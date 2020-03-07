@@ -12,5 +12,6 @@ namespace SitComTech.Core.Interface
     public interface IUserService:IUnitOfWork<User>
     {
         bool IsAuthenticated(UserVM userVM);
+        UserDataVM Insert(UserDataVM userDataVM);
     }
 }

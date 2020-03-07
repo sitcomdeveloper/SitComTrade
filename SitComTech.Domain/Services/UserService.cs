@@ -19,7 +19,7 @@ namespace SitComTech.Domain.Services
         }
         public IQueryable<User> GetAll()
         {
-            return _repository.GetAll().Where(x=>x.IsActive && !x.IsDeleted);
+            return _repository.GetAll().Where(x=>x.Active && !x.Deleted);
         }
 
         public User GetById(object Id)
@@ -29,12 +29,40 @@ namespace SitComTech.Domain.Services
             User user = _repository.GetById(Id);
             return user;
         }
-
         public void Insert(User entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("User");
             _repository.Insert(entity);
+        }
+        public UserDataVM Insert(UserDataVM userdata)
+        {
+            try
+            {
+                if (userdata == null)
+                    throw new ArgumentNullException("User");
+                User entity = new User();
+                entity.Active = true;
+                entity.Deleted = false;
+                entity.CreatedAt = DateTime.Now;
+                entity.CreatedBy = 0;
+                entity.CreatedByName = "";
+                entity.FirstName = userdata.FirstName;
+                entity.LastName = userdata.LastName;
+                entity.Password = userdata.Password;
+                entity.Email = userdata.Email;
+                entity.Country = userdata.Country;
+                entity.FtdAmount = userdata.Currency;
+                entity.Promocode = userdata.Promocode;
+                entity.CreatedAt = DateTime.Now;
+                _repository.Insert(entity);
+                SaveChanges();
+                return userdata;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Update(User entity)
@@ -57,7 +85,8 @@ namespace SitComTech.Domain.Services
         }
         public bool IsAuthenticated(UserVM userVM)
         {
-            return _repository.GetAll().Where(x => (x.UserName == userVM.UserName || x.Email == userVM.UserName) && x.Password == userVM.Password && x.IsActive == true && x.IsDeleted == false).Count() == 1;
+            return _repository.GetAll().Where(x => (x.UserName == userVM.UserName || x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).Count() == 1;
         }
+
     }
 }

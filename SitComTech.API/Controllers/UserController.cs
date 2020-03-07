@@ -11,7 +11,6 @@ using System.Web.Http.Cors;
 
 namespace SitComTech.API.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
@@ -25,7 +24,7 @@ namespace SitComTech.API.Controllers
         public List<User> GetUserList()
         {
             var userList = new List<User>();
-                userList.Add(new User { Id=1, UserName = "Abc", Password = "Xyz",Email="abc@gmail.com",Phone="123456789",IsActive=true,IsDeleted=false,CreatedBy=1,CreatedTime=DateTime.Now,UpdatedBy=1,UpdatedTime=DateTime.Now });
+                //userList.Add(new User { Id=1, UserName = "Abc", Password = "Xyz",Email="abc@gmail.com",Phone="123456789",Active=true,Deleted=false,CreatedBy=1,CreatedTime=DateTime.Now,UpdatedBy=1,UpdatedTime=DateTime.Now });
             return userList;
         }
         [Route("UserList")]
@@ -41,6 +40,16 @@ namespace SitComTech.API.Controllers
                 return _userService.IsAuthenticated(userVM);
             else
                 return false;
+        }
+
+        [HttpPost]
+        [Route("RegisterUser")]
+        public UserDataVM RegisterUser(UserDataVM userVM)
+        {
+            if (userVM != null)
+                return _userService.Insert(userVM);
+            else
+                return null;
         }
     }
 }
