@@ -107,5 +107,9 @@ namespace SitComTech.Domain.Services
             return _currencyrepository.GetAll().Where(x => x.Active && !x.Deleted).ToList();
         }
 
+        public string GetCountryISDCodeById(int countryid)
+        {
+            return _countryrepository.GetById(countryid).ISDCode;
+        }
     }
 }

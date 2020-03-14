@@ -65,5 +65,12 @@ namespace SitComTech.API.Controllers
         {
             return _userService.GetCurrencies();
         }
+
+        [HttpPost]
+        [Route("GetCountryISDCodeById/{countryid}")]
+        public string GetCountryISDCodeById(int countryid)
+        {
+            return _userService.GetCountryISDCodeById(countryid);
+        }
     }
 }
