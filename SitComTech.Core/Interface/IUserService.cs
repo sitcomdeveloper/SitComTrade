@@ -11,7 +11,7 @@ namespace SitComTech.Core.Interface
 {
     public interface IUserService:IUnitOfWork<User>
     {
-        bool IsAuthenticated(UserVM userVM);
+        User IsAuthenticated(UserVM userVM);
         UserDataVM Insert(UserDataVM userDataVM);
 
         List<Country> GetCountries();

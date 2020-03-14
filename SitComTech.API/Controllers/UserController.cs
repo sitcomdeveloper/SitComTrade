@@ -34,12 +34,12 @@ namespace SitComTech.API.Controllers
         }
         [HttpPost]
         [Route("IsAuthenticated")]
-        public bool IsAuthenticated(UserVM userVM)
+        public User IsAuthenticated(UserVM userVM)
         {
             if (userVM != null)
                 return _userService.IsAuthenticated(userVM);
             else
-                return false;
+                return null;
         }
 
         [HttpPost]

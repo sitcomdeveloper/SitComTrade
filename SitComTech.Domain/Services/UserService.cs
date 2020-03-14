@@ -88,9 +88,13 @@ namespace SitComTech.Domain.Services
         {
             _repository.SaveChanges();
         }
-        public bool IsAuthenticated(UserVM userVM)
-        {
-            return _repository.GetAll().Where(x => (x.UserName == userVM.UserName || x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).Count() == 1;
+        public User IsAuthenticated(UserVM userVM)
+        {           
+           var userdata =  _repository.GetAll().Where(x => (x.UserName == userVM.UserName || x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).FirstOrDefault();
+            if (userdata != null)
+                return userdata;
+            else
+                return null;
         }
 
         public List<Country> GetCountries()
