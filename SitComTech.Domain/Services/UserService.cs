@@ -14,10 +14,13 @@ namespace SitComTech.Domain.Services
     {
         private IUnitOfWork<User> _repository;
         private IUnitOfWork<Country> _countryrepository;
-        public UserService(IUnitOfWork<User> repository, IUnitOfWork<Country> countryrepository)
+        private IUnitOfWork<Currency> _currencyrepository;
+        public UserService(IUnitOfWork<User> repository, IUnitOfWork<Country> countryrepository, IUnitOfWork<Currency> currencyrepository)
         {
             this._repository = repository;
             this._countryrepository = countryrepository;
+            this._currencyrepository = currencyrepository;
+
         }
         public IQueryable<User> GetAll()
         {
@@ -93,6 +96,11 @@ namespace SitComTech.Domain.Services
         public List<Country> GetCountries()
         {
             return _countryrepository.GetAll().ToList();
+        }
+
+        public List<Currency> GetCurrencies()
+        {
+            return _currencyrepository.GetAll().Where(x => x.Active && !x.Deleted).ToList();
         }
 
     }

@@ -58,5 +58,12 @@ namespace SitComTech.API.Controllers
         {
            return  _userService.GetCountries();
         }
+
+        [HttpPost]
+        [Route("GetAllCurrencies")]
+        public List<Currency> GetAllCurrencies()
+        {
+            return _userService.GetCurrencies();
+        }
     }
 }
