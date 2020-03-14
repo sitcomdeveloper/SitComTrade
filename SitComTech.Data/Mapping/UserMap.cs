@@ -27,4 +27,13 @@ namespace SitComTech.Data.Mapping
             Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
+
+    public class CurrencyMap : EntityTypeConfiguration<Currency>
+    {
+        public CurrencyMap()
+        {
+            HasKey(r => r.Id);
+            Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
 }

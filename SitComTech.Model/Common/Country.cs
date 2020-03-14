@@ -14,4 +14,10 @@ namespace SitComTech.Model.Common
         public string ISOCode { get; set; }
         public string ISDCode { get; set; }
     }
+
+    public class Currency : BaseConfig
+    {
+        public string Name { get; set; }
+
+    }
 }

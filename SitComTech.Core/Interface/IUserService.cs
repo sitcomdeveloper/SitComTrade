@@ -15,5 +15,6 @@ namespace SitComTech.Core.Interface
         UserDataVM Insert(UserDataVM userDataVM);
 
         List<Country> GetCountries();
+        List<Currency> GetCurrencies();
     }
 }
