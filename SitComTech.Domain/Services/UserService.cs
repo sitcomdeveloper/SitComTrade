@@ -13,9 +13,11 @@ namespace SitComTech.Domain.Services
     public class UserService:IUserService
     {
         private IUnitOfWork<User> _repository;
-        public UserService(IUnitOfWork<User> repository)
+        private IUnitOfWork<Country> _countryrepository;
+        public UserService(IUnitOfWork<User> repository, IUnitOfWork<Country> countryrepository)
         {
             this._repository = repository;
+            this._countryrepository = countryrepository;
         }
         public IQueryable<User> GetAll()
         {
@@ -86,6 +88,11 @@ namespace SitComTech.Domain.Services
         public bool IsAuthenticated(UserVM userVM)
         {
             return _repository.GetAll().Where(x => (x.UserName == userVM.UserName || x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).Count() == 1;
+        }
+
+        public List<Country> GetCountries()
+        {
+            return _countryrepository.GetAll().ToList();
         }
 
     }

@@ -18,4 +18,13 @@ namespace SitComTech.Data.Mapping
             Property(r => r.UserName).HasMaxLength(200);            
         }
     }
+
+    public class CountryMap : EntityTypeConfiguration<Country>
+    {
+        public CountryMap()
+        {
+            HasKey(r => r.Id);
+            Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
 }

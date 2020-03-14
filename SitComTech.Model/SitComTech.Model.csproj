@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BaseConfig.cs" />
+    <Compile Include="Common\Country.cs" />
     <Compile Include="Common\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\UserVM.cs" />

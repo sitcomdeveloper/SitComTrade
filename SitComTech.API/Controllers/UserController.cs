@@ -51,5 +51,12 @@ namespace SitComTech.API.Controllers
             else
                 return null;
         }
+
+        [HttpPost]
+        [Route("GetAllCountries")]
+        public List<Country> GetAllCountries()
+        {
+           return  _userService.GetCountries();
+        }
     }
 }

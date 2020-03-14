@@ -13,5 +13,7 @@ namespace SitComTech.Core.Interface
     {
         bool IsAuthenticated(UserVM userVM);
         UserDataVM Insert(UserDataVM userDataVM);
+
+        List<Country> GetCountries();
     }
 }
