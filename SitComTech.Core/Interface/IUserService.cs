@@ -16,5 +16,6 @@ namespace SitComTech.Core.Interface
 
         List<Country> GetCountries();
         List<Currency> GetCurrencies();
+        string GetCountryISDCodeById(int countryid);
     }
 }
