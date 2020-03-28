@@ -1,0 +1,193 @@
+
+
+<app-header></app-header>
+
+<div class="container-fluid">
+    <div class="row fist">
+        <div class="col-md-12 sub-header">
+            <div class="row">
+                <!-- <div class="col-md-2 col-xs-8">
+                        <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                              </nav>
+                </div> -->
+                <div class="col-md-10"></div>
+            </div>
+            <div class="row">
+                    <div class="col-md-5 main-tab">
+                      
+                            <!-- <ul class="tab">
+                              <li><a routerLink="clients/all">ALL</a></li>
+                                <li><a routerLink="clients/accounts">ACCOUNTS</a></li>
+                                <li><a routerLink="">LEADS</a></li>
+                                </ul> -->
+                            
+                            
+
+                        </div>
+                        
+                        <!-- <div class="col-md-7" style="float:left;padding-left:532px"> -->
+                            <!-- <a routerLink=""><i class="fa fa-refresh" style="font-size:24px;opacity:1.2;padding-right:8px"></i></a> -->
+                                <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">All</button>
+                                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                                    </button>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" routerLink="#">Search</a>
+                                      <a class="dropdown-item disabled" routerLink="#">Others</a>
+                                      <a class="dropdown-item" routerLink="#">Accounts</a>
+                                      <a class="dropdown-item" routerLink="#">All</a>
+                                      <a class="dropdown-item" routerLink="#">Leads</a>
+                                      <a class="dropdown-item disabled" routerLink="#">Shared</a>
+                                      <a class="dropdown-item" routerLink="#">Online</a>
+                                    </div>
+                                  </div> -->
+                                  <!-- <div class="fa">
+                                   
+                                  <a routerLink=""><i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i></a>
+                                  <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true" style="padding-right:10px;margin-right:10px"></i>
+                                  <i class="fa fa-" aria-hidden="true"></i>
+                                  <a routerLink=""><i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i></a>
+                                  <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
+                                  <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
+                        </div> -->
+                        <div class="col-md-7">
+                          <a routerLink=""><i class="fa fa-refresh"></i></a>
+                          <a routerLink=""><i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i></a>
+                          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true" style="padding-right:10px;margin-right:10px"></i>
+                          <i class="fa fa-" aria-hidden="true"></i>
+                          <a routerLink=""><i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i></a>
+                          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
+                          <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
+                          <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+
+                        </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+  <!-- <div class="container-fluid">
+        <div class="row">
+      <div class="col-md-12 grid">
+        <ag-grid-angular
+  style="width: 1335px; height: 300px;"
+  class="ag-theme-balham"
+  [enableSorting]="true"
+  [enableFilter]="true"
+  [pagination]="true"
+
+
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  enableColResize= true
+  suppressRowClickSelection= true,
+				angularCompileRows= true,
+        angularCompileHeaders= true
+        rowHeight=50
+        autoHeight=80
+
+>
+</ag-grid-angular>
+
+      </div>
+    </div>
+
+</div> -->
+
+<tabs>
+  <tab tabTitle="ALL">
+   all
+    <div class="container-fluid">
+      <div class="row">
+    <div class="col-md-12 grid">
+      <ag-grid-angular
+style="width: 1335px; height: 300px;"
+class="ag-theme-balham"
+[enableSorting]="true"
+[enableFilter]="true"
+[pagination]="true"
+
+
+[rowData]="rowData"
+[columnDefs]="columnDefs"
+enableColResize= true
+suppressRowClickSelection= true,
+      angularCompileRows= true,
+      angularCompileHeaders= true
+      rowHeight=50
+      autoHeight=80
+
+>
+</ag-grid-angular>
+
+    </div>
+  </div>
+
+</div> 
+  </tab>
+  <tab tabTitle="ACCOUNTS">
+    accounts
+    <div class="container-fluid">
+      <div class="row">
+    <div class="col-md-12 grid">
+      <ag-grid-angular
+style="width: 1335px; height: 300px;"
+class="ag-theme-balham"
+[enableSorting]="true"
+[enableFilter]="true"
+[pagination]="true"
+
+
+[rowData]="rowData"
+[columnDefs]="columnDefs"
+enableColResize= true
+suppressRowClickSelection= true,
+      angularCompileRows= true,
+      angularCompileHeaders= true
+      rowHeight=50
+      autoHeight=80
+
+>
+</ag-grid-angular>
+
+    </div>
+  </div>
+
+</div> 
+  </tab>
+  <tab tabTitle="LEADS">
+    leads
+    <div class="container-fluid">
+      <div class="row">
+    <div class="col-md-12 grid">
+      <ag-grid-angular
+style="width: 1335px; height: 300px;"
+class="ag-theme-balham"
+[enableSorting]="true"
+[enableFilter]="true"
+[pagination]="true"
+
+
+[rowData]="rowData"
+[columnDefs]="columnDefs"
+enableColResize= true
+suppressRowClickSelection= true,
+      angularCompileRows= true,
+      angularCompileHeaders= true
+      rowHeight=50
+      autoHeight=80
+
+>
+</ag-grid-angular>
+
+    </div>
+  </div>
+
+</div> 
+  </tab>
+<tabs>

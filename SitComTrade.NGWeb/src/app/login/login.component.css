@@ -1,0 +1,65 @@
+img{
+  height:6vh;
+  /* margin-left: 49px; */
+  /* width:9vw; */
+}
+.navbar,.bg-primary
+{
+  /* background: #5b90e2 !important; */
+  background: #1D71B8 !important;
+}
+.log
+{
+    /* background-image:url(/assets/images/login.png); */
+    background-color: #e9ecef;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:auto;
+    height:100%;
+    background-position: 100%;
+}
+input.btn.btn-success {
+  padding: 10px 56px;
+  margin-left: 82px;
+  font-size: 17px;
+}
+body > app-root > app-login > div.container {
+  text-align: center!important;
+}
+img.header.img-fluid {
+  max-width: 100px!important;
+  padding-top: 30px!important;
+}
+body > app-root > app-login > div.container {
+  text-align: center!important;
+}
+body > app-root > app-login > div.container > img {
+  padding-top: 25px!important;
+}
+.label
+{
+    font-weight: bolder;
+    color:black;
+}
+.register-btn{
+
+  margin-left: 1070px;
+}
+/* .register
+{
+    background-image: url(/assets/images/register.jpg);
+    background-repeat: no-repeat;
+} */
+/* .reg
+{
+    color:black;
+    font-weight: bolder;
+    font-size: 25px;
+} */
+.text
+{
+    color:black;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-shadow: black;
+}

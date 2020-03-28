@@ -1,0 +1,83 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 sub-header">
+                <div class="row">
+                    <div class="col-md-2 col-xs-8 crumb">
+                            <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                      <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
+                                      <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                    </ol>
+                                  </nav>
+                    </div>
+                    <div class="col-md-10"></div>
+                </div>
+                <div class="row">
+                        <div class="col-md-5 main-tab">
+                                <ul class="tab">
+                                    <li><a routerLink="">GROUPS</a></li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-7" style="float:left;padding-left:161px">
+                                    <i class="fa fa-refresh" style="font-size:24px;opacity:0.2;padding-right:10px;margin-right:10px;cursor:pointer"></i>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary">Groups</button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                                        </button>
+                                        <div class="dropdown-menu">
+                                          <a class="dropdown-item" routerLink="#">Search</a>
+                                          <a class="dropdown-item disabled" routerLink="#">Others</a>
+                                          <a class="dropdown-item" routerLink="#">Accounts</a>
+                                          <a class="dropdown-item" routerLink="#">All</a>
+                                          <a class="dropdown-item" routerLink="#">Leads</a>
+                                          <a class="dropdown-item disabled" routerLink="#">Shared</a>
+                                          <a class="dropdown-item" routerLink="#">Online</a>
+                                        </div>
+                                      </div>
+                                      <div class="fa">
+                                      <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true"></i>
+                                      <i class="fa fa-pencil bg-primary fa-lg" aria-hidden="true" style="padding-right:10px;margin-right:10px"></i>
+                                      <i class="fa fa-user bg-primary fa-lg" aria-hidden="true"></i>
+                                      <i class="fa fa-pencil bg-primary fa-lg" aria-hidden="true"></i>
+                                      <i class="fa fa-trash bg-primary fa-lg" aria-hidden="true"></i>
+
+                                      
+                                      </div>
+    
+    
+    
+    
+    
+    
+                            </div>
+                </div>
+                
+    
+    
+            </div>
+            
+        </div>
+        <div class="row">
+          <div class="col-md-12 grid">
+            <ag-grid-angular
+      style="width: 700px; height: 400px;"
+      class="ag-theme-balham"
+      [enableSorting]="true"
+      [enableFilter]="true"
+      [pagination]="true"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+    >
+    </ag-grid-angular>
+    
+          </div>
+        </div>
+      <!-- container-fluid -->
+    </div> 
+    
+    
+    
+    
+    
