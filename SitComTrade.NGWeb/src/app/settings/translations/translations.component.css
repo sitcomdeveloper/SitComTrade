@@ -1,0 +1,86 @@
+
+.sub-header{
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
+    color: #fff;
+   height: 82px;
+    margin:0px 15px;
+}
+.breadcrumb
+{
+    margin-left: 5px;
+    margin-top:-32px;
+   padding:0px;
+}
+.crumb
+{
+    padding-left: 50px;
+}
+.main-tab{
+    padding-left: 51px;
+}
+.tab{
+    background-color:white;
+    border-radius:2px;
+    width: 140px;
+    height: 38px;
+    padding: 2px;
+    text-align:center;
+    font-size: 18px;
+}
+.main-tab .tab li{
+    display: inline-block;
+    padding:2px;
+}
+.main-tab .tab li a{
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    padding: 16px 9px;
+    min-width: 90px;
+    line-height: 19px;
+}
+.fa{
+    font-size:25px;
+    cursor:pointer;
+}
+
+.bg-primary
+{
+    background-color: #159ac9 !important;
+    height:31px;
+    width:33px;
+    padding:8px;
+    padding-bottom:3px;
+    margin-bottom:10px;
+
+    /* width: 1px;
+    height: 25px; */
+    
+    left: 0;
+    top: 50%;
+    margin: -12px 0 0;
+}
+.btn{
+    padding: 0.375rem 4.75rem;
+}
+.btn btn-primary,.btn btn-primary dropdown-toggle dropdown-toggle-split
+{
+    padding-left:12px;
+}
+.btn btn-primary dropdown-toggle dropdown-toggle-split
+{
+    margin-left:12px;
+}
+.btn-primary
+{
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 77px 6px 83px;
+    border-radius: 11px 0 0 2px;
+   
+}

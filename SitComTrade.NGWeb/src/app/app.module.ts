@@ -1,0 +1,132 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {TabModule} from 'angular-tabs-component';
+
+
+import { AgGridModule } from 'ag-grid-angular';
+import { AuthpipePipe } from './authpipe.pipe';
+
+
+import { HeaderComponent } from './header/header.component';
+import { LogoComponent } from './header/logo/logo.component';
+import { ClientsComponent } from './header/clients/clients.component';
+import { ActivitiesComponent } from './header/activities/activities.component';
+import { ReportsComponent } from './header/reports/reports.component';
+import { SettingsComponent } from './header/settings/settings.component';
+import { TimeComponent } from './header/time/time.component';
+import { SearchComponent } from './header/search/search.component';
+import { NotificationsComponent } from './header/notifications/notifications.component';
+import { UserComponent } from './header/user/user.component';
+import { ClientComponent } from './clients/client/client.component';
+import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './reports/dashboard/dashboard.component';
+import { ExposureComponent } from './reports/exposure/exposure.component';
+import { LeaderboardComponent } from './reports/leaderboard/leaderboard.component';
+import { ReportComponent } from './reports/report/report.component';
+import { TradingjournalsComponent } from './reports/tradingjournals/tradingjournals.component';
+import { BenchmarkComponent } from './reports/benchmark/benchmark.component';
+import { MonetarytransactionsComponent } from './activities/monetarytransactions/monetarytransactions.component';
+import { TasksComponent } from './activities/tasks/tasks.component';
+import { CasesComponent } from './activities/cases/cases.component';
+import { DocumentsComponent } from './activities/documents/documents.component';
+import { OpenedordersComponent } from './activities/openedorders/openedorders.component';
+import { ClosedordersComponent } from './activities/closedorders/closedorders.component';
+import { PendingordersComponent } from './activities/pendingorders/pendingorders.component';
+import { RejectedtransactionComponent } from './activities/rejectedtransaction/rejectedtransaction.component';
+import { CommonjournalComponent } from './activities/commonjournal/commonjournal.component';
+import { EmailtemplatesComponent } from './settings/emailtemplates/emailtemplates.component';
+import { SendersettingsComponent } from './settings/sendersettings/sendersettings.component';
+import { GroupsComponent } from './settings/groups/groups.component';
+import { InstrumentsComponent } from './settings/instruments/instruments.component';
+import { TranslationsComponent } from './settings/translations/translations.component';
+import { FiltersComponent } from './settings/filters/filters.component';
+import { ImportsComponent } from './settings/imports/imports.component';
+import { CrmusersComponent } from './settings/crmusers/crmusers.component';
+import { AffilateusersComponent } from './settings/affilateusers/affilateusers.component';
+import { AdditionalfieldsComponent } from './settings/additionalfields/additionalfields.component';
+import { ModulefieldsComponent } from './settings/modulefields/modulefields.component';
+import { IplistComponent } from './settings/iplist/iplist.component';
+import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
+import { WorkflowsComponent } from './settings/workflows/workflows.component';
+import { LogComponent } from './log/log.component';
+import { AccountsComponent } from './clients/accounts/accounts.component';
+import { AllComponent } from './clients/all/all.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { TermsComponent } from './terms/terms.component';
+import { RegisterComponent } from './register/register.component';
+// import {ui.grid.autoResize} from 'ag-grid-angular';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LogoComponent,
+    ClientsComponent,
+    ActivitiesComponent,
+    ReportsComponent,
+    SettingsComponent,
+    TimeComponent,
+    SearchComponent,
+    NotificationsComponent,
+    UserComponent,
+    ClientComponent,
+    TradeaccountsComponent,
+    LoginComponent,
+    AuthpipePipe,
+    DashboardComponent,
+    ExposureComponent,
+    LeaderboardComponent,
+    ReportComponent,
+    TradingjournalsComponent,
+    BenchmarkComponent,
+    MonetarytransactionsComponent,
+    TasksComponent,
+    CasesComponent,
+    DocumentsComponent,
+    OpenedordersComponent,
+    ClosedordersComponent,
+    PendingordersComponent,
+    RejectedtransactionComponent,
+    CommonjournalComponent,
+    EmailtemplatesComponent,
+    SendersettingsComponent,
+    GroupsComponent,
+    InstrumentsComponent,
+    TranslationsComponent,
+    FiltersComponent,
+    ImportsComponent,
+    CrmusersComponent,
+    AffilateusersComponent,
+    AdditionalfieldsComponent,
+    ModulefieldsComponent,
+    IplistComponent,
+    TradinghoursComponent,
+    WorkflowsComponent,
+    LogComponent,
+    AccountsComponent,
+    AllComponent,
+    TermsComponent,
+    RegisterComponent
+
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,FormsModule,ReactiveFormsModule,
+    AgGridModule.withComponents(null),
+    TabModule
+
+
+  ],
+  providers: [AuthService,AuthGuard],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

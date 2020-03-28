@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 sub-header">
+            <div class="row">
+                <div class="col-md-2 col-xs-8 crumb">
+                        <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                              </nav>
+                </div>
+                <div class="col-md-10"></div>
+            </div>
+            <div class="row">
+                    <div class="col-md-5 main-tab">
+                            <ul class="tab">
+                                <li><a routerLink="">EMAIL TEMPLATES</a></li>
+                                
+                                
+                            </ul>
+                        </div>
+                        <div class="col-md-7" style="float:left;padding-left:606px">
+                                
+                                <div class="btn-group">
+                                    
+                                <button class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>New Template</button>
+                                    
+                                   
+                                  </div>
+                                  
+
+
+
+
+
+                        </div>
+            </div>
+            
+
+
+        </div>
+        
+    </div>
+    <div class="row">
+      <div class="col-md-12 grid">
+        <ag-grid-angular
+  style="width: 700px; height: 400px;"
+  class="ag-theme-balham"
+  [enableSorting]="true"
+  [enableFilter]="true"
+  [pagination]="true"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+>
+</ag-grid-angular>
+
+      </div>
+    </div>
+  <!-- container-fluid -->
+</div> 
+
+
+

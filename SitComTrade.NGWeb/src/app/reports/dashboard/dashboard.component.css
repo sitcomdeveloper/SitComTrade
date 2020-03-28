@@ -1,0 +1,122 @@
+.sub-header{
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
+    color: #fff;
+   height: 104px;
+    margin:0px 15px;
+}
+.breadcrumb
+{
+    margin-left: 34px;
+    margin-top:-32px;
+    padding:0px;
+    
+}
+.tab{
+    border:0px solid;
+    border-radius: 3px;
+    text-align: center;
+    width:123px;
+    height:30px;
+    margin-left: 34px;
+}
+.left-pane
+{
+    width:10%;
+    padding-left:272px;
+
+}
+.side-tab
+{
+    
+    display: inline-block;
+    white-space: nowrap;
+}
+.side-tab1
+{
+    border:0px solid;
+    width:24%;
+    display: inline-block;
+}
+.side-tab2
+{
+    display: inline-block;
+    border:0px solid white;
+    padding-right:12px;
+}
+.dropdown
+{
+    display: inline-block;
+    color:white;
+    padding-right:12px;
+} 
+.save
+{
+    display:inline-block;
+    border:0px solid white;
+    padding-right:12px;
+    
+}
+.fa-lg
+{
+    font-size:1.5em;
+}
+.sub-header-bottom
+{
+  background-color: white;
+  
+  margin-left: 43px;
+  white-space: initial;
+  
+  border-radius: 3px;
+  width:70%;
+  padding-top:9px;
+}
+.sub-header-bottom .nav ul li
+{
+    list-style-type: none;
+    display:inline-block;
+}
+
+.sub-header-bottom .nav ul li a
+{
+  color:grey;
+  margin-right:15px;
+  margin-left: 15px;
+  font-size: 13px;
+  text-decoration-style: solid;
+  text-decoration-color: blue;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: darkgrey;
+  font-weight: 50px;
+  
+}
+.sub-header-bottom .nav ul li a:hover
+{
+  color:blue;
+  font-weight: 50%;
+  
+}
+.box
+{
+    margin-top:35px;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 3px;
+    
+}
+.box2
+{
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+.box-text
+{
+    border:1px solid white;
+    height:73px;
+    width:25px;
+}

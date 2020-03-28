@@ -1,0 +1,100 @@
+.sub-header{
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
+    color: #fff;
+   height: 82px;
+
+}
+.breadcrumb
+{
+    margin-left: 5px;
+    margin-top:-32px;
+    padding:0px;
+
+}
+.tab{
+    /* background-color:white; */
+    border-radius:5px;
+    width:208px;
+    height:37px;
+    padding:8px;
+    text-align:center;
+    font-size: 18px;
+}
+tabs
+{
+    position: top;
+    text-align: left;
+}
+.main-tab .tab li{
+    display: inline-block;
+    padding:2px;
+}
+.main-tab .tab li a{
+    text-decoration: none;
+}
+.fa{
+    font-size:25px;
+}
+i.fa.fa-refresh {
+  color: #dee2e6;
+}
+.bg-primary
+{
+    background-color: #159ac9 !important;
+    height:31px;
+    width:33px;
+    padding:8px;
+    padding-bottom:3px;
+    margin-bottom:10px;
+    left: 0;
+    top: 50%;
+    margin: -12px 0 0;
+}
+.btn-primary
+{
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: rgb(3, 3, 3)!important;
+    padding: 6px 77px 6px 83px;
+    border-radius: 11px 0 0 2px;
+}
+.btn{
+    padding: 0.375rem 4.75rem;
+}
+.btn btn-primary,.btn btn-primary dropdown-toggle dropdown-toggle-split
+{
+    padding-left:12px;
+}
+.btn btn-primary dropdown-toggle dropdown-toggle-split
+{
+    margin-left:12px;
+}
+/* i.fa.fa-pencil.bg-primary.fa-lg,i.fa.fa-trash.bg-primary.fa-lg {
+    opacity: 0.5;
+} */
+i.fa.fa-plus.bg-primary.fa-lg,i.fa.fa-pencil.bg-primary.fa-lg,i.fa.fa-user.bg-primary.fa-lg,i.fa.fa-trash.bg-primary.fa-lg,i.fa.fa-ellipsis-h.bg-primary.fa-lg{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    width: 50px;
+    height: 41px;
+    text-indent: -9999px;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    background-position: -175px -145px;
+    color:white;
+    
+}
+.ui-grid-cell-contents-auto
+{
+display: grid;
+grid-auto-columns: max-content;
+}

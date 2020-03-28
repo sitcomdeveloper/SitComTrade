@@ -1,0 +1,353 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{129E36E3-4DD8-4D98-BD6E-981C20272070}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SitComTrade.NGWeb</RootNamespace>
+    <AssemblyName>SitComTrade.NGWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\app\activities\cases\cases.component.css" />
+    <Content Include="src\app\activities\cases\cases.component.html" />
+    <Content Include="src\app\activities\closedorders\closedorders.component.css" />
+    <Content Include="src\app\activities\closedorders\closedorders.component.html" />
+    <Content Include="src\app\activities\commonjournal\commonjournal.component.css" />
+    <Content Include="src\app\activities\commonjournal\commonjournal.component.html" />
+    <Content Include="src\app\activities\documents\documents.component.css" />
+    <Content Include="src\app\activities\documents\documents.component.html" />
+    <Content Include="src\app\activities\monetarytransactions\monetarytransactions.component.css" />
+    <Content Include="src\app\activities\monetarytransactions\monetarytransactions.component.html" />
+    <Content Include="src\app\activities\openedorders\openedorders.component.css" />
+    <Content Include="src\app\activities\openedorders\openedorders.component.html" />
+    <Content Include="src\app\activities\pendingorders\pendingorders.component.css" />
+    <Content Include="src\app\activities\pendingorders\pendingorders.component.html" />
+    <Content Include="src\app\activities\rejectedtransaction\rejectedtransaction.component.css" />
+    <Content Include="src\app\activities\rejectedtransaction\rejectedtransaction.component.html" />
+    <Content Include="src\app\activities\tasks\tasks.component.css" />
+    <Content Include="src\app\activities\tasks\tasks.component.html" />
+    <Content Include="src\app\app.component.css" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\clients\accounts\accounts.component.css" />
+    <Content Include="src\app\clients\accounts\accounts.component.html" />
+    <Content Include="src\app\clients\all\all.component.css" />
+    <Content Include="src\app\clients\all\all.component.html" />
+    <Content Include="src\app\clients\client\client.component.css" />
+    <Content Include="src\app\clients\client\client.component.html" />
+    <Content Include="src\app\clients\tradeaccounts\tradeaccounts.component.css" />
+    <Content Include="src\app\clients\tradeaccounts\tradeaccounts.component.html" />
+    <Content Include="src\app\header\activities\activities.component.css" />
+    <Content Include="src\app\header\activities\activities.component.html" />
+    <Content Include="src\app\header\clients\clients.component.css" />
+    <Content Include="src\app\header\clients\clients.component.html" />
+    <Content Include="src\app\header\header.component.css" />
+    <Content Include="src\app\header\header.component.html" />
+    <Content Include="src\app\header\logo\logo.component.css" />
+    <Content Include="src\app\header\logo\logo.component.html" />
+    <Content Include="src\app\header\notifications\notifications.component.css" />
+    <Content Include="src\app\header\notifications\notifications.component.html" />
+    <Content Include="src\app\header\reports\reports.component.css" />
+    <Content Include="src\app\header\reports\reports.component.html" />
+    <Content Include="src\app\header\search\search.component.css" />
+    <Content Include="src\app\header\search\search.component.html" />
+    <Content Include="src\app\header\settings\settings.component.css" />
+    <Content Include="src\app\header\settings\settings.component.html" />
+    <Content Include="src\app\header\time\time.component.css" />
+    <Content Include="src\app\header\time\time.component.html" />
+    <Content Include="src\app\header\user\user.component.css" />
+    <Content Include="src\app\header\user\user.component.html" />
+    <Content Include="src\app\login\login.component.css" />
+    <Content Include="src\app\login\login.component.html" />
+    <Content Include="src\app\log\log.component.css" />
+    <Content Include="src\app\log\log.component.html" />
+    <Content Include="src\app\register\register.component.css" />
+    <Content Include="src\app\register\register.component.html" />
+    <Content Include="src\app\reports\benchmark\benchmark.component.css" />
+    <Content Include="src\app\reports\benchmark\benchmark.component.html" />
+    <Content Include="src\app\reports\dashboard\dashboard.component.css" />
+    <Content Include="src\app\reports\dashboard\dashboard.component.html" />
+    <Content Include="src\app\reports\exposure\exposure.component.css" />
+    <Content Include="src\app\reports\exposure\exposure.component.html" />
+    <Content Include="src\app\reports\leaderboard\leaderboard.component.css" />
+    <Content Include="src\app\reports\leaderboard\leaderboard.component.html" />
+    <Content Include="src\app\reports\report\report.component.css" />
+    <Content Include="src\app\reports\report\report.component.html" />
+    <Content Include="src\app\reports\tradingjournals\tradingjournals.component.css" />
+    <Content Include="src\app\reports\tradingjournals\tradingjournals.component.html" />
+    <Content Include="src\app\settings\additionalfields\additionalfields.component.css" />
+    <Content Include="src\app\settings\additionalfields\additionalfields.component.html" />
+    <Content Include="src\app\settings\affilateusers\affilateusers.component.css" />
+    <Content Include="src\app\settings\affilateusers\affilateusers.component.html" />
+    <Content Include="src\app\settings\crmusers\crmusers.component.css" />
+    <Content Include="src\app\settings\crmusers\crmusers.component.html" />
+    <Content Include="src\app\settings\emailtemplates\emailtemplates.component.css" />
+    <Content Include="src\app\settings\emailtemplates\emailtemplates.component.html" />
+    <Content Include="src\app\settings\filters\filters.component.css" />
+    <Content Include="src\app\settings\filters\filters.component.html" />
+    <Content Include="src\app\settings\groups\groups.component.css" />
+    <Content Include="src\app\settings\groups\groups.component.html" />
+    <Content Include="src\app\settings\imports\imports.component.css" />
+    <Content Include="src\app\settings\imports\imports.component.html" />
+    <Content Include="src\app\settings\instruments\instruments.component.css" />
+    <Content Include="src\app\settings\instruments\instruments.component.html" />
+    <Content Include="src\app\settings\iplist\iplist.component.css" />
+    <Content Include="src\app\settings\iplist\iplist.component.html" />
+    <Content Include="src\app\settings\modulefields\modulefields.component.css" />
+    <Content Include="src\app\settings\modulefields\modulefields.component.html" />
+    <Content Include="src\app\settings\sendersettings\sendersettings.component.css" />
+    <Content Include="src\app\settings\sendersettings\sendersettings.component.html" />
+    <Content Include="src\app\settings\tradinghours\tradinghours.component.css" />
+    <Content Include="src\app\settings\tradinghours\tradinghours.component.html" />
+    <Content Include="src\app\settings\translations\translations.component.css" />
+    <Content Include="src\app\settings\translations\translations.component.html" />
+    <Content Include="src\app\settings\workflows\workflows.component.css" />
+    <Content Include="src\app\settings\workflows\workflows.component.html" />
+    <Content Include="src\app\terms\terms.component.css" />
+    <Content Include="src\app\terms\terms.component.html" />
+    <Content Include="src\assets\images\bg-main-shd.png" />
+    <Content Include="src\assets\images\bg-subheader.png" />
+    <Content Include="src\assets\images\login.png" />
+    <Content Include="src\assets\images\logo.png" />
+    <Content Include="src\assets\images\logo1.png" />
+    <Content Include="src\assets\images\register.jpg" />
+    <Content Include="src\assets\images\sprite.png" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="src\styles.css" />
+    <Content Include="src\tnc.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="angular.json" />
+    <Content Include="package.json" />
+    <None Include="packages.config" />
+    <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\proxy.conf.json" />
+    <Content Include="tsconfig.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\activities\cases\cases.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\cases\cases.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\closedorders\closedorders.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\closedorders\closedorders.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\commonjournal\commonjournal.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\commonjournal\commonjournal.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\documents\documents.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\documents\documents.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\monetarytransactions\monetarytransactions.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\monetarytransactions\monetarytransactions.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\openedorders\openedorders.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\openedorders\openedorders.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\pendingorders\pendingorders.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\pendingorders\pendingorders.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\rejectedtransaction\rejectedtransaction.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\rejectedtransaction\rejectedtransaction.component.ts" />
+    <TypeScriptCompile Include="src\app\activities\tasks\tasks.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\activities\tasks\tasks.component.ts" />
+    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\auth.guard.spec.ts" />
+    <TypeScriptCompile Include="src\app\auth.guard.ts" />
+    <TypeScriptCompile Include="src\app\auth.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\auth.service.ts" />
+    <TypeScriptCompile Include="src\app\authpipe.pipe.spec.ts" />
+    <TypeScriptCompile Include="src\app\authpipe.pipe.ts" />
+    <TypeScriptCompile Include="src\app\clients\accounts\accounts.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\accounts\accounts.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\all\all.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\all\all.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\client\client.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\client\client.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.ts" />
+    <TypeScriptCompile Include="src\app\header\activities\activities.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\activities\activities.component.ts" />
+    <TypeScriptCompile Include="src\app\header\clients\clients.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\clients\clients.component.ts" />
+    <TypeScriptCompile Include="src\app\header\header.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\header.component.ts" />
+    <TypeScriptCompile Include="src\app\header\logo\logo.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\logo\logo.component.ts" />
+    <TypeScriptCompile Include="src\app\header\notifications\notifications.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\notifications\notifications.component.ts" />
+    <TypeScriptCompile Include="src\app\header\reports\reports.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\reports\reports.component.ts" />
+    <TypeScriptCompile Include="src\app\header\search\search.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\search\search.component.ts" />
+    <TypeScriptCompile Include="src\app\header\settings\settings.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\settings\settings.component.ts" />
+    <TypeScriptCompile Include="src\app\header\time\time.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\time\time.component.ts" />
+    <TypeScriptCompile Include="src\app\header\user\user.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\header\user\user.component.ts" />
+    <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\login\login.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\login\login.service.ts" />
+    <TypeScriptCompile Include="src\app\log\log.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\log\log.component.ts" />
+    <TypeScriptCompile Include="src\app\register\register.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\register\register.component.ts" />
+    <TypeScriptCompile Include="src\app\reports\benchmark\benchmark.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\reports\benchmark\benchmark.component.ts" />
+    <TypeScriptCompile Include="src\app\reports\dashboard\dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\reports\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\reports\exposure\exposure.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\reports\exposure\exposure.component.ts" />
+    <TypeScriptCompile Include="src\app\reports\leaderboard\leaderboard.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\reports\leaderboard\leaderboard.component.ts" />
+    <TypeScriptCompile Include="src\app\reports\report\report.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\reports\report\report.component.ts" />
+    <TypeScriptCompile Include="src\app\reports\tradingjournals\tradingjournals.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\reports\tradingjournals\tradingjournals.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\additionalfields\additionalfields.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\additionalfields\additionalfields.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\affilateusers\affilateusers.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\affilateusers\affilateusers.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\crmusers\crmusers.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\crmusers\crmusers.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\emailtemplates\emailtemplates.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\emailtemplates\emailtemplates.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\filters\filters.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\filters\filters.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\groups\groups.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\groups\groups.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\imports\imports.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\imports\imports.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\instruments\instruments.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\instruments\instruments.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\iplist\iplist.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\iplist\iplist.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\modulefields\modulefields.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\modulefields\modulefields.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\sendersettings\sendersettings.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\sendersettings\sendersettings.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\tradinghours\tradinghours.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\tradinghours\tradinghours.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\translations\translations.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\translations\translations.component.ts" />
+    <TypeScriptCompile Include="src\app\settings\workflows\workflows.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\settings\workflows\workflows.component.ts" />
+    <TypeScriptCompile Include="src\app\terms\terms.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\terms\terms.component.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51820</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51820/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

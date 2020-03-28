@@ -1,0 +1,25 @@
+.sub-header{
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
+    color: #fff;
+   height: 94px;
+    margin:0px 15px;
+}
+.breadcrumb
+{
+    margin-left: 34px;
+    margin-top:-32px;
+    padding:0px;
+    
+}
+.tab{
+    border:0px solid;
+    border-radius: 3px;
+    text-align: center;
+    width:143px;
+    height:47px;
+    margin-left: 34px;
+    color: #3d75e1;
+}
