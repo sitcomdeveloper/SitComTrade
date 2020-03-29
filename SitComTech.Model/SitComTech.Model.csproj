@@ -42,11 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BaseConfig.cs" />
-    <Compile Include="Common\Country.cs" />
-    <Compile Include="OwnerInformation\Address.cs" />
-    <Compile Include="OwnerInformation\User.cs" />
+    <Compile Include="DataObject\Country.cs" />
+    <Compile Include="DataObject\Address.cs" />
+    <Compile Include="DataObject\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task\Task.cs" />
+    <Compile Include="DataObject\OwnerTask.cs" />
     <Compile Include="ViewModel\UserVM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
