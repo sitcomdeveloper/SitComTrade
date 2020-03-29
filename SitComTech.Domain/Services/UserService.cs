@@ -1,14 +1,13 @@
 ﻿using SitComTech.Core.Interface;
 using SitComTech.Data.Interface;
-using SitComTech.Model.Common;
-using SitComTech.Model.OwnerInformation;
+using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
-namespace SitComTech.Domain.OwnerInfomation
+namespace SitComTech.Domain.Services
 {
     public class UserService : IUserService
     {
@@ -49,19 +48,21 @@ namespace SitComTech.Domain.OwnerInfomation
                 {
                     if (userdata == null)
                         throw new ArgumentNullException("User");
-                    User entity = new User();
-                    entity.Active = true;
-                    entity.Deleted = false;
-                    entity.CreatedAt = DateTime.Now;
-                    entity.CreatedBy = 0;
-                    entity.CreatedByName = "";
-                    entity.FirstName = userdata.FirstName;
-                    entity.LastName = userdata.LastName;
-                    entity.Password = userdata.Password;
-                    entity.Email = userdata.Email;
-                    entity.Country = userdata.Country;
-                    entity.FtdAmount = userdata.Currency;
-                    entity.Promocode = userdata.Promocode;
+                    User entity = new User
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        FirstName = userdata.FirstName,
+                        LastName = userdata.LastName,
+                        Password = userdata.Password,
+                        Email = userdata.Email,
+                        Country = userdata.Country,
+                        FtdAmount = userdata.Currency,
+                        Promocode = userdata.Promocode
+                    };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
                     SaveChanges();

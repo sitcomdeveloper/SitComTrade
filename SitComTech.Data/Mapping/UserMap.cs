@@ -1,12 +1,6 @@
-﻿using SitComTech.Model.Common;
-using SitComTech.Model.OwnerInformation;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SitComTech.Model.DataObject;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SitComTech.Data.Mapping
 {

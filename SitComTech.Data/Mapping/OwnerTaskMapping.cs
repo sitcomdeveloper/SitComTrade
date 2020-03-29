@@ -1,14 +1,11 @@
-﻿using SitComTech.Model.OwnerInformation;
-using SitComTech.Model.Task;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
+﻿using SitComTech.Model.DataObject;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SitComTech.Data.Mapping
 {
-  
-    public class TaskMap : EntityTypeConfiguration<Task>
+
+    public class TaskMap : EntityTypeConfiguration<OwnerTask>
     {
         public TaskMap()
         {

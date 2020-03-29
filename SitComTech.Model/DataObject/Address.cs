@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SitComTech.Model.Common;
+﻿using SitComTech.Model.Common;
 
 
-namespace SitComTech.Model.OwnerInformation
+namespace SitComTech.Model.DataObject
 {
     public class Address :BaseConfig
     {

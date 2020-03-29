@@ -3,8 +3,7 @@ using Autofac.Integration.WebApi;
 using SitComTech.Core.Interface;
 using SitComTech.Data.Interface;
 using SitComTech.Data.Repository;
-using SitComTech.Domain.OwnerInfomation;
-using SitComTech.Domain.TaskDomain;
+using SitComTech.Domain.Services;
 using System.Reflection;
 using System.Web.Http;
 
@@ -33,7 +32,9 @@ namespace SitComTech.API.App_Start
             builder.RegisterGeneric(typeof(UnitOfWork<>)).As(typeof(IUnitOfWork<>));
 
             builder.RegisterType<UserService>().As<IUserService>();
-            builder.RegisterType<TaskService>().As<ITaskService>();
+            builder.RegisterType<OwnerTaskService>().As<IOwnerTaskService>();
+            builder.RegisterType<TaskTypeService>().As<ITaskTypeService>();
+            builder.RegisterType<TaskStatusService>().As<ITaskStatusService>();
             return builder.Build();
         }
     }

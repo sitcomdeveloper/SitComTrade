@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SitComTech.Model.Common;
-using SitComTech.Model.OwnerInformation;
+﻿using SitComTech.Model.Common;
+using System;
 
-namespace SitComTech.Model.Task
+namespace SitComTech.Model.DataObject
 {
-    public class Task : BaseConfig
+    public class OwnerTask : BaseConfig
     {
 		
 		public long OwnerId { get; set; }

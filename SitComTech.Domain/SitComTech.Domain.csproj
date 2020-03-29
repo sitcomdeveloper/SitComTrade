@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OwnerInfomation\UserService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskDomain\TaskService.cs" />
+    <Compile Include="Services\OwnerTaskService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SitComTech.Core\SitComTech.Core.csproj">

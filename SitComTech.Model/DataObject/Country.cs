@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SitComTech.Model.Common;
 
-namespace SitComTech.Model.Common
+namespace SitComTech.Model.DataObject
 {
     public class Country
     {
