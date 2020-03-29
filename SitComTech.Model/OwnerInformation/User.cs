@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SitComTech.Model.Common;
 
-namespace SitComTech.Model.Common
+namespace SitComTech.Model.OwnerInformation
 {
-    public class User:BaseConfig
+    public class User : BaseConfig
     {
-        //public string UserName { get; set; }
-        //public string Password { get; set; }
-        //public string Email { get; set; }
-        //public string Phone { get; set; }
 
         public string UserName { get; set; }
 
@@ -82,6 +79,4 @@ namespace SitComTech.Model.Common
         public string Promocode { get; set; }
 
     }
-
-
 }
