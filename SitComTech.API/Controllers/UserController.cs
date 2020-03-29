@@ -1,6 +1,7 @@
 ﻿using SitComTech.Core.Interface;
 using SitComTech.Model.Common;
 using SitComTech.Model.ViewModel;
+using SitComTech.Model.OwnerInformation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace SitComTech.API.Controllers
         }
         [HttpPost]
         [Route("IsAuthenticated")]
-        public User IsAuthenticated(UserVM userVM)
+        public List<User> IsAuthenticated(UserVM userVM)
         {
             if (userVM != null)
                 return _userService.IsAuthenticated(userVM);
