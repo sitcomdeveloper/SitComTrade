@@ -24,10 +24,9 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("InsertTask")]
-        public Task InsertTask()
-        {
-            Task objTask = new Task();
-            return _taskService.InsertTask(objTask);
+        public Task InsertTask(Task entity)
+        {            
+            return _taskService.InsertTask(entity);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace SitComTech.Core.Interface
     public interface ITaskService : IUnitOfWork<Task>
     {
         
-        Task Insert(Task taskentity);
+        Task InsertTask(Task taskentity);
 
     }
 }
