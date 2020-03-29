@@ -20,26 +20,24 @@ namespace SitComTech.Domain.TaskDomain
 
         }
 
-        public Task Insert(Task userdata)
+        public Task InsertTask(Task userdata)
         {
             try
             {
-                var userexist = _repository.GetAll().Where(x => x.TaskDate == userdata.TaskDate).FirstOrDefault();
-                if (userexist == null)
-                {
-                    if (userdata == null)
-                        throw new ArgumentNullException("User");
-                    Task entity = new Task();
-                    entity.Active = true;
-                    entity.Deleted = false;
-                    entity.CreatedAt = DateTime.Now;
-                    entity.CreatedBy = 0;
-                    entity.CreatedByName = "";                  
-                    _repository.Insert(entity);
-                    SaveChanges();
-
-                }
-                return userdata;
+                Task entity = new Task();
+                entity.Active = true;
+                entity.Deleted = false;
+                entity.CreatedAt = DateTime.Now;
+                entity.OwnerId = 1;
+                entity.TaskStatusId = 1;
+                entity.TaskTypeId = 1;
+                entity.NotiTrasportId = 1;
+                entity.TaskType = "test";
+                entity.CreatedBy = 0;
+                entity.CreatedByName = "";
+                _repository.Insert(entity);
+                SaveChanges();
+                return entity;
             }
             catch (Exception ex)
             {
