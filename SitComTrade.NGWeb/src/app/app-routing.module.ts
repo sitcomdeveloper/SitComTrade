@@ -45,7 +45,6 @@ import { IplistComponent } from './settings/iplist/iplist.component';
 import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
 import { WorkflowsComponent } from './settings/workflows/workflows.component';
 import { ReportsComponent } from './header/reports/reports.component';
-import { LogComponent } from './log/log.component';
 import { AccountsComponent } from './clients/accounts/accounts.component';
 import { AllComponent } from './clients/all/all.component';
 import { AuthGuard } from './auth.guard';

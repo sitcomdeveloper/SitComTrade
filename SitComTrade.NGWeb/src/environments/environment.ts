@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-   API_URL: 'https://a67d5d81.ngrok.io',
-    App_Name:'Sit Com Trade'
+   API_URL: 'https://a67d5d81.ngrok.io'
+  
 };
 /*
  * For easier debugging in development mode, you can import the following file

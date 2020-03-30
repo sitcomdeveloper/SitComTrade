@@ -54,7 +54,7 @@ import { ModulefieldsComponent } from './settings/modulefields/modulefields.comp
 import { IplistComponent } from './settings/iplist/iplist.component';
 import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
 import { WorkflowsComponent } from './settings/workflows/workflows.component';
-import { LogComponent } from './log/log.component';
+// import { LogComponent } from './log/log.component';
 import { AccountsComponent } from './clients/accounts/accounts.component';
 import { AllComponent } from './clients/all/all.component';
 import { AuthService } from './auth.service';
@@ -110,7 +110,7 @@ import { RegisterComponent } from './register/register.component';
     IplistComponent,
     TradinghoursComponent,
     WorkflowsComponent,
-    LogComponent,
+    
     AccountsComponent,
     AllComponent,
     TermsComponent,
