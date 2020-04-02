@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TabModule} from 'angular-tabs-component';
+import { BlockCopyPasteDirective } from './block-copy-paste.directive';
+
 
 
 import { AgGridModule } from 'ag-grid-angular';
@@ -61,6 +63,8 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { TermsComponent } from './terms/terms.component';
 import { RegisterComponent } from './register/register.component';
+import { FooterComponent } from './footer/footer.component';
+
 // import {ui.grid.autoResize} from 'ag-grid-angular';
 
 
@@ -114,7 +118,9 @@ import { RegisterComponent } from './register/register.component';
     AccountsComponent,
     AllComponent,
     TermsComponent,
-    RegisterComponent
+    RegisterComponent,
+    BlockCopyPasteDirective,
+    FooterComponent
 
   ],
   imports: [

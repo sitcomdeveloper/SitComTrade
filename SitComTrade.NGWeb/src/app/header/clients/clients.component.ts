@@ -38,7 +38,7 @@ rowData = [
   ngOnInit() {
     // fetch('https://api.myjson.com/bins/15psn9')
     // fetch('http://localhost:59122/api/User/UserList')
-    fetch('https://a67d5d81.ngrok.io/api/User/UserList')
+    fetch('https://b3b8a2a8.ngrok.io/api/User/UserList')
       .then(result => result.json())
       .then(rowData => this.rowData = rowData);
   }

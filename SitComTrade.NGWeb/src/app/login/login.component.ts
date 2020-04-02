@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   Password: any;
   registerForm: FormGroup;
   submitted = false;
-  FullName: string;
+  FirstName: string;
+  LastName: string;
   Email: string;
   Phone: number;
   Country = [];
@@ -38,7 +39,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      fullName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(25)]],
+      
+      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       country: ['', [Validators.required]],
@@ -63,7 +66,9 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+    alert('SUCCESS');
+
   }
 
 

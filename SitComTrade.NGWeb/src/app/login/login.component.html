@@ -31,7 +31,7 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
   <div class="col-md-12">
       <!-- <h3>Angular 7 Reactive Form Validation</h3> -->
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
+          <!-- <div class="form-group">
               <label class="reg"><i class="fa fa-user" aria-hidden="true"></i>
                 Full Name:<sup style="margin-left:269px"><i class="fa fa-star fa-xs" aria-hidden="true" style="font-size: 0.5rem;"></i></sup>
               </label>
@@ -40,7 +40,27 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
                   <div *ngIf="f.fullName.errors.required">Full Name is required</div>
                   <div *ngIf="f.fullName.errors.minlength">Full Name must be at least 5 characters</div>
               </div>
+          </div> -->
+          <div class="form-group">
+            <label class="reg"><i class="fa fa-user" aria-hidden="true"></i>
+              First Name:<sup style="margin-left:269px"><i class="fa fa-star fa-xs" aria-hidden="true" style="font-size: 0.5rem;"></i></sup>
+            </label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                <div *ngIf="f.firstName.errors.minlength">First Name must be at least 2 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="reg"><i class="fa fa-user" aria-hidden="true"></i>
+           Last Name:<sup style="margin-left:269px"><i class="fa fa-star fa-xs" aria-hidden="true" style="font-size: 0.5rem;"></i></sup>
+          </label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+              <div *ngIf="f.lastName.errors.minlength">Last Name must be at least 3 characters</div>
           </div>
+      </div>
 
           <div class="form-group">
               <label class="reg"><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -118,7 +138,7 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
           <div class="form-group">
               <label class="reg"><i class="fa fa-key" aria-hidden="true"></i>
                 Confirm Password:<sup style="margin-left:210px"><i class="fa fa-star fa-xs" aria-hidden="true" style="font-size: 0.5rem;"></i></sup></label>
-              <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+              <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" appBlockCopyPaste/>
               <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                   <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
                   <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
@@ -172,7 +192,7 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
             </div>
             <label class="label"><i class="fa fa-unlock" aria-hidden="true"></i>
                 Password</label>
-            <input class="form-control" type="password" name="password" [(ngModel)]="Password" required pattern="[a-zA-z0-9]{8,20}"  #na="ngModel" placeholder="Password"><br>
+            <input class="form-control" type="text" name="password" [(ngModel)]="Password" required pattern="[0-9]+" ng-pattern-restrict #na="ngModel" placeholder="Password"><br>
             <div *ngIf="na.invalid && na.touched" class="alert alert-danger">
                 <div *ngIf="na.errors.required">Password is required</div>
                 <div *ngIf="na.errors.pattern">Password should be valid</div>
@@ -198,7 +218,10 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
     </div>
 </div>
 </div>
+<app-footer></app-footer>
 
+<!-- pattern="/[A-Z]{5}\d{4}[A-Z]{1}/i" -->
+<!-- pattern="[a-zA-z0-9]{8,20}" -->
 
 
 
