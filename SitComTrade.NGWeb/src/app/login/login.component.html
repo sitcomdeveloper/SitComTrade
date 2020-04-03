@@ -88,10 +88,12 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
             </div> -->
         </div>
           <div class="form-group">
+            <div class="nowrap" style="display:inline-block">
             <label class="reg"><i class="fa fa-envelope" aria-hidden="true"></i>
              Phone:<sup style="margin-left:292px"><i class="fa fa-star fa-xs" aria-hidden="true" style="font-size: 0.5rem;"></i></sup></label>
              <div class="col-sm-3 paddingleft">
-              <input type="" class="col-sm-6" formControlName="phoneCode" readonly class="form-control fontsize12" readonly />
+              <input type="" class="col-sm-12" formControlName="phoneCode" readonly class="form-control fontsize12" readonly />
+             
             </div>
 
             <input type="number" class="col-sm-6" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" style="width: 100%;" />
@@ -99,6 +101,7 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
                 <div *ngIf="f.phone.errors.required">Phone is required</div>
                 <!-- <div *ngIf="f.phone.errors.email">Number is valid</div> -->
             </div>
+          </div>
         </div>
         <div class="form-group">
           <label class="reg"><i class="fa fa-money" aria-hidden="true"></i>
@@ -129,7 +132,7 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
           <div class="form-group">
               <label class="reg"><i class="fa fa-user-secret" aria-hidden="true"></i>
                 Password:<sup style="margin-left:271px"><i class="fa fa-star fa-xs" aria-hidden="true" style="font-size: 0.5rem;"></i></sup></label>
-              <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+              <input type="password" formControlName="password" class="form-control" pattern="^[A-Za-z0-9]*$" ng-pattern-restrict [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                   <div *ngIf="f.password.errors.required">Password is required</div>
                   <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
@@ -192,7 +195,7 @@ text-align: center" ><img class="header img-fluid" src="assets/images/logo.png">
             </div>
             <label class="label"><i class="fa fa-unlock" aria-hidden="true"></i>
                 Password</label>
-            <input class="form-control" type="text" name="password" [(ngModel)]="Password" required pattern="[0-9]+" ng-pattern-restrict #na="ngModel" placeholder="Password"><br>
+            <input class="form-control" type="password" name="password" [(ngModel)]="Password" required pattern="[a-zA-z0-9]{8,20}" #na="ngModel" placeholder="Password"><br>
             <div *ngIf="na.invalid && na.touched" class="alert alert-danger">
                 <div *ngIf="na.errors.required">Password is required</div>
                 <div *ngIf="na.errors.pattern">Password should be valid</div>

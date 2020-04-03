@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       country: ['', [Validators.required]],
       promoCode: [],
       currency: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6),Validators.pattern(/\d/)]],
       confirmPassword: ['', Validators.required],
       phoneCode: ['']
     },
