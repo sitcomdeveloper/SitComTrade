@@ -4,9 +4,7 @@ using System;
 namespace SitComTech.Model.DataObject
 {
     public class User : BaseConfig
-    {
-
-        public string UserName { get; set; }
+    {        
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -14,10 +12,6 @@ namespace SitComTech.Model.DataObject
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public string SecondEmail { get; set; }
-        public string Tag1 { get; set; }
-        public string Tag2 { get; set; }
-        public Nullable<long> CampaignID { get; set; }
-        public Nullable<long> ItemID { get; set; }
         public string Country { get; set; }
         public Nullable<long> Owner { get; set; }
         public string Status { get; set; }
