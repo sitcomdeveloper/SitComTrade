@@ -97,6 +97,8 @@
     <Content Include="src\app\clients\client\client.component.html" />
     <Content Include="src\app\clients\tradeaccounts\tradeaccounts.component.css" />
     <Content Include="src\app\clients\tradeaccounts\tradeaccounts.component.html" />
+    <Content Include="src\app\footer\footer.component.css" />
+    <Content Include="src\app\footer\footer.component.html" />
     <Content Include="src\app\header\activities\activities.component.css" />
     <Content Include="src\app\header\activities\activities.component.html" />
     <Content Include="src\app\header\clients\clients.component.css" />
@@ -232,6 +234,8 @@
     <TypeScriptCompile Include="src\app\clients\client\client.component.ts" />
     <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.ts" />
+    <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\header\activities\activities.component.spec.ts" />
     <TypeScriptCompile Include="src\app\header\activities\activities.component.ts" />
     <TypeScriptCompile Include="src\app\header\clients\clients.component.spec.ts" />
@@ -302,6 +306,7 @@
     <TypeScriptCompile Include="src\app\settings\workflows\workflows.component.ts" />
     <TypeScriptCompile Include="src\app\terms\terms.component.spec.ts" />
     <TypeScriptCompile Include="src\app\terms\terms.component.ts" />
+    <TypeScriptCompile Include="src\app\common\validators\confirm-password.validator.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

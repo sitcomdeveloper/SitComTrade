@@ -10,7 +10,6 @@ namespace SitComTech.Data.Mapping
         {
             HasKey(r => r.Id);
             Property(r=>r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(r => r.UserName).HasMaxLength(200);            
         }
     }
 

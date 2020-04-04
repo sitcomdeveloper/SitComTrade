@@ -96,7 +96,7 @@ namespace SitComTech.Domain.Services
         }
         public List<User> IsAuthenticated(UserVM userVM)
         {
-            var userdata = _repository.GetAll().Where(x => (x.UserName == userVM.UserName || x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).FirstOrDefault();
+            var userdata = _repository.GetAll().Where(x => (x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).FirstOrDefault();
             if (userdata != null)
                 return _repository.GetAll().Where(x => x.Active && !x.Deleted).ToList();
             else

@@ -13,18 +13,10 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
   [x: string]: any;
   UserName: any;
-  countryPhoneCode: any;
   Password: any;
-  registerForm: FormGroup;
-  submitted = false;
-  FirstName: string;
-  LastName: string;
-  Email: string;
-  Phone: number;
-  Country = [];
-  Currency: string;
+  loginForm: FormGroup;
+  submitted = false;  
   userinfo: any;
-  // theCheckbox = false;
   currrency: any;
   a: any;
   b: any;
@@ -33,48 +25,31 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
     console.log('login loaded');
-
-
   }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      
-      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-      lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required]],
-      country: ['', [Validators.required]],
-      promoCode: [],
-      currency: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6),Validators.pattern(/\d/)]],
-      confirmPassword: ['', Validators.required],
-      phoneCode: ['']
-    },
-
-    );
-    this.countryName(this.a);
-    this.currencyName(this.b);
+      password: ['', [Validators.required, Validators.minLength(6), Validators.pattern(/\d/)]],
+      rememberMe: []
+    });
   }
-  get f() { return this.registerForm.controls; }
 
   onSubmit() {
     this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
+    // stop here if form is invalid   
+    if (this.loginForm.invalid) {
       return;
     }
-
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
-    alert('SUCCESS');
-
   }
 
 
   login() {
-    this.http.post(`https://a67d5d81.ngrok.io/api/User/IsAuthenticated`, { UserName: this.UserName, Password: this.Password }
-    )
+    this.userinfo = {
+      Email: this.loginForm.value.email,
+      Password: this.loginForm.value.password
+    };
+    this.loginservice.saveUserInfo(this.userinfo)
       .subscribe(
         (
           data: boolean[]) => {
@@ -87,52 +62,6 @@ export class LoginComponent implements OnInit {
         err => {
           alert('Error');
         });
-  }
-  register() {
-    this.userinfo = {
-      FullName: this.registerForm.value.fullName,
-      Email: this.registerForm.value.email,
-      Phone: this.registerForm.value.phone,
-      Country: this.registerForm.value.country,
-      Currency: this.registerForm.value.currency,
-      PromoCode: this.registerForm.value.promoCode,
-      Password: this.registerForm.value.password
-    };
-    this.loginservice.saveUserInfo(this.userinfo).subscribe(res => {
-      this.router.navigateByUrl('login');
-    }
-    );
-  }
-  // checkbox for terms and conditions
-  // toggleVisibility(e) {
-  //   this.marked = e.target.checked;
-  // }
-  // Choose city using select dropdown
-  // Getter method to access formcontrols
-  countryName(a) {
-    this.loginservice.countryName(0).subscribe(result => {
-      this.Country = result;
-    });
-  }
-  getPhoneCode(val: any) {
-    // console.log( typeof val);
-    this.Country.forEach(element => {
-      const y = +val;
-      if (element.Id === y) {
-        this.countryPhoneCode = element.ISDCode;
-        console.log(this.countryPhoneCode);
-        // this.resetForm(this.countryPhoneCode);
-      }
-    });
-    this.registerForm.controls.phoneCode.setValue(
-      '(+' + this.countryPhoneCode + ')'
-    );
-  }
-  // choose currency using dropdown
-  currencyName(a) {
-    this.loginservice.currencyName(a).subscribe(result => {
-      this.currrency = result;
-    });
   }
 }
 // http:localhost59122

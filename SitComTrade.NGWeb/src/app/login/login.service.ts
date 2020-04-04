@@ -11,7 +11,9 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-
+  loginUser(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'User/IsAuthenticated', obj);
+  }
   saveUserInfo(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'User/RegisterUser', obj);
   }
