@@ -13,5 +13,27 @@ namespace SitComTech.Core.Interface
         List<Country> GetCountries();
         List<Currency> GetCurrencies();
         string GetCountryISDCodeById(int countryid);
+
+        User GetUserDetailByOwnerId(long ownerid);
     }
+
+    public interface IMarketingInfoService : IUnitOfWork<MarketingInfo>
+    {
+        MarketingInfo GetMarketingInfoByOwnerId(long ownerid);
+    }
+    public interface IAdditionalInfoService : IUnitOfWork<AdditionalInfo>
+    {
+        AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid);
+    }
+
+    public interface IEmailService : IUnitOfWork<Email>
+    {
+        Email GetEmailByOwnerId(long ownerid);
+    }
+    public interface IShortMessageService : IUnitOfWork<ShortMessage>
+    {
+        ShortMessage GetShortMessageByOwnerId(long ownerid);
+    }
+
+
 }

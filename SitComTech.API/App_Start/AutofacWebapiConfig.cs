@@ -35,6 +35,10 @@ namespace SitComTech.API.App_Start
             builder.RegisterType<OwnerTaskService>().As<IOwnerTaskService>();
             builder.RegisterType<TaskTypeService>().As<ITaskTypeService>();
             builder.RegisterType<TaskStatusService>().As<ITaskStatusService>();
+            builder.RegisterType<MarketingInfoService>().As<IMarketingInfoService>();
+            builder.RegisterType<AdditionalInfoService>().As<IAdditionalInfoService>();
+            builder.RegisterType<EmailService>().As<IEmailService>();
+            builder.RegisterType<ShortMessageService>().As<IShortMessageService>();
             return builder.Build();
         }
     }

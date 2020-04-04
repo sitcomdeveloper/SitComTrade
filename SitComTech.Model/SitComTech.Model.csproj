@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BaseConfig.cs" />
+    <Compile Include="DataObject\AdditionalInfo.cs" />
     <Compile Include="DataObject\Country.cs" />
     <Compile Include="DataObject\Address.cs" />
+    <Compile Include="DataObject\Email.cs" />
+    <Compile Include="DataObject\MarketingInfo.cs" />
+    <Compile Include="DataObject\ShortMessage.cs" />
     <Compile Include="DataObject\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataObject\OwnerTask.cs" />
