@@ -242,6 +242,18 @@
         });
 
         $(document).ready(function () {
+            $.ajax({
+                type: "get",
+                url: 'http://localhost:59122/api/User/GetUserDetailByOwnerId/10',
+                contentType: 'application/json',
+                processData: false,
+                success: function (data) {
+                    alert(data.id);
+                },
+                error: function (data) {
+                    shownotification(10000, 'info', 'Error', 'Something went wrong');
+                }
+            });
             $('#login-submit').on('click', function () {
                 //$.ajax({
                 //    url: "http://localhost:59122/api/User/UserList",
