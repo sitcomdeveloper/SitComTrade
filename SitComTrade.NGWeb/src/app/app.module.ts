@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -7,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TabModule} from 'angular-tabs-component';
 import { BlockCopyPasteDirective } from './block-copy-paste.directive';
+// import { CollapsibleModule } from 'angular2-collapsible';
 
 
 
@@ -64,6 +66,17 @@ import { AuthGuard } from './auth.guard';
 import { TermsComponent } from './terms/terms.component';
 import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
+// clients-info component
+import { ClientsInfoComponent } from './clients-info/clients-info.component';
+import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
+import { CommentsComponent } from './clients_info/comments/comments.component';
+import { MarketingInfoComponent } from './clients_info/marketing-info/marketing-info.component';
+import { AddressComponent } from './clients_info/address/address.component';
+import { AdditionalFieldsComponent } from './clients_info/additional-fields/additional-fields.component';
+import { AdditionalInfoComponent } from './clients_info/additional-info/additional-info.component';
+import { EmailComponent } from './clients_info/email/email.component';
+import { SmsComponent } from './clients_info/sms/sms.component';
+import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
 
 // import {ui.grid.autoResize} from 'ag-grid-angular';
 
@@ -120,15 +133,27 @@ import { FooterComponent } from './footer/footer.component';
     TermsComponent,
     RegisterComponent,
     BlockCopyPasteDirective,
-    FooterComponent
+    FooterComponent,
+    ClientsInfoComponent,
+    GeneralInfoComponent,
+    CommentsComponent,
+    MarketingInfoComponent,
+    AddressComponent,
+    AdditionalFieldsComponent,
+    AdditionalInfoComponent,
+    EmailComponent,
+    SmsComponent,
+    RegHisComponent
 
   ],
   imports: [
     BrowserModule,
+    // BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,FormsModule,ReactiveFormsModule,
     AgGridModule.withComponents(null),
     TabModule
+    // CollapsibleModule
 
 
   ],
