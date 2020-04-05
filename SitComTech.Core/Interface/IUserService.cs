@@ -15,6 +15,8 @@ namespace SitComTech.Core.Interface
         string GetCountryISDCodeById(int countryid);
 
         User GetUserDetailByOwnerId(long ownerid);
+
+        List<LeadStatus> GetLeadStatusList();
     }
 
     public interface IMarketingInfoService : IUnitOfWork<MarketingInfo>
