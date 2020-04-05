@@ -112,5 +112,25 @@ namespace SitComTech.API.Controllers
         {
             return _userService.GetUserDetailByOwnerId(ownerid);
         }
+
+        [HttpPost]
+        [Route("InsertMarketingInfo")]
+        public MarketingInfo InsertMarketingInfo(MarketingInfo marketingVM)
+        {
+            if (marketingVM != null)
+                return _marketingInfoService.InsertMarketingInfo(marketingVM);
+            else
+                return null;
+        }
+
+        [HttpPost]
+        [Route("InsertAdditionalInfo")]
+        public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionalVM)
+        {
+            if (additionalVM != null)
+                return _additionalInfoeService.InsertAdditionalInfo(additionalVM);
+            else
+                return null;
+        }
     }
 }

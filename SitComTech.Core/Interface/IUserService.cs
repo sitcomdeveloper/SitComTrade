@@ -20,10 +20,12 @@ namespace SitComTech.Core.Interface
     public interface IMarketingInfoService : IUnitOfWork<MarketingInfo>
     {
         MarketingInfo GetMarketingInfoByOwnerId(long ownerid);
+        MarketingInfo InsertMarketingInfo(MarketingInfo marketingdata);
     }
     public interface IAdditionalInfoService : IUnitOfWork<AdditionalInfo>
     {
         AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid);
+        AdditionalInfo InsertAdditionalInfo(AdditionalInfo marketingdata);
     }
 
     public interface IEmailService : IUnitOfWork<Email>
