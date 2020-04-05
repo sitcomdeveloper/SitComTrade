@@ -20,7 +20,7 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
                 Last Name:<sup *ngIf="submitted && f.lastName.errors"><i class="fa fa-star fa-xs text-danger" aria-hidden="true" style="font-size: 0.5rem;" placeholder="Enter last name"></i></sup>
               </label>
-              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" placeholder="Enter last name"/>
               <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                 <div *ngIf="f.lastName.errors.minlength">Last Name must be at least 3 characters</div>
@@ -42,7 +42,7 @@
             <div class="col-sm-6 form-group">
               <div class="nowrap">
                 <label class="reg">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <i class="fa fa-mobile" aria-hidden="true"></i>
                   Phone:
                   <sup *ngIf="submitted && f.phone.errors"><i class="fa fa-star fa-xs text-danger" aria-hidden="true" style="font-size: 0.5rem;"></i></sup>
                 </label>

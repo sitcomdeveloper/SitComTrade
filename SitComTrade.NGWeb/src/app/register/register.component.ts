@@ -70,11 +70,17 @@ export class RegisterComponent implements OnInit {
       PromoCode: this.registerForm.value.promoCode,
       Password: this.registerForm.value.password
     };
-    this.loginservice.saveUserInfo(this.userinfo)
+
+    if(this.registerForm.valid){
+      this.loginservice.saveUserInfo(this.userinfo)
       .subscribe(res => {
-        this.router.navigateByUrl('login');
+        this.router.navigateByUrl('clients');
+        this.registerForm.reset();
       }
       );
+    }
+   
+    
   }
   countryName(a) {
     this.loginservice.countryName(0).subscribe(result => {
@@ -104,4 +110,5 @@ export class RegisterComponent implements OnInit {
     const { value: confirmPassword } = formGroup.get('confirmPassword');
     return password === confirmPassword ? null : { passwordNotMatch: true };
   }
+  
 }
