@@ -165,7 +165,37 @@ namespace SitComTech.Domain.Services
         {
             throw new NotImplementedException();
         }
-        
+
+        public MarketingInfo InsertMarketingInfo(MarketingInfo marketingdata)
+        {
+            try
+            {
+                var marketingdataexist = _repository.GetAll().Where(x => x.OwnerId == marketingdata.OwnerId).FirstOrDefault();
+                if (marketingdataexist == null)
+                {
+                    if (marketingdata == null)
+                        throw new ArgumentNullException("User");
+                    MarketingInfo entity = new MarketingInfo
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId=marketingdata.OwnerId,
+                    };
+                    _repository.Insert(entity);
+                    SaveChanges();
+                    return entity;
+                }
+                return marketingdata;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 
     public class AdditionalInfoService : IAdditionalInfoService
@@ -210,7 +240,36 @@ namespace SitComTech.Domain.Services
         {
             throw new NotImplementedException();
         }
-        
+
+        public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionaldata)
+        {
+            try
+            {
+                var additionaldataexist = _repository.GetAll().Where(x => x.OwnerId == additionaldata.OwnerId).FirstOrDefault();
+                if (additionaldataexist == null)
+                {
+                    if (additionaldata == null)
+                        throw new ArgumentNullException("User");
+                    AdditionalInfo entity = new AdditionalInfo
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = additionaldata.OwnerId,
+                    };
+                    _repository.Insert(entity);
+                    SaveChanges();
+                    return entity;
+                }
+                return additionaldata;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
     public class EmailService : IEmailService
