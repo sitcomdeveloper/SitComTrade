@@ -88,4 +88,22 @@ namespace SitComTech.Data.Mapping
         }
 
     }
+
+    public class LeadStatusMap : EntityTypeConfiguration<LeadStatus>
+    {
+        public LeadStatusMap()
+        {
+            HasKey(r => r.Id);
+            Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
+
+    public class AffiliateUserMap : EntityTypeConfiguration<AffiliateUser>
+    {
+        public AffiliateUserMap()
+        {
+            HasKey(r => r.Id);
+            Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
 }

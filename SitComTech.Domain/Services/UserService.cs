@@ -121,6 +121,14 @@ namespace SitComTech.Domain.Services
         {
             return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
         }
+
+        public List<LeadStatus> GetLeadStatusList()
+        {
+            //var dpfRep = _repository.GetRepository<LeadStatus>();
+            //return dpfRep.Query(x => x.Active).Select().ToList();
+
+            return null;
+        }
     }
 
     public class MarketingInfoService : IMarketingInfoService

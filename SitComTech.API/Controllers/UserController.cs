@@ -132,5 +132,12 @@ namespace SitComTech.API.Controllers
             else
                 return null;
         }
+
+        [HttpGet]
+        [Route("GetLeadStatusList")]
+        public List<LeadStatus> GetLeadStatusList()
+        {
+            return _userService.GetLeadStatusList();
+        }
     }
 }

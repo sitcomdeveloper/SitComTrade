@@ -28,6 +28,14 @@ namespace SitComTech.Model.DataObject
 
         public string AffiliateUser { get; set; }
 
+        public Nullable<long> AffiliateUserId { get; set; }
+
         public virtual User UserTable { get; set; }
+    }
+
+    public class AffiliateUser : BaseConfig
+    {
+        public string Name { get; set; }
+
     }
 }
