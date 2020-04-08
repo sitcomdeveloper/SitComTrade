@@ -50,6 +50,7 @@ import { AllComponent } from './clients/all/all.component';
 import { AuthGuard } from './auth.guard';
 import { TermsComponent } from './terms/terms.component';
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
+import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
 
 
 
@@ -128,7 +129,9 @@ const routes: Routes = [
 {path:'terms',component:TermsComponent},
 
 // clients-info
-{path:'info',component:ClientsInfoComponent}
+{path:'info',component:ClientsInfoComponent},
+{path:'generalinfo/:1',component:GeneralInfoComponent}
+
 
 
 

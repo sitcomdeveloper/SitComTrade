@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientsService } from '././clients.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -32,17 +34,26 @@ rowData = [
     // {make: 'Ford', model: 'Mondeo', price: 32000},
     // {make: 'Porsche', model: 'Boxter', price: 72000}
 ];
+  
 
-  constructor() { }
+  constructor(private _clientservice: ClientsService,private router:Router) { }
 
   ngOnInit() {
     // fetch('https://api.myjson.com/bins/15psn9')
-     fetch('http://localhost:59122/api/User/UserList')
-    //fetch('https://b3b8a2a8.ngrok.io/api/User/UserList')
-      .then(result => result.json())
-      .then(rowData => this.rowData = rowData);
+    //  fetch('http://localhost:59122/api/User/UserList')
+    // fetch('https://fc9b7fab.ngrok.io/api/User/UserList')
+    //   .then(result => result.json())
+    //   .then(rowData => this.rowData = rowData);
+this.userDetails();
   }
-
+  userDetails() {
+this._clientservice.getUsers().subscribe(res => {
+  this.rowData  = res;
+},);
+  }
+  userClick() {
+    this.router.navigateByUrl('/info');
+  }
 }
 
 // {headerName: 'Item ID', field: 'ID'},

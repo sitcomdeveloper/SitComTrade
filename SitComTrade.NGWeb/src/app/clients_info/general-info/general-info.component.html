@@ -1,74 +1,245 @@
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-6 col-md-6">
-            <table>
-                <tr>
-                  <th>First Name</th>
-                  <td>Finn</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>10</td>
-                </tr>
-                <tr>
-                  <th>Mobile</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Item ID</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Status</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>LastCommentDate</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td></td>
-                </tr>
-              </table>
-        </div>
-        <div class="col-xs-6 col-md-6">
-            <table>
-                <tr>
-                  <th>Last Name</th>
-                  <td>Finn</td>
-                </tr>
-                <tr>
-                    <th>Phone</th>
-                  
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <th>Second Email</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Owner</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Created Date</th>
-                  <td></td>
-                </tr><tr>
-                  <th>Modified Date</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td></td>
-                </tr>
-              </table>
-        </div>
-    </div>
-</div>
+  <div class="row">
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <td>{{userGenralinfo?.FirstName}}</td>
+          <th>Last Name</th>
+          <td>{{userGenralinfo?.LastName}}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Email</th>
+          <td>{{userGenralinfo?.Email}}</td>
+          <th>Phone</th>
+          <td>{{userGenralinfo?.Phone}}</td>
+        </tr>
+        <tr>
+          <th>Mobile</th>
+          <td>{{userGenralinfo?.Mobile}}</td>
+          <th>Second Email</th>
+          <td>{{userGenralinfo?.SecondEmail}}</td>
+        </tr>
+        <tr>
+          <th>Item ID</th>
+          <td></td>
+          <th>Owner</th>
+          <td>{{userGenralinfo?.OwnerId}}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{userGenralinfo?.StatusName}}</td>
+          <th>Created Date</th>
+          <td>{{userGenralinfo?.CreatedAt}}</td>
+        </tr>
+        <tr>
+          <th>LastCommentDate</th>
+          <td></td>
+          <th>Modified Date</th>
+          <!-- <td>{{userGenralinfo?.}}</td> -->
+        </tr>
+        <tr>
+          <th>Convention Owner</th>
+          <td>{{userGenralinfo?.ConvertionOwner}}</td>
+          <th>Retention Owner</th>
+          <td>{{userGenralinfo?.RetentionOwner}}</td>
+        </tr>
+        <tr>
+          <th>Citizenship</th>
+          <td>{{userGenralinfo?.CitizenshipName}}</td>
+          <th>Date of Birth</th>
+          <td>{{userGenralinfo?.DateOfBirth}}</td>
+        </tr>
+        <tr>
+          <th>FTD</th>
+          <td>{{userGenralinfo?.FTD}}</td>
+          <th>FTD Date</th>
+          <td>{{userGenralinfo?.FTDDate}}</td>
+        </tr>
+        <tr>
+          <th>Enabled</th>
+          <td>{{userGenralinfo?.Enabled}}</td>
+          <th>ClientTime</th>
+          <!-- <td>{{userGenralinfo?.}}</td> -->
+        </tr>
+        <tr>
+          <th>Last Login Date</th>
+          <td></td>
+          <th>Desk</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>HasTasks</th>
+          <td></td>
+          <th>Task Created Date</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>TaskDate</th>
+          <td></td>
+          <th>AssignedDate</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>HasNotCompletedTasks</th>
+          <td></td>
+          <th>TotalDeposits</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Ftd Amount</th>
+          <td></td>
+          <th>Total Withdrawals</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>NetDeposits</th>
+          <td></td>
+          <th>Type</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>FirstRegistrationDate</th>
+          <td></td>
+          <th>RegistrationType</th>
+          <td>{{userGenralinfo?.RegistrationType}}</td>
+        </tr>
+        <tr>
+          <th>LastTaskDaysPast</th>
+          <td>{{userGenralinfo?.LastTaskDaysPast}}</td>
+          <th>DaysAgoClientCreated
+          </th>
+          <td>{{userGenralinfo?.DaysAgoClientCreated}}</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<form [formGroup]="userInfoForm">
+  <div class="container-fluid" *ngIf="editGeneralInfo">
+    <div class="row">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <td><input type="text" class="form-control" formControlName="firstName"></td>
+            <th>Last Name</th>
+            <td><input type="text" formControlName="lastName"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" formControlName="email"></td>
+            <th>Phone</th>
+            <td><input type="text" formControlName="phone"></td>
+          </tr>
+          <tr>
+            <th>Mobile</th>
+            <td><input type="text" formControlName="mobile"></td>
+            <th>Second Email</th>
+            <td><input type="text" formControlName="secondemail"></td>
+          </tr>
+          <tr>
+            <th>Item ID</th>
+            <td><input type="text" formControlName="itemid"></td>
+            <th>Owner</th>
+            <td><input type="text" formControlName="owner"></td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td><input type="text" formControlName="status"></td>
+            <th>Created Date</th>
+            <td><input type="text" formControlName="createddate"></td>
+          </tr>
+          <tr>
+            <th>LastCommentDate</th>
+            <td><input type="text" formControlName="lastcommentdate"></td>
+            <th>Modified Date</th>
+            <td><input type="text" formControlName="modifieddate"></td>
+          </tr>
+          <tr>
+            <th>Convention Owner</th>
+            <td><input type="text" formControlName="conventionowner"></td>
+            <th>Retention Owner</th>
+            <td><input type="text" formControlName="retentionowner"></td>
+          </tr>
+          <tr>
+            <th>Citizenship</th>
+            <td><input type="text" formControlName="citizenship"></td>
+            <th>Date of Birth</th>
+            <td><input type="text" formControlName="dob"></td>
+          </tr>
+          <tr>
+            <th>FTD</th>
+            <td><input type="text" formControlName="ftd"></td>
+            <th>FTD Date</th>
+            <td><input type="text" formControlName="ftddate"></td>
+          </tr>
+          <tr>
+            <th>Enabled</th>
+            <td><input type="text" formControlName="enabled"></td>
+            <th>ClientTime</th>
+            <td><input type="text" formControlName="clienttime"></td>
+          </tr>
+          <tr>
+            <th>Last Login Date</th>
+            <td><input type="text" formControlName="lastlogindate"></td>
+            <th>Desk</th>
+            <td><input type="text" formControlName="desk"></td>
+          </tr>
+          <tr>
+            <th>HasTasks</th>
+            <td><input type="text" formControlName="hastasks"></td>
+            <th>Task Created Date</th>
+            <td><input type="text" formControlName="taskcreateddate"></td>
+          </tr>
+          <tr>
+            <th>TaskDate</th>
+            <td><input type="text" formControlName="taskdate"></td>
+            <th>AssignedDate</th>
+            <td><input type="text" formControlName="assigneddate"></td>
+          </tr>
+          <tr>
+            <th>HasNotCompletedTasks</th>
+            <td><input type="text" formControlName="hasnotcompletedtasks"></td>
+            <th>TotalDeposits</th>
+            <td><input type="text" formControlName="totaldeposits"></td>
+          </tr>
+          <tr>
+            <th>Ftd Amount</th>
+            <td><input type="text" formControlName="ftdamount"></td>
+            <th>Total Withdrawals</th>
+            <td><input type="text" formControlName="totalwithdrawals"></td>
+          </tr>
+          <tr>
+            <th>NetDeposits</th>
+            <td><input type="text" formControlName="netdeposits"></td>
+            <th>Type</th>
+            <td><input type="text" formControlName="type"></td>
+          </tr>
+          <tr>
+            <th>FirstRegistrationDate</th>
+            <td><input type="text" formControlName="firstregistrationdate"></td>
+            <th>RegistrationType</th>
+            <td><input type="text" formControlName="registrationtype"></td>
+          </tr>
+          <tr>
+            <th>LastTaskDaysPast</th>
+            <td><input type="text" formControlName="lasttaskdayspost"></td>
+            <th>DaysAgoClientCreated
+            </th>
+            <td><input type="text" formControlName="daysagoclientcreated"></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>

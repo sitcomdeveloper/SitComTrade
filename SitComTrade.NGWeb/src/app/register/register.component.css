@@ -100,3 +100,6 @@ body > app-root > app-login > div.container {
   font-size: 15px;
   font-weight: bold;
 }
+.modal-body {
+  overflow-y: hidden;
+}
