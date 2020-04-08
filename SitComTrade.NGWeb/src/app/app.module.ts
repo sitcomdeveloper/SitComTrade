@@ -72,7 +72,7 @@ import { GeneralInfoComponent } from './clients_info/general-info/general-info.c
 import { CommentsComponent } from './clients_info/comments/comments.component';
 import { MarketingInfoComponent } from './clients_info/marketing-info/marketing-info.component';
 import { AddressComponent } from './clients_info/address/address.component';
-import { AdditionalFieldsComponent } from './clients_info/additional-fields/additional-fields.component';
+// import { AdditionalFieldsComponent } from './clients_info/additional-fields/additional-fields.component';
 import { AdditionalInfoComponent } from './clients_info/additional-info/additional-info.component';
 import { EmailComponent } from './clients_info/email/email.component';
 import { SmsComponent } from './clients_info/sms/sms.component';
@@ -139,7 +139,7 @@ import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
     CommentsComponent,
     MarketingInfoComponent,
     AddressComponent,
-    AdditionalFieldsComponent,
+    // AdditionalFieldsComponent,
     AdditionalInfoComponent,
     EmailComponent,
     SmsComponent,

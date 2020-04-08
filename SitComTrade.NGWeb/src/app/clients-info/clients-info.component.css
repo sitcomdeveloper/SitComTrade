@@ -1,0 +1,25 @@
+.box-heading
+{
+    display: inline-block;
+    margin: 0;
+}
+a.box-heading {
+    font: 700 18px/22px Poppins,Arial,sans-serif;
+}
+h2
+{
+    font: 700 18px/22px Poppins,Arial,sans-serif;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; 
+}
+div#headingOne {
+    padding: 20px 40px;
+    color: #000;
+}
+::before {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
