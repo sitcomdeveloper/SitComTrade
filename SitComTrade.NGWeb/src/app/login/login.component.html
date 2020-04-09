@@ -18,7 +18,7 @@
             </h1>
             <button type="button" class="close" data-dismiss="modal" style="outline:none">×</button>
           </div>          
-          <div class="modal-body" style="max-height: calc(100vh - 143px); overflow-y: hidden;">            
+          <div class="modal-body" style="">            
             <app-register></app-register>
           </div>
         </div>
@@ -90,3 +90,10 @@
       </div>
     </div>
   </div>
+<style>
+.modal-content
+  {
+    height: auto;
+    overflow-y: scroll;
+  }
+</style>
