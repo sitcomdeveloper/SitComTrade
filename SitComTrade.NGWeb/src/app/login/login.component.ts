@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.userinfo = {
-      Email: this.loginForm.value.email,
+      UserName: this.loginForm.value.email,
       Password: this.loginForm.value.password
     };
     this.loginservice.saveUserInfo(this.userinfo)

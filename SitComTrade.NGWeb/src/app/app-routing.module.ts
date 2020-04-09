@@ -130,7 +130,7 @@ const routes: Routes = [
 
 // clients-info
 {path:'info',component:ClientsInfoComponent},
-{path:'generalinfo/:1',component:GeneralInfoComponent}
+{path:'generalinfo/:userid',component:GeneralInfoComponent}
 
 
 

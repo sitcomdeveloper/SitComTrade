@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralInfoService } from '././general-info.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,17 +12,60 @@ export class GeneralInfoComponent implements OnInit {
   userGenralinfo: any;
   stk: any;
   editGeneralInfo = false;
+  editInfo = false
   userInfoForm: FormGroup
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute,) { }
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute,private fb: FormBuilder) { }
 
   ngOnInit() {
     this._route.params.subscribe(params => console.log(params));
-    this._route.queryParams.subscribe(params => {
-      this.stk = params["1"];
+    this._route.paramMap.subscribe(params => {
+      this.stk = params.get("userid");
       if(this.stk === "1") {
         this.editGeneralInfo = true;
+        this.edituserInfo();
+        this.editInfo = false;
+      } else {
+        this.editInfo = true;
       }
     });
+    this.userInfoForm = this.fb.group({
+      firstName: [''],
+      lastName:[''],
+      email :[''],
+      phone :[''],
+      mobile :[''],
+      secondemail :[''],
+      itemid :[''],
+      owner :[''],
+      status: [''],
+      createddate: [''],
+      lastcommentdate: [''],
+      modifieddate :[''],
+      conventionowner :[''],
+      retentionowner :[''],
+      citizenship :[''],
+      dob :[''],
+      ftd :[''],
+      ftddate :[''],
+      enabled :[''],
+      clienttime :[''],
+      lastlogindate :[''],
+      desk :[''],
+      hastasks :[''],
+      taskcreateddate :[''],
+      taskdate :[''],
+      assigneddate :[''],
+      hasnotcompletedtasks :[''],
+      totaldeposits :[''],
+      ftdamount :[''],
+      totalwithdrawals :[''],
+      netdeposits :[''],
+      type :[''],
+      firstregistrationdate :[''],
+      registrationtype :[''],
+      lasttaskdayspost :[''],
+      daysagoclientcreated :['']
+    })
     this.usersInfo();
   }
   usersInfo() {
@@ -32,5 +75,29 @@ export class GeneralInfoComponent implements OnInit {
       console.log('generalinfo', res);
     });
   }
+edituserInfo() {
+  this._generalinfoservice.getUsersInfo().subscribe(res => {
+    this.userGenralinfo = res;
+    this.userInfoForm.patchValue({
+      firstName: this.userGenralinfo.FirstName,
+      lastName: this.userGenralinfo.LastName,
+      email: this.userGenralinfo.Email,
+      phone: this.userGenralinfo.Phone,
+      mobile: this.userGenralinfo.Mobile,
+      secondemail: this.userGenralinfo.SecondEmail,
+      // itemid: this.userGenralinfo.ItemId
+      owner: this.userGenralinfo.OwnerId,
+      status: this.userGenralinfo.StatusName,
+      createddate: this.userGenralinfo.CreatedAt
+      // lastcommentdate:: this.userGenralinfo.
+      // modifieddate: this.userGenralinfo.
+      // conventionowner: this.userGenralinfo.
+      // retentionowner: this.userGenralinfo.
+      // citizenship: this.userGenralinfo.
+      
 
+
+    })
+  });
+}
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://41487889.ngrok.io/api/'
+  API_URL: 'http://topseedtech.in/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

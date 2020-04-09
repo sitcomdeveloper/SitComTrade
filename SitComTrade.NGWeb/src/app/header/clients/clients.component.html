@@ -496,7 +496,7 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
         </tr>
-        <tr class="tablectn">
+        <tr class="tablectn" *ngFor="let item of rowData" (click)="userClick()">
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
@@ -509,14 +509,14 @@
             <div class="">
               <div class="text-ellipsis" data-original-title="" title="">
                 <a href="/moduleitems/item?moduleId=27&amp;itemId=AC431251&amp;filterId=2683">
-                  <span>AC431251</span></a></div>
+                  <span>{{item.Promocode}}</span></a></div>
             </div>
           </td>
           <td class="">
             <div class="">
               <div data-display-for="27_FirstName">
                 <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title=""
-                  title="">MASSIMO</div>
+                  title="">{{item.FirstName}}</div>
               </div>
             </div>
           </td>

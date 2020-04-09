@@ -77,6 +77,7 @@ import { AdditionalInfoComponent } from './clients_info/additional-info/addition
 import { EmailComponent } from './clients_info/email/email.component';
 import { SmsComponent } from './clients_info/sms/sms.component';
 import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
+// import { TasksInfoComponent } from './clients_info/clients-info/tasks-info/tasks-info.component';
 
 // import {ui.grid.autoResize} from 'ag-grid-angular';
 
@@ -144,6 +145,7 @@ import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
     EmailComponent,
     SmsComponent,
     RegHisComponent
+    // TasksInfoComponent
 
   ],
   imports: [
