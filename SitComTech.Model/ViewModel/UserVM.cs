@@ -33,4 +33,11 @@ namespace SitComTech.Model.ViewModel
 
 
     }
+
+    public class TradeAccountVM
+    {
+        public string TypeName { get; set; }
+        public long OwnerId { get; set; }
+    }
+
 }

@@ -26,6 +26,10 @@ namespace SitComTech.Domain.Services
             return _repository.GetAll().Where(x => x.Active && !x.Deleted);
         }
 
+        public List<User> GetAllUsersByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+        }
         public User GetById(object Id)
         {
             if ((long)Id == 0)
@@ -119,7 +123,7 @@ namespace SitComTech.Domain.Services
 
         public User GetUserDetailByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.Id == ownerid).FirstOrDefault();
         }
 
         public List<LeadStatus> GetLeadStatusList()
@@ -128,6 +132,11 @@ namespace SitComTech.Domain.Services
             //return dpfRep.Query(x => x.Active).Select().ToList();
 
             return null;
+        }
+
+        public List<User> GetTradeAccountByType(TradeAccountVM tradeVM)
+        {
+            return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();            
         }
     }
 

@@ -210,50 +210,60 @@
     <script>
         var UserVM = {}
         UserVM.Login = {
-            UserName : ko.observable(),
-            Password : ko.observable()
+            TypeName : ko.observable('Lead'),
+            OwnerId : ko.observable(1)
         };
-        UserVM.Register = {
-           FirstName : ko.observable(),
-           LastName : ko.observable(),
-           Email : ko.observable(),
-           Country : ko.observable(),
-           Currency : ko.observable(0),
-           Promocode : ko.observable(),
-           Password : ko.observable(),
-        };
+        //UserVM.Register = {
+        //   FirstName : ko.observable(),
+        //   LastName : ko.observable(),
+        //   Email : ko.observable(),
+        //   Country : ko.observable(),
+        //   Currency : ko.observable(0),
+        //   Promocode : ko.observable(),
+        //   Password : ko.observable(),
+        //};
         
-        ko.applyBindings(UserVM, document.getElementById("logindiv"));
-        $(function () {
-            $('#login-form-link').click(function (e) {
-                $("#login-form").delay(100).fadeIn(100);
-                $("#register-form").fadeOut(100);
-                $('#register-form-link').removeClass('active');
-                $(this).addClass('active');
-                e.preventDefault();
-            });
-            $('#register-form-link').click(function (e) {
-                $("#register-form").delay(100).fadeIn(100);
-                $("#login-form").fadeOut(100);
-                $('#login-form-link').removeClass('active');
-                $(this).addClass('active');
-                e.preventDefault();
-            });
-        });
+        //ko.applyBindings(UserVM, document.getElementById("logindiv"));
+        //$(function () {
+        //    $('#login-form-link').click(function (e) {
+        //        $("#login-form").delay(100).fadeIn(100);
+        //        $("#register-form").fadeOut(100);
+        //        $('#register-form-link').removeClass('active');
+        //        $(this).addClass('active');
+        //        e.preventDefault();
+        //    });
+        //    $('#register-form-link').click(function (e) {
+        //        $("#register-form").delay(100).fadeIn(100);
+        //        $("#login-form").fadeOut(100);
+        //        $('#login-form-link').removeClass('active');
+        //        $(this).addClass('active');
+        //        e.preventDefault();
+        //    });
+        //});
 
         $(document).ready(function () {
+
             $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/User/GetUserDetailByOwnerId/10',
+                type: 'Post',
+                url: apiURl + "api/User/GetAllUsersByOwnerId/1",
                 contentType: 'application/json',
                 processData: false,
-                success: function (data) {
-                    alert(data.id);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
+                success: function (result) {
+                    alert(result);
                 }
             });
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/User/GetUserDetailByOwnerId/1',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data.id);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
             $('#login-submit').on('click', function () {
                 //$.ajax({
                 //    url: "http://localhost:59122/api/User/UserList",
@@ -282,18 +292,18 @@
                 //    }
                 //});
             });
-            $('#register-submit').on('click', function () {              
-                $.ajax({
-                    type: 'Post',
-                    url: apiURl + "api/User/RegisterUser",
-                    contentType: 'application/json',
-                    processData: false,
-                    data: ko.toJSON(UserVM.Register),
-                    success: function (result) {
-                        alert(result);
-                    }
-                });
-            });
+            //$('#register-submit').on('click', function () {              
+            //    $.ajax({
+            //        type: 'Post',
+            //        url: apiURl + "api/User/RegisterUser",
+            //        contentType: 'application/json',
+            //        processData: false,
+            //        data: ko.toJSON(UserVM.Register),
+            //        success: function (result) {
+            //            alert(result);
+            //        }
+            //    });
+            //});
         });
     </script>
 

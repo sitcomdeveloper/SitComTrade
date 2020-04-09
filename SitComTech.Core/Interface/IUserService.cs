@@ -10,6 +10,7 @@ namespace SitComTech.Core.Interface
         List<User> IsAuthenticated(UserVM userVM);
         UserDataVM Insert(UserDataVM userDataVM);
 
+        List<User> GetAllUsersByOwnerId(long ownerid);
         List<Country> GetCountries();
         List<Currency> GetCurrencies();
         string GetCountryISDCodeById(int countryid);
@@ -17,6 +18,8 @@ namespace SitComTech.Core.Interface
         User GetUserDetailByOwnerId(long ownerid);
 
         List<LeadStatus> GetLeadStatusList();
+
+        List<User> GetTradeAccountByType(TradeAccountVM tradeVM);
     }
 
     public interface IMarketingInfoService : IUnitOfWork<MarketingInfo>

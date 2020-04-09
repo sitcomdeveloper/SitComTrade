@@ -50,6 +50,8 @@ namespace SitComTech.Model.DataObject
 
         public Nullable<long> RegistrationTypeId { get; set; }
 
+        public string ItemId { get; set; }
+
     }
 
     public class LeadStatus : BaseConfig
