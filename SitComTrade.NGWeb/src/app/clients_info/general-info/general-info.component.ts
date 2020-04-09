@@ -14,15 +14,16 @@ export class GeneralInfoComponent implements OnInit {
   editGeneralInfo = false;
   editInfo = false
   userInfoForm: FormGroup
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute,private fb: FormBuilder) { }
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute,private fb: FormBuilder) {this.edituserInfo(); }
 
   ngOnInit() {
     this._route.params.subscribe(params => console.log(params));
     this._route.paramMap.subscribe(params => {
       this.stk = params.get("userid");
       if(this.stk === "1") {
+        
         this.editGeneralInfo = true;
-        this.edituserInfo();
+        
         this.editInfo = false;
       } else {
         this.editInfo = true;
@@ -78,6 +79,8 @@ export class GeneralInfoComponent implements OnInit {
 edituserInfo() {
   this._generalinfoservice.getUsersInfo().subscribe(res => {
     this.userGenralinfo = res;
+    let date = this.userGenralinfo.CreatedAt.split('T');
+    let userDate = date[0];
     this.userInfoForm.patchValue({
       firstName: this.userGenralinfo.FirstName,
       lastName: this.userGenralinfo.LastName,
@@ -88,7 +91,7 @@ edituserInfo() {
       // itemid: this.userGenralinfo.ItemId
       owner: this.userGenralinfo.OwnerId,
       status: this.userGenralinfo.StatusName,
-      createddate: this.userGenralinfo.CreatedAt
+      createddate: userDate
       // lastcommentdate:: this.userGenralinfo.
       // modifieddate: this.userGenralinfo.
       // conventionowner: this.userGenralinfo.

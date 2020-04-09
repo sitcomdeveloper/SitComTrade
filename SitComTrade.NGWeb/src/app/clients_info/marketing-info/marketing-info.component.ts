@@ -8,17 +8,17 @@ import { MarketingInfoService } from './marketing-info.service';
   styleUrls: ['./marketing-info.component.css']
 })
 export class MarketingInfoComponent implements OnInit {
-userMarketingInfo:any;
-  constructor(private marketinginfoservice:MarketingInfoService) { }
+  userMarketingInfo: any;
+  constructor(private marketinginfoservice: MarketingInfoService) { }
 
   ngOnInit() {
     this.marketingInfo();
   }
-  marketingInfo(){
-    this.marketinginfoservice.getMarketingInfo().subscribe(res=>{
-      this.userMarketingInfo=res;
-      console.log('Marketinginfo',res);
-    },);
+  marketingInfo() {
+    this.marketinginfoservice.getMarketingInfo().subscribe(res => {
+      this.userMarketingInfo = res;
+      console.log('Marketinginfo', res);
+    });
   }
 
 }

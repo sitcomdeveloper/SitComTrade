@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
   a: any;
   b: any;
   marked: any;
+  
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
     console.log('register loaded');

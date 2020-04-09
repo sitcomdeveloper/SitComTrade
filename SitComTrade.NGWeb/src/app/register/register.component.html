@@ -36,14 +36,14 @@
             <div class="col-sm-6 form-group">
               <label class="reg">
                 <i class="fa fa-globe" aria-hidden="true"></i>
-                Country:<sup *ngIf="isSubmitted && f.countryName.errors?.required"><i
+                Country:<sup *ngIf="submitted && f.countryName.errors?.required"><i
                     class="fa fa-star fa-xs text-danger" aria-hidden="true" style="font-size: 0.5rem;"></i></sup>
               </label>
               <select class="custom-select" (change)="getPhoneCode($event.target.value)" formControlName="country">
                 <option value="">Choose your country</option>
                 <option *ngFor="let country of Country" [value]="country.Id">{{country.Name}}</option>
               </select>
-              <div class="invalid-feedback" *ngIf="isSubmitted && f.countryName.errors?.required">Please select country
+              <div class="invalid-feedback" *ngIf="submitted && f.countryName.errors?.required">Please select country
               </div>
             </div>
             <div class="col-sm-6 form-group">
