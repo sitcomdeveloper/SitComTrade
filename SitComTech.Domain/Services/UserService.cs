@@ -60,7 +60,6 @@ namespace SitComTech.Domain.Services
                         Password = userdata.Password,
                         Email = userdata.Email,
                         Country = userdata.Country,
-                        FtdAmount = userdata.Currency,
                         Promocode = userdata.Promocode
                     };
                     entity.CreatedAt = DateTime.Now;
@@ -116,6 +115,255 @@ namespace SitComTech.Domain.Services
         public string GetCountryISDCodeById(int countryid)
         {
             return _countryrepository.GetById(countryid).ISDCode;
+        }
+
+        public User GetUserDetailByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public List<LeadStatus> GetLeadStatusList()
+        {
+            //var dpfRep = _repository.GetRepository<LeadStatus>();
+            //return dpfRep.Query(x => x.Active).Select().ToList();
+
+            return null;
+        }
+    }
+
+    public class MarketingInfoService : IMarketingInfoService
+    {
+        private IUnitOfWork<MarketingInfo> _repository;
+        public MarketingInfoService(IUnitOfWork<MarketingInfo> repository)
+        {
+            this._repository = repository;
+
+        }
+        public void Delete(MarketingInfo entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<MarketingInfo> GetAll()
+        {
+            return _repository.GetAll();
+        }
+
+        public MarketingInfo GetById(object ownerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MarketingInfo GetMarketingInfoByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public void Insert(MarketingInfo entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(MarketingInfo entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MarketingInfo InsertMarketingInfo(MarketingInfo marketingdata)
+        {
+            try
+            {
+                var marketingdataexist = _repository.GetAll().Where(x => x.OwnerId == marketingdata.OwnerId).FirstOrDefault();
+                if (marketingdataexist == null)
+                {
+                    if (marketingdata == null)
+                        throw new ArgumentNullException("User");
+                    MarketingInfo entity = new MarketingInfo
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId=marketingdata.OwnerId,
+                    };
+                    _repository.Insert(entity);
+                    SaveChanges();
+                    return entity;
+                }
+                return marketingdata;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+    }
+
+    public class AdditionalInfoService : IAdditionalInfoService
+    {
+        private IUnitOfWork<AdditionalInfo> _repository;
+        public AdditionalInfoService(IUnitOfWork<AdditionalInfo> repository)
+        {
+            this._repository = repository;
+
+        }
+        public void Delete(AdditionalInfo entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<AdditionalInfo> GetAll()
+        {
+            return _repository.GetAll();
+        }
+
+        public AdditionalInfo GetById(object Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public void Insert(AdditionalInfo entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(AdditionalInfo entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionaldata)
+        {
+            try
+            {
+                var additionaldataexist = _repository.GetAll().Where(x => x.OwnerId == additionaldata.OwnerId).FirstOrDefault();
+                if (additionaldataexist == null)
+                {
+                    if (additionaldata == null)
+                        throw new ArgumentNullException("User");
+                    AdditionalInfo entity = new AdditionalInfo
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = additionaldata.OwnerId,
+                    };
+                    _repository.Insert(entity);
+                    SaveChanges();
+                    return entity;
+                }
+                return additionaldata;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
+
+    public class EmailService : IEmailService
+    {
+        private IUnitOfWork<Email> _repository;
+        public EmailService(IUnitOfWork<Email> repository)
+        {
+            this._repository = repository;
+
+        }
+        public void Delete(Email entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<Email> GetAll()
+        {
+            return _repository.GetAll();
+        }
+
+        public Email GetById(object Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Email GetEmailByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public void Insert(Email entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Email entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class ShortMessageService : IShortMessageService
+    {
+        private IUnitOfWork<ShortMessage> _repository;
+        public ShortMessageService(IUnitOfWork<ShortMessage> repository)
+        {
+            this._repository = repository;
+
+        }
+        public void Delete(ShortMessage entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<ShortMessage> GetAll()
+        {
+            return _repository.GetAll();
+        }
+
+        public ShortMessage GetById(object Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ShortMessage GetShortMessageByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public void Insert(ShortMessage entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(ShortMessage entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }
