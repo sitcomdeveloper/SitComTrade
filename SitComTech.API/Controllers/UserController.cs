@@ -32,10 +32,12 @@ namespace SitComTech.API.Controllers
             //userList.Add(new User { Id=1, UserName = "Abc", Password = "Xyz",Email="abc@gmail.com",Phone="123456789",Active=true,Deleted=false,CreatedBy=1,CreatedTime=DateTime.Now,UpdatedBy=1,UpdatedTime=DateTime.Now });
             return userList;
         }
-        [Route("UserList")]
-        public List<User> GetUsers()
+
+        [HttpPost]
+        [Route("GetAllUsersByOwnerId/{ownerid}")]
+        public List<User> GetAllUsersByOwnerId(int ownerid)
         {
-            return _userService.GetAll().ToList();
+            return _userService.GetAllUsersByOwnerId(ownerid);
         }
         [HttpPost]
         [Route("IsAuthenticated")]
@@ -138,6 +140,13 @@ namespace SitComTech.API.Controllers
         public List<LeadStatus> GetLeadStatusList()
         {
             return _userService.GetLeadStatusList();
+        }
+
+        [HttpPost]
+        [Route("GetTradeAccountByType")]
+        public List<User> GetTradeAccountByType(TradeAccountVM tradevm)
+        {
+            return _userService.GetTradeAccountByType(tradevm);
         }
     }
 }
