@@ -15,10 +15,10 @@ userMarketingInfo:any;
     this.marketingInfo();
   }
   marketingInfo(){
-    // this.marketinginfoservice.getMarketingInfo().subscribe(res=>{
-    //   this.userMarketingInfo=res;
-    //   console.log('Marketinginfo',res);
-    // },);
+    this.marketinginfoservice.getMarketingInfo().subscribe(res=>{
+      this.userMarketingInfo=res;
+      console.log('Marketinginfo',res);
+    },);
   }
 
 }
