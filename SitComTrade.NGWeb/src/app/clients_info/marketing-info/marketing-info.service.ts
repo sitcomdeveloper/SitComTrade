@@ -15,4 +15,3 @@ export class MarketingInfoService {
   //   return this.http.get<any>(API_URL + "User/GetMarketingInfoByOwnerId/1");
   // }
 }
-// http://localhost:59122/api/User/GetMarketingInfoByOwnerId/1
