@@ -14,11 +14,7 @@ namespace SitComTech.Model.DataObject
         public string SecondEmail { get; set; }
         public string Country { get; set; }
         public Nullable<long> OwnerId { get; set; }
-        public string StatusName { get; set; }
-        public string State { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Zip { get; set; }
+        public string ResponseStatus { get; set; }       
         public string Description { get; set; }
         public Nullable<long> ConvertionOwner { get; set; }
         public Nullable<long> RetentionOwner { get; set; }
@@ -43,7 +39,7 @@ namespace SitComTech.Model.DataObject
         public string DaysAgoClientCreated { get; set; }
         public string Promocode { get; set; }
 
-        public Nullable<long> StatusId { get; set; }
+        public Nullable<long> ResponseStatusId { get; set; }
         public Nullable<long> CitizenshipId { get; set; }
         public Nullable<long> DeskId { get; set; }
         public Nullable<long> TypeId { get; set; }
@@ -54,7 +50,7 @@ namespace SitComTech.Model.DataObject
 
     }
 
-    public class LeadStatus : BaseConfig
+    public class UserResponseStatus : BaseConfig
     {
         public string Name { get; set; }
 

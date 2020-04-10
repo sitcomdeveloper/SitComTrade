@@ -137,7 +137,7 @@ namespace SitComTech.API.Controllers
 
         [HttpGet]
         [Route("GetLeadStatusList")]
-        public List<LeadStatus> GetLeadStatusList()
+        public List<UserResponseStatus> GetLeadStatusList()
         {
             return _userService.GetLeadStatusList();
         }
