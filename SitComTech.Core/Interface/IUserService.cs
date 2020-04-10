@@ -17,7 +17,7 @@ namespace SitComTech.Core.Interface
 
         User GetUserDetailByOwnerId(long ownerid);
 
-        List<LeadStatus> GetLeadStatusList();
+        List<UserResponseStatus> GetLeadStatusList();
 
         List<User> GetTradeAccountByType(TradeAccountVM tradeVM);
     }

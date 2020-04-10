@@ -126,9 +126,9 @@ namespace SitComTech.Domain.Services
             return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.Id == ownerid).FirstOrDefault();
         }
 
-        public List<LeadStatus> GetLeadStatusList()
+        public List<UserResponseStatus> GetLeadStatusList()
         {
-            //var dpfRep = _repository.GetRepository<LeadStatus>();
+            //var dpfRep = _repository.GetRepository<UserResponseStatus>();
             //return dpfRep.Query(x => x.Active).Select().ToList();
 
             return null;
