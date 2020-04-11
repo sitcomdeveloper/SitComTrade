@@ -5,11 +5,11 @@
       <img src="assets/images/logo.png" alt="SwissFX" />
     </a>
     <div class="registerDiv">
-      <button type="button" class="btn btn-primary register-btn" data-toggle="modal" data-target="#myModal">
+      <button type="button" class="btn btn-primary register-btn" data-toggle="modal" data-target="#regModal">
         Register here
       </button>
     </div>
-    <div class="modal" id="myModal">
+    <div class="modal" id="regModal">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">          
           <div class="modal-header" style="height: 4rem;">
@@ -33,17 +33,17 @@
       <input type="text" class="form-control" formControlName="email" name="email" required placeholder="Email">     
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" formControlName="password" name="password" required placeholder="Password">      
+      <input type="password" class="form-control" formControlName="password" name="password" required placeholder="Password">
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block" [disabled]="ff.valid">Log in</button>
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="ff.invalid">Log in</button>
     </div>
     <div class="clearfix">
       <label class="pull-left checkbox-inline"><input type="checkbox" formControlName="rememberMe" name="rememberMe" id="rememberme" onclick="rememberme(this)"> Remember me</label>
       <a href="#" class="pull-right" data-toggle="modal" data-target="#pwdModal">Forgot Password?</a>
     </div>
   </form>
-  <p class="text-center"><a href="#" data-toggle="modal" data-target="#myModal">Create an Account</a></p>
+  <p class="text-center"><a href="#" data-toggle="modal" data-target="#regModal">Create an Account</a></p>
 </div>
 <app-footer></app-footer>
 <div class="modal fade" id="pwdModal">
@@ -90,10 +90,3 @@
       </div>
     </div>
   </div>
-<style>
-.modal-content
-  {
-    height: auto;
-    overflow-y: scroll;
-  }
-</style>

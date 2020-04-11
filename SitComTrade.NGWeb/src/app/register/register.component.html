@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="registerForm" #ff="ngForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-sm-6 form-group">
               <label class="reg">
@@ -36,14 +36,17 @@
             <div class="col-sm-6 form-group">
               <label class="reg">
                 <i class="fa fa-globe" aria-hidden="true"></i>
-                Country:<sup *ngIf="submitted && f.countryName.errors?.required"><i
-                    class="fa fa-star fa-xs text-danger" aria-hidden="true" style="font-size: 0.5rem;"></i></sup>
+                Country:<sup *ngIf="submitted && f.country.errors">
+                  <i class="fa fa-star fa-xs text-danger" aria-hidden="true" style="font-size: 0.5rem;"></i>
+                </sup>
               </label>
-              <select class="custom-select" (change)="getPhoneCode($event.target.value)" formControlName="country">
+              <select class="custom-select" (change)="getPhoneCode($event.target.value)" formControlName="country"
+                      [ngClass]="{ 'is-invalid': submitted && f.country.errors,'form-control':true }">
                 <option value="">Choose your country</option>
                 <option *ngFor="let country of Country" [value]="country.Id">{{country.Name}}</option>
               </select>
-              <div class="invalid-feedback" *ngIf="submitted && f.countryName.errors?.required">Please select country
+              <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                <div *ngIf="f.country.errors.required">Country is required</div>
               </div>
             </div>
             <div class="col-sm-6 form-group">
@@ -51,22 +54,23 @@
                 <label class="reg">
                   <i class="fa fa-mobile" aria-hidden="true"></i>
                   Phone:
-                  <sup *ngIf="submitted && f.phone.errors"><i class="fa fa-star fa-xs text-danger" aria-hidden="true"
-                      style="font-size: 0.5rem;"></i></sup>
+                  <sup *ngIf="submitted && f.phone.errors">
+                    <i class="fa fa-star fa-xs text-danger" aria-hidden="true"
+                       style="font-size: 0.5rem;"></i>
+                  </sup>
                 </label>
                 <div class="input-group mb-2 mr-sm-2">
                   <div class="input-group-prepend col-sm-3" style="padding:0">
                     <div class="input-group-text" style="padding:0">
                       <input formControlName="phoneCode"
-                        style="width: 100%; background: transparent; border: none; margin: auto; height: 100%; border-radius: 3px 0px 0px 3px; text-align: center;"
-                        disabled />
+                             style="width: 100%; background: transparent; border: none; margin: auto; height: 100%; border-radius: 3px 0px 0px 3px; text-align: center;"
+                             disabled />
                     </div>
                   </div>
-                  <input type="tel" formControlName="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}">
+                  <input type="tel" formControlName="phone" appPhoneMask
+                         [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}">
                   <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                     <div *ngIf="f.phone.errors.required">Phone is required</div>
-                    <div *ngIf="f.phone.errors.pattern">Phone format should be (999-999-9999)</div>
                   </div>
                 </div>
               </div>
@@ -147,7 +151,7 @@
                 Conditions</a>
             </label>
             <button class="btn btn-primary" id="register_button" disabled
-              style="border-radius: 15px 0 15px 0;padding:.375rem 5.75rem;margin-left: 19px;" (click)="register()">Join
+              style="border-radius: 15px 0 15px 0;padding:.375rem 5.75rem;margin-left: 19px;" data-dismiss="modal" (click)="register()">Join
               and start Trading</button>
           </div>
         </form>

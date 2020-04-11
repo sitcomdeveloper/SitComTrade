@@ -30,14 +30,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6), Validators.pattern(/\d/)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-z0-9A-Z]+$')]],
       rememberMe: []
     });
   }
 
   onSubmit() {
     this.submitted = true;
-    // stop here if form is invalid   
     if (this.loginForm.invalid) {
       return;
     }
@@ -49,7 +48,7 @@ export class LoginComponent implements OnInit {
       UserName: this.loginForm.value.email,
       Password: this.loginForm.value.password
     };
-    this.loginservice.saveUserInfo(this.userinfo)
+    this.loginservice.loginUser(this.userinfo)
       .subscribe(
         (
           data: boolean[]) => {
@@ -64,4 +63,3 @@ export class LoginComponent implements OnInit {
         });
   }
 }
-// http:localhost59122

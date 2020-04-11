@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PhoneMaskDirective } from './common/directives/phone-mask.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TabModule} from 'angular-tabs-component';
 import { BlockCopyPasteDirective } from './block-copy-paste.directive';
@@ -144,9 +145,9 @@ import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
     AdditionalInfoComponent,
     EmailComponent,
     SmsComponent,
-    RegHisComponent
+    RegHisComponent,
     // TasksInfoComponent
-
+    PhoneMaskDirective
   ],
   imports: [
     BrowserModule,
@@ -155,9 +156,9 @@ import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
     AppRoutingModule,FormsModule,ReactiveFormsModule,
     AgGridModule.withComponents(null),
     TabModule
-    // CollapsibleModule
-
-
+  ],  
+  exports: [
+    PhoneMaskDirective
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]

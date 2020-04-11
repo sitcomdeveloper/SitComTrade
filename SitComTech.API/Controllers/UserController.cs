@@ -35,7 +35,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("GetAllUsersByOwnerId/{ownerid}")]
-        public List<User> GetAllUsersByOwnerId(int ownerid)
+        public List<UserListVM> GetAllUsersByOwnerId(int ownerid)
         {
             return _userService.GetAllUsersByOwnerId(ownerid);
         }

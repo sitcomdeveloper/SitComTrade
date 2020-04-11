@@ -234,6 +234,7 @@
     <TypeScriptCompile Include="src\app\clients\client\client.component.ts" />
     <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.ts" />
+    <TypeScriptCompile Include="src\app\common\directives\phone-mask.directive.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\header\activities\activities.component.spec.ts" />

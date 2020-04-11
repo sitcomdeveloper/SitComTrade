@@ -381,3 +381,6 @@ grid-auto-columns: max-content;
     z-index: 1;
     color: #45596a;
 }
+.filterrow, .rightsubopt, .chkCol {
+  display: none;
+}

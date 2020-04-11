@@ -39,11 +39,6 @@ rowData = [
   constructor(private _clientservice: ClientsService,private router:Router) { }
 
   ngOnInit() {
-    // fetch('https://api.myjson.com/bins/15psn9')
-    //  fetch('http://localhost:59122/api/User/UserList')
-    // fetch('https://fc9b7fab.ngrok.io/api/User/UserList')
-    //   .then(result => result.json())
-    //   .then(rowData => this.rowData = rowData);
 this.userDetails();
   }
   userDetails() {

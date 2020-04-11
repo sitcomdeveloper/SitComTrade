@@ -92,3 +92,13 @@ body > app-root > app-login > div.container {
   font-size: 15px;
   font-weight: bold;
 }
+
+/* Important part */
+#regModal .modal-dialog {
+  overflow-y: initial !important
+}
+
+#regModal .modal-body {
+  height: 490px;
+  overflow-y: auto;
+}

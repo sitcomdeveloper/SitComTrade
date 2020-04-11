@@ -14,21 +14,46 @@ namespace SitComTech.Domain.Services
         private IUnitOfWork<User> _repository;
         private IUnitOfWork<Country> _countryrepository;
         private IUnitOfWork<Currency> _currencyrepository;
-        public UserService(IUnitOfWork<User> repository, IUnitOfWork<Country> countryrepository, IUnitOfWork<Currency> currencyrepository)
+        private IUnitOfWork<MarketingInfo> _marketinginforepository;
+        public UserService(IUnitOfWork<User> repository, IUnitOfWork<Country> countryrepository, IUnitOfWork<Currency> currencyrepository,IUnitOfWork<MarketingInfo> marketinginforepository)
         {
             this._repository = repository;
             this._countryrepository = countryrepository;
             this._currencyrepository = currencyrepository;
-
+            this._marketinginforepository = marketinginforepository;
         }
         public IQueryable<User> GetAll()
         {
             return _repository.GetAll().Where(x => x.Active && !x.Deleted);
         }
 
-        public List<User> GetAllUsersByOwnerId(long ownerid)
+        public List<UserListVM> GetAllUsersByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+            return _repository.GetAll().Join(_repository.GetAll(),users=>users.OwnerId,owner=>owner.Id,
+                (users,owner)=>new { Users=users,Owner=owner})
+                .GroupJoin(_marketinginforepository.GetAll(),userowner=>userowner.Users.Id,mrktinfo=>mrktinfo.OwnerId,
+                (userowner,mrktinfo)=>new { UserOwner= userowner,MarketInfo=mrktinfo })
+                .SelectMany(x=>x.MarketInfo.DefaultIfEmpty(),(x,y)=>new {x.UserOwner,MarketInfo=y})
+            .Where(x => x.UserOwner.Users.Active && !x.UserOwner.Users.Deleted && x.UserOwner.Users.OwnerId == ownerid).Select(x=>
+            new UserListVM
+            {
+                ItemId=x.UserOwner.Users.ItemId,
+                FirstName = x.UserOwner.Users.FirstName,
+                LastName = x.UserOwner.Users.LastName,
+                CountryName = x.UserOwner.Users.CountryName,
+                Email = x.UserOwner.Users.Email,
+                TypeName = x.UserOwner.Users.TypeName,
+                Phone = x.UserOwner.Users.Phone,
+                OwnerName = x.UserOwner.Owner.FirstName+" "+x.UserOwner.Owner.LastName,
+                ResponseStatus = x.UserOwner.Users.ResponseStatus,
+                CreatedDate = x.UserOwner.Users.CreatedAt,
+                CampaignId = x.MarketInfo.CampaignID,
+                Tag = x.MarketInfo.Tag1,
+                Tag1 =x.MarketInfo.Tag2,
+                FTD = x.UserOwner.Users.FTD,
+                Group = "",
+                Desk = x.UserOwner.Users.Desk
+            }).ToList();
         }
         public User GetById(object Id)
         {
@@ -51,7 +76,7 @@ namespace SitComTech.Domain.Services
                 if (userexist == null)
                 {
                     if (userdata == null)
-                        throw new ArgumentNullException("User");
+                        throw new ArgumentNullException("User");                    
                     User entity = new User
                     {
                         Active = true,
@@ -63,13 +88,22 @@ namespace SitComTech.Domain.Services
                         LastName = userdata.LastName,
                         Password = userdata.Password,
                         Email = userdata.Email,
-                        Country = userdata.Country,
-                        Promocode = userdata.Promocode
+                        CurrencyId = userdata.CurrencyId,
+                        CurrencyName = userdata.CurrencyName,
+                        CountryId = userdata.CountryId,
+                        CountryName = userdata.CountryName,    
+                        Enabled = true,
+                        TypeName="Real",
+                        FirstRegistrationDate =DateTime.Now,
+                        RegistrationType = "Direct",
+                        Promocode = userdata.Promocode,
+                        Phone = userdata.Phone,
+                        ResponseStatusId = 7,
+                        ResponseStatus = "Interested",
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
                     SaveChanges();
-
                 }
                 return userdata;
             }
@@ -136,7 +170,7 @@ namespace SitComTech.Domain.Services
 
         public List<User> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
-            return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();            
+            return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
         }
     }
 
@@ -199,7 +233,7 @@ namespace SitComTech.Domain.Services
                         CreatedAt = DateTime.Now,
                         CreatedBy = 0,
                         CreatedByName = "",
-                        OwnerId=marketingdata.OwnerId,
+                        OwnerId = marketingdata.OwnerId,
                     };
                     _repository.Insert(entity);
                     SaveChanges();

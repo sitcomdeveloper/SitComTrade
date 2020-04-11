@@ -43,7 +43,9 @@ export class RegisterComponent implements OnInit {
       currency: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      phoneCode: ['']
+      phoneCode: [''],
+      countryName: [''],
+      currencyName: ['']
     },{
         validator: MustMatch('password', 'confirmPassword')
       });
@@ -61,13 +63,25 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.Country.forEach(element => {      
+      if (element.Id == this.registerForm.value.country) {
+        this.registerForm.value.countryName = element.Name;
+      }
+    });
+    this.currrency.forEach(element => {
+      if (element.Id == this.registerForm.value.currency) {
+        this.registerForm.value.currencyName = element.Name;
+      }
+    });
     this.userinfo = {
       FirstName: this.registerForm.value.firstName,
       LastName: this.registerForm.value.lastName,
       Email: this.registerForm.value.email,
       Phone: this.registerForm.value.phone,
-      Country: this.registerForm.value.country,
-      Currency: this.registerForm.value.currency,
+      CountryId: this.registerForm.value.country,
+      CountryName: this.registerForm.value.countryName,
+      CurrencyId: this.registerForm.value.currency,
+      CurrencyName: this.registerForm.value.currencyName,
       PromoCode: this.registerForm.value.promoCode,
       Password: this.registerForm.value.password
     };
@@ -82,14 +96,13 @@ export class RegisterComponent implements OnInit {
     }
    
     
-  }
+  }  
   countryName(a) {
     this.loginservice.countryName(0).subscribe(result => {
       this.Country = result;
     });
   }
   getPhoneCode(val: any) {
-    // console.log( typeof val);
     this.Country.forEach(element => {
       const y = +val;
       if (element.Id === y) {
@@ -105,6 +118,9 @@ export class RegisterComponent implements OnInit {
     this.loginservice.currencyName(a).subscribe(result => {
       this.currrency = result;
     });
+  }
+  onCurrencyChange(val: any) {
+    this.registerForm.value.currencyName = val.target.options[val.target.options.selectedIndex].text;
   }
   password(formGroup: FormGroup) {
     const { value: password } = formGroup.get('password');

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://topseedtech.in/api/'
+  //API_URL: 'http://topseedtech.in/api/'
+  API_URL: 'http://localhost:59122/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -14,7 +15,3 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-// https://a67d5d81.ngrok.io
-// http://localhost:59122/api/
-
