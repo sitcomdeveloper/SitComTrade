@@ -1,6 +1,6 @@
 <div class="container-fluid" *ngIf ="editInfo">
   <div class="row">
-
+    <form [formGroup]="userInfoForm">
     <table class="table">
       <thead>
         <tr>
@@ -10,7 +10,7 @@
           {{userGenralinfo?.FirstName}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="firstName" aria-required="true">
           
           </div>
           </td>
@@ -20,7 +20,7 @@
           {{userGenralinfo?.LastName}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="LasttName" type="text" formControlName="lastName" aria-required="true">
           
           </div>
           </td>
@@ -34,7 +34,7 @@
           {{userGenralinfo?.Email}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="Email" type="text" formControlName="email" aria-required="true">
           
           </div>
           </td>
@@ -44,7 +44,7 @@
           {{userGenralinfo?.Phone}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="phone" aria-required="true">
           
           </div>
           </td>
@@ -56,7 +56,7 @@
           {{userGenralinfo?.Mobile}}
           </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="mobile" aria-required="true">
           
           </div>
           </td>
@@ -66,7 +66,7 @@
           {{userGenralinfo?.SecondEmail}}
           </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="secondemail" aria-required="true">
           
           </div>
           </td>
@@ -75,7 +75,7 @@
           <th class="tabletxt">Item ID</th>
           <td>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="itemid" aria-required="true">
           
           </div>
           </td>
@@ -104,7 +104,7 @@
           {{userGenralinfo?.StatusName}}
           </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="status"  aria-required="true">
           
           </div>
           </td>
@@ -114,7 +114,7 @@
           {{userGenralinfo?.CreatedAt}}
             </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="CretedDate" type="text" formControlName="createddate"  aria-required="true">
           
           </div>
           </td>
@@ -124,7 +124,7 @@
           <td>
           
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="lastcommentdate" aria-required="true">
           
           </div>
           </td>
@@ -138,7 +138,7 @@
           {{userGenralinfo?.ConvertionOwner}}
           </div>
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="conventionowner" aria-required="true">
           
           </div>
           </td>
@@ -148,7 +148,7 @@
           {{userGenralinfo?.RetentionOwner}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="retentionowner" aria-required="true">
           
           </div>
           </td>
@@ -162,7 +162,7 @@
           
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="citizenship" aria-required="true">
           
           </div>
           </td>
@@ -173,7 +173,7 @@
           {{userGenralinfo?.DateOfBirth}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="dob" aria-required="true">
           
           </div>
           </td>
@@ -186,7 +186,7 @@
           {{userGenralinfo?.FTD}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="ftd" aria-required="true">
           
           </div>
           </td>
@@ -197,7 +197,7 @@
           {{userGenralinfo?.FTDDate}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" formControlName="ftddate"  aria-required="true">
           
           </div>
           </td>
@@ -219,7 +219,7 @@
           <!-- <td>{{userGenralinfo?.}}</td> -->
           <td>
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" type="text" aria-required="true">
           
           </div>
           </td>
@@ -340,9 +340,10 @@
 
       </tbody>
     </table>
+  </form>
   </div>
 </div>
-<form [formGroup]="userInfoForm">
+<!-- <form [formGroup]="userInfoForm">
   <div class="container-fluid" *ngIf="editGeneralInfo">
     <div class="row">
 
@@ -464,5 +465,4 @@
       </table>
     </div>
   </div>
-</form>
-<!-- dummy change -->
+</form> -->
