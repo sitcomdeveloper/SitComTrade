@@ -49,6 +49,10 @@ this._clientservice.getUsers().subscribe(res => {
   userClick() {
     this.router.navigateByUrl('/info');
   }
+  newUser()
+  {
+    this.router.navigateByUrl('/user');
+  }
 }
 
 // {headerName: 'Item ID', field: 'ID'},
