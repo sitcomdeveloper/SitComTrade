@@ -4,115 +4,337 @@
     <table class="table">
       <thead>
         <tr>
-          <th>First Name</th>
-          <td>{{userGenralinfo?.FirstName}}</td>
-          <th>Last Name</th>
-          <td>{{userGenralinfo?.LastName}}</td>
+          <th class="tabletxt">First Name</th>
+          <td class="text-ellipsis ">
+          <div class="valueshhow">
+          {{userGenralinfo?.FirstName}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Last Name</th>
+          <td class="text-ellipsis">
+           <div class="valueshhow">
+          {{userGenralinfo?.LastName}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>Email</th>
-          <td>{{userGenralinfo?.Email}}</td>
+          <th class="tabletxt">Email</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.Email}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
           <th>Phone</th>
-          <td>{{userGenralinfo?.Phone}}</td>
+          <td>
+            <div class="valueshhow">
+          {{userGenralinfo?.Phone}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>Mobile</th>
-          <td>{{userGenralinfo?.Mobile}}</td>
-          <th>Second Email</th>
-          <td>{{userGenralinfo?.SecondEmail}}</td>
+          <th class="tabletxt">Mobile</th>
+          <td>
+            <div class="valueshhow">
+          {{userGenralinfo?.Mobile}}
+          </div>
+           <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Second Email</th>
+          <td>
+            <div class="valueshhow">
+          {{userGenralinfo?.SecondEmail}}
+          </div>
+           <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>Item ID</th>
-          <td></td>
-          <th>Owner</th>
-          <td>{{userGenralinfo?.OwnerId}}</td>
+          <th class="tabletxt">Item ID</th>
+          <td>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Owner</th>
+          <td>
+           <div class="valueshhow">
+          
+          {{userGenralinfo?.OwnerId}}
+          </div>
+          
+           <div class="value-edit" data-rule="valueEdit" style="display:none;">
+        
+          <select id="cars" class="form-control">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>Status</th>
-          <td>{{userGenralinfo?.StatusName}}</td>
-          <th>Created Date</th>
-          <td>{{userGenralinfo?.CreatedAt}}</td>
+          <th class="tabletxt">Status</th>
+          <td>
+          <div class="valueshhow">
+          {{userGenralinfo?.StatusName}}
+          </div>
+           <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Created Date</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.CreatedAt}}
+            </div>
+           <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>LastCommentDate</th>
-          <td></td>
-          <th>Modified Date</th>
+          <th class="tabletxt">LastCommentDate</th>
+          <td>
+          
+            <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Modified Date</th>
           <!-- <td>{{userGenralinfo?.}}</td> -->
         </tr>
         <tr>
-          <th>Convention Owner</th>
-          <td>{{userGenralinfo?.ConvertionOwner}}</td>
-          <th>Retention Owner</th>
-          <td>{{userGenralinfo?.RetentionOwner}}</td>
+          <th class="tabletxt">Convention Owner</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.ConvertionOwner}}
+          </div>
+            <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Retention Owner</th>
+          <td>
+            <div class="valueshhow">
+          {{userGenralinfo?.RetentionOwner}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>Citizenship</th>
-          <td>{{userGenralinfo?.CitizenshipName}}</td>
-          <th>Date of Birth</th>
-          <td>{{userGenralinfo?.DateOfBirth}}</td>
+          <th class="tabletxt">Citizenship</th>
+          <td>
+          
+           <div class="valueshhow">
+          {{userGenralinfo?.CitizenshipName}}
+          
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">Date of Birth</th>
+          <td>
+           <div class="valueshhow">
+          
+          {{userGenralinfo?.DateOfBirth}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>FTD</th>
-          <td>{{userGenralinfo?.FTD}}</td>
-          <th>FTD Date</th>
-          <td>{{userGenralinfo?.FTDDate}}</td>
+          <th class="tabletxt">FTD</th>
+          <td>
+           <div class="valueshhow">
+          
+          {{userGenralinfo?.FTD}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">FTD Date</th>
+          <td>
+          
+           <div class="valueshhow">
+          {{userGenralinfo?.FTDDate}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>Enabled</th>
-          <td>{{userGenralinfo?.Enabled}}</td>
-          <th>ClientTime</th>
+          <th class="tabletxt">Enabled</th>
+          <td>
+          <div class="valueshhow">
+          {{userGenralinfo?.Enabled}}
+          </div>
+          <div class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;">
+              <label class="switch ">
+          <input type="checkbox" class="primary">
+          <span class="slider round"></span>
+        </label>
+          </div>
+          </td>
+          <th class="tabletxt">ClientTime</th>
           <!-- <td>{{userGenralinfo?.}}</td> -->
+          <td>
+            <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>Last Login Date</th>
-          <td></td>
-          <th>Desk</th>
-          <td></td>
+          <th class="tabletxt">Last Login Date</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">Desk</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
         </tr>
         <tr>
-          <th>HasTasks</th>
-          <td></td>
-          <th>Task Created Date</th>
-          <td></td>
+          <th class="tabletxt">HasTasks</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">Task Created Date</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
         </tr>
         <tr>
-          <th>TaskDate</th>
-          <td></td>
-          <th>AssignedDate</th>
-          <td></td>
+          <th class="tabletxt">TaskDate</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">AssignedDate</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
         </tr>
         <tr>
-          <th>HasNotCompletedTasks</th>
-          <td></td>
-          <th>TotalDeposits</th>
-          <td></td>
+          <th class="tabletxt">HasNotCompletedTasks</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">TotalDeposits</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
         </tr>
         <tr>
-          <th>Ftd Amount</th>
-          <td></td>
-          <th>Total Withdrawals</th>
-          <td></td>
+          <th class="tabletxt">Ftd Amount</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">Total Withdrawals</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
         </tr>
         <tr>
-          <th>NetDeposits</th>
-          <td></td>
-          <th>Type</th>
-          <td></td>
+          <th class="tabletxt">NetDeposits</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">Type</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
         </tr>
         <tr>
-          <th>FirstRegistrationDate</th>
-          <td></td>
-          <th>RegistrationType</th>
-          <td>{{userGenralinfo?.RegistrationType}}</td>
+          <th class="tabletxt">FirstRegistrationDate</th>
+          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div></td>
+          <th class="tabletxt">RegistrationType</th>
+          <td>          
+            <div class="valueshhow">
+          {{userGenralinfo?.RegistrationType}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
         <tr>
-          <th>LastTaskDaysPast</th>
-          <td>{{userGenralinfo?.LastTaskDaysPast}}</td>
-          <th>DaysAgoClientCreated
+          <th class="tabletxt">LastTaskDaysPast</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.LastTaskDaysPast}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
+          <th class="tabletxt">DaysAgoClientCreated
           </th>
-          <td>{{userGenralinfo?.DaysAgoClientCreated}}</td>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.DaysAgoClientCreated}}
+          </div>
+          <div class="value-edit" data-rule="valueEdit" style="display:none;">
+          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          
+          </div>
+          </td>
         </tr>
 
 

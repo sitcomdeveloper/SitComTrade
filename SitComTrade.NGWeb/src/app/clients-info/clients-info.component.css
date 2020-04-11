@@ -15,11 +15,309 @@ h2
     margin-inline-end: 0px; 
 }
 div#headingOne {
-    padding: 20px 40px;
+    padding: 0 40px;
     color: #000;
 }
 ::before {
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.sidenav {
+    padding: 34px 45px;
+    border-radius: 3px 0 0 3px;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(-45deg,#257dc6 0,#0d538d 100%);
+    background: -webkit-linear-gradient(-45deg,#257dc6 0,#0d538d 100%);
+    background: linear-gradient(135deg,#257dc6 0,#0d538d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#257dc6', endColorstr='#0d538d', GradientType=1 );
+    color: #fff;
+}
+.sidenav h2 {
+    margin: 0 0 3px;
+}
+.sidenav ul {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 30px 0 0;
+    margin: 30px -45px 0;
+    list-style: none;
+    border: 1px solid #4095db;
+    border-width: 1px 0 0;
+}
+.sidenav ul li {
+    padding: 0 0 0 20px;
+}
+.sidenav ul li a {
+    position: relative;
+    display: block;
+    padding: 11px 50px;
+    border-radius: 24px 0 0 24px;
+    color: #99cbf3;
+}
+.sidenav ul li a i {
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    bottom: 0;
+    margin: auto 0;
+}
+.sidenav ul li a:hover, .sidenav ul li.active a {
+    text-decoration: none;
+    color: #fff;
+    background: #31c8ee;
+}
+.box-control {
+    position: relative;
+    min-height: 30px;
+    margin: 10px 0;
+}
+.box-control.pull-right>a, .box-control.pull-right>div>a {
+    margin: 0 0 0 5px;
+}
+.no-events {
+    pointer-events: none;
+}
+.btn-type02 {
+    padding: 5px 15px;
+    border: 1px solid #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1.4166666;
+    color: #8da5ba;
+    min-width: 75px;
+}
+.dropdown-menu2>li>a {
+    color: #8da5ba;
+    padding: 5px 30px;
+    text-align: right;
+}
+.dropdown-menu>li>a {
+    padding: 3px 30px 3px 15px;
+    color: #45596a;
+    line-height: 1.53845;
+}
+.dropdown-menu2 {
+    border-color: #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.dropdown-menu {
+    padding: 0;
+    margin: 5px 0 0;
+    font-size: 13px;
+    border: 1px solid #dde7f9;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,.15);
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+}
+.dropdown-menu2 {
+    border-color: #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-top: 10px;
+    
+    box-shadow: 0 3px 7px rgba(0,0,0,.15)
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.subheader {
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+   /** background: url("images/bg-subheader.png") 100% 0 no-repeat #105996;**/
+    background: #2c62a4;
+    color: #fff;
+    min-height: 82px;
+}
+.account-panel {
+    margin-top: -35px;
+    background: rgba(7,75,131,.5);
+}
+.subheader>* {
+    position: relative;
+}
+.main-holder {
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.subheader a{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: #0c4c82;
+}
+.subheader a.page-prev:before {
+    background-position: -80px -715px;
+}
+
+.subheader a[class*=page-]:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+   
+}
+.main-holder {
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.account-panel .main-holder>div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 80px;
+}
+
+.account-panel .account-main-details {
+    background: #115a96;
+    min-width: 435px;
+    padding: 10px 30px;
+    color: #88bdec;
+    -webkit-box-shadow: 10px 0 20px 0 rgba(0,0,0,.075);
+    -moz-box-shadow: 10px 0 20px 0 rgba(0,0,0,.075);
+    box-shadow: 10px 0 20px 0 rgba(0,0,0,.075);
+}
+.account-panel .account-main-details p {
+    margin: 0;
+}
+.account-panel .account-main-details h2 {
+    font: 30px/38px Poppins;
+    margin: 0;
+    color: #fff;
+}
+.account-panel .main-holder>div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 80px;
+}
+
+.account-panel .account-details {
+    display: table;
+    padding: 15px 0;
+}
+.main-holder:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.account-nav-panel {
+    background: #1566aa;
+}
+.main-holder {
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.account-switcher {
+    position: relative;
+    left: 15px;
+    float: right;
+}
+.account-switcher>ul {
+    position: relative;
+    float: left;
+}
+
+.account-nav-panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.account-switcher>ul>li:first-child {
+    border-width: 0;
+}
+.account-switcher>ul>li {
+    float: left;
+    border: 1px solid #155d99;
+    border-width: 0 0 0 1px;
+}
+.account-switcher>ul>li>a {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.no-events {
+    pointer-events: none;
+}
+.account-switcher>ul>li>.link-prev:after {
+    background-position: -80px -755px;
+}
+
+.account-switcher>ul>li>a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    
+}
+.account-nav ul li a:focus, .account-nav ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.account-nav ul li a {
+    position: relative;
+    margin: 0 25px 0 0;
+    color: #8ec8f7;background: #1566aa;
+}
+.disabled {
+    opacity: .5;
+}
+.account-nav ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
+}
+.account-nav ul li a {
+    position: relative;
+    margin: 0 25px 0 0;
+    color: #8ec8f7;
+}
+.edit-data-options
+{
+    display:none;
+}
+.edit-data-options1
+{
+    display:none;
+}
+.edit-data-options2
+{
+    display:none;
+}
+.edit-data-options3
+{
+    display:none;
+}
+.btn-type01 {
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: #8da5ba;    font-size: 16px;
+}
+.box-control.pull-right>a, .box-control.pull-right>div>a {
+    margin: 0 0 0 5px;
+}
+.btn-type01:focus, .btn-type01:hover {
+    color: #3d75e1;
+    text-decoration: none;
+    -webkit-box-shadow: inset 0 3px 6px 0 rgba(0,0,0,.06);
+    -moz-box-shadow: inset 0 3px 6px 0 rgba(0,0,0,.06);
+    box-shadow: inset 0 3px 6px 0 rgba(0,0,0,.06);
 }
