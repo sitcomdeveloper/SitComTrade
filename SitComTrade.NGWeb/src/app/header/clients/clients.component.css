@@ -103,7 +103,11 @@ body {
     width: 100%!important;
     overflow-x:hidden!important;
   }
-
+.row-gutter
+{
+    margin-right: 15px;
+    /* margin-left: 15px; */
+}
 .sub-header{
     position: relative;
     z-index: 10;
