@@ -12,7 +12,7 @@
                 </div>
                 <div class="account-nav-panel">
                     <div class="main-holder">
-                        <div class="account-switcher">
+                        <!--<div class="account-switcher">
                         <ul><li><a class="disabled no-events link-prev" href="#">Prev
                         <i class="fa fa-chevron-right"></i>
                         </a>
@@ -21,9 +21,10 @@
                         <div class="dropdown-menu pull-right"><p>Jump to clients:</p>
                         </div></li>
                         <li><a class="link-next" href="">Next</a>
-                        </li></ul></div>
+                        </li></ul></div>-->
                         <div class="account-nav">
-                            <ul id="navPanel">
+                            <ul id="navPanel" style="    padding: 14px;
+    padding-left: 0;">
                               <li>
                                  <a href="#tasks">Tasks</a>
                               </li>
@@ -46,7 +47,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-9 col-md-8">
-      
+      <!-- <a href="headingSeven">Tasks</a> -->
     </div>
     <div class="col-xs-3 col-md-4">
 
@@ -214,7 +215,7 @@
             </div>
           </div>
         </div>
-       
+        <!-- <div id="tasks"></div> -->
         <div class="card mb20" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingSeven">
@@ -227,7 +228,7 @@
           </div>
           <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
             <div class="card-body">
-              <app-tasks-info></app-tasks-info>
+              <app-tasks></app-tasks>
             </div>
           </div>
         </div>
@@ -302,5 +303,4 @@
     </div>
   </div>
 </div>
-
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer> 

@@ -98,7 +98,7 @@
   <div class="row fist1">
     <div class="col-md-12 sub-header">
 
-      <div class="row container-padd">
+      <div class="row container-padd row-gutter">
         <div class="col-md-6 main-tab">
           <ul class="nav nav-pills tablist" role="tablist">
             <li class="nav-item">
@@ -280,12 +280,12 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>First Name</span></div>
+              <div class="text-ellipsis" data-original-title="" title=""  data-field="FirstName" rel="tooltip" title="First Name"><span>First Name</span></div>
             </div>
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Last Name</span></div>
+              <div class="text-ellipsis" data-original-title="" rel="tooltip" title="Last Name"><span>Last Name</span></div>
             </div>
           </th>
           <th class="">
@@ -320,12 +320,12 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Created Date</span></div>
+              <div class="text-ellipsis" data-original-title=""  rel="tooltip" title="Created Date"><span>Created Date</span></div>
             </div>
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Campaign ID</span></div>
+              <div class="text-ellipsis" data-original-title=""  rel="tooltip" title="Campaign ID"><span>Campaign ID</span></div>
             </div>
           </th>
           <th class="">
@@ -618,7 +618,7 @@
           <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">{{item.Desk}}</div>
+                <div class="text-ellipsis">{{item.IMC}}</div>
               </div>
             </div>
           </td>
@@ -642,7 +642,6 @@
       </tbody>
     </table>
   </div>
-
   <div id="account" class="container-fluid tab-pane fade"><br>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead>
@@ -678,11 +677,11 @@
               <div class="text-ellipsis"><span>Email</span></div>
             </div>
           </th>
-          <!-- <th class="">
+          <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Type</span></div>
             </div>
-          </th> -->
+          </th>
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Phone</span></div>
@@ -723,11 +722,11 @@
               <div class="text-ellipsis"><span>FTD</span></div>
             </div>
           </th>
-          <!-- <th class="">
+          <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Group</span></div>
             </div>
-          </th> -->
+          </th>
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Desk</span></div>
@@ -876,8 +875,7 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
         </tr>
-        <!-- ACCOUNTS CODE------------------------------------------------------------ -->
-        <tr class="tablectn" *ngFor="let actinfo of accountInfo">
+        <tr class="tablectn">
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
@@ -889,29 +887,29 @@
           <td class="">
             <div class="">
               <div class="text-ellipsis" data-original-title="" title="">
-                <a href="">
-                  <span>{{actinfo.ItemId}}</span></a></div>
+                <a href="/moduleitems/item?moduleId=27&amp;itemId=AC431251&amp;filterId=2683">
+                  <span>AC431251</span></a></div>
             </div>
           </td>
           <td class="">
             <div class="">
               <div data-display-for="27_FirstName">
                 <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title=""
-                  title="">{{actinfo.FirstName}}</div>
+                  title="">MASSIMO</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_LastName">
-                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">{{actinfo.LastName}}</div>
+                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">ZIZZA</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Country">
-                <div class="text-ellipsis"><span class="flag it"></span>{{actinfo.CountryName}}</div>
+                <div class="text-ellipsis"><span class="flag it"></span>Italy</div>
               </div>
             </div>
           </td>
@@ -919,14 +917,14 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
                 <div class="text-ellipsis" data-original-title="" title=""><a
-                    href=""><span>{{actinfo.Email}}</span></a></div>
+                    href="mailto:mailarc@aol.com"><span>mailarc@aol.com</span></a></div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Type">
-                <div class="text-ellipsis">{{actinfo.Phone}}</div>
+                <div class="text-ellipsis">Lead</div>
               </div>
             </div>
           </td>
@@ -934,33 +932,33 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title=""
-                  title="">{{actinfo.OwnerName}}</div>
+                  title="">3295385412</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_OwnerId">
-                <div class="text-ellipsis" data-original-title="" title="">{{actinfo.ResponseStatus}}</div>
+                <div class="text-ellipsis" data-original-title="" title="">Anton Novak</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_StatusId">
-                <div class="text-ellipsis" data-original-title="" title="">{{actinfo.CreatedDate}}</div>
+                <div class="text-ellipsis" data-original-title="" title="">No answer 7</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell" style="width:115px;">
             <div class="jsgrid-cell-content">
-              <div data-display-for="27_CreatedDate">{{actinfo.CampaignId}}</div>
+              <div data-display-for="27_CreatedDate">12/9/2019 11:34:00 AM</div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_CampaignId">
-                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{actinfo.Tag}}</div>
+                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">silver.aff</div>
               </div>
             </div>
           </td>
@@ -968,7 +966,7 @@
           <td class="">
             <div class="">
               <div data-display-for="27_HasDeposit">
-                <div><i class="ico-sz2 ico-status"></i>{{actinfo.Tag1}}</div>
+                <div><i class="ico-sz2 ico-status"></i></div>
               </div>
             </div>
           </td>
@@ -976,21 +974,18 @@
           <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis" style="text-align:center">
-                  <!--<div *ngIf="show"><p>Show this only if "show" is true</p></div>-->
-                  <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': actinfo.FTD ? 'green':'gray' }"></i>
-                </div>
+                <div class="text-ellipsis">IMC</div>
               </div>
             </div>
           </td>
           <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">{{actinfo.Desk}}</div>
+                <div class="text-ellipsis"></div>
               </div>
             </div>
           </td>
-          <!-- <td class="">
+          <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
                 <div class="text-ellipsis"></div>
@@ -1003,7 +998,7 @@
                 <div class="text-ellipsis">IMC</div>
               </div>
             </div>
-          </td> -->
+          </td>
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -1051,17 +1046,7 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis"><span>Owner</span></div>
-            </div>
-          </th>
-          <th class="">
-            <div class="cell-content">
               <div class="text-ellipsis" data-original-title="" title=""><span>Country</span></div>
-            </div>
-          </th>
-          <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Status</span></div>
             </div>
           </th>
           <th class="">
@@ -1071,12 +1056,22 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis"><span>Tag</span></div>
+              <div class="text-ellipsis"><span>Type</span></div>
             </div>
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis"><span>Tag1</span></div>
+              <div class="text-ellipsis"><span>Phone</span></div>
+            </div>
+          </th>
+          <th class="">
+            <div class="cell-content">
+              <div class="text-ellipsis"><span>Owner</span></div>
+            </div>
+          </th>
+          <th class="">
+            <div class="cell-content">
+              <div class="text-ellipsis"><span>Status</span></div>
             </div>
           </th>
           <th class="">
@@ -1091,23 +1086,14 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis"><span>Desk</span></div>
-            </div>
-          </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Type</span></div>
+              <div class="text-ellipsis"><span>Tag</span></div>
             </div>
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis"><span>Phone</span></div>
+              <div class="text-ellipsis"><span>Tag1</span></div>
             </div>
           </th>
-         
-         
-          
-         
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>FTD</span></div>
@@ -1118,10 +1104,14 @@
               <div class="text-ellipsis"><span>Group</span></div>
             </div>
           </th>
-         
+          <th class="">
+            <div class="cell-content">
+              <div class="text-ellipsis"><span>Desk</span></div>
+            </div>
+          </th>
           <th class="">
 
-          </th> -->
+          </th>
         </tr>
       </thead>
 
@@ -1262,7 +1252,7 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
         </tr>
-        <tr class="tablectn" *ngFor="let leadinfo of leadInfo">
+        <tr class="tablectn">
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
@@ -1274,29 +1264,29 @@
           <td class="">
             <div class="">
               <div class="text-ellipsis" data-original-title="" title="">
-                <a href="">
-                  <span>{{leadinfo.ItemId}}</span></a></div>
+                <a href="/moduleitems/item?moduleId=27&amp;itemId=AC431251&amp;filterId=2683">
+                  <span>AC431251</span></a></div>
             </div>
           </td>
           <td class="">
             <div class="">
               <div data-display-for="27_FirstName">
                 <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title=""
-                  title="">{{leadinfo.FirstName}}</div>
+                  title="">MASSIMO</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_LastName">
-                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">{{leadinfo.LastName}}</div>
+                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">ZIZZA</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Country">
-                <div class="text-ellipsis"><span class="flag it"></span>{{leadinfo.OwnerName}}</div>
+                <div class="text-ellipsis"><span class="flag it"></span>Italy</div>
               </div>
             </div>
           </td>
@@ -1304,14 +1294,14 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
                 <div class="text-ellipsis" data-original-title="" title=""><a
-                    href=""><span>{{leadinfo.CountryName}}</span></a></div>
+                    href="mailto:mailarc@aol.com"><span>mailarc@aol.com</span></a></div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Type">
-                <div class="text-ellipsis">{{leadinfo.TypeName}}</div>
+                <div class="text-ellipsis">Lead</div>
               </div>
             </div>
           </td>
@@ -1319,33 +1309,33 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title=""
-                  title="">{{leadinfo.Email}}</div>
+                  title="">3295385412</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_OwnerId">
-                <div class="text-ellipsis" data-original-title="" title="">{{leadinfo.Tag}}</div>
+                <div class="text-ellipsis" data-original-title="" title="">Anton Novak</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_StatusId">
-                <div class="text-ellipsis" data-original-title="" title="">{{leadinfo.Tag1}}</div>
+                <div class="text-ellipsis" data-original-title="" title="">No answer 7</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell" style="width:115px;">
             <div class="jsgrid-cell-content">
-              <div data-display-for="27_CreatedDate">{{leadinfo.CreatedDate}}</div>
+              <div data-display-for="27_CreatedDate">12/9/2019 11:34:00 AM</div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_CampaignId">
-                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{leadinfo.CampaignId}}</div>
+                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">silver.aff</div>
               </div>
             </div>
           </td>
@@ -1353,12 +1343,12 @@
           <td class="">
             <div class="">
               <div data-display-for="27_HasDeposit">
-                <div><i class="ico-sz2 ico-status"></i>{{leadinfo.Desk}}</div>
+                <div><i class="ico-sz2 ico-status"></i></div>
               </div>
             </div>
           </td>
 
-          <!-- <td class="">
+          <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
                 <div class="text-ellipsis">IMC</div>
@@ -1385,7 +1375,7 @@
                 <div class="text-ellipsis">IMC</div>
               </div>
             </div>
-          </td> -->
+          </td>
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -1407,3 +1397,4 @@
     </table>
   </div>
 </div>
+<app-footer></app-footer>

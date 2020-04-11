@@ -10,7 +10,7 @@ const API_URL = environment.API_URL;
 export class ClientsService {
 
   constructor(private http: HttpClient) { }
-  getUsers(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + "user/GetAllUsersByOwnerId/1", obj);
+  getUsers(): Observable<any> {
+    return this.http.post<any>(API_URL + 'User/GetAllUsersByOwnerId/1',"");
   }
 }
