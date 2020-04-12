@@ -28,7 +28,10 @@
   height: 34px;
   
 }
-
+.table td, .table th {
+   
+    vertical-align: middle;
+}
 /* Hide default HTML checkbox */
 .switch input {display:none;}
 
