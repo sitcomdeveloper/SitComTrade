@@ -34,6 +34,9 @@ rowData = [
     // {make: 'Ford', model: 'Mondeo', price: 32000},
     // {make: 'Porsche', model: 'Boxter', price: 72000}
 ];
+accountInfo: any[];
+  leadInfo: any[];
+  clientInfo:any[];
   
 
   constructor(private _clientservice: ClientsService,private router:Router) { }
@@ -42,10 +45,22 @@ rowData = [
 this.userDetails();
   }
   userDetails() {
-this._clientservice.getUsers().subscribe(res => {
-  this.rowData  = res;
-},);
-  }
+    this._clientservice.getUsers(this.clientInfo).subscribe(res => {
+      if(res !== null && res !== undefined && res !== '') {
+      this.rowData  = res;
+      this.accountInfo =  this.rowData.filter(m => {
+        if (m.TypeName === 'Real') {
+          return m;
+        }
+      })
+      this.leadInfo =  this.rowData.filter(p => {
+        if(p.TypeName === 'Lead') {
+          return p;
+        }
+      })
+    }
+    },);
+      }
   userClick() {
     this.router.navigateByUrl('/info');
   }
@@ -53,6 +68,7 @@ this._clientservice.getUsers().subscribe(res => {
   {
     this.router.navigateByUrl('/user');
   }
+  
 }
 
 // {headerName: 'Item ID', field: 'ID'},

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-
+<form [formGroup]="marketingInfoForm">
     <table class="table">
       <thead>
         <tr>
@@ -10,7 +10,7 @@
           {{userMarketingInfo?.Tag1}}
           </div>
           <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="tag1" type="text" formControlName="tag1"  aria-required="true">
           
           </div>
           </td>
@@ -20,7 +20,7 @@
           {{userMarketingInfo?.Tag2}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="tag2" type="text" formControlName="tag2"  aria-required="true">
           
           </div>
           </td>
@@ -34,7 +34,7 @@
           {{userMarketingInfo?.CampaignID}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="campaignid" type="text" formControlName="campaignid"  aria-required="true">
           
           </div>
           </td>
@@ -43,7 +43,7 @@
           <div class="valueshhow1">
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="affilateid" type="text" formControlName="affilateid" aria-required="true">
           
           </div>
           </td>
@@ -56,7 +56,7 @@
           {{userMarketingInfo?.SubAffiliateID}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="subaffilateid" type="text" formControlName="subaffilateid" aria-required="true">
           
           </div>
           </td>
@@ -67,7 +67,7 @@
           {{userMarketingInfo?.Source}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="source" type="text" formControlName="source" aria-required="true">
           
           </div>
           </td>
@@ -79,7 +79,7 @@
           {{userMarketingInfo?.IPAddress}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="ipaddress" type="text" formControlName="ipaddress"  aria-required="true">
           
           </div>
           </td>
@@ -89,7 +89,7 @@
           {{userMarketingInfo?.Referrer}}
           </div>
           <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="referrer" type="text" formControlName="referrer" aria-required="true">
           
           </div>
           </td>
@@ -101,7 +101,7 @@
           {{userMarketingInfo?.IPCountry}}
 </div>
 <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="ipcountry" type="text" formControlName="ipcountry" aria-required="true">
           
           </div>
           </td>
@@ -111,7 +111,7 @@
           {{userMarketingInfo?.UtmContent}}
           </div>
           <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="utmcontent" aria-required="true">
           
           </div>
           </td>
@@ -124,7 +124,7 @@
           </div>
          
  <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="utmsource" aria-required="true">
           
           </div>
           </td>
@@ -134,7 +134,7 @@
           {{userMarketingInfo?.UtmCampaign}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="utmcampaign" aria-required="true">
           
           </div>
           </td>
@@ -147,7 +147,7 @@
           
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="utmcreative" aria-required="true">
           
           </div>
           </td>
@@ -157,7 +157,7 @@
           {{userMarketingInfo?.UtmMedium}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="utmmedium" aria-required="true">
           
           </div>
           </td>
@@ -169,7 +169,7 @@
           {{userMarketingInfo?.GoogleKeyword}}
           </div>
            <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="googlekeyword" aria-required="true">
           
           </div>
           </td>
@@ -179,7 +179,7 @@
           {{userMarketingInfo?.AffTransactionID}}
           </div>
              <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="afftransactionid" aria-required="true">
           
           </div>
           </td>
@@ -191,7 +191,7 @@
           {{userMarketingInfo?.AffiliateUser}}
           </div>
              <div class="value-edit1" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="" type="text" formControlName="affiliateuser" aria-required="true">
           
           </div>
           </td>
@@ -208,6 +208,7 @@
 
       </tbody>
     </table>
+  </form>
   </div>
 </div>
 
