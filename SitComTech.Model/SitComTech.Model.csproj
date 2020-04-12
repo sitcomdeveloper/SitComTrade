@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Common\BaseConfig.cs" />
     <Compile Include="DataObject\AdditionalInfo.cs" />
+    <Compile Include="DataObject\Client.cs" />
     <Compile Include="DataObject\Country.cs" />
     <Compile Include="DataObject\Address.cs" />
     <Compile Include="DataObject\Email.cs" />
