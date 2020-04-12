@@ -39,14 +39,14 @@ namespace SitComTech.Domain.Services
                 throw new ArgumentNullException("Client");
             _repository.Insert(entity);
         }
-        public Client InsertClient(Client Clientdata)
+        public Client InsertClient(ClientDataVM clientdata)
         {
             try
             {
-                var Clientexist = _repository.GetAll().Where(x => x.Email == Clientdata.Email).FirstOrDefault();
+                var Clientexist = _repository.GetAll().Where(x => x.Email == clientdata.Email).FirstOrDefault();
                 if (Clientexist == null)
                 {
-                    if (Clientdata == null)
+                    if (clientdata == null)
                         throw new ArgumentNullException("Client");
                     Client entity = new Client
                     {
@@ -55,28 +55,30 @@ namespace SitComTech.Domain.Services
                         CreatedAt = DateTime.Now,
                         CreatedBy = 0,
                         CreatedByName = "",
-                        FirstName = Clientdata.FirstName,
-                        LastName = Clientdata.LastName,
-                        Password = Clientdata.Password,
-                        Email = Clientdata.Email,
-                        CurrencyId = Clientdata.CurrencyId,
-                        CurrencyName = Clientdata.CurrencyName,
-                        CountryId = Clientdata.CountryId,
-                        CountryName = Clientdata.CountryName,
+                        FirstName = clientdata.FirstName,
+                        LastName = clientdata.LastName,
+                        Password = clientdata.Password,
+                        Email = clientdata.Email,
+                        CurrencyId = clientdata.CurrencyId,
+                        CurrencyName = clientdata.CurrencyName,
+                        CountryId = clientdata.CountryId,
+                        CountryName = clientdata.CountryName,
                         Enabled = true,
                         TypeName = "Real",
                         FirstRegistrationDate = DateTime.Now,
                         RegistrationType = "Direct",
-                        Promocode = Clientdata.Promocode,
-                        Phone = Clientdata.Phone,
+                        Promocode = clientdata.Promocode,
+                        Phone = clientdata.Phone,
                         ResponseStatusId = 7,
                         ResponseStatus = "Interested",
+                        OwnerId=1,
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
                     SaveChanges();
+                    return entity;
                 }
-                return Clientdata;
+                return null;
             }
             catch (Exception ex)
             {
@@ -86,12 +88,12 @@ namespace SitComTech.Domain.Services
 
         public void Update(Client entity)
         {
-            Client Clientdata = _repository.GetById(entity.Id);
-            if (Clientdata != null)
+            Client clientdata = _repository.GetById(entity.Id);
+            if (clientdata != null)
             {
                 entity.UpdatedAt = DateTime.Now;
-                entity.UpdatedBy = Clientdata.Id;
-                entity.UpdatedByName = Clientdata.FirstName;
+                entity.UpdatedBy = clientdata.Id;
+                entity.UpdatedByName = clientdata.FirstName;
                 _repository.Update(entity);
                 SaveChanges();
             }

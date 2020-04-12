@@ -213,15 +213,19 @@
             TypeName : ko.observable('Lead'),
             OwnerId : ko.observable(1)
         };
-        //UserVM.Register = {
-        //   FirstName : ko.observable(),
-        //   LastName : ko.observable(),
-        //   Email : ko.observable(),
-        //   Country : ko.observable(),
-        //   Currency : ko.observable(0),
-        //   Promocode : ko.observable(),
-        //   Password : ko.observable(),
-        //};
+        UserVM.Register = {
+           FirstName : ko.observable('Lead'),
+           LastName : ko.observable('Lead'),
+           Email : ko.observable('Lead'),
+           CountryId : ko.observable(0),
+           CurrencyName : ko.observable('hdfdf'),
+           Promocode : ko.observable('Lead'),
+            Password: ko.observable('Lead'),
+            CountryName: ko.observable('Lead'),
+            CurrencyId: ko.observable(0),
+            OwnerId: ko.observable('Lead'),
+            Phone: ko.observable('Lead'),
+        };
         
         //ko.applyBindings(UserVM, document.getElementById("logindiv"));
         //$(function () {
@@ -242,16 +246,25 @@
         //});
 
         $(document).ready(function () {
-
             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/User/GetAllUsersByOwnerId/1",
+                url: apiURl + "api/Client/AddClient",
                 contentType: 'application/json',
                 processData: false,
+                data: ko.toJSON(UserVM.Register),
                 success: function (result) {
                     alert(result);
                 }
             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/User/GetAllUsersByOwnerId/1",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: "get",
             //    url: 'http://localhost:59122/api/User/GetUserDetailByOwnerId/1',
