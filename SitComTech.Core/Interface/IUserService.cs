@@ -20,6 +20,8 @@ namespace SitComTech.Core.Interface
         List<UserResponseStatus> GetLeadStatusList();
 
         List<User> GetTradeAccountByType(TradeAccountVM tradeVM);
+
+        User GetUserbyusername(string username);
     }
 
     public interface IMarketingInfoService : IUnitOfWork<MarketingInfo>

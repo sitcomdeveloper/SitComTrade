@@ -109,6 +109,7 @@
     <Compile Include="App_Start\AutofacWebapiConfig.cs" />
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\OwnerTaskController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
