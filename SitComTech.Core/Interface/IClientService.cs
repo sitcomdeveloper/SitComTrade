@@ -7,7 +7,7 @@ namespace SitComTech.Core.Interface
 {
     public interface IClientService : IUnitOfWork<Client>
     {
-        Client InsertClient(Client userDataVM);
+        Client InsertClient(ClientDataVM userDataVM);
 
         List<Client> GetAllUsersByOwnerId(long ownerid);
 

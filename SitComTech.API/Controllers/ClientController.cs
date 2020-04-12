@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace SitComTech.API.Controllers
 {
+    [RoutePrefix("api/Client")]
     public class ClientController : ApiController
     {
 
@@ -51,6 +52,16 @@ namespace SitComTech.API.Controllers
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+        }
+
+        [HttpPost]
+        [Route("AddClient")]
+        public Client AddClient(ClientDataVM clientVM)
+        {
+            if (clientVM != null)
+                return _clientService.InsertClient(clientVM);
+            else
+                return null;
         }
     }
 }
