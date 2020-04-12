@@ -20,36 +20,21 @@
 <body style="background-color: #e9ecef;">
   <app-root>Loading..</app-root>
   <!-- Register page checkbox -->
+
   <script>
-// ===== Scroll to Top ==== 
-$(document).ready(function(){
-$(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-        $('#return-to-top').fadeIn(200);    // Fade in the arrow
-    } else {
-        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-    }
+   $(document).ready(function(){
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 100){
+            $('#scroll').fadeIn();
+        }else{
+            $('#scroll').fadeOut();
+        }
+    });
+    $('#scroll').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
 });
-$('#return-to-top').click(function() {      // When arrow is clicked
-    $('body,html').animate({
-        scrollTop : 0                       // Scroll to top of body
-    }, 500);
-});
-});
-</script>
-  <script>
-     function terms_changed(termsCheckBox){
-      if(termsCheckBox.checked)
-      {
-        document.getElementById("register_button").disabled=false;
-    console.log("false");
-      }
-      else
-      {
-        document.getElementById("register_button").disabled=true;
-    console.log("true");
-      }
-    }
   </script>
   <script>
   $(document).ready(function(){
@@ -81,7 +66,7 @@ $('#return-to-top').click(function() {      // When arrow is clicked
   $(".valueshhow").hide();
   $(".pencil").hide();
   $(".edit-data-options").show();
-  $(".table td, .table th").css("border", "none");
+  $("#generalinfo td, #generalinfo th").css("border", "none");
 
 });
 
@@ -90,7 +75,7 @@ $(".edit-data-options").click(function(){
    $(".valueshhow").show();
   $(".pencil").show();
   $(".edit-data-options").hide();
-  $(".table td, .table th").css("border-top", "1px solid #dee2e6");
+  $("#generalinfo td, #generalinfo th").css("border-top", "1px solid #dee2e6");
 });
 });
 
@@ -101,7 +86,7 @@ $(document).ready(function(){
   $(".valueshhow1").hide();
   $(".pencil1").hide();
   $(".edit-data-options1").show();
-  $(".table td, .table th").css("border", "none");
+  $("#marketinginfo td, #marketinginfo th").css("border", "none");
 });
 
 $(".edit-data-options1").click(function(){
@@ -109,7 +94,7 @@ $(".edit-data-options1").click(function(){
    $(".valueshhow1").show();
   $(".pencil1").show();
   $(".edit-data-options1").hide();
-  $(".table td, .table th").css("border-top", "1px solid #dee2e6");
+  $("#marketinginfo td, #marketinginfo th").css("border-top", "1px solid #dee2e6");
 });
 });
 $(document).ready(function(){
@@ -119,7 +104,7 @@ $(document).ready(function(){
   $(".valueshhow2").hide();
   $(".pencil2").hide();
   $(".edit-data-options2").show();
-  $(".table td, .table th").css("border", "none");
+  $("#address td, #address th").css("border", "none");
 });
 
 $(".edit-data-options2").click(function(){
@@ -127,7 +112,7 @@ $(".edit-data-options2").click(function(){
    $(".valueshhow2").show();
   $(".pencil2").show();
   $(".edit-data-options2").hide();
-  $(".table td, .table th").css("border-top", "1px solid #dee2e6");
+  $("#address td, #address th").css("border-top", "1px solid #dee2e6");
 });
 });
 $(document).ready(function(){
@@ -137,7 +122,7 @@ $(document).ready(function(){
   $(".valueshhow3").hide();
   $(".pencil3").hide();
   $(".edit-data-options3").show();
-  $(".table td, .table th").css("border", "none");
+  $("#additionalinfo td, #additionalinfo th").css("border", "none");
 });
 
 $(".edit-data-options3").click(function(){
@@ -145,7 +130,7 @@ $(".edit-data-options3").click(function(){
    $(".valueshhow3").show();
   $(".pencil3").show();
   $(".edit-data-options3").hide();
-  $(".table td, .table th").css("border-top", "1px solid #dee2e6");
+  $("#additionalinfo td, #additionalinfo th").css("border-top", "1px solid #dee2e6");
 });
 });
 

@@ -98,5 +98,10 @@ input:checked + .slider:before {
 .value-edit input
 {
     height:33px;
-    padding:0!important;
+   font: 15px/1.53845 Poppins,Arial,sans-serif;
+    text-transform: capitalize;
+}
+td.text-ellipsis {
+    font: 15px/1.53845 Poppins,Arial,sans-serif;
+    text-transform: capitalize;
 }

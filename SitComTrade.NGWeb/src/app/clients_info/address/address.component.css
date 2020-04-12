@@ -1,7 +1,6 @@
 .tabletxt
 {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    
     margin: 0;
     color: #8da5ba;
     line-height: 1.461538;
@@ -9,6 +8,10 @@
     width: auto;
     font-weight:500!important;
     border-bottom: transparent;
+}
+.table td, .table th {
+   
+    vertical-align: middle;
 }
 .value-edit2
 {
@@ -98,6 +101,10 @@ input:checked + .slider:before {
 .value-edit2 input
 {
     height:33px;
-    padding:0!important;
+    font: 15px/1.53845 Poppins,Arial,sans-serif;
+    text-transform: capitalize;
 }
-
+td.text-ellipsis {
+    font: 15px/1.53845 Poppins,Arial,sans-serif;
+    text-transform: capitalize;
+}
