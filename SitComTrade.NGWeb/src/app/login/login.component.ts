@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
   b: any;
   marked: any;
   isSubmitted = false;
+  pwdrecover: any;
+  getPassword: any;
+  resetForm: FormGroup;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
     console.log('login loaded');
@@ -33,6 +36,9 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-z0-9A-Z]+$')]],
       rememberMe: []
     });
+    this.resetForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]]
+    })
   }
 
   onSubmit() {
@@ -61,5 +67,12 @@ export class LoginComponent implements OnInit {
         err => {
           alert('Error');
         });
+  }
+  resetpwd() {
+    this.loginservice.resetPassword(this.pwdrecover).subscribe(res =>{
+      this.getPassword = res;
+      console.log('pwd',res);
+    })
+    
   }
 }

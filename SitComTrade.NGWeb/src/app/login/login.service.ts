@@ -23,4 +23,7 @@ export class LoginService {
   currencyName(obj: any):Observable<any>{
     return this.http.post<any>(API_URL + 'User/GetAllCurrencies', obj);
   }
+  resetPassword(obj: any):Observable<any>{
+    return this.http.post<any>(API_URL + 'User/ForgotPassword?username=kk84singh@gmail.com', obj)
+  }
 }
