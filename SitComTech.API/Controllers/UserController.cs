@@ -4,7 +4,6 @@ using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 
 namespace SitComTech.API.Controllers
@@ -172,14 +171,16 @@ namespace SitComTech.API.Controllers
                 string content = "<html><body><p>Dear <b></b></p>";
                 content += "<p>Below is your  credentials of SitCom  :</p>";
                 content += "<p>Login ID: " + username + "</p>";
-                content += "<p>Password: " + user.Password + "</p>";                
-                content += "<p>Happy SitCom !</p>";
+                content += "<p>Password: " + user.Password + "</p>";
+                content += "<p>Happy Trading !</p>";
                 content += "<p>SitCom Team</p></body></html>";
-                MailManager oMailManager = new MailManager();
-                oMailManager.To = user.Email;
-                oMailManager.Subject = "Forgot Password - SitCom!";
-                oMailManager.IsBodyHtml = true;
-                oMailManager.Body = content;
+                MailManager oMailManager = new MailManager
+                {
+                    To = user.Email,
+                    Subject = "Forgot Password - SitCom!",
+                    IsBodyHtml = true,
+                    Body = content
+                };
                 oMailManager.SendEmail();
                 return "Success";
             }

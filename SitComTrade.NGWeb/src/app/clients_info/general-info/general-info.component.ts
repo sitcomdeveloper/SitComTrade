@@ -88,12 +88,14 @@ edituserInfo() {
       phone: this.userGenralinfo.Phone,
       mobile: this.userGenralinfo.Mobile,
       secondemail: this.userGenralinfo.SecondEmail,
-      // itemid: this.userGenralinfo.ItemId
+      itemid: this.userGenralinfo.ItemId,
       owner: this.userGenralinfo.OwnerId,
       status: this.userGenralinfo.StatusName,
-      createddate: userDate
+      createddate: userDate,
       // lastcommentdate:: this.userGenralinfo.
-      // modifieddate: this.userGenralinfo.
+      modifieddate: this.userGenralinfo.UpdatedAt,
+      ftd: this.userGenralinfo.Ftd,
+      enabled: this.userGenralinfo.Enabled
       // conventionowner: this.userGenralinfo.
       // retentionowner: this.userGenralinfo.
       // citizenship: this.userGenralinfo.

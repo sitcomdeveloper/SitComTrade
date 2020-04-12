@@ -13,6 +13,6 @@ export class GeneralInfoService {
 
   constructor(private http:HttpClient) { }
   getUsersInfo(): Observable<any>{
-    return this.http.get<any>(API_URL + "User/GetUserDetailByOwnerId/1");
+    return this.http.get<any>(API_URL + "User/GetUserDetailByOwnerId/2");
   }
 }

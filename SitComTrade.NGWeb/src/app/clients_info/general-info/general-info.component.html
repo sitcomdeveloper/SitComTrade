@@ -74,38 +74,34 @@
         <tr>
           <th class="tabletxt">Item ID</th>
           <td>
-          <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="itemid" aria-required="true">
-          
-          </div>
+            <div class="valueshhow">
+              {{userGenralinfo?.ItemId}}
+            </div>
+            <div class="value-edit" data-rule="valueEdit" style="display:none;">
+              <input class="form-control" name="FirstName" type="text" formControlName="itemid" aria-required="true">
+            </div>
           </td>
           <th class="tabletxt">Owner</th>
           <td>
-           <div class="valueshhow">
-          
-          {{userGenralinfo?.OwnerId}}
-          </div>
-          
-           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-        
+           <div class="valueshhow">          
+          <!--{{userGenralinfo?.OwnerId}}-->
+             Krishan Kant
+          </div>          
+           <div class="value-edit" data-rule="valueEdit" style="display:none;">        
           <select id="cars" class="form-control">
-  <option value="Krishankant">Krishankant</option>
-  <!-- <option value=""></option>
-  <option value=""></option>
-  <option value=""></option> -->
-</select>
+            <option value="Krishankant">Krishankant</option> 
+          </select>
           </div>
           </td>
         </tr>
         <tr>
           <th class="tabletxt">Status</th>
           <td>
-          <div class="valueshhow">
-          {{userGenralinfo?.StatusName}}
-          </div>
+            <div class="valueshhow">
+              {{userGenralinfo?.ResponseStatus}}
+            </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="status"  aria-required="true">
-          
+          <input class="form-control" name="FirstName" type="text" formControlName="status"  aria-required="true">          
           </div>
           </td>
           <th class="tabletxt">Created Date</th>
@@ -124,28 +120,34 @@
           <td>
           
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="lastcommentdate" aria-required="true">
+            <input class="form-control" name="FirstName" type="text" formControlName="lastcommentdate" aria-required="true">
           
           </div>
           </td>
           <th class="tabletxt">Modified Date</th>
-          <!-- <td>{{userGenralinfo?.}}</td> -->
+          <td>
+            <div class="valueshhow">
+              {{userGenralinfo?.UpdatedAt}}
+            </div>
+            <div class="value-edit" data-rule="valueEdit" style="display:none;">
+              <input class="form-control" name="CretedDate" type="text" formControlName="modifieddate" aria-required="true">
+            </div>
+          </td>
         </tr>
         <tr>
           <th class="tabletxt">Convention Owner</th>
           <td>
            <div class="valueshhow">
-          {{userGenralinfo?.ConvertionOwner}}
+            {{userGenralinfo?.ConvertionOwner}}
           </div>
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="conventionowner" aria-required="true">
-          
+          <input class="form-control" name="FirstName" type="text" formControlName="conventionowner" aria-required="true">          
           </div>
           </td>
           <th class="tabletxt">Retention Owner</th>
           <td>
             <div class="valueshhow">
-          {{userGenralinfo?.RetentionOwner}}
+              {{userGenralinfo?.RetentionOwner}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" type="text" formControlName="retentionowner" aria-required="true">
@@ -157,10 +159,10 @@
           <th class="tabletxt">Citizenship</th>
           <td>
           
-           <div class="valueshhow">
-          {{userGenralinfo?.CitizenshipName}}
-          
-          </div>
+            <div class="valueshhow">
+              {{userGenralinfo?.CountryName}}
+
+            </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" type="text" formControlName="citizenship" aria-required="true">
           
@@ -168,13 +170,11 @@
           </td>
           <th class="tabletxt">Date of Birth</th>
           <td>
-           <div class="valueshhow">
-          
-          {{userGenralinfo?.DateOfBirth}}
+           <div class="valueshhow">          
+              {{userGenralinfo?.DateOfBirth}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="dob" aria-required="true">
-          
+          <input class="form-control" name="FirstName" type="text" formControlName="dob" aria-required="true">          
           </div>
           </td>
         </tr>
@@ -182,13 +182,14 @@
           <th class="tabletxt">FTD</th>
           <td>
            <div class="valueshhow">
-          
-          {{userGenralinfo?.FTD}}
+             <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': userGenralinfo?.ftd ? 'green':'gray' }"></i>          
           </div>
-          <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="ftd" aria-required="true">
-          
-          </div>
+           <div class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;">
+             <label class="switch ">
+               <input type="checkbox" class="primary">
+               <span class="slider round" formControlName="ftd"></span>
+             </label>
+           </div>
           </td>
           <th class="tabletxt">FTD Date</th>
           <td>
@@ -206,12 +207,12 @@
           <th class="tabletxt">Enabled</th>
           <td>
           <div class="valueshhow">
-          {{userGenralinfo?.Enabled}}
+            <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': userGenralinfo?.enabled ? 'green':'gray' }"></i>
           </div>
           <div class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;">
               <label class="switch ">
-          <input type="checkbox" class="primary">
-          <span class="slider round"></span>
+          <input type="checkbox" class="primary" >
+          <span class="slider round" formControlName="enabled"></span>
         </label>
           </div>
           </td>
