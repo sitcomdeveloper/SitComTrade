@@ -115,9 +115,15 @@ namespace SitComTech.Domain.Services
 
         public void Update(User entity)
         {
-            if (entity == null)
-                throw new ArgumentNullException("User");
-            _repository.Update(entity);
+            User userdata = _repository.GetById(entity.Id);
+            if (userdata != null)
+            {
+                entity.UpdatedAt = DateTime.Now;
+                entity.UpdatedBy = userdata.OwnerId;
+                entity.UpdatedByName = userdata.FirstName;
+                _repository.Update(entity);
+                SaveChanges();
+            }
         }
 
         public void Delete(User entity)
@@ -171,6 +177,11 @@ namespace SitComTech.Domain.Services
         public List<User> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
             return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
+        }
+
+        public User GetUserbyusername(string username)
+        {
+            return _repository.GetAll().Where(x => x.Email == username && x.Active == true && x.Deleted == false).FirstOrDefault();
         }
     }
 

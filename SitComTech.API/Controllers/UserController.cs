@@ -1,6 +1,8 @@
 ﻿using SitComTech.Core.Interface;
+using SitComTech.Core.Utils;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -57,6 +59,13 @@ namespace SitComTech.API.Controllers
                 return _userService.Insert(userVM);
             else
                 return null;
+        }
+
+        [HttpPost]
+        [Route("UpdateUserDetail")]
+        public void UpdateUserDetail(User userVM)
+        {
+            _userService.Update(userVM);
         }
 
         [HttpPost]
@@ -147,6 +156,37 @@ namespace SitComTech.API.Controllers
         public List<User> GetTradeAccountByType(TradeAccountVM tradevm)
         {
             return _userService.GetTradeAccountByType(tradevm);
+        }
+
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public string ForgotPassword(string username)
+        {
+            try
+            {
+                User user = _userService.GetUserbyusername(username);
+                if (user == null)
+                {
+                    return "Invalid User";
+                }
+                string content = "<html><body><p>Dear <b></b></p>";
+                content += "<p>Below is your  credentials of SitCom  :</p>";
+                content += "<p>Login ID: " + username + "</p>";
+                content += "<p>Password: " + user.Password + "</p>";                
+                content += "<p>Happy SitCom !</p>";
+                content += "<p>SitCom Team</p></body></html>";
+                MailManager oMailManager = new MailManager();
+                oMailManager.To = user.Email;
+                oMailManager.Subject = "Forgot Password - SitCom!";
+                oMailManager.IsBodyHtml = true;
+                oMailManager.Body = content;
+                oMailManager.SendEmail();
+                return "Success";
+            }
+            catch (Exception)
+            {
+                return "Failure";
+            }
         }
     }
 }
