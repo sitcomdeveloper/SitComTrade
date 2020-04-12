@@ -39,6 +39,7 @@ namespace SitComTech.API.App_Start
             builder.RegisterType<AdditionalInfoService>().As<IAdditionalInfoService>();
             builder.RegisterType<EmailService>().As<IEmailService>();
             builder.RegisterType<ShortMessageService>().As<IShortMessageService>();
+            builder.RegisterType<ClientService>().As<IClientService>();
             return builder.Build();
         }
     }
