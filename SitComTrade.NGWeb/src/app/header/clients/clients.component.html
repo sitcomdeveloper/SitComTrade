@@ -1,98 +1,3 @@
-
-<!-- <app-header></app-header>
-
-<div class="container-fluid">
-  <div class="row fist">
-    <div class="col-md-12 sub-header">
-      <div class="row">
-       
-        <div class="col-md-10"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-5 main-tab">
-
-          
-
-
-
-        </div>
-
-       
-        <div class="col-md-7">
-          <a routerLink=""><i class="fa fa-refresh"></i></a>
-          <a routerLink=""><i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i></a>
-          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"
-            style="padding-right:10px;margin-right:10px"></i>
-          <i class="fa fa-" aria-hidden="true"></i>
-          <a routerLink=""><i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i></a>
-          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
-          <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
-          <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<tabs>
-  <tab tabTitle="ALL">
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular style="width: 1335px; height: 300px;" class="ag-theme-balham" [enableSorting]="true"
-            [enableFilter]="true"  (click)="userClick()" [pagination]="true" [rowData]="rowData" [columnDefs]="columnDefs" enableColResize=true
-            suppressRowClickSelection=true, angularCompileRows=true, angularCompileHeaders=true rowHeight=50
-            autoHeight=80>
-          </ag-grid-angular>
-
-        </div>
-      </div>
-
-    </div>
-  </tab>
-  <tab tabTitle="ACCOUNTS">
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular style="width: 1335px; height: 300px;" class="ag-theme-balham" [enableSorting]="true"
-            [enableFilter]="true" [pagination]="true" [rowData]="rowData" [columnDefs]="columnDefs" enableColResize=true
-            suppressRowClickSelection=true, angularCompileRows=true, angularCompileHeaders=true rowHeight=50
-            autoHeight=80>
-          </ag-grid-angular>
-
-        </div>
-      </div>
-
-    </div>
-  </tab>
-  <tab tabTitle="LEADS">
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular style="width: 1335px; height: 300px;" class="ag-theme-balham" [enableSorting]="true"
-            [enableFilter]="true" [pagination]="true" [rowData]="rowData" [columnDefs]="columnDefs" enableColResize=true
-            suppressRowClickSelection=true, angularCompileRows=true, angularCompileHeaders=true rowHeight=50
-            autoHeight=80>
-          </ag-grid-angular>
-
-        </div>
-      </div>
-
-    </div>
-  </tab>
-  <tabs> -->
-
-<!-- ------------------------------------------------------------------------------------------ -->
-
-
-
 <app-header></app-header>
 
 <div class="container-fluid ">
@@ -115,154 +20,35 @@
         </div>
 
 
-        <div class="col-md-6 rightsubopt">
-          <a routerLink=""><i class="fa fa-refresh"></i></a>
-          <a routerLink="">
-            <select class="browser-default custom-select" style="width:43%;">
-              <option selected>All</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i></a>
-          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"
-            style="padding-right:10px;margin-right:10px"></i>
-          <i class="fa fa-" aria-hidden="true"></i>
-          <i class="fa fa-user bg-primary fa-lg" aria-hidden="true" (click)="newUser()" style="color: white"></i>
-          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
-          <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
-          <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i>
-
+        <div class="col-md-6 rightsubopt row">
+          <div class="firstopt col-md-7">
+            <a routerLink=""><i class="fa fa-refresh"></i></a>
+            <a routerLink="">
+              <select class="browser-default custom-select" style="width:43%;">
+                <option selected>All</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i>
+            </a>
+            <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"
+               style="padding-right:10px;margin-right:10px"></i>            
+          </div>
+          <div class="secondopt col-md-4" style="background-color: #159ac9;">
+            <i class="fa fa-user-plus col-md-4" aria-hidden="true" data-toggle="modal" data-target="#itemModal" style="border-right:solid 1px white"></i>
+            <i class="fa fa-pencil col-md-4" disabled aria-hidden="true" style="border-right:solid 1px white"></i>
+            <i class="fa fa-trash col-md-4" disabled aria-hidden="true"></i>
+          </div>
+          <div class="thirdopt col-md-1">
+            <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
 </div>
-
-<!-- <div class="container-fluid">
-            <div class="row">
-          <div class="col-md-12 grid">
-            <ag-grid-angular
-      style="width: 1335px; height: 300px;"
-      class="ag-theme-balham"
-      [enableSorting]="true"
-      [enableFilter]="true"
-      [pagination]="true"
-    
-    
-      [rowData]="rowData"
-      [columnDefs]="columnDefs"
-      enableColResize= true
-      suppressRowClickSelection= true,
-            angularCompileRows= true,
-            angularCompileHeaders= true
-            rowHeight=50
-            autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-          </div>
-        </div>
-    
-    </div> -->
-
-<!--<tabs>
-      <tab tabTitle="ALL">
-       
-        <div class="container-fluid">
-          <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular
-    style="width: 1335px; height: 300px;"
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    
-    
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    enableColResize= true
-    suppressRowClickSelection= true,
-          angularCompileRows= true,
-          angularCompileHeaders= true
-          rowHeight=50
-          autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-        </div>
-      </div>
-    
-    </div> 
-      </tab>
-      <tab tabTitle="ACCOUNTS">
-        
-        <div class="container-fluid">
-          <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular
-    style="width: 1335px; height: 300px;"
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    
-    
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    enableColResize= true
-    suppressRowClickSelection= true,
-          angularCompileRows= true,
-          angularCompileHeaders= true
-          rowHeight=50
-          autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-        </div>
-      </div>
-    
-    </div> 
-      </tab>
-      <tab tabTitle="LEADS">
-        
-        <div class="container-fluid">
-          <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular
-    style="width: 1335px; height: 300px;"
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    
-    
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    enableColResize= true
-    suppressRowClickSelection= true,
-          angularCompileRows= true,
-          angularCompileHeaders= true
-          rowHeight=50
-          autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-        </div>
-      </div>
-    
-    </div> 
-      </tab>
-    <tabs>-->
-
-
-<!-- Tab panes -->
 <div class="tab-content">
   <div id="all" class="container-fluid tab-pane active"><br>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -603,8 +389,7 @@
             <div class="">
               <div data-display-for="27_DeskId">
                 <div class="text-ellipsis" style="text-align:center">
-                  <!--<div *ngIf="show"><p>Show this only if "show" is true</p></div>-->
-                  <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': item.FTD ? 'green':'gray' }"></i>
+                  <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngClass]="(item.FTD)?'text-primary':'text-secondary'"></i>
                 </div>
               </div>
             </div>
@@ -637,9 +422,6 @@
             </div>
           </td>
         </tr>
-
-
-
       </tbody>
     </table>
   </div>
@@ -679,11 +461,6 @@
               <div class="text-ellipsis"><span>Email</span></div>
             </div>
           </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Type</span></div>
-            </div>
-          </th> -->
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Phone</span></div>
@@ -724,11 +501,6 @@
               <div class="text-ellipsis"><span>FTD</span></div>
             </div>
           </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Group</span></div>
-            </div>
-          </th> -->
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Desk</span></div>
@@ -979,7 +751,7 @@
               <div data-display-for="27_DeskId">
                 <div class="text-ellipsis" style="text-align:center">
                   <!--<div *ngIf="show"><p>Show this only if "show" is true</p></div>-->
-                  <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': actinfo.FTD ? 'green':'gray' }"></i>
+                  <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngClass]="(actinfo.FTD)?'text-primary':'text-secondary'"></i>
                 </div>
               </div>
             </div>
@@ -991,20 +763,6 @@
               </div>
             </div>
           </td>
-          <!-- <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">IMC</div>
-              </div>
-            </div>
-          </td> -->
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -1094,26 +852,7 @@
             <div class="cell-content">
               <div class="text-ellipsis"><span>Desk</span></div>
             </div>
-          </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Type</span></div>
-            </div>
-          </th>
-          <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Phone</span></div>
-            </div>
-          </th>
-         
-         
-          
-         
-         
-         
-          <th class="">
-
-          </th> -->
+          </th>          
         </tr>
       </thead>
 
@@ -1349,35 +1088,6 @@
               </div>
             </div>
           </td>
-
-          <!-- <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">IMC</div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">IMC</div>
-              </div>
-            </div>
-          </td> -->
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -1399,4 +1109,18 @@
     </table>
   </div>
 </div>
-<!-- dummy change -->
+<div class="modal" id="itemModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h2 class="modal-title" style="font-size: 1.2rem;">
+          Create Item
+        </h2>
+        <button type="button" class="close" data-dismiss="modal" style="outline:none">×</button>
+      </div>
+      <div class="modal-body" style="">
+        <app-item></app-item>
+      </div>
+    </div>
+  </div>
+</div>

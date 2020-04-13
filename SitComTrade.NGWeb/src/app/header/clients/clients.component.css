@@ -284,6 +284,17 @@ grid-auto-columns: max-content;
     z-index: 1;
     color: #45596a;
 }
-.filterrow, .rightsubopt, .chkCol {
+.filterrow, .chkCol {
   display: none;
+}
+.rightsubopt .firstopt, .rightsubopt .thirdopt{
+  visibility:hidden;
+}
+.rightsubopt {
+  padding-bottom: 2px;
+}
+.rightsubopt .secondopt {
+  background-color: #159ac9;
+  text-align: center;
+  padding: 10px;
 }
