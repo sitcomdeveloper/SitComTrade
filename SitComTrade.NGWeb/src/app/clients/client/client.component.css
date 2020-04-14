@@ -306,3 +306,12 @@ grid-auto-columns: max-content;
     box-shadow: 0 3px 7px rgba(0,0,0,.15);
     color:#000;
 }
+.searchbtn
+{
+    display:block;
+}
+.btn-group, .btn-group-vertical {
+    
+    display: -webkit-inline-box!important;
+    vertical-align: middle;
+}
