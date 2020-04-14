@@ -58,21 +58,21 @@ import { ItemComponent } from './clients/item/item.component';
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
-  // {path:'',redirectTo:'log',pathMatch:'full'},
-  // {path:'log',component:LogComponent},
-
- {path:'clients',component:ClientsComponent,canActivate:[AuthGuard],
+  
+{path:'',component:ClientsComponent},
+ {path:'clients',component:ClientsComponent,
 
     children:[
-      {path:'',redirectTo:'clients',pathMatch:'full'},
-      {path:'clients',component:ClientsComponent,
+      {path:'',redirectTo:'client',pathMatch:'full'},
+      {path:'client',component:ClientComponent,
           // children:[
           //   {path:'',redirectTo:'',pathMatch:'full'},
           //   {path:'all',component:AllComponent},
           //   {path:'accounts',component:AccountsComponent}
           // ]
     },
-      {path:'tradeaccounts',component:TradeaccountsComponent,canActivate:[AuthGuard]}
+      {path:'client',component:ClientComponent},
+      {path:'tradeaccounts',component:TradeaccountsComponent}
     ]},
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientsService } from 'src/app/header/clients/clients.service';
 
 @Component({
   selector: 'app-tradeaccounts',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TradeaccountsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private clientsservice:ClientsService) { }
+  tradeInfo: any;
+  fetchTradeDetails: any;
+
 
   ngOnInit() {
+    this.tradeDetails();
+  }
+  tradeDetails() {
+    this.clientsservice.getTradeUsers(this.tradeInfo).subscribe(res =>{
+      this.fetchTradeDetails = res;
+      console.log('tradeusers',res);
+    })
   }
 
 }

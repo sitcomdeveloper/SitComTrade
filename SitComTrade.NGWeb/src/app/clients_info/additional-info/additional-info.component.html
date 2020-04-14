@@ -1,10 +1,7 @@
-
-<!---------------------------------->
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-6 col-md-12">
+          <form [formGroup]="additionalForm">
           <table class="table" id="additionalinfo">
             <tr>
                 <th class="tabletxt">Supplied Docs</th>
@@ -13,7 +10,7 @@
                    {{userAdditionalInfo?.SuppliedDocs}}
                  </div>
                  <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" formControlName="supplieddocs" type="text"  aria-required="true">
           
           </div>
                 </td>
@@ -25,7 +22,7 @@
                  {{userAdditionalInfo?.AcceptedTermConditions}}
                  </div>
                  <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="acceptedtermsconditions" formControlName="acceptedtermsconditions" type="text"  aria-required="true">
           
           </div>
                 </td>
@@ -37,7 +34,7 @@
                    {{userAdditionalInfo?.SubscribedNewsletter}}
                  </div>
                  <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="subscribednewsletter" formControlName="subscribednewsletter" type="text"  aria-required="true">
           
           </div>
                 </td>
@@ -49,7 +46,7 @@
                    {{userAdditionalInfo?.IsOnline}}
                  </div>
                  <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="isonline" formControlName="isonline" type="text"  aria-required="true">
           
           </div>
                 </td>
@@ -61,15 +58,17 @@
                     {{userAdditionalInfo?.Description}}
                  </div>
                  <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="description" formControlName="description" type="text"  aria-required="true">
           
           </div>
                 </td>
               </tr>
             </table>
+          </form>
         </div>
     </div>
 </div>
+
 
 <!-------------------------------------->
 <!-- <div class="container-fluid">

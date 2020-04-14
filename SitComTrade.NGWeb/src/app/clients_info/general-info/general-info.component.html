@@ -44,7 +44,7 @@
           {{userGenralinfo?.Phone}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="phone" aria-required="true">
+          <input class="form-control" name="Phone" type="text" formControlName="phone" aria-required="true">
           
           </div>
           </td>
@@ -56,7 +56,7 @@
           {{userGenralinfo?.Mobile}}
           </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="mobile" aria-required="true">
+          <input class="form-control" name="Mobile" type="text" formControlName="mobile" aria-required="true">
           
           </div>
           </td>
@@ -66,7 +66,7 @@
           {{userGenralinfo?.SecondEmail}}
           </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="secondemail" aria-required="true">
+          <input class="form-control" name="SecondEmail" type="text" formControlName="secondemail" aria-required="true">
           
           </div>
           </td>
@@ -78,7 +78,7 @@
               {{userGenralinfo?.ItemId}}
             </div>
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-              <input class="form-control" name="FirstName" type="text" formControlName="itemid" aria-required="true">
+              <input class="form-control" name="ItemId" type="text" formControlName="itemid" aria-required="true">
             </div>
           </td>
           <th class="tabletxt">Owner</th>
@@ -101,7 +101,7 @@
               {{userGenralinfo?.ResponseStatus}}
             </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="status"  aria-required="true">          
+          <input class="form-control" name="Status" type="text" formControlName="status"  aria-required="true">          
           </div>
           </td>
           <th class="tabletxt">Created Date</th>
@@ -120,7 +120,7 @@
           <td>
           
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-            <input class="form-control" name="FirstName" type="text" formControlName="lastcommentdate" aria-required="true">
+            <input class="form-control" name="LastCommentDate" type="text" formControlName="lastcommentdate" aria-required="true">
           
           </div>
           </td>
@@ -141,7 +141,7 @@
             {{userGenralinfo?.ConvertionOwner}}
           </div>
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="conventionowner" aria-required="true">          
+          <input class="form-control" name="ConventionOwner" type="text" formControlName="conventionowner" aria-required="true">          
           </div>
           </td>
           <th class="tabletxt">Retention Owner</th>
@@ -150,7 +150,7 @@
               {{userGenralinfo?.RetentionOwner}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="retentionowner" aria-required="true">
+          <input class="form-control" name="RetentionOwner" type="text" formControlName="retentionowner" aria-required="true">
           
           </div>
           </td>
@@ -164,7 +164,7 @@
 
             </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="citizenship" aria-required="true">
+          <input class="form-control" name="Citizenship" type="text" formControlName="citizenship" aria-required="true">
           
           </div>
           </td>
@@ -174,7 +174,7 @@
               {{userGenralinfo?.DateOfBirth}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="dob" aria-required="true">          
+          <input class="form-control" name="Dob" type="text" formControlName="dob" aria-required="true">          
           </div>
           </td>
         </tr>
@@ -187,7 +187,7 @@
            <div class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;">
              <label class="switch ">
                <input type="checkbox" class="primary">
-               <span class="slider round" formControlName="ftd"></span>
+               <span class="slider round" name="Ftd"></span>
              </label>
            </div>
           </td>
@@ -198,7 +198,7 @@
           {{userGenralinfo?.FTDDate}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="ftddate"  aria-required="true">
+          <input class="form-control" name="FtdDate" type="text" formControlName="ftddate"  aria-required="true">
           
           </div>
           </td>
@@ -212,7 +212,7 @@
           <div class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;">
               <label class="switch ">
           <input type="checkbox" class="primary" >
-          <span class="slider round" formControlName="enabled"></span>
+          <span class="slider round" name="Enabled"></span>
         </label>
           </div>
           </td>
@@ -232,8 +232,12 @@
           
           </div></td>
           <th class="tabletxt">Desk</th>
+          <td class="text-ellipsis ">
+            <div class="valueshhow">
+            {{userGenralinfo?.Desk}}
+            </div>
           <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstName" formControlName="desk" type="text"  aria-required="true">
           
           </div></td>
         </tr>
@@ -256,8 +260,12 @@
           
           </div></td>
           <th class="tabletxt">AssignedDate</th>
+          <td class="text-ellipsis ">
+            <div class="valueshhow">
+            {{userGenralinfo?.AssignedDate}}
+            </div>
           <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="AssignedDate" formControlName="{{userGenralinfo?.AssignedDate}}" type="text"  aria-required="true">
           
           </div></td>
         </tr>
@@ -300,7 +308,7 @@
         <tr>
           <th class="tabletxt">FirstRegistrationDate</th>
           <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="FirstRegistrationDate" formControlName="{{userGenralinfo?.FirstRegistrationDate}}" type="text"  aria-required="true">
           
           </div></td>
           <th class="tabletxt">RegistrationType</th>
@@ -321,7 +329,7 @@
           {{userGenralinfo?.LastTaskDaysPast}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="LastTaskDaysPast" formControlName="{{userGenralinfo?.LastTaskDaysPast}}" type="text"  aria-required="true">
           
           </div>
           </td>
@@ -332,7 +340,7 @@
           {{userGenralinfo?.DaysAgoClientCreated}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
+          <input class="form-control" name="DaysAgoClientCreated" formControlName="{{userGenralinfo?.DaysAgoClientCreated}}" type="text"  aria-required="true">
           
           </div>
           </td>

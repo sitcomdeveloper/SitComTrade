@@ -93,7 +93,8 @@
 
 
 
-<app-header></app-header>
+<!-- <app-header></app-header>
+<router-outlet></router-outlet> -->
 
 <div class="container-fluid ">
   <div class="row fist1">
@@ -140,126 +141,8 @@
   </div>
 </div>
 
-<!-- <div class="container-fluid">
-            <div class="row">
-          <div class="col-md-12 grid">
-            <ag-grid-angular
-      style="width: 1335px; height: 300px;"
-      class="ag-theme-balham"
-      [enableSorting]="true"
-      [enableFilter]="true"
-      [pagination]="true"
-    
-    
-      [rowData]="rowData"
-      [columnDefs]="columnDefs"
-      enableColResize= true
-      suppressRowClickSelection= true,
-            angularCompileRows= true,
-            angularCompileHeaders= true
-            rowHeight=50
-            autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-          </div>
-        </div>
-    
-    </div> -->
 
-<!--<tabs>
-      <tab tabTitle="ALL">
-       
-        <div class="container-fluid">
-          <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular
-    style="width: 1335px; height: 300px;"
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    
-    
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    enableColResize= true
-    suppressRowClickSelection= true,
-          angularCompileRows= true,
-          angularCompileHeaders= true
-          rowHeight=50
-          autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-        </div>
-      </div>
-    
-    </div> 
-      </tab>
-      <tab tabTitle="ACCOUNTS">
-        
-        <div class="container-fluid">
-          <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular
-    style="width: 1335px; height: 300px;"
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    
-    
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    enableColResize= true
-    suppressRowClickSelection= true,
-          angularCompileRows= true,
-          angularCompileHeaders= true
-          rowHeight=50
-          autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-        </div>
-      </div>
-    
-    </div> 
-      </tab>
-      <tab tabTitle="LEADS">
-        
-        <div class="container-fluid">
-          <div class="row">
-        <div class="col-md-12 grid">
-          <ag-grid-angular
-    style="width: 1335px; height: 300px;"
-    class="ag-theme-balham"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    
-    
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    enableColResize= true
-    suppressRowClickSelection= true,
-          angularCompileRows= true,
-          angularCompileHeaders= true
-          rowHeight=50
-          autoHeight=80
-    
-    >
-    </ag-grid-angular>
-    
-        </div>
-      </div>
-    
-    </div> 
-      </tab>
-    <tabs>-->
+
 
 
 <!-- Tab panes -->
@@ -603,7 +486,7 @@
             <div class="">
               <div data-display-for="27_DeskId">
                 <div class="text-ellipsis" style="text-align:center">
-                  <!--<div *ngIf="show"><p>Show this only if "show" is true</p></div>-->
+                  
                   <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': item.FTD ? 'green':'gray' }"></i>
                 </div>
               </div>
@@ -679,11 +562,7 @@
               <div class="text-ellipsis"><span>Email</span></div>
             </div>
           </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Type</span></div>
-            </div>
-          </th> -->
+         
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Phone</span></div>
@@ -724,11 +603,7 @@
               <div class="text-ellipsis"><span>FTD</span></div>
             </div>
           </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Group</span></div>
-            </div>
-          </th> -->
+          
           <th class="">
             <div class="cell-content">
               <div class="text-ellipsis"><span>Desk</span></div>
@@ -877,7 +752,7 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
         </tr>
-        <!-- ACCOUNTS CODE------------------------------------------------------------ -->
+        
         <tr class="tablectn" *ngFor="let actinfo of accountInfo">
           <td class="">
             <div class="jsgrid-cell-content">
@@ -978,7 +853,7 @@
             <div class="">
               <div data-display-for="27_DeskId">
                 <div class="text-ellipsis" style="text-align:center">
-                  <!--<div *ngIf="show"><p>Show this only if "show" is true</p></div>-->
+                 
                   <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': actinfo.FTD ? 'green':'gray' }"></i>
                 </div>
               </div>
@@ -991,20 +866,7 @@
               </div>
             </div>
           </td>
-          <!-- <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">IMC</div>
-              </div>
-            </div>
-          </td> -->
+         
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -1095,25 +957,7 @@
               <div class="text-ellipsis"><span>Desk</span></div>
             </div>
           </th>
-          <!-- <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Type</span></div>
-            </div>
-          </th>
-          <th class="">
-            <div class="cell-content">
-              <div class="text-ellipsis"><span>Phone</span></div>
-            </div>
-          </th>
-         
-         
           
-         
-         
-         
-          <th class="">
-
-          </th> -->
         </tr>
       </thead>
 
@@ -1350,34 +1194,7 @@
             </div>
           </td>
 
-          <!-- <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">IMC</div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
-              </div>
-            </div>
-          </td>
-          <td class="">
-            <div class="">
-              <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">IMC</div>
-              </div>
-            </div>
-          </td> -->
+         
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -1399,4 +1216,3 @@
     </table>
   </div>
 </div>
-<!-- dummy change -->

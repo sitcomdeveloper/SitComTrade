@@ -64,7 +64,7 @@ export class GeneralInfoComponent implements OnInit {
       type :[''],
       firstregistrationdate :[''],
       registrationtype :[''],
-      lasttaskdayspost :[''],
+      lasttaskdayspast :[''],
       daysagoclientcreated :['']
     })
     this.usersInfo();
@@ -92,13 +92,34 @@ edituserInfo() {
       owner: this.userGenralinfo.OwnerId,
       status: this.userGenralinfo.StatusName,
       createddate: userDate,
-      // lastcommentdate:: this.userGenralinfo.
+      // lastcommentdate:: this.userGenralinfo.,
       modifieddate: this.userGenralinfo.UpdatedAt,
-      ftd: this.userGenralinfo.Ftd,
-      enabled: this.userGenralinfo.Enabled
       // conventionowner: this.userGenralinfo.
       // retentionowner: this.userGenralinfo.
-      // citizenship: this.userGenralinfo.
+      // citizenship: this.userGenralinfo.,
+      // dob: this.userGenralinfo.,
+      ftd: this.userGenralinfo.Ftd,
+      // ftdate: this.userGenralinfo.,
+      enabled: this.userGenralinfo.Enabled,
+      // clienttime: this.userGenralinfo.,
+      // lastlogindate: this.userGenralinfo.,
+      desk: this.userGenralinfo.Desk,
+      // hastasks: this.userGenralinfo.,
+      // taskcreateddate: this.userGenralinfo.,
+      // taskdate: this.userGenralinfo.,
+      assigneddate: this.userGenralinfo.AssignedDate,
+      // hasnotcompletedtasks: this.userGenralinfo.,
+      // totaldeposits: this.userGenralinfo.,
+      // ftdamount: this.userGenralinfo.,
+      // totalwithdrawals: this.userGenralinfo.,
+      // netdeposits: this.userGenralinfo.,
+      // type: this.userGenralinfo.TypeName,
+      firstregistrationdate: this.userGenralinfo.FirstRegistrationDate,
+      // registrationtype: this.userGenralinfo.,
+      lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
+      daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
+      
+     
       
 
 

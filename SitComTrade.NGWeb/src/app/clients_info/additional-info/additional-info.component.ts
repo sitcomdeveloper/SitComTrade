@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdditionalInfoService } from './additional-info.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-additional-info',
@@ -8,9 +9,17 @@ import { AdditionalInfoService } from './additional-info.service';
 })
 export class AdditionalInfoComponent implements OnInit {
   userAdditionalInfo:any;
-  constructor(private additionalinfoservice: AdditionalInfoService) { }
+  additionalForm: FormGroup
+  constructor(private additionalinfoservice: AdditionalInfoService,private fb: FormBuilder) {this.editAdditionalInfo(); }
 
   ngOnInit() {
+    this.additionalForm = this.fb.group({
+      supplieddocs: [''],
+      acceptedtermsconditions: [''],
+      subscribednewsletter: [''],
+      isonline: [''],
+      description: ['']
+    })
     this.additionalInfo();
   }
   additionalInfo(){
@@ -18,6 +27,18 @@ export class AdditionalInfoComponent implements OnInit {
       this.userAdditionalInfo = res;
       console.log('additionalinfo',res);
     });
+  }
+  editAdditionalInfo() {
+    this.additionalinfoservice.getAdditionalInfo().subscribe(res =>{
+      this.userAdditionalInfo = res;
+      this.additionalForm.patchValue({
+        supplieddocs: this.userAdditionalInfo.SuppliedDocs,
+        acceptedtermsconditions: this.userAdditionalInfo.AcceptedTermConditions,
+      subscribednewsletter: this.userAdditionalInfo.SubscribedNewsletter,
+      isonline: this.userAdditionalInfo.IsOnline,
+      description: this.userAdditionalInfo.Description
+      })
+    })
   }
 
 }

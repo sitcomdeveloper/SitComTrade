@@ -80,6 +80,7 @@ import { SmsComponent } from './clients_info/sms/sms.component';
 import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
 import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.component';
 import { ItemComponent } from './clients/item/item.component';
+import { AdditionalFieldsComponent } from './clients_info/additional-fields/additional-fields.component';
 
 // import { TasksInfoComponent } from './clients_info/clients-info/tasks-info/tasks-info.component';
 
@@ -153,6 +154,7 @@ import { ItemComponent } from './clients/item/item.component';
     PhoneMaskDirective,
     TasksInfoComponent,
     ItemComponent,
+    AdditionalFieldsComponent,
     
   ],
   imports: [
