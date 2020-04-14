@@ -11,13 +11,18 @@ export class TradeaccountsComponent implements OnInit {
   constructor(private clientsservice:ClientsService) { }
   tradeInfo: any[];
   fetchTradeDetails: any[];
-
+  TypeName = 'Real';
+	OwnerId  = 1;
 
   ngOnInit() {
     this.tradeDetails();
   }
   tradeDetails() {
-    this.clientsservice.getTradeUsers(this.tradeInfo).subscribe(res =>{
+    let obj = {
+      TypeName :'Real',
+  	OwnerId  : 1
+    }
+    this.clientsservice.getTradeUsers(obj).subscribe(res =>{
       this.fetchTradeDetails = res;
       console.log('tradeusers',res);
     })

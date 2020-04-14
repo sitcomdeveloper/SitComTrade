@@ -13,7 +13,7 @@ export class ClientsService {
   getUsers(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + "user/GetAllUsersByOwnerId/1", obj);
   }
-  getTradeUsers(obj: any): Observable<any> {
+  getTradeUsers(obj): Observable<any> {
     return this.http.post<any>(API_URL + "User/GetTradeAccountByType", obj);
   }
 }
