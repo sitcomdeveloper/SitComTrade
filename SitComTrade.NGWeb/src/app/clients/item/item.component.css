@@ -1,0 +1,28 @@
+.valign-label>span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal930 .valign-label {
+    display: table;
+    display: flex;
+    align-items: center;
+    height: 33px;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.valign-label {
+    font-weight: 500;
+    display: inline-table;
+    line-height: initial;
+    line-height: 1.230769;
+}
+
+.itemformcontrol {
+    font-size: 13px!important;
+    color: #45596a !important;
+    height: 33px!important;
+    border-radius: 2px!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
