@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../login/login.service';
 import { MustMatch } from 'src/app/common/validators/confirm-password.validator';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  
 })
 export class RegisterComponent implements OnInit {
 
@@ -26,7 +28,7 @@ export class RegisterComponent implements OnInit {
   a: any;
   b: any;
   marked: any;
-  
+  @ViewChild('myModalClose', { static: false }) modalClose;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
     console.log('register loaded');
@@ -86,7 +88,8 @@ export class RegisterComponent implements OnInit {
       Password: this.registerForm.value.password
     };
 
-    if(this.registerForm.valid){
+    if (this.registerForm.valid) {
+      this.modalClose.nativeElement.click();
       this.loginservice.saveUserInfo(this.userinfo)
       .subscribe(res => {
         this.router.navigateByUrl('clients');
