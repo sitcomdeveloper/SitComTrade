@@ -37,8 +37,9 @@ export class ClientComponent implements OnInit {
     }
     },);
       }
-  userClick() {
+  userClick(selectedItem: any) {
     this.router.navigateByUrl('/info');
+    console.log("Selected item Id: ", selectedItem.ItemId);
   }
   newUser()
   {

@@ -9,8 +9,8 @@ import { ClientsService } from 'src/app/header/clients/clients.service';
 export class TradeaccountsComponent implements OnInit {
 
   constructor(private clientsservice:ClientsService) { }
-  tradeInfo: any;
-  fetchTradeDetails: any;
+  tradeInfo: any[];
+  fetchTradeDetails: any[];
 
 
   ngOnInit() {
