@@ -1,4 +1,4 @@
-/* body {
+body {
     width: 100%!important;
     overflow-x:hidden!important;
   }
@@ -284,4 +284,4 @@ grid-auto-columns: max-content;
 }
 .filterrow, .rightsubopt, .chkCol {
   display: none;
-} */
+}
