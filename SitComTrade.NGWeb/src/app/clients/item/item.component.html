@@ -3,151 +3,39 @@
     <div class="row">
       <div class="col-md-12">
         <form method="post" novalidate="novalidate">
-          <div class="form-group">
-            <div class="radio-tabs">
-              <ul class="nav nav-tabs nav-justified" style="border:1px solid #dde7f9; border-radius:3px">
-                <li class="col-md-6" style="text-align:center; border-right:1px solid #dde7f9">
-                  <label>
-                    <input type="radio" group="itemtype"/>
-                    Account
-                  </label>
+         <div class="form-group">
+           <div class="radio-tabs">
+             <ul class="nav nav-tabs nav-justified" role="tablist">  
+                <li  class="nav-item active">
+                    <a class="nav-link active" data-toggle="tab"  href="#Account">
+                      <div class="input-radio" id="uniform-clientType0"><span class="checked"><input type="radio" name="clientType" id="clientType0"></span></div>
+                      <label for="clientType0">Account</label>
+                    </a>
                 </li>
-                <li class="col-md-6" style="text-align:center">
-                  <label>
-                    <input type="radio" group="itemtype"/>
-                    Lead
-                  </label>
+                <li  class="nav-item">
+                    <a class="nav-link active" data-toggle="tab"  href="#Lead">
+                      <div class="input-radio" id="uniform-clientType1"><span class=""><input type="radio" name="clientType" id="clientType1"></span></div>
+                      <label for="clientType1">Lead</label>
+                    </a>
                 </li>
               </ul>
-            </div>
-          </div>
+             </div>
+           </div>
           <div class="items form-horizontal">
             <div class="row form-group">
-              <div class="col-xs-6">
-                <div class="row">
-                  <div class="col-xs-3">
-                    <label class="valign-label" for="FirstName">
-                      <span data-tooltip-el="">First Name</span>
-                    </label>
-                  </div>
-                  <div class="col-xs-9">
-                    <input class="form-control" name="FirstName" type="text" id="14f32760-b0b5-fbd6-ffe9-60fc5b2b9627" aria-required="true">
-                  </div>
-                </div>
+            <div class="tab-content">
+              <div  class="tab-pane container active" id="Account">
+                <h3>HOME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
-              <div class="col-xs-6">
-                <div class="row">
-                  <div class="col-xs-3">
-                    <label class="valign-label" for="LastName">
-                      <span data-tooltip-el="">Last Name</span>
-                    </label>
-                  </div>
-                  <div class="col-xs-9">
-                    <input class="form-control" name="LastName" type="text" id="87bc78bc-d0c9-bad0-a05a-c4f719d0ecbc" aria-required="true">
-                  </div>
-                </div>
+              <div  class="tab-pane container fade" id="Lead">
+                <h3>Menu 1</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
             </div>
-            <div class="row form-group">
-              <div class="col-xs-6">
-                <div class="row">
-                  <div class="col-xs-3">
-                    <label class="valign-label" for="Email">
-                      <span data-tooltip-el="">Email</span>
-                    </label>
-                  </div>
-                  <div class="col-xs-9">
-                    <input class="form-control" name="Email" type="text" id="47ebe4f4-5e56-beba-b077-f875ee275673" aria-required="true">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="row">
-                  <div class="col-xs-3">
-                    <label class="valign-label" for="Phone">
-                      <span data-tooltip-el="">Phone</span>
-                    </label>
-                  </div>
-                  <div class="col-xs-9">
-                    <input class="form-control" name="Phone" type="text" id="1bfb0fb5-a352-893a-a198-23abc8145b79" aria-required="true">
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="row form-group">
-              <div class="col-xs-6">
-                <div class="row">
-                  <div class="col-xs-3">
-                    <label class="valign-label" for="Country">
-                      <span data-tooltip-el="">Country</span>
-                    </label>
-                  </div>
-                  <div class="col-xs-9">
-                    <div class="btn-group bootstrap-select form-control">
-                      <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="e0e49280-72fb-9343-876f-d1b4aa5cf13f" title="Select...">
-                        <span class="filter-option pull-left">Select...</span>&nbsp;
-                        <span class="bs-caret">
-                          <span class="caret"></span>
-                        </span>
-                      </button>
-                      <div class="dropdown-menu open" role="combobox">
-                        <div class="bs-searchbox">
-                          <input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
-                        </div>
-                      </div>
-                      <select class="form-control" name="Country" data-container="body" data-live-search="true" id="e0e49280-72fb-9343-876f-d1b4aa5cf13f" aria-required="true" tabindex="-98">
-                        <option value="">Select...</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="row" style="display: block;">
-                  <div class="col-xs-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
-                  <div class="col-xs-9"><input class="form-control" name="Password" type="text" id="c1f5c18f-b436-f955-4add-d2746501c470" aria-required="true"></div>
-                </div>
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col-xs-6">
-                <div class="row">
-                  <div class="col-xs-3"><label class="valign-label" for="_sendEmail"><span data-tooltip-el="">_sendEmail</span></label></div>
-                  <div class="col-xs-9">
-                    <div class="checkbox-inline"><label class="switcher">Yes<span class="checkcontrol"><input class="form-control default-checkbox" name="_sendEmail" type="checkbox" id="e08e7a71-e7a5-e94f-1da2-0b7ae717cba0" value="true"></span>No</label>&nbsp;</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="row" style="display: block;">
-                  <div class="col-xs-3"><label class="valign-label" for="GroupId"><span data-tooltip-el="">Group</span></label></div>
-                  <div class="col-xs-9">
-                    <div class="btn-group bootstrap-select form-control">
-                      <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="00edc5da-8f84-1650-6be6-78e860cd3717" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                      <div class="dropdown-menu open" role="combobox">
-                        <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                          <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                          <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">TradePro Markets Limited USD</span></a></li>
-                          <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">TradePro Markets Limited EUR</span></a></li>
-                          <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">TradePro Markets Limited GBP</span></a></li>
-                          <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">IB_DEMO_01</span></a></li>
-                          <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">TradePro Markets Limited BTC</span></a></li>
-                        </ul>
-                      </div>
-                      <select class="form-control" name="GroupId" data-container="body" data-live-search="true" id="00edc5da-8f84-1650-6be6-78e860cd3717" aria-required="true" tabindex="-98">
-                        <option value="">Select...</option>
-                        <option value="37" data-currency="1" data-is-demo="false">TradePro Markets Limited USD</option>
-                        <option value="42" data-currency="2" data-is-demo="false">TradePro Markets Limited EUR</option>
-                        <option value="43" data-currency="3" data-is-demo="false">TradePro Markets Limited GBP</option>
-                        <option value="44" data-currency="1" data-is-demo="true">IB_DEMO_01</option>
-                        <option value="45" data-currency="22" data-is-demo="false">TradePro Markets Limited BTC</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+       
           </div>          
         </form>
       </div>
