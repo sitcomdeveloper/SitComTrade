@@ -282,6 +282,27 @@ grid-auto-columns: max-content;
     z-index: 1;
     color: #45596a;
 }
-.filterrow, .rightsubopt, .chkCol {
+/* .filterrow, .rightsubopt, .chkCol {
   display: none;
+} */
+.rightsubopt .input-group select{
+    width:230px;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
+.rightsubopt .input-group select option
+{
+    padding: 0;
+    margin: 5px 0 0;
+    font-size: 13px;
+    border: 1px solid #dde7f9;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,.15);
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+    color:#000;
 }
