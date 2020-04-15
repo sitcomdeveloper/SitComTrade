@@ -9,13 +9,33 @@ namespace SitComTech.Core.Interface
     {
         Client InsertClient(ClientDataVM userDataVM);
 
-        List<Client> GetAllUsersByOwnerId(long ownerid);
+        List<ClientListVM> GetAllClientsByOwnerId(long ownerid);
 
-        Client GetUserDetailByOwnerId(long ownerid);
+        Client GetClientDetailById(long id);
 
         List<UserResponseStatus> GetLeadStatusList();
 
         List<Client> GetTradeAccountByType(TradeAccountVM tradeVM);
 
+    }
+
+    public interface IMarketingInfoService : IUnitOfWork<MarketingInfo>
+    {
+        MarketingInfo GetMarketingInfoByOwnerId(long ownerid);
+        MarketingInfo InsertMarketingInfo(MarketingInfo marketingdata);
+    }
+    public interface IAdditionalInfoService : IUnitOfWork<AdditionalInfo>
+    {
+        AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid);
+        AdditionalInfo InsertAdditionalInfo(AdditionalInfo marketingdata);
+    }
+
+    public interface IEmailService : IUnitOfWork<Email>
+    {
+        Email GetEmailByOwnerId(long ownerid);
+    }
+    public interface IShortMessageService : IUnitOfWork<ShortMessage>
+    {
+        ShortMessage GetShortMessageByOwnerId(long ownerid);
     }
 }

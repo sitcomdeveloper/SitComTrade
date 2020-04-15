@@ -30,7 +30,7 @@ namespace SitComTech.Model.DataObject
 
         public Nullable<long> AffiliateUserId { get; set; }
 
-        public virtual User UserTable { get; set; }
+        public virtual Client ClientTable { get; set; }
     }
 
     public class AffiliateUser : BaseConfig

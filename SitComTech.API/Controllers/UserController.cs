@@ -33,13 +33,7 @@ namespace SitComTech.API.Controllers
             //userList.Add(new User { Id=1, UserName = "Abc", Password = "Xyz",Email="abc@gmail.com",Phone="123456789",Active=true,Deleted=false,CreatedBy=1,CreatedTime=DateTime.Now,UpdatedBy=1,UpdatedTime=DateTime.Now });
             return userList;
         }
-
-        [HttpPost]
-        [Route("GetAllUsersByOwnerId/{ownerid}")]
-        public List<UserListVM> GetAllUsersByOwnerId(int ownerid)
-        {
-            return _userService.GetAllUsersByOwnerId(ownerid);
-        }
+       
         [HttpPost]
         [Route("IsAuthenticated")]
         public List<User> IsAuthenticated(UserVM userVM)
@@ -87,75 +81,13 @@ namespace SitComTech.API.Controllers
         {
             return _userService.GetCountryISDCodeById(countryid);
         }
-
-        [HttpGet]
-        [Route("GetMarketingInfoByOwnerId/{ownerid}")]
-        public MarketingInfo GetMarketingInfoByOwnerId(long ownerid)
-        {
-            return _marketingInfoService.GetMarketingInfoByOwnerId(ownerid);
-        }
-
-        [HttpGet]
-        [Route("GetAdditionalInfoByOwnerId/{ownerid}")]
-        public AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid)
-        {
-            return _additionalInfoeService.GetAdditionalInfoByOwnerId(ownerid);
-        }
-
-        [HttpGet]
-        [Route("GetEmailByOwnerId/{ownerid}")]
-        public Email GetEmailByOwnerId(long ownerid)
-        {
-            return _emailService.GetEmailByOwnerId(ownerid);
-        }
-
-        [HttpGet]
-        [Route("GetShortMessageByOwnerId/{ownerid}")]
-        public ShortMessage GetShortMessageByOwnerId(long ownerid)
-        {
-            return _shortMeassageService.GetShortMessageByOwnerId(ownerid);
-        }
-
-        [HttpGet]
-        [Route("GetUserDetailByOwnerId/{ownerid}")]
-        public User GetUserDetailByOwnerId(long ownerid)
-        {
-            return _userService.GetUserDetailByOwnerId(ownerid);
-        }
-
-        [HttpPost]
-        [Route("InsertMarketingInfo")]
-        public MarketingInfo InsertMarketingInfo(MarketingInfo marketingVM)
-        {
-            if (marketingVM != null)
-                return _marketingInfoService.InsertMarketingInfo(marketingVM);
-            else
-                return null;
-        }
-
-        [HttpPost]
-        [Route("InsertAdditionalInfo")]
-        public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionalVM)
-        {
-            if (additionalVM != null)
-                return _additionalInfoeService.InsertAdditionalInfo(additionalVM);
-            else
-                return null;
-        }
-
+       
         [HttpGet]
         [Route("GetLeadStatusList")]
         public List<UserResponseStatus> GetLeadStatusList()
         {
             return _userService.GetLeadStatusList();
-        }
-
-        [HttpPost]
-        [Route("GetTradeAccountByType")]
-        public List<User> GetTradeAccountByType(TradeAccountVM tradevm)
-        {
-            return _userService.GetTradeAccountByType(tradevm);
-        }
+        }      
 
         [HttpPost]
         [Route("ForgotPassword")]

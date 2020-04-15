@@ -20,7 +20,7 @@ namespace SitComTech.Model.DataObject
 
 		public string StreetAddress { get; set; }
 
-		public virtual User UserTable { get; set; }
+		public virtual Client ClientTable { get; set; }
 		public virtual Country CountryTable { get; set; }
 	}
 
