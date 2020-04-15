@@ -38,6 +38,8 @@ export class ClientComponent implements OnInit {
     },);
       }
   userClick(selectedItem: any) {
+    localStorage.clear();
+    localStorage.setItem("project", JSON.stringify(selectedItem));
     this.router.navigateByUrl('/info');
     console.log("Selected item Id: ", selectedItem.ItemId);
   }
