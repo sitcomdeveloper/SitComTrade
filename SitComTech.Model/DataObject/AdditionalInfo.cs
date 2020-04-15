@@ -14,6 +14,6 @@ namespace SitComTech.Model.DataObject
         public string Description { get; set; }
 
         public string PromoCode { get; set; }
-        public virtual User UserTable { get; set; }
+        public virtual Client ClientTable { get; set; }
     }
 }

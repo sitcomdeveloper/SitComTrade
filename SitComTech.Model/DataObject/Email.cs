@@ -23,6 +23,6 @@ namespace SitComTech.Model.DataObject
         public string ErrorMessage { get; set; }
 
         public string Body { get; set; }
-        public virtual User UserTable { get; set; }
+        public virtual Client ClientTable { get; set; }
     }
 }
