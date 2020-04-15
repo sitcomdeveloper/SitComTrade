@@ -70,7 +70,6 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: ['']
     });
     this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    
     console.log('getclientdata', this.Apptitle);
     this.userGenralinfo = this.Apptitle;
     // this.usersInfo();
