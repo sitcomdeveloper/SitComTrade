@@ -107,10 +107,10 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpGet]
-        [Route("GetClientDetailByOwnerId/{ownerid}")]
-        public Client GetClientDetailByOwnerId(long ownerid)
+        [Route("GetClientDetailById/{id}")]
+        public Client GetClientDetailById(long id)
         {
-            return _clientService.GetClientDetailByOwnerId(ownerid);
+            return _clientService.GetClientDetailById(id);
         }
 
         [HttpPost]

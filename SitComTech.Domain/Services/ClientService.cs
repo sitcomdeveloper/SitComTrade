@@ -108,9 +108,12 @@ namespace SitComTech.Domain.Services
         }
        
 
-        public Client GetClientDetailByOwnerId(long ownerid)
+        public Client GetClientDetailById(long Id)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.Id == ownerid).FirstOrDefault();
+            if ((long)Id == 0)
+                return null;
+            Client Client = _repository.GetById(Id);
+            return Client;
         }
 
         public List<UserResponseStatus> GetLeadStatusList()
@@ -123,7 +126,7 @@ namespace SitComTech.Domain.Services
 
         public List<Client> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
-            return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.Id == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
+            return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
         }
 
         public List<Client> GetAllUsersByOwnerId(long ownerid)
@@ -138,30 +141,30 @@ namespace SitComTech.Domain.Services
 
         public List<ClientListVM> GetAllClientsByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Join(_repository.GetAll(), users => users.OwnerId, owner => owner.Id,
-                (users, owner) => new { Users = users, Owner = owner })
-                .GroupJoin(_marketinginforepository.GetAll(), userowner => userowner.Users.Id, mrktinfo => mrktinfo.OwnerId,
+            return _repository.GetAll().Join(_repository.GetAll(), clients => clients.OwnerId, owner => owner.Id,
+                (clients, owner) => new { clients = clients, Owner = owner })
+                .GroupJoin(_marketinginforepository.GetAll(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.OwnerId,
                 (userowner, mrktinfo) => new { UserOwner = userowner, MarketInfo = mrktinfo })
                 .SelectMany(x => x.MarketInfo.DefaultIfEmpty(), (x, y) => new { x.UserOwner, MarketInfo = y })
-            .Where(x => x.UserOwner.Users.Active && !x.UserOwner.Users.Deleted && x.UserOwner.Users.OwnerId == ownerid).Select(x =>
+            .Where(x => x.UserOwner.clients.Active && !x.UserOwner.clients.Deleted && x.UserOwner.clients.OwnerId == ownerid).Select(x =>
             new ClientListVM
             {
-                ItemId = x.UserOwner.Users.ItemId,
-                FirstName = x.UserOwner.Users.FirstName,
-                LastName = x.UserOwner.Users.LastName,
-                CountryName = x.UserOwner.Users.CountryName,
-                Email = x.UserOwner.Users.Email,
-                TypeName = x.UserOwner.Users.TypeName,
-                Phone = x.UserOwner.Users.Phone,
+                ItemId = x.UserOwner.clients.ItemId,
+                FirstName = x.UserOwner.clients.FirstName,
+                LastName = x.UserOwner.clients.LastName,
+                CountryName = x.UserOwner.clients.CountryName,
+                Email = x.UserOwner.clients.Email,
+                TypeName = x.UserOwner.clients.TypeName,
+                Phone = x.UserOwner.clients.Phone,
                 OwnerName = x.UserOwner.Owner.FirstName + " " + x.UserOwner.Owner.LastName,
-                ResponseStatus = x.UserOwner.Users.ResponseStatus,
-                CreatedDate = x.UserOwner.Users.CreatedAt,
+                ResponseStatus = x.UserOwner.clients.ResponseStatus,
+                CreatedDate = x.UserOwner.clients.CreatedAt,
                 CampaignId = x.MarketInfo.CampaignID,
                 Tag = x.MarketInfo.Tag1,
                 Tag1 = x.MarketInfo.Tag2,
-                FTD = x.UserOwner.Users.FTD,
+                FTD = x.UserOwner.clients.FTD,
                 Group = "",
-                Desk = x.UserOwner.Users.Desk
+                Desk = x.UserOwner.clients.Desk
             }).ToList();
         }
     }

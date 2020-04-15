@@ -11,7 +11,7 @@ namespace SitComTech.Core.Interface
 
         List<ClientListVM> GetAllClientsByOwnerId(long ownerid);
 
-        Client GetClientDetailByOwnerId(long ownerid);
+        Client GetClientDetailById(long id);
 
         List<UserResponseStatus> GetLeadStatusList();
 
