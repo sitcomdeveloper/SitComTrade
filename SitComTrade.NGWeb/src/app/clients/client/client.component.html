@@ -57,8 +57,9 @@
   </div>
   <div class="btn-group mr-2" role="group" aria-label="Third group">
     
-          <i class="fa fa-" aria-hidden="true"></i>
-          <i class="fa fa-user bg-primary fa-lg" aria-hidden="true" (click)="newUser()" style="color: white"></i>
+          <a href="#" data-toggle="modal" data-target="#regModal">
+          <i class="fa fa-user bg-primary fa-lg" aria-hidden="true"  style="color: white"></i>
+          </a>
           <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
           <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
           
@@ -1148,4 +1149,23 @@
     </table>
   </div> 
 </div>
- 
+ <!------------------create new user model------------->
+<div class="modal" id="regModal">
+      <div class="modal-dialog modal930">
+        <div class="modal-content">          
+          <div class="modal-header" style="height: 4rem;">
+            <h1  class="modal-title createitemheader">
+              CREATE ITEM
+            </h1>
+            <button type="button" class="close" data-dismiss="modal" #myModalClose  style="outline:none">×</button>
+          </div>          
+          <div class="modal-body">            
+            <app-item></app-item>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+ <!--------------End create new user model--------------->

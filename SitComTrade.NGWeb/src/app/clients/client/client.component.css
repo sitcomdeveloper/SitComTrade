@@ -315,3 +315,25 @@ grid-auto-columns: max-content;
     display: -webkit-inline-box!important;
     vertical-align: middle;
 }
+.createitemheader
+{
+    text-transform: uppercase;
+    color: #000;
+    font: 700 21px Poppins,Arial,sans-serif;
+    
+    letter-spacing:1px;
+
+}
+.modal930
+{
+    width:930px!important;
+    max-width:930px!important;
+}
+.modal930 .modal-header {
+    padding: 20px 30px;
+}
+.modal930 .modal-body 
+{
+    padding: 15px 30px;
+    word-wrap: break-word;
+}
