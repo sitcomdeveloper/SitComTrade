@@ -12,20 +12,20 @@ export class GeneralInfoComponent implements OnInit {
   userGenralinfo: any;
   stk: any;
   editGeneralInfo = false;
-  editInfo = false
+  editInfo = false;
   userInfoForm: FormGroup;
-  Apptitle:any;
+  Apptitle: any;
   useraddinfo: any;
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute,private fb: FormBuilder) { }
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
-     this._route.params.subscribe(params => console.log(params));
+    this._route.params.subscribe(params => console.log(params));
     this._route.paramMap.subscribe(params => {
       this.stk = params.get("userid");
-      if(this.stk === "1") {
+      if (this.stk === "1") {
 
         this.editGeneralInfo = true;
-        
+
         this.editInfo = false;
       } else {
         this.editInfo = true;
@@ -33,47 +33,48 @@ export class GeneralInfoComponent implements OnInit {
     });
     this.userInfoForm = this.fb.group({
       firstName: [''],
-      lastName:[''],
-      email :[''],
-      phone :[''],
-      mobile :[''],
-      secondemail :[''],
-      itemid :[''],
-      owner :[''],
+      lastName: [''],
+      email: [''],
+      phone: [''],
+      mobile: [''],
+      secondemail: [''],
+      itemid: [''],
+      owner: [''],
       status: [''],
       createddate: [''],
       lastcommentdate: [''],
-      modifieddate :[''],
-      conventionowner :[''],
-      retentionowner :[''],
-      citizenship :[''],
-      dob :[''],
-      ftd :[''],
-      ftddate :[''],
-      enabled :[''],
-      clienttime :[''],
-      lastlogindate :[''],
-      desk :[''],
-      hastasks :[''],
-      taskcreateddate :[''],
-      taskdate :[''],
-      assigneddate :[''],
-      hasnotcompletedtasks :[''],
-      totaldeposits :[''],
-      ftdamount :[''],
-      totalwithdrawals :[''],
-      netdeposits :[''],
-      type :[''],
-      firstregistrationdate :[''],
-      registrationtype :[''],
-      lasttaskdayspast :[''],
-      daysagoclientcreated :['']
-    })
-      this.Apptitle = JSON.parse(localStorage.getItem('project'));
-        console.log( 'aaaaa', this.Apptitle);
-this.userGenralinfo= this.Apptitle;
-   // this.usersInfo();
-   this.edituserInfo();
+      modifieddate: [''],
+      conventionowner: [''],
+      retentionowner: [''],
+      citizenship: [''],
+      dob: [''],
+      ftd: [''],
+      ftddate: [''],
+      enabled: [''],
+      clienttime: [''],
+      lastlogindate: [''],
+      desk: [''],
+      hastasks: [''],
+      taskcreateddate: [''],
+      taskdate: [''],
+      assigneddate: [''],
+      hasnotcompletedtasks: [''],
+      totaldeposits: [''],
+      ftdamount: [''],
+      totalwithdrawals: [''],
+      netdeposits: [''],
+      type: [''],
+      firstregistrationdate: [''],
+      registrationtype: [''],
+      lasttaskdayspast: [''],
+      daysagoclientcreated: ['']
+    });
+    this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    
+    console.log('getclientdata', this.Apptitle);
+    this.userGenralinfo = this.Apptitle;
+    // this.usersInfo();
+    this.edituserInfo();
   }
   // usersInfo() {
 
@@ -82,14 +83,14 @@ this.userGenralinfo= this.Apptitle;
   //     console.log('generalinfo', res);
   //   });
   // }
-edituserInfo() {
- // this._generalinfoservice.getUsersInfo().subscribe(res => {
-      this.Apptitle = JSON.parse(localStorage.getItem('project'));
-        console.log( 'aaaaa', this.Apptitle);
-        this.userGenralinfo= this.Apptitle;
-     this.useraddinfo = this.userGenralinfo;
-    let date = this.useraddinfo.CreatedDate.split('T');
-    let userDate = date[0];
+  edituserInfo() {
+    // this._generalinfoservice.getUsersInfo().subscribe(res => {
+    this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    console.log('geteditdata', this.Apptitle);
+    this.userGenralinfo = this.Apptitle;
+    this.useraddinfo = this.userGenralinfo;
+    const date = this.useraddinfo.CreatedDate.split('T');
+    const userDate = date[0];
     this.userInfoForm.patchValue({
       firstName: this.useraddinfo.FirstName,
       lastName: this.useraddinfo.LastName,
@@ -127,12 +128,7 @@ edituserInfo() {
       // registrationtype: this.userGenralinfo.,
       lasttaskdayspast: this.useraddinfo.LastTaskDaysPast,
       daysagoclientcreated: this.useraddinfo.DaysAgoClientCreated,
-      
-     
-      
-
-
-    })
-  // });
-}
+    });
+    // });
+  }
 }

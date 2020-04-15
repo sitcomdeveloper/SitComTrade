@@ -1,48 +1,40 @@
 <app-header></app-header>
 <!--------------Subheader---->
 <div class="subheader">
-                <div class="account-panel">
-                <div class="main-holder">
-                <div class="account-main-details">
-                <p>ID: 431251<span class="type">Lead</span></p>
-                <h2>MASSIMO ZIZZA</h2></div><div class="account-details"></div>
-                </div>
-                <a class="history-back-link page-prev" href="">
-                Prev Page</a>
-                </div>
-                <div class="account-nav-panel">
-                    <div class="main-holder">
-                        <!--<div class="account-switcher">
-                        <ul><li><a class="disabled no-events link-prev" href="#">Prev
-                        <i class="fa fa-chevron-right"></i>
-                        </a>
-                        </li>
-                        <li><a aria-expanded="true" class="link-control dropdown-toggle" data-toggle="dropdown" href="#" role="button">Control</a>
-                        <div class="dropdown-menu pull-right"><p>Jump to clients:</p>
-                        </div></li>
-                        <li><a class="link-next" href="">Next</a>
-                        </li></ul></div>-->
-                        <div class="account-nav">
-                            <ul id="navPanel" style="    padding: 14px;
+  <div class="account-panel">
+    <div class="main-holder">
+      <div class="account-main-details">
+        <p>ID: {{userGenralinfo?.ItemId}}<span class="type">{{userGenralinfo?.TypeName}}</span></p>
+        <h2>{{userGenralinfo?.FirstName}} {{userGenralinfo?.LastName}}</h2>
+      </div>
+      <div class="account-details"></div>
+    </div>
+    <a class="history-back-link page-prev" href="">
+      Prev Page</a>
+  </div>
+  <div class="account-nav-panel">
+    <div class="main-holder">
+      <div class="account-nav">
+        <ul id="navPanel" style="    padding: 14px;
     padding-left: 0;">
-                              <li>
-                                 <a href="#tasks">Tasks</a>
-                              </li>
-                              <li>
-                                 <a href="#emails">Emails</a>
-                              </li>
-                              <li>
-                                 <a href="#sent-sms">Sms</a>
-                              </li>
-                              <li>
-                                 <a href="#registrationHistorys">RegistrationHistory</a>
-                              </li>
-                              </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#emails">Emails</a>
+          </li>
+          <li>
+            <a href="#sent-sms">Sms</a>
+          </li>
+          <li>
+            <a href="#registrationHistorys">RegistrationHistory</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--------------------------->
 <div class="container-fluid">
   <div class="row">
@@ -62,21 +54,22 @@
           <div class="card-header1 container" role="tab" id="headingOne">
             <h5 class="mb-0">
               <a class="box-heading" data-toggle="" aria-expanded="true" aria-controls="collapseOne">
-                <h2>General Info 
-               </h2>
-               
+                <h2>General Info
+                </h2>
+
               </a>
               <div class="box-control pull-right">
-              <div class="pencil"  id="edit">
-               <i class="fa fa-pencil "aria-hidden="true" ></i>
-               </div>
-               <!-- <button class="" [routerLink]="['/generalinfo',userid]"> 
+                <div class="pencil" id="edit">
+                  <i class="fa fa-pencil " aria-hidden="true"></i>
+                </div>
+                <!-- <button class="" [routerLink]="['/generalinfo',userid]"> 
                  </button> -->
-                 <div class="edit-data-options" >
-                 <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button" data-action="apply">
-                 <i class="fa fa-check dark">&nbsp;</i>Apply</a>
-                 <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel">Cancel</a></div>
-             </div>
+                <div class="edit-data-options">
+                  <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
+                    data-action="apply">
+                    <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+                  <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel">Cancel</a></div>
+              </div>
             </h5>
           </div>
 
@@ -91,27 +84,28 @@
           <div class="card-header1 container" role="tab" id="headingTwo">
             <h5 class="mb-0">
               <a class="box-heading" data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
-             <h2>   Comments  </h2>
+                <h2> Comments </h2>
               </a>
-               <div class="box-control pull-right">
+              <div class="box-control pull-right">
                 <a href="javascript:void(0);" class="btn-type02 dim no-events">
-                 <i class="fa fa-trash" aria-hidden="true"></i>
-                      Delete all
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                  Delete all
                 </a>
-                <a href="#addNewComment" class="btn-type02 collapsed" data-toggle="collapse" aria-controls="addNewComment" aria-expanded="false">
-                <i class="fa fa-plus" aria-hidden="true"></i>
+                <a href="#addNewComment" class="btn-type02 collapsed" data-toggle="collapse"
+                  aria-controls="addNewComment" aria-expanded="false">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
                   Add
                 </a>
                 <a href="#" class="btn-type02 dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                   All
-                
-                 </a>
-                 <ul class="dropdown-menu dropdown-menu2">
-                      <li><a href="javascript:void(0);" name="filterOption">All</a></li>
-                      <li><a href="javascript:void(0);" name="filterOption">Last 5</a></li>
-                      <li><a href="javascript:void(0);" name="filterOption">Mine</a></li>
-                 </ul>
-             </div>
+
+                </a>
+                <ul class="dropdown-menu dropdown-menu2">
+                  <li><a href="javascript:void(0);" name="filterOption">All</a></li>
+                  <li><a href="javascript:void(0);" name="filterOption">Last 5</a></li>
+                  <li><a href="javascript:void(0);" name="filterOption">Mine</a></li>
+                </ul>
+              </div>
             </h5>
           </div>
           <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
@@ -126,19 +120,20 @@
           <div class="card-header1 container" role="tab" id="headingThree">
             <h5 class="mb-0">
               <a class="collapsed box-heading" data-toggle="" aria-expanded="false" aria-controls="collapseThree">
-               <h2> Marketing Info</h2>
+                <h2> Marketing Info</h2>
               </a>
-                <div class="box-control pull-right">
-              <div class="pencil1"  id="edit1">
-               <i class="fa fa-pencil "aria-hidden="true" ></i>
-               </div>
-               <!---- <button class="" [routerLink]="['/generalinfo',userid]"> 
+              <div class="box-control pull-right">
+                <div class="pencil1" id="edit1">
+                  <i class="fa fa-pencil " aria-hidden="true"></i>
+                </div>
+                <!---- <button class="" [routerLink]="['/generalinfo',userid]"> 
                  </button>-->
-                 <div class="edit-data-options1" >
-                 <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button" data-action="apply">
-                 <i class="fa fa-check dark">&nbsp;</i>Apply</a>
-                 <a class="btn-type01 " id="gfg1" data-rule="button" data-action="cancel">Cancel</a></div>
-             </div>
+                <div class="edit-data-options1">
+                  <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
+                    data-action="apply">
+                    <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+                  <a class="btn-type01 " id="gfg1" data-rule="button" data-action="cancel">Cancel</a></div>
+              </div>
             </h5>
           </div>
           <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
@@ -148,24 +143,25 @@
           </div>
         </div>
 
-       
+
         <div class="card mb20">
           <div class="card-header1 container" role="tab" id="headingFour">
             <h5 class="mb-0">
               <a class="collapsed box-heading" data-toggle="" aria-expanded="false" aria-controls="collapseFour">
-               <h2> Address</h2>
+                <h2> Address</h2>
               </a>
-                <div class="box-control pull-right">
-              <div class="pencil2"  id="edit2">
-               <i class="fa fa-pencil "aria-hidden="true" ></i>
-               </div>
-               <!---- <button class="" [routerLink]="['/generalinfo',userid]"> 
+              <div class="box-control pull-right">
+                <div class="pencil2" id="edit2">
+                  <i class="fa fa-pencil " aria-hidden="true"></i>
+                </div>
+                <!---- <button class="" [routerLink]="['/generalinfo',userid]"> 
                  </button>-->
-                 <div class="edit-data-options2" >
-                 <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button" data-action="apply">
-                 <i class="fa fa-check dark">&nbsp;</i>Apply</a>
-                 <a class="btn-type01 " id="gfg1" data-rule="button" data-action="cancel">Cancel</a></div>
-             </div>
+                <div class="edit-data-options2">
+                  <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
+                    data-action="apply">
+                    <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+                  <a class="btn-type01 " id="gfg1" data-rule="button" data-action="cancel">Cancel</a></div>
+              </div>
             </h5>
           </div>
           <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
@@ -176,37 +172,39 @@
         </div>
 
         <div class="card">
-    <div class="card-header" role="tab" id="headingFive">
-      <h5 class="mb-0">
-        <a class="collapsed" data-toggle=""  aria-expanded="false" aria-controls="collapseFive">
-          Additional Fields
-        </a>
-      </h5>
-    </div>
-    <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
-      <div class="card-body">
-        <app-additional-fields></app-additional-fields>      </div>
-    </div>
-  </div>
+          <div class="card-header" role="tab" id="headingFive">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="" aria-expanded="false" aria-controls="collapseFive">
+                Additional Fields
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
+            <div class="card-body">
+              <app-additional-fields></app-additional-fields>
+            </div>
+          </div>
+        </div>
 
         <div class="card mb20">
           <div class="card-header1 container" role="tab" id="headingSix">
             <h5 class="mb-0">
               <a class="collapsed box-heading" data-toggle="" aria-expanded="false" aria-controls="collapseSix">
-               <h2> Additional Info
-</h2>
+                <h2> Additional Info
+                </h2>
               </a>
-                <div class="box-control pull-right">
-              <div class="pencil3"  id="edit3">
-               <i class="fa fa-pencil "aria-hidden="true" ></i>
-               </div>
-               <!---- <button class="" [routerLink]="['/generalinfo',userid]"> 
+              <div class="box-control pull-right">
+                <div class="pencil3" id="edit3">
+                  <i class="fa fa-pencil " aria-hidden="true"></i>
+                </div>
+                <!---- <button class="" [routerLink]="['/generalinfo',userid]"> 
                  </button>-->
-                 <div class="edit-data-options3" >
-                 <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button" data-action="apply">
-                 <i class="fa fa-check dark">&nbsp;</i>Apply</a>
-                 <a class="btn-type01 " id="gfg3" data-rule="button" data-action="cancel">Cancel</a></div>
-             </div>
+                <div class="edit-data-options3">
+                  <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
+                    data-action="apply">
+                    <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+                  <a class="btn-type01 " id="gfg3" data-rule="button" data-action="cancel">Cancel</a></div>
+              </div>
             </h5>
           </div>
           <div id="collapseSix" class="collapse show" role="tabpanel" aria-labelledby="headingSix">
@@ -219,16 +217,16 @@
         <div class="card mb20" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingSeven">
-            
-              <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false"
-                aria-controls="collapseSeven" id="tasks" style="color:#000;">
-                 <h5 class="mb-0">
-             
-                   Tasks
-                               </h5>
-                              <i class="fa fa-chevron-down collpsicon"></i>
 
-              </a>
+            <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false"
+              aria-controls="collapseSeven" id="tasks" style="color:#000;">
+              <h5 class="mb-0">
+
+                Tasks
+              </h5>
+              <i class="fa fa-chevron-down collpsicon"></i>
+
+            </a>
           </div>
           <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
             <div class="card-body">
@@ -240,14 +238,14 @@
         <div class="card mb20" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingEight">
-           
-              <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false"
-                aria-controls="collapseEight" style="color:#000;">
-               <h5 class="mb-0"> Email</h5>
 
-                 <i class="fa fa-chevron-down collpsicon"></i>
-              </a>
-            
+            <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false"
+              aria-controls="collapseEight" style="color:#000;">
+              <h5 class="mb-0"> Email</h5>
+
+              <i class="fa fa-chevron-down collpsicon"></i>
+            </a>
+
           </div>
           <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
             <div class="card-body">
@@ -259,17 +257,17 @@
         <div class="card mb20" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingNine">
-           
-              <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false"
-                aria-controls="collapseNine" style="color:#000;">
-               
-                <h5 class="mb-0">
-                Sms 
-                 </h5>
-                
-                 <i class="fa fa-chevron-down collpsicon"></i>
-                </a>
-           
+
+            <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false"
+              aria-controls="collapseNine" style="color:#000;">
+
+              <h5 class="mb-0">
+                Sms
+              </h5>
+
+              <i class="fa fa-chevron-down collpsicon"></i>
+            </a>
+
           </div>
           <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
             <div class="card-body">
@@ -281,16 +279,16 @@
         <div class="card mb20 mb4" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingTen">
-          
-              <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false"
-                aria-controls="collapseTen" style="color:#000;">
-              
-               <h5 class="mb-0">
-                Registration History 
-                </h5>
-                 <i class="fa fa-chevron-down collpsicon"></i>
-                </a>
-           
+
+            <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false"
+              aria-controls="collapseTen" style="color:#000;">
+
+              <h5 class="mb-0">
+                Registration History
+              </h5>
+              <i class="fa fa-chevron-down collpsicon"></i>
+            </a>
+
           </div>
           <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen">
             <div class="card-body">
@@ -303,21 +301,21 @@
     </div>
 
     <div class="col-xs-3 col-md-4">
-     <div id="sidebar">
-   <div class="sidenav" style="display: block;">
-      <h2>Actions</h2>
-      <ul style="display: block;">
-         <li><a href="javascript:void(0);"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
-      </ul>
-      <ul style="display: block;">
-         <li><a href="javascript:void(0);"><i class="fa fa-refresh">&nbsp;</i>Add task</a></li>
-         <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send email</a></li>
-         <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
-         <li><a href="javascript:void(0);"><i class="fa fa-history">&nbsp;</i>View history</a></li>
-      </ul>
-   </div>
-</div>
+      <div id="sidebar">
+        <div class="sidenav" style="display: block;">
+          <h2>Actions</h2>
+          <ul style="display: block;">
+            <li><a href="javascript:void(0);"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
+          </ul>
+          <ul style="display: block;">
+            <li><a href="javascript:void(0);"><i class="fa fa-refresh">&nbsp;</i>Add task</a></li>
+            <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send email</a></li>
+            <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
+            <li><a href="javascript:void(0);"><i class="fa fa-history">&nbsp;</i>View history</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<app-footer></app-footer> 
+<app-footer></app-footer>

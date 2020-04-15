@@ -333,5 +333,18 @@ div#headingOne {
 {
     float:left;
 }
+.type{
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background: #12baee;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    min-width: 60px;
+    padding: 5px 15px;
+    margin: -3px 25px;
+    font-size: 10px;
+}
 
 

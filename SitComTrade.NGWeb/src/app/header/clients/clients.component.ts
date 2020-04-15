@@ -10,65 +10,63 @@ import { Router } from '@angular/router';
 
 export class ClientsComponent implements OnInit {
   columnDefs = [
-    {headerName:'Id',field:'Id',headerHeight:'50',autoHeight:true,rowHeight:50},
-    {headerName: 'FirstName', field: 'FirstName',autoHeight:true},
-    {headerName: 'LastName', field: 'LastName'},
-    {headerName: 'Country', field: 'Country'},
-    {headerName:'Email',field:'Email'},
-    {headerName:'Type',field:'Type'},
-    {headerName: 'Phone', field: 'Phone'},
-    {headerName:'Owner',field:'Owner'},
-    {headerName:'Status',field:'Status'},
-    {headerName:'Created Date',field:'Created Date'},
-    {headerName:'Campaign Id',field:'Campaign Id'},
-    {headerName:'Tag',field:'Tag'},
-    {headerName:'Tag1',field:'Tag1'},
-    {headerName:'FTD',field:'FTD'},
-    {headerName:'Group',field:'Group'},
-    {headerName:'Desk',field:'Desk'},
-];
+    { headerName: 'Id', field: 'Id', headerHeight: '50', autoHeight: true, rowHeight: 50 },
+    { headerName: 'FirstName', field: 'FirstName', autoHeight: true },
+    { headerName: 'LastName', field: 'LastName' },
+    { headerName: 'Country', field: 'Country' },
+    { headerName: 'Email', field: 'Email' },
+    { headerName: 'Type', field: 'Type' },
+    { headerName: 'Phone', field: 'Phone' },
+    { headerName: 'Owner', field: 'Owner' },
+    { headerName: 'Status', field: 'Status' },
+    { headerName: 'Created Date', field: 'Created Date' },
+    { headerName: 'Campaign Id', field: 'Campaign Id' },
+    { headerName: 'Tag', field: 'Tag' },
+    { headerName: 'Tag1', field: 'Tag1' },
+    { headerName: 'FTD', field: 'FTD' },
+    { headerName: 'Group', field: 'Group' },
+    { headerName: 'Desk', field: 'Desk' },
+  ];
 
 
-rowData = [
+  rowData = [
     // {make: 'Toyota', model: 'Celica', price: 35000},
     // {make: 'Ford', model: 'Mondeo', price: 32000},
     // {make: 'Porsche', model: 'Boxter', price: 72000}
-];
-accountInfo: any[];
+  ];
+  accountInfo: any[];
   leadInfo: any[];
-  clientInfo:any[];
-  
+  clientInfo: any[];
 
-  constructor(private _clientservice: ClientsService,private router:Router) { }
+  constructor(private _clientservice: ClientsService, private router: Router) { }
 
   ngOnInit() {
-this.userDetails();
+    this.userDetails();
   }
   userDetails() {
     this._clientservice.getUsers(this.clientInfo).subscribe(res => {
-      if(res !== null && res !== undefined && res !== '') {
-      this.rowData  = res;
-      this.accountInfo =  this.rowData.filter(m => {
-        if (m.TypeName === 'Real') {
-          return m;
-        }
-      })
-      this.leadInfo =  this.rowData.filter(p => {
-        if(p.TypeName === 'Lead') {
-          return p;
-        }
-      })
-    }
-    },);
+      if (res !== null && res !== undefined && res !== '') {
+        this.rowData = res;
+        this.accountInfo = this.rowData.filter(m => {
+          if (m.TypeName === 'Real') {
+            return m;
+          }
+        })
+        this.leadInfo = this.rowData.filter(p => {
+          if (p.TypeName === 'Lead') {
+            return p;
+          }
+        })
       }
+    });
+  }
   userClick() {
     this.router.navigateByUrl('/info');
   }
-  newUser()
-  {
-    this.router.navigateByUrl('/user');
-  }
-  
+  // newUser() {
+  //   this.router.navigateByUrl('/user');
+  // }
+
 }
 
 // {headerName: 'Item ID', field: 'ID'},

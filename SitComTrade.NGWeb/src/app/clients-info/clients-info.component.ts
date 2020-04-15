@@ -7,16 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./clients-info.component.css']
 })
 export class ClientsInfoComponent implements OnInit {
-userid: any;
-  constructor(private router:Router) { }
+  userid: any;
+  Apptitle: any;
+  userGenralinfo: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.userid = '1';
+    this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    console.log('getclientdata', this.Apptitle);
+    this.userGenralinfo = this.Apptitle;
   }
-  genInfo() {
-    
-     this.router.navigateByUrl('/generalinfo/:1');
-     
-  }
+  // genInfo() {
+
+  //    this.router.navigateByUrl('/generalinfo/:1');
+
+  // }
 
 }

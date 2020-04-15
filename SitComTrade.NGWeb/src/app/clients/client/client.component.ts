@@ -15,31 +15,32 @@ export class ClientComponent implements OnInit {
 
   accountInfo: any[];
   leadInfo: any[];
-  clientInfo:any[];
+  clientInfo: any[];
 
   ngOnInit() {
     this.userDetails();
   }
   userDetails() {
     this._clientservice.getUsers(this.clientInfo).subscribe(res => {
-      if(res !== null && res !== undefined && res !== '') {
+      if (res !== null && res !== undefined && res !== '') {
       this.rowData  = res;
       this.accountInfo =  this.rowData.filter(m => {
         if (m.TypeName === 'Real') {
           return m;
         }
-      })
+      });
       this.leadInfo =  this.rowData.filter(p => {
-        if(p.TypeName === 'Lead') {
+        if (p.TypeName === 'Lead') {
           return p;
         }
-      })
+      });
     }
     },);
       }
   userClick(selectedItem: any) {
     localStorage.clear();
     localStorage.setItem("project", JSON.stringify(selectedItem));
+    console.log('selecteditem', JSON.stringify(selectedItem));
     this.router.navigateByUrl('/info');
     console.log("Selected item Id: ", selectedItem.ItemId);
   }
