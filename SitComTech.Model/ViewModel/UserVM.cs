@@ -29,31 +29,6 @@ namespace SitComTech.Model.ViewModel
 
         public string Password { get; set; }
 
-    }
-    public class UserListVM
-    {
-        public string ItemId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string CountryName { get; set; }
-        public string Email { get; set; }
-        public string TypeName { get; set; }
-        public string Phone { get; set; }
-        public string OwnerName { get; set; }
-        public string ResponseStatus { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string CampaignId { get; set; }
-        public string Tag { get; set; }
-        public string Tag1 { get; set; }
-        public bool? FTD { get; set; }
-        public string Group { get; set; }
-        public string Desk { get; set; }
-    }
-
-    public class TradeAccountVM
-    {
-        public string TypeName { get; set; }
-        public long OwnerId { get; set; }
-    }
+    }   
 
 }

@@ -63,5 +63,75 @@ namespace SitComTech.API.Controllers
             else
                 return null;
         }
+
+        [HttpPost]
+        [Route("GetAllClientsByOwnerId/{ownerid}")]
+        public List<ClientListVM> GetAllClientsByOwnerId(int ownerid)
+        {
+            return _clientService.GetAllClientsByOwnerId(ownerid);
+        }
+
+        [HttpPost]
+        [Route("GetTradeAccountByType")]
+        public List<Client> GetTradeAccountByType(TradeAccountVM tradevm)
+        {
+            return _clientService.GetTradeAccountByType(tradevm);
+        }
+
+        [HttpGet]
+        [Route("GetMarketingInfoByOwnerId/{ownerid}")]
+        public MarketingInfo GetMarketingInfoByOwnerId(long ownerid)
+        {
+            return _marketingInfoService.GetMarketingInfoByOwnerId(ownerid);
+        }
+
+        [HttpGet]
+        [Route("GetAdditionalInfoByOwnerId/{ownerid}")]
+        public AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid)
+        {
+            return _additionalInfoeService.GetAdditionalInfoByOwnerId(ownerid);
+        }
+
+        [HttpGet]
+        [Route("GetEmailByOwnerId/{ownerid}")]
+        public Email GetEmailByOwnerId(long ownerid)
+        {
+            return _emailService.GetEmailByOwnerId(ownerid);
+        }
+
+        [HttpGet]
+        [Route("GetShortMessageByOwnerId/{ownerid}")]
+        public ShortMessage GetShortMessageByOwnerId(long ownerid)
+        {
+            return _shortMeassageService.GetShortMessageByOwnerId(ownerid);
+        }
+
+        [HttpGet]
+        [Route("GetClientDetailById/{id}")]
+        public Client GetClientDetailById(long id)
+        {
+            return _clientService.GetClientDetailById(id);
+        }
+
+        [HttpPost]
+        [Route("InsertMarketingInfo")]
+        public MarketingInfo InsertMarketingInfo(MarketingInfo marketingVM)
+        {
+            if (marketingVM != null)
+                return _marketingInfoService.InsertMarketingInfo(marketingVM);
+            else
+                return null;
+        }
+
+        [HttpPost]
+        [Route("InsertAdditionalInfo")]
+        public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionalVM)
+        {
+            if (additionalVM != null)
+                return _additionalInfoeService.InsertAdditionalInfo(additionalVM);
+            else
+                return null;
+        }
+
     }
 }
