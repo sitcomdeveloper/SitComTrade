@@ -73,19 +73,13 @@ import { GeneralInfoComponent } from './clients_info/general-info/general-info.c
 import { CommentsComponent } from './clients_info/comments/comments.component';
 import { MarketingInfoComponent } from './clients_info/marketing-info/marketing-info.component';
 import { AddressComponent } from './clients_info/address/address.component';
-// import { AdditionalFieldsComponent } from './clients_info/additional-fields/additional-fields.component';
+
 import { AdditionalInfoComponent } from './clients_info/additional-info/additional-info.component';
 import { EmailComponent } from './clients_info/email/email.component';
 import { SmsComponent } from './clients_info/sms/sms.component';
 import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
 import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.component';
 import { ItemComponent } from './clients/item/item.component';
-import { AdditionalFieldsComponent } from './clients_info/additional-fields/additional-fields.component';
-
-// import { TasksInfoComponent } from './clients_info/clients-info/tasks-info/tasks-info.component';
-
-// import {ui.grid.autoResize} from 'ag-grid-angular';
-
 
 @NgModule({
   declarations: [
@@ -154,7 +148,6 @@ import { AdditionalFieldsComponent } from './clients_info/additional-fields/addi
     PhoneMaskDirective,
     TasksInfoComponent,
     ItemComponent,
-    AdditionalFieldsComponent,
     
   ],
   imports: [
