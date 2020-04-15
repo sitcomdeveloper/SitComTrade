@@ -35,3 +35,54 @@
 .itemtabcontent {
     width: 100%;
 }
+.modal .radio-tabs {
+    margin: 0 0 30px;
+}
+.nav-tabs.nav-justified>li {
+    display: table-cell;
+    width: 1%;
+}
+
+.nav-tabs.nav-justified>li {
+    float: none;
+}
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+}
+.modal .radio-tabs li.active a>* {
+    cursor: default;
+}
+
+.itemradio {
+    position: relative;
+    margin: 1px 5px 0 0;
+    vertical-align: top;
+}
+.nav-justified li a
+{
+    border-color: #dde7f9;
+    color: #45596a;
+    margin:0;
+}
+.radio-tabs .nav-tabs>li>a {
+    padding: 9px 10px;
+    line-height: 18px;
+    color: #aab8d3;
+    border-color: #dde7f9;
+    border-radius: 0;
+    margin: 0 0 0 -1px;
+    position: relative;
+}
+.input-radio {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    margin: 1px 0 0 -20px;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+ .radio-tabs .nav-tabs>li.active>a, .modal .radio-tabs .nav-tabs>li.active>a:focus, .modal .radio-tabs .nav-tabs>li.active>a:hover {
+    border-color: #dde7f9;
+    color: #45596a;
+}
