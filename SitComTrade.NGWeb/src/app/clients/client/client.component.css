@@ -1,12 +1,19 @@
 body {
     width: 100%!important;
     overflow-x:hidden!important;
+    font: 15px/1.53845 Poppins,Arial,sans-serif;
+    -moz-transform: scale(.8,.8);
+    transform-origin: 50% 0;
   }
 .row-gutter
 {
     margin-right: 15px;
     
 }
+/* .holder {
+    background: #12baee;
+    border-radius: 2px;
+} */
 .sub-header{
     position: relative;
     z-index: 10;
@@ -16,6 +23,15 @@ body {
    height: 82px;
 
 }
+.z_co_dropdown
+{
+    width:68px;
+}
+/* #.z_co_dropdown option {
+      width: 520px;
+} */
+
+
 .breadcrumb
 {
     margin-left: 5px;
@@ -336,4 +352,66 @@ grid-auto-columns: max-content;
 {
     padding: 15px 30px;
     word-wrap: break-word;
+}
+.comparation-type-3
+{
+    left: 0;
+    color: #a9c1d5;
+    text-align: center;
+    position: absolute;
+    width: 33px;
+    height: 100%;
+    top: 7px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 4;
+    font-size:12px;
+}
+.dropform
+{
+    height: 27px;
+    width:69px;
+}
+.cstm-search
+{
+        position: relative;
+}
+.radiondrop
+{
+    padding: 0;
+    margin: 5px 0 0;
+    font-size: 13px;
+    border: 1px solid #dde7f9;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,.15);
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+    width:100%;
+}
+.radiondrop  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.radiondrop  ul label {
+    font-weight: 400;
+    display: flex;
+    margin: 0;
+    padding: 3px 15px 3px 33px;
+    color: #45596a;
+}
+
+.radiondrop  ul label span {
+    display: block;
+    width: 16px;
+    height: 16px;
+  
+}
+.fistinpt {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    margin: 1px 0 0 -20px;
+    padding: 0;
+    width: 16px;
+    height: 16px;
 }

@@ -66,7 +66,7 @@
           <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
           
   </div>
-  <div class="btn-group mr-2" role="group" aria-label="Four group">
+  <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
     
          
           <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i>
@@ -184,12 +184,77 @@
             <div class=""><span>x</span><i class="fa fa-star" title="Clear filter"></i></div>
           </td>
           <td class="">
-            <select class="browser-default custom-select1">
-              <option _ngcontent-pxh-c1="" selected="">All</option>
-              <option _ngcontent-pxh-c1="" value="1" ng-reflect-value="1">One</option>
-              <option _ngcontent-pxh-c1="" value="2" ng-reflect-value="2">Two</option>
-              <option _ngcontent-pxh-c1="" value="3" ng-reflect-value="3">Three</option>
-            </select>
+
+          <!-------------------------------->
+            <div class="jsgrid-cell-content">
+   <div class="cstm-search input-control empty">
+      <div class="checkbox-dd">
+         
+         <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+         <div class="drop dropdown-menu radiondrop"  aria-labelledby="firstid">
+            <form>
+               <ul>
+                  <li class="active">
+                     <label>
+                        <div class="input-radio fistinpt"><span class="">
+                        <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                        </span>
+                        </div>
+                        Contains
+                     </label>
+                  </li>
+                  <li class="active">
+                     <label>
+                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                        Not Contains
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                        Equals
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                        Not Equals
+                     </label>
+                  </li>
+                  <li class="active">
+                     <label>
+                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                        Starts With
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                        End With
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                        Empty
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                        NotEmpty
+                     </label>
+                  </li>
+               </ul>
+            </form>
+         </div>
+      </div>
+      <input class="form-control dropform" name="ItemId_condition" type="text" id="" data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+   </div>
+</div>
+
+
+            <!------------------------->
           </td>
           <td class="">
             <select class="browser-default custom-select1">
@@ -824,12 +889,12 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>First Name</span></div>
+              <div class="text-ellipsis" data-toggle="tooltip"  title="First Name"><span>First Name</span></div>
             </div>
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Last Name</span></div>
+              <div class="text-ellipsis" data-toggle="tooltip"  title="Last Name"><span>Last Name</span></div>
             </div>
           </th>
           <th class="">
@@ -839,7 +904,7 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Country</span></div>
+              <div class="text-ellipsis" data-toggle="tooltip"  title="Country"><span>Country</span></div>
             </div>
           </th>
           <th class="">
@@ -864,12 +929,12 @@
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Created Date</span></div>
+              <div class="text-ellipsis" data-toggle="tooltip"  title="Created Date"><span>Created Date</span></div>
             </div>
           </th>
           <th class="">
             <div class="cell-content">
-              <div class="text-ellipsis" data-original-title="" title=""><span>Campaign ID</span></div>
+              <div class="text-ellipsis" data-toggle="tooltip"  title="Campaign ID"><span>Campaign ID</span></div>
             </div>
           </th>
           <th class="">
@@ -998,7 +1063,7 @@
 
           <td class="">
             <div class="">
-              <div class="text-ellipsis" data-original-title="" title="">
+              <div class="text-ellipsis" data-toggle="tooltip"  title="Created Date">
                 <a href="">
                   <span>{{leadinfo.ItemId}}</span></a></div>
             </div>
