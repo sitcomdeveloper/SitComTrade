@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GeneralInfoService } from '././general-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+
 
 @Component({
   selector: 'app-general-info',
@@ -16,7 +18,7 @@ export class GeneralInfoComponent implements OnInit {
   userInfoForm: FormGroup;
   Apptitle: any;
   useraddinfo: any;
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder) { }
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
     this._route.params.subscribe(params => console.log(params));
@@ -69,11 +71,15 @@ export class GeneralInfoComponent implements OnInit {
       lasttaskdayspast: [''],
       daysagoclientcreated: ['']
     });
+    this.spinnerService.show();
+    setTimeout( () =>{
     this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    this.spinnerService.hide();
     console.log('getclientdata', this.Apptitle);
     this.userGenralinfo = this.Apptitle;
     // this.usersInfo();
     this.edituserInfo();
+  }, 5000);
   }
   // usersInfo() {
 

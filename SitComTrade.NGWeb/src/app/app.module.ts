@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TabModule} from 'angular-tabs-component';
 import { BlockCopyPasteDirective } from './block-copy-paste.directive';
 // import { CollapsibleModule } from 'angular2-collapsible';
-
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
 import { AgGridModule } from 'ag-grid-angular';
@@ -156,7 +156,8 @@ import { ItemComponent } from './clients/item/item.component';
     HttpClientModule,
     AppRoutingModule,FormsModule,ReactiveFormsModule,
     AgGridModule.withComponents(null),
-    TabModule
+    TabModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],  
   exports: [
     PhoneMaskDirective
