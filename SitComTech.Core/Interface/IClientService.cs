@@ -38,4 +38,9 @@ namespace SitComTech.Core.Interface
     {
         ShortMessage GetShortMessageByOwnerId(long ownerid);
     }
+
+    public interface ICommentService : IUnitOfWork<Comment>
+    {
+        Comment GetCommentByOwnerId(long ownerid);
+    }
 }

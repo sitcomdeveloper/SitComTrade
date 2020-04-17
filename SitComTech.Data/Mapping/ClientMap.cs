@@ -75,4 +75,16 @@ namespace SitComTech.Data.Mapping
         }
 
     }
+
+    public class CommentMap : EntityTypeConfiguration<Comment>
+    {
+        public CommentMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasRequired(a => a.ClientTable).WithMany().HasForeignKey(x => x.OwnerId).WillCascadeOnDelete(false);
+        }
+
+    }
 }
