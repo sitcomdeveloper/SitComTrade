@@ -17,12 +17,13 @@ export class ClientComponent implements OnInit {
   accountInfo: any[];
   leadInfo: any[];
   clientInfo: any[];
+
   ngOnInit() {
     this.userDetails();
   }
   userDetails() {
     this.spinnerService.show();
-    setTimeout( () =>{
+    setTimeout( () => {
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
         this.rowData = res;
@@ -51,10 +52,4 @@ export class ClientComponent implements OnInit {
   newUser() {
     this.router.navigateByUrl('/user');
   }
-
 }
-
-// setTimeout(() => {
-//   /** spinner ends after 5 seconds */
-//   this.spinner.hide();
-// }, 5000);
