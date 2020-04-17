@@ -44,4 +44,15 @@ namespace SitComTech.Model.DataObject
 
         public virtual User UserTable { get; set; }
     }
+
+    public class Comment : BaseConfig
+    {
+
+        public long OwnerId { get; set; }
+
+        public string CommentDescription { get; set; }
+
+        public virtual Client ClientTable { get; set; }
+
+    }
 }
