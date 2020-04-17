@@ -69,7 +69,20 @@
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
 
 
-              <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i>
+              <i class="fa fa-ellipsis-h" aria-hidden="true" id="clientcret" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" ></i>
+
+              <!---------------DROPDOWN-------->
+              <ul class="dropdown-menu impdrp "  aria-labelledby="clientcret">
+                <li><a href="#" title="Import Clients" class="link-import"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
+                <li><a href="#" title="Export Clients" class="link-export"><i class="fa fa-arrow-down"></i>Export Clients</a></li>
+                <li class="no-events disabled"><a class="link-sms" href="javascript:void(0);" title="Sms"><i class="fa fa-sms"></i>Sms to selected</a></li>
+                <li class="no-events disabled"><a class="link-sms-all" href="javascript:void(0);" title="Sms"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
+                <li class="no-events disabled"><a class="link-email" href="javascript:void(0);" title="Emails"><i class="fa fa-envelope"></i>Email to selected</a></li>
+                <li class="no-events disabled"><a class="link-email-all" href="javascript:void(0);" title="Emails"><i class="fa fa-envelope"></i>Email to all</a></li>
+                <li><a class="link-account" href="javascript:void(0);"><i class="fa fa-user"></i>Create Account</a></li>
+             </ul>
+              <!------------------------------->
             </div>
 
           </div>
