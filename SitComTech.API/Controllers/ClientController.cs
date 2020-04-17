@@ -19,8 +19,9 @@ namespace SitComTech.API.Controllers
         private IEmailService _emailService;
         private IShortMessageService _shortMeassageService;
         private ICommentService _commentService;
+        private IAddressService _addressService;
         public ClientController(IClientService clientService, IMarketingInfoService marketingInfoService, IAdditionalInfoService additionalInfoeService
-            , IEmailService emailService, IShortMessageService shortMeassageService, ICommentService commentService)
+            , IEmailService emailService, IShortMessageService shortMeassageService, ICommentService commentService, IAddressService addressService)
         {
             this._clientService = clientService;
             this._marketingInfoService = marketingInfoService;
@@ -28,6 +29,7 @@ namespace SitComTech.API.Controllers
             this._emailService = emailService;
             this._shortMeassageService = shortMeassageService;
             this._commentService = commentService;
+            this._addressService = addressService;
         }
         // GET api/<controller>
         public IEnumerable<string> Get()
@@ -142,5 +144,11 @@ namespace SitComTech.API.Controllers
             return _commentService.GetCommentByOwnerId(ownerid);
         }
 
+        [HttpPost]
+        [Route("GetAddressByOwnerId/{ownerid}")]
+        public Address GetAddressByOwnerId(long ownerid)
+        {
+            return _addressService.GetAddressByOwnerId(ownerid);
+        }
     }
 }
