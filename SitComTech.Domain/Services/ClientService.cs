@@ -404,4 +404,49 @@ namespace SitComTech.Domain.Services
             throw new NotImplementedException();
         }
     }
+
+    public class CommentService : ICommentService
+    {
+        private IUnitOfWork<Comment> _repository;
+        public CommentService(IUnitOfWork<Comment> repository)
+        {
+            this._repository = repository;
+
+        }
+
+        public void Delete(Comment entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<Comment> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Comment GetById(object Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Comment GetCommentByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public void Insert(Comment entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Comment entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
