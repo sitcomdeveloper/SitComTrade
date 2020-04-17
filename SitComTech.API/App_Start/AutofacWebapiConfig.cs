@@ -41,6 +41,7 @@ namespace SitComTech.API.App_Start
             builder.RegisterType<ShortMessageService>().As<IShortMessageService>();
             builder.RegisterType<ClientService>().As<IClientService>();
             builder.RegisterType<CommentService>().As<ICommentService>();
+            builder.RegisterType<AddressService>().As<IAddressService>();
             return builder.Build();
         }
     }
