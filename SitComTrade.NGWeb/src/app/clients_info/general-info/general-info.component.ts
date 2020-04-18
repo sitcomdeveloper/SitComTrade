@@ -18,6 +18,8 @@ export class GeneralInfoComponent implements OnInit {
   userInfoForm: FormGroup;
   Apptitle: any;
   useraddinfo: any;
+  name: any;
+  Country: any;
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
@@ -80,6 +82,7 @@ export class GeneralInfoComponent implements OnInit {
     // this.usersInfo();
     this.edituserInfo();
   }, 5000);
+  this.getcountryName();
   }
   // usersInfo() {
 
@@ -135,5 +138,11 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: this.useraddinfo.DaysAgoClientCreated,
     });
     // });
+  }
+  getcountryName() {
+    this._generalinfoservice.countryName(this.name).subscribe(result => {
+      this.Country = result;
+      console.log('countryname', result);
+    });
   }
 }

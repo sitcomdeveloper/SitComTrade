@@ -164,8 +164,13 @@
 
             </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="Citizenship" type="text" formControlName="citizenship" aria-required="true">
-          
+          <!-- <input class="form-control" name="Citizenship" type="text" formControlName="citizenship" aria-required="true"> -->
+          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+          data-live-search="true" formControlName="citizenship">
+          <option ngcontent-qpo-c3="">Select</option>
+          <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+             {{country.Name}}</option>
+            </select>
           </div>
           </td>
           <th class="tabletxt">Date of Birth</th>

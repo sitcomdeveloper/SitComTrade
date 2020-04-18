@@ -11,6 +11,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class MarketingInfoComponent implements OnInit {
   userMarketingInfo: any;
   marketingInfoForm: FormGroup
+  name: any;
+  Country: any;
   constructor(private marketinginfoservice: MarketingInfoService,private fb: FormBuilder) { this.editMarketingInfo(); }
 
   ngOnInit() {
@@ -35,6 +37,7 @@ export class MarketingInfoComponent implements OnInit {
 
     })
     this.marketingInfo();
+    this.getcountryName();
   }
   marketingInfo() {
     this.marketinginfoservice.getMarketingInfo().subscribe(res => {
@@ -66,6 +69,12 @@ export class MarketingInfoComponent implements OnInit {
 
       })
     })
+  }
+  getcountryName() {
+    this.marketinginfoservice.countryName(this.name).subscribe(result => {
+      this.Country = result;
+      console.log('countryname', result);
+    });
   }
 
 }
