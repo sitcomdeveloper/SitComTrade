@@ -258,7 +258,7 @@ select.browser-default.custom-select {
     margin-left:12px;
 }
 
-i.fa.fa-plus.bg-primary.fa-lg,i.fa.fa-pencil.bg-primary.fa-lg,i.fa.fa-user.bg-primary.fa-lg,i.fa.fa-trash.bg-primary.fa-lg,i.fa.fa-ellipsis-h.bg-primary.fa-lg{
+/* i.fa.fa-plus.bg-primary.fa-lg,i.fa.fa-pencil.bg-primary.fa-lg,i.fa.fa-user.bg-primary.fa-lg,i.fa.fa-trash.bg-primary.fa-lg,i.fa.fa-ellipsis-h.bg-primary.fa-lg{
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
@@ -273,6 +273,39 @@ i.fa.fa-plus.bg-primary.fa-lg,i.fa.fa-pencil.bg-primary.fa-lg,i.fa.fa-user.bg-pr
     background-position: -175px -145px;
     color:white;
     
+} */
+.serachicon  a
+{
+    display: block;
+    width: 50px;
+    height: 39px;
+    color:#fff;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+}
+.serachicon
+{
+    background: #12baee;
+    /* border-radius: 2px; */
+}
+.brdr-right {
+    border-right: 1px solid #105996;
+}
+.serachicon a i
+{
+    width: 25px;
+    height: 25px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color:#fff;
+    left: 17px!important;
+    top: 17%!important;
+    position: relative!important;
+    font-size: 21px;
 }
 .ui-grid-cell-contents-auto
 {

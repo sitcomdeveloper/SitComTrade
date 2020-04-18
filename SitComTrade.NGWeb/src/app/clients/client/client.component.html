@@ -40,7 +40,7 @@
               <a routerLink=""><i class="fa fa-refresh"></i></a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
-              <div class="input-group">
+              <div class="input-group selecticon">
 
                 <select id="lunch" class="selectpicker form-control" data-live-search="true" title="ALL">
                   <option>Others</option>
@@ -51,20 +51,31 @@
                   <option>Online</option>
 
                 </select>
-                <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i>
-                <i class="fa fa-pencil bg-primary fa-lg" aria-hidden="true"
-                  style="padding-right:10px;margin-right:10px"></i>
+                <span class="serachicon brdr-right">
+                <a href="#" class="">
+                <i class="fa fa-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white;"></i>
+                </a>
+                </span>
+                <span class="serachicon">
+                <a href="#">
+                <i class="fa fa-pencil bg-primary1 fa-lg" aria-hidden="true"
+                  ></i>
+                  </a>
+                  </span>
               </div>
 
             </div>
-            <div class="btn-group mr-2" role="group" aria-label="Third group">
+            <div class="btn-group mr-2 serachicon " role="group" aria-label="Third group">
 
-              <a href="#" data-toggle="modal" data-target="#regModal">
-                <i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i>
+              <a href="#" data-toggle="modal" data-target="#regModal" class="brdr-right">
+                <i class="fa fa-user-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white"></i>
               </a>
-              <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
-              <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
-
+              <a href="#" class="brdr-right">
+                 <i class="fa fa-pencil bg-primary1 fa-lg" disabled aria-hidden="true"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true"></i>
+              </a>
             </div>
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
 
