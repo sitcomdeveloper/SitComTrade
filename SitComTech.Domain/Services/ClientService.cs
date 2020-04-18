@@ -67,7 +67,7 @@ namespace SitComTech.Domain.Services
                         Phone = clientdata.Phone,
                         ResponseStatusId = 7,
                         ResponseStatus = "Interested",
-                        OwnerId=1,
+                        OwnerId=clientdata.OwnerId,
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
@@ -204,7 +204,7 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(MarketingInfo entity)
@@ -279,7 +279,7 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(AdditionalInfo entity)
@@ -353,7 +353,7 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(Email entity)
@@ -396,7 +396,7 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(ShortMessage entity)
@@ -434,14 +434,32 @@ namespace SitComTech.Domain.Services
             return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
         }
 
-        public void Insert(Comment entity)
+        public void Insert(Comment comm)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Comment entity = new Comment
+                {
+                    Active = true,
+                    Deleted = false,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = 0,
+                    CreatedByName = "",
+                    OwnerId=comm.OwnerId,
+                    CommentDescription=comm.CommentDescription,
+                };
+                _repository.Insert(entity);
+                SaveChanges();               
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(Comment entity)
@@ -486,12 +504,38 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
-        public void Update(Address entity)
+        public void Update(Address addr)
         {
-            throw new NotImplementedException();
+            Address userdata = _repository.GetById(addr.Id);
+            if (userdata != null)
+            {
+                addr.UpdatedAt = DateTime.Now;
+                _repository.Update(addr);
+                SaveChanges();
+            }
+            else
+            {
+                Address entity = new Address
+                {
+                    Active = true,
+                    Deleted = false,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = 0,
+                    CreatedByName = "",
+                    OwnerId = addr.OwnerId,
+                    CountryId = addr.CountryId,
+                    CountryName=addr.CountryName,
+                    ZipCode=addr.ZipCode,
+                    City=addr.City,
+                    State=addr.State,
+                    StreetAddress=addr.StreetAddress,
+                };
+                _repository.Insert(entity);
+                SaveChanges();
+            }
         }
     }
 }
