@@ -112,7 +112,7 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(TaskType entity)
@@ -150,7 +150,7 @@ namespace SitComTech.Domain.Services
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _repository.SaveChanges();
         }
 
         public void Update(TaskStatus entity)

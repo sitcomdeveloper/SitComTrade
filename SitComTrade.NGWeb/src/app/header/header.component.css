@@ -93,6 +93,13 @@ body
   width: 100%!important;
   overflow-x:hidden!important;
 }
+body:not(.page-client) {
+  font: 15px/1.53845 Poppins,Arial,sans-serif;
+  -moz-transform: scale(.8,.8);
+  transform-origin: 50% 0;
+  zoom: .8;
+  zoom: 80%;
+}
 img{
   height:6vh;
   /* width:9vw; */
@@ -169,13 +176,15 @@ ul.navbar-nav.navbar-right
     border-radius: 0px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
+    font: 17px Poppins,Arial,sans-serif;
 
 }
 
 /*first level*/
 .btco-hover-menu .collapse ul > li:hover > a{background: #f5f5f5;    color: #000;
 }
-.btco-hover-menu .collapse ul ul > li:hover > a, .navbar .show .dropdown-menu > li > a:focus, .navbar .show .dropdown-menu > li > a:hover{background: #fff;}
+.btco-hover-menu .collapse ul ul > li:hover > a, .navbar .show .dropdown-menu > li > a:focus, .navbar .show .dropdown-menu > li > a:hover{background: #f5f8fc;
+  color: #12baee;}
 /*second level*/
 .btco-hover-menu .collapse ul ul ul > li:hover > a{background: #fff;}
 
@@ -196,7 +205,7 @@ ul.navbar-nav.navbar-right
 
     .btco-hover-menu .collapse ul li{position:relative;}
     .btco-hover-menu .collapse ul li:hover> ul{display:block}
-    .btco-hover-menu .collapse ul ul{position:absolute;top:100%;left:0;min-width:250px;display:none}
+    .btco-hover-menu .collapse ul ul{position:absolute;top:100%;left:0;min-width:auto;display:none}
     /*******/
     .btco-hover-menu .collapse ul ul li{position:relative}
     .btco-hover-menu .collapse ul ul li:hover> ul{display:block}

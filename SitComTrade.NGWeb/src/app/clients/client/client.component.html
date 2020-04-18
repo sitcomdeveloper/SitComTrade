@@ -40,7 +40,7 @@
               <a routerLink=""><i class="fa fa-refresh"></i></a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
-              <div class="input-group">
+              <div class="input-group selecticon">
 
                 <select id="lunch" class="selectpicker form-control" data-live-search="true" title="ALL">
                   <option>Others</option>
@@ -51,20 +51,31 @@
                   <option>Online</option>
 
                 </select>
-                <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i>
-                <i class="fa fa-pencil bg-primary fa-lg" aria-hidden="true"
-                  style="padding-right:10px;margin-right:10px"></i>
+                <span class="serachicon brdr-right">
+                <a href="#" class="">
+                <i class="fa fa-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white;"></i>
+                </a>
+                </span>
+                <span class="serachicon">
+                <a href="#">
+                <i class="fa fa-pencil bg-primary1 fa-lg" aria-hidden="true"
+                  ></i>
+                  </a>
+                  </span>
               </div>
 
             </div>
-            <div class="btn-group mr-2" role="group" aria-label="Third group">
+            <div class="btn-group mr-2 serachicon " role="group" aria-label="Third group">
 
-              <a href="#" data-toggle="modal" data-target="#regModal">
-                <i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i>
+              <a href="#" data-toggle="modal" data-target="#regModal" class="brdr-right">
+                <i class="fa fa-user-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white"></i>
               </a>
-              <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
-              <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
-
+              <a href="#" class="brdr-right">
+                 <i class="fa fa-pencil bg-primary1 fa-lg" disabled aria-hidden="true"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true"></i>
+              </a>
             </div>
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
 
@@ -74,12 +85,13 @@
 
               <!---------------DROPDOWN-------->
               <ul class="dropdown-menu impdrp "  aria-labelledby="clientcret">
-                <li><a href="#" title="Import Clients" class="link-import"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
-                <li><a href="#" title="Export Clients" class="link-export"><i class="fa fa-arrow-down"></i>Export Clients</a></li>
-                <li class="no-events disabled"><a class="link-sms" href="javascript:void(0);" title="Sms"><i class="fa fa-sms"></i>Sms to selected</a></li>
-                <li class="no-events disabled"><a class="link-sms-all" href="javascript:void(0);" title="Sms"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
-                <li class="no-events disabled"><a class="link-email" href="javascript:void(0);" title="Emails"><i class="fa fa-envelope"></i>Email to selected</a></li>
-                <li class="no-events disabled"><a class="link-email-all" href="javascript:void(0);" title="Emails"><i class="fa fa-envelope"></i>Email to all</a></li>
+                <li><a title="Import Clients" class="link-import" data-toggle="modal" data-target="#importclient"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
+                <li><a href="#" title="Export Clients" class="link-export" data-toggle="modal" data-target="#exportclient"><i class="fa fa-arrow-down"></i>Export Clients</a>
+                </li>
+                <li class="no-events disabled"><a class="link-sms" href="javascript:void(0);" title="Sms"><i class="fa fa-envelope"></i>Sms to selected</a></li>
+                <li class="no-events disabled"><a href="#" class="link-sms-all" data-toggle="modal" data-target="#sms-all" title="Sms"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
+                <li class="no-events disabled"><a href="#" class="link-email"   title="Emails"><i class="fa fa-envelope"></i>Email to selected</a></li>
+                <li class="no-events disabled"><a href="#" class="link-email-all"  data-toggle="modal" data-target="#email-all"title="Emails"><i class="fa fa-envelope"></i>Email to all</a></li>
                 <li><a class="link-account" href="javascript:void(0);"><i class="fa fa-user"></i>Create Account</a></li>
              </ul>
               <!------------------------------->
@@ -4038,130 +4050,6 @@
       <div class="modal-body">
         <app-item></app-item>
 
-        <!-- <div class="register img-fluid">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <form method="post" novalidate="novalidate">
-                     <div class="form-group">
-                       <div class="radio-tabs">
-                         <ul class="nav nav-tabs nav-justified" role="tablist">  
-                            <li  class="nav-item active">
-                                <a class="nav-link active" data-toggle="tab"  href="#Account">
-                                  <div class="input-radio" id="uniform-clientType0"><span class="checked"><input type="radio" name="clientType" id="clientType0"></span></div>
-                                  <label for="clientType0">Account</label>
-                                </a>
-                            </li>
-                            <li  class="nav-item">
-                                <a class="nav-link " data-toggle="tab"  href="#Lead">
-                                  <div class="input-radio" id="uniform-clientType1"><span class=""><input type="radio" name="clientType" id="clientType1"></span></div>
-                                  <label for="clientType1">Lead</label>
-                                </a>
-                            </li>
-                          </ul>
-                         </div>
-                       </div>
-                      <div class="items form-horizontal">
-                        <div class="row form-group">
-                        <div class="tab-content">
-                          <div  class="tab-pane container active" id="Account">
-                            <div class="items form-horizontal">
-               <div class="row form-group">
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row">
-                        <div class="col-xs-3">
-                        <label class="valign-label" for="FirstName">
-                        <span data-tooltip-el="">First Name</span></label></div>
-                        <div class="col-xs-9"><input class="form-control itemformcontrol" name="FirstName" type="text" id="d600d6c8-c1f2-388e-97ba-8aea6698d309" aria-required="true"></div>
-                     </div>
-                  </div>
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row">
-                        <div class="col-xs-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
-                        <div class="col-xs-9"><input class="form-control itemformcontrol" name="LastName" type="text" id="a5c72fea-ee8e-5a3f-e331-efb87fce283a" aria-required="true"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row form-group">
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row">
-                        <div class="col-xs-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
-                        <div class="col-xs-9"><input class="form-control itemformcontrol" name="Email" type="text" id="fa2ff2d8-f778-4371-ef93-7a7672cdb611" aria-required="true"></div>
-                     </div>
-                  </div>
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row">
-                        <div class="col-xs-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-                        <div class="col-xs-9"><input class="form-control itemformcontrol" name="Phone" type="text" id="60b28dc3-bf23-af47-51fb-d07201e53bf6" aria-required="true"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row form-group">
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row">
-                        <div class="col-xs-3"><label class="valign-label" for="Country"><span data-tooltip-el="">Country</span></label></div>
-                        <div class="col-xs-9">
-                           <div _ngcontent-qpo-c3="" class="input-group">
-                           <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" data-live-search="true" id="lunc" title="Country">
-                           <option _ngcontent-qpo-c3="">All</option><option _ngcontent-qpo-c3="">One</option>
-                           <option _ngcontent-qpo-c3="">Two</option><option _ngcontent-qpo-c3="">Three</option>
-                           </select>
-                           
-                           
-                           </div>
-                     
-                     </div>
-                     </div>
-                  </div>
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row" style="display: block;">
-                        <div class="col-xs-3 col-md-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
-                        <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol" name="Password" type="text" id="5fdf7377-d1ba-213b-6c76-131a0d5a2041" aria-required="true"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row form-group">
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row">
-                        <div class="col-xs-3 col-md-3"><label class="valign-label" for="_sendEmail"><span data-tooltip-el="">_sendEmail</span></label></div>
-                        <div class="col-xs-9 col-md-9">
-                           <div class="checkbox-inline"><label class="switcher">Yes<span class="checkcontrol"><input class="form-control default-checkbox" name="_sendEmail" type="checkbox" id="cdffa348-3aab-a196-9c70-c8684b38f518" value="true"></span>No</label>&nbsp;</div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xs-6 col-md-6">
-                     <div class="row" style="display: block;">
-                        <div class="col-xs-3 col-md-3"><label class="valign-label" for="GroupId"><span data-tooltip-el="">Group</span></label></div>
-                        <div class="col-xs-9 col-md-9">
-                           <div _ngcontent-qpo-c3="" class="input-group">
-                           <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" data-live-search="true" id="lun" title="Group">
-                           <option _ngcontent-qpo-c3="">All</option><option _ngcontent-qpo-c3="">One</option>
-                           <option _ngcontent-qpo-c3="">Two</option><option _ngcontent-qpo-c3="">Three</option>
-                           </select>
-                           
-                                          </div>
-            
-                           </div>
-                     
-                     </div>
-                  </div>
-               </div>
-            </div>
-                          </div>
-                          <div  class="tab-pane container fade" id="Lead">
-                            <h3>Menu 1</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          </div>
-                        </div>
-                        </div>
-            
-                   
-                      </div>          
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
       </div>
     </div>
@@ -4171,4 +4059,117 @@
 
 
 <!--------------End create new user model--------------->
+<!------------------create Import Client model------------->
+<div class="modal" id="importclient">
+  <div class="modal-dialog modal930">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title createitemheader">
+          CREATE ITEM
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-import-client></app-import-client>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------End create Import Client model--------------->
+<!------------------create Export Client model------------->
+<div class="modal" id="exportclient">
+  <div class="modal-dialog modal930">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title createitemheader">
+          CREATE ITEM
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-export-client></app-export-client>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------End create Export Client model--------------->
+<!------------------create SMS to all model------------->
+<div class="modal" id="sms-all">
+  <div class="modal-dialog modal930">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title createitemheader">
+          CREATE ITEM
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-sms-all></app-sms-all>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------End create SMS to all model--------------->
+
+<div class="modal" id="sms-all">
+  <div class="modal-dialog modal930">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title createitemheader">
+          CREATE ITEM
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-sms-all></app-sms-all>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------End create SMS to all model--------------->
+
+
+<!--------------End create email-all model--------------->
+
+<div class="modal" id="email-all">
+  <div class="modal-dialog modal930">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title createitemheader">
+          CREATE ITEM
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-email-all></app-email-all>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------End create email-all model--------------->
 <ng4-loading-spinner> </ng4-loading-spinner>

@@ -80,6 +80,10 @@ import { SmsComponent } from './clients_info/sms/sms.component';
 import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
 import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.component';
 import { ItemComponent } from './clients/item/item.component';
+import { ImportClientComponent } from './clients/import-client/import-client.component';
+import { ExportClientComponent } from './clients/export-client/export-client.component';
+import { SmsAllComponent } from './clients/sms-all/sms-all.component';
+import { EmailAllComponent } from './clients/email-all/email-all.component';
 
 @NgModule({
   declarations: [
@@ -148,6 +152,10 @@ import { ItemComponent } from './clients/item/item.component';
     PhoneMaskDirective,
     TasksInfoComponent,
     ItemComponent,
+    ImportClientComponent,
+    ExportClientComponent,
+    SmsAllComponent,
+    EmailAllComponent,
     
   ],
   imports: [

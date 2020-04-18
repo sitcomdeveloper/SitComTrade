@@ -145,10 +145,24 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("InsertComment")]
+        public void InsertComment(Comment entity)
+        {
+             _commentService.Insert(entity);
+        }
+
+        [HttpPost]
         [Route("GetAddressByOwnerId/{ownerid}")]
         public Address GetAddressByOwnerId(long ownerid)
         {
             return _addressService.GetAddressByOwnerId(ownerid);
+        }
+
+        [HttpPost]
+        [Route("InsertUpdateAddress")]
+        public void InsertUpdateAddress(Address entity)
+        {
+            _addressService.Update(entity);
         }
     }
 }
