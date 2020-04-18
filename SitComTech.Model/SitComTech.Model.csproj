@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BaseConfig.cs" />
+    <Compile Include="Constants\Enums.cs" />
     <Compile Include="DataObject\AdditionalInfo.cs" />
     <Compile Include="DataObject\Client.cs" />
     <Compile Include="DataObject\Country.cs" />

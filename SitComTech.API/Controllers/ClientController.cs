@@ -1,11 +1,14 @@
-﻿using SitComTech.Core.Interface;
+﻿using Newtonsoft.Json.Linq;
+using SitComTech.Core.Interface;
 using SitComTech.Core.Utils;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
+using SitComTech.Model.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json;
 
 namespace SitComTech.API.Controllers
 {
@@ -163,6 +166,14 @@ namespace SitComTech.API.Controllers
         public void InsertUpdateAddress(Address entity)
         {
             _addressService.Update(entity);
+        }
+
+        [HttpGet]
+        [Route("GetRegistrationTypeEnum")]
+        public JArray GetRegistrationTypeEnum()
+        {
+            var entities = EnumExtensions.GetList<RegistrationTypeEnum>(true);
+            return JArray.Parse(JsonConvert.SerializeObject(entities));
         }
     }
 }
