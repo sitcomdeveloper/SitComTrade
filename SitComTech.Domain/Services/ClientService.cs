@@ -449,4 +449,49 @@ namespace SitComTech.Domain.Services
             throw new NotImplementedException();
         }
     }
+
+    public class AddressService : IAddressService
+    {
+        private IUnitOfWork<Address> _repository;
+        public AddressService(IUnitOfWork<Address> repository)
+        {
+            this._repository = repository;
+
+        }
+
+        public void Delete(Address entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Address GetAddressByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+        }
+
+        public IQueryable<Address> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Address GetById(object Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Address entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Address entity)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

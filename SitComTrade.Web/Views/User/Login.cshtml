@@ -287,9 +287,18 @@
             //        shownotification(10000, 'info', 'Error', 'Something went wrong');
             //    }
             //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/GetCommentByOwnerId/1",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Client/GetCommentByOwnerId/1",
+                url: apiURl + "api/Client/GetAddressByOwnerId/1",
                 contentType: 'application/json',
                 processData: false,
                 success: function (result) {
