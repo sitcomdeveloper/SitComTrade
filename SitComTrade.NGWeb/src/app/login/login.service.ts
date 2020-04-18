@@ -17,7 +17,7 @@ export class LoginService {
   saveUserInfo(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'User/RegisterUser', obj);
   }
-  countryName(obj: any): Observable<any>{
+  countryName(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'User/GetAllCountries', obj);
   }
   currencyName(obj: any): Observable<any> {
@@ -25,8 +25,12 @@ export class LoginService {
     return this.http.post<any>(API_URL + 'User/GetAllCurrencies', obj);
   }
   resetPassword(obj: any): Observable<any> {
-    console.log('fgtpassword',obj);
-    return this.http.post<any>(API_URL + 'User/ForgotPassword', obj);
-  }
+    console.log('fgtpassword', obj);
+    return this.http.post<any>(API_URL + 'User/ForgotPassword?username=', obj);
+    }
+
+  // resetPassword(orderId) {
+  //   return this.http.post(API_URL + 'User/ForgotPassword?username=' + orderId);
+  // }
 }
 // kk84singh

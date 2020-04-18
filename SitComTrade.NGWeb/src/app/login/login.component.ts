@@ -69,12 +69,10 @@ export class LoginComponent implements OnInit {
         });
   }
   resetpwd() {
-    let obj = {
-      username: this.resetForm.value.email,
-    }
-    this.loginservice.resetPassword(obj).subscribe(res =>{
+     const obj = this.resetForm.value.email;
+     this.loginservice.resetPassword(obj).subscribe(res => {
       this.getPassword = res;
-      console.log('pwd', res);
-    })
+      console.log('resetpwd', res);
+    });
   }
 }
