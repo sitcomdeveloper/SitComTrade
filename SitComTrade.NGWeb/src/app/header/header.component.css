@@ -93,6 +93,13 @@ body
   width: 100%!important;
   overflow-x:hidden!important;
 }
+body:not(.page-client) {
+  font: 15px/1.53845 Poppins,Arial,sans-serif;
+  -moz-transform: scale(.8,.8);
+  transform-origin: 50% 0;
+  zoom: .8;
+  zoom: 80%;
+}
 img{
   height:6vh;
   /* width:9vw; */

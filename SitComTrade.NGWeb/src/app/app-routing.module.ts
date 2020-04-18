@@ -52,6 +52,7 @@ import { TermsComponent } from './terms/terms.component';
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
 import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
 import { ItemComponent } from './clients/item/item.component';
+import { ImportClientComponent } from './clients/import-client/import-client.component';
 
 
 
@@ -132,7 +133,9 @@ const routes: Routes = [
 // clients-info
 {path:'info',component:ClientsInfoComponent},
 {path:'generalinfo/:userid',component:GeneralInfoComponent},
-{path:'user',component:ItemComponent}
+{path:'user',component:ItemComponent},
+
+{path:'importclients',component:ImportClientComponent}
 
 
 
