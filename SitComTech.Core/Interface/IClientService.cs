@@ -43,4 +43,9 @@ namespace SitComTech.Core.Interface
     {
         Comment GetCommentByOwnerId(long ownerid);
     }
+
+    public interface IAddressService : IUnitOfWork<Address>
+    {
+        Address GetAddressByOwnerId(long ownerid);
+    }
 }
