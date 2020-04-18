@@ -254,16 +254,29 @@
         //});
 
         $(document).ready(function () {
+           
             $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Client/InsertUpdateAddress",
+                type: "get",
+                url: 'http://localhost:59122/api/Client/GetRegistrationTypeEnum',
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.Register),
-                success: function (result) {
-                    alert(result);
+                success: function (data) {
+                    alert(data.id);
+                },
+                error: function (data) {
+                    shownotification(10000, 'info', 'Error', 'Something went wrong');
                 }
             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/InsertUpdateAddress",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.Register),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/AddClient",
