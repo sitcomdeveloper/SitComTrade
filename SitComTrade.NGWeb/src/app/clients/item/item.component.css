@@ -86,6 +86,10 @@
     border-color: #dde7f9;
     color: #45596a;
 }
+.modal .radio-tabs .nav-tabs>li.active>a, .modal .radio-tabs .nav-tabs>li.active>a:focus, .modal .radio-tabs .nav-tabs>li.active>a:hover {
+    border-color: #dde7f9;
+    color: #45596a;
+}
 .form-horizontal .radio, .form-horizontal .radio-inline {
     padding-top: 7px;
     margin-top: 0;
