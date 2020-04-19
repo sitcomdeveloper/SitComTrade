@@ -13,7 +13,7 @@ export class GeneralInfoService {
 
   constructor(private http:HttpClient) { }
   getUsersInfo(): Observable<any>{
-    return this.http.get<any>(API_URL + "User/GetUserDetailByOwnerId/3");
+    return this.http.get<any>(API_URL + "Client/GetClientDetailById/3");
   }
   countryName(obj: any): Observable<any>{
     return this.http.post<any>(API_URL + 'User/GetAllCountries', obj);
