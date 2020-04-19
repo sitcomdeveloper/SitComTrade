@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   pwdrecover: any;
   getPassword: any;
   resetForm: FormGroup;
-
+  ResetPWdResponse: any;
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
     console.log('login loaded');
   }
@@ -71,8 +71,12 @@ export class LoginComponent implements OnInit {
   resetpwd() {
      const obj = this.resetForm.value.email;
      this.loginservice.resetPassword(obj).subscribe(res => {
-      this.getPassword = res;
-      console.log('resetpwd', res);
+       if (res =='Invalid User')
+        this.ResetPWdResponse = 'Invalid User'
+       else if (res =='Success')
+         this.ResetPWdResponse = 'Success'
+       else
+         this.ResetPWdResponse = 'Failure'
     });
   }
 }

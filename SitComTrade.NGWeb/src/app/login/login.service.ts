@@ -26,7 +26,7 @@ export class LoginService {
   }
   resetPassword(obj: any): Observable<any> {
     console.log('fgtpassword', obj);
-    return this.http.post<any>(API_URL + 'User/ForgotPassword?username=', obj);
+    return this.http.post<any>(API_URL + 'User/ForgotPassword?username=' + obj, {});
     }
 
   // resetPassword(orderId) {

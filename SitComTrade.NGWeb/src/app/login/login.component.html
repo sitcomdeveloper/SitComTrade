@@ -4,7 +4,7 @@
     <a class="navbar-brand img-fluid" routerLink="#">
       <img src="assets/images/logo.png" alt="SwissFX" />
     </a>
-    <div class="registerDiv">
+    <div class="registerDiv" style="display:none">
       <button type="button" class="btn btn-primary register-btn" data-toggle="modal" data-target="#regModal">
         Register here
       </button>
@@ -43,7 +43,7 @@
       <a href="#" class="pull-right" data-toggle="modal" data-target="#pwdModal">Forgot Password?</a>
     </div>
   </form>
-  <p class="text-center"><a href="#" data-toggle="modal" data-target="#regModal">Create an Account</a></p>
+  <p class="text-center" style="display:none"><a href="#" data-toggle="modal" data-target="#regModal">Create an Account</a></p>
 </div>
 <app-footer></app-footer>
 <div class="modal fade" id="pwdModal">
@@ -64,9 +64,9 @@
                     <p>You can reset your password here.</p>
                     <div class="panel-body">
 
-                      <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                      <form id="register-form" role="form" autocomplete="off" class="form" method="post" [formGroup]="resetForm">
 
-                        <div class="form-group" [formGroup]="resetForm">
+                        <div class="form-group">
                           <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
                             <input id="email" name="email" placeholder="email address" class="form-control" formControlName="email" type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
@@ -75,14 +75,14 @@
                               <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                             </div>
                           </div>
+                          <div [innerHTML]="ResetPWdResponse">                        
+                          </div>
                         </div>
-                        <div class="form-group" [formGroup]="resetForm">
-                          <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset" type="submit" formControlName="email" (click)="resetpwd()">
+                        <div class="form-group">
+                          <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset" type="submit" (click)="resetpwd()">
                         </div>
-
                         <input type="hidden" class="hide" name="token" id="token" value="">
                       </form>
-
                     </div>
                   </div>
                 </div>
