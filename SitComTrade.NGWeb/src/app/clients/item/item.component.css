@@ -86,6 +86,10 @@
     border-color: #dde7f9;
     color: #45596a;
 }
+.modal .radio-tabs .nav-tabs>li.active>a, .modal .radio-tabs .nav-tabs>li.active>a:focus, .modal .radio-tabs .nav-tabs>li.active>a:hover {
+    border-color: #dde7f9;
+    color: #45596a;
+}
 .form-horizontal .radio, .form-horizontal .radio-inline {
     padding-top: 7px;
     margin-top: 0;
@@ -290,11 +294,11 @@ input[type="checkbox"].switch_1{
     height: 16px;
     background: url(/assets/images/sprite.png) -9999px -9999px no-repeat;
 }
-.nav-tabs .nav-item .nav-link.active {
+.nav-tabs1 .nav-item .nav-link.active {
   color: #131415;
     background: #f2f2f2;
 }
-ul.nav.nav-tabs.nav-justified li a {
+ul.nav.nav-tabs1.nav-justified li a {
     font-weight: bold;
     color: #838486;
 }

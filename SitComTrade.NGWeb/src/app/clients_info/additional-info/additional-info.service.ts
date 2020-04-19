@@ -12,6 +12,6 @@ export class AdditionalInfoService {
 
   constructor(private http:HttpClient) { }
   getAdditionalInfo(): Observable<any>{
-    return this.http.get<any>(API_URL + "User/GetAdditionalInfoByOwnerId/1");
+    return this.http.get<any>(API_URL + "Client/GetAdditionalInfoByOwnerId/3");
   }
 }

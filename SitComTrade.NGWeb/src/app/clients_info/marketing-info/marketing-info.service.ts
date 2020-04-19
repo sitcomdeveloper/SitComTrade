@@ -12,7 +12,7 @@ export class MarketingInfoService {
 
   constructor(private http:HttpClient) { }
   getMarketingInfo(): Observable<any>{
-    return this.http.get<any>(API_URL + "User/GetMarketingInfoByOwnerId/1");
+    return this.http.get<any>(API_URL + "Client/GetMarketingInfoByOwnerId/3");
   }
   countryName(obj: any): Observable<any>{
     return this.http.post<any>(API_URL + 'User/GetAllCountries', obj);

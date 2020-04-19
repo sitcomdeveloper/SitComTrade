@@ -10,6 +10,10 @@
     font-weight:500!important;
     border-bottom: transparent;
 }
+.width100
+{
+  width: 100%;
+}
 .value-edit
 {
         font-size: 13px;
