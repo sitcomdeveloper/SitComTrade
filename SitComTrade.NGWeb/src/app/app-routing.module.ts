@@ -57,85 +57,85 @@ import { ImportClientComponent } from './clients/import-client/import-client.com
 
 
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'login',component:LoginComponent},
-  
-{path:'',component:ClientsComponent},
- {path:'clients',component:ClientsComponent,
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
 
-    children:[
-      {path:'',redirectTo:'client',pathMatch:'full'},
-      {path:'client',component:ClientComponent,
+{path: '', component: ClientsComponent},
+ {path: 'clients', component: ClientsComponent,
+
+    children: [
+      {path: '', redirectTo: 'client', pathMatch: 'full'},
+      {path: 'client', component: ClientComponent,
           // children:[
           //   {path:'',redirectTo:'',pathMatch:'full'},
           //   {path:'all',component:AllComponent},
           //   {path:'accounts',component:AccountsComponent}
           // ]
     },
-      {path:'client',component:ClientComponent},
-      {path:'tradeaccounts',component:TradeaccountsComponent}
+      {path: 'client', component: ClientComponent},
+      {path: 'tradeaccounts', component: TradeaccountsComponent}
     ]},
 
 
-  {path:'',component:ActivitiesComponent},
-  {path:'activities',component:ActivitiesComponent,
-    children:[
-      {path:'',redirectTo:'',pathMatch:'full'},
-      {path:'monetarytransactions',component:MonetarytransactionsComponent},
-      {path:'tasks',component:TasksComponent},
-      {path:'cases',component:CasesComponent},
-      {path:'documents',component:DocumentsComponent},
-      {path:'openedorders',component:OpenedordersComponent},
-      {path:'closedorders',component:ClosedordersComponent},
-      {path:'pendingorders',component:PendingordersComponent},
-      {path:'rejectedtransactions',component:RejectedtransactionComponent},
-      {path:'commonjournal',component:CommonjournalComponent}
+  {path: '', component: ActivitiesComponent},
+  {path: 'activities', component: ActivitiesComponent,
+    children: [
+      {path: '', redirectTo: '', pathMatch: 'full'},
+      {path: 'monetarytransactions', component: MonetarytransactionsComponent},
+      {path: 'tasks', component: TasksComponent},
+      {path: 'cases', component: CasesComponent},
+      {path: 'documents', component: DocumentsComponent},
+      {path: 'openedorders', component: OpenedordersComponent},
+      {path: 'closedorders', component: ClosedordersComponent},
+      {path: 'pendingorders', component: PendingordersComponent},
+      {path: 'rejectedtransactions', component: RejectedtransactionComponent},
+      {path: 'commonjournal', component: CommonjournalComponent}
 
     ]},
 
-{path:'',component:ReportsComponent},
-{path:'reports',component:ReportsComponent,
-    children:[
-      {path:'',redirectTo:'',pathMatch:'full'},
-      {path:'dashboard',component:DashboardComponent},
-      {path:'exposure',component:ExposureComponent},
-      {path:'leaderboard',component:LeaderboardComponent},
-      {path:'report',component:ReportComponent},
-      {path:'tradingjournals',component:TradingjournalsComponent},
-      {path:'benchmark',component:BenchmarkComponent}
+{path: '', component: ReportsComponent},
+{path: 'reports', component: ReportsComponent,
+    children: [
+      {path: '', redirectTo: '', pathMatch: 'full'},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'exposure', component: ExposureComponent},
+      {path: 'leaderboard', component: LeaderboardComponent},
+      {path: 'report', component: ReportComponent},
+      {path: 'tradingjournals', component: TradingjournalsComponent},
+      {path: 'benchmark', component: BenchmarkComponent}
     ]
 },
 
 
 
-{path:'',component:SettingsComponent},
-{path:'settings',component:SettingsComponent,
-  children:[
-    {path:'',redirectTo:'',pathMatch:'full'},
-           {path:'crmusers',component:CrmusersComponent},
-           {path:'affilateusers',component:AffilateusersComponent},
-    {path:'emailtemplates',component:EmailtemplatesComponent},
-    {path:'sendersettings',component:SendersettingsComponent},
-    {path:'groups',component:GroupsComponent},
-    {path:'instruments',component:InstrumentsComponent},
-          {path:'additionalfields',component:AdditionalfieldsComponent},
-          {path:'modulefields',component:ModulefieldsComponent},
-          {path:'iplist',component:IplistComponent},
-          {path:'tradinghours',component:TradinghoursComponent},
-          {path:'workflows',component:WorkflowsComponent},
-    {path:'translations',component:TranslationsComponent},
-    {path:'filters',component:FiltersComponent},
-     {path:'imports',component:ImportsComponent}
+{path: '', component: SettingsComponent},
+{path: 'settings', component: SettingsComponent,
+  children: [
+    {path: '', redirectTo: '', pathMatch: 'full'},
+           {path: 'crmusers', component: CrmusersComponent},
+           {path: 'affilateusers', component: AffilateusersComponent},
+    {path: 'emailtemplates', component: EmailtemplatesComponent},
+    {path: 'sendersettings', component: SendersettingsComponent},
+    {path: 'groups', component: GroupsComponent},
+    {path: 'instruments', component: InstrumentsComponent},
+          {path: 'additionalfields', component: AdditionalfieldsComponent},
+          {path: 'modulefields', component: ModulefieldsComponent},
+          {path: 'iplist', component: IplistComponent},
+          {path: 'tradinghours', component: TradinghoursComponent},
+          {path: 'workflows', component: WorkflowsComponent},
+    {path: 'translations', component: TranslationsComponent},
+    {path: 'filters', component: FiltersComponent},
+     {path: 'imports', component: ImportsComponent}
   ]
 },
-{path:'terms',component:TermsComponent},
+{path: 'terms', component: TermsComponent},
 
 // clients-info
-{path:'info',component:ClientsInfoComponent},
-{path:'generalinfo/:userid',component:GeneralInfoComponent},
-{path:'user',component:ItemComponent},
+{path: 'info', component: ClientsInfoComponent},
+{path: 'generalinfo/:userid', component: GeneralInfoComponent},
+{path: 'user', component: ItemComponent},
 
-{path:'importclients',component:ImportClientComponent}
+{path: 'importclients', component: ImportClientComponent}
 
 
 

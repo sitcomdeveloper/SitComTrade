@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AddressService } from './address.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-address',
@@ -7,12 +8,16 @@ import { AddressService } from './address.service';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
-  userAddress:any;
+  userAddress: any;
   name: any;
   Country: any;
-  constructor(private addressservice:AddressService) { }
+  addressForm: FormGroup;
+  constructor(private addressservice: AddressService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.addressForm = this.fb.group({
+      ipcountry: ['']
+    });
     this.address();
     this.getcountryName();
   }
