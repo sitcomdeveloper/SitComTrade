@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   UserName: any;
   Password: any;
   loginForm: FormGroup;
-  submitted = false;  
+  submitted = false;
   userinfo: any;
   currrency: any;
   a: any;
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     });
     this.resetForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]]
-    })
+    });
   }
 
   onSubmit() {
@@ -71,12 +71,14 @@ export class LoginComponent implements OnInit {
   resetpwd() {
      const obj = this.resetForm.value.email;
      this.loginservice.resetPassword(obj).subscribe(res => {
-       if (res =='Invalid User')
-        this.ResetPWdResponse = 'Invalid User'
-       else if (res =='Success')
-         this.ResetPWdResponse = 'Success'
-       else
-         this.ResetPWdResponse = 'Failure'
+       console.log('rstpwd', res);
+       if (res == 'Invalid User') {
+        this.ResetPWdResponse = 'Invalid User';
+       } else if (res == 'Success') {
+         this.ResetPWdResponse = 'Success';
+ }       else {
+         this.ResetPWdResponse = 'Failure';
+ }
     });
   }
 }

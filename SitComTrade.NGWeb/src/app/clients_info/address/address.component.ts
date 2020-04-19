@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddressService } from './address.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { CountryService } from 'src/app/services/country.service';
 
 @Component({
   selector: 'app-address',
@@ -12,7 +13,7 @@ export class AddressComponent implements OnInit {
   name: any;
   Country: any;
   addressForm: FormGroup;
-  constructor(private addressservice: AddressService, private fb: FormBuilder) { }
+  constructor(private addressservice: AddressService, private fb: FormBuilder, private countryService: CountryService) { }
 
   ngOnInit() {
     this.addressForm = this.fb.group({
@@ -28,7 +29,7 @@ export class AddressComponent implements OnInit {
     // })
   }
   getcountryName() {
-    this.addressservice.countryName(this.name).subscribe(result => {
+    this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
       console.log('countryname', result);
     });

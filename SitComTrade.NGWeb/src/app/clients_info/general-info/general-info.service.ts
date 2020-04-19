@@ -15,7 +15,4 @@ export class GeneralInfoService {
   getUsersInfo(): Observable<any>{
     return this.http.get<any>(API_URL + "Client/GetClientDetailById/3");
   }
-  countryName(obj: any): Observable<any>{
-    return this.http.post<any>(API_URL + 'User/GetAllCountries', obj);
-  }
 }

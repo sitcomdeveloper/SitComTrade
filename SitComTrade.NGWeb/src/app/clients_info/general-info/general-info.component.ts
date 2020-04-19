@@ -3,6 +3,7 @@ import { GeneralInfoService } from '././general-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { CountryService } from 'src/app/services/country.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class GeneralInfoComponent implements OnInit {
   useraddinfo: any;
   name: any;
   Country: any;
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
   ngOnInit() {
     this._route.params.subscribe(params => console.log(params));
@@ -140,7 +142,7 @@ export class GeneralInfoComponent implements OnInit {
     // });
   }
   getcountryName() {
-    this._generalinfoservice.countryName(this.name).subscribe(result => {
+    this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
       console.log('countryname', result);
     });

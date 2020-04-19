@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
-import { LoginService } from 'src/app/login/login.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { CountryService } from 'src/app/services/country.service';
 
 @Component({
   selector: 'app-item',
@@ -14,7 +14,7 @@ export class ItemComponent implements OnInit {
   name: any;
   newUserForm: FormGroup;
 
-  constructor(private clientService: ClientsService, private loginService: LoginService, private fb: FormBuilder) { }
+  constructor(private clientService: ClientsService, private countryService: CountryService, private fb: FormBuilder) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
       firstname: [''],
@@ -23,33 +23,38 @@ export class ItemComponent implements OnInit {
       phone: [''],
       country: [''],
       password: [''],
-      group: ['']
+      group: [''],
+      countryid: [''],
+      currencyname: [''],
+      promocode: [''],
+      currencyid: [''],
+      ownerid: ['']
     }),
       this.getcountryName();
   }
   newClients() {
-    let obj = {
+    const obj = {
       FirstName: this.newUserForm.value.firstname,
       LastName: this.newUserForm.value.lastname,
       Email: this.newUserForm.value.email,
       Phone: this.newUserForm.value.phone,
       CountryName: this.newUserForm.value.country,
       Password: this.newUserForm.value.password,
-      // CountryId: this.newUserForm.value.,
-      //  CurrencyName :this.newUserForm.value.,
-      // Promocode :this.newUserForm.value.,  
-      //  CurrencyId: this.newUserForm.value.,
-      //  OwnerId: this.newUserForm.value.',
-    }
+      CountryId: this.newUserForm.value.countryid,
+       CurrencyName : this.newUserForm.value.currencyname,
+      Promocode : this.newUserForm.value.promocode,
+       CurrencyId: this.newUserForm.value.currencyid,
+       OwnerId: this.newUserForm.value.ownerid,
+    };
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
       console.log('newuser', res);
       this.newUserForm.reset();
-    })
+    });
   }
   // Get country
   getcountryName() {
-    this.loginService.countryName(this.name).subscribe(result => {
+    this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
       console.log('countryname', result);
     });

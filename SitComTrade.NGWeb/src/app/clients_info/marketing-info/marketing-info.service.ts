@@ -14,7 +14,4 @@ export class MarketingInfoService {
   getMarketingInfo(): Observable<any>{
     return this.http.get<any>(API_URL + "Client/GetMarketingInfoByOwnerId/3");
   }
-  countryName(obj: any): Observable<any>{
-    return this.http.post<any>(API_URL + 'User/GetAllCountries', obj);
-  }
 }
