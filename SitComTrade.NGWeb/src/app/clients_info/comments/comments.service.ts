@@ -8,13 +8,13 @@ const API_URL = environment.API_URL;
 @Injectable({
   providedIn: 'root'
 })
-export class AddressService {
+export class CommentsService {
 
   constructor(private http: HttpClient) { }
-  getAddress(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'Client/GetAddressByOwnerId/1', obj);
+  getComments(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/GetCommentByOwnerId/1', obj);
   }
-  insertAddress(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'Client/InsertUpdateAddress', obj);
+  insertComments(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/InsertComment', obj);
   }
 }

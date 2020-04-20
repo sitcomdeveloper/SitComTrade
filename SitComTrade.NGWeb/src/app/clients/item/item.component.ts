@@ -44,7 +44,8 @@ export class ItemComponent implements OnInit {
        CurrencyName : this.newUserForm.value.currencyname,
       Promocode : this.newUserForm.value.promocode,
        CurrencyId: this.newUserForm.value.currencyid,
-       OwnerId: this.newUserForm.value.ownerid,
+      //  OwnerId: this.newUserForm.value.ownerid,
+      OwnerId: 1
     };
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
