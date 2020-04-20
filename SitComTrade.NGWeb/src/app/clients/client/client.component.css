@@ -44,6 +44,29 @@ body {
     font-size: 17px;
 
 }
+.grpselect .bootstrap-select
+{
+    width:366px!important;
+    z-index: 6666;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
+.input-group.selecticon.grpselect {
+    width: 366px!important;
+    z-index: 6666;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
 .modal790
 {
     width:790px;
