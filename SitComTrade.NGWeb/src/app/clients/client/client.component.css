@@ -38,11 +38,15 @@ body {
 }
 .impdrp li a
 {
-    padding: 12px 30px 12px 25px;
+    padding: 12px 0px 12px 25px;
     color: #1b4b74;
     line-height: 2.53845;
     font-size: 17px;
 
+}
+.modal790
+{
+    width:790px;
 }
 .impdrp li a i
 {

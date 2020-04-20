@@ -2,7 +2,57 @@
 @import 'ag-grid-community/dist/styles/ag-grid.css';
 @import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 /* @import '~materialize-css/dist/css/materialize.min.css'; */
+/***********************CSS****************************/
+body {
+    /* font: 13px/1.53845 Poppins,Arial,sans-serif; */
+    color: #45596a;
+    background: #e0e8f3;
+    min-width: 1263px;
+    font-family: Poppins,Arial,sans-serif;
+}
+.popupheader
+{
+    text-transform: uppercase;
+    color: #000;
+    font: 700 21px Poppins,Arial,sans-serif;
+    letter-spacing: 1px;
+}
 
+.text-center {
+    text-align: center;
+}
+.submit-button
+{
+    position: relative;
+    padding: 11px 39px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.46666;
+    text-align: center;
+    background: #12baee;
+    color: #fff;
+    border-radius: 3px;
+    min-width: 125px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+.modal-footernew {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*****************************************************/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
@@ -44,7 +94,13 @@
     }
     /* Desktops and laptops ----------- */
     @media only screen  and (min-width : 1224px) {
-    /* Styles */
+        /* body:not(.page-client) {
+            font: 15px/1.53845 Poppins,Arial,sans-serif;
+            -moz-transform: scale(.8,.8);
+            transform-origin: 50% 0;
+            zoom: .8;
+            zoom: 80%;
+        } */
     }
     
     /* Large screens ----------- */
