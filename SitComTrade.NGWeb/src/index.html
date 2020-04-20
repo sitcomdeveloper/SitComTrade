@@ -162,6 +162,36 @@
      });
    });
    </script>
+  <script>
+  //   $(document).ready(function () {
+  //     $("#closecreateclient").click(function () {
+  //    $("#importclient").hide();
+  //    $("#importclientdata").show();
+
+  //    });
+  // });
+  $(document).ready(function(){
+    // Show modal on page load
+    // $("#myModal").modal('show');
+
+    // Hide modal on button click
+   
+ // $(".abf").click(function(){
+    //     $("#importclient").modal('hide');
+    //     $("#importclientdata").modal('show');
+
+    // });
+    $("#closecreateclient").click(function(){
+      $('#importclientdata').modal('show');
+    $('#importclient').modal('hide');
+    
+});
+
+// same as above button id
+// $("#closecreateclient").click(function(){
+// $('#importclientdata').modal('show')});
+});
+  </script> 
 </body>
 
 </html>
