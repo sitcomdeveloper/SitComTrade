@@ -140,3 +140,7 @@
     color: #a0b2d4;
     padding-bottom: 2px;
 }
+#importclient>.modal-footer
+{
+   padding: 0!important;
+}

@@ -452,11 +452,7 @@ grid-auto-columns: max-content;
     letter-spacing:1px;
 
 }
-.modal930
-{
-    width:930px!important;
-    max-width:930px!important;
-}
+
 .modal930 .modal-header {
     padding: 20px 30px;
 }
