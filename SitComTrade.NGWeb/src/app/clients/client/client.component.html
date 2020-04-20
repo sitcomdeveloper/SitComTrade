@@ -40,9 +40,9 @@
               <a routerLink=""><i class="fa fa-refresh"></i></a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
-              <div class="input-group selecticon">
+              <div class="input-group selecticon grpselect">
 
-                <select id="lunch" class="selectpicker form-control" data-live-search="true" title="ALL">
+                <select id="all" data-live-search="true"  title="Please select " data-live-search-placeholder="All" class="selectpicker form-control">
                   <option>Others</option>
                   <option>Accounts</option>
                   <option>All</option>
@@ -4042,7 +4042,7 @@
   <div class="modal-dialog modal930">
     <div class="modal-content">
       <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title createitemheader">
+        <h1 class="modal-title popupheader">
           CREATE ITEM
         </h1>
         <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
@@ -4060,16 +4060,16 @@
 
 <!--------------End create new user model--------------->
 <!------------------create Import Client model------------->
-<div class="modal" id="importclient">
-  <div class="modal-dialog modal930">
+<div class="modal" id="importclient" >
+  <div class="modal-dialog modal750">
     <div class="modal-content">
       <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title createitemheader">
-          CREATE ITEM
+        <h1 class="modal-title popupheader">
+          IMPORT CLIENT
         </h1>
         <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body nopadd">
         <app-import-client></app-import-client>
 
 
@@ -4172,4 +4172,5 @@
 
 
 <!--------------End create email-all model--------------->
+
 <ng4-loading-spinner> </ng4-loading-spinner>

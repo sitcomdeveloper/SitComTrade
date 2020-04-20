@@ -84,6 +84,7 @@ import { ImportClientComponent } from './clients/import-client/import-client.com
 import { ExportClientComponent } from './clients/export-client/export-client.component';
 import { SmsAllComponent } from './clients/sms-all/sms-all.component';
 import { EmailAllComponent } from './clients/email-all/email-all.component';
+import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 
 @NgModule({
   declarations: [
@@ -156,6 +157,7 @@ import { EmailAllComponent } from './clients/email-all/email-all.component';
     ExportClientComponent,
     SmsAllComponent,
     EmailAllComponent,
+    ImportClientDataComponent,
     
   ],
   imports: [

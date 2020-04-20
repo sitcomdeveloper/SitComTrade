@@ -38,11 +38,38 @@ body {
 }
 .impdrp li a
 {
-    padding: 12px 30px 12px 25px;
+    padding: 12px 0px 12px 25px;
     color: #1b4b74;
     line-height: 2.53845;
     font-size: 17px;
 
+}
+.grpselect .bootstrap-select
+{
+    width:366px!important;
+    z-index: 6666;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
+.input-group.selecticon.grpselect {
+    width: 366px!important;
+    z-index: 6666;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
+.modal790
+{
+    width:790px;
 }
 .impdrp li a i
 {
@@ -425,11 +452,7 @@ grid-auto-columns: max-content;
     letter-spacing:1px;
 
 }
-.modal930
-{
-    width:930px!important;
-    max-width:930px!important;
-}
+
 .modal930 .modal-header {
     padding: 20px 30px;
 }
