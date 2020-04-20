@@ -23,6 +23,13 @@ input.btn.btn-success {
   margin-left: 82px;
   font-size: 17px;
 }
+.alertclass {
+  color:  red;
+}
+.alertclass1 {
+  color:  green;
+}
+
 
 body > app-root > app-login > div.container {
   text-align: center !important;

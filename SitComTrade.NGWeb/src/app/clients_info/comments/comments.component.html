@@ -1,4 +1,4 @@
-<div class="collapse " id="addNewComment" aria-expanded="true" style="">
+<div class="collapse " id="addNewComment" aria-expanded="true" (click)=addComment()>
    <form novalidate="novalidate">
       <div class="comment">
          <div class="form-group">
@@ -13,4 +13,4 @@
       </div>
    </form>
 </div>
-<p>No Comment</p>
+<p>{{comments?.CommentDescription}}</p>

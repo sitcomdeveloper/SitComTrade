@@ -13,20 +13,55 @@ export class AddressComponent implements OnInit {
   name: any;
   Country: any;
   addressForm: FormGroup;
-  constructor(private addressservice: AddressService, private fb: FormBuilder, private countryService: CountryService) { }
+  clientAddress: any;
+  modifyAddress: any;
+  // tslint:disable-next-line: max-line-length
+  constructor(private addressservice: AddressService, private fb: FormBuilder, private countryService: CountryService) {this.editAddress(); }
 
   ngOnInit() {
     this.addressForm = this.fb.group({
-      ipcountry: ['']
+      ipcountry: [''],
+      zipcode: [''],
+      city: [''],
+      state: [''],
+      address: ['']
     });
     this.address();
     this.getcountryName();
   }
   address() {
-    // this.addressservice.getAddress().subscribe(res=>{
-    //   this.userAddress=res;
-    //   console.log('address',res);
-    // })
+    this.addressservice.getAddress(this.clientAddress).subscribe(res => {
+      this.userAddress = res;
+      console.log('address', res);
+    });
+  }
+
+  editAddress() {
+    this.addressservice.getAddress(this.clientAddress).subscribe(res => {
+      this.userAddress = res;
+      this.addressForm.patchValue({
+        ipcountry: this.userAddress.CountryName,
+        zipcode: this.userAddress.ZipCode,
+        city: this.userAddress.City,
+        state: this.userAddress.State,
+        address: this.userAddress.StreetAddress,
+      });
+    });
+  }
+  updateAddress() {
+    const obj = {
+      CountryName: this.addressForm.value.ipcountry,
+      ZipCode: this.addressForm.value.zipcode,
+      City: this.addressForm.value.city,
+      State: this.addressForm.value.state,
+      StreetAddress: this.addressForm.value.address,
+      CountryId: 1,
+      OwnerId: 1
+    };
+    this.addressservice.insertAddress(obj).subscribe(res => {
+      this.modifyAddress = res;
+      console.log('modifyadd', res);
+    });
   }
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
