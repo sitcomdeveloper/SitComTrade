@@ -58,6 +58,558 @@
       </div>
     </div> -->
   <!-- container-fluid -->
+  <!-------------start page -------->
+<div class="main-holder">
+   <div id="content">
+      <div class="tab-content">
+         <div role="tabpanel" class="tab-pane active fade in" id="filter">
+         </div>
+         <div>
+            <div id="email" class="email" unselectable="on" style="">
+               <div class="email-grid-header email-header-scrollbar">
+                  
+                  <table class="email-table " >
+                     <tbody>
+                        <tr class="email-header-row">
+                           <th class="email-header-cell email-header-sortable" >
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>Name</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-header-sortable" >
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>Subject</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-align-center email-header-sortable">
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>System Template</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-control-field email-align-center email-header-sort email-header-sort-asc">
+                            <div class="nospace">
+                            <i class="fa fa-sort-asc"></i>
+                            <br>
+                              <i class="fa fa-sort-desc"></i>
+                             
+                            </div>
+                            
+                          </th>
+                        </tr>
+                        <tr class="email-filter-row">
+                           <td class="email-cell" style="width: 100px;">
+                            <div class="jsgrid-cell-content">
+                              <div class="cstm-search input-control empty">
+                                <div class="checkbox-dd">
+                
+                                  <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"></i>
+                                  <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                                    <form>
+                                      <ul>
+                                        <li class="active">
+                                          <label>
+                                            <div class="input-radio fistinpt"><span class="">
+                                                <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                              </span>
+                                            </div>
+                                            Contains
+                                          </label>
+                                        </li>
+                                        <li class="active">
+                                          <label>
+                                            <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="6"></span></div>
+                                            Not Contains
+                                          </label>
+                                        </li>
+                                        <li>
+                                          <label>
+                                            <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="1"></span></div>
+                                            Equals
+                                          </label>
+                                        </li>
+                                        <li>
+                                          <label>
+                                            <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="2"></span></div>
+                                            Not Equals
+                                          </label>
+                                        </li>
+                                        <li class="active">
+                                          <label>
+                                            <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="3"></span></div>
+                                            Starts With
+                                          </label>
+                                        </li>
+                                        <li>
+                                          <label>
+                                            <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="4"></span></div>
+                                            End With
+                                          </label>
+                                        </li>
+                                        <li>
+                                          <label>
+                                            <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="11"></span></div>
+                                            Empty
+                                          </label>
+                                        </li>
+                                        <li>
+                                          <label>
+                                            <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                                  name="filterparam" type="radio" value="12"></span></div>
+                                            NotEmpty
+                                          </label>
+                                        </li>
+                                      </ul>
+                                    </form>
+                                  </div>
+                                </div>
+                               
+                              </div>
+                            </div>
+                           </td>
+                           <td class="email-cell">
+                              <div class="email-cell-content">
+                                 <div class="cstm-search input-control empty">
+                                    <div class="checkbox-dd">
+                                       <i class="cstm-search-btn-trigger comparation-type-5"></i>
+                                       <div class="drop dropdown-menu">
+                                          <form>
+                                             <ul>
+                                                <li class="active">
+                                                   <label>
+                                                      <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                      Contains
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                      Not Contains
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                      Equals
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                      Not Equals
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                      Starts With
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                      End With
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                      Empty
+                                                   </label>
+                                                </li>
+                                                <li>
+                                                   <label>
+                                                      <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                      NotEmpty
+                                                   </label>
+                                                </li>
+                                             </ul>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <input class="form-control" name="Subject_condition" type="text" id="032d3b26-836f-e546-d06e-65f36286ef3c" data-comparation-type="5"><i class="clear cstm-search-btn-clear"><span></span></i>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div class="btn-group bootstrap-select form-control">
+                                    <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="bd5f576a-ecb5-497f-3cb0-1a8e039d4fb9" title="All"><span class="filter-option pull-left">All</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                    <div class="dropdown-menu open" role="combobox">
+                                       <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                       <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                          <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">All</span></a></li>
+                                          <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Yes</span></a></li>
+                                          <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">No</span></a></li>
+                                       </ul>
+                                    </div>
+                                    <select class="form-control" name="IsSystemTemplate" data-container="body" data-live-search="true" id="bd5f576a-ecb5-497f-3cb0-1a8e039d4fb9" tabindex="-98">
+                                       <option value="">All</option>
+                                       <option value="true">Yes</option>
+                                       <option value="false">No</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center">
+                             <input class="email-button email-search-button" type="button" title="Search"><input class="email-button email-clear-filter-button" type="button" title="Clear filter"></td>
+                        </tr>
+                        <tr class="email-insert-row" >
+                           <td class="email-cell" >
+                              <div class="cstm-search input-control empty">
+                                <input type="text" class="form-control" placeholder="Search"></div>
+                           </td>
+                           <td class="email-cell">
+                              <div class="cstm-search input-control empty">
+                                <input type="text" class="form-control" placeholder="Search"></div>
+                           </td>
+                           <td class="email-cell email-align-center" >
+                              <div class="input-checkbox"><span>
+                                <input class="form-control" name="IsSystemTemplate" type="checkbox" id="4d32a12e-04f2-9350-cb49-e25bee3b5df8" value="true"></span></div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center">
+                             <input class="email-button email-insert-button" type="button" title="Insert"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="email-grid-body" >
+                  <table class="email-table" >
+                     <tbody>
+                        <tr class="email-row">
+                           <td class="email-cell" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Bonus Confirmation (en)">Bonus Confirmation (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="BONUS CONFIRMATION">BONUS CONFIRMATION</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-alt-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Change Password (en)">Change Password (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="PASSWORD UPDATE FROM SWISSFX">PASSWORD UPDATE FROM SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Contact Us (en)">Contact Us (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="CONTACT REQUEST FOR SWISSFX">CONTACT REQUEST FOR SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-alt-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Create Account (en)">Create Account (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WELCOME TO SWISSFX">WELCOME TO SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Create Demo Account (en)">Create Demo Account (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WELCOME TO SWISSFX: DEMO ACCOUNT">WELCOME TO SWISSFX: DEMO ACCOUNT</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-alt-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Create Real Account (en)">Create Real Account (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WELCOME TO SWISSFX: LIVE ACCOUNT">WELCOME TO SWISSFX: LIVE ACCOUNT</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Deposit Confirmation (en)">Deposit Confirmation (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="SUCCESSFULLY DEPOSITED FUNDS TO SWISSFX" data-original-title="" title="">SUCCESSFULLY DEPOSITED FUNDS TO SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-alt-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Forgot Password (en)">Forgot Password (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="PASSWORD REMINDER FROM SWISSFX">PASSWORD REMINDER FROM SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Update Account Details (en)">Update Account Details (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="ACCOUNT UPDATE AT SWISSFX">ACCOUNT UPDATE AT SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-alt-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Withdrawal Confirmation (en)">Withdrawal Confirmation (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WITHDRAWAL CONFIRMATION FROM SWISSFX" data-original-title="" title="">WITHDRAWAL CONFIRMATION FROM SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                        <tr class="email-row">
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Name">
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Withdrawal Request (en)">Withdrawal Request (en)</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_Subject">
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WITHDRAWAL REQUEST FROM SWISSFX">WITHDRAWAL REQUEST FROM SWISSFX</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" style="width: 100px;">
+                              <div class="email-cell-content">
+                                 <div data-display-for="8_IsSystemTemplate">
+                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
+                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="email-pager-container" style="display: none;">
+                  <div class="email-pager">Pages: <span class="email-pager-nav-button first email-pager-nav-inactive-button"><a href="javascript:void(0);">First</a></span> <span class="email-pager-nav-button prev email-pager-nav-inactive-button"><a href="javascript:void(0);">Prev</a></span> <span class="email-pager-page email-pager-current-page">1</span> <span class="email-pager-nav-button next email-pager-nav-inactive-button"><a href="javascript:void(0);">Next</a></span> <span class="email-pager-nav-button last email-pager-nav-inactive-button"><a href="javascript:void(0);">Last</a></span> &nbsp;&nbsp; 1 of 1 </div>
+               </div>
+               <div class="email-load-shader" style="display: none; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000;"></div>
+               <div class="email-load-panel" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">Please, wait...</div>
+            </div>
+            <div class="email-pager-perpage" style="display: block;">
+               <label>
+                  Records per page
+                  <div class="btn-group bootstrap-select count-records-list form-control">
+                     <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="20"><span class="filter-option pull-left">20</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                     <div class="dropdown-menu open" role="combobox">
+                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                           <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">20</span></a></li>
+                           <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">25</span></a></li>
+                           <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">50</span></a></li>
+                           <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">100</span></a></li>
+                           <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">250</span></a></li>
+                        </ul>
+                     </div>
+                     <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="250">250</option>
+                     </select>
+                  </div>
+               </label>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="copy">
+      <p>© 2020 FXTopTech CRM v1.9.0</p>
+   </div>
+</div>
+
+  <!-------------------------------->
 </div> 
 
 
