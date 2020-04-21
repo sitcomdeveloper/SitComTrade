@@ -4,14 +4,14 @@
           <table class="table-style01 dataTable">
              <thead>
                 <tr data-rule="titles">
-                   <th>Owner<span class="fixel"><span><span>Owner</span></span></span></th>
-                   <th>Type<span class="fixel"><span><span>Type</span></span></span></th>
-                   <th>Status<span class="fixel"><span><span>Status</span></span></span></th>
-                   <th>Date<span class="fixel"><span><span>Date</span></span></span></th>
-                   <th>Description<span class="fixel"><span><span>Description</span></span></span></th>
-                   <th>Created By<span class="fixel"><span><span>Created<br class="visible-xs visible-sm visible-md"> By</span></span></span></th>
-                   <th>Task<span class="fixel"><span><span>Task</span></span></span></th>
-                   <th>Created Date<span class="fixel"><span><span>Created<br class="visible-xs visible-sm visible-md"> Date</span></span></span></th>
+                   <th>Owner<span class="fixel"><span><span></span></span></span></th>
+                   <th>Type<span class="fixel"><span><span></span></span></span></th>
+                   <th>Status<span class="fixel"><span><span></span></span></span></th>
+                   <th>Date<span class="fixel"><span><span></span></span></span></th>
+                   <th>Description<span class="fixel"><span><span></span></span></span></th>
+                   <th>Created By<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
+                   <th>Task<span class="fixel"><span><span></span></span></span></th>
+                   <th>Created Date<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
                    <th></th>
                 </tr>
              </thead>
@@ -20,39 +20,39 @@
                 <tr data-index="0" data-rule="body">
                    <td style="max-width: 300px;">
                       <div data-display-for="16_UserId">
-                         <div class="text-ellipsis">Anton Novak</div>
+                         <div class="text-ellipsis"></div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_Type">
-                         <div class="text-ellipsis">Meeting</div>
+                         <div class="text-ellipsis">{{userTasks.TaskType}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_Status">
-                         <div class="text-ellipsis">New</div>
+                         <div class="text-ellipsis">{{userTasks.TaskStatus}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
-                      <div data-display-for="16_Date">3/4/2020 12:00:00 AM</div>
+                      <div data-display-for="16_Date">{{userTasks.CreatedAt}}</div>
                    </td>
                    <td style="max-width: 200px;">
                       <div data-display-for="16_Description">
-                         <div class="text-ellipsis" data-field="Description" data-original-value="info">info</div>
+                         <div class="text-ellipsis" data-field="Description" data-original-value="info">{{userTasks.Description}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_CreatedBy">
-                         <div class="text-ellipsis">Anton Novak</div>
+                         <div class="text-ellipsis">{{userTasks.CreatedBy}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_ItemId">
-                         <div class="text-ellipsis"><a href="#edit-popup"><span>TSK4587</span></a></div>
+                         <div class="text-ellipsis"><a href="#edit-popup"><span>{{userTasks.TaskTypeId}}</span></a></div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
-                      <div data-display-for="16_CreatedDate">3/4/2020 11:57:38 AM</div>
+                      <div data-display-for="16_CreatedDate">{{userTasks.CreatedAt}}</div>
                    </td>
                    <td class="nowrap"></td>
                 </tr>

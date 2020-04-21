@@ -25,11 +25,13 @@ namespace SitComTech.Domain.Services
                 entity.Active = true;
                 entity.Deleted = false;
                 entity.CreatedAt = DateTime.Now;
-                entity.OwnerId = 1;
-                entity.TaskStatusId = 1;
-                entity.TaskTypeId = 1;
-                entity.NotiTrasportId = 1;
-                entity.TaskType = "test";
+                entity.OwnerId = userdata.OwnerId;
+                entity.TaskStatusId = userdata.TaskStatusId;
+                entity.TaskTypeId = userdata.TaskTypeId;
+                entity.NotiTrasportId = userdata.NotiTrasportId;
+                entity.TaskType = userdata.TaskType;
+                entity.TaskStatus = userdata.TaskStatus;
+                entity.NotiTimeBefore = userdata.NotiTimeBefore;
                 entity.CreatedBy = 0;
                 entity.CreatedByName = "";
                 _repository.Insert(entity);
