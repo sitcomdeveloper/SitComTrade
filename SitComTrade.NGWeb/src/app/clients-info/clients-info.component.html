@@ -204,15 +204,60 @@
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingSeven">
 
-            <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false"
+            <!-- <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false"
               aria-controls="collapseSeven" id="tasks" style="color:#000;">
               <h5 class="mb-0">
 
                 Tasks
               </h5>
+              <div class="box-control pull-right1">
+                <div class="records-control-switcher" data-rule="count-record-selector" style="display: inline-block;">
+                   <label>Records per page</label>
+                   <select class="form-control" name="RecordsPerPageSelector" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="15">15</option>
+                      <option value="20">20</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                   </select>
+                </div>
+                <a href="javascript:void(0);" class="ico-add ico-sz3" >
+                  <i class="fa fa-plus"></i>
+                
+                </a>
+          
+             </div>
               <i class="fa fa-chevron-down collpsicon"></i>
 
-            </a>
+            </a> -->
+            <div class="box-heading">
+              <div class="box-control pull-right">
+                 <div class="records-control-switcher showrcrd" data-rule="count-record-selector" style="display: none;">
+                    <label>Records per page</label>
+                    <select class="form-control" name="RecordsPerPageSelector" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c">
+                       <option value="5">5</option>
+                       <option value="10">10</option>
+                       <option value="15">15</option>
+                       <option value="20">20</option>
+                       <option value="50">50</option>
+                       <option value="100">100</option>
+                    </select>
+                 </div>
+                 <a href="javascript:void(0);" class="ico-add ico-sz3 showrcrd popupicon" data-rule="add-link" style="display:none;" data-toggle="modal" data-target="#createtask">
+                  <i class="fa fa-plus "></i>
+                </a>
+                 <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false"
+                 aria-controls="collapseSeven" id="tasks" style="color:#000;">
+                 <i class="fa fa-chevron-down collpsicon"></i>
+                </a>
+              </div>
+              <h2>Tasks</h2>
+              <div class="records-control showrcrd" style="display: none;">Showing Records 
+                <a href="javascript:void(0);" class="prev" style="visibility:hidden">Prev</a>
+                 <a href="javascript:void(0);" class="next" style="visibility:hidden">Next</a>
+                  <span style="width: 30px;">1 - 1</span> of <span style="width: 20px;">1</span></div>
+           </div>
           </div>
           <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
             <div class="card-body">
@@ -304,4 +349,29 @@
     </div>
   </div>
 </div>
+<!------------------create task model------------->
+<div class="modal" id="createtask">
+  <div class="modal-dialog modal930">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title popupheader">
+          <i _ngcontent-jvq-c1="" class="fa fa-plus "></i>
+          <span>
+          CREATE TASK
+          </span>
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-create-task></app-create-task>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------End create task model--------------->
 <app-footer></app-footer>

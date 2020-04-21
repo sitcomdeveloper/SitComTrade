@@ -85,6 +85,7 @@ import { ExportClientComponent } from './clients/export-client/export-client.com
 import { SmsAllComponent } from './clients/sms-all/sms-all.component';
 import { EmailAllComponent } from './clients/email-all/email-all.component';
 import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
+import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
 
 @NgModule({
   declarations: [
@@ -158,6 +159,7 @@ import { ImportClientDataComponent } from './clients/import-client-data/import-c
     SmsAllComponent,
     EmailAllComponent,
     ImportClientDataComponent,
+    CreateTaskComponent,
     
   ],
   imports: [

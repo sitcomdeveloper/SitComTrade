@@ -185,8 +185,59 @@ body {
     width: 16px;
     height: 16px;
 }
-
-
+.box-heading {
+    width: 100%;
+}
+.box-control {
+    position: relative;
+    min-height: 30px;
+    margin: -4px 0;
+}
+.records-control-switcher {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.records-control-switcher label {
+    font: 14px/26px Poppins,Arial,sans-serif;
+    vertical-align: top;
+    color: #95abbf;
+    margin: 0 15px;
+}
+.records-control-switcher .form-control {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: 26px!important;
+    background: #d2dbe8;
+    color: #45596a;
+    border-color: transparent;
+    font-size: 14px;
+    padding: 2px 26px;
+    margin: 0;
+    border-radius: 3px;
+    margin-right: 20px;
+}
+.box-heading h2+.records-control {
+    padding-left: 80px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.records-control {
+    display: inline-block;
+    vertical-align: middle;
+    color: #8da5ba;
+    line-height: 22px;
+}
+.box-heading h2 {
+    display: inline-block;
+    margin: 0;
+}
+.box-pd01 .table-type01, .box-pd01 .table-type02, .box-pd01 .table-type04 {
+    margin: 0 -40px 35px;
+}
+.scroll-area {
+    overflow: auto;
+}
 /*****************************************************/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

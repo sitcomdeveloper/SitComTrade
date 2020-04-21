@@ -72,9 +72,15 @@ div#headingOne {
     position: relative;
     min-height: 30px;
     margin: 10px 0;
+    display: inline-flex;
 }
 .box-control.pull-right>a, .box-control.pull-right>div>a {
     margin: 0 0 0 5px;
+}
+.popupicon i  {
+    color: #d2dbe8;
+    vertical-align: middle!important;
+    margin-right: 12px!important;
 }
 .no-events {
     pointer-events: none;
@@ -346,5 +352,6 @@ div#headingOne {
     margin: -3px 25px;
     font-size: 10px;
 }
+
 
 
