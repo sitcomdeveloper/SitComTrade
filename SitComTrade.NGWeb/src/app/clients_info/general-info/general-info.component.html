@@ -322,8 +322,13 @@
           {{userGenralinfo?.RegistrationType}}
           </div>
           <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
+          <!-- <input class="form-control" name="FirstName" type="text"  aria-required="true"> -->
+          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+          data-live-search="true" formControlName="registrationtype">
+          <option ngcontent-qpo-c3="">Select</option>
+          <option ngcontent-qpo-c3="" *ngFor="let type of registrationType">
+             {{type.Name}}</option>
+            </select>
           </div>
           </td>
         </tr>

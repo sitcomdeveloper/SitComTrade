@@ -21,14 +21,15 @@ export class GeneralInfoComponent implements OnInit {
   useraddinfo: any;
   name: any;
   Country: any;
+  registrationType: any;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
   ngOnInit() {
     this._route.params.subscribe(params => console.log(params));
     this._route.paramMap.subscribe(params => {
-      this.stk = params.get("userid");
-      if (this.stk === "1") {
+      this.stk = params.get('userid');
+      if (this.stk === '1') {
 
         this.editGeneralInfo = true;
 
@@ -76,7 +77,7 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: ['']
     });
     this.spinnerService.show();
-    setTimeout( () =>{
+    setTimeout( () => {
     this.Apptitle = JSON.parse(localStorage.getItem('project'));
     this.spinnerService.hide();
     console.log('getclientdata', this.Apptitle);
@@ -84,7 +85,8 @@ export class GeneralInfoComponent implements OnInit {
     // this.usersInfo();
     this.edituserInfo();
   }, 5000);
-  this.getcountryName();
+    this.getcountryName();
+    this.getRegistrationFromType();
   }
   // usersInfo() {
 
@@ -146,5 +148,11 @@ export class GeneralInfoComponent implements OnInit {
       this.Country = result;
       console.log('countryname', result);
     });
+  }
+  getRegistrationFromType() {
+    this._generalinfoservice.getRegistrationType().subscribe(res => {
+      this.registrationType = res;
+      console.log('registeredtype', res);
+    })
   }
 }
