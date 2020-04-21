@@ -55,15 +55,15 @@ namespace SitComTech.Domain.Services
                         LastName = clientdata.LastName,
                         Password = clientdata.Password,
                         Email = clientdata.Email,
-                        CurrencyId = clientdata.CurrencyId,
-                        CurrencyName = clientdata.CurrencyName,
+                        GroupId = clientdata.GroupId,
+                        GroupName = clientdata.GroupName,
                         CountryId = clientdata.CountryId,
                         CountryName = clientdata.CountryName,
                         Enabled = true,
-                        TypeName = "Real",
+                        TypeName = clientdata.AccountType,
                         FirstRegistrationDate = DateTime.Now,
                         RegistrationType = "Direct",
-                        Promocode = clientdata.Promocode,
+                        ISendEmail = clientdata.ISendEmail,
                         Phone = clientdata.Phone,
                         ResponseStatusId = 7,
                         ResponseStatus = "Interested",
@@ -482,9 +482,9 @@ namespace SitComTech.Domain.Services
             throw new NotImplementedException();
         }
 
-        public Address GetAddressByOwnerId(long ownerid)
+        public List<Address> GetAddressByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
         public IQueryable<Address> GetAll()

@@ -19,10 +19,12 @@ namespace SitComTech.Model.ViewModel
         public Nullable<long> CountryId { get; set; }
         public string CountryName { get; set; }
 
-        public Nullable<long> CurrencyId { get; set; }
-        public string CurrencyName { get; set; }
+        public Nullable<long> GroupId { get; set; }
+        public string GroupName { get; set; }
 
-        public string Promocode { get; set; }
+        public Nullable<bool> ISendEmail { get; set; }
+
+        public string AccountType { get; set; }
 
         public string Password { get; set; }
 

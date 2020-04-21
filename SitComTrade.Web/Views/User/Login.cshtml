@@ -213,28 +213,29 @@
             CommentDescription: ko.observable('test comm desc'),
             OwnerId: ko.observable(1)
         };
-        UserVM.Register = {
-            City: ko.observable('Lead'),
-            State: ko.observable('Lead'),
-            ZipCode: ko.observable('Leadhfhf'),
-            CountryId: ko.observable(1),           
-            CountryName: ko.observable('Lead'),
-            OwnerId: ko.observable('1'),
-            StreetAddress: ko.observable('Lead'),
-        };
         //UserVM.Register = {
-        //    FirstName: ko.observable('Lead'),
-        //    LastName: ko.observable('Lead'),
-        //    Email: ko.observable('Leadhfhf'),
-        //    CountryId: ko.observable(0),
-        //    CurrencyName: ko.observable('hdfdf'),
-        //    Promocode: ko.observable('Lead'),
-        //    Password: ko.observable('Lead'),
+        //    City: ko.observable('Lead'),
+        //    State: ko.observable('Lead'),
+        //    ZipCode: ko.observable('Leadhfhf'),
+        //    CountryId: ko.observable(1),           
         //    CountryName: ko.observable('Lead'),
-        //    CurrencyId: ko.observable(0),
         //    OwnerId: ko.observable('1'),
-        //    Phone: ko.observable('Lead'),
+        //    StreetAddress: ko.observable('Lead'),
         //};
+        UserVM.Register = {
+            FirstName: ko.observable('fdfd'),
+            LastName: ko.observable('Ldgdgdead'),
+            Email: ko.observable('fdgdgdg'),
+            CountryId: ko.observable(0),
+            GroupName: ko.observable('hdfdf'),
+            AccountType: ko.observable('Lead'),
+            Password: ko.observable('dgdg'),
+            CountryName: ko.observable('wewew'),
+            GroupId: ko.observable(0),
+            ISendEmail: ko.observable(0),
+            OwnerId: ko.observable('1'),
+            Phone: ko.observable('24234224'),
+        };
         //ko.applyBindings(UserVM, document.getElementById("logindiv"));
         //$(function () {
         //    $('#login-form-link').click(function (e) {
@@ -255,18 +256,18 @@
 
         $(document).ready(function () {
            
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/Client/GetRegistrationTypeEnum',
-                contentType: 'application/json',
-                processData: false,
-                success: function (data) {
-                    alert(data.id);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
-                }
-            });
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/Client/GetRegistrationTypeEnum',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data.id);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/InsertUpdateAddress",
@@ -277,16 +278,16 @@
             //        alert(result);
             //    }
             //});
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/Client/AddClient",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    data: ko.toJSON(UserVM.Register),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/AddClient",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.Register),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/GetTradeAccountByType",
