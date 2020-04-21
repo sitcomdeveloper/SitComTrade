@@ -1,11 +1,14 @@
-<div class="collapse " id="addNewComment" aria-expanded="true" (click)=addComment()>
+
+<div class="collapse " id="addNewComment" aria-expanded="true">
    <form novalidate="novalidate">
       <div class="comment">
          <div class="form-group">
-             <textarea name="CommentText" class="form-control textarea-h01"  aria-required="true"></textarea>
+            <form [formGroup] = "commentsForm">
+             <textarea name="CommentText" formControlName="commentarea" class="form-control textarea-h01"  aria-required="true"></textarea>
+            </form>
          </div>
          <div class="text-right">
-             <a href="#" class="btn-type02 submit-button">Submit</a>
+             <a class="btn-type02 submit-button" (click)=addComment()>Submit</a>
              <a href="#addNewComment" class="btn-type02" data-toggle="collapse" aria-controls="addNewComment" aria-expanded="true">
                Cancel
              </a>
@@ -13,4 +16,5 @@
       </div>
    </form>
 </div>
+
 <p>{{comments?.CommentDescription}}</p>
