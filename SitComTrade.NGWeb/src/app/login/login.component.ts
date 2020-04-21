@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   a: any;
   b: any;
   marked: any;
-  isSubmitted = false;
   pwdrecover: any;
   getPassword: any;
   resetForm: FormGroup;
@@ -45,12 +44,23 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  get f() {
+    return this.resetForm.controls;
+  }
+
   onSubmit() {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
   }
+  reset() {
+    this.submitted = true;
+    if (this.resetForm.invalid) {
+        return;
+    }
+    // alert('SUCCESS!! :-)');
+}
 
 
   login() {
@@ -81,11 +91,13 @@ export class LoginComponent implements OnInit {
         this.green = false;
         this.red = true;
         this.resetError = true;
+        // alert('Invalid User!');
        } else if (res === 'Success') {
          this.ResetPWdResponse1 = '!Success';
          this.red = false;
          this.green = true;
          this.resetError = true;
+        //  alert('Success! Your login credentials is sent to your email');
  }       else {
          this.ResetPWdResponse = 'Failure';
          this.green = false;
@@ -93,5 +105,8 @@ export class LoginComponent implements OnInit {
          this.resetError = true;
  }
     });
+    //  this.resetForm.reset();
   }
+
+
 }

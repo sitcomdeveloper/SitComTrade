@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       phoneCode: [''],
       countryName: [''],
       currencyName: ['']
-    },{
+    }, {
         validator: MustMatch('password', 'confirmPassword')
       });
     this.countryName(this.a);
@@ -64,13 +64,13 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.Country.forEach(element => {      
-      if (element.Id == this.registerForm.value.country) {
+    this.Country.forEach(element => {
+      if (element.Id === this.registerForm.value.country) {
         this.registerForm.value.countryName = element.Name;
       }
     });
     this.currrency.forEach(element => {
-      if (element.Id == this.registerForm.value.currency) {
+      if (element.Id === this.registerForm.value.currency) {
         this.registerForm.value.currencyName = element.Name;
       }
     });
@@ -96,9 +96,9 @@ export class RegisterComponent implements OnInit {
       }
       );
     }
-   
-    
-  }  
+
+
+  }
   countryName(a) {
     this.loginservice.countryName(0).subscribe(result => {
       this.Country = result;
@@ -129,5 +129,5 @@ export class RegisterComponent implements OnInit {
     const { value: confirmPassword } = formGroup.get('confirmPassword');
     return password === confirmPassword ? null : { passwordNotMatch: true };
   }
-  
+
 }
