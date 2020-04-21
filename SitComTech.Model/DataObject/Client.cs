@@ -30,12 +30,13 @@ namespace SitComTech.Model.DataObject
         public Nullable<DateTime> AssignedDate { get; set; }
         public Nullable<DateTime> FirstRegistrationDate { get; set; }
         public string ImportId { get; set; }
-        public string StatusGroup { get; set; }
+        public string GroupName { get; set; }
+        public Nullable<long> GroupId { get; set; }
         public string Desk { get; set; }
         public string RegistrationType { get; set; }
         public string LastTaskDaysPast { get; set; }
         public string DaysAgoClientCreated { get; set; }
-        public string Promocode { get; set; }
+        public Nullable<bool> ISendEmail { get; set; }
         public Nullable<long> CitizenshipId { get; set; }
         public Nullable<long> DeskId { get; set; }
         public Nullable<long> TypeId { get; set; }

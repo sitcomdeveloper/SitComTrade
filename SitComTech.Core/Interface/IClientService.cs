@@ -46,6 +46,6 @@ namespace SitComTech.Core.Interface
 
     public interface IAddressService : IUnitOfWork<Address>
     {
-        Address GetAddressByOwnerId(long ownerid);
+        List<Address> GetAddressByOwnerId(long ownerid);
     }
 }
