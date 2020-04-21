@@ -41,8 +41,7 @@
     <div class="col-md-12" style="padding:0!important"> 
         <div class="modal-footer modal-footernew">
            <div class="text-center margin17">
-              <a href="#" class="button submit-button itembutton" id="closecreateclient" data-toggle="modal" data-target="#importclientdata" data-dismiss="modal"
-               >Next</a>
+              <a href="#" class="button submit-button itembutton close" id="closecreateclient" data-toggle="modal" data-target="#importclientdata" data-dismiss="modal">Next</a>
              
            </div>
         </div>
@@ -54,14 +53,14 @@
 
 
  <!------------------create Import Client data model------------->
-<div class="modal" id="importclientdata">
-   <div class="modal-dialog modal750">
+<div class="modal" id="importclientdata" tabindex="-1" > 
+   <div class="modal-dialog modal1250">
      <div class="modal-content">
        <div class="modal-header" style="height: 4rem;">
          <h1 class="modal-title popupheader">
            IMPORT CLIENT
          </h1>
-         <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+         <button type="button" class="close" data-dismiss="modal"  style="outline:none">×</button>
        </div>
        <div class="modal-body nopadd">
          <app-import-client-data></app-import-client-data>
@@ -75,11 +74,11 @@
  
  
  <!--------------End create Import Client model--------------->
- <script>
+ <!-- <script>
    $(document).ready(function () {
    $('#importclient').on('hidden.bs.modal', function () {
    // Load up a new modal...
    $('#importclientdata').modal('show')
  })
  });
- </script>
+ </script> -->
