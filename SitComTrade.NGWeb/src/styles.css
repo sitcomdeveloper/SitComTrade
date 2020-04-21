@@ -238,6 +238,39 @@ body {
 .scroll-area {
     overflow: auto;
 }
+.valign-label {
+    display: table;
+    display: flex;
+    align-items: center;
+    height: 33px;
+    width: 100%;
+    margin-bottom: 0;
+}
+.valign-label>span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.bootstrap-select>.btn.dropdown-toggle {
+    font-size: 13px;
+    background: #fff;
+    border-color: #dde7f9;
+    text-shadow: none;
+    height: 100%;
+    opacity: 1;
+    border-radius: 2px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.bs-searchbox .form-control {
+    margin-bottom: 0;
+    width: 100%;
+    float: none;
+    border-radius: 0;
+    border-color: transparent transparent #dde7f9;
+    padding-left: 38px;
+    text-align: left;
+}
+
 /*****************************************************/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
