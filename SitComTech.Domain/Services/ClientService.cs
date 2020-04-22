@@ -341,9 +341,9 @@ namespace SitComTech.Domain.Services
             throw new NotImplementedException();
         }
 
-        public Email GetEmailByOwnerId(long ownerid)
+        public List<Email> GetEmailByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
         public void Insert(Email entity)
@@ -384,9 +384,9 @@ namespace SitComTech.Domain.Services
             throw new NotImplementedException();
         }
 
-        public ShortMessage GetShortMessageByOwnerId(long ownerid)
+        public List<ShortMessage> GetShortMessageByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
         public void Insert(ShortMessage entity)
@@ -429,9 +429,9 @@ namespace SitComTech.Domain.Services
             throw new NotImplementedException();
         }
 
-        public Comment GetCommentByOwnerId(long ownerid)
+        public List<Comment> GetCommentByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
         public void Insert(Comment comm)

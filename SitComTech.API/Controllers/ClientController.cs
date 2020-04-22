@@ -101,14 +101,14 @@ namespace SitComTech.API.Controllers
 
         [HttpGet]
         [Route("GetEmailByOwnerId/{ownerid}")]
-        public Email GetEmailByOwnerId(long ownerid)
+        public List<Email> GetEmailByOwnerId(long ownerid)
         {
             return _emailService.GetEmailByOwnerId(ownerid);
         }
 
         [HttpGet]
         [Route("GetShortMessageByOwnerId/{ownerid}")]
-        public ShortMessage GetShortMessageByOwnerId(long ownerid)
+        public List<ShortMessage> GetShortMessageByOwnerId(long ownerid)
         {
             return _shortMeassageService.GetShortMessageByOwnerId(ownerid);
         }
@@ -142,7 +142,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("GetCommentByOwnerId/{ownerid}")]
-        public Comment GetCommentByOwnerId(long ownerid)
+        public List<Comment> GetCommentByOwnerId(long ownerid)
         {
             return _commentService.GetCommentByOwnerId(ownerid);
         }

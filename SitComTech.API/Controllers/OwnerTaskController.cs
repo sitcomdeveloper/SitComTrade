@@ -36,6 +36,14 @@ namespace SitComTech.API.Controllers
         {
             return _taskService.GetTaskList().ToList();
         }
+
+        [HttpPost]
+        [Route("GetTaskByOwnerId/{ownerid}")]
+        public List<OwnerTask> GetTaskByOwnerId(long ownerid)
+        {
+            return _taskService.GetTaskByOwnerId(ownerid);
+        }
+
         [HttpPost]
         [Route("InsertTask")]
         public OwnerTask InsertTask(OwnerTask entity)
