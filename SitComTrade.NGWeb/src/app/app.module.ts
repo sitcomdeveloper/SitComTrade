@@ -86,6 +86,8 @@ import { SmsAllComponent } from './clients/sms-all/sms-all.component';
 import { EmailAllComponent } from './clients/email-all/email-all.component';
 import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
+import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
+import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 
 @NgModule({
   declarations: [
@@ -160,6 +162,8 @@ import { CreateTaskComponent } from './clients_info/tasks-info/create-task/creat
     EmailAllComponent,
     ImportClientDataComponent,
     CreateTaskComponent,
+    CreateTemplateComponent,
+    EditTemplateComponent,
     
   ],
   imports: [

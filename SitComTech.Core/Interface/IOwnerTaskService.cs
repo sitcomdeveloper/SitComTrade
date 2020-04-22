@@ -8,6 +8,7 @@ namespace SitComTech.Core.Interface
     {
         List<OwnerTask> GetTaskList();
         OwnerTask InsertTask(OwnerTask taskentity);
+        List<OwnerTask> GetTaskByOwnerId(long ownerid);
 
     }
     public interface ITaskTypeService : IUnitOfWork<TaskType>

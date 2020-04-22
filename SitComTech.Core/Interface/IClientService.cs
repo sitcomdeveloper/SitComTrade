@@ -32,16 +32,16 @@ namespace SitComTech.Core.Interface
 
     public interface IEmailService : IUnitOfWork<Email>
     {
-        Email GetEmailByOwnerId(long ownerid);
+        List<Email> GetEmailByOwnerId(long ownerid);
     }
     public interface IShortMessageService : IUnitOfWork<ShortMessage>
     {
-        ShortMessage GetShortMessageByOwnerId(long ownerid);
+        List<ShortMessage> GetShortMessageByOwnerId(long ownerid);
     }
 
     public interface ICommentService : IUnitOfWork<Comment>
     {
-        Comment GetCommentByOwnerId(long ownerid);
+        List<Comment> GetCommentByOwnerId(long ownerid);
     }
 
     public interface IAddressService : IUnitOfWork<Address>
