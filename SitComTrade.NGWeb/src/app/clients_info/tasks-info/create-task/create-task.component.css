@@ -134,3 +134,24 @@
     background: #12baee;
     color: #fff;
 }
+.createselect
+{
+    font-size: 13px;
+    background: #fff;
+    border-color: #dde7f9;
+    text-shadow: none;
+    height: 100%;
+    opacity: 1;
+    border-radius: 2px;
+    box-shadow: none!important;
+    border: 1px solid #dde7f9;
+}
+.createselect option
+{
+    padding: 0;
+    margin: 5px 0 0;
+    font-size: 13px;
+    border: 1px solid #dde7f9;
+    border-radius: 2px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+}
