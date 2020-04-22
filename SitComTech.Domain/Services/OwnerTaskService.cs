@@ -72,6 +72,10 @@ namespace SitComTech.Domain.Services
         {
             return _repository.GetAll().ToList();
         }
+        public List<OwnerTask> GetTaskByOwnerId(long ownerid)
+        {
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+        }
         public OwnerTask GetById(object Id)
         {
             throw new NotImplementedException();
