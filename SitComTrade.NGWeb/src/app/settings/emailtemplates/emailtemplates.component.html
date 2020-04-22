@@ -83,7 +83,7 @@
                            </th>
                            <th class="email-header-cell email-align-center email-header-sortable">
                               <div class="email-cell-content">
-                                 <div class="text-ellipsis"><span>System Template</span></div>
+                                 <div class="text-ellipsis text-center"><span>System Template</span></div>
                               </div>
                            </th>
                            <th class="email-header-cell email-control-field email-align-center email-header-sort email-header-sort-asc">
@@ -229,27 +229,32 @@
                            </td>
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
-                                 <div class="btn-group bootstrap-select form-control">
-                                    <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="bd5f576a-ecb5-497f-3cb0-1a8e039d4fb9" title="All"><span class="filter-option pull-left">All</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                                    <div class="dropdown-menu open" role="combobox">
-                                       <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                                       <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                          <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">All</span></a></li>
-                                          <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Yes</span></a></li>
-                                          <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">No</span></a></li>
-                                       </ul>
-                                    </div>
-                                    <select class="form-control" name="IsSystemTemplate" data-container="body" data-live-search="true" id="bd5f576a-ecb5-497f-3cb0-1a8e039d4fb9" tabindex="-98">
-                                       <option value="">All</option>
-                                       <option value="true">Yes</option>
-                                       <option value="false">No</option>
-                                    </select>
-                                 </div>
+                                 <select class="btn-group bootstrap-select form-control emailinpt">
+                                  
+                                       <option data-original-index="1" class="selected ">
+                                           <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                               
+                                               <span class="text">All</span>
+                                             </a>
+                                         </option>
+                                         <option data-original-index="1" class="selected ">
+                                             <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                 
+                                                 <span class="text">Yes</span>
+                                               </a>
+                                           </option>
+                                           <option data-original-index="1" class="selected ">
+                                             <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                                                 
+                                                 <span class="text">No</span>
+                                               </a>
+                                           </option>
+                              </select>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center">
                               <span>
-                                 <i _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyicon"></i>
+                                 <i _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i>
                               </span>
                            </td>
                         </tr>
@@ -277,13 +282,16 @@
                            </td>
                            <td class="email-cell email-align-center" >
                               <div class="email-cell-content">
-                                 <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                 <div data-display-for="8_IsSystemTemplate ">
+                                    <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i>
+                                    </div>
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop ">
+                                 <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+                                               </div>
                            </td>
                         </tr>
                         <tr class="email-alt-row">
@@ -304,12 +312,16 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
-                           <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                           <td class="email-cell email-control-field email-align-center">
+                              <div class="dropleft droptop text-center">
+                                   <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+
+                              </div>
                            </td>
                         </tr>
                         <tr class="email-row">
@@ -330,12 +342,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-alt-row">
@@ -356,12 +370,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-row">
@@ -382,12 +398,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-alt-row">
@@ -408,12 +426,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-row">
@@ -434,12 +454,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-alt-row">
@@ -460,12 +482,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-row">
@@ -486,12 +510,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-alt-row">
@@ -512,12 +538,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                         <tr class="email-row">
@@ -538,12 +566,14 @@
                            <td class="email-cell email-align-center" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
-                                    <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                   <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
+
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop"><input class="email-button email-edit-button" type="button" title="Edit"></div>
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
+</div>
                            </td>
                         </tr>
                      </tbody>

@@ -5,8 +5,7 @@
     padding: 35px 0 0;
     background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
     color: #fff;
-   height: 82px;
-    margin:0px 15px;
+    height: 82px;
 }
 .breadcrumb
 {
@@ -90,7 +89,7 @@
     border-spacing: 0;
 }
 th.email-header-cell.email-header-sortable {
-    width: 28%;
+    width: 26.6%;
 }
 .email-alt-row>.email-cell, .email-header-row>.email-header-cell {
     background: #f5f8fc;
@@ -105,13 +104,27 @@ th.email-header-cell.email-header-sortable {
     padding: 0;
     line-height: 0;
 }
+td.email-cell {
+    width: 29%;
+}
+.nospace i {
+    line-height: 0;
+}
+.nospace{
+    text-align: end;
+}
 .emailinpt
 {
-    height:27px;
+    height:27px!important;
+    border: 1px solid #ced4da;
 }
 .email-cell-content {
     padding: 5px;
 }
 .email-row:hover {
     background: #e1ebf9;
+}
+.email-cell-content
+{
+    font: 15px/1.53845 Poppins,Arial,sans-serif;
 }

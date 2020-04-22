@@ -185,8 +185,8 @@ body {
     width: 16px;
     height: 16px;
 }
-.greyicon {
-    color: #4485bc;
+.greyiconn {
+    color: #bdc3ca;
     text-align: -webkit-center;
     display: flex;
     justify-content: center;
@@ -195,10 +195,14 @@ body {
     cursor: pointer;
 }
 
-.greyicon:hover
+.greyiconn:hover
 {
     color:#2175bb;
     opacity: 1;
+}
+.greenbtn
+{
+    color:#12eea3;
 }
 .box-heading {
     width: 100%;
