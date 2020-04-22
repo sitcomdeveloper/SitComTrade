@@ -1,1 +1,52 @@
-<p>create-template works!</p>
+<div class="form-holder">
+    <form class="form-horizontal" novalidate="novalidate">
+       <div class="form-group">
+      <div class="row">
+        <div class="col-xs-2 col-md-2"><label class="valign-label" for="Name"><span data-tooltip-el="">Name</span></label></div>
+          <div class="col-xs-10 col-md-10"><input class="form-control" name="Name" type="text" id="95040634-3c7c-0ef6-2ac1-143b8ad12967" aria-required="true"></div>
+       </div>
+    </div>
+       <div class="form-group">
+           <div class="row">
+          <div class="col-xs-2 col-md-2"><label class="valign-label" for="Subject"><span data-tooltip-el="">Subject</span></label></div>
+          <div class="col-xs-10 col-md-10"><input class="form-control" name="Subject" type="text" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" aria-required="true"></div>
+       </div>
+       <div></div></div>
+       <div class="row">
+          <div class="col-xs-10 col-xs-offset-2 col-md-10 col-md-offset-2">
+             <div class="checkbox required-flag">
+                <label class="" for="b2fe92ae-b635-4e71-c2e6-ee34d35bd683">
+                   <div class="input-checkbox" id="uniform-b2fe92ae-b635-4e71-c2e6-ee34d35bd683"><span class=""><input class="form-control" name="IsSystemTemplate" type="checkbox" id="b2fe92ae-b635-4e71-c2e6-ee34d35bd683" value="true"></span></div>
+                   System Template
+                </label>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-xs-10 col-xs-offset-2 col-md-10 col-md-offset-2">
+             <div class="checkbox required-flag">
+                <label class="" for="9e20448b-615e-181d-2575-6786255f3d3f">
+                   <div class="input-checkbox" id="uniform-9e20448b-615e-181d-2575-6786255f3d3f"><span class=""><input class="form-control" name="IsPublic" type="checkbox" id="9e20448b-615e-181d-2575-6786255f3d3f" value="true"></span></div>
+                   IsPublic
+                </label>
+             </div>
+          </div>
+       </div>
+       
+      <div class="row">
+          <div class="col-md-12">
+            <div id="editor">This is some sample content.</div>
+            <script>
+                    ClassicEditor
+                            .create( document.querySelector( '#editor' ) )
+                            .then( editor => {
+                                    console.log( editor );
+                            } )
+                            .catch( error => {
+                                    console.error( error );
+                            } );
+            </script>
+          </div>
+       </div>
+    </form>
+ </div>

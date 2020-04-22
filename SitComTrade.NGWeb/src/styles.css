@@ -392,6 +392,10 @@ body {
     float: right;
     padding: 5px 0;
 }
+.form-holder {
+    padding: 40px 60px 20px;
+}
+
 /*****************************************************/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

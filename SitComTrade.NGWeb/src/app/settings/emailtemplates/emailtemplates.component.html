@@ -29,7 +29,7 @@
                   </ul>
                </div>
                         <div class="col-md-6 end" style="">
-                           <a href="#" class="btn-type03 create-email-template-link">
+                           <a href="#" class="btn-type03 create-email-template-link" data-toggle="modal" data-target="#createtemplate">
                               <i class="fa fa-user-plus">&nbsp;</i> New Template</a> 
                                 <!-- <div class="btn-group">
                                     
@@ -625,3 +625,28 @@
 
 
 
+<!------------------create template model------------->
+<div class="modal" id="createtemplate">
+   <div class="modal-dialog modal750">
+     <div class="modal-content">
+       <div class="modal-header" style="height: 4rem;">
+         <h1 class="modal-title popupheader">
+           <i _ngcontent-jvq-c1="" class="fa fa-plus "></i>
+           <span>
+           CREATE TEMPLATE
+           </span>
+         </h1>
+         <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+       </div>
+       <div class="modal-body">
+         <app-create-template></app-create-template>
+ 
+ 
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+ 
+ 
+ <!--------------End create template model--------------->
