@@ -185,6 +185,20 @@ body {
     width: 16px;
     height: 16px;
 }
+.greyicon {
+    color: #4485bc;
+    text-align: -webkit-center;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    opacity: 1.6;
+    cursor: pointer;
+}
+.greyicon:hover
+{
+    color:#2175bb;
+    opacity: 1;
+}
 .box-heading {
     width: 100%;
 }

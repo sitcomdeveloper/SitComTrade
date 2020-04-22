@@ -105,3 +105,13 @@ th.email-header-cell.email-header-sortable {
     padding: 0;
     line-height: 0;
 }
+.emailinpt
+{
+    height:27px;
+}
+.email-cell-content {
+    padding: 5px;
+}
+.email-row:hover {
+    background: #e1ebf9;
+}
