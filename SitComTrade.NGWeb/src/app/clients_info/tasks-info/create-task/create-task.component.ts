@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksInfoService } from '../tasks-info.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-create-task',
@@ -11,10 +12,19 @@ export class CreateTaskComponent implements OnInit {
   getTaskTypeData: any;
   getStatus: any;
   getTaskStatusData: any;
+  userTasks: any;
+  taskInfoForm: FormGroup;
 
-  constructor(private taskInfoService: TasksInfoService) { }
+  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.taskInfoForm = this.fb.group({
+      owner: [''],
+      type: [''],
+      status: [''],
+      transport: ['']
+
+    });
     this.taskType();
     this.taskStatus();
   }
@@ -30,5 +40,19 @@ export class CreateTaskComponent implements OnInit {
       console.log('taskstatus', res);
     });
   }
+  // insert task
+  infoTasks() {
+    const obj = {
+      OwnerId: 1,
+      TaskStatusId: 1,
+TaskTypeId: +this.taskInfoForm.value.status,
+NotiTrasportId: 1,
+TaskType: +this.taskInfoForm.value.type
+    };
+    this.taskInfoService.insertTask(obj).subscribe(res => {
+    this.userTasks = res;
+    console.log('tasks', res);
+  });
+}
 
 }

@@ -9,20 +9,23 @@
                         <li class="nav-item ">
                            <a class="nav-link ">
                               <!-- <label for="optDaily">Account</label> -->
-                               <div class="input-radio" id="uniform-clientType0"><span class="">
-                       <input type="radio" name="clientType" id="clientType0" class="itemradio" checked></span></div>
-                       <label for="clientType0">Account</label> 
-                                                    <!-- <label for="optDaily">Account</label>
+                              <div class="input-radio" id="uniform-clientType0"><span class="">
+                                    <input type="radio" name="clientType" id="clientType0" class="itemradio"
+                                       (change)='actrealifo($event.target.checked)' checked></span></div>
+                              <label for="clientType0">Account</label>
+                              <!-- <label for="optDaily">Account</label>
                        <input id="optDaily" checked="checked" name="intervaltype" type="radio" > -->
                            </a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link">
                               <!-- <label for="clientType1">Lead</label> -->
-                               <div class="input-radio" id="uniform-clientType1"><span class="">
-                       <input type="radio" name="clientType" id="clientType1" class="itemradio"></span></div>
-                       <label for="clientType1">Lead</label> 
-    <!--<label for="optDaily">Daily</label>
+                              <div class="input-radio" id="uniform-clientType1"><span class="">
+                                    <input type="radio" name="clientType" id="clientType1"
+                                       (change)='actrealifo1($event.target.checked)' class="itemradio"></span>
+                              </div>
+                              <label for="clientType1">Lead</label>
+                              <!--<label for="optDaily">Daily</label>
       <input id="optDaily" checked="checked" name="intervaltype1" type="radio" > -->
                            </a>
                         </li>
@@ -104,9 +107,8 @@
                                                 for="Password"><span data-tooltip-el="">Password</span></label>
                                           </div>
                                           <div class="col-xs-9 col-md-9">
-                                             <input class="form-control itemformcontrol"
-                                                name="Password" formControlName="password" type="text"
-                                                aria-required="true">
+                                             <input class="form-control itemformcontrol" name="Password"
+                                                formControlName="password" type="text" aria-required="true">
                                           </div>
                                        </div>
                                     </div>
@@ -121,9 +123,10 @@
                                              <div class="checkbox-inline">
 
                                                 <!------------------------->
-                                                <div class="switch_box box_1">
+                                                <div class="switch_box box_1" formControlName="sendemail">
                                                    <label class="switchboxtext">Yes</label>
-                                                   <input type="checkbox" class="switch_1">
+                                                   <input type="checkbox" class="switch_1"
+                                                      (change)='sendemailuser($event.target.checked)'>
                                                    <label class="switchboxtext">No</label>
                                                 </div>
                                                 <!----------------------------->
@@ -132,14 +135,15 @@
                                        </div>
                                     </div>
                                     <div class="col-xs-6 col-md-6">
-                                       <div class="row crtclintvsl" >
+                                       <div class="row crtclintvsl">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="GroupId"><span
                                                    data-tooltip-el="">Group</span></label></div>
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">
                                                 <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol "
                                                    formControlName="group" data-live-search="true" id="lunch"
-                                                   title="Please select a lunch ..." data-show-subtext="true" data-live-search="true">
+                                                   title="Please select a lunch ..." data-show-subtext="true"
+                                                   data-live-search="true">
                                                    <option ngcontent-qpo-c3="" class="other">All</option>
                                                    <option ngcontent-qpo-c3="" class="other">One</option>
 
@@ -234,13 +238,13 @@
                                           <div class="checkbox-inline">
 
                                              <----------------------->
-                                            <!---- <div class="switch_box box_1">
+                        <!---- <div class="switch_box box_1">
                                                 <label class="switchboxtext">Yes</label>
                                                 <input type="checkbox" class="switch_1">
                                                 <label class="switchboxtext">No</label>
                                              </div>
                                              <!----------------------------->
-                                       <!---- </div>
+                        <!---- </div>
                                        </div>
                                     </div>
                                  </div>
@@ -275,4 +279,3 @@
       </div>
    </div>
 </div>
-

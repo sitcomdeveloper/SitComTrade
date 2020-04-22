@@ -13,22 +13,25 @@ export class ItemComponent implements OnInit {
   Country: any;
   name: any;
   newUserForm: FormGroup;
-
+  acttype = 'Real';
+  sedemailbyuser = false;
   constructor(private clientService: ClientsService, private countryService: CountryService, private fb: FormBuilder) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
       firstname: [''],
       lastname: [''],
       email: [''],
+
       phone: [''],
       country: [''],
       password: [''],
       group: [''],
       countryid: [''],
       currencyname: [''],
-      promocode: [''],
-      currencyid: [''],
-      ownerid: ['']
+      // promocode: [''],
+      // currencyid: [''],
+      ownerid: [''],
+      sendemail: ['']
     }),
       this.getcountryName();
   }
@@ -37,15 +40,21 @@ export class ItemComponent implements OnInit {
       FirstName: this.newUserForm.value.firstname,
       LastName: this.newUserForm.value.lastname,
       Email: this.newUserForm.value.email,
-      Phone: this.newUserForm.value.phone,
-      CountryName: this.newUserForm.value.country,
+      // CountryId: 0,
+      GroupName: this.newUserForm.value.group,
+      AccountType: this.acttype,
       Password: this.newUserForm.value.password,
+      CountryName: this.newUserForm.value.country,
+      GroupId: this.newUserForm.value.group,
+      ISendEmail: this.sedemailbyuser,
+      OwnerId: 1,
+      Phone: this.newUserForm.value.phone,
       CountryId: this.newUserForm.value.countryid,
-       CurrencyName : this.newUserForm.value.currencyname,
-      Promocode : this.newUserForm.value.promocode,
-       CurrencyId: this.newUserForm.value.currencyid,
+      //  CurrencyName : this.newUserForm.value.currencyname,
+      // Promocode : this.newUserForm.value.promocode,
+      //  CurrencyId: this.newUserForm.value.currencyid,
       //  OwnerId: this.newUserForm.value.ownerid,
-      OwnerId: 1
+
     };
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
@@ -60,5 +69,23 @@ export class ItemComponent implements OnInit {
       console.log('countryname', result);
     });
   }
-
+  actrealifo(val: any) {
+    this.acttype = 'Real';
+    if (val === true) {
+      this.acttype = 'Real';
+    }
+  }
+  actrealifo1(val: any) {
+    this.acttype = 'Real';
+    if (val === true) {
+      this.acttype = 'Lead';
+    }
+  }
+  sendemailuser(val: any) {
+if(val === true) {
+  this.sedemailbyuser = true;
+} else {
+  this.sedemailbyuser = false;
+}
+  }
 }
