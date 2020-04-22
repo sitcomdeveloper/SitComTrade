@@ -8,17 +8,13 @@ import { TasksInfoService } from './tasks-info.service';
 })
 export class TasksInfoComponent implements OnInit {
   userTasks: any;
-  getTasks: any;
-  getTaskTypeData: any;
-  getStatus: any;
-  getTaskStatusData: any;
+  
 
   constructor(private taskInfoService: TasksInfoService) { }
 
   ngOnInit() {
     this.infoTasks();
-    this.taskType();
-    this.taskStatus();
+    
   }
   infoTasks() {
     const obj = {
@@ -29,17 +25,6 @@ export class TasksInfoComponent implements OnInit {
     console.log('tasks', res);
   });
 }
-taskType() {
-  this.taskInfoService.getTaskType(this.getTaskTypeData).subscribe(res => {
-    this.getTasks = res;
-    console.log('tasktype', res);
-  });
-}
-taskStatus() {
-  this.taskInfoService.getTaskStatus(this.getTaskStatusData).subscribe(res => {
-    this.getStatus = res;
-    console.log('taskstatus', res);
-  });
-}
+
 
 }
