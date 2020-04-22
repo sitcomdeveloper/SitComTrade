@@ -1,33 +1,42 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 sub-header">
+           <div class="container-fluid container-padd">
             <div class="row">
-                <div class="col-md-2 col-xs-8 crumb">
-                        <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Library</li>
-                                </ol>
-                              </nav>
-                </div>
-                <div class="col-md-10"></div>
+               <div class="tools-panel-addon">
+                  <div class="breadcrumbs">
+                     <ul>
+                        <li itemscope="">
+                           <span itemprop="title">Settings</span>
+                        </li>
+                        <li itemscope="">
+                           <span itemprop="title">Email Templates</span>
+                        </li>
+                     </ul>
+                  </div>
+              </div>
             </div>
-            <div class="row">
-                    <div class="col-md-5 main-tab">
-                            <ul class="tab">
-                                <li><a routerLink="">EMAIL TEMPLATES</a></li>
-                                
-                                
-                            </ul>
-                        </div>
-                        <div class="col-md-7" style="float:left;padding-left:606px">
-                                
-                                <div class="btn-group">
+         </div>
+            <div class="container-fluid container-padd">
+             <div class="row subhedarpadd">
+               <div _ngcontent-mew-c3="" class="col-md-6 main-tab">
+                  <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
+                     <li _ngcontent-mew-c3="" class="nav-item">
+                        <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#">
+                           Email Templates</a>
+                        </li>
+                     
+                  </ul>
+               </div>
+                        <div class="col-md-6 end" style="">
+                           <a href="#" class="btn-type03 create-email-template-link">
+                              <i class="fa fa-user-plus">&nbsp;</i> New Template</a> 
+                                <!-- <div class="btn-group">
                                     
                                 <button class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>New Template</button>
                                     
                                    
-                                  </div>
+                                  </div> -->
                                   
 
 
@@ -37,7 +46,7 @@
                         </div>
             </div>
             
-
+         </div>
 
         </div>
         
@@ -579,41 +588,35 @@
                      </tbody>
                   </table>
                </div>
-               <div class="email-pager-container" style="display: none;">
-                  <div class="email-pager">Pages: <span class="email-pager-nav-button first email-pager-nav-inactive-button"><a href="javascript:void(0);">First</a></span> <span class="email-pager-nav-button prev email-pager-nav-inactive-button"><a href="javascript:void(0);">Prev</a></span> <span class="email-pager-page email-pager-current-page">1</span> <span class="email-pager-nav-button next email-pager-nav-inactive-button"><a href="javascript:void(0);">Next</a></span> <span class="email-pager-nav-button last email-pager-nav-inactive-button"><a href="javascript:void(0);">Last</a></span> &nbsp;&nbsp; 1 of 1 </div>
-               </div>
-               <div class="email-load-shader" style="display: none; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000;"></div>
-               <div class="email-load-panel" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">Please, wait...</div>
+             
+
             </div>
-            <div class="email-pager-perpage" style="display: block;">
-               <label>
-                  Records per page
-                  <div class="btn-group bootstrap-select count-records-list form-control">
-                     <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="20"><span class="filter-option pull-left">20</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                     <div class="dropdown-menu open" role="combobox">
-                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                           <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">20</span></a></li>
-                           <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">25</span></a></li>
-                           <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">50</span></a></li>
-                           <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">100</span></a></li>
-                           <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">250</span></a></li>
-                        </ul>
-                     </div>
-                     <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                        <option value="250">250</option>
-                     </select>
-                  </div>
-               </label>
-            </div>
+            
          </div>
       </div>
    </div>
+   <div class="row">
+   <div class="col-md-6">
    <div class="copy">
       <p>© 2020 FXTopTech CRM v1.9.0</p>
+   </div>
+</div>
+   <div class="col-md-6 end">
+      <div class="email-pager-perpage" style="display: block;">
+         <label>
+            Records per page
+               
+               <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="250">250</option>
+               </select>
+            
+         </label>
+      </div>
+      </div>
    </div>
 </div>
 
