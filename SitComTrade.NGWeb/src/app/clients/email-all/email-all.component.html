@@ -1,1 +1,58 @@
-<p>email-all works!</p>
+<form class="form-horizontal" id="sendEmailForm" enctype="multipart/form-data" novalidate="novalidate">
+    <div class="hightlited-area02 hightlited01">
+       <div class="form-group">
+          <div class="col-xs-2 control-label"><label class="valign-label" for="settingsId"><span data-tooltip-el="">Settings:</span></label></div>
+          <div class="col-xs-10">
+             <div class="btn-group bootstrap-select form-control">
+                <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="8f393402-466e-be21-ee27-17656e8d6df4" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                <div class="dropdown-menu open" role="combobox">
+                   <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                   <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                      <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
+                      <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">info@swissfxuk.com</span></a></li>
+                   </ul>
+                </div>
+                <select class="form-control" name="settingsId" data-container="body" data-live-search="true" id="8f393402-466e-be21-ee27-17656e8d6df4" aria-required="true" tabindex="-98">
+                   <option value="">Select...</option>
+                   <option value="22">info@swissfxuk.com</option>
+                </select>
+             </div>
+          </div>
+       </div>
+       <div class="form-group">
+          <div class="col-xs-2 control-label"><label class="valign-label" for="cc"><span data-tooltip-el="">Cc:</span></label></div>
+          <div class="col-xs-10"><input class="form-control" name="cc" type="text" id="1df5ee23-0ba3-5ff4-0ff9-676013e08e37"></div>
+       </div>
+       <div class="email-options-area" style="display: block;">
+          <div class="form-group">
+             <div class="col-xs-2 control-label"><label class="valign-label" for="bcc"><span data-tooltip-el="">Bcc:</span></label></div>
+             <div class="col-xs-10"><input class="form-control" name="bcc" type="text" id="f71704d0-5399-376d-7ff4-78cb6da2986a"></div>
+          </div>
+          <div class="form-group">
+             <div class="col-xs-2 control-label"><label class="valign-label" for="template"><span data-tooltip-el="">Template:</span></label></div>
+             <div class="col-xs-10">
+                <div class="btn-group bootstrap-select form-control">
+                   <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="206d92e4-816f-202a-780b-170ce38fc914" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                   <div class="dropdown-menu open" role="combobox">
+                      <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                      <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                         <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
+                      </ul>
+                   </div>
+                   <select class="form-control" name="template" data-container="body" data-live-search="true" id="206d92e4-816f-202a-780b-170ce38fc914" tabindex="-98">
+                      <option value="">Select...</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+          <div class="form-group">
+             <div class="col-xs-2 control-label"><label for="attachment">Attachment:</label></div>
+             <div class="col-xs-10"><input type="file" name="attachment" id="attachment"></div>
+          </div>
+          <div class="form-group"><input type="hidden" class="not-resetable" name="isHtml" value="true"></div>
+       </div>
+    </div>
+   
+    
+   
+ </form>
