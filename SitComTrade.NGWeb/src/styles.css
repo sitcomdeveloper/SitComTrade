@@ -323,6 +323,20 @@ body {
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
+.center
+{
+    display: flex;
+    justify-content: center;
+}
+.padd0
+{
+    padding:0!important;
+}
+.modal-bodypadd
+{
+    padding-left:0!important;
+    padding-right:0!important;
+}
 .bs-searchbox .form-control {
     margin-bottom: 0;
     width: 100%;
@@ -334,6 +348,10 @@ body {
 }
 .button {
     margin: 0 3px!important;
+}
+.button.button2:focus, .button.button2:hover {
+    background: #12baee;
+    color: #fff;
 }
 .itembutton1{
     background: 0 0;
@@ -398,6 +416,22 @@ body {
 .padd18
 {
     padding-top: 18px;
+}
+.cstm-search-btn-trigger {
+    padding: 2px;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    background: #a9c1d5;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 6px;
+    left: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 4;
+    font-size: 7px;
 }
 /*****************************************************/
 /* Smartphones (portrait and landscape) ----------- */

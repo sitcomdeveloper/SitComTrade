@@ -108,6 +108,8 @@ td.email-cell {
 {
     height:27px!important;
     border: 1px solid #ced4da;
+    border-radius: 0;
+
 }
 .email-cell-content {
     padding: 5px;
