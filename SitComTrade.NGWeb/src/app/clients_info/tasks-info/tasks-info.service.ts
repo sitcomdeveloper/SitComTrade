@@ -19,4 +19,7 @@ export class TasksInfoService {
   getTaskStatus(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Task/GetAllTaskStatus', obj);
   }
+  getTask(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'GetTaskByOwnerId/1', obj);
+  }
 }

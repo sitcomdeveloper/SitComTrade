@@ -69,6 +69,7 @@ export class ItemComponent implements OnInit {
       console.log('countryname', result);
     });
   }
+  // for separtion between account and lead on the select of radio button
   actrealifo(val: any) {
     this.acttype = 'Real';
     if (val === true) {
@@ -81,8 +82,9 @@ export class ItemComponent implements OnInit {
       this.acttype = 'Lead';
     }
   }
+  // for send email
   sendemailuser(val: any) {
-if(val === true) {
+if (val === true) {
   this.sedemailbyuser = true;
 } else {
   this.sedemailbyuser = false;
