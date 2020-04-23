@@ -1,13 +1,5 @@
 
-.sub-header{
-    position: relative;
-    z-index: 10;
-    padding: 35px 0 0;
-    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
-    color: #fff;
-   height: 82px;
-    margin:0px 15px;
-}
+
 .breadcrumb
 {
     margin-left: 5px;
@@ -18,9 +10,7 @@
 {
     padding-left: 50px;
 }
-.main-tab{
-    padding-left: 51px;
-}
+
 .tab{
     background-color:white;
     border-radius:2px;
