@@ -1,65 +1,975 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 sub-header">
-            <div class="row">
-                <div class="col-md-2 col-xs-8 crumb">
-                        <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Library</li>
-                                </ol>
-                              </nav>
-                </div>
-                <div class="col-md-10"></div>
+      <div class="col-md-12 subheader">
+        <div class="container-fluid container-padd">
+         <div class="row">
+            <div class="tools-panel-addon">
+               <div class="breadcrumbs">
+                  <ul>
+                     <li itemscope="">
+                        <span itemprop="title">Settings</span>
+                     </li>
+                     <li itemscope="">
+                        <span itemprop="title">Email Templates</span>
+                     </li>
+                  </ul>
+               </div>
+           </div>
+         </div>
+      </div>
+         <div class="container-fluid container-padd">
+          <div class="row subhedarpadd">
+            <div _ngcontent-mew-c3="" class="col-md-6 main-tab">
+               <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
+                  <li _ngcontent-mew-c3="" class="nav-item">
+                     <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#">
+                      User management</a>
+                     </li>
+                     <li _ngcontent-mew-c3="" class="nav-item">
+                      <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#">
+                        Desks Hierarchy</a>
+                      </li>
+                      <li _ngcontent-mew-c3="" class="nav-item">
+                        <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#">
+                          Roles Permissions</a>
+                        </li>
+                  
+               </ul>
             </div>
-            <div class="row">
-                    <div class="col-md-5 main-tab">
-                            <ul class="tab">
-                                <li><a routerLink="">USER MANAGEMENT</a></li>
-                                <li><a routerLink="">DESKS HIERARCHY</a></li>
-                                <li><a routerLink="">ROLES PERMISSIONS</a></li>
+                     <div class="col-md-6 end" style="">
+                        <a href="javascript:void(0);" class="btn-type03 create-email-template-link" data-toggle="modal" data-target="#createtemplate">
+                           <i class="fa fa-user-plus">&nbsp;</i> New Template</a> 
+                             <!-- <div class="btn-group">
+                                 
+                             <button class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>New Template</button>
+                                 
                                 
-                                
-                            </ul>
-                        </div>
-                        <div class="col-md-7" style="float:left;padding-left:606px">
-                                
-                                <div class="btn-group">
-                                    
-                                <button class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>New Setting</button>
-                                    
-                                   
+                               </div> -->
+                               
+
+
+
+
+
+                     </div>
+         </div>
+         <div class="tab-content">
+             <div id="all" class="container-fluid tab-pane active">
+              <div>
+                <div id="jsGrid" class="jsgrid" unselectable="on" style="position: relative; height: auto; width: 100%; user-select: none;">
+                   <div class="jsgrid-grid-header jsgrid-header-scrollbar">
+                      
+                      <table class="jsgrid-table JColResizer" id="JColResizer0">
+                         <tbody>
+                            <tr class="jsgrid-header-row">
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Id</span></div>
                                   </div>
-                                  
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis" data-original-title="" title=""><span>User Name</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis" data-original-title="" title=""><span>First Name</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis" data-original-title="" title=""><span>Last Name</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Email</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Phone</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 10.1%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Created Date</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 10.1%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Last Login Date</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 10.1%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Updated Date</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Disabled</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-align-left jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Desk</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-align-left" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis"><span>Roles</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-align-left jsgrid-header-sortable" style="width: 6.3%;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="text-ellipsis" data-original-title="" title=""><span>Department</span></div>
+                                  </div>
+                               </th>
+                               <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center jsgrid-header-sort jsgrid-header-sort-asc" style="width: 6.3%;"><input class="jsgrid-button jsgrid-mode-button jsgrid-search-mode-button jsgrid-mode-on-button" type="button" title=""></th>
+                            </tr>
+                            <tr class="jsgrid-filter-row">
+                               <td class="jsgrid-cell" style="">
+                                <div _ngcontent-keb-c3="" class="jsgrid-cell-content">
+                                  <div _ngcontent-keb-c3="" class="cstm-search input-control empty">
+                                     <div _ngcontent-keb-c3="" class="checkbox-dd ">
+                                        <i _ngcontent-keb-c3="" aria-expanded="true" aria-haspopup="true" class="fa fa-equals comparation-type-3" data-toggle="dropdown" id="firstid"></i>
+                                        <div _ngcontent-keb-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop " x-placement="bottom-start">
+                                           <form _ngcontent-keb-c3="" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                              <ul _ngcontent-keb-c3="">
+                                                 <li _ngcontent-keb-c3="" class="active">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3="" class=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                       Contains 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="" class="active">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3="" class=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                       Not Contains 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                       Equals 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                       Not Equals 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="" class="active">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3="" class="checked"><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                       Starts With 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                       End With 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                       Empty 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-keb-c3="">
+                                                    <label _ngcontent-keb-c3="">
+                                                       <div _ngcontent-keb-c3="" class="input-radio fistinpt"><span _ngcontent-keb-c3=""><input _ngcontent-keb-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                       NotEmpty 
+                                                    </label>
+                                                 </li>
+                                              </ul>
+                                           </form>
+                                        </div>
+                                     </div>
+                                     <input _ngcontent-keb-c3="" class="form-control dropform" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-keb-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-keb-c3=""></span></i>
+                                  </div>
+                               </div>
+                               </td>
+                               <td class="jsgrid-cell" >
+                                <div _ngcontent-ind-c3="" class="jsgrid-cell-content">
+                                  <div _ngcontent-ind-c3="" class="cstm-search input-control empty">
+                                     <div _ngcontent-ind-c3="" class="checkbox-dd">
+                                        <i _ngcontent-ind-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="secondid"></i>
+                                        <div _ngcontent-ind-c3="" aria-labelledby="secondid" class="drop dropdown-menu radiondrop">
+                                           <form _ngcontent-ind-c3="" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                              <ul _ngcontent-ind-c3="">
+                                                 <li _ngcontent-ind-c3="" class="active">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3="" class=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                       Contains 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="" class="active">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3="" class=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                       Not Contains 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                       Equals 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                       Not Equals 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="" class="active">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3="" class="checked"><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                       Starts With 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                       End With 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                       Empty 
+                                                    </label>
+                                                 </li>
+                                                 <li _ngcontent-ind-c3="">
+                                                    <label _ngcontent-ind-c3="">
+                                                       <div _ngcontent-ind-c3="" class="input-radio fistinpt"><span _ngcontent-ind-c3=""><input _ngcontent-ind-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                       NotEmpty 
+                                                    </label>
+                                                 </li>
+                                              </ul>
+                                           </form>
+                                        </div>
+                                     </div>
+                                     <input _ngcontent-ind-c3="" class="form-control dropform" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-ind-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-ind-c3=""></span></i>
+                                  </div>
+                               </div>
+                               </td>
+                               <td class="jsgrid-cell" >
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-5"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                          Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                          Not Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                          Not Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                          Starts With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                          End With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control" name="FirstName_condition" type="text" id="581010eb-0210-4227-961b-63b087525205" data-comparation-type="5"><i class="clear cstm-search-btn-clear"><span></span></i>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-5"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                          Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                          Not Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                          Not Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                          Starts With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                          End With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control" name="LastName_condition" type="text" id="5f81d42c-cb01-f343-0ab1-1791374246d7" data-comparation-type="5"><i class="clear cstm-search-btn-clear"><span></span></i>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-5"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                          Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                          Not Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                          Not Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                          Starts With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                          End With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control" name="Email_condition" type="text" id="cf14e326-a81d-36dd-15fd-5c0a34cee1b6" data-comparation-type="5"><i class="clear cstm-search-btn-clear"><span></span></i>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-5"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                          Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                          Not Contains
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                          Not Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                          Starts With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                          End With
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control" name="Phone_condition" type="text" id="a403a3af-717a-e0d3-0788-f2704b2dd854" data-comparation-type="5"><i class="clear cstm-search-btn-clear"><span></span></i>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 160px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-group input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-1"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control daterange" name="CreatedDate" type="text" id="0e989afc-6fdd-b910-2f2d-b0e4460558b6" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 160px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-group input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-1"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control daterange" name="LastLoginDate" type="text" id="22d2ec15-945e-d76d-67ec-ff7eaed98c22" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 160px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="cstm-search input-group input-control empty">
+                                        <div class="checkbox-dd">
+                                           <i class="cstm-search-btn-trigger comparation-type-1"></i>
+                                           <div class="drop dropdown-menu">
+                                              <form>
+                                                 <ul>
+                                                    <li class="active">
+                                                       <label>
+                                                          <div class="input-radio"><span class="checked"><input data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                          Equals
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                          Empty
+                                                       </label>
+                                                    </li>
+                                                    <li>
+                                                       <label>
+                                                          <div class="input-radio"><span><input data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                          NotEmpty
+                                                       </label>
+                                                    </li>
+                                                 </ul>
+                                              </form>
+                                           </div>
+                                        </div>
+                                        <input class="form-control daterange" name="UpdatedDate" type="text" id="3695ebee-a3dd-a76b-fe95-d97035f357e4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-center" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="btn-group bootstrap-select form-control">
+                                        <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="000bfdd0-575b-b9cc-d754-c35a3f4a76aa" title="All" aria-expanded="false"><span class="filter-option pull-left">All</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                        <div class="dropdown-menu open" role="combobox" style="max-height: 447px; overflow: hidden; min-height: 33px;">
+                                           <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                           <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 412px; overflow-y: auto; min-height: 0px;">
+                                              <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">All</span></a></li>
+                                              <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Yes</span></a></li>
+                                              <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">No</span></a></li>
+                                           </ul>
+                                        </div>
+                                        <select class="form-control" name="LockoutEnabled" data-container="body" data-live-search="true" id="000bfdd0-575b-b9cc-d754-c35a3f4a76aa" tabindex="-98">
+                                           <option value="">All</option>
+                                           <option value="true">Yes</option>
+                                           <option value="false">No</option>
+                                        </select>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="input-control empty">
+                                        <div class="btn-group bootstrap-select show-tick form-control">
+                                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="efa514a2-0e51-fab0-cdc9-ec9d22710d72" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                           <div class="dropdown-menu open" role="combobox" style="max-height: 447px; overflow: hidden; min-height: 118px;">
+                                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                              <div class="bs-actionsbox">
+                                                 <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
+                                              </div>
+                                              <div class="bs-emptychecker"><a tabindex="0" aria-selected="false" data-comparation-type="11"><span class="checkbox check-mark"></span><span class="text">Empty</span></a><a tabindex="1" aria-selected="false" data-comparation-type="12"><span class="checkbox check-mark"></span><span class="text">Not Empty</span></a></div>
+                                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 327px; overflow-y: auto; min-height: 0px;">
+                                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Title</span></a></li>
+                                                 <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">IMC</span></a></li>
+                                              </ul>
+                                           </div>
+                                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="efa514a2-0e51-fab0-cdc9-ec9d22710d72" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" data-empty-checker="true" tabindex="-98">
+                                              <option value="232">Title</option>
+                                              <option value="206">IMC</option>
+                                           </select>
+                                        </div>
+                                        <i class="clear cstm-search-btn-clear"><span>x</span></i>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="btn-group bootstrap-select show-tick form-control">
+                                        <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="8578a3ed-8a05-3512-a792-82bf3e4cf347" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                        <div class="dropdown-menu open" role="combobox" style="max-height: 447px; overflow: hidden; min-height: 118px;">
+                                           <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                           <div class="bs-actionsbox">
+                                              <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
+                                           </div>
+                                           <div class="bs-emptychecker"><a tabindex="0" aria-selected="false" data-comparation-type="11"><span class="checkbox check-mark"></span><span class="text">Empty</span></a><a tabindex="1" aria-selected="false" data-comparation-type="12"><span class="checkbox check-mark"></span><span class="text">Not Empty</span></a></div>
+                                           <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 327px; overflow-y: auto; min-height: 0px;">
+                                              <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Owner</span></a></li>
+                                              <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">DESK MANAGER</span></a></li>
+                                              <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Retention</span></a></li>
+                                              <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Agent</span></a></li>
+                                              <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Conversion</span></a></li>
+                                              <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">General Support</span></a></li>
+                                              <li data-original-index="6"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">desk1</span></a></li>
+                                           </ul>
+                                        </div>
+                                        <select class="form-control" name="Roles" data-container="body" data-live-search="true" id="8578a3ed-8a05-3512-a792-82bf3e4cf347" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" data-empty-checker="true" tabindex="-98">
+                                           <option value="8">Owner</option>
+                                           <option value="17">DESK MANAGER</option>
+                                           <option value="32">Retention</option>
+                                           <option value="34">Agent</option>
+                                           <option value="35">Conversion</option>
+                                           <option value="36">General Support</option>
+                                           <option value="39">desk1</option>
+                                        </select>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 100px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div class="input-control empty">
+                                        <div class="btn-group bootstrap-select show-tick form-control">
+                                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="aa19db3b-0e23-65ee-e469-465d4412a180" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                           <div class="dropdown-menu open" role="combobox" style="max-height: 447px; overflow: hidden; min-height: 118px;">
+                                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                              <div class="bs-actionsbox">
+                                                 <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
+                                              </div>
+                                              <div class="bs-emptychecker"><a tabindex="0" aria-selected="false" data-comparation-type="11"><span class="checkbox check-mark"></span><span class="text">Empty</span></a><a tabindex="1" aria-selected="false" data-comparation-type="12"><span class="checkbox check-mark"></span><span class="text">Not Empty</span></a></div>
+                                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 327px; overflow-y: auto; min-height: 0px;">
+                                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">None</span></a></li>
+                                                 <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Management</span></a></li>
+                                                 <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Sales</span></a></li>
+                                                 <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Retention</span></a></li>
+                                                 <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Marketing</span></a></li>
+                                              </ul>
+                                           </div>
+                                           <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aa19db3b-0e23-65ee-e469-465d4412a180" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" data-empty-checker="true" tabindex="-98">
+                                              <option value="0">None</option>
+                                              <option value="1">Management</option>
+                                              <option value="2">Sales</option>
+                                              <option value="3">Retention</option>
+                                              <option value="4">Marketing</option>
+                                           </select>
+                                        </div>
+                                        <i class="clear cstm-search-btn-clear"><span>x</span></i>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" style="width: 100px;"><input class="jsgrid-button jsgrid-search-button" type="button" title="Search"><input class="jsgrid-button jsgrid-clear-filter-button" type="button" title="Clear filter"></td>
+                            </tr>
+                            <tr class="jsgrid-insert-row" style="display: none;">
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 100px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 160px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 160px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 160px;">
+                                  <div class="cstm-search input-control empty"><input type="text" class="form-control" placeholder="Search"></div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-center" style="width: 100px;">
+                                  <div class="input-checkbox" id="uniform-8aa716a2-ed49-ffdc-c4b0-9b826dd4b910"><span><input class="form-control" name="LockoutEnabled" type="checkbox" id="8aa716a2-ed49-ffdc-c4b0-9b826dd4b910" value="true"></span></div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 100px;">
+                                  <div class="btn-group bootstrap-select form-control">
+                                     <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="b9d57bc3-e635-b16b-fd43-30152e697071" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                     <div class="dropdown-menu open" role="combobox">
+                                        <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                           <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
+                                           <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Title</span></a></li>
+                                           <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">IMC</span></a></li>
+                                        </ul>
+                                     </div>
+                                     <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="b9d57bc3-e635-b16b-fd43-30152e697071" data-empty-checker="true" tabindex="-98">
+                                        <option value="">Select...</option>
+                                        <option value="232">Title</option>
+                                        <option value="206">IMC</option>
+                                     </select>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 100px;">
+                                  <div class="btn-group bootstrap-select show-tick form-control">
+                                     <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="931db206-a15b-6319-9f9b-31fdfd6371b6" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                     <div class="dropdown-menu open" role="combobox">
+                                        <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                        <div class="bs-actionsbox">
+                                           <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
+                                        </div>
+                                        <div class="bs-emptychecker"><a tabindex="0" aria-selected="false" data-comparation-type="11"><span class="checkbox check-mark"></span><span class="text">Empty</span></a><a tabindex="1" aria-selected="false" data-comparation-type="12"><span class="checkbox check-mark"></span><span class="text">Not Empty</span></a></div>
+                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                           <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Owner</span></a></li>
+                                           <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">DESK MANAGER</span></a></li>
+                                           <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Retention</span></a></li>
+                                           <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Agent</span></a></li>
+                                           <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Conversion</span></a></li>
+                                           <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">General Support</span></a></li>
+                                           <li data-original-index="6"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">desk1</span></a></li>
+                                        </ul>
+                                     </div>
+                                     <select class="form-control" name="Roles" data-container="body" data-live-search="true" id="931db206-a15b-6319-9f9b-31fdfd6371b6" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" data-empty-checker="true" tabindex="-98">
+                                        <option value="8">Owner</option>
+                                        <option value="17">DESK MANAGER</option>
+                                        <option value="32">Retention</option>
+                                        <option value="34">Agent</option>
+                                        <option value="35">Conversion</option>
+                                        <option value="36">General Support</option>
+                                        <option value="39">desk1</option>
+                                     </select>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 100px;">
+                                  <div class="btn-group bootstrap-select form-control">
+                                     <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="94a22c96-af54-6828-f46e-2478dc6ce5ec" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                                     <div class="dropdown-menu open" role="combobox">
+                                        <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                        <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                                           <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
+                                           <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">None</span></a></li>
+                                           <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Management</span></a></li>
+                                           <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Sales</span></a></li>
+                                           <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Retention</span></a></li>
+                                           <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Marketing</span></a></li>
+                                        </ul>
+                                     </div>
+                                     <select class="form-control" name="Department" data-container="body" data-live-search="true" id="94a22c96-af54-6828-f46e-2478dc6ce5ec" data-empty-checker="true" tabindex="-98">
+                                        <option value="">Select...</option>
+                                        <option value="0">None</option>
+                                        <option value="1">Management</option>
+                                        <option value="2">Sales</option>
+                                        <option value="3">Retention</option>
+                                        <option value="4">Marketing</option>
+                                     </select>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" style="width: 100px;"><input class="jsgrid-button jsgrid-insert-button" type="button" title="Insert"></td>
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                   <div class="jsgrid-grid-body" style="height: 407px;">
+                      <table class="jsgrid-table" style="width: 1306px;">
+                         <tbody>
+                            <tr class="jsgrid-row">
+                               <td class="jsgrid-cell" style="width: 83px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_Id">
+                                        <div class="text-ellipsis" data-field="Id" data-original-value="518">518</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 83px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_UserName">
+                                        <div class="text-ellipsis" data-field="UserName" data-original-value="Anton.n">Anton.n</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 83px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_FirstName">
+                                        <div class="text-ellipsis" data-field="FirstName" data-original-value="Anton">Anton</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 83px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_LastName">
+                                        <div class="text-ellipsis" data-field="LastName" data-original-value="Novak">Novak</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 83px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_Email">
+                                        <div class="text-ellipsis" data-original-title="" title=""><a href="mailto:gshsg@skhsj.com"><span>gshsg@skhsj.com</span></a></div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 83px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_Phone">
+                                        <div class="text-ellipsis" data-field="Phone" data-original-value="523641">523641</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 133px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_CreatedDate">11/18/2019 1:16:45 PM</div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 133px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_LastLoginDate">4/23/2020 12:39:38 PM</div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell" style="width: 132px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_UpdatedDate">1/15/2020 12:59:33 PM</div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-center" style="width: 82px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_LockoutEnabled">
+                                        <div><i class="ico-sz2 ico-status"></i></div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 82px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_DeskId">
+                                        <div class="text-ellipsis">IMC</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 82px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_Roles">
+                                        <div class="text-ellipsis"><a href="javascript:void(0);"><span>Owner</span></a></div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-align-left" style="width: 82px;">
+                                  <div class="jsgrid-cell-content">
+                                     <div data-display-for="2_Department">
+                                        <div class="text-ellipsis">None</div>
+                                     </div>
+                                  </div>
+                               </td>
+                               <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" style="width: 82px;">
+                                  <div class="dropleft droptop"><a href="javascript:void(0);" class="ico-sz3 ico-login dh" title="Sign in">&nbsp;</a><input class="jsgrid-button jsgrid-edit-button" type="button" title="Edit"></div>
+                               </td>
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                   <div class="jsgrid-pager-container" style="display: none;">
+                      <div class="jsgrid-pager">Pages: <span class="jsgrid-pager-nav-button first jsgrid-pager-nav-inactive-button"><a href="javascript:void(0);">First</a></span> <span class="jsgrid-pager-nav-button prev jsgrid-pager-nav-inactive-button"><a href="javascript:void(0);">Prev</a></span> <span class="jsgrid-pager-page jsgrid-pager-current-page">1</span> <span class="jsgrid-pager-nav-button next jsgrid-pager-nav-inactive-button"><a href="javascript:void(0);">Next</a></span> <span class="jsgrid-pager-nav-button last jsgrid-pager-nav-inactive-button"><a href="javascript:void(0);">Last</a></span> &nbsp;&nbsp; 1 of 1 </div>
+                   </div>
+                   <div class="jsgrid-load-shader" style="display: none; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000;"></div>
+                   <div class="jsgrid-load-panel" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">Please, wait...</div>
+                </div>
+                <div class="jsgrid-pager-perpage" style="display: block;">
+                   <label>
+                      Records per page
+                      <div class="btn-group bootstrap-select count-records-list form-control">
+                         <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="20"><span class="filter-option pull-left">20</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                         <div class="dropdown-menu open" role="combobox">
+                            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                               <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">20</span></a></li>
+                               <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">25</span></a></li>
+                               <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">50</span></a></li>
+                               <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">100</span></a></li>
+                               <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">250</span></a></li>
+                            </ul>
+                         </div>
+                         <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="250">250</option>
+                         </select>
+                      </div>
+                   </label>
+                </div>
+                <script type="text/javascript">var CURRENT_MODULE_ID=2;var USE_JSGRID=true;var USE_USERS_MANAGEMENT=true;var USE_USERS_MANAGEMENT_PLUGIN=true;</script>
+             </div>
+             </div>
+          </div>
+      </div>
 
-
-
-
-
-                        </div>
-            </div>
-            
-
-
-        </div>
+     </div>
         
     </div>
-    <!-- <div class="row">
-      <div class="col-md-12 grid">
-        <ag-grid-angular
-  style="width: 700px; height: 400px;"
-  class="ag-theme-balham"
-  [enableSorting]="true"
-  [enableFilter]="true"
-  [pagination]="true"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
->
-</ag-grid-angular>
-
-      </div>
-    </div> -->
-  <!-- container-fluid -->
+   
 </div> 
 
 

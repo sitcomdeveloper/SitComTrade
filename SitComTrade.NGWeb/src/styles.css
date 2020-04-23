@@ -10,6 +10,80 @@ body {
     min-width: 1263px;
     font-family: Poppins,Arial,sans-serif;
 }
+.text-ellipsis {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.subheader {
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
+    color: #fff;
+    height: 82px;
+}
+.tablist {
+    border: 0;
+    display: inline-flex;
+    vertical-align: top;
+    background: #f1f6fc;
+    border-radius: 2px 2px 0 0;
+    -webkit-box-shadow: inset 0 -3px 5px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 -3px 5px 0 rgba(0,0,0,.1);
+    box-shadow: inset 0 -3px 5px 0 rgba(0,0,0,.1);
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #007bff;
+    color: #3d75e1;
+    background: #fff;
+    -webkit-box-shadow: 3px 0 5px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 3px 0 5px 0 rgba(0,0,0,.1);
+    box-shadow: 3px 0 5px 0 rgba(0,0,0,.1);
+    border-bottom: 2px solid #3d75e1;
+
+}
+.tablist>li
+{
+    font-weight: 500;
+}
+.tablist>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    margin: 0;
+    color: #8c9bb3;
+    border-width: 0;
+    padding: 14px 23px;
+    min-width: 90px;
+    line-height: 1.35714;
+    line-height: 19px;
+}
+.tab{
+    /* background-color:white; */
+    border-radius:5px;
+    width:208px;
+    height:37px;
+    padding:8px;
+    text-align:center;
+    font-size: 18px;
+}
+.tabs
+{
+    position: top;
+    text-align: left;
+}
+.main-tab .tab li{
+    display: inline-block;
+    padding:2px;
+}
+.main-tab .tab li a{
+    text-decoration: none;
+}
 .popupheader
 {
     text-transform: uppercase;
@@ -323,6 +397,20 @@ body {
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
+.center
+{
+    display: flex;
+    justify-content: center;
+}
+.padd0
+{
+    padding:0!important;
+}
+.modal-bodypadd
+{
+    padding-left:0!important;
+    padding-right:0!important;
+}
 .bs-searchbox .form-control {
     margin-bottom: 0;
     width: 100%;
@@ -334,6 +422,10 @@ body {
 }
 .button {
     margin: 0 3px!important;
+}
+.button.button2:focus, .button.button2:hover {
+    background: #12baee;
+    color: #fff;
 }
 .itembutton1{
     background: 0 0;
@@ -399,6 +491,29 @@ body {
 {
     padding-top: 18px;
 }
+.cstm-search-btn-trigger {
+    padding: 2px;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    background: #a9c1d5;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 6px;
+    left: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 4;
+    font-size: 7px;
+}
+.jsgrid-grid-header {
+    background: #f5f8fc;
+   
+}
+/* .jsgrid-cell-content {
+    padding: 5px;
+} */
 /*****************************************************/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
