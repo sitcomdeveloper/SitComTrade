@@ -67,6 +67,11 @@ body {
     border-radius: 2px 0 0 2px;
     text-shadow: 0 0 1px rgba(69,89,106,.25);
 }
+.displayend
+{
+    display: flex;
+    justify-content: flex-end;
+}
 .modal790
 {
     width:790px;
