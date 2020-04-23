@@ -51,7 +51,7 @@ TaskType: +this.taskInfoForm.value.type
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
-    console.log('tasks', res);
+    console.log('inserttasks', res);
   });
 }
 
