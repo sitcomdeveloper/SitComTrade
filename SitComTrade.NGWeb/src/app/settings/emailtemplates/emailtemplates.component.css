@@ -119,3 +119,21 @@ td.email-cell {
 {
     font: 15px/1.53845 Poppins,Arial,sans-serif;
 }
+.email-pager-perpage label {
+    display: flex!important;    margin: 0 0 0 15px;
+}
+.email-pager-perpage label select {
+    width:auto;    margin: -7px 0 0 15px;
+    background: #d2dbe8;
+    border-color: transparent;
+    font-size: 14px;
+    padding: 4px 0px 4px 9px;
+}
+.jsgrid-pager-perpage .bootstrap-select.form-control {
+    width: auto;
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+.email-pager-perpage {
+    float: right;
+}
