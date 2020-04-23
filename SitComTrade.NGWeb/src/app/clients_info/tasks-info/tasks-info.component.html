@@ -1,11 +1,11 @@
 <div class="box-content">
     <div class="table-type02 margin-bottom-0">
-       <div class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+       <div  class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
           <table class="table-style01 dataTable">
              <thead>
                 <tr data-rule="titles">
                    <th>Owner<span class="fixel"><span><span></span></span></span></th>
-                   <th>Type<span class="fixel"><span><span></span></span></span></th>
+                   <th>Type<span class="fixel" ><span><span></span></span></span></th>
                    <th>Status<span class="fixel"><span><span></span></span></span></th>
                    <th>Date<span class="fixel"><span><span></span></span></span></th>
                    <th>Description<span class="fixel"><span><span></span></span></span></th>
@@ -17,42 +17,42 @@
              </thead>
              <tfoot></tfoot>
              <tbody>
-                <tr data-index="0" data-rule="body">
+                <tr *ngFor="let trade of getInfoTasks" data-index="0" data-rule="body">
                    <td style="max-width: 300px;">
                       <div data-display-for="16_UserId">
-                         <div class="text-ellipsis"></div>
+                         <div class="text-ellipsis">{{trade?.OwnerId}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_Type">
-                         <div class="text-ellipsis">{{userTasks?.TaskType}}</div>
+                         <div class="text-ellipsis">{{trade?.TaskType}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_Status">
-                         <div class="text-ellipsis">{{userTasks?.TaskStatus}}</div>
+                         <div class="text-ellipsis">{{trade?.TaskStatus}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
-                      <div data-display-for="16_Date">{{userTasks?.CreatedAt}}</div>
+                      <div data-display-for="16_Date">{{trade?.CreatedAt}}</div>
                    </td>
                    <td style="max-width: 200px;">
                       <div data-display-for="16_Description">
-                         <div class="text-ellipsis" data-field="Description" data-original-value="info">{{userTasks?.Description}}</div>
+                         <div class="text-ellipsis" data-field="Description" data-original-value="info">{{trade?.Description}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_CreatedBy">
-                         <div class="text-ellipsis">{{userTasks?.CreatedBy}}</div>
+                         <div class="text-ellipsis">{{trade?.CreatedBy}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_ItemId">
-                         <div class="text-ellipsis"><a href="#edit-popup"><span>{{userTasks?.TaskTypeId}}</span></a></div>
+                         <div class="text-ellipsis"><a href="#edit-popup"><span>{{trade?.TaskTypeId}}</span></a></div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
-                      <div data-display-for="16_CreatedDate">{{userTasks?.CreatedAt}}</div>
+                      <div data-display-for="16_CreatedDate">{{trade?.CreatedAt}}</div>
                    </td>
                    <td class="nowrap"></td>
                 </tr>

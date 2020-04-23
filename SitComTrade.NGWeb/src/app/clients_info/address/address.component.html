@@ -25,14 +25,14 @@
   </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" *ngFor="let address of userAddress" >
         <div class="col-xs-6 col-md-12">
           <form [formGroup] = "addressForm">
           <table class="table" id="address">
             <tr>
-                <th class="tabletxt">Country</th>
+                <th class="tabletxt" >Country</th>
                 <td>
-                 <div class="valueshhow2">{{userAddress?.CountryName}}
+                 <div class="valueshhow2">{{address?.CountryName}}
                  </div>
                  <div class="value-edit2" data-rule="valueEdit" style="display:none;">
           <!-- <input class="form-control" name="FirstName" type="text"  aria-required="true"> -->
@@ -48,7 +48,7 @@
               <tr>
                 <th class="tabletxt">Zipcode</th>
                  <td>
-                 <div class="valueshhow2">{{userAddress?.ZipCode}}
+                 <div class="valueshhow2">{{address?.ZipCode}}
                  </div>
                  <div class="value-edit2" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" formControlName="zipcode" type="text"  aria-required="true">
@@ -59,7 +59,7 @@
               <tr>
                 <th class="tabletxt">City</th>
                   <td>
-                 <div class="valueshhow2">{{userAddress?.City}}
+                 <div class="valueshhow2">{{address?.City}}
                  </div>
                  <div class="value-edit2" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" formControlName="city" type="text"  aria-required="true">
@@ -70,7 +70,7 @@
               <tr>
                 <th class="tabletxt">State</th>
                 <td>
-                 <div class="valueshhow2">{{userAddress?.State}}
+                 <div class="valueshhow2">{{address?.State}}
                  </div>
                  <div class="value-edit2" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" formControlName="state" type="text"  aria-required="true">
@@ -81,7 +81,7 @@
               <tr>
                 <th class="tabletxt">Street</th>
                  <td>
-                 <div class="valueshhow2">{{userAddress?.StreetAddress}}
+                 <div class="valueshhow2">{{address?.StreetAddress}}
                  </div>
                  <div class="value-edit2" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" formControlName="address" type="text"  aria-required="true">

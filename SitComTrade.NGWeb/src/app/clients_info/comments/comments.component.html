@@ -8,7 +8,7 @@
             </form>
          </div>
          <div class="text-right">
-             <a class="btn-type02 submit-button" (click)=addComment()>Submit</a>
+             <a class="btn-type02 submit-button" data-dismiss="modal" (click)=addComment()>Submit</a>
              <a href="#addNewComment" class="btn-type02" data-toggle="collapse" aria-controls="addNewComment" aria-expanded="true">
                Cancel
              </a>
@@ -17,4 +17,4 @@
    </form>
 </div>
 
-<p>{{comments?.CommentDescription}}</p>
+<p *ngFor="let comment of comments">{{comment?.CommentDescription}}</p>

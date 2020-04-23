@@ -45,9 +45,9 @@ export class CreateTaskComponent implements OnInit {
     const obj = {
       OwnerId: 1,
       TaskStatusId: 1,
-TaskTypeId: +this.taskInfoForm.value.status,
+TaskTypeId: this.taskInfoForm.value.status,
 NotiTrasportId: 1,
-TaskType: +this.taskInfoForm.value.type
+TaskType: this.taskInfoForm.value.type
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
