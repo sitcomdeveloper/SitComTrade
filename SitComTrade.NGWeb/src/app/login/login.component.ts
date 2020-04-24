@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   resetError: boolean;
+  btndisable = true;
   green = false;
   red = false;
   ResetPWdResponse1: any;
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
       rememberMe: []
     });
     this.resetForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]]
     });
   }
 
@@ -84,7 +85,10 @@ export class LoginComponent implements OnInit {
   }
   resetpwd() {
      const obj = this.resetForm.value.email;
-     this.loginservice.resetPassword(obj).subscribe(res => {
+     if (this.resetForm.valid) {
+       
+      // this.resetForm.controls.email.enable();
+      this.loginservice.resetPassword(obj).subscribe(res => {
        console.log('rstpwd', res);
        if (res === 'Invalid User') {
         this.ResetPWdResponse = '!Invalid User';
@@ -105,8 +109,20 @@ export class LoginComponent implements OnInit {
          this.resetError = true;
  }
     });
-    //  this.resetForm.reset();
+  } else {
+    // alert('wrong');
+    //this.resetForm.controls.email.disable();
+    
   }
+    //  this.ResetPWdResponse  = '';
+    //  this.ResetPWdResponse1 = '';
+    //  this.resetForm.reset();
 
+  }
+  change() {
+    if (this.resetForm.valid) {
+   this.btndisable = false;
+  }
+}
 
 }

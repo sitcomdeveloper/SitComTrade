@@ -11,14 +11,14 @@
     </div>
     <div class="modal" id="regModal">
       <div class="modal-dialog modal-lg">
-        <div class="modal-content">          
+        <div class="modal-content">
           <div class="modal-header" style="height: 4rem;">
             <h1 style="width: 100%; text-align: center; line-height: 0;" class="modal-title">
               <i class="fa fa-user-plus" aria-hidden="true"></i>
             </h1>
-            <button type="button" class="close" data-dismiss="modal" #myModalClose  style="outline:none">×</button>
-          </div>          
-          <div class="modal-body">            
+            <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+          </div>
+          <div class="modal-body">
             <app-register></app-register>
           </div>
         </div>
@@ -27,29 +27,32 @@
   </nav>
 </div>
 <div class="login-form">
-  <form class="form-group" [formGroup]="loginForm"  #ff="ngForm" (ngSubmit)="login()">
+  <form class="form-group" [formGroup]="loginForm" #ff="ngForm" (ngSubmit)="login()">
     <h2 class="text-center">Log in</h2>
     <div class="form-group">
-      <input type="text" class="form-control" formControlName="email" name="email" required placeholder="Email">     
+      <input type="text" class="form-control" formControlName="email" name="email" required placeholder="Email">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" formControlName="password" name="password" required placeholder="Password">
+      <input type="password" class="form-control" formControlName="password" name="password" required
+        placeholder="Password">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary btn-block" [disabled]="ff.invalid">Log in</button>
     </div>
     <div class="clearfix">
-      <label class="pull-left checkbox-inline"><input type="checkbox" formControlName="rememberMe" name="rememberMe" id="rememberme" onclick="rememberme(this)"> Remember me</label>
+      <label class="pull-left checkbox-inline"><input type="checkbox" formControlName="rememberMe" name="rememberMe"
+          id="rememberme" onclick="rememberme(this)"> Remember me</label>
       <a href="#" class="pull-right" data-toggle="modal" data-target="#pwdModal">Forgot Password?</a>
     </div>
   </form>
-  <p class="text-center" style="display:none"><a href="#" data-toggle="modal" data-target="#regModal">Create an Account</a></p>
+  <p class="text-center" style="display:none"><a href="#" data-toggle="modal" data-target="#regModal">Create an
+      Account</a></p>
 </div>
 <app-footer></app-footer>
 <div class="modal fade" id="pwdModal">
   <div class="modal-dialog modal-login">
     <div class="modal-content">
-      <div class="modal-header">        
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body" style="overflow-y: hidden;">
@@ -64,26 +67,33 @@
                     <p>You can reset your password here.</p>
                     <div class="panel-body">
 
-                      <form id="register-form" role="form" autocomplete="off" class="form" method="post" [formGroup]="resetForm" (ngSubmit)="reset()">
+                      <form id="register-form" role="form" autocomplete="off" class="form" method="post"
+                        [formGroup]="resetForm" (ngSubmit)="reset()">
 
                         <div class="form-group">
                           <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                            <input id="email" name="email" placeholder="email address" class="form-control" formControlName="email" type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+                            <span class="input-group-addon"><i
+                                class="glyphicon glyphicon-envelope color-blue"></i></span>
+                            <input id="email" name="email" placeholder="email address" class="form-control"
+                              formControlName="email" type="email" (keyup)="change()"
+                              [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
                             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                               <div *ngIf="f.email.errors.required">Email is required</div>
                               <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                              <!-- <span class="text-danger" *ngIf="resetForm.get('email').errors?.pattern">Email must be a
+                                valid email address</span> -->
                             </div>
                           </div>
-                          <div *ngIf = 'red' [ngClass]="[resetError?'alertclass':'']"[innerHTML]="ResetPWdResponse">                        
+                          <div *ngIf='red' [ngClass]="[resetError?'alertclass':'']" [innerHTML]="ResetPWdResponse">
                           </div>
-                          <div *ngIf = 'green' [ngClass]="[resetError?'alertclass1':'']"[innerHTML]="ResetPWdResponse1">                        
+                          <div *ngIf='green' [ngClass]="[resetError?'alertclass1':'']" [innerHTML]="ResetPWdResponse1">
                           </div>
-                          <div *ngIf = 'green'>   Your password is sent to your email                     
+                          <div *ngIf='green'> Your password is sent to your email
                           </div>
                         </div>
                         <div class="form-group">
-                          <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit" (click)="resetpwd()">
+                          <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" [disabled]= btndisable
+                            type="submit" (click)="resetpwd()">
                         </div>
                         <input type="hidden" class="hide" name="token" id="token" value="">
                       </form>
@@ -94,7 +104,7 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
     </div>
   </div>
+</div>

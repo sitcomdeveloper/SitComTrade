@@ -7,10 +7,16 @@
             <th class="tabletxt">Supplied Docs</th>
             <td>
               <div class="valueshhow3">
-                {{userAdditionalInfo?.SuppliedDocs}}
+                <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                    [ngStyle]="{'color': userAdditionalInfo?.SuppliedDocs ? 'green':'gray' }"></i>
+                <!-- {{userAdditionalInfo?.SuppliedDocs}} -->
               </div>
               <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-                <input class="form-control" formControlName="supplieddocs" type="text" aria-required="true">
+                <!-- <input class="form-control" formControlName="supplieddocs" type="text" aria-required="true"> -->
+                <label class="switch ">
+                  <input type="checkbox" formControlName="supplieddocs" class="primary">
+                  <span class="slider round" ></span>
+                </label>
 
               </div>
             </td>
@@ -19,11 +25,17 @@
             <th class="tabletxt">Accepted Terms & Conditions</th>
             <td>
               <div class="valueshhow3">
-                {{userAdditionalInfo?.AcceptedTermConditions}}
+                <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                [ngStyle]="{'color': userAdditionalInfo?.AcceptedTermConditions ? 'green':'gray' }"></i>
+                 <!-- {{userAdditionalInfo?.AcceptedTermConditions}}  -->
               </div>
               <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-                <input class="form-control" name="acceptedtermsconditions" formControlName="acceptedtermsconditions"
-                  type="text" aria-required="true">
+                <!-- <input class="form-control" name="acceptedtermsconditions" formControlName="acceptedtermsconditions"
+                  type="text" aria-required="true"> -->
+                  <label class="switch ">
+                    <input type="checkbox" formControlName="acceptedtermsconditions" class="primary">
+                    <span class="slider round" ></span>
+                  </label>
 
               </div>
             </td>
@@ -32,11 +44,17 @@
             <th class="tabletxt">Subscribed Newsletter</th>
             <td>
               <div class="valueshhow3">
-                {{userAdditionalInfo?.SubscribedNewsletter}}
+                <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                [ngStyle]="{'color': userAdditionalInfo?.SubscribedNewsletter ? 'green':'gray'}"></i>
+                <!-- {{userAdditionalInfo?.SubscribedNewsletter}} -->
               </div>
               <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-                <input class="form-control" name="subscribednewsletter" formControlName="subscribednewsletter"
-                  type="text" aria-required="true">
+                <!-- <input class="form-control" name="subscribednewsletter" formControlName="subscribednewsletter"
+                  type="text" aria-required="true"> -->
+                  <label class="switch ">
+                    <input type="checkbox" class="form-control" formControlName="subscribednewsletter" class="primary">
+                    <span class="slider round" name="subscribednewsletter" ></span>
+                  </label>
 
               </div>
             </td>
@@ -45,10 +63,16 @@
             <th class="tabletxt">IsOnline</th>
             <td>
               <div class="valueshhow3">
-                {{userAdditionalInfo?.IsOnline}}
+                <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                [ngStyle] = "{'color': userAdditionalInfo?.IsOnline ? 'green':'gray'}"></i>
+                <!-- {{userAdditionalInfo?.IsOnline}} -->
               </div>
               <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-                <input class="form-control" name="isonline" formControlName="isonline" type="text" aria-required="true">
+                <!-- <input class="form-control" name="isonline" formControlName="isonline" type="text" aria-required="true"> -->
+                <label class="switch">
+                  <input type="checkbox" name="isonline" formControlName="isonline" disabled class="primary">
+                  <span class="slider round" ></span>
+                </label>
 
               </div>
             </td>
@@ -70,10 +94,10 @@
             <th class="tabletxt">Promocode</th>
             <td>
               <div class="valueshhow3">
-                {{userAdditionalInfo?.Description}}
+                {{userAdditionalInfo?.PromoCode}}
               </div>
               <div class="value-edit3" data-rule="valueEdit" style="display:none;">
-                <input class="form-control" name="description" formControlName="description" type="text"
+                <input class="form-control" name="description" formControlName="promocode" type="text"
                   aria-required="true">
 
               </div>

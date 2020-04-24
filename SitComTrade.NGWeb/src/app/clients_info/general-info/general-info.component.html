@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="row">
     <form [formGroup]="userInfoForm" class="width100">
@@ -107,7 +108,7 @@
           <th class="tabletxt">Created Date</th>
           <td>
            <div class="valueshhow">
-          {{userGenralinfo?.CreatedAt}}
+          {{userGenralinfo?.CreatedDate}}
             </div>
            <div class="value-edit" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="CretedDate" type="text" formControlName="createddate"  aria-required="true">
@@ -305,6 +306,10 @@
           
           </div></td>
           <th class="tabletxt">Type</th>
+          <td class="text-ellipsis ">
+            <div class="valueshhow">
+            {{userGenralinfo?.TypeName}}
+            </div>
           <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
           <input class="form-control" name="FirstName" type="text"  aria-required="true">
           

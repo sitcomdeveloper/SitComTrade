@@ -18,8 +18,9 @@ export class AdditionalInfoComponent implements OnInit {
       acceptedtermsconditions: [''],
       subscribednewsletter: [''],
       isonline: [''],
-      description: ['']
-    })
+      description: [''],
+      promocode: ['']
+    });
     this.additionalInfo();
   }
   additionalInfo() {
@@ -36,7 +37,8 @@ export class AdditionalInfoComponent implements OnInit {
         acceptedtermsconditions: this.userAdditionalInfo.AcceptedTermConditions,
         subscribednewsletter: this.userAdditionalInfo.SubscribedNewsletter,
         isonline: this.userAdditionalInfo.IsOnline,
-        description: this.userAdditionalInfo.Description
+        description: this.userAdditionalInfo.Description,
+        promocode: this.userAdditionalInfo.PromoCode
       });
     });
   }

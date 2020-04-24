@@ -112,7 +112,7 @@ export class GeneralInfoComponent implements OnInit {
       secondemail: this.useraddinfo.SecondEmail,
       itemid: this.useraddinfo.ItemId,
       owner: this.useraddinfo.OwnerId,
-      status: this.useraddinfo.StatusName,
+      status: this.useraddinfo.ResponseStatus,
       createddate: userDate,
       // lastcommentdate:: this.userGenralinfo.,
       modifieddate: this.useraddinfo.UpdatedAt,
@@ -135,7 +135,7 @@ export class GeneralInfoComponent implements OnInit {
       // ftdamount: this.userGenralinfo.,
       // totalwithdrawals: this.userGenralinfo.,
       // netdeposits: this.userGenralinfo.,
-      // type: this.userGenralinfo.TypeName,
+      type: this.userGenralinfo.TypeName,
       firstregistrationdate: this.useraddinfo.FirstRegistrationDate,
       // registrationtype: this.userGenralinfo.,
       lasttaskdayspast: this.useraddinfo.LastTaskDaysPast,
@@ -153,6 +153,6 @@ export class GeneralInfoComponent implements OnInit {
     this._generalinfoservice.getRegistrationType().subscribe(res => {
       this.registrationType = res;
       console.log('registeredtype', res);
-    })
+    });
   }
 }
