@@ -1,0 +1,17 @@
+
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+    border-radius: 0;
+}
+select {
+    border-bottom: 1px solid #dde7f9;
+}
+.form-control {
+    font-size: 13px;
+    color: #45596a;
+    height: 33px!important;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+}

@@ -88,6 +88,7 @@ import { ImportClientDataComponent } from './clients/import-client-data/import-c
 import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
+import { CreateItemComponent } from './settings/groups/create-item/create-item.component';
 
 @NgModule({
   declarations: [
@@ -164,6 +165,7 @@ import { EditTemplateComponent } from './settings/emailtemplates/edit-template/e
     CreateTaskComponent,
     CreateTemplateComponent,
     EditTemplateComponent,
+    CreateItemComponent,
     
   ],
   imports: [

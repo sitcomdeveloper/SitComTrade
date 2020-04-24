@@ -491,26 +491,226 @@ body {
 {
     padding-top: 18px;
 }
-.cstm-search-btn-trigger {
-    padding: 2px;
-    left: 0;
-    color: #fff;
-    text-align: center;
-    background: #a9c1d5;
-    position: absolute;
-    width: 13px;
-    height: 13px;
-    top: 6px;
-    left: 6px;
+.nospace
+{
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.nospace i {
+    line-height: 0;
+}
+.nospace{
+    text-align: end;
+}
+.text-ellipsis {
+    white-space: nowrap;
+    display: block;
     overflow: hidden;
+    text-overflow: ellipsis;
+}
+.greybtn
+{
+    color:#b0c5d8;
+}
+.greyiconnn
+{
+    color:#b0c5d8;
+}
+.reverse {
+    /* transform: rotate(95deg); */
+   
+    padding-right: 12px;
+    display: initial!important;
+}
+.holder {
+    background: #12baee;
+    border-radius: 2px;
+    width: 50px;
+    height: 41px;
+}
+.serachicon a{
+    display: block;
+    width: 50px;
+    height: 39px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+}
+.serachicon a i{
+    width: 25px;
+    height: 25px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #fff;
+    left: 17px!important;
+    top: 17%!important;
+    position: relative!important;
+    font-size: 21px;
+}
+.holder i {
+    position: absolute;
+    top: 22%;
+    left: 32%;
     cursor: pointer;
-    z-index: 4;
-    font-size: 7px;
+}
+.fa-ellipsis-h {
+    font-size: 25px;
+}
+.email-pager-perpage {
+    float: right;
+}
+.email-pager-perpage label {
+    display: -webkit-box!important;
+    display: flex!important;
+    margin: 0 0 0 15px;
+}
+.email-pager-perpage label select{
+    width: auto;
+    margin: -7px 0 0 15px;
+    background: #d2dbe8;
+    border-color: transparent;
+    font-size: 14px;
+    padding: 4px 0px 4px 9px;
 }
 .jsgrid-grid-header {
     background: #f5f8fc;
    
 }
+.searchbtn {
+    display: block;
+}
+.displayend {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+.input-group.selecticon.grpselect{
+    width: 393px!important;
+    z-index: 6666;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
+.rightsubopt .input-group select {
+    width: 230px;
+    background: 0 0!important;
+    border-color: #609bce!important;
+    font-size: 14px;
+    color: #fff!important;
+    padding: 6px 25px 6px 20px;
+    border-radius: 2px 0 0 2px;
+    text-shadow: 0 0 1px rgba(69,89,106,.25);
+}
+
+element.style {
+}
+.rightsubopt .input-group select option {
+    padding: 0;
+    margin: 5px 0 0;
+    font-size: 13px;
+    border: 1px solid #dde7f9;
+    border-radius: 2px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+    color: #000;}
+    .brdr-right{
+        border-right: 1px solid #105996;
+    }
+    
+    .serachicon {
+        background: #12baee;
+    }
+    .btn-group, .btn-group-vertical {
+        display: -webkit-inline-box!important;
+        vertical-align: middle;
+    }
+    .serachicon{
+        display: block;
+        /* width: 50px; */
+        height: 39px;
+        color: #fff;
+        text-decoration: none;
+        overflow: hidden;
+        position: relative;
+    }
+    .serachicon a i {
+        width: 25px;
+        height: 25px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        color: #fff;
+        left: 17px!important;
+        top: 17%!important;
+        position: relative!important;
+        font-size: 21px;
+    }
+    .email-cell-content {
+        padding: 5px;
+        font-weight: 400;
+    }
+    .email-table {
+        background: #fff;
+        width: 100%!important;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    .emailinpt
+    {
+        height:27px!important;
+        border: 1px solid #ced4da;
+        border-radius: 0;    padding: 0px;
+    
+    }
+    .email-cell-content {
+        padding: 5px;
+    }
+    .email-row:hover {
+        background: #e1ebf9;
+    }
+    .email-cell-content
+    {
+        font: 15px/1.53845 Poppins,Arial,sans-serif;
+    }
+    .JCLRgrip .JColResizer {
+        position: absolute;
+        background-color: red;
+        filter: alpha(opacity=1);
+        opacity: 0;
+        width: 10px;
+        height: 100%;
+        cursor: e-resize;
+        top: 0px;
+    }
+    .JCLRgrip .JColResizer {
+        background: 0 0!important;
+        opacity: 1!important;position: relative;
+    }
+    
+    .JCLRgrip .JColResizer:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        height: 18px;
+        margin: auto;
+        background: #d7e2ef;
+    }
 /* .jsgrid-cell-content {
     padding: 5px;
 } */

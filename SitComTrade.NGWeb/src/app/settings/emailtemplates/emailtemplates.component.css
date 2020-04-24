@@ -73,54 +73,17 @@
     -o-user-select: none;
     user-select: none;
 }
-.email-table {
-    background: #fff;
-    width: 100%!important;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+
 th.email-header-cell.email-header-sortable {
     width: 26.6%;
 }
 .email-alt-row>.email-cell, .email-header-row>.email-header-cell {
     background: #f5f8fc;
 }
-.email-cell-content {
-    padding: 5px;
-    font-weight: 400;
-}
-.nospace
-{
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-}
 td.email-cell {
     width: 29%;
 }
-.nospace i {
-    line-height: 0;
-}
-.nospace{
-    text-align: end;
-}
-.emailinpt
-{
-    height:27px!important;
-    border: 1px solid #ced4da;
-    border-radius: 0;
 
-}
-.email-cell-content {
-    padding: 5px;
-}
-.email-row:hover {
-    background: #e1ebf9;
-}
-.email-cell-content
-{
-    font: 15px/1.53845 Poppins,Arial,sans-serif;
-}
 .email-pager-perpage label {
     display: flex!important;    margin: 0 0 0 15px;
 }
