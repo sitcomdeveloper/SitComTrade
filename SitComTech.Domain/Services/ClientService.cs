@@ -1,4 +1,5 @@
 ﻿using SitComTech.Core.Interface;
+using SitComTech.Core.Utils;
 using SitComTech.Data.Interface;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
@@ -72,9 +73,40 @@ namespace SitComTech.Domain.Services
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
                     SaveChanges();
+                    if (clientdata.ISendEmail == true)
+                    {
+                        SendEmilToClient(clientdata);
+                    }
                     return entity;
                 }
                 return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void SendEmilToClient(ClientDataVM clientdata)
+        {
+            try
+            {
+
+                string content = "<html><body><p>Dear <b>" + clientdata.FirstName +" "+ clientdata.LastName+ ",</b></p>";
+                content += "<p>We let you know that  with the following details has been created for you in the system :</p>";
+
+                content += "<p>Email: " + clientdata.Email + "</p>";
+                content += "<p>Password: " + clientdata.Password + "</p>";
+                content += "<p>Happy Trading !</p>";
+                content += "<p>SitCom Team</p></body></html>";
+                MailManager oMailManager = new MailManager
+                {
+                    To = clientdata.Email,
+                    Subject = "Created Successfully - SitCom!",
+                    IsBodyHtml = true,
+                    Body = content
+                };
+                oMailManager.SendEmail();
             }
             catch (Exception ex)
             {
@@ -87,10 +119,24 @@ namespace SitComTech.Domain.Services
             Client clientdata = _repository.GetById(entity.Id);
             if (clientdata != null)
             {
-                entity.UpdatedAt = DateTime.Now;
-                entity.UpdatedBy = clientdata.Id;
-                entity.UpdatedByName = clientdata.FirstName;
-                _repository.Update(entity);
+                clientdata.UpdatedAt = DateTime.Now;
+                clientdata.UpdatedBy = entity.Id;
+                clientdata.UpdatedByName = entity.FirstName;
+                clientdata.FirstName = entity.FirstName;
+                clientdata.LastName = entity.LastName;
+                clientdata.Password = entity.Password;
+                clientdata.Email = entity.Email;
+                clientdata.GroupId = entity.GroupId;
+                clientdata.GroupName = entity.GroupName;
+                clientdata.CountryId = entity.CountryId;
+                clientdata.CountryName = entity.CountryName;
+                clientdata.TypeName = entity.TypeName;
+                clientdata.Phone = entity.Phone;
+                clientdata.OwnerId = entity.OwnerId;
+                clientdata.ResponseStatus = entity.ResponseStatus;
+                clientdata.ResponseStatusId = entity.ResponseStatusId;
+                clientdata.ItemId = entity.ItemId;
+                _repository.Update(clientdata);
                 SaveChanges();
             }
         }
@@ -100,6 +146,7 @@ namespace SitComTech.Domain.Services
             if (entity == null)
                 throw new ArgumentNullException("Client");
             _repository.Delete(entity);
+            SaveChanges();
         }
 
         public void SaveChanges()
@@ -416,17 +463,23 @@ namespace SitComTech.Domain.Services
 
         public void Delete(Comment entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+                throw new ArgumentNullException("Client");
+            _repository.Delete(entity);
+            SaveChanges();
         }
 
         public IQueryable<Comment> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll().Where(x => x.Active && !x.Deleted);
         }
 
         public Comment GetById(object Id)
         {
-            throw new NotImplementedException();
+            if ((long)Id == 0)
+                return null;
+            Comment Client = _repository.GetById(Id);
+            return Client;
         }
 
         public List<Comment> GetCommentByOwnerId(long ownerid)
@@ -507,33 +560,40 @@ namespace SitComTech.Domain.Services
             _repository.SaveChanges();
         }
 
-        public void Update(Address addr)
+        public void Update(Address entity)
         {
-            Address userdata = _repository.GetById(addr.Id);
+            Address userdata = _repository.GetById(entity.Id);
             if (userdata != null)
             {
-                addr.UpdatedAt = DateTime.Now;
-                _repository.Update(addr);
+                userdata.UpdatedAt = DateTime.Now;
+                userdata.UpdatedBy = entity.Id;
+                userdata.City = entity.City;
+                userdata.State = entity.State;
+                userdata.StreetAddress = entity.StreetAddress;
+                userdata.CountryId = entity.CountryId;
+                userdata.CountryName = entity.CountryName;
+                userdata.OwnerId = entity.OwnerId;
+                _repository.Update(userdata);
                 SaveChanges();
             }
             else
             {
-                Address entity = new Address
+                Address addr = new Address
                 {
                     Active = true,
                     Deleted = false,
                     CreatedAt = DateTime.Now,
                     CreatedBy = 0,
                     CreatedByName = "",
-                    OwnerId = addr.OwnerId,
-                    CountryId = addr.CountryId,
-                    CountryName=addr.CountryName,
-                    ZipCode=addr.ZipCode,
-                    City=addr.City,
-                    State=addr.State,
-                    StreetAddress=addr.StreetAddress,
+                    OwnerId = entity.OwnerId,
+                    CountryId = entity.CountryId,
+                    CountryName= entity.CountryName,
+                    ZipCode= entity.ZipCode,
+                    City= entity.City,
+                    State= entity.State,
+                    StreetAddress= entity.StreetAddress,
                 };
-                _repository.Insert(entity);
+                _repository.Insert(addr);
                 SaveChanges();
             }
         }
