@@ -84,12 +84,13 @@
                                 valid email address</span> -->
                             </div>
                           </div>
-                          <div *ngIf='red' [ngClass]="[resetError?'alertclass':'']" [innerHTML]="ResetPWdResponse">
+                          <!-- <div *ngIf='red' [ngClass]="[resetError?'alertclass':'']" [innerHTML]="ResetPWdResponse">
+                          </div> -->
+                          <!-- <div *ngIf='green' [ngClass]="[resetError?'alertclass1':'']" [innerHTML]="ResetPWdResponse1">
+                          </div> -->
+                          <div *ngIf='green'> Your password is successfully sent to your email
                           </div>
-                          <div *ngIf='green' [ngClass]="[resetError?'alertclass1':'']" [innerHTML]="ResetPWdResponse1">
-                          </div>
-                          <div *ngIf='green'> Your password is sent to your email
-                          </div>
+                          <div *ngIf='red'>The email account that you tried to reach does not exist</div>
                         </div>
                         <div class="form-group">
                           <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" [disabled]= btndisable

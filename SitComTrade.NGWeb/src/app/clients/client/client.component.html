@@ -37,7 +37,7 @@
           <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i> -->
           <div class="btn-toolbar searchbtn" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a routerLink=""><i class="fa fa-refresh"></i></a>
+              <a><i class="fa fa-refresh" (click)="userDetails()"></i></a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
               <div class="input-group selecticon grpselect">
@@ -4172,5 +4172,6 @@
 
 
 <!--------------End create email-all model--------------->
-
+<div class="loader">
 <ng4-loading-spinner> </ng4-loading-spinner>
+</div>

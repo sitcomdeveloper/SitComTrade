@@ -22,7 +22,9 @@ export class CreateTaskComponent implements OnInit {
       owner: [''],
       type: [''],
       status: [''],
-      transport: ['']
+      transport: [''],
+      description: [''],
+      notitimebefore: ['']
 
     });
     this.taskType();
@@ -45,9 +47,12 @@ export class CreateTaskComponent implements OnInit {
     const obj = {
       OwnerId: 1,
       TaskStatusId: 1,
-TaskTypeId: this.taskInfoForm.value.status,
+TaskTypeId: 1,
 NotiTrasportId: 1,
-TaskType: this.taskInfoForm.value.type
+TaskType: this.taskInfoForm.value.type,
+Description: this.taskInfoForm.value.description,
+TaskStatus: this.taskInfoForm.value.status,
+NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;

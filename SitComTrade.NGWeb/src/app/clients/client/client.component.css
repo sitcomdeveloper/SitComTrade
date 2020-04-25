@@ -528,3 +528,12 @@ grid-auto-columns: max-content;
     width: 16px;
     height: 16px;
 }
+.loader{
+    
+  
+  margin: auto;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}

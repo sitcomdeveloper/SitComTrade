@@ -91,13 +91,13 @@ export class LoginComponent implements OnInit {
       this.loginservice.resetPassword(obj).subscribe(res => {
        console.log('rstpwd', res);
        if (res === 'Invalid User') {
-        this.ResetPWdResponse = '!Invalid User';
+        // this.ResetPWdResponse = '!Invalid User';
         this.green = false;
         this.red = true;
         this.resetError = true;
         // alert('Invalid User!');
        } else if (res === 'Success') {
-         this.ResetPWdResponse1 = '!Success';
+        //  this.ResetPWdResponse1 = '!Success';
          this.red = false;
          this.green = true;
          this.resetError = true;
