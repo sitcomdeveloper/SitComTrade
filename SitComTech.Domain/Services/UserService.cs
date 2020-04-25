@@ -90,10 +90,10 @@ namespace SitComTech.Domain.Services
             User userdata = _repository.GetById(entity.Id);
             if (userdata != null)
             {
-                entity.UpdatedAt = DateTime.Now;
-                entity.UpdatedBy = userdata.OwnerId;
-                entity.UpdatedByName = userdata.FirstName;
-                _repository.Update(entity);
+                userdata.UpdatedAt = DateTime.Now;
+                userdata.UpdatedBy = entity.OwnerId;
+                userdata.UpdatedByName = entity.FirstName;
+                _repository.Update(userdata);
                 SaveChanges();
             }
         }

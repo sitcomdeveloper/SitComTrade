@@ -50,5 +50,13 @@ namespace SitComTech.API.Controllers
         {
             return _taskService.InsertTask(entity);
         }
+
+        [HttpPost]
+        [Route("UpdateOwnerTask")]
+        public void UpdateOwnerTask(OwnerTask userVM)
+        {
+            _taskService.Update(userVM);
+        }
+
     }
 }
