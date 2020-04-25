@@ -34,6 +34,7 @@ namespace SitComTech.Domain.Services
                 entity.NotiTimeBefore = userdata.NotiTimeBefore;
                 entity.CreatedBy = 0;
                 entity.CreatedByName = "";
+                entity.Description = userdata.Description;
                 _repository.Insert(entity);
                 SaveChanges();
                 return entity;
@@ -45,10 +46,25 @@ namespace SitComTech.Domain.Services
         }
 
         public void Update(OwnerTask entity)
-        {
-            if (entity == null)
-                throw new ArgumentNullException("User");
-            _repository.Update(entity);
+        {           
+            OwnerTask taskdata = _repository.GetById(entity.Id);
+            if (taskdata != null)
+            {
+                taskdata.UpdatedAt = DateTime.Now;
+                taskdata.UpdatedBy = entity.OwnerId;
+                taskdata.Description = entity.Description;
+                taskdata.NotiTimeBefore = entity.NotiTimeBefore;
+                taskdata.NotiTrasportId = entity.NotiTrasportId;
+                taskdata.TaskStatusId = entity.TaskStatusId;
+                taskdata.TaskStatus = entity.TaskStatus;
+                taskdata.TaskType = entity.TaskType;
+                taskdata.TaskTypeId = entity.TaskTypeId;
+                taskdata.OwnerId = entity.OwnerId;
+                _repository.Update(taskdata);
+                SaveChanges();
+            }
+            if (entity == null || taskdata==null)
+                throw new ArgumentNullException("Task");
         }
 
         public void Delete(OwnerTask entity)
