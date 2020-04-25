@@ -52,11 +52,19 @@ namespace SitComTech.Domain.Services
             {
                 taskdata.UpdatedAt = DateTime.Now;
                 taskdata.UpdatedBy = entity.OwnerId;
+                taskdata.Description = entity.Description;
+                taskdata.NotiTimeBefore = entity.NotiTimeBefore;
+                taskdata.NotiTrasportId = entity.NotiTrasportId;
+                taskdata.TaskStatusId = entity.TaskStatusId;
+                taskdata.TaskStatus = entity.TaskStatus;
+                taskdata.TaskType = entity.TaskType;
+                taskdata.TaskTypeId = entity.TaskTypeId;
+                taskdata.OwnerId = entity.OwnerId;
                 _repository.Update(taskdata);
                 SaveChanges();
             }
             if (entity == null || taskdata==null)
-                throw new ArgumentNullException("User");
+                throw new ArgumentNullException("Task");
         }
 
         public void Delete(OwnerTask entity)

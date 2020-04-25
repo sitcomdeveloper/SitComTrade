@@ -72,6 +72,36 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("DeleteClient/{Id}")]
+        public bool DeleteClient(long Id)
+        {
+            try
+            {
+                Client clientdata = _clientService.GetById(Id);
+                if (clientdata != null)
+                {
+                    _clientService.Delete(clientdata);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        [HttpPost]
+        [Route("UpdateClient")]
+        public void UpdateClient(Client userVM)
+        {
+            _clientService.Update(userVM);
+        }
+
+        [HttpPost]
         [Route("GetAllClientsByOwnerId/{ownerid}")]
         public List<ClientListVM> GetAllClientsByOwnerId(int ownerid)
         {
@@ -152,6 +182,48 @@ namespace SitComTech.API.Controllers
         public void InsertComment(Comment entity)
         {
              _commentService.Insert(entity);
+        }
+
+        [HttpPost]
+        [Route("DeleteComment/{Id}")]
+        public bool DeleteComment(long Id)
+        {
+            try
+            {
+                Comment commentdata = _commentService.GetById(Id);
+                if (commentdata != null)
+                {
+                    _commentService.Delete(commentdata);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        [HttpPost]
+        [Route("DeleteAllComment")]
+        public bool DeleteAllComment()
+        {
+            try
+            {
+                List<Comment> commentdata = _commentService.GetAll().ToList();
+                foreach(var item in commentdata)
+                {
+                    _commentService.Delete(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
         }
 
         [HttpPost]
