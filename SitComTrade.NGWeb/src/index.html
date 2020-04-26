@@ -180,47 +180,51 @@
     });
   </script>
   <script>
-    //   $(document).ready(function () {
-    //     $("#closecreateclient").click(function () {
-    //    $("#importclient").hide();
-    //    $("#importclientdata").show();
 
-    //    });
-    // });
-    $(document).ready(function () {
-      // Show modal on page load
-      // $("#myModal").modal('show');
-
-      // Hide modal on button click
-
-      // $(".abf").click(function(){
-      //     $("#importclient").modal('hide');
-      //     $("#importclientdata").modal('show');
-
-      // });
-      //     $("#closecreateclient").click(function(){
-      //       $('#importclientdata').modal('show');
-      //     $('#importclient').modal('hide');
-
-      // });
-
-      // same as above button id
-      // $("#closecreateclient").click(function(){
-      // $('#importclientdata').modal('show')});
-      // $("#closecreateclient").click( function()
-      //          {
-      //             $('#importclient').modal('hide');
-      //             $('#importclientdata').modal('show');
-      //          }
-      //  );
-      //  $(document).ready(function(){
-      //     $("#closecreateclient").on('hidden.bs.modal', function(){
-      //         $('#importclient').modal('hide');
-      //     });
-      // });
-
-    });
-  </script>
+    function isElementInViewport (el) {
+          //special bonus for those using jQuery
+          if (typeof jQuery === "function" && el instanceof jQuery) {
+            el = el[0];
+          }
+          var rect = el.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+          );
+        }
+    
+    
+        // click-to-scroll behavior
+        $("a").click(function (e) {
+          e.preventDefault();
+          var section = this.href;
+          var sectionClean = section.substring(section.indexOf("#"));
+          $("html, body").animate({
+            scrollTop: $(sectionClean).offset().top
+          }, 1000, function () {
+            window.location.hash = sectionClean;
+          });
+        });
+        
+        // listen for the scroll event
+        $(document).on("scroll", function() {
+          //console.log("onscroll event fired...");
+          // check if the anchor elements are visible
+          $(".common").each(function (idx, el) {
+            if ( isElementInViewport(el) ) {
+              // update the URL hash
+              if (window.history.pushState) {
+                var urlHash = "#" + $(el).attr("id");
+          window.history.pushState(null, null, urlHash);
+              }
+            }
+          });
+        });
+    
+    
+    </script>
 </body>
 
 </html>

@@ -89,6 +89,7 @@ import { CreateTaskComponent } from './clients_info/tasks-info/create-task/creat
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 import { CreateItemComponent } from './settings/groups/create-item/create-item.component';
+import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-accounts.component';
 
 @NgModule({
   declarations: [
@@ -166,6 +167,7 @@ import { CreateItemComponent } from './settings/groups/create-item/create-item.c
     CreateTemplateComponent,
     EditTemplateComponent,
     CreateItemComponent,
+    TradeAccountsComponent,
     
   ],
   imports: [
