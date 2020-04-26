@@ -1,3 +1,7 @@
+.subheader
+{
+    height:auto!important;
+}
 .box-heading
 {
     display: inline-block;

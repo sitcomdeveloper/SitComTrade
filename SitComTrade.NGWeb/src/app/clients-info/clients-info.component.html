@@ -4,7 +4,9 @@
   <div class="account-panel">
     <div class="main-holder">
       <div class="account-main-details">
-        <p>ID: {{userGenralinfo?.ItemId}}<span class="type">{{userGenralinfo?.TypeName}}</span></p>
+        <p>ID: {{userGenralinfo?.ItemId}}<span class="type">{{userGenralinfo?.TypeName}}</span>
+      
+        </p>
         <h2>{{userGenralinfo?.FirstName}} {{userGenralinfo?.LastName}}</h2>
       </div>
       <div class="account-details">
@@ -43,16 +45,28 @@
         <ul id="navPanel" style="    padding: 14px;
     padding-left: 0;">
           <li>
-            <a href="#tasks">Tasks</a>
+            <a href="#tasks" class="common">Tasks</a>
           </li>
           <li>
-            <a href="#emails">Emails</a>
+            <a href="#" class="common">Trade Accounts</a>
           </li>
           <li>
-            <a href="#sent-sms">Sms</a>
+            <a href="#emails" class="common">Emails</a>
           </li>
           <li>
-            <a href="#registrationHistorys">RegistrationHistory</a>
+            <a href="#" class="common">Financial Transactions</a>
+          </li>
+          <li>
+            <a href="#" class="common">Documents</a>
+          </li>
+          <li>
+            <a href="#sent-sms" class="common">Sms</a>
+          </li>
+          <li>
+            <a href="#" class="common">Cases</a>
+          </li>
+          <li>
+            <a href="#registrationHistorys" class="common">RegistrationHistory</a>
           </li>
         </ul>
       </div>
@@ -225,7 +239,7 @@
           </div>
         </div>
         <!-- <div id="tasks"></div> -->
-        <div class="card mb20" style="padding: 15px;
+        <div class="card mb20"  id="tasks" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingSeven">
 
@@ -400,3 +414,7 @@
 
 <!--------------End create task model--------------->
 <app-footer></app-footer>
+
+
+
+
