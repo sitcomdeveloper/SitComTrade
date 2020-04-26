@@ -106,17 +106,20 @@ img{
   margin: 4px 82px 3px 0;
 
 }
-li.nav-item .dropdown-menu a::after {
+/* .input::after, .main-nav .dropdown-menu::after, .main-nav>li>a::after, .main::after, header::after {
+  content: "";
+}
+li.nav-item .dropdown-menu ::after {
+  content: "";
   position: absolute;
   left: 33px;
   top: -7px;
   border-style: solid;
   border-width: 0 6px 7px;
   border-color: #fff transparent;
-}
-.input::after, .main-nav .dropdown-menu::after, .main-nav>li>a::after, .main::after, header::after {
-  content: "";
-}
+ 
+} */
+
 .container-padd
 {
   padding: 0 30px!important;

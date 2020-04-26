@@ -344,6 +344,37 @@ div#headingOne {
     margin: -3px 25px;
     font-size: 10px;
 }
+.account-details {
+    display: table;
+    padding: 15px 0;
+}
 
+
+.account-panel .account-details dl:first-child {
+    border-width: 0;
+}
+.account-panel .account-details dl {
+    display: table-cell;
+    vertical-align: top;
+    color: #7cb5e5;
+    font-size: 14px;
+    border: 1px solid #09508a;
+    border-width: 0 0 0 2px;
+    padding: 0 20px;
+}
+.account-panel .account-details dt {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.account-panel .account-details dd {
+    font-size: 16px;
+    color: #fff;
+}
+.color06 {
+    color: #f65858;
+}
+.color05 {
+    color: #12eea3;
+}
 
 
