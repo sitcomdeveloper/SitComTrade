@@ -184,7 +184,7 @@ ul.navbar-nav.navbar-right
 
 .dropdown-menu {
     padding: 0px 0;
-    margin: 10px 0 0;
+    margin: 0 0 0;
     border: 0px solid transition !important;
     border: 0px solid rgba(0,0,0,.15);
     border-radius: 0px;
