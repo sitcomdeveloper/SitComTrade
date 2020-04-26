@@ -90,6 +90,7 @@ import { CreateTemplateComponent } from './settings/emailtemplates/create-templa
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 import { CreateItemComponent } from './settings/groups/create-item/create-item.component';
 import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-accounts.component';
+import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
 
 @NgModule({
   declarations: [
@@ -168,6 +169,7 @@ import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-acco
     EditTemplateComponent,
     CreateItemComponent,
     TradeAccountsComponent,
+    FinancialTransactionsComponent,
     
   ],
   imports: [
