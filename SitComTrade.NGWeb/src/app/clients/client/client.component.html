@@ -69,7 +69,7 @@
             <div class="btn-group mr-2 serachicon " role="group" aria-label="Third group" [attr.disabled]="deletbtnn ==true ? true : false">
 
               <a href="#" data-toggle="modal" data-target="#regModal" class="brdr-right">
-                <i class="fa fa-user-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white"></i>
+                <i class="fa fa-user-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white" (click)="newClient()"></i>
               </a>
               <a class="brdr-right" [class.disabled] = deletbtnn>
                  <i class="fa fa-pencil bg-primary1 fa-lg"  ></i>
@@ -4057,7 +4057,7 @@
   </div>
 </div>
 <!------------------create new user model------------->
-<div class="modal" id="regModal">
+<!-- <div class="modal" id="regModal">
   <div class="modal-dialog modal930">
     <div class="modal-content">
       <div class="modal-header" style="height: 4rem;">
@@ -4073,7 +4073,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 

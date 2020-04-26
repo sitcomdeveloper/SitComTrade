@@ -22,7 +22,7 @@ export class CommentsComponent implements OnInit {
     });
     this.userComments();
     this.editComment();
-    this.deleteAll();
+    // this.deleteAll();
   }
   userComments() {
     this.commentsService.getComments(this.infoComment).subscribe(res => {
@@ -45,12 +45,14 @@ export class CommentsComponent implements OnInit {
     };
     this.commentsService.insertComments(obj).subscribe(res => {
       this.insert = res;
+      this.userComments();
       console.log('insertcomment', res);
     });
   }
   deleteAll() {
     this.commentsService.deleteAllComment('this.dltAll').subscribe(res => {
       this.dltAllComment = res;
+      this.userComments();
       console.log('dltAllComment', res);
     });
   }

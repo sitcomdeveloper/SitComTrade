@@ -1,3 +1,9 @@
+<div class="modal-header">
+   <h4 class="modal-title pull-left">{{title}} </h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+       <span aria-hidden="true">&times;</span>
+   </button>
+</div>
 <div class="register img-fluid">
    <div class="container">
       <div class="row">
@@ -186,7 +192,7 @@
                <div class="text-center">
                   <a form [formGroup]="newUserForm" class="button submit-button itembutton" href="javascript:void(0);"
                      (click)="newClients()">Save</a>
-                  <a class="button button2 itembutton1" href="javascript:void(0);" data-dismiss="modal">Cancel</a>
+                  <a class="button button2 itembutton1" href="javascript:void(0);" data-dismiss="modal" (click) = "hideModal()">Cancel</a>
                </div>
             </div>
          </div>

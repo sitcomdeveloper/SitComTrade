@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-item',
@@ -9,15 +10,19 @@ import { CountryService } from 'src/app/services/country.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
+  @Input() prtdata: any;
+  @Output() clddata: EventEmitter<any> = new EventEmitter();
   getnewClients: any;
   Country: any;
   name: any;
   newUserForm: FormGroup;
   acttype = 'Real';
+  // bsmodal: BsModalRef;
   sedemailbyuser = false;
   submitted = false;
 
-  constructor(private clientService: ClientsService, private countryService: CountryService, private fb: FormBuilder) { }
+  constructor(private clientService: ClientsService,private bsmodal: BsModalRef, 
+    private countryService: CountryService, private fb: FormBuilder) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
@@ -60,8 +65,11 @@ export class ItemComponent implements OnInit {
     };
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
+      this.clddata.emit(res);
+      this.hideModal();
       console.log('newuser', res);
       this.newUserForm.reset();
+      // alert('Client is added');
     });
   }
   // Get country
@@ -100,5 +108,8 @@ if (val === true) {
   }
   get f() {
     return this.newUserForm.controls;
+  }
+  hideModal() {
+    this.bsmodal.hide();
   }
 }

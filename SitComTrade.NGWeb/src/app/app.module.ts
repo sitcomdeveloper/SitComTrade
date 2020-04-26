@@ -16,7 +16,7 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { AgGridModule } from 'ag-grid-angular';
 import { AuthpipePipe } from './authpipe.pipe';
 
-
+import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { ClientsComponent } from './header/clients/clients.component';
@@ -174,11 +174,13 @@ import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-acco
     BrowserModule,
     // BrowserAnimationsModule,
     HttpClientModule,
+    ModalModule.forRoot(),
     AppRoutingModule,FormsModule,ReactiveFormsModule,
     AgGridModule.withComponents(null),
     TabModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],  
+  entryComponents: [ItemComponent],
   exports: [
     PhoneMaskDirective
   ],
