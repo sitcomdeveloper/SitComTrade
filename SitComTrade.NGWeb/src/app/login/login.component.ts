@@ -86,7 +86,6 @@ export class LoginComponent implements OnInit {
   resetpwd() {
      const obj = this.resetForm.value.email;
      if (this.resetForm.valid) {
-       
       // this.resetForm.controls.email.enable();
       this.loginservice.resetPassword(obj).subscribe(res => {
        console.log('rstpwd', res);
@@ -111,8 +110,8 @@ export class LoginComponent implements OnInit {
     });
   } else {
     // alert('wrong');
-    //this.resetForm.controls.email.disable();
-    
+    // this.resetForm.controls.email.disable();
+
   }
     //  this.ResetPWdResponse  = '';
     //  this.ResetPWdResponse1 = '';

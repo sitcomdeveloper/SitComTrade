@@ -13,7 +13,8 @@ export class ClientComponent implements OnInit {
   constructor(private clientService: ClientsService, private router: Router, private spinnerService: Ng4LoadingSpinnerService) { }
 
   rowData = [];
-
+  deletbtnn = true;
+  showMsg: any;
   accountInfo: any[];
   leadInfo: any[];
   clientInfo: any[];
@@ -54,6 +55,21 @@ export class ClientComponent implements OnInit {
   }
   importClients() {
     this.router.navigateByUrl('/importclients');
+  }
+a: any;
+  deletbtn(val) {
+    let count = 1;
+    if (val === true) {
+    this.a = count+1;
+  this.showMsg = 'items checked from 4 items';
+   this.deletbtnn = false;
+} else {
+  let count = 1;
+  this.a = count--;
+  this.showMsg = '';
+  this.deletbtnn = true;
+}
+
   }
 
 }

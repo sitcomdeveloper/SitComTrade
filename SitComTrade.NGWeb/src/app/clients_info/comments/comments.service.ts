@@ -17,4 +17,7 @@ export class CommentsService {
   insertComments(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/InsertComment', obj);
   }
+  deleteAllComment(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/DeleteAllComment' , '');
+  }
 }

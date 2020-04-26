@@ -43,10 +43,18 @@
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3">
                                              <label class="valign-label" for="FirstName">
-                                                <span data-tooltip-el="">First Name</span></label></div>
+                                                <span data-tooltip-el="">First Name</span></label>
+                                             </div>
                                           <div class="col-xs-9 col-md-9">
                                              <input class="form-control itemformcontrol" name="FirstName" type="text"
-                                                formControlName="firstname" aria-required="true"></div>
+                                                [ngClass]="{ 'is-invalid': submitted && f.firstname.errors,'form-control':true }"
+                                                formControlName="firstname" aria-required="true">
+                                             <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                                <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                                                <div *ngIf="f.firstname.errors.minlength">First Name must be at least 2
+                                                   characters</div>
+                                             </div>
+                                          </div>
                                        </div>
                                     </div>
                                     <div class="col-xs-6 col-md-6">
@@ -54,8 +62,14 @@
                                           <div class="col-xs-3 col-md-3"><label class="valign-label"
                                                 for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
                                           <div class="col-xs-9 col-md-9">
-                                             <input class="form-control itemformcontrol" name="LastName" type="text"
-                                                formControlName="lastname" aria-required="true"></div>
+                                             <input class="form-control itemformcontrol" formControlName="lastname" name="LastName" type="text" 
+                                             [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+                                                 aria-required="true">
+                                                <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                                                   <div *ngIf="f.lastname.errors.minlength">Last Name must be at least 3 characters</div>
+                                                 </div>
+                                             </div>
                                        </div>
                                     </div>
                                  </div>
@@ -74,7 +88,8 @@
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="Phone"><span
                                                    data-tooltip-el="">Phone</span></label></div>
                                           <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol"
-                                                name="Phone" formControlName="phone" type="text" aria-required="true">
+                                                name="Phone" formControlName="phone" type="text" aria-required="true"
+                                                appPhoneMask>
                                           </div>
                                        </div>
                                     </div>
@@ -87,7 +102,7 @@
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">
                                                 <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-                                                   formControlName="country" data-live-search="true" id="lunch"
+                                                   formControlName="country" data-live-search="true" id="lunc"
                                                    title="Please select a lunch ...">
                                                    <option ngcontent-qpo-c3="">Choose your Country</option>
                                                    <option ngcontent-qpo-c3="" *ngFor="let country of Country">
@@ -108,7 +123,7 @@
                                           </div>
                                           <div class="col-xs-9 col-md-9">
                                              <input class="form-control itemformcontrol" name="Password"
-                                                formControlName="password" type="text" aria-required="true">
+                                                formControlName="password" type="password" aria-required="true">
                                           </div>
                                        </div>
                                     </div>
@@ -147,7 +162,6 @@
                                                    <option ngcontent-qpo-c3="" class="other">All</option>
                                                    <option ngcontent-qpo-c3="" class="other">One</option>
 
-
                                                 </select>
 
                                              </div>
@@ -160,109 +174,9 @@
                               </div>
                            </form>
                         </div>
-                        <!-- <div class="tab-pane container fade" id="Lead">
-                           <form [formGroup] = "newUserForm">
-                           <div class="items form-horizontal">
-                              <div class="row form-group">
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-3 col-md-3">
-                                          <label class="valign-label" for="FirstName">
-                                             <span data-tooltip-el="">First Name</span></label></div>
-                                       <div class="col-xs-9 col-md-9">
-                                          <input class="form-control itemformcontrol" name="FirstName" type="text" formControlName="firstname"
-                                             aria-required="true"></div>
-                                    </div>
-                                 </div>
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-3 col-md-3"><label class="valign-label" for="LastName"><span
-                                                data-tooltip-el="">Last Name</span></label></div>
-                                       <div class="col-xs-9 col-md-9">
-                                          <input class="form-control itemformcontrol" name="LastName" type="text" formControlName="lastname"
-                                             aria-required="true"></div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="row form-group">
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-3 col-md-3"><label class="valign-label" for="Email"><span
-                                                data-tooltip-el="">Email</span></label></div>
-                                       <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol"
-                                             name="Email" formControlName="email" type="text" aria-required="true"></div>
-                                    </div>
-                                 </div>
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-3 col-md-3"><label class="valign-label" for="Phone"><span
-                                                data-tooltip-el="">Phone</span></label></div>
-                                       <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol"
-                                             name="Phone" formControlName="phone" type="text" aria-required="true"></div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="row form-group">
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-3 col-md-3"><label class="valign-label" for="Country"><span
-                                                data-tooltip-el="">Country</span></label></div>
-                                       <div class="col-xs-9 col-md-9">
-                                          <div _ngcontent-qpo-c3="" class="input-group">
-                                             <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-                                                data-live-search="true" formControlName="country" id="lunch" title="Please select a lunch ...">
-                                                <option ngcontent-qpo-c3="">Select</option>
-                                                <option ngcontent-qpo-c3="" *ngFor="let country of Country">
-                                                   {{country.Name}}</option>
-
-                                             </select>
-
-
-                                          </div>
-
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="row form-group">
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-                                       <div class="col-xs-3 col-md-3"><label class="valign-label" for="_sendEmail"><span
-                                                data-tooltip-el="">_sendEmail</span></label></div>
-                                       <div class="col-xs-9 col-md-9">
-                                          <div class="checkbox-inline">
-
-                                             <----------------------->
-                        <!---- <div class="switch_box box_1">
-                                                <label class="switchboxtext">Yes</label>
-                                                <input type="checkbox" class="switch_1">
-                                                <label class="switchboxtext">No</label>
-                                             </div>
-                                             <!----------------------------->
-                        <!---- </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="col-xs-6 col-md-6">
-                                    <div class="row">
-
-
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </form>
-
-                        </div> -->
 
                      </div>
                   </div>
-
 
                </div>
             </form>
@@ -270,7 +184,7 @@
          <div class="col-md-12">
             <div class="modal-footer item-modal-footer">
                <div class="text-center">
-                  <a class="button submit-button itembutton" href="javascript:void(0);" data-dismiss="modal"
+                  <a form [formGroup]="newUserForm" class="button submit-button itembutton" href="javascript:void(0);"
                      (click)="newClients()">Save</a>
                   <a class="button button2 itembutton1" href="javascript:void(0);" data-dismiss="modal">Cancel</a>
                </div>

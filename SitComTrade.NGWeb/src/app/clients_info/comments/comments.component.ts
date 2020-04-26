@@ -12,6 +12,7 @@ export class CommentsComponent implements OnInit {
   comments: any;
   infoComment: any;
   commentsForm: FormGroup;
+  dltAllComment: any;
 
   constructor(private commentsService: CommentsService, private fb: FormBuilder) { }
 
@@ -44,6 +45,12 @@ export class CommentsComponent implements OnInit {
     this.commentsService.insertComments(obj).subscribe(res => {
       this.insert = res;
       console.log('insertcomment', res);
+    });
+  }
+  deleteAll() {
+    this.commentsService.deleteAllComment('').subscribe(res => {
+      this.dltAllComment = res;
+      console.log('dltAllComment', res);
     });
   }
 

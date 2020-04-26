@@ -1,3 +1,4 @@
+<!-- <div>{{a}}{{showMsg}}</div> -->
 <div class="container-fluid ">
   <div class="row fist1">
     <div class="col-md-12 sub-header">
@@ -65,16 +66,16 @@
               </div>
 
             </div>
-            <div class="btn-group mr-2 serachicon " role="group" aria-label="Third group">
+            <div class="btn-group mr-2 serachicon " role="group" aria-label="Third group" [attr.disabled]="deletbtnn ==true ? true : false">
 
               <a href="#" data-toggle="modal" data-target="#regModal" class="brdr-right">
                 <i class="fa fa-user-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white"></i>
               </a>
-              <a href="#" class="brdr-right">
-                 <i class="fa fa-pencil bg-primary1 fa-lg" disabled aria-hidden="true"></i>
+              <a class="brdr-right" [class.disabled] = deletbtnn>
+                 <i class="fa fa-pencil bg-primary1 fa-lg"  ></i>
               </a>
-              <a href="#">
-                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true"></i>
+              <a href="#" [class.disabled] = deletbtnn>
+                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true" ></i>
               </a>
             </div>
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
@@ -1450,10 +1451,12 @@
           </td>
         </tr>
         <tr class="tablectn" *ngFor="let item of rowData">
+
+          
           <td class="chkCol">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox" (change)="deletbtn($event.target.checked)"></span>
                 <span><i class="fa fa-star" title="Clear filter"></i></span></div>
             </div>
           </td>
@@ -4035,6 +4038,22 @@
 
       </tbody>
     </table>
+  </div>
+</div>
+<!-- Pgination -->
+<div class="col-sm-5 lh-34 b-l">
+  <div class="row clearfix">
+    <div class="col-sm-6 p-lr-0 text-right">Page Size:</div>
+    <div class="col-sm-6 pull-right">
+      <select data-toggle="tooltip" data-placement="top" title="Items Per Page"
+        [(ngModel)]="pageSize" class="form-control p-0" (change)="changePageSize()">
+        <option value="10">20</option>
+        <option value="20">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="100">250</option>
+      </select>
+    </div>
   </div>
 </div>
 <!------------------create new user model------------->

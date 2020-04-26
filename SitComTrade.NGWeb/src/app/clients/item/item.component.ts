@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
 
 @Component({
@@ -15,17 +15,19 @@ export class ItemComponent implements OnInit {
   newUserForm: FormGroup;
   acttype = 'Real';
   sedemailbyuser = false;
+  submitted = false;
+
   constructor(private clientService: ClientsService, private countryService: CountryService, private fb: FormBuilder) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
-      firstname: [''],
-      lastname: [''],
-      email: [''],
+      firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]],
 
-      phone: [''],
-      country: [''],
-      password: [''],
-      group: [''],
+      phone: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      group: ['', Validators.required],
       countryid: [''],
       currencyname: [''],
       // promocode: [''],
@@ -89,5 +91,14 @@ if (val === true) {
 } else {
   this.sedemailbyuser = false;
 }
+  }
+  onSubmit() {
+    this.submitted = true;
+    if (this.newUserForm.invalid) {
+      return;
+    }
+  }
+  get f() {
+    return this.newUserForm.controls;
   }
 }

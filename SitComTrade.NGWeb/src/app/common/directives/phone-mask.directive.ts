@@ -10,8 +10,9 @@ export class PhoneMaskDirective {
 
   @HostListener('ngModelChange', ['$event'])
   onModelChange(event) {
-    if (event != null)
+    if (event != null) {
       this.onInputChange(event, false);
+    }
   }
 
   @HostListener('keydown.backspace', ['$event'])

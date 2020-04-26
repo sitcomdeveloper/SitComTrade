@@ -537,3 +537,6 @@ grid-auto-columns: max-content;
   bottom:0;
   right:0;
 }
+.disabled {
+    cursor: not-allowed;
+  }
