@@ -13,7 +13,7 @@ export class CommentsComponent implements OnInit {
   infoComment: any;
   commentsForm: FormGroup;
   dltAllComment: any;
-
+  dltAll: any;
   constructor(private commentsService: CommentsService, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -22,6 +22,7 @@ export class CommentsComponent implements OnInit {
     });
     this.userComments();
     this.editComment();
+    this.deleteAll();
   }
   userComments() {
     this.commentsService.getComments(this.infoComment).subscribe(res => {
@@ -48,7 +49,7 @@ export class CommentsComponent implements OnInit {
     });
   }
   deleteAll() {
-    this.commentsService.deleteAllComment('').subscribe(res => {
+    this.commentsService.deleteAllComment('this.dltAll').subscribe(res => {
       this.dltAllComment = res;
       console.log('dltAllComment', res);
     });
