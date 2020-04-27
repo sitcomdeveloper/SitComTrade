@@ -47,8 +47,35 @@
                Cancel
              </a>
         </div>
+
+
+
+      
       </div>
    </form>
 </div>
-
+  <!------------comment here----->
+  <div class="comments-list">
+    <div class="comment" data-comment-id="635171">
+       <pre class="comment-body form-control1">hi</pre>
+      
+       <div class="comment-details mt5"><span class="author no-events">Anton Novak</span>
+        <span class="date no-events"><i class="fa fa-calendar">&nbsp;</i>
+          <span>4/26/2020 4:41 PM</span></span>
+        </div>
+       <div class="clearfix edit-options">
+          <div class="pull-right">
+            <a href="#" class="btn-type01 btn02 edit-apply">
+              <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+              <a href="#" class="btn-type01">Cancel</a></div>
+       </div>
+       <div class="comment-controls">
+         <a href="javascript:void(0)" class="ico-edit2 ico-sz3  " id="edit-comment">
+           <i _ngcontent-xpi-c4="" aria-hidden="true" class="fa fa-pencil "></i></a>
+         <a href="javascript:void(0)" class="ico-delete ico-sz3">
+          <i _ngcontent-xpi-c4="" aria-hidden="true" class="fa fa-trash"></i>
+         </a></div>
+    </div>
+ </div>
+  <!------------------------------->
 <p *ngFor="let comment of comments">{{comment?.CommentDescription}}</p>
