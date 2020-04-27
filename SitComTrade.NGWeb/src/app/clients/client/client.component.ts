@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ItemComponent } from '../item/item.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { DeleteComponent } from 'src/app/common/delete/delete.component';
 
 @Component({
   selector: 'app-client',
@@ -11,6 +12,7 @@ import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bo
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
+  // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService) { }
   bsModalRef: BsModalRef;
 
@@ -21,11 +23,10 @@ export class ClientComponent implements OnInit {
   leadInfo: any[];
   clientInfo: any[];
 a: any;
-
+UserId: any;
+UserLength: any;
   ngOnInit() {
     this.userDetails();
-    // this.accountData();
-    // this.leadData();
   }
   userDetails() {
     this.spinnerService.show();
@@ -33,7 +34,7 @@ a: any;
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
         this.rowData = res;
-        let totalItems = res.length;
+        this.UserLength = res.length;
         this.spinnerService.hide();
         this.accountInfo = this.rowData.filter(m => {
           if (m.TypeName === 'Real') {
@@ -49,30 +50,6 @@ a: any;
     });
   }, 5000);
   }
-  // accountData() {
-  //   this.clientService.getUsers(this.clientInfo).subscribe(res => {
-  //     if (res !== null && res !== undefined && res !== '') {
-  //       this.rowData = res.reverse();
-  //       this.accountInfo = this.rowData.filter(m => {
-  //     if (m.TypeName === 'Real') {
-  //       return m;
-  //     }
-  //   });
-  // }
-  // });
-  // }
-//   leadData() {
-//     this.clientService.getUsers(this.clientInfo).subscribe(res => {
-//       if (res !== null && res !== undefined && res !== '') {
-//         this.rowData = res.reverse();
-//         this.leadInfo = this.rowData.filter(p => {
-//       if (p.TypeName === 'Lead') {
-//         return p;
-//       }
-//     });
-//   }
-// });
-//   }
   userClick(selectedItem: any) {
     localStorage.clear();
     localStorage.setItem('project', JSON.stringify(selectedItem));
@@ -86,11 +63,12 @@ a: any;
   importClients() {
     this.router.navigateByUrl('/importclients');
   }
-  deletbtn(val) {
+  deletbtn(val, userid) {
+    this.UserId = userid;
     const count = 1;
     if (val === true) {
     this.a = count + 1;
-    this.showMsg = 'items checked from 4 items';
+    this.showMsg = 'items checked from';
     this.deletbtnn = false;
 } else {
   let count = 1;
@@ -115,11 +93,19 @@ a: any;
     });
   }
   // delete client
-  deleteClient() {
-    // this.clientService.dltClient(obj).subscribe(res => {
-    //   this.dltclientRes = res;
-    //   console.log('dltclientRes', res);
-    // })
+  deleteClient(userid) {
+    const initialState = {
+      title: 'Delete Item',
+      userId: this.UserId,
+      // for div close or hide
+      rmvClient: 'rmvClient'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.userDetails();
+    });
   }
 
 }

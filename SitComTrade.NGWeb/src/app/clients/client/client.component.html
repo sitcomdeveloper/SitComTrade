@@ -1,4 +1,4 @@
-<!-- <div>{{a}}{{showMsg}}</div> -->
+<div>{{a}} {{showMsg}} {{UserLength}} items</div>
 
 <div class="container-fluid ">
   <div class="row fist1">
@@ -75,8 +75,8 @@
               <a class="brdr-right" [class.disabled] = deletbtnn>
                  <i class="fa fa-pencil bg-primary1 fa-lg"  ></i>
               </a>
-              <a href="#" [class.disabled] = deletbtnn>
-                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true" (click)="deleteClient()" ></i>
+              <a  [class.disabled] = deletbtnn>
+                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true" (click)="deleteClient(Id)" ></i>
               </a>
             </div>
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
@@ -1457,7 +1457,7 @@
           <td class="chkCol">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox" (change)="deletbtn($event.target.checked)"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox" (change)="deletbtn($event.target.checked,item.Id)"></span>
                 <span><i class="fa fa-star" title="Clear filter"></i></span></div>
             </div>
           </td>

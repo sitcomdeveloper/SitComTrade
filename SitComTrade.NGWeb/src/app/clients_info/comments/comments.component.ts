@@ -64,7 +64,9 @@ export class CommentsComponent implements OnInit {
 openDltComment(userId) {
     const initialState = {
       title: 'DELETE COMMENT',
-      id: userId
+      id: userId,
+      // div show hide.see in delete component
+      comment: 'comment'
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
