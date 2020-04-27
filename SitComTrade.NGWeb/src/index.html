@@ -181,7 +181,25 @@
       });
     });
   </script>
-  
+  <script>
+        $(document).ready(function () {
+
+//     $('#edit-comment').click(function(event) {
+//     $(this).attr('contenteditable', 'true');
+// });
+$('#edit-comment').click(function(){
+    var $div=$('.form-control1'), isEditable=$div.is('.editable');
+    $('div').prop('contenteditable',!isEditable).toggleClass('editable')
+})
+});
+$(document).ready(function () {
+$('#edit-comment').click(function(){
+  $(".edit-options").show();
+  $(".comment-controls").hide();
+})
+});
+
+    </script>
 </body>
 
 </html>

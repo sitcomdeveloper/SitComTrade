@@ -14,3 +14,54 @@ p {
     color: grey;
     font-size: 16px;
 }
+.comments .comment:first-child {
+    border-width: 0;
+}
+.comments-list .comment {
+    padding: 20px 45px 15px 10px;
+}
+.comments .comment {
+    border: 1px solid #d5e1ea;
+    border-width: 1px 0 0;
+    padding: 20px 0 15px;
+    position: relative;
+}
+.comment
+{
+    position:relative;
+}
+.comment-controls>a>i
+{
+    color:#000;
+    width: 20px;
+    height: 20px;
+    font-size:12px;
+}
+.comment-controls {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.edit-options
+{
+    display: none;
+}
+.comments-list .comment.editing .edit-options, .comments-list .comment:hover .comment-controls {
+    display: block;
+}
+.comment:hover .comment-controls {
+    display: block;
+}
+.comments-list .comment.editing .comment-body.form-control {
+    border-color: #dde7f9;
+    height: auto;
+}
+.editable pre
+{
+    border-color: #dde7f9;
+    height: auto;
+    width: 100%;
+    z-index: 9999;
+    border: 1px solid #000;
+}
