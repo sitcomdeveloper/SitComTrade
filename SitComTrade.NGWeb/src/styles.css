@@ -343,6 +343,11 @@ body {
 {
     display: flex;
 }
+.popupicon i {
+    color: #d2dbe8;
+    vertical-align: middle!important;
+    margin-right: 12px!important;
+}
 .records-control-switcher .form-control {
     display: inline-block;
     vertical-align: top;
