@@ -61,7 +61,7 @@
       
        <div class="comment-details mt5"><span class="author no-events">Anton Novak</span>
         <span class="date no-events"><i class="fa fa-calendar">&nbsp;</i>
-          <span>4/26/2020 4:41 PM</span></span>
+          <span>{{comment?.CreatedAt}}</span></span>
         </div>
        <div class="clearfix edit-options">
           <div class="pull-right">
@@ -73,9 +73,13 @@
          <a href="javascript:void(0)" class="ico-edit2 ico-sz3  " id="edit-comment">
            <i _ngcontent-xpi-c4="" aria-hidden="true" class="fa fa-pencil "></i></a>
          <a href="javascript:void(0)" class="ico-delete ico-sz3">
-          <i _ngcontent-xpi-c4="" aria-hidden="true" class="fa fa-trash"></i>
+          <i _ngcontent-xpi-c4="" aria-hidden="true" class="fa fa-trash" (click)="openDltComment(comment.Id)"></i>
          </a></div>
     </div>
  </div>
   <!------------------------------->
+
+
+
+
 

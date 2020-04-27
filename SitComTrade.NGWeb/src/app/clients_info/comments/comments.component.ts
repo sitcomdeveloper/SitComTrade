@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsService } from './comments.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DeleteComponent } from 'src/app/common/delete/delete.component';
+import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+
 
 @Component({
   selector: 'app-comments',
@@ -14,7 +17,8 @@ export class CommentsComponent implements OnInit {
   commentsForm: FormGroup;
   dltAllComment: any;
   dltAll: any;
-  constructor(private commentsService: CommentsService, private fb: FormBuilder) { }
+  constructor(private commentsService: CommentsService, private fb: FormBuilder, private modalService: BsModalService) { }
+   bsModalRef: BsModalRef;
 
   ngOnInit() {
     this.commentsForm = this.fb.group({
@@ -22,8 +26,8 @@ export class CommentsComponent implements OnInit {
     });
     this.userComments();
     this.editComment();
-    // this.deleteAll();
   }
+  // get all comments
   userComments() {
     this.commentsService.getComments(this.infoComment).subscribe(res => {
       this.comments = res;
@@ -56,5 +60,18 @@ export class CommentsComponent implements OnInit {
       console.log('dltAllComment', res);
     });
   }
-
+// open modal for delete comment by id
+openDltComment(userId) {
+    const initialState = {
+      title: 'DELETE COMMENT',
+      id: userId
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      // after delete refresh all the data
+      this.userComments();
+    });
+  }
 }

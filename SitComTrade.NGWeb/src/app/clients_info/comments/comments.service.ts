@@ -20,4 +20,7 @@ export class CommentsService {
   deleteAllComment(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/DeleteAllComment' , obj);
   }
+  deleteComment(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/DeleteComment/' + obj, {});
+  }
 }

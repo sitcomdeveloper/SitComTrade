@@ -91,6 +91,7 @@ import { EditTemplateComponent } from './settings/emailtemplates/edit-template/e
 import { CreateItemComponent } from './settings/groups/create-item/create-item.component';
 import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-accounts.component';
 import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
+import { DeleteComponent } from './common/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -170,6 +171,7 @@ import { FinancialTransactionsComponent } from './clients_info/financial-transac
     CreateItemComponent,
     TradeAccountsComponent,
     FinancialTransactionsComponent,
+    DeleteComponent,
     
   ],
   imports: [
@@ -182,7 +184,7 @@ import { FinancialTransactionsComponent } from './clients_info/financial-transac
     TabModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],  
-  entryComponents: [ItemComponent],
+  entryComponents: [ItemComponent,DeleteComponent],
   exports: [
     PhoneMaskDirective
   ],
