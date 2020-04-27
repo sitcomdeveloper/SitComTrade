@@ -116,10 +116,10 @@ a: any;
   }
   // delete client
   deleteClient() {
-    this.clientService.dltClient(obj).subscribe(res => {
-      this.dltclientRes = res;
-      console.log('dltclientRes', res);
-    })
+    // this.clientService.dltClient(obj).subscribe(res => {
+    //   this.dltclientRes = res;
+    //   console.log('dltclientRes', res);
+    // })
   }
 
 }
