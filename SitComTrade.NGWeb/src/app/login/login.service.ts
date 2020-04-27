@@ -28,9 +28,5 @@ export class LoginService {
     console.log('fgtpassword', obj);
     return this.http.post<any>(API_URL + 'User/ForgotPassword?username=' + obj, {});
     }
-
-  // resetPassword(orderId) {
-  //   return this.http.post(API_URL + 'User/ForgotPassword?username=' + orderId);
-  // }
 }
 // kk84singh

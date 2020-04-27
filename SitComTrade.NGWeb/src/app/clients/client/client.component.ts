@@ -33,6 +33,7 @@ a: any;
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
         this.rowData = res;
+        let totalItems = res.length;
         this.spinnerService.hide();
         this.accountInfo = this.rowData.filter(m => {
           if (m.TypeName === 'Real') {
@@ -99,6 +100,7 @@ a: any;
 }
 
   }
+  // part of add new client modal
   newClient() {
     const initialState = {
       title: 'Create Item',
@@ -111,6 +113,13 @@ a: any;
       // this.accountData();
       // this.leadData();
     });
+  }
+  // delete client
+  deleteClient() {
+    this.clientService.dltClient(obj).subscribe(res => {
+      this.dltclientRes = res;
+      console.log('dltclientRes', res);
+    })
   }
 
 }

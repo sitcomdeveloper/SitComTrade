@@ -1,4 +1,5 @@
 <!-- <div>{{a}}{{showMsg}}</div> -->
+
 <div class="container-fluid ">
   <div class="row fist1">
     <div class="col-md-12 sub-header">
@@ -75,7 +76,7 @@
                  <i class="fa fa-pencil bg-primary1 fa-lg"  ></i>
               </a>
               <a href="#" [class.disabled] = deletbtnn>
-                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true" ></i>
+                <i class="fa fa-trash bg-primary1 fa-lg" disabled aria-hidden="true" (click)="deleteClient()" ></i>
               </a>
             </div>
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
@@ -1464,7 +1465,7 @@
             <div class="">
               <div class="text-ellipsis" data-original-title="" title="">
                 <a>
-                  <span>{{item.ItemId}}</span></a></div>
+                  <span>{{item.Id}}</span></a></div>
             </div>
           </td>
           <td class="">
@@ -2790,7 +2791,7 @@
             <div class="">
               <div class="text-ellipsis" data-original-title="" title="">
                 <a href="">
-                  <span>{{actinfo.ItemId}}</span></a></div>
+                  <span>{{actinfo.Id}}</span></a></div>
             </div>
           </td>
           <td class="">
@@ -3934,7 +3935,7 @@
             <div class="">
               <div class="text-ellipsis" data-toggle="tooltip" title="Created Date">
                 <a href="">
-                  <span>{{leadinfo.ItemId}}</span></a></div>
+                  <span>{{leadinfo.Id}}</span></a></div>
             </div>
           </td>
           <td class="">

@@ -22,4 +22,9 @@ export class ClientsService {
   addnewClients(obj): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/AddClient', obj);
   }
+  // client.componet.ts
+  // delete client
+  dltClient() {
+    return this.http.post<any>(API_URL + 'Client/DeleteClient/{Id}', obj);
+  }
 }
