@@ -1461,11 +1461,16 @@
                 <span><i class="fa fa-star" title="Clear filter"></i></span></div>
             </div>
           </td>
-          <td class="" (click)="userClick(item)">
+          <td  (click)="userClick(item)">
             <div class="">
-              <div class="text-ellipsis" data-original-title="" title="">
+              <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                 <a>
-                  <span>{{item.Id}}</span></a></div>
+                  <span>{{item.Id}}</span>
+                </a>
+              </div>
+              <div class="jsgrid-cell-content1" style=" display: none;">
+                <input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false">
+              </div>
             </div>
           </td>
           <td class="">
@@ -1585,8 +1590,8 @@
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
-              <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
-                  _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled=""></i></a>
+              <a href="javascript:void(0)" class="ico-sz3 ico-link dh " id="ico9"   data-jsgrid-rule="link" title="Open in new tab">
+                <i  _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled=""></i></a>
               <br>
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"
                 title="Open in new tab">&nbsp;&nbsp;<i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
@@ -4195,3 +4200,7 @@
 <div class="loader">
 <ng4-loading-spinner> </ng4-loading-spinner>
 </div>
+
+
+
+
