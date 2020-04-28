@@ -348,7 +348,13 @@ body {
     vertical-align: middle!important;
     margin-right: 12px!important;
 }
-
+.text-ellipsis {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 64px;
+}
 .records-control-switcher .form-control {
     display: inline-block;
     vertical-align: top;
