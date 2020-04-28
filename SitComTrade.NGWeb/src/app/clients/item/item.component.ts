@@ -20,6 +20,7 @@ export class ItemComponent implements OnInit {
   // bsmodal: BsModalRef;
   sedemailbyuser = false;
   submitted = false;
+  title: any;
 
   constructor(private clientService: ClientsService,private bsmodal: BsModalRef, 
     private countryService: CountryService, private fb: FormBuilder) { }

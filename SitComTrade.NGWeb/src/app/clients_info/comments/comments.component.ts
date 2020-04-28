@@ -51,6 +51,7 @@ export class CommentsComponent implements OnInit {
       this.insert = res;
       this.userComments();
       console.log('insertcomment', res);
+      this.commentsForm.reset();
     });
   }
   deleteAll() {

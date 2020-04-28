@@ -92,6 +92,7 @@ import { CreateItemComponent } from './settings/groups/create-item/create-item.c
 import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-accounts.component';
 import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
 import { DeleteComponent } from './common/delete/delete.component';
+import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -172,6 +173,7 @@ import { DeleteComponent } from './common/delete/delete.component';
     TradeAccountsComponent,
     FinancialTransactionsComponent,
     DeleteComponent,
+    EditTaskComponent,
     
   ],
   imports: [
@@ -184,7 +186,7 @@ import { DeleteComponent } from './common/delete/delete.component';
     TabModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],  
-  entryComponents: [ItemComponent,DeleteComponent],
+  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent],
   exports: [
     PhoneMaskDirective
   ],

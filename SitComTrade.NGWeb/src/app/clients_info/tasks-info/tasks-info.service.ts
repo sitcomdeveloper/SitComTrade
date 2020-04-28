@@ -10,6 +10,7 @@ const API_URL = environment.API_URL;
 export class TasksInfoService {
 
   constructor(private http: HttpClient) { }
+  // insert task
   insertTask(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Task/InsertTask', obj);
   }
@@ -19,7 +20,12 @@ export class TasksInfoService {
   getTaskStatus(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Task/GetAllTaskStatus', obj);
   }
+  // get all task
   getTask(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Task/GetTaskByOwnerId/1', obj);
+  }
+  // edit task
+  edtTsk(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Task/UpdateOwnerTask', obj);
   }
 }

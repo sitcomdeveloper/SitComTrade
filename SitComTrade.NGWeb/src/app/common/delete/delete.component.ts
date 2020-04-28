@@ -23,6 +23,7 @@ deleteComment = false;
 userId: number;
 rmvClient: any;
 removeClient = false;
+title: any;
 
   ngOnInit() {
     if (this.comment === 'comment') {

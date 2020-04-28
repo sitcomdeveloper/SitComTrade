@@ -25,6 +25,7 @@ export class ClientComponent implements OnInit {
 a: any;
 UserId: any;
 UserLength: any;
+Id: any;
   ngOnInit() {
     this.userDetails();
   }
