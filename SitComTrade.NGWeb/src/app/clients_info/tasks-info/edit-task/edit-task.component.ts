@@ -21,7 +21,7 @@ export class EditTaskComponent implements OnInit {
   getUserTasks: any;
   getInfoTasks: any;
   title: any;
-  id: any;
+  wholeData: any;
 
   constructor(private bsmodal: BsModalRef, private taskInfoService: TasksInfoService, private fb: FormBuilder) { }
 
@@ -51,22 +51,22 @@ export class EditTaskComponent implements OnInit {
     // this.taskInfoService.getTask(this.id).subscribe(res => {
       // this.getInfoTasks = res;
       this.taskInfoForm.patchValue({
-        type: this.id.TaskType,
-        status: this.id.TaskStatus,
-        description: this.id.Description
+        type: this.wholeData.TaskType,
+        status: this.wholeData.TaskStatus,
+        description: this.wholeData.Description
       });
   }
   saveEditTaskData() {
     const obj = {
-//       ID: this.id,
-//       OwnerId:  1,
-//       TaskStatusId: 1,
-// TaskTypeId: 1,
-// NotiTrasportId: 1,
-// NotiTimeBefore: 5,
-//       TaskType : this.taskInfoForm.value.type,
-//       TaskStatus: this.taskInfoForm.value.status,
-//       Description: this.taskInfoForm.value.description
+      Id: this.wholeData.Id,
+      OwnerId:  this.wholeData.OwnerId,
+      TaskStatusId: this.wholeData.TaskStatusId,
+TaskTypeId: this.wholeData.TaskTypeId,
+NotiTrasportId: this.wholeData.NotiTrasportId,
+NotiTimeBefore: this.wholeData.NotiTimeBefore,
+      TaskType : this.taskInfoForm.value.type,
+      TaskStatus: this.taskInfoForm.value.status,
+      Description: this.taskInfoForm.value.description
     };
     this.taskInfoService.edtTsk(obj).subscribe(res => {
       this.taskeditRes = res;

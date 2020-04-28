@@ -36,7 +36,7 @@
                <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="type"
                   data-live-search="true">
                   <option ngcontent-qpo-c3="">Select</option>
-                  <option ngcontent-qpo-c3="" *ngFor="let trade of getTasks">
+                  <option ngcontent-qpo-c3="" value="{{trade.Name}}" *ngFor="let trade of getTasks">
 
                      {{trade.Name}}</option>
                </select>

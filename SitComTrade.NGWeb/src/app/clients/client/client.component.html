@@ -39,7 +39,7 @@
           <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i> -->
           <div class="btn-toolbar searchbtn" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a><i class="fa fa-refresh" (click)="userDetails()"></i></a>
+              <a href=""><i class="fa fa-refresh" (click)="userDetails()"></i></a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
               <div class="input-group selecticon grpselect">
@@ -87,7 +87,7 @@
 
               <!---------------DROPDOWN-------->
               <ul class="dropdown-menu impdrp "  aria-labelledby="clientcret">
-                <li><a title="Import Clients" class="link-import" data-toggle="modal" data-target="#importclient"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
+                <li><a href="#" title="Import Clients" class="link-import" data-toggle="modal" data-target="#importclient"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
                 <li><a href="#" title="Export Clients" class="link-export" data-toggle="modal" data-target="#exportclient"><i class="fa fa-arrow-down"></i>Export Clients</a>
                 </li>
                 <li class="no-events disabled"><a class="link-sms" href="javascript:void(0);" title="Sms"><i class="fa fa-envelope"></i>Sms to selected</a></li>
@@ -1498,8 +1498,8 @@
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
-                <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="{{item.Email}}"><a
-                    href=""><span>{{item.Email}}</span></a></div>
+                <div class="text-ellipsis" data-original-title="" ><a
+                    href=""><span data-toggle="tooltip">{{item.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -2824,7 +2824,7 @@
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
-                <div class="text-ellipsis" data-toggle="tooltip" title="Created Date"><a
+                <div class="text-ellipsis" data-toggle="tooltip" data-placement="top" title="Created Date"><a
                     href=""><span>{{actinfo.Email}}</span></a></div>
               </div>
             </div>
@@ -4047,7 +4047,7 @@
   </div>
 </div>
 <!-- Pgination -->
-<!-- <div class="col-sm-5 lh-34 b-l">
+<div class="col-sm-5 lh-34 b-l">
   <div class="row clearfix">
     <div class="col-sm-6 p-lr-0 text-right">Page Size:</div>
     <div class="col-sm-6 pull-right">
@@ -4061,7 +4061,7 @@
       </select>
     </div>
   </div>
-</div> -->
+</div>
 <!------------------create new user model------------->
 <!-- <div class="modal" id="regModal">
   <div class="modal-dialog modal930">
@@ -4200,7 +4200,7 @@
 <div class="loader">
 <ng4-loading-spinner> </ng4-loading-spinner>
 </div>
-
+<app-footer></app-footer>
 
 
 

@@ -21,7 +21,7 @@ export class TasksInfoComponent implements OnInit {
   }
   getAllTask() {
     this.taskInfoService.getTask(this.getUserTasks).subscribe(res => {
-      this.getInfoTasks = res;
+      this.getInfoTasks = res.reverse();
       console.log('taskget', res);
     });
   }
@@ -29,7 +29,7 @@ export class TasksInfoComponent implements OnInit {
     console.log(userid);
     const initialState = {
       title: 'Edit Task',
-      id: userid
+      wholeData: userid
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(EditTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));

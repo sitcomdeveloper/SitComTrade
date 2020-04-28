@@ -14,6 +14,8 @@ export class CreateTaskComponent implements OnInit {
   getTaskStatusData: any;
   userTasks: any;
   taskInfoForm: FormGroup;
+  getUserTasks: any;
+  getInfoTasks: any;
 
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder) { }
 
@@ -27,8 +29,15 @@ export class CreateTaskComponent implements OnInit {
       notitimebefore: ['']
 
     });
+    this.getAllTask();
     this.taskType();
     this.taskStatus();
+  }
+  getAllTask() {
+    this.taskInfoService.getTask(this.getUserTasks).subscribe(res => {
+      this.getInfoTasks = res.reverse();
+      console.log('taskget', res);
+    });
   }
   taskType() {
     this.taskInfoService.getTaskType(this.getTaskTypeData).subscribe(res => {
@@ -56,6 +65,7 @@ NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
+    this.getAllTask();
     console.log('inserttasks', res);
   });
 }
