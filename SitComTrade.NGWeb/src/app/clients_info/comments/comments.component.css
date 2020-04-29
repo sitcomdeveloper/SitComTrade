@@ -48,6 +48,29 @@ p {
 .borderbtm {
     border-bottom: 1px solid #c1c1c1;
     padding-bottom: 17px;
+}.box-control>.dropdown-menu {
+    margin: 10px 0 0;
+}
+.dropdown-menu2>li:first-child>a {
+    border-radius: 15px 15px 0 0;
+}
+
+.dropdown-menu2>li>a {
+    color: #8da5ba;
+    padding: 5px 30px!important;
+    text-align: right!important;
+    line-height: 1.53845;
+}
+.dropdown-menu2 {
+    border-color: #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-top: 10px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+}
+.pull-right>.dropdown-menu {
+    /* right: 0; */
+    left: 0;
 }
 
 .card.mb20 {
