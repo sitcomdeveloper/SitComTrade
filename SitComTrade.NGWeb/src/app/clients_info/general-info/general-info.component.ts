@@ -18,10 +18,10 @@ export class GeneralInfoComponent implements OnInit {
   editInfo = false;
   userInfoForm: FormGroup;
   Apptitle: any;
-  useraddinfo: any;
   name: any;
   Country: any;
   registrationType: any;
+  details: number;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
@@ -78,68 +78,74 @@ export class GeneralInfoComponent implements OnInit {
     });
     this.spinnerService.show();
     setTimeout( () => {
-    this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    this.spinnerService.hide();
-    console.log('getclientdata', this.Apptitle);
-    this.userGenralinfo = this.Apptitle;
+    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    // this.spinnerService.hide();
+    // console.log('getclientdata', this.Apptitle);
+    // this.userGenralinfo = this.Apptitle;
     // this.usersInfo();
     this.edituserInfo();
   }, 5000);
     this.getcountryName();
     this.getRegistrationFromType();
+    // receiving data from client page for general-info
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    console.log(details);
+    this._generalinfoservice.getUsersInfo(details).subscribe(res => {
+      this.userGenralinfo = res;
+      console.log('generalinfo', res);
+    });
   }
   // usersInfo() {
-
-  //   this._generalinfoservice.getUsersInfo().subscribe(res => {
-  //     this.useraddinfo= res;
-  //     console.log('generalinfo', res);
-  //   });
+    // this._generalinfoservice.getUsersInfo(this.details).subscribe(res => {
+    //   this.useraddinfo = res;
+    //   console.log('generalinfo', res);
+    // });
   // }
   edituserInfo() {
     // this._generalinfoservice.getUsersInfo().subscribe(res => {
-    this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    console.log('geteditdata', this.Apptitle);
-    this.userGenralinfo = this.Apptitle;
-    this.useraddinfo = this.userGenralinfo;
-    const date = this.useraddinfo.CreatedDate.split('T');
+    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    // console.log('geteditdata', this.Apptitle);
+    // this.userGenralinfo = this.Apptitle;
+    // this.useraddinfo = this.userGenralinfo;
+    const date = this.userGenralinfo.CreatedDate.split('T');
     const userDate = date[0];
     this.userInfoForm.patchValue({
-      firstName: this.useraddinfo.FirstName,
-      lastName: this.useraddinfo.LastName,
-      email: this.useraddinfo.Email,
-      phone: this.useraddinfo.Phone,
-      mobile: this.useraddinfo.Mobile,
-      secondemail: this.useraddinfo.SecondEmail,
-      itemid: this.useraddinfo.ItemId,
-      owner: this.useraddinfo.OwnerId,
-      status: this.useraddinfo.ResponseStatus,
+      firstName: this.userGenralinfo.FirstName,
+      lastName: this.userGenralinfo.LastName,
+      email: this.userGenralinfo.Email,
+      phone: this.userGenralinfo.Phone,
+      mobile: this.userGenralinfo.Mobile,
+      secondemail: this.userGenralinfo.SecondEmail,
+      itemid: this.userGenralinfo.ItemId,
+      owner: this.userGenralinfo.OwnerId,
+      status: this.userGenralinfo.ResponseStatus,
       createddate: userDate,
       // lastcommentdate:: this.userGenralinfo.,
-      modifieddate: this.useraddinfo.UpdatedAt,
+      modifieddate: this.userGenralinfo.UpdatedAt,
       // conventionowner: this.userGenralinfo.
       // retentionowner: this.userGenralinfo.
       // citizenship: this.userGenralinfo.,
       // dob: this.userGenralinfo.,
-      ftd: this.useraddinfo.Ftd,
+      ftd: this.userGenralinfo.Ftd,
       // ftdate: this.userGenralinfo.,
-      enabled: this.useraddinfo.Enabled,
+      enabled: this.userGenralinfo.Enabled,
       // clienttime: this.userGenralinfo.,
       // lastlogindate: this.userGenralinfo.,
-      desk: this.useraddinfo.Desk,
+      desk: this.userGenralinfo.Desk,
       // hastasks: this.userGenralinfo.,
       // taskcreateddate: this.userGenralinfo.,
       // taskdate: this.userGenralinfo.,
-      assigneddate: this.useraddinfo.AssignedDate,
+      assigneddate: this.userGenralinfo.AssignedDate,
       // hasnotcompletedtasks: this.userGenralinfo.,
       // totaldeposits: this.userGenralinfo.,
       // ftdamount: this.userGenralinfo.,
       // totalwithdrawals: this.userGenralinfo.,
       // netdeposits: this.userGenralinfo.,
       type: this.userGenralinfo.TypeName,
-      firstregistrationdate: this.useraddinfo.FirstRegistrationDate,
+      firstregistrationdate: this.userGenralinfo.FirstRegistrationDate,
       // registrationtype: this.userGenralinfo.,
-      lasttaskdayspast: this.useraddinfo.LastTaskDaysPast,
-      daysagoclientcreated: this.useraddinfo.DaysAgoClientCreated,
+      lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
+      daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
     });
     // });
   }

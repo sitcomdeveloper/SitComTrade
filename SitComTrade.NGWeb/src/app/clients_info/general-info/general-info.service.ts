@@ -9,8 +9,11 @@ const API_URL = environment.API_URL;
 })
 export class GeneralInfoService {
   constructor(private http: HttpClient) { }
-  getUsersInfo(): Observable<any> {
-    return this.http.get<any>(API_URL + 'Client/GetClientDetailById/3');
+  // getUsersInfo(): Observable<any> {
+  //   return this.http.get<any>(API_URL + 'Client/GetClientDetailById/3');
+  // }
+  getUsersInfo(obj: any): Observable<any> {
+    return this.http.get<any>(API_URL + 'Client/GetClientDetailById/' + obj);
   }
   getRegistrationType(): Observable<any> {
     return this.http.get<any>(API_URL + 'Client/GetRegistrationTypeEnum');

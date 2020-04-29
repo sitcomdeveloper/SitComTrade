@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ItemComponent } from '../item/item.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
@@ -13,7 +13,7 @@ import { DeleteComponent } from 'src/app/common/delete/delete.component';
 })
 export class ClientComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
-  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService) { }
+  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute) { }
   bsModalRef: BsModalRef;
 
   rowData = [];
@@ -52,11 +52,13 @@ Id: any;
   }, 5000);
   }
   userClick(selectedItem: any) {
-    localStorage.clear();
-    localStorage.setItem('project', JSON.stringify(selectedItem));
-    console.log('selecteditem', JSON.stringify(selectedItem));
-    this.router.navigateByUrl('/info');
-    console.log('Selected item Id: ', selectedItem.ItemId);
+    // localStorage.clear();
+    // localStorage.setItem('project', JSON.stringify(selectedItem));
+    // console.log('selecteditem', JSON.stringify(selectedItem));
+    // this.router.navigateByUrl('/info');
+    // console.log('Selected item Id: ', selectedItem.ItemId);
+    console.log(selectedItem);
+    this.router.navigate(['/info', selectedItem]);
   }
   newUser() {
     this.router.navigateByUrl('/user');

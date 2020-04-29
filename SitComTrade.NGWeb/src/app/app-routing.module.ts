@@ -131,7 +131,7 @@ const routes: Routes = [
 {path: 'terms', component: TermsComponent},
 
 // clients-info
-{path: 'info', component: ClientsInfoComponent},
+{path: 'info/:selectedItem', component: ClientsInfoComponent},
 {path: 'generalinfo/:userid', component: GeneralInfoComponent},
 {path: 'user', component: ItemComponent},
 
