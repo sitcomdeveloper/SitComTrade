@@ -33,7 +33,7 @@
      </div>
    </div>
  </div>
-<div class="collapse " id="addNewComment" aria-expanded="true">
+<div class="collapse addNewComment12" id="addNewComment" aria-expanded="true">
    <form novalidate="novalidate">
       <div class="comment">
          <div class="form-group">
@@ -42,7 +42,8 @@
             </form>
          </div>
          <div class="text-right">
-             <a class="btn-type02 submit-button" data-dismiss="modal" (click)=addComment()>Submit</a>
+             <a class="btn-type02 submit-button collapsed" id="close-btn" href="#addNewComment"  data-toggle="collapse"
+             aria-controls="addNewComment" aria-expanded="false"(click)=addComment()>Submit</a>
              <a href="#addNewComment" class="btn-type02" data-toggle="collapse" aria-controls="addNewComment" aria-expanded="true">
                Cancel
              </a>
