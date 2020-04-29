@@ -190,15 +190,26 @@
   </script>
   
   <script>
-        $(document).ready(function () {
+//         $(document).ready(function () {
 
-//     $('#edit-comment').click(function(event) {
-//     $(this).attr('contenteditable', 'true');
+
+// // $('#edit-comment').click(function(){
+// //     var $edit=$('.form-control1'), isEditable=$edit.is('.editable');
+// //     $('.comment').prop('contenteditable',!isEditable).toggleClass('editable')
+// // })
+// $( "#edit-comment" ).click(function() {
+//     $('.form-control1').attr('contenteditable','true');
 // });
-$('#edit-comment').click(function(){
-    var $div=$('.form-control1'), isEditable=$div.is('.editable');
-    $('div').prop('contenteditable',!isEditable).toggleClass('editable')
-})
+// });
+$( "#edit-comment" ).click(function() {
+    var value = $('.form-control1').attr('contenteditable');
+
+    if (value == 'false') {
+        $('.form-control1').attr('contenteditable','true');
+    }
+    else {
+        $('.form-control1').attr('contenteditable','false');
+    }
 });
 $(document).ready(function () {
 $('#edit-comment').click(function(){

@@ -1,6 +1,6 @@
 <div class="card mb20">
    <div class="card-header1 container" role="tab" id="headingTwo">
-     <h5 class="mb-0">
+     <h5 class="mb-0 mbt">
        <a class="box-heading" data-toggle="" aria-expanded="true" aria-controls="collapseTwo">
          <h2> Comments </h2>
        </a>
@@ -33,7 +33,7 @@
      </div>
    </div>
  </div>
-<div class="collapse addNewComment12" id="addNewComment" aria-expanded="true">
+<div class="collapse addNewComment12 container" id="addNewComment" aria-expanded="true">
    <form novalidate="novalidate">
       <div class="comment">
          <div class="form-group">
@@ -41,7 +41,7 @@
              <textarea name="CommentText" formControlName="commentarea" class="form-control textarea-h01"  aria-required="true"></textarea>
             </form>
          </div>
-         <div class="text-right">
+         <div class="text-right borderbtm">
              <a class="btn-type02 submit-button collapsed" id="close-btn" href="#addNewComment"  data-toggle="collapse"
              aria-controls="addNewComment" aria-expanded="false"(click)=addComment()>Submit</a>
              <a href="#addNewComment" class="btn-type02" data-toggle="collapse" aria-controls="addNewComment" aria-expanded="true">
@@ -56,9 +56,9 @@
    </form>
 </div>
   <!------------comment here----->
-  <div class="comments-list">
-    <div class="comment" data-comment-id="635171" *ngFor="let comment of comments">
-       <pre class="comment-body form-control1" >{{comment?.CommentDescription}}</pre>
+  <div class="comments-list container">
+    <div class="comment form-control1" data-comment-id="635171" *ngFor="let comment of comments" >
+       <pre class="comment-body " >{{comment?.CommentDescription}}</pre>
       
        <div class="comment-details mt5"><span class="author no-events">Anton Novak</span>
         <span class="date no-events"><i class="fa fa-calendar">&nbsp;</i>
@@ -70,7 +70,7 @@
               <i class="fa fa-check dark">&nbsp;</i>Apply</a>
               <a href="#" class="btn-type01">Cancel</a></div>
        </div>
-       <div class="comment-controls">
+       <div class="comment-controls container">
          <a href="javascript:void(0)" class="ico-edit2 ico-sz3  " id="edit-comment">
            <i _ngcontent-xpi-c4="" aria-hidden="true" class="fa fa-pencil "></i></a>
          <a href="javascript:void(0)" class="ico-delete ico-sz3">
