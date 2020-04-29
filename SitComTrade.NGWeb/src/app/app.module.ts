@@ -11,6 +11,7 @@ import {TabModule} from 'angular-tabs-component';
 import { BlockCopyPasteDirective } from './block-copy-paste.directive';
 // import { CollapsibleModule } from 'angular2-collapsible';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+// import { ToastrModule} from 'ngx-toastr';
 
 
 import { AgGridModule } from 'ag-grid-angular';
@@ -184,7 +185,9 @@ import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task
     AppRoutingModule,FormsModule,ReactiveFormsModule,
     AgGridModule.withComponents(null),
     TabModule,
-    Ng4LoadingSpinnerModule.forRoot()
+    Ng4LoadingSpinnerModule.forRoot(),
+    // ToastrModule.forRoot()
+    
   ],  
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent],
   exports: [

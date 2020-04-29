@@ -3,6 +3,7 @@ import { ClientsService } from 'src/app/header/clients/clients.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+// import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-item',
@@ -22,8 +23,8 @@ export class ItemComponent implements OnInit {
   submitted = false;
   title: any;
 
-  constructor(private clientService: ClientsService,private bsmodal: BsModalRef, 
-    private countryService: CountryService, private fb: FormBuilder) { }
+  constructor(private clientService: ClientsService, private bsmodal: BsModalRef,
+              private countryService: CountryService, private fb: FormBuilder) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
@@ -66,12 +67,14 @@ export class ItemComponent implements OnInit {
     };
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
+      
       this.clddata.emit(res);
       this.hideModal();
       console.log('newuser', res);
       this.newUserForm.reset();
-      // alert('Client is added');
+      alert('Client is added');
     });
+    // alert('Client is added');
   }
   // Get country
   getcountryName() {

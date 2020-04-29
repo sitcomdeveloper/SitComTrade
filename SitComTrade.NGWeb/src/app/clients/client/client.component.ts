@@ -34,7 +34,7 @@ Id: any;
     setTimeout( () => {
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
-        this.rowData = res;
+        this.rowData = res.reverse();
         this.UserLength = res.length;
         this.spinnerService.hide();
         this.accountInfo = this.rowData.filter(m => {
@@ -89,8 +89,7 @@ Id: any;
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
-      // this.accountData();
-      // this.leadData();
+      
     });
   }
   // delete client
