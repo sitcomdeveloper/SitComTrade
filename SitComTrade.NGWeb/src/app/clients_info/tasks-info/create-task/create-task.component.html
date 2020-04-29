@@ -50,7 +50,7 @@
                      data-tooltip-el="">Status</span></label></div>
             <div class="col-xs-10 col-md-10">
 
-               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="status"
+               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" (change)="ggg(tasks)"formControlName="status"
                   data-live-search="true">
                   <option ngcontent-qpo-c3="">Select</option>
                   <option ngcontent-qpo-c3="" value="{{tasks.Name}}" *ngFor="let tasks of getStatus">

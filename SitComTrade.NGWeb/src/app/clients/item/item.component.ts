@@ -22,6 +22,8 @@ export class ItemComponent implements OnInit {
   sedemailbyuser = false;
   submitted = false;
   title: any;
+  btndisable: true;
+  response: any;
 
   constructor(private clientService: ClientsService, private bsmodal: BsModalRef,
               private countryService: CountryService, private fb: FormBuilder) { }
@@ -65,16 +67,23 @@ export class ItemComponent implements OnInit {
       //  OwnerId: this.newUserForm.value.ownerid,
 
     };
+    // if (this.newUserForm.valid) {
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
-      
       this.clddata.emit(res);
       this.hideModal();
       console.log('newuser', res);
+      if(res === 'null') {
+        this.response = 'Item is created';
+      } else {
+        this.response = '';
+      }
       this.newUserForm.reset();
-      alert('Client is added');
+      
     });
-    // alert('Client is added');
+    // } else{
+    //   alert('');
+    // }
   }
   // Get country
   getcountryName() {
@@ -113,6 +122,11 @@ if (val === true) {
   get f() {
     return this.newUserForm.controls;
   }
+//   change() {
+//     if (this.newUserForm.valid) {
+//    this.btndisable = false;
+//   }
+// }
   hideModal() {
     this.bsmodal.hide();
   }

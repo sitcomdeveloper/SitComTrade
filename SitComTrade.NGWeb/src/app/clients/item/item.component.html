@@ -51,16 +51,45 @@
                                              <label class="valign-label" for="FirstName">
                                                 <span data-tooltip-el="">First Name</span></label>
                                              </div>
-                                          <div class="col-xs-9 col-md-9">
+                                             <!-- <div class="col-sm-6">
+                                                <div class="form-group" [ngClass]="{'has-error': customerForm.get('contactFirstName').invalid &&
+                                                          (customerForm.get('contactFirstName').touched || submitted) }">
+                                                  <label for="contact">Contact First Name<span class="text-danger">*</span></label>
+                                                  <div>
+                                                    <input type="text" formControlName="contactFirstName" id="contact" class="form-control fontsize12"
+                                                      placeholder="Enter Contact First Name" />
+                                                    <span *ngIf="customerForm.get('contactFirstName').errors?.required" class="text-danger">
+                                                      Required
+                                                    </span>
+                                                    <span *ngIf="customerForm.get('contactFirstName').errors?.maxlength" class="text-danger">
+                                                      Can not have more that 100 characters.
+                                                    </span>
+                                                  </div>
+                                                  <div class="clearfix"></div>
+                                                </div>
+                                              </div> -->
+                                          <!-- <div class="col-xs-9 col-md-9">
+                                             <div class="form-group" [ngClass]="{'has-error': newUserForm.get('firstname').invalid &&
+                                                          (newUserForm.get('firstname').touched || submitted) }">
                                              <input class="form-control itemformcontrol" name="FirstName" type="text"
-                                                [ngClass]="{ 'is-invalid': submitted && f.firstname.errors,'form-control':true }"
                                                 formControlName="firstname" aria-required="true">
-                                             <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-                                                <div *ngIf="f.firstname.errors.required">First Name is required</div>
-                                                <div *ngIf="f.firstname.errors.minlength">First Name must be at least 2
-                                                   characters</div>
+                                                <span *ngIf="newUserForm.get('firstname').errors?.required" class="text-danger">
+                                                   Required
+                                                 </span>
+                                                 <span *ngIf="newUserForm.get('firstname').errors?.maxlength" class="text-danger">
+                                                   Can not have more that 100 characters.
+                                                 </span>
                                              </div>
-                                          </div>
+                                          </div> -->
+                                          <div class="col-xs-9 col-md-9">
+                                             <input class="form-control itemformcontrol" formControlName="firstname" name="FirsttName" type="text" 
+                                             [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+                                                 aria-required="true"> 
+                                                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                                                   <div *ngIf="f.firstname.errors.minlength">First Name must be at least 2 characters</div>
+                                                 </div>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="col-xs-6 col-md-6">
@@ -84,8 +113,13 @@
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="Email"><span
                                                    data-tooltip-el="">Email</span></label></div>
-                                          <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol"
+                                          <div class="col-xs-9 col-md-9">
+                                             <input class="form-control itemformcontrol" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
                                                 name="Email" formControlName="email" type="text" aria-required="true">
+                                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.email.errors.required">Email is required</div>
+                                                   <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                                 </div>
                                           </div>
                                        </div>
                                     </div>
@@ -94,8 +128,11 @@
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="Phone"><span
                                                    data-tooltip-el="">Phone</span></label></div>
                                           <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol"
-                                                name="Phone" formControlName="phone" type="text" aria-required="true"
+                                                name="Phone" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}" type="text" aria-required="true"
                                                 appPhoneMask>
+                                                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.phone.errors.required">Phone is required</div>
+                                                 </div>
                                           </div>
                                        </div>
                                     </div>
@@ -108,13 +145,16 @@
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">
                                                 <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-                                                   formControlName="country" data-live-search="true" id="lunc"
-                                                   title="Please select a lunch ...">
+                                                   formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors,'form-control':true }" data-live-search="true" id="lunc"
+                                                   title="Please select a lunch ..." >
                                                    <option ngcontent-qpo-c3="">Choose your Country</option>
                                                    <option ngcontent-qpo-c3="" *ngFor="let country of Country">
                                                       {{country.Name}}</option>
 
                                                 </select>
+                                                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.country.errors.required">Country is required</div>
+                                                 </div>
 
 
                                              </div>
@@ -129,7 +169,13 @@
                                           </div>
                                           <div class="col-xs-9 col-md-9">
                                              <input class="form-control itemformcontrol" name="Password"
-                                                formControlName="password" type="password" aria-required="true">
+                                                formControlName="password"  pattern="^[A-Za-z0-9]*$"
+                                                [ngClass]="{ 'is-invalid': submitted && f.password.errors,'form-control':true }" type="password" aria-required="true">
+                                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.password.errors.required">Password is required</div>
+                                                   <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                                   <div *ngIf="f.password.errors.pattern">Password should not contain special characters</div>
+                                                 </div>
                                           </div>
                                        </div>
                                     </div>
@@ -162,13 +208,16 @@
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">
                                                 <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol "
-                                                   formControlName="group" data-live-search="true" id="lunch"
+                                                   formControlName="group" [ngClass]="{ 'is-invalid': submitted && f.password.errors,'form-control':true }" data-live-search="true" id="lunch"
                                                    title="Please select a lunch ..." data-show-subtext="true"
                                                    data-live-search="true">
                                                    <option ngcontent-qpo-c3="" class="other">All</option>
                                                    <option ngcontent-qpo-c3="" class="other">One</option>
 
                                                 </select>
+                                                <div *ngIf="submitted && f.group.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.group.errors.required">Group is required</div>
+                                                 </div>
 
                                              </div>
 
@@ -187,12 +236,15 @@
                </div>
             </form>
          </div>
+         <div [innerHTML]="response"></div>
          <div class="col-md-12">
             <div class="modal-footer item-modal-footer">
                <div class="text-center">
-                  <a form [formGroup]="newUserForm" class="button submit-button itembutton" href="javascript:void(0);"
+                  <div class="form-group" [formGroup]="newUserForm">
+                  <a class="button submit-button itembutton" href="javascript:void(0);"
                      (click)="newClients()">Save</a>
                   <a class="button button2 itembutton1" href="javascript:void(0);" data-dismiss="modal" (click) = "hideModal()">Cancel</a>
+               </div>
                </div>
             </div>
          </div>

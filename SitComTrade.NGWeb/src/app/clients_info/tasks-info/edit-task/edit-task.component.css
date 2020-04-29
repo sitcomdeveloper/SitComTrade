@@ -161,3 +161,7 @@ a.link-add-control.mt5.el-inline-block {
 a.link-add-control.mt5.el-inline-block {
     cursor: not-allowed;
 }
+a.button.submit-button.itembutton,a.button.button2.itembutton1 {
+    text-decoration: none;
+}
+ 

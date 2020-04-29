@@ -49,7 +49,7 @@ Id: any;
         });
       }
     });
-  }, 5000);
+  }, 10000);
   }
   userClick(selectedItem: any) {
     // localStorage.clear();

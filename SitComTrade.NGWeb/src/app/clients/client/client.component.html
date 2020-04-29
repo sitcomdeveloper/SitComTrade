@@ -1567,7 +1567,7 @@
                 <div class="text-ellipsis" style="text-align:center">
 
                   <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                    [ngStyle]="{'color': item.FTD ? 'green':'gray' }"></i>
+                    [ngClass]="{'color': item.FTD ? 'default':'success' }"></i>
                 </div>
               </div>
             </div>
@@ -4198,9 +4198,9 @@
 
 
 <!--------------End create email-all model--------------->
-<div class="loader">
+<!-- <div class="loader"> -->
 <ng4-loading-spinner> </ng4-loading-spinner>
-</div>
+<!-- </div> -->
 <app-footer></app-footer>
 
 
