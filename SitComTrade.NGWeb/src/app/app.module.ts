@@ -189,7 +189,7 @@ import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task
     // ToastrModule.forRoot()
     
   ],  
-  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent],
+  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent,CreateTaskComponent],
   exports: [
     PhoneMaskDirective
   ],

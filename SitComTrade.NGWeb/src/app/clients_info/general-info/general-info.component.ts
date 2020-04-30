@@ -107,7 +107,7 @@ export class GeneralInfoComponent implements OnInit {
     // console.log('geteditdata', this.Apptitle);
     // this.userGenralinfo = this.Apptitle;
     // this.useraddinfo = this.userGenralinfo;
-    const date = this.userGenralinfo.CreatedDate.split('T');
+    const date = this.userGenralinfo.CreatedAt.split('T');
     const userDate = date[0];
     this.userInfoForm.patchValue({
       firstName: this.userGenralinfo.FirstName,

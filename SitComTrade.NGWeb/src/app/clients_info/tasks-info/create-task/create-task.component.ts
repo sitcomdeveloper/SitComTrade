@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TasksInfoService } from '../tasks-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
@@ -8,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
+ 
   getTasks: any;
   getTaskTypeData: any;
   getStatus: any;
@@ -17,7 +19,7 @@ export class CreateTaskComponent implements OnInit {
   getUserTasks: any;
   getInfoTasks: any;
 
-  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder) { }
+  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,) { }
 
   ngOnInit() {
     this.taskInfoForm = this.fb.group({
@@ -66,7 +68,7 @@ NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
-    this.getAllTask();
+
     console.log('inserttasks', res);
   });
     this.getStatus.forEach(element => {

@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import 'ag-grid-community/dist/styles/ag-grid.css';
 @import 'ag-grid-community/dist/styles/ag-theme-balham.css';
-/* @import '~materialize-css/dist/css/materialize.min.css'; */
-/***********************CSS****************************/
+
 body {
-    /* font: 13px/1.53845 Poppins,Arial,sans-serif; */
+    
     color: #45596a;
     background: #e0e8f3;
     min-width: 1263px;
@@ -64,7 +63,7 @@ body {
     line-height: 19px;
 }
 .tab{
-    /* background-color:white; */
+   
     border-radius:5px;
     width:208px;
     height:37px;
@@ -535,7 +534,6 @@ body {
     color:#b0c5d8;
 }
 .reverse {
-    /* transform: rotate(95deg); */
    
     padding-right: 12px;
     display: initial!important;
@@ -701,7 +699,7 @@ body {
     }
     .serachicon{
         display: block;
-        /* width: 50px; */
+       
         height: 39px;
         color: #fff;
         text-decoration: none;
@@ -806,10 +804,7 @@ body {
         color: #8da5ba;
         font-weight: 400;
     }
-/* .jsgrid-cell-content {
-    padding: 5px;
-} */
-/*****************************************************/
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

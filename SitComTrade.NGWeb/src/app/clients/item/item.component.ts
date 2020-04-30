@@ -20,7 +20,7 @@ export class ItemComponent implements OnInit {
   acttype = 'Real';
   // bsmodal: BsModalRef;
   sedemailbyuser = false;
-  submitted = true;
+  submitted = false;
   title: any;
   btndisable: true;
   response: any;
@@ -60,30 +60,28 @@ export class ItemComponent implements OnInit {
       ISendEmail: this.sedemailbyuser,
       OwnerId: 1,
       Phone: this.newUserForm.value.phone,
-      CountryId: this.newUserForm.value.countryid,
+      CountryId: this.newUserForm.value.country,
       //  CurrencyName : this.newUserForm.value.currencyname,
       // Promocode : this.newUserForm.value.promocode,
       //  CurrencyId: this.newUserForm.value.currencyid,
       //  OwnerId: this.newUserForm.value.ownerid,
 
     };
-    // if (this.newUserForm.valid) {
+    if (this.newUserForm.valid) {
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
       this.clddata.emit(res);
       this.hideModal();
       console.log('newuser', res);
-      if(res === 'null') {
-        this.response = 'Item is created';
-      } else {
-        this.response = '';
-      }
+      // if(res === 'null') {
+      //   this.response = 'Item is created';
+      // } else {
+      //   this.response = '';
+      // }
       this.newUserForm.reset();
       
     });
-    // } else{
-    //   alert('');
-    // }
+    } 
   }
   // Get country
   getcountryName() {
