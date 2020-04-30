@@ -323,7 +323,7 @@ ul.nav.nav-tabs1.nav-justified li a {
     background-color: transparent!important;
     color: #1868ac!important;
 }
-a.button.submit-button.itembutton.ng-untouched.ng-pristine.ng-invalid,a.button.button2.itembutton1 {
+a.button.submit-button.itembutton,a.button.button2.itembutton1 {
     text-decoration: none;
 }
  

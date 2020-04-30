@@ -20,7 +20,7 @@ export class ItemComponent implements OnInit {
   acttype = 'Real';
   // bsmodal: BsModalRef;
   sedemailbyuser = false;
-  submitted = false;
+  submitted = true;
   title: any;
   btndisable: true;
   response: any;
