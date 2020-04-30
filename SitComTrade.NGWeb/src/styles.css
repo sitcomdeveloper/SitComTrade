@@ -686,11 +686,14 @@ body {
         vertical-align: middle;
     }
     #rotate{
-        transition:all 2s;
-        -webkit-transition: all 2s;
+        -moz-transition: all 2s linear;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
       }
       .rotate{
-        transform: rotate(360deg);
+        -moz-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    transform:rotate(360deg);
       }
       .jsgrid-items-counter {
         float: right;
