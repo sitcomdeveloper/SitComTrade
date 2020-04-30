@@ -5,7 +5,7 @@
 .box-heading
 {
     display: inline-block;
-    margin: 0;
+    margin: 0;width: auto;
 }
 a.box-heading {
     font: 700 18px/22px Poppins,Arial,sans-serif;
@@ -314,7 +314,7 @@ div#headingOne {
     color: #8da5ba;    font-size: 16px;
 }
 .box-control.pull-right>a, .box-control.pull-right>div>a {
-    margin: 0 0 0 5px;
+    margin: 0 0 0 5px;background: 0,0!important;
 }
 .btn-type01:focus, .btn-type01:hover {
     color: #3d75e1;
