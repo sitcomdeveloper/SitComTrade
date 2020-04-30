@@ -226,7 +226,19 @@ $('#edit-comment').click(function(){
         $("#rotate").on('click', function() {
   $(this).toggleClass('rotate');
 });
+
       });
+      $(document).ready(function () {
+    $("#ckbCheckAll").click(function () {
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+    });
+    $("#ckbCheckAll1").click(function () {
+        $(".checkBoxClass1").prop('checked', $(this).prop('checked'));
+    });
+    $("#ckbCheckAll2").click(function () {
+        $(".checkBoxClass2").prop('checked', $(this).prop('checked'));
+    });
+});
     </script>
 </body>
 
