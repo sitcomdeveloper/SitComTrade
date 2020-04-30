@@ -47,6 +47,7 @@ export class ItemComponent implements OnInit {
       this.getcountryName();
   }
   newClients() {
+    if (this.newUserForm.valid) {
     const obj = {
       FirstName: this.newUserForm.value.firstname,
       LastName: this.newUserForm.value.lastname,
@@ -67,21 +68,26 @@ export class ItemComponent implements OnInit {
       //  OwnerId: this.newUserForm.value.ownerid,
 
     };
-    if (this.newUserForm.valid) {
+ 
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
+  
       this.clddata.emit(res);
-      this.hideModal();
-      console.log('newuser', res);
-      // if(res === 'null') {
-      //   this.response = 'Item is created';
-      // } else {
-      //   this.response = '';
-      // }
-      this.newUserForm.reset();
       
+      console.log('newuser', res);
+      setTimeout( () =>{
+      this.newUserForm.reset();
+      if(res === 'null') {
+        this.response = '';
+      } else {
+        this.response = 'Item is created';
+      }
+      },1000000000 * 10000000 * 10000000);
+      this.hideModal();
     });
-    } 
+    } else {
+      this.submitted = true;
+    }
   }
   // Get country
   getcountryName() {
@@ -111,12 +117,12 @@ if (val === true) {
   this.sedemailbyuser = false;
 }
   }
-  onSubmit() {
-    this.submitted = true;
-    if (this.newUserForm.invalid) {
-      return;
-    }
-  }
+  // onSubmit() {
+  //   this.submitted = true;
+  //   if (this.newUserForm.invalid) {
+  //     return;
+  //   }
+  // }
   get f() {
     return this.newUserForm.controls;
   }

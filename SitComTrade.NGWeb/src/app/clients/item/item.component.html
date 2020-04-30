@@ -42,7 +42,7 @@
                   <div class="row form-group">
                      <div class="tab-contentqq itemtabcontent" style="width:100%;">
                         <div class="tab-pane1 container ">
-                           <form [formGroup]="newUserForm" #ff="ngForm" (ngSubmit)="onSubmit()">
+                           <form [formGroup]="newUserForm" (ngSubmit)="onSubmit()">
                               <div class="items form-horizontal">
                                  <div class="row form-group">
                                     <div class="col-xs-6 col-md-6">
@@ -236,11 +236,11 @@
                </div>
             </form>
          </div>
-         <div [innerHTML]="response"></div>
+         <div>{{response}}</div>
          <div class="col-md-12">
             <div class="modal-footer item-modal-footer">
                <div class="text-center">
-                  <div class="form-group" [formGroup]="newUserForm">
+                  <div class="form-group" [formGroup]="newUserForm" (ngSubmit)="onSubmit()">
                   <a class="button submit-button itembutton" href="javascript:void(0);"
                      (click)="newClients()">Save</a>
                   <a class="button button2 itembutton1" href="javascript:void(0);" data-dismiss="modal" (click) = "hideModal()">Cancel</a>
