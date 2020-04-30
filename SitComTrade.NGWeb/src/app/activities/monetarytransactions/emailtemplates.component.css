@@ -1,0 +1,104 @@
+
+.sub-header{
+    position: relative;
+    z-index: 10;
+    padding: 35px 0 0;
+    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
+    color: #fff;
+    height: 82px;
+}
+
+.main-tab{
+    /* padding-left: 51px; */
+}
+.tab{
+    background-color:white;
+    border-radius:2px;
+    width: 163px;
+    height: 38px;
+    padding: 2px;
+    text-align:center;
+    font-size: 18px;
+}
+.main-tab .tab li{
+    display: inline-block;
+    padding:2px;
+}
+.main-tab .tab li a{
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    padding: 14px 0px;
+    min-width: 90px;
+    line-height: 19px;
+}
+ .text{
+    font-size:12px;
+    cursor:pointer;
+    padding-right:0px;
+}
+
+/* .btn {
+    background-color: #159ac9; 
+    border: none; 
+    color: white;
+    padding: 7px 17px; 
+    font-size: 16px; 
+    cursor: pointer;
+  } */
+.btn btn-primary,.btn btn-primary dropdown-toggle dropdown-toggle-split
+{
+    padding-left:12px;
+}
+.btn btn-primary dropdown-toggle dropdown-toggle-split
+{
+    margin-left:12px;
+}
+#email
+{
+    position: relative;
+    height: auto;
+    width: 100%;
+    user-select: none;
+
+}
+.email-grid-header {
+    background: #f5f8fc;
+    overflow-x: visible;
+    overflow-y: visible;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+th.email-header-cell.email-header-sortable {
+    width: 26.6%;
+}
+.email-alt-row>.email-cell, .email-header-row>.email-header-cell {
+    background: #f5f8fc;
+}
+td.email-cell {
+    width: 29%;
+}
+
+.email-pager-perpage label {
+    display: flex!important;    margin: 0 0 0 15px;
+}
+.email-pager-perpage label select {
+    width:auto;    margin: -7px 0 0 15px;
+    background: #d2dbe8;
+    border-color: transparent;
+    font-size: 14px;
+    padding: 4px 0px 4px 9px;
+}
+.jsgrid-pager-perpage .bootstrap-select.form-control {
+    width: auto;
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+.email-pager-perpage {
+    float: right;
+}
