@@ -83,7 +83,12 @@ th.email-header-cell.email-header-sortable {
 td.email-cell {
    
 }
-
+.dropleft.droptop {
+    display: flex;
+}
+.dropleft.droptop a {
+    padding-right: 8px;
+}
 .email-pager-perpage label {
     display: flex!important;    margin: 0 0 0 15px;
 }
