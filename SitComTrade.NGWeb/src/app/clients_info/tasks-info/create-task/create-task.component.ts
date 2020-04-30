@@ -26,7 +26,8 @@ export class CreateTaskComponent implements OnInit {
       status: [''],
       transport: [''],
       description: [''],
-      notitimebefore: ['']
+      notitimebefore: [''],
+      taskStatusId: ['']
 
     });
     this.getAllTask();
@@ -68,8 +69,12 @@ NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     this.getAllTask();
     console.log('inserttasks', res);
   });
+    this.getStatus.forEach(element => {
+    if (element.Id === this.taskInfoForm.value.status) {
+      this.taskInfoForm.value.status = element.Name;
+    }
+  });
 }
-ggg(abc) {
 
-}
+
 }
