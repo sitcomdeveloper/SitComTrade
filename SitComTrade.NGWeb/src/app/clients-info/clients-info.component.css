@@ -149,10 +149,10 @@ div#headingOne {
 }
 .subheader a
 {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     height: 100%;
-    width: 30px;
+    width: 30px; */
    }
 .subheader a.page-prev:before {
     background-position: -80px -715px;
