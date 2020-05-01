@@ -417,6 +417,79 @@ body {
     display: flex;
     justify-content: center;
 }
+.account-switcher {
+    position: relative;
+    left: 15px;
+    float: right;
+}
+.account-switcher>ul {
+    position: relative;
+    float: left;
+}
+.account-switcher>ul>li:first-child {
+    border-width: 0;
+}
+
+.account-switcher>ul>li {
+    float: left;
+    border: 1px solid #155d99;
+    border-width: 0 0 0 1px;
+}
+.account-switcher>ul>li>a {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    
+}
+.account-switcher ul li a i {
+    color: #fff;
+    font-size: 17px;
+    position: relative;
+    top: 30%;
+    left: 34%;
+}
+.account-switcher>ul>li>.dropdown-menu p {
+    background: #f5f8fc;
+    margin: 0;
+    padding: 15px 45px;
+}
+.account-switcher>ul>li>.dropdown-menu {
+    font-size: 16px;
+    color: #000;
+    margin-top: 0;
+    min-width: 320px;
+}
+.account-switcher>ul>li>.dropdown-menu:before {
+    position: absolute;
+    content: "";
+    top: -7px;
+    right: 69px;
+    border-style: solid;
+    border-width: 0 6px 7px;
+    border-color: #fff transparent;
+}
+.account-nav-panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.account-switcher>ul>li>.dropdown-menu ul li a {
+    display: block;
+    padding: 3px 45px;
+    color: #1b4b74;
+}
+.dropdown-toggle1::after {
+    display:none;
+}
+.account-nav-panel
+{
+    width:100%;
+}
+.account-nav
+{
+    float:left;
+}
 .padd0
 {
     padding:0!important;
