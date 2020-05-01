@@ -87,20 +87,16 @@ export class GeneralInfoComponent implements OnInit {
   }, 5000);
     this.getcountryName();
     this.getRegistrationFromType();
+
     // receiving data from client page for general-info
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     console.log(details);
+    // window.location.reload();
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
       console.log('generalinfo', res);
     });
   }
-  // usersInfo() {
-    // this._generalinfoservice.getUsersInfo(this.details).subscribe(res => {
-    //   this.useraddinfo = res;
-    //   console.log('generalinfo', res);
-    // });
-  // }
   edituserInfo() {
     // this._generalinfoservice.getUsersInfo().subscribe(res => {
     // this.Apptitle = JSON.parse(localStorage.getItem('project'));

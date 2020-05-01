@@ -111,6 +111,7 @@ msg: string;
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
+      window.location.reload();
     });
   }
 
