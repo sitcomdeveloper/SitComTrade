@@ -417,6 +417,46 @@ body {
     display: flex;
     justify-content: center;
 }
+.account-switcher {
+    position: relative;
+    left: 15px;
+    float: right;
+}
+.account-switcher>ul {
+    position: relative;
+    float: left;
+}
+.account-switcher>ul>li:first-child {
+    border-width: 0;
+}
+
+.account-switcher>ul>li {
+    float: left;
+    border: 1px solid #155d99;
+    border-width: 0 0 0 1px;
+}
+.account-switcher>ul>li>a {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    
+}
+.account-switcher ul li a i {
+    color: #fff;
+    font-size: 22px;
+    position: relative;
+    top: 30%;
+    left: 34%;
+}
+.account-nav-panel
+{
+    width:100%;
+}
+.account-nav
+{
+    float:left;
+}
 .padd0
 {
     padding:0!important;
