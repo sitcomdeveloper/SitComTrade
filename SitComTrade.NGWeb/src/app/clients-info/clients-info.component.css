@@ -147,14 +147,13 @@ div#headingOne {
     margin: 0 auto;
     padding: 0 30px;
 }
-.subheader a{
+.subheader a
+{
     position: absolute;
     top: 0;
     height: 100%;
     width: 30px;
-   
-    background: #0c4c82;
-}
+   }
 .subheader a.page-prev:before {
     background-position: -80px -715px;
 }
@@ -253,7 +252,7 @@ div#headingOne {
 .no-events {
     pointer-events: none;
 }
-.account-switcher>ul>li>.link-prev:after {
+/* .account-switcher>ul>li>.link-prev:after {
     background-position: -80px -755px;
 }
 
@@ -272,7 +271,7 @@ div#headingOne {
 .account-nav ul li a:focus, .account-nav ul li a:hover {
     color: #fff;
     text-decoration: none;
-}
+} */
 .account-nav ul li a {
     position: relative;
     margin: 0 25px 0 0;
