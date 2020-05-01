@@ -146,6 +146,23 @@ ul.navbar-nav.navbar-right
 .input:after, .main-nav .dropdown-menu:after, .main-nav>li>a:after, .main:after, header:before {
   content:"";
 }
+li.nav-item.brdr-right.nohover:hover a, li.nav-item.brdr-right.nohover:focus a {
+  color: #fff!important;
+}
+/* .item-account:hover .dropdown-menu
+{
+  display: none!important;
+} */
+.logindetail>.dropdown-menu::before
+{
+  content:"";
+  position: absolute;
+  top: -7px;
+    right: 28px;
+    border-style: solid;
+    border-width: 0 6px 7px;
+    border-color: #eff3f9 transparent;
+}
 
 ul.dropdown-menu:after {
   content: "";
