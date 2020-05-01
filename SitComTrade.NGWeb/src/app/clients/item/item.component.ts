@@ -3,6 +3,7 @@ import { ClientsService } from 'src/app/header/clients/clients.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { LoginService } from 'src/app/login/login.service';
 // import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -26,7 +27,7 @@ export class ItemComponent implements OnInit {
   response: any;
 
   constructor(private clientService: ClientsService, private bsmodal: BsModalRef,
-              private countryService: CountryService, private fb: FormBuilder) { }
+              private countryService: CountryService, private fb: FormBuilder, private loginservice: LoginService) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
@@ -113,6 +114,9 @@ export class ItemComponent implements OnInit {
   sendemailuser(val: any) {
 if (val === true) {
   this.sedemailbyuser = true;
+  const obj = this.newUserForm.value.email;
+  this.loginservice.resetPassword(obj).subscribe(res => {
+  });
 } else {
   this.sedemailbyuser = false;
 }
@@ -126,11 +130,6 @@ if (val === true) {
   get f() {
     return this.newUserForm.controls;
   }
-//   change() {
-//     if (this.newUserForm.valid) {
-//    this.btndisable = false;
-//   }
-// }
   hideModal() {
     this.bsmodal.hide();
   }

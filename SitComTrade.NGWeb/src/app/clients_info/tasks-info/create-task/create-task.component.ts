@@ -68,7 +68,7 @@ NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
-
+    window.location.reload();
     console.log('inserttasks', res);
   });
     this.getStatus.forEach(element => {
