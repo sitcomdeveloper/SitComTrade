@@ -2802,7 +2802,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id)"></span>
                 <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
             </div>
           </td>
@@ -3946,7 +3946,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id)"></span>
                 <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
             </div>
           </td>
