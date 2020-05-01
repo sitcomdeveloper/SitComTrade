@@ -94,6 +94,7 @@ import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-acco
 import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
 import { DeleteComponent } from './common/delete/delete.component';
 import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
+import { TooltipDirective } from './common/directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -175,6 +176,7 @@ import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task
     FinancialTransactionsComponent,
     DeleteComponent,
     EditTaskComponent,
+    TooltipDirective,
     
   ],
   imports: [
@@ -191,9 +193,9 @@ import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task
   ],  
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent,CreateTaskComponent],
   exports: [
-    PhoneMaskDirective
+    PhoneMaskDirective, TooltipDirective
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

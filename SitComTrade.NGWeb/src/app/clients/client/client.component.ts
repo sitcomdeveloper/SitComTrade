@@ -26,6 +26,7 @@ a: any;
 UserId: any;
 UserLength: any;
 Id: any;
+msg: string;
   ngOnInit() {
     this.userDetails();
   }
