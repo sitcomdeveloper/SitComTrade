@@ -52,6 +52,9 @@ msg: string;
     });
   }, 10000);
   }
+  refresh(): void {
+    window.location.reload();
+}
   userClick(selectedItem: any) {
     // localStorage.clear();
     // localStorage.setItem('project', JSON.stringify(selectedItem));

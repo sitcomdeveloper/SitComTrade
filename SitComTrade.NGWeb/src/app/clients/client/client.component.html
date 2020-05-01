@@ -22,7 +22,7 @@
         <div class="col-md-5 main-tab">
           <ul class="nav nav-pills tablist " role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="pill" href="#all">All</a>
+              <a class="nav-link active" data-toggle="pill" href="#all" (click)="userDetails()">All</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="pill" href="#account">Accounts</a>
@@ -53,7 +53,7 @@
           <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i> -->
           <div class="btn-toolbar searchbtn" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="userDetails()"></i></a>
+              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="refresh()"></i></a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
               <div class="input-group selecticon grpselect">
@@ -1514,7 +1514,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
                 <div class="text-ellipsis" data-original-title="Email"><a
-                    href=""><span tooltip="Email">{{item.Email}}</span></a></div>
+                    href="mailto:{{item.Email}}"><span tooltip="Email">{{item.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -2807,10 +2807,10 @@
             </div>
           </td>
 
-          <td class="">
+          <td class="" (click)="userClick(actinfo.Id)">
             <div class="">
               <div class="text-ellipsis" data-original-title="" title="">
-                <a href="">
+                <a href="javascript:void(0)">
                   <span>{{actinfo.Id}}</span></a></div>
             </div>
           </td>
@@ -2840,7 +2840,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
                 <div class="text-ellipsis"   ><a
-                    href=""><span title="{{actinfo.Email}}" data-toggle="tooltip" apptooltip>{{actinfo.Email}}</span></a></div>
+                    href="mailto:{{actinfo.Email}}"><span title="{{actinfo.Email}}" data-toggle="tooltip" apptooltip>{{actinfo.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -3951,10 +3951,10 @@
             </div>
           </td>
 
-          <td class="">
+          <td class="" (click)="userClick(leadinfo.Id)">
             <div class="">
               <div class="text-ellipsis" data-toggle="tooltip" title="Created Date">
-                <a href="">
+                <a href="javascript:void(0)">
                   <span>{{leadinfo.Id}}</span></a></div>
             </div>
           </td>
@@ -3983,8 +3983,8 @@
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
-                <div class="text-ellipsis" data-original-title="" title=""><a
-                    href=""><span>{{leadinfo.CountryName}}</span></a></div>
+                <div class="text-ellipsis" data-original-title="" title="">
+                    <span>{{leadinfo.CountryName}}</span></div>
               </div>
             </div>
           </td>
@@ -3999,7 +3999,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title="" data-toggle="tooltip"
-                  title="">{{leadinfo.Email}}</div>
+                  title=""><a href="mailto:{{leadinfo.Email}}">{{leadinfo.Email}}</a></div>
               </div>
             </div>
           </td>
