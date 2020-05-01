@@ -557,9 +557,9 @@ grid-auto-columns: max-content;
 .disabled {
     cursor: not-allowed;
   }
-  /* a.brdr-right.disabled,a.disabled {
+  a.brdr-right.disabled,a.disabled {
     opacity: 0.5;
-} */
+}
 .tablectn:hover{
     background-color:#f5f5f5;
 }
