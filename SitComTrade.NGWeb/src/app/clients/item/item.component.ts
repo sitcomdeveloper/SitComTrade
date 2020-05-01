@@ -74,17 +74,14 @@ export class ItemComponent implements OnInit {
       this.getnewClients = res;
   
       this.clddata.emit(res);
-      
-      console.log('newuser', res);
-      setTimeout( () =>{
-      this.newUserForm.reset();
       if(res === 'null') {
         this.response = '';
       } else {
-        this.response = 'Item is created';
+        this.response = 'Client is added successfully!';
       }
-      },1000000000 * 10000000 * 10000000);
-      this.hideModal();
+      this.newUserForm.reset();
+      console.log('newuser', res);
+     
     });
     } else {
       this.submitted = true;

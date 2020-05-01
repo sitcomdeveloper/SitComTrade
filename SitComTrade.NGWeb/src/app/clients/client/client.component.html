@@ -1,4 +1,4 @@
-<!-- <div>{{UserLength}} items</div> -->
+<div  *ngIf=messageSuccess>jdcndjscnjdscnjsdcn</div>
 
 <div class="container-fluid ">
   <div class="row fist1">
@@ -1511,10 +1511,10 @@
             </div>
           </td>
           <td class="jsgrid-cell">
-            <div class="jsgrid-cell-content">
+            <div class="jsgrid-cell-content" >
               <div data-display-for="27_Email">
-                <div class="text-ellipsis" data-original-title="Email"><a
-                    href="mailto:{{item.Email}}"><span tooltip="Email">{{item.Email}}</span></a></div>
+                <div class="text-ellipsis" data-original-title="Email"  ><a
+                    href="mailto:{{item.Email}}"><span title="{{item.Email}}" data-toggle="tooltip" appTooltip>{{item.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -2840,7 +2840,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
                 <div class="text-ellipsis"   ><a
-                    href="mailto:{{actinfo.Email}}"><span title="{{actinfo.Email}}" data-toggle="tooltip" apptooltip>{{actinfo.Email}}</span></a></div>
+                    href="mailto:{{actinfo.Email}}"><span title="{{actinfo.Email}}" data-toggle="tooltip" appTooltip>{{actinfo.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -3953,7 +3953,7 @@
 
           <td class="" (click)="userClick(leadinfo.Id)">
             <div class="">
-              <div class="text-ellipsis" data-toggle="tooltip" title="Created Date">
+              <div class="text-ellipsis" data-toggle="tooltip" title="">
                 <a href="javascript:void(0)">
                   <span>{{leadinfo.Id}}</span></a></div>
             </div>
@@ -3999,7 +3999,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title="" data-toggle="tooltip"
-                  title=""><a href="mailto:{{leadinfo.Email}}">{{leadinfo.Email}}</a></div>
+                  title=""><a href="mailto:{{leadinfo.Email}}"><span title="{{leadinfo.Email}}" data-toggle="tooltip" appTooltip>{{leadinfo.Email}}</span></a></div>
               </div>
             </div>
           </td>

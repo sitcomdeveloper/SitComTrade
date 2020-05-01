@@ -134,6 +134,7 @@ const routes: Routes = [
 {path: 'info/:selectedItem', component: ClientsInfoComponent},
 {path: 'generalinfo/:userid', component: GeneralInfoComponent},
 {path: 'user', component: ItemComponent},
+{path: 'client-info/:userid', component: ClientsInfoComponent},
 
 {path: 'importclients', component: ImportClientComponent}
 

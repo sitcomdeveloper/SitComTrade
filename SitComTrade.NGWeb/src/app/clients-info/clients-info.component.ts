@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../clients_info/general-info/general-info.service';
+import { ClientsService } from '../header/clients/clients.service';
 
 
 @Component({
@@ -13,7 +14,10 @@ export class ClientsInfoComponent implements OnInit {
   Apptitle: any;
   userGenralinfo: any;
   details: any;
-  constructor(private router: Router, private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute ) { }
+  clientInfo: any;
+  rowData: any
+  constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
+     private clientService: ClientsService ) { }
 
   ngOnInit() {
     // this.userid = '1';
@@ -27,6 +31,18 @@ export class ClientsInfoComponent implements OnInit {
       this.userGenralinfo = res;
       console.log('generalinfo', res);
     });
+    this.userDetails();
+  }
+  // get all 'clientdetailbyownerId/1' for jump to clients
+  userDetails() {
+    this.clientService.getUsers(this.clientInfo).subscribe(res => {
+      if (res !== null && res !== undefined && res !== '') {
+        this.rowData = res.reverse();
+        console.log('res',res);
+      }
+    });
+ 
   }
   
 }
+

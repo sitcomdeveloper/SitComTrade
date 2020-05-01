@@ -56,6 +56,7 @@ msg: string;
     window.location.reload();
 }
   userClick(selectedItem: any) {
+    // let userid = selectedItem;
     // localStorage.clear();
     // localStorage.setItem('project', JSON.stringify(selectedItem));
     // console.log('selecteditem', JSON.stringify(selectedItem));
@@ -63,6 +64,8 @@ msg: string;
     // console.log('Selected item Id: ', selectedItem.ItemId);
     console.log(selectedItem);
     this.router.navigate(['/info', selectedItem]);
+    // this.router.navigate(['/client-info', userid]);
+    
   }
   newUser() {
     this.router.navigateByUrl('/user');

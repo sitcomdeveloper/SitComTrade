@@ -563,3 +563,80 @@ grid-auto-columns: max-content;
 .tablectn:hover{
     background-color:#f5f5f5;
 }
+/* #help{
+    i{color:#0055B8;}
+    .checkbox:hover{
+        .show-d{display: block !important;}
+        }
+    
+
+    .show-d{display: none;
+        position: absolute;
+        z-index: 99;
+        background: #0055B8;
+        padding: 6px 12px;
+        color: #fff;
+        font-weight: 500;
+        bottom: 4rem;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+    &::before{
+        content: '';
+        position: absolute;
+        width:15px;
+        height:15px;
+        background:#0055B8;
+        bottom: -7px;
+        left: 28%;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    }
+} */
+/* #help i {
+    color: #0055B8;
+  }
+  #help .checkbox:hover .show-d {
+    display: block !important;
+  }
+  #help .show-d {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: #0055B8;
+    padding: 6px 12px;
+    color: #fff;
+    font-weight: 500;
+    bottom: 4rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+  }
+  #help .show-d::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #0055B8;
+    bottom: -7px;
+    left: 28%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+   */
+
+    
+
+
+
+
+
+
+
+
+   

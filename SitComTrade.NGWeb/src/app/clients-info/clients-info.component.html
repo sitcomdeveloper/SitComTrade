@@ -88,11 +88,11 @@
               </a>
               <div class="dropdown-menu pull-right">
                  <p>Jump to clients:</p>
-                 <ul>
-                    <li class="active"><a href="">MASSIMO ZIZZA</a></li>
-                    <li><a href="">BARTOLOMEO ALVERA</a></li>
+                 <ul *ngFor="let data of rowData">
+                    <li class="active"><a href="">{{data.FirstName}} {{data.LastName}}</a></li>
+                    <!-- <li><a href="">BARTOLOMEO ALVERA</a></li>
                     <li><a href="">MATTEO GUARNIERI</a></li>
-                    <li><a href="">Linus Test</a></li>
+                    <li><a href="">Linus Test</a></li> -->
                  </ul>
               </div>
            </li>
@@ -355,6 +355,7 @@
         </div>
 
         <div><app-financial-transactions></app-financial-transactions></div>
+        <!-- <div><app-info-documents></app-info-documents></div> -->
         
         <div class="card mb20" style="padding: 15px;
     padding-left: 0;">
@@ -373,11 +374,11 @@
           </div>
           <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
             <div class="card-body">
-              <app-sms></app-sms>
+              <!-- <app-sms></app-sms> -->
             </div>
           </div>
         </div>
-
+        <!-- <div><app-info-cases></app-info-cases></div> -->
         <div class="card mb20 mb4" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingTen">
@@ -446,7 +447,3 @@
 
 <!--------------End create task model--------------->
 <app-footer></app-footer>
-
-
-
-

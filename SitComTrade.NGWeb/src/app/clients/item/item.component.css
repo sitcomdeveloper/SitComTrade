@@ -326,4 +326,10 @@ ul.nav.nav-tabs1.nav-justified li a {
 a.button.submit-button.itembutton,a.button.button2.itembutton1 {
     text-decoration: none;
 }
+.message{
+    color: green;
+    text-align: center;
+    margin-left: 285px;
+    margin-bottom: 5px;
+}
  
