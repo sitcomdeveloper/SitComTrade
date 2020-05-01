@@ -95,6 +95,8 @@ import { FinancialTransactionsComponent } from './clients_info/financial-transac
 import { DeleteComponent } from './common/delete/delete.component';
 import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
 import { TooltipDirective } from './common/directives/tooltip.directive';
+import { InfoDocumentsComponent } from './clients_info/info-documents/info-documents.component';
+import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
 
 @NgModule({
   declarations: [
@@ -177,6 +179,8 @@ import { TooltipDirective } from './common/directives/tooltip.directive';
     DeleteComponent,
     EditTaskComponent,
     TooltipDirective,
+    InfoDocumentsComponent,
+    InfoCasesComponent,
     
   ],
   imports: [
