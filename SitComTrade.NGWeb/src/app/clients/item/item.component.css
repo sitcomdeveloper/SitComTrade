@@ -82,6 +82,12 @@
     width: 16px;
     height: 16px;
 }
+
+.radio-tabs ul li a:hover {
+    color: #000!important;
+    border-color: #dde7f9;
+
+}
  .radio-tabs .nav-tabs>li.active>a, .modal .radio-tabs .nav-tabs>li.active>a:focus, .modal .radio-tabs .nav-tabs>li.active>a:hover {
     border-color: #dde7f9;
     color: #45596a;
