@@ -27,6 +27,9 @@ UserId: any;
 UserLength: any;
 Id: any;
 msg: string;
+pageSize: any;
+changePageSize: any;
+
   ngOnInit() {
     this.userDetails();
   }
