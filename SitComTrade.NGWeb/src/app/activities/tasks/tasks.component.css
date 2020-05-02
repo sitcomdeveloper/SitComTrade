@@ -5,28 +5,18 @@
     padding: 35px 0 0;
     background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
     color: #fff;
-   height: 82px;
-    margin:0px 15px;
+    height: 82px;
 }
-.breadcrumb
-{
-    margin-left: 5px;
-    margin-top:-32px;
-   padding:0px;
-}
-.crumb
-{
-    padding-left: 50px;
-}
+
 .main-tab{
-    padding-left: 51px;
+    /* padding-left: 51px; */
 }
 .tab{
     background-color:white;
     border-radius:2px;
-    width:485px;
-    height:37px;
-    padding:3px 0px;
+    width: 163px;
+    height: 38px;
+    padding: 2px;
     text-align:center;
     font-size: 18px;
 }
@@ -38,44 +28,24 @@
     text-decoration: none;
     text-align: center;
     margin: 0;
-    padding: 14px 17px;
+    padding: 14px 0px;
     min-width: 90px;
     line-height: 19px;
 }
-.fa{
-    font-size:25px;
+ .text{
+    font-size:12px;
     cursor:pointer;
+    padding-right:0px;
 }
 
-.bg-primary
-{
-    background-color: #159ac9 !important;
-    height:31px;
-    width:33px;
-    padding:8px;
-    padding-bottom:3px;
-    margin-bottom:10px;
-
-    /* width: 1px;
-    height: 25px; */
-    
-    left: 0;
-    top: 50%;
-    margin: -12px 0 0;
-}
-
-.btn-primary
-{
-    background: 0 0!important;
-    border-color: #609bce!important;
-    font-size: 14px;
-    color: #fff!important;
-    padding: 6px 77px 6px 83px;
-    border-radius: 11px 0 0 2px;
-}
-.btn{
-    padding: 0.375rem 4.75rem;
-}
+/* .btn {
+    background-color: #159ac9; 
+    border: none; 
+    color: white;
+    padding: 7px 17px; 
+    font-size: 16px; 
+    cursor: pointer;
+  } */
 .btn btn-primary,.btn btn-primary dropdown-toggle dropdown-toggle-split
 {
     padding-left:12px;
@@ -83,4 +53,57 @@
 .btn btn-primary dropdown-toggle dropdown-toggle-split
 {
     margin-left:12px;
+}
+#email
+{
+    position: relative;
+    height: auto;
+    width: 100%;
+    user-select: none;
+
+}
+.email-grid-header {
+    background: #f5f8fc;
+    overflow-x: visible;
+    overflow-y: visible;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+th.email-header-cell.email-header-sortable {
+  
+}
+.email-alt-row>.email-cell, .email-header-row>.email-header-cell {
+    background: #f5f8fc;
+}
+td.email-cell {
+   
+}
+.dropleft.droptop {
+    display: flex;
+}
+.dropleft.droptop a {
+    padding-right: 8px;
+}
+.email-pager-perpage label {
+    display: flex!important;    margin: 0 0 0 15px;
+}
+.email-pager-perpage label select {
+    width:auto;    margin: -7px 0 0 15px;
+    background: #d2dbe8;
+    border-color: transparent;
+    font-size: 14px;
+    padding: 4px 0px 4px 9px;
+}
+.jsgrid-pager-perpage .bootstrap-select.form-control {
+    width: auto;
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+.email-pager-perpage {
+    float: right;
 }
