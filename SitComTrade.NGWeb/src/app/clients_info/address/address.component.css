@@ -13,6 +13,19 @@
    
     vertical-align: middle;
 }
+.mb20 {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  border: none;
+  padding-bottom: 0;
+}
+.btn-type01 {
+  padding: 5px 15px;
+  border-radius: 3px;
+  color: #8da5ba;
+  font-size: 16px;
+  background: 0!important;
+}
 .value-edit2
 {
         font-size: 13px;
