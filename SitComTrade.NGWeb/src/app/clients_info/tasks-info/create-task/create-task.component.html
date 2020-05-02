@@ -36,7 +36,7 @@
                <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="type"
                   data-live-search="true">
                   <option ngcontent-qpo-c3="">Select</option>
-                  <option ngcontent-qpo-c3="" value="{{trade.Name}}" *ngFor="let trade of getTasks">
+                  <option ngcontent-qpo-c3="" value="{{trade.Id}}" *ngFor="let trade of getTasks">
 
                      {{trade.Name}}</option>
                </select>
@@ -53,7 +53,7 @@
                <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="status"
                   data-live-search="true">
                   <option ngcontent-qpo-c3="">Select</option>
-                  <option ngcontent-qpo-c3="" value="{{tasks.Name}}" *ngFor="let tasks of getStatus">
+                  <option ngcontent-qpo-c3="" value="{{tasks.Id}}" *ngFor="let tasks of getStatus">
 
                      {{tasks.Name}}</option>
                </select>
