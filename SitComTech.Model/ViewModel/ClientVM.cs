@@ -34,11 +34,14 @@ namespace SitComTech.Model.ViewModel
 
     public class ClientListVM
     {
+        public long Id { get; set; }
         public string ItemId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Nullable<long> CountryId { get; set; }
         public string CountryName { get; set; }
         public string Email { get; set; }
+        public Nullable<long> TypeId { get; set; }
         public string TypeName { get; set; }
         public string Phone { get; set; }
         public string OwnerName { get; set; }
