@@ -29,7 +29,9 @@ export class CreateTaskComponent implements OnInit {
       transport: [''],
       description: [''],
       notitimebefore: [''],
-      taskStatusId: ['']
+      taskStatusId: [''],
+      statusName: [''],
+      taskName: ['']
 
     });
     this.getAllTask();
@@ -56,14 +58,24 @@ export class CreateTaskComponent implements OnInit {
   }
   // insert task
   infoTasks() {
+    this.getStatus.forEach(element => {
+      if (element.Id === +this.taskInfoForm.value.status) {
+        this.taskInfoForm.value.statusName = element.Name;
+      }
+    });
+    this.getTasks.forEach(element => {
+      if (element.Id === +this.taskInfoForm.value.type) {
+        this.taskInfoForm.value.taskName = element.Name;
+      }
+    });
     const obj = {
       OwnerId: 1,
-      TaskStatusId: 1,
-TaskTypeId: 1,
+      TaskStatusId: this.taskInfoForm.value.status,
+TaskTypeId: this.taskInfoForm.value.type,
 NotiTrasportId: 1,
-TaskType: this.taskInfoForm.value.type,
+TaskType: this.taskInfoForm.value.taskName,
 Description: this.taskInfoForm.value.description,
-TaskStatus: this.taskInfoForm.value.status,
+TaskStatus: this.taskInfoForm.value.statusName,
 NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
@@ -71,11 +83,7 @@ NotiTimeBefore: this.taskInfoForm.value.notitimebefore
     window.location.reload();
     console.log('inserttasks', res);
   });
-    this.getStatus.forEach(element => {
-    if (element.Id === this.taskInfoForm.value.status) {
-      this.taskInfoForm.value.status = element.Name;
-    }
-  });
+   
 }
 
 

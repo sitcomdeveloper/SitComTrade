@@ -15,9 +15,13 @@ export class ClientsInfoComponent implements OnInit {
   userGenralinfo: any;
   details: any;
   clientInfo: any;
-  rowData: any
+  rowData: any;
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
-     private clientService: ClientsService ) { }
+              private clientService: ClientsService ) {
+      this.router.routeReuseStrategy.shouldReuseRoute = function() {
+        return false;
+        };
+     }
 
   ngOnInit() {
     // this.userid = '1';
@@ -33,16 +37,23 @@ export class ClientsInfoComponent implements OnInit {
     });
     this.userDetails();
   }
-  // get all 'clientdetailbyownerId/1' for jump to clients
+  // get all 'clientdetailbyownerId/1' for jump to clients for showing name
   userDetails() {
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
         this.rowData = res.reverse();
-        console.log('res',res);
+        console.log('res', res);
       }
     });
- 
+
   }
-  
+  // in route send Id for jump to clients
+  sendData(selectedItem: any) {
+    this.router.navigate(['/info', selectedItem]);
+    
+  }
+  moveBackward(selectedItem: any) {
+    this.router.navigate(['/info', selectedItem]);
+  }
 }
 
