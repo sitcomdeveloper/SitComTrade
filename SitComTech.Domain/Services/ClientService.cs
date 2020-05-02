@@ -196,6 +196,7 @@ namespace SitComTech.Domain.Services
             .Where(x => x.UserOwner.clients.Active && !x.UserOwner.clients.Deleted && x.UserOwner.clients.OwnerId == ownerid).Select(x =>
             new ClientListVM
             {
+                Id = x.UserOwner.clients.Id,
                 ItemId = x.UserOwner.clients.ItemId,
                 FirstName = x.UserOwner.clients.FirstName,
                 LastName = x.UserOwner.clients.LastName,
