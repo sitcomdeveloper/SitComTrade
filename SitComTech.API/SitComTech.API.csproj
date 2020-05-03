@@ -112,6 +112,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\OwnerTaskController.cs" />
+    <Compile Include="Controllers\TradeGroupController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
