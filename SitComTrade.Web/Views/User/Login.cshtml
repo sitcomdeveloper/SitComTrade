@@ -213,30 +213,28 @@
             CommentDescription: ko.observable('test comm desc'),
             OwnerId: ko.observable(1)
         };
-        //UserVM.Register = {
-        //    City: ko.observable('Lead'),
-        //    State: ko.observable('Lead'),
-        //    ZipCode: ko.observable('Leadhfhf'),
-        //    CountryId: ko.observable(1),           
-        //    CountryName: ko.observable('Lead'),
-        //    OwnerId: ko.observable('1'),
-        //    StreetAddress: ko.observable('Lead'),
-        //};
         UserVM.Register = {
-            FirstName: ko.observable('fdfd'),
-            LastName: ko.observable('Ldgdgdead'),
-            Email: ko.observable('kk84singh@gmail.com'),
-            CountryId: ko.observable(0),
-            GroupName: ko.observable('hdfdf'),
-            AccountType: ko.observable('Lead'),
-            Password: ko.observable('dgdg'),
-            CountryName: ko.observable('wewew'),
-            GroupId: ko.observable(0),
-            ISendEmail: ko.observable(1),
-            OwnerId: ko.observable('1'),
-            Id: ko.observable('85'),
-            Phone: ko.observable('24234224'),
+            Description: ko.observable('jgjj'),
+            Name: ko.observable('kk gg'),
+            CurrencyId: ko.observable(1),           
+            CurrencyName: ko.observable('phd'),
+            Id: ko.observable('1'),
         };
+        //UserVM.Register = {
+        //    FirstName: ko.observable('fdfd'),
+        //    LastName: ko.observable('Ldgdgdead'),
+        //    Email: ko.observable('kk84singh@gmail.com'),
+        //    CountryId: ko.observable(0),
+        //    GroupName: ko.observable('hdfdf'),
+        //    AccountType: ko.observable('Lead'),
+        //    Password: ko.observable('dgdg'),
+        //    CountryName: ko.observable('wewew'),
+        //    GroupId: ko.observable(0),
+        //    ISendEmail: ko.observable(1),
+        //    OwnerId: ko.observable('1'),
+        //    Id: ko.observable('85'),
+        //    Phone: ko.observable('24234224'),
+        //};
         //ko.applyBindings(UserVM, document.getElementById("logindiv"));
         //$(function () {
         //    $('#login-form-link').click(function (e) {
@@ -257,9 +255,9 @@
 
         $(document).ready(function () {
 
-            $.ajax({
+             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Client/UpdateClient",
+                 url: apiURl + "api/TradeGroup/UpdateTradeGroup",
                 contentType: 'application/json',
                 processData: false,
                 data: ko.toJSON(UserVM.Register),
@@ -268,7 +266,39 @@
                 }
             });
 
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/TradeGroup/GetTradeGroupDetailById/2",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+
             //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeGroup/InsertTradeGroup",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.Register),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/UpdateClient",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.Register),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+
+            ////$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/DeleteClient/82",
             //    contentType: 'application/json',

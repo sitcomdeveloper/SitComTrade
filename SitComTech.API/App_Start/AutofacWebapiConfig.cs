@@ -42,6 +42,7 @@ namespace SitComTech.API.App_Start
             builder.RegisterType<ClientService>().As<IClientService>();
             builder.RegisterType<CommentService>().As<ICommentService>();
             builder.RegisterType<AddressService>().As<IAddressService>();
+            builder.RegisterType<TradeGroupService>().As<ITradeGroupService>();
             return builder.Build();
         }
     }
