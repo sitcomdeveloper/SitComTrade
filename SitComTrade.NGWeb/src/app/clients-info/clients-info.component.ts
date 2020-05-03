@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../clients_info/general-info/general-info.service';
 import { ClientsService } from '../header/clients/clients.service';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 
 @Component({
@@ -16,28 +17,37 @@ export class ClientsInfoComponent implements OnInit {
   details: any;
   clientInfo: any;
   rowData: any;
+  realAccountSection = false;
+  TypeName: any;
+  accountInfo: any[];
+  leadInfo: any[];
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
-              private clientService: ClientsService ) {
+              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService ) {
       this.router.routeReuseStrategy.shouldReuseRoute = function() {
         return false;
         };
      }
 
   ngOnInit() {
-    // this.userid = '1';
-    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    // console.log('getclientdata', this.Apptitle);
-    // this.userGenralinfo = this.Apptitle;
-
+    // For jump to specific clients.see below method "sendData"
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     console.log(details);
+    // API of general section use for showing name of selected client
+    this.spinnerService.show();
+    setTimeout( () => {
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
       console.log('generalinfo', res);
+      if ( this.userGenralinfo.TypeName === 'Real') {
+        this.realAccountSection = true;
+      } else {
+        this.realAccountSection = false;
+      }
     });
+    }, );
     this.userDetails();
   }
-  // get all 'clientdetailbyownerId/1' for jump to clients for showing name
+  // get all 'clientdetailbyownerId/1' for jump to clients for showing name(all first and last name)
   userDetails() {
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
@@ -50,10 +60,9 @@ export class ClientsInfoComponent implements OnInit {
   // in route send Id for jump to clients
   sendData(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
-    
   }
-  moveBackward(selectedItem: any) {
-    this.router.navigate(['/info', selectedItem]);
-  }
+  // moveBackward(selectedItem: any) {
+  //   this.router.navigate(['/info', selectedItem]);
+  // }
 }
 

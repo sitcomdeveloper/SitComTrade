@@ -131,10 +131,10 @@ const routes: Routes = [
 {path: 'terms', component: TermsComponent},
 
 // clients-info
-{path: 'info/:selectedItem', component: ClientsInfoComponent},
+{path: 'info/:selectedItem', component: ClientsInfoComponent, data: [{isProd: true}]},
 {path: 'generalinfo/:userid', component: GeneralInfoComponent},
 {path: 'user', component: ItemComponent},
-{path: 'client-info/:userid', component: ClientsInfoComponent},
+
 
 {path: 'importclients', component: ImportClientComponent}
 

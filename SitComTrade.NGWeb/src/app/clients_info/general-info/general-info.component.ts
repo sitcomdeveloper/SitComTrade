@@ -84,7 +84,7 @@ export class GeneralInfoComponent implements OnInit {
     // this.userGenralinfo = this.Apptitle;
     // this.usersInfo();
     this.edituserInfo();
-  }, 5000);
+  }, );
     this.getcountryName();
     this.getRegistrationFromType();
 

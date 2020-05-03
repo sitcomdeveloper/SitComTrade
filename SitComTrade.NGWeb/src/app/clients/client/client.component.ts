@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
@@ -66,9 +66,9 @@ changePageSize: any;
     // this.router.navigateByUrl('/info');
     // console.log('Selected item Id: ', selectedItem.ItemId);
     console.log(selectedItem);
-    this.router.navigate(['/info', selectedItem]);
-    // this.router.navigate(['/client-info', userid]);
-    
+    this.router.navigate(['/info', selectedItem, {skipLocationChange: true}]);
+        // this.router.navigate(['/client-info', userid]);
+
   }
   newUser() {
     this.router.navigateByUrl('/user');
@@ -101,7 +101,7 @@ changePageSize: any;
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
-      
+
     });
   }
   // delete client

@@ -17,7 +17,7 @@
         </p>
         <h2>{{userGenralinfo?.FirstName}} {{userGenralinfo?.LastName}}</h2>
       </div>
-      <div class="account-details">
+      <div class="account-details" *ngIf="realAccountSection">
         <dl>
            <dt>Open P&amp;L</dt>
            <dd><span class="color06">$ -202.79</span></dd>
@@ -55,22 +55,22 @@
           <li>
             <a href="#tasks" class="common">Tasks</a>
           </li>
-          <li>
+          <li *ngIf="realAccountSection">
             <a href="#" class="common">Trade Accounts</a>
           </li>
           <li>
             <a href="#emails" class="common">Emails</a>
           </li>
-          <li>
+          <li *ngIf="realAccountSection">
             <a href="#" class="common">Financial Transactions</a>
           </li>
-          <li>
+          <li *ngIf="realAccountSection">
             <a href="#" class="common">Documents</a>
           </li>
           <li>
             <a href="#sent-sms" class="common">Sms</a>
           </li>
-          <li>
+          <li *ngIf="realAccountSection">
             <a href="#" class="common">Cases</a>
           </li>
           <li>
@@ -81,7 +81,7 @@
 
       <div class="account-switcher">
         <ul>
-           <li (click)="moveBackward()"><a class=" no-events link-prev" routerLink="/info/"><i class="fa fa-chevron-left" ></i></a></li>
+           <li (click)="moveBackward()"><a class=" no-events link-prev" routerLink=""><i class="fa fa-chevron-left" ></i></a></li>
            <li>
               <a aria-expanded="true" class="link-control dropdown-toggle dropdown-toggle1" data-toggle="dropdown" href="#" role="button">
                 <i class="fa fa-equals" style="font-size: 33px;top:8px;left: 13px;">=</i>
@@ -89,7 +89,7 @@
               <div class="dropdown-menu pull-right">
                  <p>Jump to clients:</p>
                  <ul *ngFor="let data of rowData">
-                    <li class="active" (click)="sendData(data.Id)"><a routerLink="/info/">{{data.FirstName}} {{data.LastName}}</a></li>
+                    <li class="active" (click)="sendData(data.Id)"><a href="javascript:void(0);">{{data.FirstName}} {{data.LastName}}</a></li>
                     <!-- <li><a href="">BARTOLOMEO ALVERA</a></li>
                     <li><a href="">MATTEO GUARNIERI</a></li>
                     <li><a href="">Linus Test</a></li> -->
@@ -334,7 +334,7 @@
             </div>
           </div>
         </div>
-        <div> <app-trade-accounts></app-trade-accounts></div>
+        <div *ngIf="realAccountSection"> <app-trade-accounts></app-trade-accounts></div>
         <div class="card mb20" style="padding: 15px;padding-left: 0;">
     
           <div class="card-header1 container" role="tab" id="headingEight">
@@ -354,8 +354,8 @@
           </div>
         </div>
 
-        <div><app-financial-transactions></app-financial-transactions></div>
-         <div><app-info-documents></app-info-documents></div> 
+        <div *ngIf="realAccountSection"><app-financial-transactions></app-financial-transactions></div>
+         <div *ngIf="realAccountSection"><app-info-documents></app-info-documents></div> 
         
         <div class="card mb20" style="padding: 15px;
     padding-left: 0;">
@@ -378,7 +378,7 @@
             </div>
           </div>
         </div>
-         <div><app-info-cases></app-info-cases></div> 
+         <div *ngIf="realAccountSection"><app-info-cases></app-info-cases></div> 
         <div class="card mb20 mb4" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingTen">
