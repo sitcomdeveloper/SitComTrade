@@ -97,6 +97,7 @@ import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task
 import { TooltipDirective } from './common/directives/tooltip.directive';
 import { InfoDocumentsComponent } from './clients_info/info-documents/info-documents.component';
 import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
+import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 
 @NgModule({
   declarations: [
@@ -181,6 +182,7 @@ import { InfoCasesComponent } from './clients_info/info-cases/info-cases.compone
     TooltipDirective,
     InfoDocumentsComponent,
     InfoCasesComponent,
+    GroupsInfoComponent,
     
   ],
   imports: [
