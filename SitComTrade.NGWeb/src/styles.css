@@ -44,6 +44,9 @@ body {
     border-bottom: 2px solid #3d75e1;
 
 }
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+}
 .tablist>li
 {
     font-weight: 500;
