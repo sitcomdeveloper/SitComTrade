@@ -47,6 +47,17 @@ body {
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
 }
+.email-header-row {
+    background: #f5f8fc;
+    overflow-x: visible;
+    overflow-y: visible;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
 .tablist>li
 {
     font-weight: 500;
@@ -693,7 +704,7 @@ body {
     width: 13px;
     height: 13px;
     top: 6px;
-    left: 6px;
+    left: 9px;
     overflow: hidden;
     cursor: pointer;
     z-index: 4;
@@ -712,6 +723,31 @@ body {
     cursor: pointer;
     z-index: 4;
     font-size: 10px;
+}
+.jsgrid-pager {
+    float: right;
+}
+.jsgrid-pager-current-page {
+    color: #57c9f0;
+}
+
+.jsgrid-pager-page {
+    min-width: 39px;
+    text-align: center;
+}
+.jsgrid-pager>* {
+    display: inline-block;
+    vertical-align: top;
+}
+.jsgrid-pager-current-page {
+    font-weight: 700;
+}
+.jsgrid-pager-page a {
+    padding: 0 5px;
+    display: block;
+    color: #45596a;
+    text-decoration: none;
+    position: relative;
 }
 .email-pager-perpage label {
     display: -webkit-box!important;
@@ -838,7 +874,7 @@ body {
     {
         height:27px!important;
         border: 1px solid #ced4da;
-        border-radius: 0;    padding: 0px;
+        border-radius: 0;    padding: 0px;    margin: 5px;
     
     }
     .email-cell-content {

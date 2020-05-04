@@ -251,7 +251,19 @@ $('#edit-comment').click(function(){
     <!-- <script>
      $( "#all" ).load( "clients/client.component.html" );
     </script> -->
+    <script>
+        $(document).ready(function () {
+          $("[data-toggle=popover]").popover({
+        html : true,
+        trigger: 'focus',
+        content: function() {
+            var content = $(this).attr("data-popover-content");
+            return $(content).children(".popover-body").html();
+        }
+    });
     
+});
+</script>
 
 </body>
 
