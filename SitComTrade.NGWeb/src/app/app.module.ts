@@ -145,7 +145,6 @@ import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.c
     IplistComponent,
     TradinghoursComponent,
     WorkflowsComponent,
-    
     AccountsComponent,
     AllComponent,
     TermsComponent,
@@ -183,21 +182,20 @@ import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.c
     InfoDocumentsComponent,
     InfoCasesComponent,
     GroupsInfoComponent,
-    
   ],
   imports: [
     BrowserModule,
     // BrowserAnimationsModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    AppRoutingModule,FormsModule,ReactiveFormsModule,
+    AppRoutingModule, FormsModule, ReactiveFormsModule,
     AgGridModule.withComponents(null),
     TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
     // ToastrModule.forRoot()
-    
-  ],  
-  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent,CreateTaskComponent],
+
+  ],
+  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent],
   exports: [
     PhoneMaskDirective, TooltipDirective
   ],

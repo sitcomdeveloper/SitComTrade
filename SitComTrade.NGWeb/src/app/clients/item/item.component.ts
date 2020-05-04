@@ -69,19 +69,19 @@ export class ItemComponent implements OnInit {
       //  OwnerId: this.newUserForm.value.ownerid,
 
     };
- 
+
     this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
-  
+
       this.clddata.emit(res);
-      if(res === 'null') {
+      if (res === 'null') {
         this.response = '';
       } else {
         this.response = 'Client is added successfully!';
       }
       this.newUserForm.reset();
       console.log('newuser', res);
-     
+
     });
     } else {
       this.submitted = true;

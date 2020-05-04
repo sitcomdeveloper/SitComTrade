@@ -84,6 +84,7 @@ changePageSize: any;
     this.showMsg = 'items checked from';
     this.deletbtnn = false;
 } else {
+  // tslint:disable-next-line: no-shadowed-variable
   let count = 1;
   this.a = count--;
   this.showMsg = '';

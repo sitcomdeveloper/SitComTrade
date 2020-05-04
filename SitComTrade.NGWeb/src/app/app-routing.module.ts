@@ -53,6 +53,7 @@ import { ClientsInfoComponent } from './clients-info/clients-info.component';
 import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
 import { ItemComponent } from './clients/item/item.component';
 import { ImportClientComponent } from './clients/import-client/import-client.component';
+import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 
 
 
@@ -134,7 +135,7 @@ const routes: Routes = [
 {path: 'info/:selectedItem', component: ClientsInfoComponent, data: [{isProd: true}]},
 {path: 'generalinfo/:userid', component: GeneralInfoComponent},
 {path: 'user', component: ItemComponent},
-
+{path: 'groups-info', component: GroupsInfoComponent},
 
 {path: 'importclients', component: ImportClientComponent}
 
