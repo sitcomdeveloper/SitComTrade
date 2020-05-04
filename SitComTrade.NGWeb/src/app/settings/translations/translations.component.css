@@ -10,12 +10,12 @@
 .email-cell-content:first-child
 
 {
-    width: 400px;
+    width: 300px;
 }
 .email-cell-content
 
 {
-    width: 357px!important;
+    width: 280px!important;
 }
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
