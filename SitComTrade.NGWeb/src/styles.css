@@ -47,6 +47,17 @@ body {
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
 }
+.email-header-row {
+    background: #f5f8fc;
+    overflow-x: visible;
+    overflow-y: visible;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
 .tablist>li
 {
     font-weight: 500;
@@ -693,7 +704,7 @@ body {
     width: 13px;
     height: 13px;
     top: 6px;
-    left: 6px;
+    left: 9px;
     overflow: hidden;
     cursor: pointer;
     z-index: 4;
@@ -712,6 +723,56 @@ body {
     cursor: pointer;
     z-index: 4;
     font-size: 10px;
+}
+.jsgrid-pager {
+    float: right;padding: 2px 14px;
+}
+
+.jsgrid-pager-current-page {
+    color: #57c9f0;
+}
+
+.jsgrid-pager-page {
+    min-width: 39px;
+    text-align: center;
+}
+.jsgrid-pager>* {
+    display: inline-block;
+    vertical-align: top;
+}
+.jsgrid-pager-current-page {
+    font-weight: 700;
+}
+.jsgrid-pager-page a {
+    padding: 0 5px;
+    display: block;
+    color: #45596a;
+    text-decoration: none;
+    position: relative;
+}
+.jsgrid-pager-nav-button a {
+    display: block;
+    width: 39px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: -9999px;
+    color: #45596a;
+}
+.jsgrid-pager-nav-button a:before, .jsgrid-pager-page a:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #57c9f0;
+    border-radius: 2px;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 .email-pager-perpage label {
     display: -webkit-box!important;
@@ -838,7 +899,7 @@ body {
     {
         height:27px!important;
         border: 1px solid #ced4da;
-        border-radius: 0;    padding: 0px;
+        border-radius: 0;    padding: 0px;    margin: 5px;
     
     }
     .email-cell-content {
