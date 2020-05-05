@@ -91,7 +91,6 @@ export class GeneralInfoComponent implements OnInit {
     // receiving data from client page for general-info
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     console.log(details);
-    // window.location.reload();
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
       console.log('generalinfo', res);
@@ -103,8 +102,8 @@ export class GeneralInfoComponent implements OnInit {
     // console.log('geteditdata', this.Apptitle);
     // this.userGenralinfo = this.Apptitle;
     // this.useraddinfo = this.userGenralinfo;
-    const date = this.userGenralinfo.CreatedAt.split('T');
-    const userDate = date[0];
+    // const date = this.userGenralinfo.CreatedAt.split('T');
+    // const userDate = date[0];
     this.userInfoForm.patchValue({
       firstName: this.userGenralinfo.FirstName,
       lastName: this.userGenralinfo.LastName,
@@ -115,7 +114,7 @@ export class GeneralInfoComponent implements OnInit {
       itemid: this.userGenralinfo.ItemId,
       owner: this.userGenralinfo.OwnerId,
       status: this.userGenralinfo.ResponseStatus,
-      createddate: userDate,
+      createddate: this.userGenralinfo.CreatedAt,
       // lastcommentdate:: this.userGenralinfo.,
       modifieddate: this.userGenralinfo.UpdatedAt,
       // conventionowner: this.userGenralinfo.

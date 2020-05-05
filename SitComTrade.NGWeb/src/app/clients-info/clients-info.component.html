@@ -439,3 +439,81 @@
 
 <!--------------End create task model--------------->
 <app-footer></app-footer>
+
+<script>
+  $(document).ready(function () {
+
+    $("#edit").click(function () {
+      $(".value-edit").show();
+      $(".valueshhow").hide();
+      $(".pencil").hide();
+      $(".edit-data-options").show();
+      $("#generalinfo td, #generalinfo th").css("border", "none");
+
+    });
+
+    $(".edit-data-options").click(function () {
+      $(".value-edit").hide();
+      $(".valueshhow").show();
+      $(".pencil").show();
+      $(".edit-data-options").hide();
+      $("#generalinfo td, #generalinfo th").css("border-top", "1px solid #dee2e6");
+    });
+  });
+
+  $(document).ready(function () {
+
+    $("#edit1").click(function () {
+      $(".value-edit1").show();
+      $(".valueshhow1").hide();
+      $(".pencil1").hide();
+      $(".edit-data-options1").show();
+      $("#marketinginfo td, #marketinginfo th").css("border", "none");
+    });
+
+    $(".edit-data-options1").click(function () {
+      $(".value-edit1").hide();
+      $(".valueshhow1").show();
+      $(".pencil1").show();
+      $(".edit-data-options1").hide();
+      $("#marketinginfo td, #marketinginfo th").css("border-top", "1px solid #dee2e6");
+    });
+  });
+  $(document).ready(function () {
+
+    $("#edit2").click(function () {
+      $(".value-edit2").show();
+      $(".valueshhow2").hide();
+      $(".pencil2").hide();
+      $(".edit-data-options2").show();
+      $("#address td, #address th").css("border", "none");
+    });
+
+    $(".edit-data-options2").click(function () {
+      $(".value-edit2").hide();
+      $(".valueshhow2").show();
+      $(".pencil2").show();
+      $(".edit-data-options2").hide();
+      $("#address td, #address th").css("border-top", "1px solid #dee2e6");
+    });
+  });
+  $(document).ready(function () {
+
+    $("#edit3").click(function () {
+      $(".value-edit3").show();
+      $(".valueshhow3").hide();
+      $(".pencil3").hide();
+      $(".edit-data-options3").show();
+      $("#additionalinfo td, #additionalinfo th").css("border", "none");
+    });
+
+    $(".edit-data-options3").click(function () {
+      $(".value-edit3").hide();
+      $(".valueshhow3").show();
+      $(".pencil3").show();
+      $(".edit-data-options3").hide();
+      $("#additionalinfo td, #additionalinfo th").css("border-top", "1px solid #dee2e6");
+    });
+  });
+
+</script>
