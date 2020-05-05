@@ -1,4 +1,6 @@
-
+#body, .dashboard-calendar table, .jsgrid-table, .table-type01 table, .table-type03.table-style01 table, .table-type04 table {
+    table-layout: fixed;
+}
 .headingwidth
 {
     width: 18.9%;
@@ -12,10 +14,13 @@
 {
     width: 300px;
 }
+td.email-cell {
+    min-width: 249px;
+}
 .email-cell-content
 
 {
-    width: 280px!important;
+    width: 249px!important;
 }
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
@@ -25,4 +30,11 @@
 }
 .email-alt-row {
     background: #f5f8fc;
+}
+tr.email-filter-row {
+    background: #fff;
+}
+.jsgrid-header-scrollbar
+{
+    overflow-y: auto;
 }
