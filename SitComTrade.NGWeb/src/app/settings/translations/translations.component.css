@@ -20,3 +20,9 @@
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
 }
+.text-ellipsis {
+    width: auto!important;
+}
+.email-alt-row {
+    background: #f5f8fc;
+}
