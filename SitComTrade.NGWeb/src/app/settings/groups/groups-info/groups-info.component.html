@@ -4,7 +4,7 @@
     <div class="account-panel">
       <div class="main-holder">
         <div class="account-main-details">
-          <p>ID: <span class="type"></span>
+          <p>ID: <span class="type">{{groupDetails?.Id}}</span>
            
           </p>
           
@@ -33,25 +33,102 @@
                   
                       <div _ngcontent-xey-c3="" class="container-fluid">
                           <div _ngcontent-xey-c3="" class="row">
-                              <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]">
+                              <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]" [formGroup]="groupsinfoForm">
                                   <table _ngcontent-xey-c3="" class="table" id="generalinfo">
                                       <thead _ngcontent-xey-c3="">
                                           <tr _ngcontent-xey-c3="">
-                                              <th _ngcontent-xey-c3="" class="tabletxt">First Name</th>
+                                              <th _ngcontent-xey-c3="" class="tabletxt">Name</th>
                                               <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                   <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.Name}} </div>
                                                   <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
-                                                      <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="firstName" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                      <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="names" name="name" type="text" ng-reflect-name="name">
                                                   </div>
                                               </td>
-                                              <th _ngcontent-xey-c3="" class="tabletxt">Last Name</th>
+                                              <th _ngcontent-xey-c3="" class="tabletxt">Initial Deposit</th>
                                               <td _ngcontent-xey-c3="" class="text-ellipsis">
-                                                  <div _ngcontent-xey-c3="" class="valueshhow"> Pal </div>
+                                                  <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.InitialDeposit}}</div>
                                                   <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
-                                                      <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="lastName" name="LasttName" type="text" ng-reflect-name="lastName">
+                                                      <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="initialdeposit" name="initialdeposit" type="text" ng-reflect-name="lastName">
                                                   </div>
                                               </td>
                                           </tr>
+                                          <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Margin Call</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.MarginCall}}</div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="margincall" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Order Count</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.OrderCount}} </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="ordercount" name="LasttName" type="text" ng-reflect-name="lastName">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Currency</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.CurrencyName}} </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="currency" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Demo</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <!-- <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.Demo}}</div> -->
+                                                <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': groupDetails.Demo ? 'green':'gray' }"></i></div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="demo" name="LasttName" type="text" ng-reflect-name="lastName">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Stop Out</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.StopOut}} </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="stopout" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Allow Trade</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <!-- <div _ngcontent-xey-c3="" class="valueshhow">{{groupDetails?.AllowTrade}} </div> -->
+                                                <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': groupDetails.Demo ? 'green':'gray' }"></i></div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="allowtrade" name="LasttName" type="text" ng-reflect-name="lastName">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Description</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.Description}}</div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="description" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Leverage</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.LeverageName}} </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="leverage" name="LasttName" type="text" ng-reflect-name="lastName">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Min Deposit</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.MinDeposit}} </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="mindeposit" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                </div>
+                                            </td>
+                                            
+                                            
+                                        </tr>
                                       </thead>
                                      
                                   </table>
@@ -72,26 +149,118 @@
                   <h2 _ngcontent-qoj-c1="">General Info </h2></a>
                   <div _ngcontent-qoj-c1="" class="box-control pull-right">
                    
-                      <div _ngcontent-qoj-c1="" class="edit-data-options" style="display: block;"><a _ngcontent-qoj-c1="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);"><i _ngcontent-qoj-c1="" class="fa fa-check dark">&nbsp;</i>Apply</a>
-                <a _ngcontent-qoj-c1="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg">Cancel</a></div></div></h5>
+                      <div _ngcontent-qoj-c1="" class="edit-data-options" style="display: block;"><a _ngcontent-qoj-c1="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="updateGroupDetails()"><i _ngcontent-qoj-c1="" class="fa fa-check dark" >&nbsp;</i>Apply</a>
+                <a _ngcontent-qoj-c1="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="closehideshow()">Cancel</a></div></div></h5>
                     <div _ngcontent-xey-c3="" class="container-fluid">
                         <div _ngcontent-xey-c3="" class="row">
-                            <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]">
+                            <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]" [formGroup]="groupsinfoForm">
                                 <table _ngcontent-xey-c3="" class="table" id="generalinfo">
                                     <thead _ngcontent-xey-c3="">
                                         <tr _ngcontent-xey-c3="">
-                                            <th _ngcontent-xey-c3="" class="tabletxt">First Name</th>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Name</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                 <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="firstName" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="names" name="name" type="text" ng-reflect-name="name">
                                                 </div>
                                             </td>
-                                            <th _ngcontent-xey-c3="" class="tabletxt">Last Name</th>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Initial Deposit</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                 <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="lastName" name="LasttName" type="text" ng-reflect-name="lastName">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="initialdeposit" name="initialdeposit" type="text" ng-reflect-name="initialdeposit">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Margin Call</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="margincall" name="name" type="text" ng-reflect-name="name">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">OrderCount</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="ordercount" name="initialdeposit" type="text" ng-reflect-name="initialdeposit">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Currency</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="currency" name="name" type="text" ng-reflect-name="name">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Demo</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="demo" name="initialdeposit" type="text" ng-reflect-name="initialdeposit"> -->
+                                                    <label class="switch ">
+                                                        <input type="checkbox" formControlName="demo" class="primary">
+                                                        <span class="slider round" ></span>
+                                                      </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">StopOut</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Allow Trade</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="allowtrade" name="initialdeposit" type="text" ng-reflect-name="initialdeposit"> -->
+                                                    <label class="switch ">
+                                                        <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                        <span class="slider round" ></span>
+                                                      </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Description</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="description" name="name" type="text" ng-reflect-name="name">
+                                                </div>
+                                            </td>
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Leverage</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="leverage" name="initialdeposit" type="text" ng-reflect-name="initialdeposit"> -->
+                                                    <select class="form-control" name="Leverage" formControlName="leverage" data-container="body" data-live-search="true" id="99916a34-3200-ac21-10fd-d4e015e7c6b4" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                                        <option value="">Select...</option>
+                                                        <option value="1">1:1</option>
+                                                        <option value="5">1:5</option>
+                                                        <option value="10">1:10</option>
+                                                        <option value="33">1:33</option>
+                                                        <option value="100">1:100</option>
+                                                        <option value="200">1:200</option>
+                                                        <option value="500">1:500</option>
+                                                        <option value="1000">1:1000</option>
+                                                     </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr _ngcontent-xey-c3="">
+                                            <th _ngcontent-xey-c3="" class="tabletxt">Min Deposit</th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="mindeposit" name="name" type="text" ng-reflect-name="name">
                                                 </div>
                                             </td>
                                         </tr>
