@@ -497,6 +497,8 @@ body {
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 99999;
+    background: #e9ecef;
 }
 .account-switcher>ul>li>.dropdown-menu ul li
     {
@@ -773,6 +775,10 @@ body {
     -webkit-transition: all .3s ease;
     -webkit-transform: scale(0);
     transform: scale(0);
+}
+.jsgrid-grid-body {
+    overflow-y: scroll;
+    height: 440px;
 }
 .email-pager-perpage label {
     display: -webkit-box!important;
