@@ -20,6 +20,6 @@ export class GroupsService {
   }
   // get group details on general info section
   getGroupDetails(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'TradeGroup/GetTradeGroupDetailById/', obj);
+    return this.http.post<any>(API_URL + 'TradeGroup/GetTradeGroupDetailById/' + obj, {});
   }
 }

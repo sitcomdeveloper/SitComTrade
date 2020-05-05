@@ -12,7 +12,6 @@ import { CreateItemComponent } from './create-item/create-item.component';
 export class GroupsComponent implements OnInit {
   getGroupsData: any;
   Group: any;
-  groupDetails: any;
 
   constructor(private groupsService: GroupsService, private router: Router, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
@@ -26,8 +25,8 @@ export class GroupsComponent implements OnInit {
     console.log('getGroup', result);
   });
  }
- getGeneralInfo() {
-   this.router.navigateByUrl('/groups-info');
+ getGeneralInfo(setItem: any) {
+   this.router.navigate(['/groups-info', setItem]);
  }
  newGroup() {
   const initialState = {
@@ -40,12 +39,4 @@ export class GroupsComponent implements OnInit {
     this.getGroups();
   });
 }
-// for general info
-getDetails() {
-  // this.groupsService.getGroupDetails(obj).subscribe(result => {
-  //   this.groupDetails = result;
-  //   console.log('groupDetails', result);
-  // })
-}
-
 }

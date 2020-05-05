@@ -18,17 +18,17 @@
     <div _ngcontent-xey-c1="" id="accordion1" role="tablist">
       <div _ngcontent-xey-c1="" class="card mb20">
           <div _ngcontent-xey-c1="" class="card-header1 container" id="headingOne" role="tab">
-              <h5 _ngcontent-xey-c1="" class="mb-0">
+              <h5 _ngcontent-xey-c1="" class="mb-0" *ngIf=frontend>
                 <a _ngcontent-xey-c1="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="">
                   <h2 _ngcontent-xey-c1="">General Info </h2></a>
                   <div _ngcontent-xey-c1="" class="box-control pull-right">
-                    <div _ngcontent-xey-c1="" class="pencil" id="edit12"><i _ngcontent-xey-c1="" aria-hidden="true" class="fa fa-pencil "></i>
+                    <div _ngcontent-xey-c1="" class="pencil" id="edit12"><i _ngcontent-xey-c1="" aria-hidden="true" class="fa fa-pencil " (click)="hideshow()"></i>
                     </div>
                    
                     </div>
                   </h5>
                 </div>
-          <div _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel">
+          <div _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel" *ngIf=frontend>
               <div _ngcontent-xey-c1="" class="card-body">
                   
                       <div _ngcontent-xey-c3="" class="container-fluid">
@@ -39,7 +39,7 @@
                                           <tr _ngcontent-xey-c3="">
                                               <th _ngcontent-xey-c3="" class="tabletxt">First Name</th>
                                               <td _ngcontent-xey-c3="" class="text-ellipsis ">
-                                                  <div _ngcontent-xey-c3="" class="valueshhow"> Shank </div>
+                                                  <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.Name}} </div>
                                                   <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
                                                       <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="firstName" name="FirstName" type="text" ng-reflect-name="firstName">
                                                   </div>
@@ -64,10 +64,11 @@
 
 <br><br><br><br>
           <!-------------------------------------->
-          <div _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel" style="display:none">
+         
+          <div *ngIf=backend _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel" >
             <div _ngcontent-xey-c1="" class="card-body">
               <h5 _ngcontent-qoj-c1="" class="mb-0">
-                <a _ngcontent-qoj-c1="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="">
+                <a _ngcontent-qoj-c1="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="" >
                   <h2 _ngcontent-qoj-c1="">General Info </h2></a>
                   <div _ngcontent-qoj-c1="" class="box-control pull-right">
                    
@@ -81,15 +82,15 @@
                                         <tr _ngcontent-xey-c3="">
                                             <th _ngcontent-xey-c3="" class="tabletxt">First Name</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis ">
-                                                <div _ngcontent-xey-c3="" class="valueshhow"> Shank </div>
-                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                     <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="firstName" name="FirstName" type="text" ng-reflect-name="firstName">
                                                 </div>
                                             </td>
                                             <th _ngcontent-xey-c3="" class="tabletxt">Last Name</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis">
-                                                <div _ngcontent-xey-c3="" class="valueshhow"> Pal </div>
-                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                <div _ngcontent-xey-c3="" class="valueshhow">  </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                     <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="lastName" name="LasttName" type="text" ng-reflect-name="lastName">
                                                 </div>
                                             </td>
