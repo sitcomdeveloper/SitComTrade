@@ -12,6 +12,7 @@ import { CreateItemComponent } from './create-item/create-item.component';
 export class GroupsComponent implements OnInit {
   getGroupsData: any;
   Group: any;
+  groupDetails: any;
 
   constructor(private groupsService: GroupsService, private router: Router, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
@@ -21,7 +22,7 @@ export class GroupsComponent implements OnInit {
   }
  getGroups() {
   this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
-    this.Group = result;
+    this.Group = result.reverse();
     console.log('getGroup', result);
   });
  }
@@ -38,6 +39,13 @@ export class GroupsComponent implements OnInit {
   this.bsModalRef.content.clddata.subscribe(data => {
     this.getGroups();
   });
+}
+// for general info
+getDetails() {
+  // this.groupsService.getGroupDetails(obj).subscribe(result => {
+  //   this.groupDetails = result;
+  //   console.log('groupDetails', result);
+  // })
 }
 
 }

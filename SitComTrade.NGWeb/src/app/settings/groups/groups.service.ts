@@ -18,4 +18,8 @@ export class GroupsService {
   addTradeGroups(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'TradeGroup/InsertTradeGroup', obj);
   }
+  // get group details on general info section
+  getGroupDetails(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'TradeGroup/GetTradeGroupDetailById/', obj);
+  }
 }

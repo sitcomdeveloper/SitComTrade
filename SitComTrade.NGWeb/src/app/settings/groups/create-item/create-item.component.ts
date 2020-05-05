@@ -29,13 +29,13 @@ export class CreateItemComponent implements OnInit {
       stopout: ['', [Validators.required]],
       margincall: ['', [Validators.required]],
       ordercount: ['', [Validators.required]],
-      demo: ['', [Validators.required]],
+      demo: [''],
       mindeposit: ['', [Validators.required]],
-      allowtrade: ['', [Validators.required]],
+      allowtrade: [''],
       currencyname: ['', [Validators.required]],
       leveragename: ['', [Validators.required]],
-      currencyid: ['', [Validators.required]],
-      leverageid: ['', [Validators.required]]
+      currencyid: [''],
+      leverageid: ['']
     });
     this.currency();
   }
@@ -49,11 +49,11 @@ export class CreateItemComponent implements OnInit {
 // add new group
   addGroup() {
     if (this.newGroupForm.valid) {
-    this.getAllCurrency.array.forEach(element => {
-      if ( element.Id === +this.newGroupForm.value.currencyname) {
-        this.newGroupForm.value.currencyid = element.Name;
-      }
-    });
+    // this.getAllCurrency.array.forEach(element => {
+    //   if ( element.Id === +this.newGroupForm.value.currencyname) {
+    //     this.newGroupForm.value.currencyid = element.Name;
+    //   }
+    // });
     const obj = {
       Name: this.newGroupForm.value.name,
       Description: this.newGroupForm.value.description,
@@ -66,7 +66,7 @@ export class CreateItemComponent implements OnInit {
       AllowTrade: this.newGroupForm.value.allowtrade,
       CurrencyId: 1,
       CurrencyName: this.newGroupForm.value.currencyname,
-      LeverageId: this.newGroupForm.value.leveragename,
+      LeverageId: 1,
       LeverageName: this.newGroupForm.value.leveragename
 
     };

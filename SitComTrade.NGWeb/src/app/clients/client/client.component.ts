@@ -66,7 +66,7 @@ changePageSize: any;
     // this.router.navigateByUrl('/info');
     // console.log('Selected item Id: ', selectedItem.ItemId);
     console.log(selectedItem);
-    this.router.navigate(['/info', selectedItem, {skipLocationChange: true}]);
+    this.router.navigate(['/info', selectedItem]);
         // this.router.navigate(['/client-info', userid]);
 
   }
