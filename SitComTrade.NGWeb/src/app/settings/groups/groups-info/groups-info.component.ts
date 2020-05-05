@@ -11,7 +11,7 @@ export class GroupsInfoComponent implements OnInit {
   info: number;
   groupDetails: any;
   frontend = true;
-  backend = true;
+  backend = false;
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService) { }
 
   ngOnInit() {
