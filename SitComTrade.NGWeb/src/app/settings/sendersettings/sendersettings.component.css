@@ -1,66 +1,22 @@
 
-.sub-header{
-    position: relative;
-    z-index: 10;
-    padding: 35px 0 0;
-    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
-    color: #fff;
-   height: 82px;
-    margin:0px 15px;
-}
-.breadcrumb
+.headingwidth
 {
-    margin-left: 5px;
-    margin-top:-32px;
-   padding:0px;
+    width: 18.9%;
 }
-.crumb
-{
-    padding-left: 50px;
+.text-ellipsis {
+    
+    width:auto;
 }
-.main-tab{
-    padding-left: 51px;
-}
-.tab{
-    background-color:white;
-    border-radius:2px;
-    width: 295px;
-    height: 38px;
-    padding: 4px 4px 4px 4px;
-    text-align:center;
-    font-size: 18px;
-}
-.main-tab .tab li{
-    display: inline-block;
-    padding:2px;
-}
-.main-tab .tab li a{
-    text-decoration: none;
-    text-align: center;
-    margin: 0;
-    padding: 14px 7px;
-    min-width: 90px;
-    line-height: 19px;
-}
- .text{
-    font-size:12px;
-    cursor:pointer;
-    padding-right:0px;
-}
+.email-cell-content:first-child
 
-.btn {
-    background-color: #159ac9; 
-    border: none; 
-    color: white;
-    padding: 7px 17px; 
-    font-size: 16px; 
-    cursor: pointer;
-  }
-.btn btn-primary,.btn btn-primary dropdown-toggle dropdown-toggle-split
 {
-    padding-left:12px;
+    width: 400px;
 }
-.btn btn-primary dropdown-toggle dropdown-toggle-split
+.email-cell-content
+
 {
-    margin-left:12px;
+    width: 357px!important;
+}
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
 }
