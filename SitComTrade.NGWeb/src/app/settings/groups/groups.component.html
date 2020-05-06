@@ -81,7 +81,7 @@
                            <tbody>
                               <tr class="email-header-row">
                                  <th class="email-header-cell email-align-center" >
-                                    <div class="email-cell-content">
+                                    <div class="email-cell-content1">
                                        <div class="input-checkbox"><span><input type="checkbox"></span></div>
                                     </div>
                                  </th>
@@ -124,7 +124,7 @@
                               </tr>
                               <tr class="email-filter-row">
                                  <td class="email-cell email-align-center" style="width: 20px;">
-                                    <div class="email-cell-content">
+                                    <div class="email-cell-content1">
                                        <i class="custom-close" title="Clear filter"><span>x</span></i>
                                     </div>
                                  </td>
@@ -352,7 +352,7 @@
                                     <span _ngcontent-lrx-c3=""><i _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i></span>
                                     </td>
                               </tr>
-                              <tr class="email-insert-row" style="display: none;">
+                              <!-- <tr class="email-insert-row" style="display: none;">
                                  <td class="email-cell email-align-center" style="width: 20px;">
                                     <div class="input-checkbox"><span><input type="checkbox"></span></div>
                                  </td>
@@ -401,63 +401,63 @@
                                              <i _ngcontent-oov-c3="" _ngcontent-ktw-c1="" aria-hidden="true" class="fas fa-pencil-alt greyiconnn" disabled=""></i></a>
                                             </div>
                                  </td>
-                              </tr>
+                              </tr> -->
                            </tbody>
                         </table>
                      </div>
-                     <div class="email-grid-body" style="height: 407px;">
-                        <table class="email-table" style="width: 1306px;">
+                     <div class="email-grid-body" >
+                        <table class="email-table" >
                            <tbody>
                               <tr class="email-row" *ngFor="let group of Group">
-                                 <td class="email-cell email-align-center" style="width: 46px;">
-                                    <div class="email-cell-content">
+                                 <td class="email-cell email-align-center">
+                                    <div class="email-cell-content1">
                                        <div class="input-checkbox"><span>
                                           
                                           <input type="checkbox" data-item-selector="true"></span>
                                        </div>
                                     </div>
                                  </td>
-                                 <td class="email-cell" style="width: 221px;" (click)="getGeneralInfo(group.Id)">
+                                 <td class="email-cell"  (click)="getGeneralInfo(group.Id)">
                                     <div class="email-cell-content">
                                        <div class="text-ellipsis" data-original-title="" title=""><a href="javascript:void(0);"><span>{{group.Name}}</span></a></div>
                                     </div>
                                  </td>
-                                 <td class="email-cell" style="width: 199px;">
+                                 <td class="email-cell" >
                                     <div class="email-cell-content">
                                        <div data-display-for="10_Description">
                                           <div class="text-ellipsis" data-field="Description" data-original-value="TradePro Markets Limited USD" data-original-title="" title="">{{group.Description}}</div>
                                        </div>
                                     </div>
                                  </td>
-                                 <td class="email-cell" style="width: 184px;">
+                                 <td class="email-cell" >
                                     <div class="email-cell-content">
                                        <div data-display-for="10_InitialDeposit">
                                           <div class="text-ellipsis" data-field="InitialDeposit" data-original-value="0">{{group.InitialDeposit}}</div>
                                        </div>
                                     </div>
                                  </td>
-                                 <td class="email-cell email-align-center" style="width: 174px;">
+                                 <td class="email-cell email-align-center" >
                                     <div class="email-cell-content">
                                        <div data-display-for="10_IsDemo">
-                                          <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': group.Demo ? 'green':'gray' }"></i></div>
+                                          <div class="text-center"><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': group.Demo ? 'green':'gray' }"></i></div>
                                        </div>
                                     </div>
                                  </td>
-                                 <td class="email-cell email-align-left" style="width: 167px;">
+                                 <td class="email-cell email-align-left" >
                                     <div class="email-cell-content">
                                        <div data-display-for="10_Currency">
                                           <div class="text-ellipsis">{{group.CurrencyName}}</div>
                                        </div>
                                     </div>
                                  </td>
-                                 <td class="email-cell email-align-center" style="width: 160px;">
+                                 <td class="email-cell email-align-center" >
                                     <div class="email-cell-content">
                                        <div data-display-for="10_AllowTrade">
-                                          <div><i _ngcontent-ixd-c3="" _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': group.AllowTrade ? 'green':'gray' }"></i></div>
+                                          <div class="text-center"><i _ngcontent-ixd-c3="" _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': group.AllowTrade ? 'green':'gray' }"></i></div>
                                        </div>
                                     </div>
                                  </td>
-                                 <td class="email-cell email-control-field email-align-center" style="width: 155px;">
+                                 <td class="email-cell email-control-field email-align-center" >
                                     <div _ngcontent-oov-c3="" class="dropleft droptop">
                                        <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
                                           <i _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-link greyiconnn"></i></a>
@@ -476,7 +476,7 @@
                      <div class="email-load-shader" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000; display: none;"></div>
                      <div class="email-load-panel" style="position: absolute; top: 50%; left: 50%; z-index: 1000; margin-top: -37.5px; margin-left: -112.5px; display: none;">Please, wait...</div>
                   </div>
-                  <div class="row padd18">
+                  <div class="row padd18 fxdpsn">
                      <div class="col-md-6">
                      <div class="copy">
                         <p>© 2020 Trade Fx CRM </p>
