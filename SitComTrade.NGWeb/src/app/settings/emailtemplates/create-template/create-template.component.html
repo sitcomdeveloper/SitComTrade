@@ -1,3 +1,9 @@
+<div class="modal-header">
+   <h4 class="modal-title pull-left">{{title}} </h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+       <span aria-hidden="true">&times;</span>
+   </button>
+</div>
 <div class="form-holder">
     <form class="form-horizontal" novalidate="novalidate">
        <div class="form-group">
@@ -48,7 +54,7 @@
  <div _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
     <div _ngcontent-xfs-c7="" class="text-center">
        <a _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
-   <a _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);">Cancel</a>
+   <a _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a>
 </div>
 </div>
 </div>

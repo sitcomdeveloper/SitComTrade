@@ -11,7 +11,7 @@ export class TranslationsService {
 
   constructor(private http: HttpClient) { }
   // get all translations
-  getTranslations(obj: any): Observable<any> {
-    return this.http.post<any>('translations.json', obj);
+  getTranslations(): Observable<any> {
+    return this.http.get<any>('translations.json');
   }
 }

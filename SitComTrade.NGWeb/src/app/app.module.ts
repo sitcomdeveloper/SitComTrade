@@ -195,7 +195,8 @@ import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.c
     // ToastrModule.forRoot()
 
   ],
-  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent],
+  entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
+    CreateTemplateComponent],
   exports: [
     PhoneMaskDirective, TooltipDirective
   ],

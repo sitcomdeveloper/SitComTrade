@@ -13,8 +13,8 @@ export class TranslationsComponent implements OnInit {
   ngOnInit() {
   }
   // get translations data
-  getTranslationsData(obj: any) {
-    this.translationsService.getTranslations(obj).subscribe( res => {
+  getTranslationsData() {
+    this.translationsService.getTranslations().subscribe( res => {
       this.translations = res;
       console.log('translations', res);
     });
