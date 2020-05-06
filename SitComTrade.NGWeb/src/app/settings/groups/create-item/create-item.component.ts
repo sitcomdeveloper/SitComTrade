@@ -50,11 +50,16 @@ export class CreateItemComponent implements OnInit {
 // add new group
   addGroup() {
     if (this.newGroupForm.valid) {
-    // this.getAllCurrency.array.forEach(element => {
+    // this.getAllCurrency.forEach(element => {
     //   if ( element.Id === +this.newGroupForm.value.currencyname) {
     //     this.newGroupForm.value.currencyid = element.Name;
     //   }
     // });
+    for ( let i = 0; i < this.getAllCurrency.length; i++)  {
+      if (this.getAllCurrency[i].Id === +this.newGroupForm.value.currencyname) {
+        this.newGroupForm.value.currencyid = this.getAllCurrency[i].Name;
+      }
+    }
     const obj = {
       Name: this.newGroupForm.value.name,
       Description: this.newGroupForm.value.description,

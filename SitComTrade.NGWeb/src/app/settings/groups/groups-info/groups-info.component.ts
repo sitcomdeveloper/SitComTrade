@@ -19,6 +19,7 @@ export class GroupsInfoComponent implements OnInit {
   updatedDetails: any;
   getGroupsData: any;
   Group: any;
+  groupid: number;
   getAllCurrency: any;
   currencies: any;
   submitted: any;
@@ -43,6 +44,7 @@ export class GroupsInfoComponent implements OnInit {
     });
     // for getting data for general-info
     const info = +this.route.snapshot.paramMap.get('setItem');
+    this.groupid = info;
     console.log(info);
     this.groupService.getGroupDetails(info).subscribe(res => {
       this.groupDetails = res;
@@ -106,7 +108,7 @@ export class GroupsInfoComponent implements OnInit {
     };
     this.groupService.updateGroup(obj).subscribe(res => {
   this.updatedDetails = res;
-  this.getGroups();
+  this.rohan();
   this.frontend = true;
   this.backend = false;
   
@@ -114,6 +116,10 @@ export class GroupsInfoComponent implements OnInit {
   console.log('updatedDetails', res);
 });
   }
-
+rohan() {
+  this.groupService.getGroupDetails(this.groupid).subscribe(res => {
+    this.groupDetails = res;
+  })
+}
 }
 
