@@ -55,9 +55,9 @@ changePageSize: any;
     });
   }, 10000);
   }
-  refresh(): void {
-    window.location.reload();
-}
+//   refresh(): void {
+//     window.location.reload();
+// }
   userClick(selectedItem: any) {
     // let userid = selectedItem;
     // localStorage.clear();

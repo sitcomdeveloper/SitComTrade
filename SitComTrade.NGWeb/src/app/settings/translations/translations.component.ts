@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslationsService } from './translations.service';
 
 @Component({
   selector: 'app-translations',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./translations.component.css']
 })
 export class TranslationsComponent implements OnInit {
-
-  constructor() { }
+  translations: any;
+  constructor(private translationsService: TranslationsService) { }
 
   ngOnInit() {
+  }
+  // get translations data
+  getTranslationsData(obj: any) {
+    this.translationsService.getTranslations(obj).subscribe( res => {
+      this.translations = res;
+      console.log('translations', res);
+    });
   }
 
 }
