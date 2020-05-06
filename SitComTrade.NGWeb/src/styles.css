@@ -500,6 +500,49 @@ body {
     z-index: 99999;
     background: #e9ecef;
 }
+.sidenav h2 {
+    margin: 0 0 3px;
+    font: 700 18px/22px Poppins,Arial,sans-serif;
+    -webkit-margin-before: 0.83em;
+}
+
+.sidenav{
+    padding: 34px 45px;
+    border-radius: 3px 0 0 3px;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: linear-gradient(135deg,#257dc6 0,#0d538d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#257dc6', endColorstr='#0d538d', GradientType=1 );
+    color: #fff;
+}
+.sidenav ul {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 30px 0 0;
+    margin: 30px -45px 0;
+    list-style: none;
+    border: 1px solid #4095db;
+    border-width: 1px 0 0;
+}
+.sidenav ul li {
+    padding: 0 0 0 20px;
+}
+.sidenav ul li a{
+    position: relative;
+    display: block;
+    padding: 11px 50px;
+    border-radius: 24px 0 0 24px;
+    color: #99cbf3;
+}
+.sidenav ul li a i{
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    bottom: 0;
+    margin: auto 0;
+}
+.disabledd:hover {
+    cursor:not-allowed
+ }
 .account-switcher>ul>li>.dropdown-menu ul li
     {
         position: relative;

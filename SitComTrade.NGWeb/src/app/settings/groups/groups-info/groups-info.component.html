@@ -34,7 +34,7 @@
                       <div _ngcontent-xey-c3="" class="container-fluid">
                           <div _ngcontent-xey-c3="" class="row">
                               <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]" [formGroup]="groupsinfoForm">
-                                  <table _ngcontent-xey-c3="" class="table" id="generalinfo">
+                                  <table _ngcontent-xey-c3="" class="table " id="generalinfo">
                                       <thead _ngcontent-xey-c3="">
                                           <tr _ngcontent-xey-c3="">
                                               <th _ngcontent-xey-c3="" class="tabletxt">Name</th>
@@ -126,7 +126,13 @@
                                                     <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="mindeposit" name="FirstName" type="text" ng-reflect-name="firstName">
                                                 </div>
                                             </td>
-                                            
+                                            <th _ngcontent-xey-c3="" class="tabletxt"></th>
+                                            <td _ngcontent-xey-c3="" class="text-ellipsis ">
+                                                <div _ngcontent-xey-c3="" class="valueshhow"> </div>
+                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
+                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="mindeposit" name="FirstName" type="text" ng-reflect-name="firstName">
+                                                </div>
+                                            </td>
                                             
                                         </tr>
                                       </thead>
@@ -139,11 +145,11 @@
               </div>
           </div>
 
-<br><br><br><br>
+
           <!-------------------------------------->
          
-          <div *ngIf=backend _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel" >
-            <div _ngcontent-xey-c1="" class="card-body">
+          <div *ngIf=backend _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show card-header1 container" id="collapseOne" role="tabpanel" >
+            <div _ngcontent-xey-c1="" class="card-body1">
               <h5 _ngcontent-qoj-c1="" class="mb-0">
                 <a _ngcontent-qoj-c1="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="" >
                   <h2 _ngcontent-qoj-c1="">General Info </h2></a>
@@ -154,7 +160,7 @@
                     <div _ngcontent-xey-c3="" class="container-fluid">
                         <div _ngcontent-xey-c3="" class="row">
                             <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]" [formGroup]="groupsinfoForm">
-                                <table _ngcontent-xey-c3="" class="table" id="generalinfo">
+                                <table _ngcontent-xey-c3="" class="table bordertable" id="generalinfo">
                                     <thead _ngcontent-xey-c3="">
                                         <tr _ngcontent-xey-c3="">
                                             <th _ngcontent-xey-c3="" class="tabletxt">Name</th>
@@ -194,7 +200,7 @@
                                                 <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                     <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="currency" name="name" type="text" ng-reflect-name="name"> -->
-                                                    <select class="form-control" name="Currency" formControlName="currency" data-container="body" data-live-search="true" id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+                                                    <select class="form-control disabledd" name="Currency" formControlName="currency" data-container="body" data-live-search="true" id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
                                                         <option value="">Select...</option>
                                                         <option *ngFor="let data of getAllCurrency">{{data.Name}}</option>
                                                      </select>
@@ -286,14 +292,8 @@
        <div _ngcontent-rio-c13="" class="sidenav" style="display: block;">
           <h2 _ngcontent-rio-c13="">Actions</h2>
           <ul _ngcontent-rio-c13="" style="display: block;">
-             <li _ngcontent-rio-c13=""><a _ngcontent-rio-c13="" href="javascript:void(0);"><i _ngcontent-rio-c13="" class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
-          </ul>
-          <ul _ngcontent-rio-c13="" style="display: block;">
-             <li _ngcontent-rio-c13=""><a _ngcontent-rio-c13="" href="javascript:void(0);"><i _ngcontent-rio-c13="" class="fa fa-refresh">&nbsp;</i>Add task</a></li>
-             <li _ngcontent-rio-c13=""><a _ngcontent-rio-c13="" href="javascript:void(0);"><i _ngcontent-rio-c13="" class="fa fa-envelope">&nbsp;</i>Send email</a></li>
-             <li _ngcontent-rio-c13=""><a _ngcontent-rio-c13="" href="javascript:void(0);"><i _ngcontent-rio-c13="" class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
-             <li _ngcontent-rio-c13=""><a _ngcontent-rio-c13="" href="javascript:void(0);"><i _ngcontent-rio-c13="" class="fa fa-history">&nbsp;</i>View history</a></li>
-          </ul>
+            <li _ngcontent-rio-c13=""><a _ngcontent-rio-c13="" href="javascript:void(0);"><i _ngcontent-rio-c13="" class="fa fa-history">&nbsp;</i>View history</a></li>          </ul>
+         
        </div>
     </div>
  </div>
