@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GroupsService } from '../groups.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
   selector: 'app-groups-info',
@@ -15,7 +16,10 @@ export class GroupsInfoComponent implements OnInit {
   backend = false;
   groupsinfoForm: FormGroup;
   updatedDetails: any;
-  constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder) { }
+  getGroupsData: any;
+  Group: any;
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
@@ -63,9 +67,16 @@ export class GroupsInfoComponent implements OnInit {
     this.frontend = true;
     this.backend = false;
   }
+  getGroups() {
+    this.groupService.getTradeGroups(this.getGroupsData).subscribe(result => {
+      this.Group = result.reverse();
+      console.log('getGroup', result);
+    });
+   }
   // updateGroupDetails
   updateGroupDetails() {
     const obj = {
+      Id: this.groupDetails.Id,
       Name: this.groupsinfoForm.value.names,
       Description: this.groupsinfoForm.value.description,
       InitialDeposit: this.groupsinfoForm.value.initialdeposit,
@@ -82,6 +93,11 @@ export class GroupsInfoComponent implements OnInit {
     };
     this.groupService.updateGroup(obj).subscribe(res => {
   this.updatedDetails = res;
+  this.getGroups();
+  this.frontend = true;
+  this.backend = false;
+  
+  this.spinnerService.show();
   console.log('updatedDetails', res);
 });
   }
