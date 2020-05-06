@@ -18,7 +18,7 @@
     <div _ngcontent-xey-c1="" id="accordion1" role="tablist">
       <div _ngcontent-xey-c1="" class="card mb20">
           <div _ngcontent-xey-c1="" class="card-header1 container" id="headingOne" role="tab">
-              <h5 _ngcontent-xey-c1="" class="mb-0" *ngIf=frontend>
+              <h5 _ngcontent-xey-c1="" class="mb-0 padd18" *ngIf=frontend>
                 <a _ngcontent-xey-c1="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="">
                   <h2 _ngcontent-xey-c1="">General Info </h2></a>
                   <div _ngcontent-xey-c1="" class="box-control pull-right">
@@ -28,7 +28,7 @@
                     </div>
                   </h5>
                 </div>
-          <div _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel" *ngIf=frontend>
+          <div _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show padd18" id="collapseOne" role="tabpanel" *ngIf=frontend>
               <div _ngcontent-xey-c1="" class="card-body">
                   
                       <div _ngcontent-xey-c3="" class="container-fluid">
@@ -150,14 +150,14 @@
          
           <div *ngIf=backend _ngcontent-xey-c1="" aria-labelledby="headingOne" class="collapse show card-header1 container" id="collapseOne" role="tabpanel" >
             <div _ngcontent-xey-c1="" class="card-body1">
-              <h5 _ngcontent-qoj-c1="" class="mb-0">
+              <h5 _ngcontent-qoj-c1="" class="mb-0 padd18">
                 <a _ngcontent-qoj-c1="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="" >
                   <h2 _ngcontent-qoj-c1="">General Info </h2></a>
-                  <div _ngcontent-qoj-c1="" class="box-control pull-right">
+                  <div _ngcontent-qoj-c1="" class="box-control pull-right ">
                    
                       <div _ngcontent-qoj-c1="" class="edit-data-options" style="display: block;"><a _ngcontent-qoj-c1="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="updateGroupDetails()"><i _ngcontent-qoj-c1="" class="fa fa-check dark" >&nbsp;</i>Apply</a>
                 <a _ngcontent-qoj-c1="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="closehideshow()">Cancel</a></div></div></h5>
-                    <div _ngcontent-xey-c3="" class="container-fluid">
+                    <div _ngcontent-xey-c3="" class="container-fluid padd18">
                         <div _ngcontent-xey-c3="" class="row">
                             <form _ngcontent-xey-c3="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]" [formGroup]="groupsinfoForm">
                                 <table _ngcontent-xey-c3="" class="table bordertable" id="generalinfo">
@@ -200,7 +200,7 @@
                                                 <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                     <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="currency" name="name" type="text" ng-reflect-name="name"> -->
-                                                    <select class="form-control disabledd" name="Currency" formControlName="currency" data-container="body" data-live-search="true" id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+                                                    <select class="form-control disabledd" name="Currency" formControlName="currency" data-container="body" data-live-search="true" onmousedown = 'return false' onselectstart = 'return false' id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
                                                         <option value="">Select...</option>
                                                         <option *ngFor="let data of getAllCurrency">{{data.Name}}</option>
                                                      </select>
@@ -209,11 +209,11 @@
                                             <th _ngcontent-xey-c3="" class="tabletxt">Demo</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                 <div _ngcontent-xey-c3="" class="valueshhow">  </div>
-                                                <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
+                                                <div _ngcontent-xey-c3="" class="value-edit " data-rule="valueEdit">
                                                     <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="demo" name="initialdeposit" type="text" ng-reflect-name="initialdeposit"> -->
-                                                    <label class="switch ">
-                                                        <input type="checkbox" formControlName="demo" class="primary">
-                                                        <span class="slider round" ></span>
+                                                    <label class="switch "  >
+                                                        <input type="checkbox" formControlName="demo" class="primary " disabled >
+                                                        <span class="slider round disabledd"  onmousedown = 'return false' onselectstart = 'return false'></span>
                                                       </label>
                                                 </div>
                                             </td>
