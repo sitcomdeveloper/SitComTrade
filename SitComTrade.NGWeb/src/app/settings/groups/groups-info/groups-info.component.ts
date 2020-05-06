@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GroupsService } from '../groups.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
   selector: 'app-groups-info',
@@ -18,8 +19,11 @@ export class GroupsInfoComponent implements OnInit {
   updatedDetails: any;
   getGroupsData: any;
   Group: any;
+  getAllCurrency: any;
+  currencies: any;
   // tslint:disable-next-line: max-line-length
-  constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
+    private currencyService: CurrencyService) { }
 
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
@@ -56,6 +60,7 @@ export class GroupsInfoComponent implements OnInit {
 
     });
     });
+    this.currency();
   }
   // hide front div and show back div(by click on pencil)
   hideshow() {
@@ -66,6 +71,12 @@ export class GroupsInfoComponent implements OnInit {
   closehideshow() {
     this.frontend = true;
     this.backend = false;
+  }
+  currency() {
+    this.currencyService.currencyName(this.currencies).subscribe(res => {
+      this.getAllCurrency = res;
+      console.log('currency', res);
+    });
   }
   getGroups() {
     this.groupService.getTradeGroups(this.getGroupsData).subscribe(result => {

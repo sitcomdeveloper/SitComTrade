@@ -79,7 +79,7 @@
                                             <th _ngcontent-xey-c3="" class="tabletxt">Demo</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                 <!-- <div _ngcontent-xey-c3="" class="valueshhow"> {{groupDetails?.Demo}}</div> -->
-                                                <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': groupDetails.Demo ? 'green':'gray' }"></i></div>
+                                                <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': groupDetails?.Demo ? 'green':'gray' }"></i></div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
                                                     <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="demo" name="LasttName" type="text" ng-reflect-name="lastName">
                                                 </div>
@@ -96,7 +96,7 @@
                                             <th _ngcontent-xey-c3="" class="tabletxt">Allow Trade</th>
                                             <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                 <!-- <div _ngcontent-xey-c3="" class="valueshhow">{{groupDetails?.AllowTrade}} </div> -->
-                                                <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': groupDetails.AllowTrade ? 'green':'gray' }"></i></div>
+                                                <div><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': groupDetails?.AllowTrade ? 'green':'gray' }"></i></div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" style="display:none;">
                                                     <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="allowtrade" name="LasttName" type="text" ng-reflect-name="lastName">
                                                 </div>
@@ -193,7 +193,11 @@
                                             <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                 <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                 <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                    <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="currency" name="name" type="text" ng-reflect-name="name">
+                                                    <!-- <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="currency" name="name" type="text" ng-reflect-name="name"> -->
+                                                    <select class="form-control" name="Currency" formControlName="currency" data-container="body" data-live-search="true" id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+                                                        <option value="">Select...</option>
+                                                        <option *ngFor="let data of getAllCurrency">{{data.Name}}</option>
+                                                     </select>
                                                 </div>
                                             </td>
                                             <th _ngcontent-xey-c3="" class="tabletxt">Demo</th>
