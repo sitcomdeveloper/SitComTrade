@@ -98,6 +98,7 @@ import { TooltipDirective } from './common/directives/tooltip.directive';
 import { InfoDocumentsComponent } from './clients_info/info-documents/info-documents.component';
 import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
+import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
 
 @NgModule({
   declarations: [
@@ -182,6 +183,7 @@ import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.c
     InfoDocumentsComponent,
     InfoCasesComponent,
     GroupsInfoComponent,
+    TranslationsFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -196,7 +198,7 @@ import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.c
 
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent],
+    CreateTemplateComponent,TranslationsFilterComponent],
   exports: [
     PhoneMaskDirective, TooltipDirective
   ],

@@ -1,4 +1,127 @@
+<div class="subheader">
+  <div class="account-panel">
+    <div class="main-holder">
+      <div class="account-main-details">
+        <p>ID: {{userGenralinfo?.ItemId}}<span class="type">{{userGenralinfo?.TypeName}}</span>
+         
+        </p>
+        <h2>{{userGenralinfo?.FirstName}} {{userGenralinfo?.LastName}}</h2>
+      </div>
+      <div class="account-details" *ngIf="realAccountSection">
+        <dl>
+           <dt>Open P&amp;L</dt>
+           <dd><span class="color06">$ -202.79</span></dd>
+        </dl>
+        <dl>
+           <dt>CloseP&amp;L</dt>
+           <dd><span class="color05">$ 8.70</span></dd>
+        </dl>
+        <dl>
+           <dt>Deposit</dt>
+           <dd><span class="color05">$ 1'105.93</span></dd>
+        </dl>
+        <dl>
+           <dt>Withdrawal</dt>
+           <dd><span class="">$ 0.00</span></dd>
+        </dl>
+        <dl>
+           <dt>Net Deposit</dt>
+           <dd><span class="color05">$ 1'105.93</span></dd>
+        </dl>
+        <dl>
+           <dt>Credit</dt>
+           <dd><span class="">$ 0.00</span></dd>
+        </dl>
+     </div>
+    </div>
+    <a class="history-back-link page-prev" href="">
+      <i class="fa fa-chevron-left"></i></a>
+  </div>
+  <div class="account-nav-panel">
+    <div class="main-holder">
+      <div class="account-nav">
+        <ul id="navPanel" style="    padding: 14px;
+    padding-left: 0;">
+          <li>
+            <a href="#tasks" class="common">Tasks</a>
+          </li>
+          <li *ngIf="realAccountSection">
+            <a href="#" class="common">Trade Accounts</a>
+          </li>
+          <li>
+            <a href="#emails" class="common">Emails</a>
+          </li>
+          <li *ngIf="realAccountSection">
+            <a href="#" class="common">Financial Transactions</a>
+          </li>
+          <li *ngIf="realAccountSection">
+            <a href="#" class="common">Documents</a>
+          </li>
+          <li>
+            <a href="#sent-sms" class="common">Sms</a>
+          </li>
+          <li *ngIf="realAccountSection">
+            <a href="#" class="common">Cases</a>
+          </li>
+          <li>
+            <a href="#registrationHistorys" class="common">RegistrationHistory</a>
+          </li>
+        </ul>
+      </div>
 
+      <div class="account-switcher">
+        <ul>
+           <li><a class=" no-events link-prev" routerLink=""><i class="fa fa-chevron-left" ></i></a></li>
+           <li>
+              <a aria-expanded="true" class="link-control dropdown-toggle dropdown-toggle1" data-toggle="dropdown" href="#" role="button">
+                <i class="fa fa-equals" style="font-size: 33px;top:8px;left: 13px;">=</i>
+              </a>
+              <div class="dropdown-menu pull-right">
+                 <p>Jump to clients:</p>
+                 <ul *ngFor="let data of rowData">
+                    <li class="active" (click)="sendData(data.Id)"><a href="javascript:void(0);">{{data.FirstName}} {{data.LastName}}</a></li>
+                    
+                 </ul>
+              </div>
+           </li>
+           <li><a class="link-next disabled" href=""><i class="fa fa-chevron-right"></i></a></li>
+        </ul>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb20">
+  <div class="card-header1 container" role="tab" id="headingOne">
+    <h5 class="mb-0">
+      <a class="box-heading" data-toggle="" aria-expanded="true" aria-controls="collapseOne">
+        <h2>General Info
+        </h2>
+
+      </a>
+      <div class="box-control pull-right">
+        <div class="pencil" id="edit" >
+          <i class="fa fa-pencil " aria-hidden="true"></i>
+        </div>
+        
+        <div class="edit-data-options">
+          <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
+            data-action="apply">
+            <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+          <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel">Cancel</a></div>
+      </div>
+    </h5>
+  </div>
+
+  <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+    <div class="card-body">
+
+      <!-- <app-general-info></app-general-info> -->
+    </div>
+  </div>
+</div>
+
+<!-- General Info -->
 <div class="container-fluid">
   <div class="row">
     <form [formGroup]="userInfoForm" class="width100">

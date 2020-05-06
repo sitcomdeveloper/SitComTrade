@@ -21,6 +21,8 @@ export class GroupsInfoComponent implements OnInit {
   Group: any;
   getAllCurrency: any;
   currencies: any;
+  submitted: any;
+  f: any;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
     private currencyService: CurrencyService) { }

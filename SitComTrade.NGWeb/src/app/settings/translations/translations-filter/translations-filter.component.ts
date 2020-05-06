@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+
 @Component({
-  selector: 'app-create-template',
-  templateUrl: './create-template.component.html',
-  styleUrls: ['./create-template.component.css']
+  selector: 'app-translations-filter',
+  templateUrl: './translations-filter.component.html',
+  styleUrls: ['./translations-filter.component.css']
 })
-export class CreateTemplateComponent implements OnInit {
+export class TranslationsFilterComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   title: any;

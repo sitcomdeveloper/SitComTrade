@@ -18,6 +18,7 @@ export class CreateItemComponent implements OnInit {
   newGroup: any;
   response: any;
   submitted = false;
+  title: any;
     constructor(private bsmodal: BsModalRef, private currencyService: CurrencyService, private groupService: GroupsService,
                 private fb: FormBuilder) { }
 
