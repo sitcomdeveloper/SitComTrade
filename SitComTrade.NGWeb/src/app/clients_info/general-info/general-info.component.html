@@ -1,6 +1,6 @@
 
 <div class="card-bodynew mb20">
-<div class="card mb20 ">
+<div class="card1 mb20 ">
   <div class="card-header1 container" role="tab" id="headingOne">
     <h5 class="mb-0">
       <a class="box-heading" data-toggle="" aria-expanded="true" aria-controls="collapseOne">
@@ -13,11 +13,7 @@
           <i class="fa fa-pencil " aria-hidden="true"></i>
         </div>
         
-        <div class="edit-data-options">
-          <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
-            data-action="apply">
-            <i class="fa fa-check dark">&nbsp;</i>Apply</a>
-          <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel">Cancel</a></div>
+      
       </div>
     </h5>
   </div>
@@ -401,6 +397,34 @@
 </div>
 </div>
 <ng4-loading-spinner> </ng4-loading-spinner>
+<div class="card-bodynew mb20">
+  <div class="card1 mb20 ">
+    <div class="card-header1 container" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a class="box-heading" data-toggle="" aria-expanded="true" aria-controls="collapseOne">
+          <h2>General Info
+          </h2>
+  
+        </a>
+        <div class="box-control pull-right">
+         
+          
+          <div class="edit-data-options">
+            <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
+              data-action="apply">
+              <i class="fa fa-check dark">&nbsp;</i>Apply</a>
+            <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel">Cancel</a></div>
+        </div>
+      </h5>
+    </div>
+  
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+      <div class="card-body11">
+  
+        <!-- <app-general-info></app-general-info> -->
+      </div>
+    </div>
+  </div>
 <form [formGroup]="userInfoForm">
   <div class="container-fluid" *ngIf="editGeneralInfo">
     <div class="row">
@@ -525,3 +549,4 @@
   </div>
 </form>
 
+</div>

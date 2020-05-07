@@ -21,6 +21,13 @@
 td.text-ellipsis {
   width: 210px;
 }
+.btn-type01 {
+  padding: 5px 15px;
+  border-radius: 3px;
+  color: #8da5ba;
+  font-size: 16px;
+  background: 0!important;
+}
 .value-edit
 {
         font-size: 13px;
