@@ -961,7 +961,7 @@ body {
         font-weight: 400;
     }
     .email-table {
-        background: #fff;
+        background: #fff!important;
         width: 100%!important;
         border-collapse: collapse;
         border-spacing: 0;
