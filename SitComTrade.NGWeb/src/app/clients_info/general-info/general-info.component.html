@@ -493,9 +493,9 @@
             <th>FTD</th>
             <td>
               <!-- <input type="text" formControlName="ftd"> -->
-              <label class="switch " formControlName="ftd">
-                <input type="checkbox" class="primary">
-                <span class="slider round" name="Ftd"></span>
+              <label class="switch " >
+                <input type="checkbox" formControlName="ftd" class="primary">
+                <span class="slider round" name="Ftd" ></span>
               </label>
             </td>
             <th>FTD Date</th>
@@ -505,9 +505,9 @@
             <th>Enabled</th>
             <td>
               <!-- <input type="text" formControlName="enabled"> -->
-              <label class="switch " formControlName="enabled">
+              <label class="switch " >
                 
-                <input type="checkbox" class="primary">
+                <input type="checkbox" formControlName="enabled" class="primary">
                 
                 <span class="slider round" name="Ftd"></span>
               </label>
@@ -549,7 +549,8 @@
             <th>NetDeposits</th>
             <td><input type="text" class="form-control" formControlName="netdeposits"></td>
             <th>Type</th>
-            <td><input type="text" class="form-control" formControlName="type"></td>
+           
+            <td><input type="text"  class="form-control" formControlName="type"></td>
           </tr>
           <tr>
             <th>FirstRegistrationDate</th>

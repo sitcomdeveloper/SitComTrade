@@ -175,7 +175,7 @@ export class GeneralInfoComponent implements OnInit {
       LastName: this.userInfoForm.value.lastName,
       Email: this.userInfoForm.value.email,
       GroupName: this.userGenralinfo.GroupName,
-      AccountType: this.userInfoForm.value.type,
+      TypeName: this.userInfoForm.value.type,
       Password: this.userGenralinfo.Password,
       CountryName: this.userInfoForm.value.citizenship,
       CountryId: 1,
