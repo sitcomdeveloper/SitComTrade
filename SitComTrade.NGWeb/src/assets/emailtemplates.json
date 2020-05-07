@@ -1,0 +1,29 @@
+[
+    {
+        "Id":1,
+        "Name": "Bonus",
+        "Subject": "",
+        "SytemTemplate":""
+    },
+
+    {
+        "Id":2,
+        "Name": "Change",
+        "Subject": "Change",
+        "SytemTemplate":""
+    },
+
+    {
+        "Id":3,
+        "Name": "Contact",
+        "Subject": "Change",
+        "SytemTemplate":""
+    },
+
+    {
+        "Id":4,
+        "Name": "Create",
+        "Subject": "Change",
+        "SytemTemplate":""
+    }
+]
