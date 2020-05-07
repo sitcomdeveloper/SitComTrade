@@ -15,6 +15,7 @@ export class GeneralInfoComponent implements OnInit {
   userGenralinfo: any;
   stk: any;
   editGeneralInfo = false;
+  frontGeneralInfo = true;
   editInfo = false;
   userInfoForm: FormGroup;
   Apptitle: any;
@@ -22,22 +23,24 @@ export class GeneralInfoComponent implements OnInit {
   Country: any;
   registrationType: any;
   details: number;
+  updatedDtls: any;
+  detail: number;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
   ngOnInit() {
-    this._route.params.subscribe(params => console.log(params));
-    this._route.paramMap.subscribe(params => {
-      this.stk = params.get('userid');
-      if (this.stk === '1') {
+    // this._route.params.subscribe(params => console.log(params));
+    // this._route.paramMap.subscribe(params => {
+    //   this.stk = params.get('userid');
+    //   if (this.stk === '1') {
 
-        this.editGeneralInfo = true;
+    //     this.editGeneralInfo = true;
 
-        this.editInfo = false;
-      } else {
-        this.editInfo = true;
-      }
-    });
+    //     this.editInfo = false;
+    //   } else {
+    //     this.editInfo = true;
+    //   }
+    // });
     this.userInfoForm = this.fb.group({
       firstName: [''],
       lastName: [''],
@@ -83,35 +86,24 @@ export class GeneralInfoComponent implements OnInit {
     // console.log('getclientdata', this.Apptitle);
     // this.userGenralinfo = this.Apptitle;
     // this.usersInfo();
-    this.edituserInfo();
   }, );
     this.getcountryName();
     this.getRegistrationFromType();
 
     // receiving data from client page for general-info
     const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
     console.log(details);
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
-      console.log('generalinfo', res);
-    });
-  }
-  edituserInfo() {
-    // this._generalinfoservice.getUsersInfo().subscribe(res => {
-    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    // console.log('geteditdata', this.Apptitle);
-    // this.userGenralinfo = this.Apptitle;
-    // this.useraddinfo = this.userGenralinfo;
-    // const date = this.userGenralinfo.CreatedAt.split('T');
-    // const userDate = date[0];
-    this.userInfoForm.patchValue({
-      firstName: this.userGenralinfo.FirstName,
-      lastName: this.userGenralinfo.LastName,
+      this.userInfoForm.patchValue({
+        firstName: this.userGenralinfo.FirstName,
+        lastName: this.userGenralinfo.LastName,
       email: this.userGenralinfo.Email,
       phone: this.userGenralinfo.Phone,
       mobile: this.userGenralinfo.Mobile,
       secondemail: this.userGenralinfo.SecondEmail,
-      itemid: this.userGenralinfo.ItemId,
+      itemid: this.userGenralinfo.Id,
       owner: this.userGenralinfo.OwnerId,
       status: this.userGenralinfo.ResponseStatus,
       createddate: this.userGenralinfo.CreatedAt,
@@ -119,7 +111,7 @@ export class GeneralInfoComponent implements OnInit {
       modifieddate: this.userGenralinfo.UpdatedAt,
       // conventionowner: this.userGenralinfo.
       // retentionowner: this.userGenralinfo.
-      // citizenship: this.userGenralinfo.,
+      citizenship: this.userGenralinfo.CountryName,
       // dob: this.userGenralinfo.,
       ftd: this.userGenralinfo.Ftd,
       // ftdate: this.userGenralinfo.,
@@ -138,12 +130,20 @@ export class GeneralInfoComponent implements OnInit {
       // netdeposits: this.userGenralinfo.,
       type: this.userGenralinfo.TypeName,
       firstregistrationdate: this.userGenralinfo.FirstRegistrationDate,
-      // registrationtype: this.userGenralinfo.,
-      lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
+      registrationtype: this.userGenralinfo.RegistrationType,
+      // lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
       daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
+      });
+      console.log('generalinfo', res);
     });
-    // });
   }
+    // this._generalinfoservice.getUsersInfo().subscribe(res => {
+    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
+    // console.log('geteditdata', this.Apptitle);
+    // this.userGenralinfo = this.Apptitle;
+    // this.useraddinfo = this.userGenralinfo;
+    // const date = this.userGenralinfo.CreatedAt.split('T');
+    // const userDate = date[0];
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
@@ -155,5 +155,49 @@ export class GeneralInfoComponent implements OnInit {
       this.registrationType = res;
       console.log('registeredtype', res);
     });
+  }
+  // for hide show div
+  // pencil
+  hideshow() {
+    this.frontGeneralInfo = false;
+    this.editGeneralInfo = true;
+  }
+  // cancel btn
+  closehideshow() {
+    this.frontGeneralInfo = true;
+    this.editGeneralInfo = false;
+  }
+  // apply btn.update the details of user
+  savehideshow() {
+    const obj = {
+      Id: this.userGenralinfo.Id,
+      FirstName: this.userInfoForm.value.firstName,
+      LastName: this.userInfoForm.value.lastName,
+      Email: this.userInfoForm.value.email,
+      GroupName: this.userGenralinfo.GroupName,
+      AccountType: this.userInfoForm.value.type,
+      Password: this.userGenralinfo.Password,
+      CountryName: this.userInfoForm.value.citizenship,
+      CountryId: 1,
+      GroupId: this.userGenralinfo.GroupId,
+      ISendEmail: this.userGenralinfo.ISendEmail,
+      OwnerId: 1,
+      Phone: this.userInfoForm.value.phone,
+    };
+    this._generalinfoservice.updateClient(obj).subscribe(res => {
+      this.updatedDtls = res;
+      console.log('updatedDtls', res);
+      this.spinnerService.show();
+      this.afterUpdate();
+      this.frontGeneralInfo = true;
+      this.editGeneralInfo = false;
+    });
+
+  }
+  // API call for getting details from clients page to general-info page
+  afterUpdate() {
+    this._generalinfoservice.getUsersInfo(this.detail).subscribe(res => {
+      this.userGenralinfo = res;
+  });
   }
 }

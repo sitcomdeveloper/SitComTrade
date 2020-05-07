@@ -26,7 +26,7 @@ export class GroupsInfoComponent implements OnInit {
   f: any;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
-    private currencyService: CurrencyService) { }
+              private currencyService: CurrencyService) { }
 
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
@@ -108,18 +108,20 @@ export class GroupsInfoComponent implements OnInit {
     };
     this.groupService.updateGroup(obj).subscribe(res => {
   this.updatedDetails = res;
-  this.rohan();
+  this.updateshowonPage();
   this.frontend = true;
   this.backend = false;
-  
+
   this.spinnerService.show();
   console.log('updatedDetails', res);
 });
   }
-rohan() {
+  // after update again call the method for refresh the details on groups-info page.same API call
+  // which take data from groups pg. to groups-info pg.
+updateshowonPage() {
   this.groupService.getGroupDetails(this.groupid).subscribe(res => {
     this.groupDetails = res;
-  })
-}
+  });
+};
 }
 

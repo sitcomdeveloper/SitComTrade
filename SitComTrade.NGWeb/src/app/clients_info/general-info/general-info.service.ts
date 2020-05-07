@@ -18,4 +18,8 @@ export class GeneralInfoService {
   getRegistrationType(): Observable<any> {
     return this.http.get<any>(API_URL + 'Client/GetRegistrationTypeEnum');
   }
+  // update client details
+  updateClient(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/UpdateClient', obj);
+  }
 }

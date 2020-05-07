@@ -1,5 +1,5 @@
 
-<div class="card-bodynew mb20">
+<div class="card-bodynew mb20" *ngIf="frontGeneralInfo">
 <div class="card1 mb20 ">
   <div class="card-header1 container" role="tab" id="headingOne">
     <h5 class="mb-0">
@@ -9,7 +9,7 @@
 
       </a>
       <div class="box-control pull-right">
-        <div class="pencil" id="edit" >
+        <div class="pencil" id="edit" (click)="hideshow()">
           <i class="fa fa-pencil " aria-hidden="true"></i>
         </div>
         
@@ -104,7 +104,7 @@
           <th class="tabletxt">Item ID</th>
           <td>
             <div class="valueshhow">
-              {{userGenralinfo?.ItemId}}
+              {{userGenralinfo?.Id}}
             </div>
             <div class="value-edit" data-rule="valueEdit" style="display:none;">
               <input class="form-control" name="ItemId" type="text" formControlName="itemid" aria-required="true">
@@ -114,7 +114,7 @@
           <td>
            <div class="valueshhow">          
           
-             Krishan Kant
+            1
           </div>          
            <div class="value-edit" data-rule="valueEdit" style="display:none;">        
           <select id="cars" class="form-control">
@@ -397,7 +397,7 @@
 </div>
 </div>
 <ng4-loading-spinner> </ng4-loading-spinner>
-<div class="card-bodynew mb20">
+<div class="card-bodynew mb20" *ngIf="editGeneralInfo">
   <div class="card1 mb20 ">
     <div class="card-header1 container" role="tab" id="headingOne">
       <h5 class="mb-0">
@@ -411,9 +411,9 @@
           
           <div class="edit-data-options">
             <a href="javascript:void(0);" class="btn-type01 btn02 submit-button" data-rule="button"
-              data-action="apply">
+              data-action="apply" (click)="savehideshow()">
               <i class="fa fa-check dark">&nbsp;</i>Apply</a>
-            <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel">Cancel</a></div>
+            <a class="btn-type01 " id="gfg" data-rule="button" data-action="cancel" (click)="closehideshow()" >Cancel</a></div>
         </div>
       </h5>
     </div>
@@ -426,7 +426,7 @@
     </div>
   </div>
 <form [formGroup]="userInfoForm">
-  <div class="container-fluid" *ngIf="editGeneralInfo">
+  <div class="container-fluid">
     <div class="row">
 
       <table class="table">
@@ -435,112 +435,141 @@
             <th>First Name</th>
             <td><input type="text" class="form-control" formControlName="firstName"></td>
             <th>Last Name</th>
-            <td><input type="text" formControlName="lastName"></td>
+            <td><input type="text"  class="form-control" formControlName="lastName"></td>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th>Email</th>
-            <td><input type="text" formControlName="email"></td>
+            <td><input type="text" class="form-control" formControlName="email"></td>
             <th>Phone</th>
-            <td><input type="text" formControlName="phone"></td>
+            <td><input type="text" class="form-control" formControlName="phone" appPhoneMask></td>
           </tr>
           <tr>
             <th>Mobile</th>
-            <td><input type="text" formControlName="mobile"></td>
+            <td><input type="text" class="form-control" formControlName="mobile"></td>
             <th>Second Email</th>
-            <td><input type="text" formControlName="secondemail"></td>
+            <td><input type="text" class="form-control" formControlName="secondemail"></td>
           </tr>
           <tr>
             <th>Item ID</th>
-            <td><input type="text" formControlName="itemid"></td>
+            <td><input type="text" class="form-control" formControlName="itemid"></td>
             <th>Owner</th>
-            <td><input type="text" formControlName="owner"></td>
+            <td><input type="text" class="form-control" formControlName="owner"></td>
           </tr>
           <tr>
             <th>Status</th>
-            <td><input type="text" formControlName="status"></td>
+            <td><input type="text"  class="form-control"formControlName="status"></td>
             <th>Created Date</th>
-            <td><input type="text" formControlName="createddate"></td>
+            <td><input type="text" class="form-control" formControlName="createddate"></td>
           </tr>
           <tr>
             <th>LastCommentDate</th>
-            <td><input type="text" formControlName="lastcommentdate"></td>
+            <td><input type="text" class="form-control" formControlName="lastcommentdate"></td>
             <th>Modified Date</th>
-            <td><input type="text" formControlName="modifieddate"></td>
+            <td><input type="text"  class="form-control" formControlName="modifieddate"></td>
           </tr>
           <tr>
             <th>Convention Owner</th>
-            <td><input type="text" formControlName="conventionowner"></td>
+            <td><input type="text" class="form-control" formControlName="conventionowner"></td>
             <th>Retention Owner</th>
-            <td><input type="text" formControlName="retentionowner"></td>
+            <td><input type="text"  class="form-control" formControlName="retentionowner"></td>
           </tr>
           <tr>
             <th>Citizenship</th>
-            <td><input type="text" formControlName="citizenship"></td>
+            <td>
+              <!-- <input type="text" formControlName="citizenship"> -->
+              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+          data-live-search="true" formControlName="citizenship">
+          <option ngcontent-qpo-c3="">Select</option>
+          <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+             {{country.Name}}</option>
+            </select>
+            </td>
             <th>Date of Birth</th>
-            <td><input type="text" formControlName="dob"></td>
+            <td><input type="text" class="form-control" formControlName="dob"></td>
           </tr>
           <tr>
             <th>FTD</th>
-            <td><input type="text" formControlName="ftd"></td>
+            <td>
+              <!-- <input type="text" formControlName="ftd"> -->
+              <label class="switch " formControlName="ftd">
+                <input type="checkbox" class="primary">
+                <span class="slider round" name="Ftd"></span>
+              </label>
+            </td>
             <th>FTD Date</th>
-            <td><input type="text" formControlName="ftddate"></td>
+            <td><input type="text" class="form-control" formControlName="ftddate"></td>
           </tr>
           <tr>
             <th>Enabled</th>
-            <td><input type="text" formControlName="enabled"></td>
+            <td>
+              <!-- <input type="text" formControlName="enabled"> -->
+              <label class="switch " formControlName="enabled">
+                
+                <input type="checkbox" class="primary">
+                
+                <span class="slider round" name="Ftd"></span>
+              </label>
+            </td>
             <th>ClientTime</th>
-            <td><input type="text" formControlName="clienttime"></td>
+            <td><input type="text" class="form-control" formControlName="clienttime"></td>
           </tr>
           <tr>
             <th>Last Login Date</th>
-            <td><input type="text" formControlName="lastlogindate"></td>
+            <td><input type="text" class="form-control" formControlName="lastlogindate"></td>
             <th>Desk</th>
-            <td><input type="text" formControlName="desk"></td>
+            <td><input type="text" class="form-control" formControlName="desk"></td>
           </tr>
           <tr>
             <th>HasTasks</th>
-            <td><input type="text" formControlName="hastasks"></td>
+            <td><input type="text" class="form-control" formControlName="hastasks"></td>
             <th>Task Created Date</th>
-            <td><input type="text" formControlName="taskcreateddate"></td>
+            <td><input type="text" class="form-control" formControlName="taskcreateddate"></td>
           </tr>
           <tr>
             <th>TaskDate</th>
-            <td><input type="text" formControlName="taskdate"></td>
+            <td><input type="text" class="form-control" formControlName="taskdate"></td>
             <th>AssignedDate</th>
-            <td><input type="text" formControlName="assigneddate"></td>
+            <td><input type="text" class="form-control" formControlName="assigneddate"></td>
           </tr>
           <tr>
             <th>HasNotCompletedTasks</th>
-            <td><input type="text" formControlName="hasnotcompletedtasks"></td>
+            <td><input type="text" class="form-control" formControlName="hasnotcompletedtasks"></td>
             <th>TotalDeposits</th>
-            <td><input type="text" formControlName="totaldeposits"></td>
+            <td><input type="text" class="form-control" formControlName="totaldeposits"></td>
           </tr>
           <tr>
             <th>Ftd Amount</th>
-            <td><input type="text" formControlName="ftdamount"></td>
+            <td><input type="text" class="form-control" formControlName="ftdamount"></td>
             <th>Total Withdrawals</th>
-            <td><input type="text" formControlName="totalwithdrawals"></td>
+            <td><input type="text" class="form-control" formControlName="totalwithdrawals"></td>
           </tr>
           <tr>
             <th>NetDeposits</th>
-            <td><input type="text" formControlName="netdeposits"></td>
+            <td><input type="text" class="form-control" formControlName="netdeposits"></td>
             <th>Type</th>
-            <td><input type="text" formControlName="type"></td>
+            <td><input type="text" class="form-control" formControlName="type"></td>
           </tr>
           <tr>
             <th>FirstRegistrationDate</th>
-            <td><input type="text" formControlName="firstregistrationdate"></td>
+            <td><input type="text" class="form-control" formControlName="firstregistrationdate"></td>
             <th>RegistrationType</th>
-            <td><input type="text" formControlName="registrationtype"></td>
+            <td>
+              <!-- <input type="text" formControlName="registrationtype"> -->
+              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+              data-live-search="true" formControlName="registrationtype">
+              <option ngcontent-qpo-c3="">Select</option>
+              <option ngcontent-qpo-c3="" *ngFor="let type of registrationType">
+                 {{type.Name}}</option>
+                </select></td>
           </tr>
           <tr>
             <th>LastTaskDaysPast</th>
-            <td><input type="text" formControlName="lasttaskdayspost"></td>
+            <td><input type="text" class="form-control" formControlName="lasttaskdayspast"></td>
             <th>DaysAgoClientCreated
             </th>
-            <td><input type="text" formControlName="daysagoclientcreated"></td>
+            <td><input type="text" class="form-control" formControlName="daysagoclientcreated"></td>
           </tr>
 
         </tbody>
