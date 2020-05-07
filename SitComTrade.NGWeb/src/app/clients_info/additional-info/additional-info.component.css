@@ -13,6 +13,13 @@
    
     vertical-align: middle;
 }
+.btn-type01{
+  padding: 5px 15px;
+  border-radius: 3px;
+  color: #8da5ba;
+  font-size: 16px;
+  background: 0,0!important;
+}
 .value-edit
 {
         font-size: 13px;
