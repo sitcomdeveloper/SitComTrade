@@ -1,4 +1,5 @@
-<div class="card-bodynew mb20">
+
+<div class="card-bodynew mb20" *ngIf=MarketingInfo>
 <div class="card1 mb20">
   <div class="card-header1 container" role="tab" id="headingThree">
     <h5 class="mb-0">
@@ -6,7 +7,7 @@
         <h2> Marketing Info</h2>
       </a>
       <div class="box-control pull-right">
-        <div class="pencil1" id="edit1">
+        <div class="pencil1" id="edit1" (click)="showhide()">
           <i class="fa fa-pencil " aria-hidden="true"></i>
         </div>
         
@@ -239,7 +240,7 @@
 </div>
 </div>
 <!------------------------------------------>
-<div _ngcontent-jhd-c5="" class="card-bodynew mb20">
+<div _ngcontent-jhd-c5="" class="card-bodynew mb20" *ngIf=marketingInfoEdit>
   <div _ngcontent-jhd-c5="" class="card1 mb20">
      <div _ngcontent-jhd-c5="" class="card-header1 container" id="headingThree" role="tab">
         <h5 _ngcontent-jhd-c5="" class="mb-0">
@@ -249,9 +250,9 @@
            <div _ngcontent-jhd-c5="" class="box-control pull-right">
               
               <div _ngcontent-jhd-c5="" class="edit-data-options1" style="">
-                <a _ngcontent-jhd-c5="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);">
+                <a _ngcontent-jhd-c5="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="closeshowhide()">
                   <i _ngcontent-jhd-c5="" class="fa fa-check dark">&nbsp;</i>Apply</a>
-                  <a _ngcontent-jhd-c5="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg1">
+                  <a _ngcontent-jhd-c5="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg1" (click)="close()">
                     Cancel</a></div>
            </div>
         </h5>
@@ -262,19 +263,30 @@
   </div>
   <div _ngcontent-jhd-c5="" class="container-fluid">
      <div _ngcontent-jhd-c5="" class="row">
-        <form _ngcontent-jhd-c5="" novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid">
+        <form _ngcontent-jhd-c5="" novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid" [formGroup]="marketingInfoForm">
            <table _ngcontent-jhd-c5="" class="table" id="marketinginfo">
               <thead _ngcontent-jhd-c5="">
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Tag</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> tag1 test </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="tag1" name="tag1" type="text" ng-reflect-name="tag1"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="tag1" name="tag1" type="text" ng-reflect-name="tag1">
+                        </div> -->
                     </td>
+                    <div class="value-edit1" data-rule="valueEdit" style="">
+                      <input class="form-control" name="tag1" type="text" formControlName="tag1"  aria-required="true">
+                    </div>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Tag1</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> tag2 test </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="tag2" name="tag2" type="text" ng-reflect-name="tag2"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="tag2" name="tag2" type="text" ng-reflect-name="tag2">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="tag2"  aria-required="true">
+                          
+                          </div>
                     </td>
                  </tr>
               </thead>
@@ -283,36 +295,70 @@
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Campaign ID</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> campid </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="campaignid" name="campaignid" type="text" ng-reflect-name="campaignid"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="campaignid" name="campaignid" type="text" ng-reflect-name="campaignid">
+                      </div> -->
+                      <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="campaignid"  aria-required="true">
+                        
+                        </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Affilate ID</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"></div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="affilateid" name="affilateid" type="text" ng-reflect-name="affilateid"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="affilateid" name="affilateid" type="text" ng-reflect-name="affilateid">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="affilateid"  aria-required="true">
+                          
+                          </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Sub Affiliate ID</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> 4242 </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="subaffilateid" name="subaffilateid" type="text" ng-reflect-name="subaffilateid"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="subaffilateid" name="subaffilateid" type="text" ng-reflect-name="subaffilateid">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="subaffilateid"  aria-required="true">
+                          
+                          </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Source</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> source text </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="source" name="source" type="text" ng-reflect-name="source"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="source" name="source" type="text" ng-reflect-name="source">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="source"  aria-required="true">
+                          
+                          </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">IP Address</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> 43424242 </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="ipaddress" name="ipaddress" type="text" ng-reflect-name="ipaddress"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="ipaddress" name="ipaddress" type="text" ng-reflect-name="ipaddress"></div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="ipaddress"  aria-required="true">
+                        
+                        </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Referrer</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> referrer </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="referrer" name="referrer" type="text" ng-reflect-name="referrer"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="referrer" name="referrer" type="text" ng-reflect-name="referrer">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="referrer"  aria-required="true">
+                          
+                          </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
@@ -320,307 +366,97 @@
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> 423525</div>
                        <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
-                          <select _ngcontent-jhd-c5="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-untouched ng-pristine ng-valid" data-live-search="true" formcontrolname="ipcountry" ng-reflect-name="ipcountry">
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3="">Select</option>
-                             <!--bindings={
-                                "ng-reflect-ng-for-of": "[object Object],[object Object"
-                                }-->
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Afghanistan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Albania</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Algeria</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> American Samoa</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Andorra</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Angola</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Anguilla</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Antarctica</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Antigua and Barbuda</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Argentina</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Armenia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Aruba</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Australia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Austria</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Azerbaijan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bahamas</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bahrain</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bangladesh</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Barbados</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Belarus</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Belgium</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Belize</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Benin</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bermuda</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bhutan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bolivia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bosnia and Herzegowina</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Botswana</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bouvet Island</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Brazil</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> British Indian Ocean Territory</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Brunei Darussalam</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Bulgaria</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Burkina Faso</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Burundi</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cambodia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cameroon</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Canada</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cape Verde</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cayman Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Central African Republic</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Chad</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Chile</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> China</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Christmas Island</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cocos (Keeling) Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Colombia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Comoros</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Congo Democratic Republic of</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cook Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Costa Rica</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cote D'Ivoire</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Croatia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cuba</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Cyprus</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Czech Republic</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Denmark</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Djibouti</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Dominica</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Dominican Republic</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Timor-Leste</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Ecuador</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Egypt</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> El Salvador</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Equatorial Guinea</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Eritrea</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Estonia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Ethiopia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Falkland Islands (Malvinas)</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Faroe Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Fiji</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Finland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> France</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> French Guiana</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> French Polynesia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> French Southern Territories</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Gabon</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Gambia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Georgia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Germany</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Ghana</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Gibraltar</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Greece</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Greenland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Grenada</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guadeloupe</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guam</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guatemala</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guinea</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guinea-bissau</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guyana</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Haiti</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Heard Island and McDonald Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Honduras</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Hong Kong</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Hungary</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Iceland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> India</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Indonesia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Iran (Islamic Republic of)</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Iraq</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Ireland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Israel</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Italy</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Jamaica</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Japan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Jordan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Kazakhstan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Kenya</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Kiribati</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Korea, Democratic People's Republic of</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> South Korea</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Kuwait</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Kyrgyzstan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Lao People's Democratic Republic</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Latvia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Lebanon</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Lesotho</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Liberia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Libya</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Liechtenstein</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Lithuania</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Luxembourg</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Macao</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Macedonia, The Former Yugoslav Republic of</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Madagascar</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Malawi</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Malaysia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Maldives</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mali</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Malta</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Marshall Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Martinique</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mauritania</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mauritius</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mayotte</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mexico</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Micronesia, Federated States of</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Moldova</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Monaco</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mongolia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Montserrat</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Morocco</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Mozambique</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Myanmar</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Namibia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Nauru</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Nepal</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Netherlands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Netherlands Antilles</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> New Caledonia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> New Zealand</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Nicaragua</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Niger</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Nigeria</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Niue</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Norfolk Island</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Northern Mariana Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Norway</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Oman</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Pakistan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Palau</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Panama</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Papua New Guinea</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Paraguay</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Peru</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Philippines</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Pitcairn</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Poland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Portugal</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Puerto Rico</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Qatar</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Reunion</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Romania</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Russian Federation</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Rwanda</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Saint Kitts and Nevis</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Saint Lucia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Saint Vincent and the Grenadines</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Samoa</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> San Marino</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Sao Tome and Principe</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Saudi Arabia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Senegal</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Seychelles</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Sierra Leone</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Singapore</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Slovakia (Slovak Republic)</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Slovenia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Solomon Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Somalia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> South Africa</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> South Georgia and the South Sandwich Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Spain</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Sri Lanka</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Saint Helena, Ascension and Tristan da Cunha</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> St. Pierre and Miquelon</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Sudan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Suriname</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Svalbard and Jan Mayen Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Swaziland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Sweden</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Switzerland</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Syrian Arab Republic</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Taiwan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Tajikistan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Tanzania, United Republic of</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Thailand</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Togo</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Tokelau</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Tonga</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Trinidad and Tobago</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Tunisia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Turkey</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Turkmenistan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Turks and Caicos Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Tuvalu</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Uganda</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Ukraine</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> United Arab Emirates</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> United Kingdom</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> United States</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> United States Minor Outlying Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Uruguay</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Uzbekistan</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Vanuatu</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Vatican City State (Holy See)</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Venezuela</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Vietnam</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Virgin Islands (British)</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Virgin Islands (U.S.)</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Wallis and Futuna Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Western Sahara</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Yemen</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Serbia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Zambia</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Zimbabwe</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Aaland Islands</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Palestine</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Montenegro</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Guernsey</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Isle of Man</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Jersey</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Curaçao</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Ivory Coast</option>
-                             <option _ngcontent-jhd-c5="" ngcontent-qpo-c3=""> Kosovo</option>
-                          </select>
+                         
+                          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+                          data-live-search="true" formControlName="ipcountry">
+                          <option ngcontent-qpo-c3="">Select</option>
+                          <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+                             {{country.Name}}</option>
+                            </select>
                        </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Utm Content</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> um </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmcontent" name="" type="text" ng-reflect-name="utmcontent"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmcontent" name="" type="text" ng-reflect-name="utmcontent"></div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="utmcontent"  aria-required="true">
+                        
+                        </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Utm Source</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> um source </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmsource" name="" type="text" ng-reflect-name="utmsource"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmsource" name="" type="text" ng-reflect-name="utmsource">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="utmsource"  aria-required="true">
+                          
+                          </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Utm Campaign</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> um camp </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmcampaign" name="" type="text" ng-reflect-name="utmcampaign"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmcampaign" name="" type="text" ng-reflect-name="utmcampaign">
+                        </div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="utmcampaign"  aria-required="true">
+                        
+                        </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Utm Creative</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> um cr </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmcreative" name="" type="text" ng-reflect-name="utmcreative"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style="">
+                         <input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmcreative" name="" type="text" ng-reflect-name="utmcreative">
+                        </div> -->
+                        <div class="value-edit1" data-rule="valueEdit" style="">
+                          <input class="form-control" name="tag2" type="text" formControlName="utmcreative"  aria-required="true">
+                          
+                          </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Utm Medium</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> um med </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmmedium" name="" type="text" ng-reflect-name="utmmedium"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="utmmedium" name="" type="text" ng-reflect-name="utmmedium"></div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="utmmedium"  aria-required="true">
+                        
+                        </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Google Keyword</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> g keyword </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="googlekeyword" name="" type="text" ng-reflect-name="googlekeyword"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="googlekeyword" name="" type="text" ng-reflect-name="googlekeyword"></div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="googlekeyword"  aria-required="true">
+                       </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">Aff Transaction ID</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> afftrans id </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="afftransactionid" name="" type="text" ng-reflect-name="afftransactionid"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="afftransactionid" name="" type="text" ng-reflect-name="afftransactionid"></div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="afftransactionid"  aria-required="true">
+                       </div>
                     </td>
                  </tr>
                  <tr _ngcontent-jhd-c5="">
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;">AffiliateUser</th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;">
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> aff user </div>
-                       <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="affiliateuser" name="" type="text" ng-reflect-name="affiliateuser"></div>
+                       <!-- <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" style=""><input _ngcontent-jhd-c5="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="affiliateuser" name="" type="text" ng-reflect-name="affiliateuser"></div> -->
+                       <div class="value-edit1" data-rule="valueEdit" style="">
+                        <input class="form-control" name="tag2" type="text" formControlName="affiliateuser"  aria-required="true">
+                       </div>
                     </td>
                     <th _ngcontent-jhd-c5="" class="tabletxt" style="border: none;"></th>
                     <td _ngcontent-jhd-c5="" class="text-ellipsis" style="border: none;"></td>
@@ -631,6 +467,7 @@
      </div>
   </div>
 </div>
+
 <!----------------------------------------->
 <!-- <tr>
   <th>Utm Source</th>

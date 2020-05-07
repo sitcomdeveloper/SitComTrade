@@ -14,6 +14,8 @@ export class MarketingInfoComponent implements OnInit {
   marketingInfoForm: FormGroup;
   name: any;
   Country: any;
+  marketingInfoEdit = false;
+  MarketingInfo = true;
   constructor(private marketinginfoservice: MarketingInfoService, private fb: FormBuilder, private countryService: CountryService) { this.editMarketingInfo(); }
 
   ngOnInit() {
@@ -43,12 +45,6 @@ export class MarketingInfoComponent implements OnInit {
   marketingInfo() {
     this.marketinginfoservice.getMarketingInfo().subscribe(res => {
       this.userMarketingInfo = res;
-      console.log('Marketinginfo', res);
-    });
-  }
-  editMarketingInfo() {
-    this.marketinginfoservice.getMarketingInfo().subscribe(res => {
-      this.userMarketingInfo = res;
       this.marketingInfoForm.patchValue({
         tag1: this.userMarketingInfo.Tag1,
         tag2: this.userMarketingInfo.Tag2,
@@ -67,6 +63,31 @@ export class MarketingInfoComponent implements OnInit {
       googlekeyword: this.userMarketingInfo.GoogleKeyword,
       afftransactionid: this.userMarketingInfo.AffTransactionID,
       affiliateuser: this.userMarketingInfo.AffiliateUser
+      })
+      console.log('Marketinginfo', res);
+    });
+  }
+  editMarketingInfo() {
+    this.marketinginfoservice.getMarketingInfo().subscribe(res => {
+      this.userMarketingInfo = res;
+      this.marketingInfoForm.patchValue({
+        
+      //   tag2: this.userMarketingInfo.Tag2,
+      //   campaignid: this.userMarketingInfo.CampaignID,
+      //   // affilateid: this.userMarketingInfo.
+      //   subaffilateid: this.userMarketingInfo.SubAffiliateID,
+      //   source: this.userMarketingInfo.Source,
+      //   ipaddress: this.userMarketingInfo.IPAddress,
+      //   referrer: this.userMarketingInfo.Referrer,
+      //   ipcountry: this.userMarketingInfo.IPCountry,
+      //   utmcontent: this.userMarketingInfo.UtmContent,
+      //   utmsource: this.userMarketingInfo.UtmSource,
+      // utmcampaign: this.userMarketingInfo.UtmCampaign,
+      // utmcreative: this.userMarketingInfo.UtmCreative,
+      // utmmedium: this.userMarketingInfo.UtmMedium,
+      // googlekeyword: this.userMarketingInfo.GoogleKeyword,
+      // afftransactionid: this.userMarketingInfo.AffTransactionID,
+      // affiliateuser: this.userMarketingInfo.AffiliateUser
 
       })
     })
@@ -77,5 +98,21 @@ export class MarketingInfoComponent implements OnInit {
       console.log('countryname', result);
     });
   }
+  // pencil
+  showhide() {
+    this.marketingInfoEdit = true;
+    this.MarketingInfo = false;
+  }
+  // apply
+  closeshowhide() {
+    this.marketingInfoEdit = false;
+    this.MarketingInfo = true;
+  }
+  // cancel
+  close() {
+    this.marketingInfoEdit = false;
+    this.MarketingInfo = true;
+  }
+
 
 }
