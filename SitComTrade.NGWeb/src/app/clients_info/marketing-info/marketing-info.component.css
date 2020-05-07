@@ -34,6 +34,13 @@ form {
         /* padding: 6px 15px; */
         border-color: #dde7f9;
 }
+.btn-type01{
+  padding: 5px 15px;
+  border-radius: 3px;
+  color: #8da5ba;
+  font-size: 16px;
+  background: 0,0!important;
+}
 .switch {
   position: relative;
   display: inline-block;
