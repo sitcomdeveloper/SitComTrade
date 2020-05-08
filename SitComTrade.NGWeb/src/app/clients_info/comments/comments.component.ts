@@ -30,7 +30,7 @@ export class CommentsComponent implements OnInit {
   // get all comments
   userComments() {
     this.commentsService.getComments(this.infoComment).subscribe(res => {
-      this.comments = res;
+      this.comments = res.reverse();
       console.log('comments', res);
     });
   }

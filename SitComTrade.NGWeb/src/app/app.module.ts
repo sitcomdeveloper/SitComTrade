@@ -99,6 +99,7 @@ import { InfoDocumentsComponent } from './clients_info/info-documents/info-docum
 import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -193,8 +194,7 @@ import { TranslationsFilterComponent } from './settings/translations/translation
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     AgGridModule.withComponents(null),
     TabModule,
-    Ng4LoadingSpinnerModule.forRoot(),
-    // ToastrModule.forRoot()
+    Ng4LoadingSpinnerModule.forRoot()
 
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,

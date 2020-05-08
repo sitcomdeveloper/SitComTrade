@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../clients_info/general-info/general-info.service';
 import { ClientsService } from '../header/clients/clients.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ViewportScroller } from '@angular/common';
 
 
 @Component({
@@ -22,7 +23,9 @@ export class ClientsInfoComponent implements OnInit {
   accountInfo: any[];
   leadInfo: any[];
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
-              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService ) {
+              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService
+               ) {
+      // tslint:disable-next-line: only-arrow-functions
       this.router.routeReuseStrategy.shouldReuseRoute = function() {
         return false;
         };
@@ -61,8 +64,5 @@ export class ClientsInfoComponent implements OnInit {
   sendData(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
   }
-  // moveBackward(selectedItem: any) {
-  //   this.router.navigate(['/info', selectedItem]);
-  // }
 }
 
