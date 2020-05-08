@@ -19,7 +19,7 @@ export class EmailtemplatesComponent implements OnInit {
     this.emailTemplatesService.getTemplates().subscribe( res => {
       this.emailtemplates = res;
       console.log('emailtemplates', res);
-    })
+    });
   }
   newTemplate() {
     const initialState = {

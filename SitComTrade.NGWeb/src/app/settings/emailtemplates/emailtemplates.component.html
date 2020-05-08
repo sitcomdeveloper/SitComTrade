@@ -59,7 +59,7 @@
          <div role="tabpanel" class="tab-pane active fade in" id="filter">
          </div>
          <div>
-            <div id="email" class="email" unselectable="on" style="">
+            <div id="email" class="email" unselectable="on">
                <div class="email-grid-header email-header-scrollbar">
                   
                   <table class="email-table " >
@@ -258,20 +258,20 @@
                </div>
                <div class="email-grid-body" >
                   <table class="email-table" >
-                     <tbody>
+                     <tbody *ngFor="let email of emailtemplates ">
                        
                         <tr class="email-alt-row">
                            <td class="email-cell" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_Name">
-                                    <div class="text-ellipsis" data-field="Name" data-original-value="Withdrawal Confirmation (en)">{{emailtemplates?.Name}}</div>
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Withdrawal Confirmation (en)">{{email.Name}}</div>
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_Subject">
-                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WITHDRAWAL CONFIRMATION FROM SWISSFX" data-original-title="" title="">WITHDRAWAL CONFIRMATION FROM SWISSFX</div>
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WITHDRAWAL CONFIRMATION FROM SWISSFX" data-original-title="" title="">{{email.Subject}}</div>
                                  </div>
                               </div>
                            </td>
@@ -279,7 +279,7 @@
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
                                    <div class="text-center"><i class="fa fa-check-circle greenbtn" aria-hidden="true"></i></div>
-
+                                   {{email.SystemTemplate}}
                                  </div>
                               </div>
                            </td>
@@ -288,7 +288,7 @@
 </div>
                            </td>
                         </tr>
-                        <tr class="email-row">
+                        <!-- <tr class="email-row">
                            <td class="email-cell" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_Name">
@@ -315,7 +315,7 @@
                               <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" ></i>             
 </div>
                            </td>
-                        </tr>
+                        </tr> -->
                      </tbody>
                   </table>
                </div>

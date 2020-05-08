@@ -77,7 +77,8 @@ export class GeneralInfoComponent implements OnInit {
       firstregistrationdate: [''],
       registrationtype: [''],
       lasttaskdayspast: [''],
-      daysagoclientcreated: ['']
+      daysagoclientcreated: [''],
+      countryid: ['']
     });
     this.spinnerService.show();
     setTimeout( () => {
@@ -169,6 +170,11 @@ export class GeneralInfoComponent implements OnInit {
   }
   // apply btn.update the details of user
   savehideshow() {
+    this.Country.forEach(element => {
+      if ( element.Id === +this.userInfoForm.value.citizenship) {
+        this.userInfoForm.value.countryid = element.Name;
+      }
+    });
     const obj = {
       Id: this.userGenralinfo.Id,
       FirstName: this.userInfoForm.value.firstName,
@@ -178,7 +184,7 @@ export class GeneralInfoComponent implements OnInit {
       TypeName: this.userInfoForm.value.type,
       Password: this.userGenralinfo.Password,
       CountryName: this.userInfoForm.value.citizenship,
-      CountryId: 1,
+      CountryId: this.userInfoForm.value.countryid,
       GroupId: this.userGenralinfo.GroupId,
       ISendEmail: this.userGenralinfo.ISendEmail,
       OwnerId: 1,

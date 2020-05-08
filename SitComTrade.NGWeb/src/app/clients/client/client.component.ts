@@ -29,9 +29,6 @@ Id: any;
 msg: string;
 pageSize: any;
 changePageSize: any;
-// alltab = true;
-// accounttab = true;
-// leadtab = true;
 
   ngOnInit() {
     this.userDetails();
@@ -73,11 +70,6 @@ changePageSize: any;
         // this.router.navigate(['/client-info', userid]);
 
   }
-  // refresh() {
-  //   this.alltab = true; 
-  //   this.accounttab = false;
-  //   this.leadtab  = false;
-  // }
   newUser() {
     this.router.navigateByUrl('/user');
   }

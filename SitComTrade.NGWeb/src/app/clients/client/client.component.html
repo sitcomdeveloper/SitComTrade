@@ -21,7 +21,7 @@
         <div class="col-md-5 main-tab">
           <ul class="nav nav-pills tablist " role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="pill" href="#all" (click)="userDetails()">All</a>
+              <a class="nav-link active" data-toggle="pill" href="#all">All</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="pill" href="#account">Accounts</a>
@@ -36,7 +36,9 @@
         <div class="col-md-7 rightsubopt displayend">
           <div class="btn-toolbar searchbtn" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)=userDetails()></i></a>
+              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="userDetails()"></i></a>
+               
+              
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
               <div class="input-group selecticon grpselect">

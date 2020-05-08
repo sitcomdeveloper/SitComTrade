@@ -122,7 +122,7 @@
                       
                       <select class="form-control" name="Currency" formControlName="currencyname" data-container="body" data-live-search="true" id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
                          <option value="">Select...</option>
-                         <option *ngFor="let data of getAllCurrency">{{data.Name}}</option>
+                         <option value="{{data.Id}}" *ngFor="let data of getAllCurrency">{{data.Name}}</option>
                       </select>
                       <div *ngIf="submitted && f.currencyname.errors" class="invalid-feedback">
                         <div *ngIf="f.currencyname.errors.required">Currency is required</div>
