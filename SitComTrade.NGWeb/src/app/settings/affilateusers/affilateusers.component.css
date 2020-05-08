@@ -446,3 +446,123 @@
     padding: 15px 20px;
     font-weight: 500;
 }
+.bootstrap-select>.btn.dropdown-toggle {
+    font-size: 13px;
+    background: #fff;
+    border-color: #dde7f9;
+    text-shadow: none;
+    height: 100%;
+    opacity: 1;
+    border-radius: 2px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.affiliate-settings .fielditem-group {
+    display: table;
+}
+.affiliate-settings div.bootstrap-select.form-control {
+    width: 175px;
+}
+.affiliate-settings .fielditem {
+    margin: 5px 0;
+    border-radius: 2px;
+    position: relative;
+    padding: 12px 10px 12px 27px;
+    background: #fff;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+.affiliate-settings .handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 5px;
+}
+
+.handle {
+    cursor: move;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    overflow: hidden;
+    /* background: url(images/sprite.png) -120px -715px no-repeat; */
+}
+.bootstrap-select.btn-group .dropdown-menu {
+    min-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+    margin: 0 0 5px;
+}
+.affiliate-settings .fielditem-group .form-control {
+    width: 100%;
+}
+.bootstrap-select>select {
+    position: absolute!important;
+    bottom: 0;
+    left: 50%;
+    display: block!important;
+    width: .5px!important;
+    height: 100%!important;
+    padding: 0!important;
+    opacity: 0!important;
+    border: none;
+}
+.bs-searchbox {
+    position: relative;
+}
+.bs-searchbox:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    margin: -7px 0 0;
+    /* background: url(images/sprite.png) 0 -280px no-repeat; */
+}
+.affiliate-settings .fielditem-group .form-control {
+    width: 100%;
+}
+.bs-searchbox .form-control, .jsgrid-cell .bs-searchbox .form-control {
+    margin-bottom: 0;
+    width: 100%;
+    float: none;
+    border-radius: 0;
+    border-color: transparent transparent #dde7f9;
+    padding-left: 38px;
+    text-align: left;
+}
+.form-control {
+    font-size: 13px;
+    color: #45596a;
+    height: 33px;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.btn, .form-control {
+    padding: 6px 15px;
+}
+.inner {
+    position: static;
+    float: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
