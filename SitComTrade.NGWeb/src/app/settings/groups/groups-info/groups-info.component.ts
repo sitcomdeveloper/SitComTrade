@@ -40,7 +40,8 @@ export class GroupsInfoComponent implements OnInit {
       allowtrade: [''],
       description: [''],
       leverage: [''],
-      mindeposit: ['']
+      mindeposit: [''],
+      currencyid: ['']
     });
     // for getting data for general-info
     const info = +this.route.snapshot.paramMap.get('setItem');
@@ -90,6 +91,11 @@ export class GroupsInfoComponent implements OnInit {
    }
   // updateGroupDetails
   updateGroupDetails() {
+    this.getAllCurrency.forEach(element => {
+      if ( element.Id === +this.groupsinfoForm.value.currency) {
+        this.groupsinfoForm.value.currencyid = element.Name;
+      }
+    });
     const obj = {
       Id: this.groupDetails.Id,
       Name: this.groupsinfoForm.value.names,
@@ -101,8 +107,8 @@ export class GroupsInfoComponent implements OnInit {
       Demo: this.groupsinfoForm.value.demo,
       MinDeposit: this.groupsinfoForm.value.mindeposit,
       AllowTrade: this.groupsinfoForm.value.allowtrade,
-      CurrencyId: 1,
-      CurrencyName: this.groupsinfoForm.value.currency,
+      CurrencyId: this.groupsinfoForm.value.currency,
+      CurrencyName: this.groupsinfoForm.value.currencyid,
       LeverageId: 1,
       LeverageName: this.groupsinfoForm.value.leverage
     };
