@@ -16,7 +16,7 @@ export class MarketingInfoComponent implements OnInit {
   Country: any;
   marketingInfoEdit = false;
   MarketingInfo = true;
-  constructor(private marketinginfoservice: MarketingInfoService, private fb: FormBuilder, private countryService: CountryService) { this.editMarketingInfo(); }
+  constructor(private marketinginfoservice: MarketingInfoService, private fb: FormBuilder, private countryService: CountryService) { }
 
   ngOnInit() {
     this.marketingInfoForm = this.fb.group({
@@ -67,31 +67,7 @@ export class MarketingInfoComponent implements OnInit {
       console.log('Marketinginfo', res);
     });
   }
-  editMarketingInfo() {
-    this.marketinginfoservice.getMarketingInfo().subscribe(res => {
-      this.userMarketingInfo = res;
-      this.marketingInfoForm.patchValue({
-        
-      //   tag2: this.userMarketingInfo.Tag2,
-      //   campaignid: this.userMarketingInfo.CampaignID,
-      //   // affilateid: this.userMarketingInfo.
-      //   subaffilateid: this.userMarketingInfo.SubAffiliateID,
-      //   source: this.userMarketingInfo.Source,
-      //   ipaddress: this.userMarketingInfo.IPAddress,
-      //   referrer: this.userMarketingInfo.Referrer,
-      //   ipcountry: this.userMarketingInfo.IPCountry,
-      //   utmcontent: this.userMarketingInfo.UtmContent,
-      //   utmsource: this.userMarketingInfo.UtmSource,
-      // utmcampaign: this.userMarketingInfo.UtmCampaign,
-      // utmcreative: this.userMarketingInfo.UtmCreative,
-      // utmmedium: this.userMarketingInfo.UtmMedium,
-      // googlekeyword: this.userMarketingInfo.GoogleKeyword,
-      // afftransactionid: this.userMarketingInfo.AffTransactionID,
-      // affiliateuser: this.userMarketingInfo.AffiliateUser
-
-      })
-    })
-  }
+ 
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
