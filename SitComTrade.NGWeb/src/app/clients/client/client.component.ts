@@ -61,11 +61,8 @@ leads = false;
         this.leadLength = this.leadInfo.length;
       }
     });
-  }, 10000);
+  }, );
   }
-//   refresh(): void {
-//     window.location.reload();
-// }
   userClick(selectedItem: any) {
     // let userid = selectedItem;
     // localStorage.clear();
@@ -75,7 +72,6 @@ leads = false;
     // console.log('Selected item Id: ', selectedItem.ItemId);
     console.log(selectedItem);
     this.router.navigate(['/info', selectedItem]);
-        // this.router.navigate(['/client-info', userid]);
 
   }
   newUser() {
