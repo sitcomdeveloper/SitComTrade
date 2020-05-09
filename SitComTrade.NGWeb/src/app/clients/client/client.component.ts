@@ -25,10 +25,15 @@ export class ClientComponent implements OnInit {
 a: any;
 UserId: any;
 UserLength: any;
+accountLength: any;
+leadLength: any;
 Id: any;
 msg: string;
 pageSize: any;
 changePageSize: any;
+all = true;
+accounts = false;
+leads = false;
 
   ngOnInit() {
     this.userDetails();
@@ -46,11 +51,14 @@ changePageSize: any;
             return m;
           }
         });
+        this.accountLength = this.accountInfo.length;
+        console.log('new', this.accountInfo.length);
         this.leadInfo = this.rowData.filter(p => {
           if (p.TypeName === 'Lead') {
             return p;
           }
         });
+        this.leadLength = this.leadInfo.length;
       }
     });
   }, 10000);
@@ -118,8 +126,23 @@ changePageSize: any;
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
-      window.location.reload();
+      // window.location.reload();
     });
+  }
+  alll() {
+    this.all = true;
+    this.accounts = false;
+    this.leads = false;
+  }
+  account() {
+    this.all = false;
+    this.accounts = true;
+    this.leads = false;
+  }
+  lead() {
+    this.all = false;
+    this.accounts = false;
+    this.leads = true;
   }
 
 }

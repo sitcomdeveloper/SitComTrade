@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../clients_info/general-info/general-info.service';
 import { ClientsService } from '../header/clients/clients.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
-import { ViewportScroller } from '@angular/common';
 
 
 @Component({
