@@ -24,7 +24,8 @@ export class AddressComponent implements OnInit {
       zipcode: [''],
       city: [''],
       state: [''],
-      address: ['']
+      address: [''],
+     countryid: ['']
     });
     this.address();
     this.getcountryName();
@@ -49,6 +50,11 @@ export class AddressComponent implements OnInit {
     });
   }
   updateAddress() {
+    // this.Country.forEach(element => {
+    //   if ( element.Id === +this.addressForm.value.ipcountry) {
+    //     this.addressForm.value.countryid = element.Name;
+    //   }
+    // });
     const obj = {
     City: this.addressForm.value.city,
     State: this.addressForm.value.state,
@@ -56,18 +62,9 @@ export class AddressComponent implements OnInit {
     CountryId: 1,
     CountryName: this.addressForm.value.ipcountry,
     OwnerId: '1',
-    StreetAddress: this.addressForm.value.address
+    StreetAddress: this.addressForm.value.address,
+    Id: this.userAddress.Id
     }
-
-    // const obj = {
-    //   CountryName: this.addressForm.value.ipcountry,
-    //   ZipCode: this.addressForm.value.zipcode,
-    //   City: this.addressForm.value.city,
-    //   State: this.addressForm.value.state,
-    //   StreetAddress: this.addressForm.value.address,
-    //   CountryId: 1,
-    //   OwnerId: 1
-    // };
     this.addressservice.insertAddress(obj).subscribe(res => {
       this.modifyAddress = res;
       console.log('modifyadd', res);

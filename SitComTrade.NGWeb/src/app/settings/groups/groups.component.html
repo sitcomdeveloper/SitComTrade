@@ -1,3 +1,6 @@
+<div class="jsgrid-items-counter">
+   <span>{{GroupLength}} items</span>
+ </div>
 <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 subheader">
@@ -23,23 +26,19 @@
                    <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
                       <li _ngcontent-mew-c3="" class="nav-item">
                          <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#">
-                            Email Templates</a>
+                            Groups</a>
                          </li>
                       
                    </ul>
                 </div>
                 <div _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend">
                   <div _ngcontent-boj-c6="" aria-label="Toolbar with button groups" class="btn-toolbar searchbtn" role="toolbar">
-                     <div _ngcontent-boj-c6="" aria-label="First group" class="btn-group mr-2" role="group"><a _ngcontent-boj-c6="" routerlink="" ng-reflect-router-link="" href="/"><i _ngcontent-boj-c6="" class="fa fa-refresh"></i></a></div>
+                     <div _ngcontent-boj-c6="" aria-label="First group" class="btn-group mr-2" role="group"><a _ngcontent-boj-c6="" routerlink="" ng-reflect-router-link="" href="javascript:void(0);" (click)="getGroups()"><i _ngcontent-boj-c6="" class="fa fa-refresh"></i></a></div>
                      <div _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
                         <div _ngcontent-boj-c6="" class="input-group selecticon grpselect">
                            <select _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
-                              <option _ngcontent-boj-c6="">Others</option>
-                              <option _ngcontent-boj-c6="">Accounts</option>
-                              <option _ngcontent-boj-c6="">All</option>
-                              <option _ngcontent-boj-c6="">Leads</option>
-                              <option _ngcontent-boj-c6="">Shared</option>
-                              <option _ngcontent-boj-c6="">Online</option>
+                              <option _ngcontent-boj-c6="">Groups</option>
+                              
                            </select>
                            <span _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-boj-c6="" class="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-boj-c6="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fas fa-pencil-alt bg-primary1 fa-lg"></i></a></span>
                         </div>
@@ -459,9 +458,9 @@
                                  </td>
                                  <td class="email-cell email-control-field email-align-center" >
                                     <div _ngcontent-oov-c3="" class="dropleft droptop">
-                                       <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
+                                       <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link" href="javascript:void(0);"  title="Open in new tab" (click)="getGeneralInfo(group.Id)">
                                           <i _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-link greyiconnn"></i></a>
-                                          <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
+                                          <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" title="Open in new tab">
                                              <i _ngcontent-oov-c3="" _ngcontent-ktw-c1="" aria-hidden="true" class="fas fa-pencil-alt greyiconnn" disabled=""></i></a>
                                             </div>
                                  </td>
@@ -505,6 +504,8 @@
         
       </div>
     </div> 
+
+    <ng4-loading-spinner> </ng4-loading-spinner>
     
     <!------------------create item model------------->
 <!-- <div class="modal" id="createitem">
