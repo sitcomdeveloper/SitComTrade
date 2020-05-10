@@ -7,7 +7,7 @@ namespace SitComTech.Core.Interface
 {
     public interface IUserService:IUnitOfWork<User>
     {
-        List<User> IsAuthenticated(UserVM userVM);
+        User IsAuthenticated(UserVM userVM);
         UserDataVM Insert(UserDataVM userDataVM);
         List<Country> GetCountries();
         List<Currency> GetCurrencies();

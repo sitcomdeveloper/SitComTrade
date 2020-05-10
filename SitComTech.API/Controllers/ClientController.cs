@@ -151,8 +151,8 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
-        [Route("InsertMarketingInfo")]
-        public MarketingInfo InsertMarketingInfo(MarketingInfo marketingVM)
+        [Route("InsertUpdateMarketingInfo")]
+        public MarketingInfo InsertUpdateMarketingInfo(MarketingInfo marketingVM)
         {
             if (marketingVM != null)
                 return _marketingInfoService.InsertMarketingInfo(marketingVM);

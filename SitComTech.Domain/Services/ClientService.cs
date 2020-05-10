@@ -266,9 +266,7 @@ namespace SitComTech.Domain.Services
             {
                 var marketingdataexist = _repository.GetAll().Where(x => x.OwnerId == marketingdata.OwnerId).FirstOrDefault();
                 if (marketingdataexist == null)
-                {
-                    if (marketingdata == null)
-                        throw new ArgumentNullException("User");
+                {                   
                     MarketingInfo entity = new MarketingInfo
                     {
                         Active = true,
@@ -277,12 +275,55 @@ namespace SitComTech.Domain.Services
                         CreatedBy = 0,
                         CreatedByName = "",
                         OwnerId = marketingdata.OwnerId,
+                        AffiliateID = marketingdata.AffiliateID,
+                        AffiliateUser = marketingdata.AffiliateUser,
+                        AffiliateUserId = marketingdata.AffiliateUserId,
+                        AffTransactionID = marketingdata.AffTransactionID,
+                        CampaignID = marketingdata.CampaignID,
+                        IPAddress = marketingdata.IPAddress,
+                        IPCountry = marketingdata.IPCountry,
+                        Referrer = marketingdata.Referrer,
+                        Source = marketingdata.Source,
+                        SubAffiliateID = marketingdata.SubAffiliateID,
+                        Tag1 = marketingdata.Tag1,
+                        Tag2 = marketingdata.Tag2,
+                        UtmCampaign = marketingdata.UtmCampaign,
+                        UtmContent = marketingdata.UtmContent,
+                        UtmCreative = marketingdata.UtmCreative,
+                        UtmMedium = marketingdata.UtmMedium,
+                        UtmSource = marketingdata.UtmSource,
+                        GoogleKeyword = marketingdata.GoogleKeyword,
                     };
                     _repository.Insert(entity);
                     SaveChanges();
                     return entity;
                 }
-                return marketingdata;
+                else
+                {
+                    marketingdataexist.AffiliateID = marketingdata.AffiliateID;
+                    marketingdataexist.AffiliateUser = marketingdata.AffiliateUser;
+                    marketingdataexist.AffiliateUserId = marketingdata.AffiliateUserId;
+                    marketingdataexist.AffTransactionID = marketingdata.AffTransactionID;
+                    marketingdataexist.CampaignID = marketingdata.CampaignID;
+                    marketingdataexist.IPAddress = marketingdata.IPAddress;
+                    marketingdataexist.IPCountry = marketingdata.IPCountry;
+                    marketingdataexist.OwnerId = marketingdata.OwnerId;
+                    marketingdataexist.Referrer = marketingdata.Referrer;
+                    marketingdataexist.Source = marketingdata.Source;
+                    marketingdataexist.SubAffiliateID = marketingdata.SubAffiliateID;
+                    marketingdataexist.Tag1 = marketingdata.Tag1;
+                    marketingdataexist.Tag2 = marketingdata.Tag2;
+                    marketingdataexist.UtmCampaign = marketingdata.UtmCampaign;
+                    marketingdataexist.UtmContent = marketingdata.UtmContent;
+                    marketingdataexist.UtmCreative = marketingdata.UtmCreative;
+                    marketingdataexist.UtmMedium = marketingdata.UtmMedium;
+                    marketingdataexist.UtmSource = marketingdata.UtmSource;
+                    marketingdataexist.GoogleKeyword = marketingdata.GoogleKeyword;
+                    marketingdataexist.UpdatedAt = DateTime.Now;
+                    _repository.Update(marketingdataexist);
+                    SaveChanges();
+                    return marketingdataexist;
+                }
             }
             catch (Exception ex)
             {

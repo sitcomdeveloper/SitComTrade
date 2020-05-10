@@ -109,11 +109,11 @@ namespace SitComTech.Domain.Services
         {
             _repository.SaveChanges();
         }
-        public List<User> IsAuthenticated(UserVM userVM)
+        public User IsAuthenticated(UserVM userVM)
         {
             var userdata = _repository.GetAll().Where(x => (x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).FirstOrDefault();
             if (userdata != null)
-                return _repository.GetAll().Where(x => x.Active && !x.Deleted).ToList();
+                return userdata;
             else
                 return null;
         }
