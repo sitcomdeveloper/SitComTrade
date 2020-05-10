@@ -187,7 +187,7 @@ export class GeneralInfoComponent implements OnInit {
       CountryId: this.userInfoForm.value.countryid,
       GroupId: this.userGenralinfo.GroupId,
       ISendEmail: this.userGenralinfo.ISendEmail,
-      OwnerId: 1,
+      OwnerId: this.userGenralinfo.OwnerId,
       Phone: this.userInfoForm.value.phone,
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {

@@ -1484,21 +1484,21 @@
             <div class="">
               <div data-display-for="27_FirstName">
                 <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title=""
-                  title="">{{item.FirstName}}</div>
+                  title="" tooltip="{{item.FirstName}}">{{item.FirstName}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_LastName">
-                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">{{item.LastName}}</div>
+                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA" tooltip="{{item.LastName}}">{{item.LastName}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Country">
-                <div class="text-ellipsis"><span class="flag it"></span>{{item.CountryName}}</div>
+                <div class="text-ellipsis" tooltip="{{item.CountryName}}"><span class="flag it"></span>{{item.CountryName}}</div>
               </div>
             </div>
           </td>
@@ -1506,7 +1506,7 @@
             <div class="jsgrid-cell-content" >
               <div data-display-for="27_Email">
                 <div class="text-ellipsis" data-original-title="Email"  ><a
-                    href="mailto:{{item.Email}}"><span title="{{item.Email}}" data-toggle="tooltip" appTooltip>{{item.Email}}</span></a></div>
+                    href="mailto:{{item.Email}}"><span title="" tooltip="{{item.Email}}">{{item.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -1521,7 +1521,8 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title=""
-                  title="">{{item.Phone}}</div>
+                  title="" tooltip="{{item.Phone}}">{{item.Phone}}
+                </div>
               </div>
             </div>
           </td>
@@ -1535,7 +1536,7 @@
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_StatusId">
-                <div class="text-ellipsis" data-original-title="" title="">{{item.ResponseStatus}}</div>
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{item.ResponseStatus}}">{{item.ResponseStatus}}</div>
               </div>
             </div>
           </td>
@@ -1594,14 +1595,19 @@
           </td>
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
-              <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
+              <a href="javascript:void(0);" (click)="userClick(item.Id)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" routerLinkActive="active" (click)="userClick(item.Id)"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0)" class="ico-sz3 ico-link dh " id="ico9"   data-jsgrid-rule="link" title="Open in new tab">
                 <i  _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled=""></i></a>
               <br>
-              <a href="javascript:void(0)" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"
-                title="Open in new tab">&nbsp;&nbsp;<i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+              <a href="javascript:void(0)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link"
+              popover="lorem"> &nbsp;&nbsp; <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+              <!-- <button type="button" class="btn btn-primary"
+              popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Live demo
+      </button> -->
+       
               </a>
               
             </div>
@@ -2819,21 +2825,21 @@
             <div class="">
               <div data-display-for="27_FirstName">
                 <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title=""
-                  title="">{{actinfo.FirstName}}</div>
+                  title="" tooltip="{{actinfo.FirstName}}">{{actinfo.FirstName}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_LastName">
-                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">{{actinfo.LastName}}</div>
+                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA" tooltip="{{actinfo.LastName}}">{{actinfo.LastName}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Country">
-                <div class="text-ellipsis"><span class="flag it"></span>{{actinfo.CountryName}}</div>
+                <div class="text-ellipsis"><span class="flag it" tooltip="{{actinfo.CountryName}}">{{actinfo.CountryName}}</span></div>
               </div>
             </div>
           </td>
@@ -2841,14 +2847,14 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
                 <div class="text-ellipsis"   ><a
-                    href="mailto:{{actinfo.Email}}"><span title="{{actinfo.Email}}" data-toggle="tooltip" appTooltip>{{actinfo.Email}}</span></a></div>
+                    href="mailto:{{actinfo.Email}}"><span title="" tooltip="{{actinfo.Email}}">{{actinfo.Email}}</span></a></div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Type">
-                <div class="text-ellipsis">{{actinfo.Phone}}</div>
+                <div class="text-ellipsis" tooltip="{{actinfo.Phone}}">{{actinfo.Phone}}</div>
               </div>
             </div>
           </td>
@@ -2863,14 +2869,14 @@
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_OwnerId">
-                <div class="text-ellipsis" data-original-title="" title="">{{actinfo.ResponseStatus}}</div>
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{actinfo.ResponseStatus}}">{{actinfo.ResponseStatus}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_StatusId">
-                <div class="text-ellipsis" data-original-title="" title="">{{actinfo.CreatedDate}}</div>
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{actinfo.CreatedDate}}">{{actinfo.CreatedDate}}</div>
               </div>
             </div>
           </td>
@@ -2917,7 +2923,7 @@
 
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
-              <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
+              <a href="javascript:void(0);" (click)="userClick(actinfo.Id)" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
@@ -3963,14 +3969,14 @@
             <div class="">
               <div data-display-for="27_FirstName">
                 <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title=""
-                  title="">{{leadinfo.FirstName}}</div>
+                  title="" tooltip="{{leadinfo.FirstName}}">{{leadinfo.FirstName}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_LastName">
-                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA">{{leadinfo.LastName}}</div>
+                <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA" tooltip="{{leadinfo.LastName}}">{{leadinfo.LastName}}</div>
               </div>
             </div>
           </td>
@@ -3984,7 +3990,7 @@
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Email">
-                <div class="text-ellipsis" data-original-title="" title="">
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{leadinfo.CountryName}}">
                     <span>{{leadinfo.CountryName}}</span></div>
               </div>
             </div>
@@ -4000,7 +4006,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title="" data-toggle="tooltip"
-                  title=""><a href="mailto:{{leadinfo.Email}}"><span title="{{leadinfo.Email}}" data-toggle="tooltip" appTooltip>{{leadinfo.Email}}</span></a></div>
+                  title=""><a href="mailto:{{leadinfo.Email}}"><span title="" tooltip="{{leadinfo.Email}}">{{leadinfo.Email}}</span></a></div>
               </div>
             </div>
           </td>
@@ -4043,7 +4049,7 @@
 
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
-              <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i
+              <a href="javascript:void(0);" (click)="userClick(leadinfo.Id)" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i

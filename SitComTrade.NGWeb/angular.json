@@ -22,17 +22,18 @@
             "assets": [
               "src/favicon.ico",
               {
-                "glob":"**/**",
-                "input":"src/assets/images",
-                "output":"/assets"
+                "glob": "**/**",
+                "input": "src/assets/images",
+                "output": "/assets"
               },
               {
-                "glob":"**/**",
-                "input":"src/assets",
-                "output":"/assets"
+                "glob": "**/**",
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -57,7 +58,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "6mb", 
+                  "maximumWarning": "6mb",
                   "maximumError": "8mb"
                 },
                 {
@@ -71,13 +72,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options":{
-
+          "options": {
             "browserTarget": "cms:build",
-            "port":1234
-
+            "port": 1234
           },
-
           "configurations": {
             "production": {
               "browserTarget": "cms:build:production"
@@ -102,6 +100,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -133,6 +132,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cms"
 }

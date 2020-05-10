@@ -7,11 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhoneMaskDirective } from './common/directives/phone-mask.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {TabModule} from 'angular-tabs-component';
+// import {TabModule} from 'angular-tabs-component';
 import { BlockCopyPasteDirective } from './block-copy-paste.directive';
 // import { CollapsibleModule } from 'angular2-collapsible';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
-// import { ToastrModule} from 'ngx-toastr';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 import { AgGridModule } from 'ag-grid-angular';
@@ -94,12 +95,11 @@ import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-acco
 import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
 import { DeleteComponent } from './common/delete/delete.component';
 import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
-import { TooltipDirective } from './common/directives/tooltip.directive';
 import { InfoDocumentsComponent } from './clients_info/info-documents/info-documents.component';
 import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
-import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -180,7 +180,6 @@ import { RouterModule } from '@angular/router';
     FinancialTransactionsComponent,
     DeleteComponent,
     EditTaskComponent,
-    TooltipDirective,
     InfoDocumentsComponent,
     InfoCasesComponent,
     GroupsInfoComponent,
@@ -193,14 +192,15 @@ import { RouterModule } from '@angular/router';
     ModalModule.forRoot(),
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     AgGridModule.withComponents(null),
-    TabModule,
-    Ng4LoadingSpinnerModule.forRoot()
+    // TabModule,
+    Ng4LoadingSpinnerModule.forRoot(),
+    PopoverModule.forRoot(), TooltipModule.forRoot(),
 
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent,TranslationsFilterComponent],
+    CreateTemplateComponent, TranslationsFilterComponent],
   exports: [
-    PhoneMaskDirective, TooltipDirective
+    PhoneMaskDirective
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

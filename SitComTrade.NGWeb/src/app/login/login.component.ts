@@ -75,6 +75,10 @@ export class LoginComponent implements OnInit {
           data: boolean[]) => {
           if (data) {
             this.router.navigateByUrl('clients');
+            console.log('LoginDetails', data);
+            // localStorage.clear();
+            localStorage.setItem('project', JSON.stringify(data));
+            console.log('stringifydata', JSON.stringify(data));
           } else {
             alert('Invalid Credential');
           }

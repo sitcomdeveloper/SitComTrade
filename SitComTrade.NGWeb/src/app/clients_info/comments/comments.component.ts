@@ -17,10 +17,17 @@ export class CommentsComponent implements OnInit {
   commentsForm: FormGroup;
   dltAllComment: any;
   dltAll: any;
+  getLoginDetails: any;
+  bindLoginData: any;
   constructor(private commentsService: CommentsService, private fb: FormBuilder, private modalService: BsModalService) { }
    bsModalRef: BsModalRef;
 
   ngOnInit() {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
+    // comments code
     this.commentsForm = this.fb.group({
       commentarea: ['']
     });
