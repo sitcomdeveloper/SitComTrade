@@ -1,853 +1,965 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 subheader">
-      <div class="container-fluid container-padd">
-       <div class="row">
-          <div class="tools-panel-addon">
-             <div class="breadcrumbs">
-                <ul>
-                   <li itemscope="">
-                      <span itemprop="title">Settings</span>
-                   </li>
-                   <li itemscope="">
-                      <span itemprop="title">Translations</span>
-                   </li>
-                </ul>
-             </div>
-         </div>
-       </div>
-    </div>
+   <div class="row">
+     <div class="col-md-12 subheader">
        <div class="container-fluid container-padd">
-        <div class="row subhedarpadd">
-          <div _ngcontent-mew-c3="" class="col-md-5 main-tab">
-             <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
-                <li _ngcontent-mew-c3="" class="nav-item">
-                   <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#">
-                    Translations</a>
-                   </li>
-                
-             </ul>
+        <div class="row">
+           <div class="tools-panel-addon">
+              <div class="breadcrumbs">
+                 <ul>
+                    <li itemscope="">
+                       <span itemprop="title">users</span>
+                    </li>
+                    <li itemscope="">
+                       <span itemprop="title">Management: User Roles</span>
+                    </li>
+                 </ul>
+              </div>
           </div>
-     <div _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend">
-            <div _ngcontent-boj-c6="" aria-label="Toolbar with button groups" class="btn-toolbar searchbtn" role="toolbar">
-               <div _ngcontent-boj-c6="" aria-label="First group" class="btn-group mr-2" role="group"><a _ngcontent-boj-c6="" routerlink="" ng-reflect-router-link="" href="/"><i _ngcontent-boj-c6="" class="fa fa-refresh"></i></a></div>
-               <div _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
-                  <div _ngcontent-boj-c6="" class="input-group selecticon grpselect">
-                     <select _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
-                        <option _ngcontent-boj-c6="">Others</option>
-                        <option _ngcontent-boj-c6="">Accounts</option>
-                        <option _ngcontent-boj-c6="">All</option>
-                        <option _ngcontent-boj-c6="">Leads</option>
-                        <option _ngcontent-boj-c6="">Shared</option>
-                        <option _ngcontent-boj-c6="">Online</option>
-                     </select>
-                     <span _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-boj-c6="" class="" href="javascript:void(0);"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-boj-c6="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fas fa-pencil-alt bg-primary1 fa-lg"></i></a></span>
-                  </div>
-               </div>
-               <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group"><a _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a><a _ngcontent-boj-c6="" class="brdr-right" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fas fa-pencil-alt bg-primary1 fa-lg" disabled=""></i></a><a _ngcontent-boj-c6="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled=""></i></a></div>
-               <div _ngcontent-boj-c6="" aria-label="Four group" class="btn-group mr-2 holder" role="group">
-                  <i _ngcontent-boj-c6="" aria-expanded="false" aria-haspopup="true" aria-hidden="true" class="fa fa-ellipsis-h" data-toggle="dropdown" id="clientcret"></i>
-                  <ul _ngcontent-boj-c6="" aria-labelledby="clientcret" class="dropdown-menu impdrp ">
-                     <li _ngcontent-boj-c6=""><a _ngcontent-boj-c6="" class="link-import" data-target="#importclient" data-toggle="modal" title="Import Clients"><i _ngcontent-boj-c6="" class="fa fa-arrow-up"></i>Import Clients</a></li>
-                     <li _ngcontent-boj-c6=""><a _ngcontent-boj-c6="" class="link-export" data-target="#exportclient" data-toggle="modal" href="#" title="Export Clients"><i _ngcontent-boj-c6="" class="fa fa-arrow-down"></i>Export Clients</a></li>
-                     <li _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-boj-c6="" class="link-sms" href="javascript:void(0);" title="Sms"><i _ngcontent-boj-c6="" class="fa fa-envelope"></i>Sms to selected</a></li>
-                     <li _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-boj-c6="" class="link-sms-all" data-target="#sms-all" data-toggle="modal" href="#" title="Sms"><i _ngcontent-boj-c6="" class="fa fa-sticky-note-o"></i>Sms to all</a></li>
-                     <li _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-boj-c6="" class="link-email" href="#" title="Emails"><i _ngcontent-boj-c6="" class="fa fa-envelope"></i>Email to selected</a></li>
-                     <li _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-boj-c6="" class="link-email-all" data-target="#email-all" data-toggle="modal" href="#" title="Emails"><i _ngcontent-boj-c6="" class="fa fa-envelope"></i>Email to all</a></li>
-                     <li _ngcontent-boj-c6=""><a _ngcontent-boj-c6="" class="link-account" href="javascript:void(0);"><i _ngcontent-boj-c6="" class="fa fa-user"></i>Create Account</a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-       </div>
-       
+        </div>
+     </div>
+        <div class="container-fluid container-padd">
+         <div class="row subhedarpadd">
+           <div _ngcontent-mew-c3="" class="col-md-5 main-tab">
+              <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
+                 <li _ngcontent-mew-c3="" class="nav-item">
+                    <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#emailsetting">
+                    All</a>
+                    </li>
+                    <!-- <li _ngcontent-mew-c3="" class="nav-item">
+                     <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#smssetting">
+                       Sms Settings</a>
+                     </li> -->
+                 
+              </ul>
+           </div>
+        
+        </div>
+        
+     </div>
+ 
     </div>
-
+       
    </div>
-      
-  </div>
-  <div class="main-holder">
-   <div id="content">
-      <div class="tab-content main-tabs-content">
-         <div role="tabpanel" class="tab-pane active fade in" id="filter">
-         </div>
-         <div class="content-area">
-         </div>
-         <div>
-            <div id="email" class="email">
-               <div class="email-grid-header email-header-scrollbar">
-                 <table>
-                    <tbody>
-<tr class="email-header-row">
-                          
-                           <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
-                              <div class="email-cell-content">
-                                 <div class="text-ellipsis"><span>Title</span></div>
-                              </div>
-                           </th>
-                           <th class="email-header-cell email-header-sortable" >
-                              <div class="email-cell-content">
-                                 <div class="text-ellipsis"><span>Status</span></div>
-                              </div>
-                           </th>
-                           <th class="email-header-cell email-header-sortable">
-                              <div class="email-cell-content">
-                                 <div class="text-ellipsis"><span>Date</span></div>
-                              </div>
-                           </th>
-                           <th class="email-header-cell email-header-sortable">
-                            <div class="email-cell-content">
-                               <div class="text-ellipsis"><span>FinishDate</span></div>
-                            </div>
-                         </th>
-                         <th class="email-header-cell email-header-sortable">
-                          <div class="email-cell-content">
-                             <div class="text-ellipsis"><span>Created By</span></div>
-                          </div>
-                       </th>
-                       <th class="email-header-cell email-header-sortable">
-                        <div class="email-cell-content">
-                           <div class="text-ellipsis"><span>Errors</span></div>
-                        </div>
-                     </th>
-                     <th class="email-header-cell email-header-sortable">
-                      <div class="email-cell-content">
-                         <div class="text-ellipsis"><span>DeletedDate</span></div>
-                      </div>
-                   </th>
-                   <th class="email-header-cell email-header-sortable">
-                    <div class="email-cell-content">
-                       <div class="text-ellipsis"><span>DeletedBy</span></div>
-                    </div>
-                 </th>
-                           <th class="email-header-cell email-control-field email-align-center" >
-                              <div _ngcontent-bog-c3="" class="nospace">
-                                 <i _ngcontent-bog-c3="" class="fa fa-sort-asc"></i><br _ngcontent-bog-c3="">
-                                 <i _ngcontent-bog-c3="" class="fa fa-sort-desc"></i></div>
-                          
-                           </th>
-                        </tr>
-                        <tr class="email-filter-row">
-                          <td class="email-cell email-align-center headingwidth" >
-                            <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
-                              <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
-                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
-                                    <i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid"></i>
-                                    <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop" style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
-                                       <form _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
-                                          <ul _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
-                                                   Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
-                                                   Not Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
-                                                   Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
-                                                   Not Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked"><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
-                                                   Starts With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
-                                                   End With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
-                                                   Empty 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
-                                                   NotEmpty 
-                                                </label>
-                                             </li>
-                                          </ul>
-                                       </form>
-                                    </div>
-                                 </div>
-                                 <input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span></i>
-                              </div>
-                           </div>                         
-                              
-                           </td>
-                           <td class="email-cell email-align-left headingwidth" >
-                              <div _ngcontent-eme-c5="" class="email-cell-content">
-                                 <select _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
-                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">All</span></a></option>
-                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">Yes</span></a></option>
-                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">No</span></a></option>
-                                 </select>
-                              </div>
-                           </td>
-                           <td class="email-cell email-align-center headingwidth" >
-                            <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
-                              <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
-                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
-                                    <i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid">=</i>
-                                    <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop" style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
-                                       <form _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
-                                          <ul _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
-                                                   Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
-                                                   Not Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
-                                                   Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
-                                                   Not Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked"><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
-                                                   Starts With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
-                                                   End With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
-                                                   Empty 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
-                                                   NotEmpty 
-                                                </label>
-                                             </li>
-                                          </ul>
-                                       </form>
-                                    </div>
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                 </div>
-                                 <input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span></i>
-                              </div>
-                           </div>
-                           </td>
-                           <td class="email-cell email-align-center headingwidth" >
-                            <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
-                              <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
-                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
-                                    <i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid">=</i>
-                                    <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop" style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
-                                       <form _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
-                                          <ul _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
-                                                   Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
-                                                   Not Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
-                                                   Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
-                                                   Not Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked"><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
-                                                   Starts With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
-                                                   End With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
-                                                   Empty 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
-                                                   NotEmpty 
-                                                </label>
-                                             </li>
-                                          </ul>
-                                       </form>
-                                    </div>
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                 </div>
-                                 <input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span></i>
-                              </div>
-                           </div>
-                           </td>
-                           <td class="email-cell email-align-center headingwidth" >
-                            <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
-                              <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
-                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
-                                    <i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid">=</i>
-                                    <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop" style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
-                                       <form _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
-                                          <ul _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
-                                                   Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
-                                                   Not Contains 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
-                                                   Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
-                                                   Not Equals 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked"><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
-                                                   Starts With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
-                                                   End With 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
-                                                   Empty 
-                                                </label>
-                                             </li>
-                                             <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                   <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
-                                                   NotEmpty 
-                                                </label>
-                                             </li>
-                                          </ul>
-                                       </form>
-                                    </div>
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                 </div>
-                                 <input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span></i>
-                              </div>
-                           </div>
-                           </td>
-                           <td class="email-cell email-align-left headingwidth" >
-                            <div _ngcontent-eme-c5="" class="email-cell-content">
-                               <select _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
-                                  <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">All</span></a></option>
-                                  <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">Yes</span></a></option>
-                                  <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">No</span></a></option>
-                               </select>
-                            </div>
-                         </td>
-                           <td class="email-cell email-align-left headingwidth" >
-                            <div _ngcontent-eme-c5="" class="email-cell-content">
-                               <select _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
-                                  <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">All</span></a></option>
-                                  <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">Yes</span></a></option>
-                                  <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">No</span></a></option>
-                               </select>
-                            </div>
-                         </td>
-                         <td class="email-cell email-align-center headingwidth" >
-                          <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
-                            <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
-                               <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
-                                  <i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid">=</i>
-                                  <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop" style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
-                                     <form _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
-                                        <ul _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
-                                                 Contains 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
-                                                 Not Contains 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
-                                                 Equals 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
-                                                 Not Equals 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked"><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
-                                                 Starts With 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
-                                                 End With 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
-                                                 Empty 
-                                              </label>
-                                           </li>
-                                           <li _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                              <label _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
-                                                 <div _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""><input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
-                                                 NotEmpty 
-                                              </label>
-                                           </li>
-                                        </ul>
-                                     </form>
-                                  </div>
-                                  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                               </div>
-                               <input _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span></i>
-                            </div>
-                         </div>
-                         </td>
-                         <td _ngcontent-agf-c19="" class="email-cell email-control-field email-align-center">
-                           <span _ngcontent-agf-c19="" _ngcontent-lrx-c3="">
-                           <i _ngcontent-agf-c19="" _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i>
-                          </span>
-                        </td>
-                        </tr>
-                    </tbody>
-                 </table>
-               </div>
-               <div class="jsgrid-grid-body">
-                <table _ngcontent-bdo-c4="" class="email-table1 JColResizer" id="JColResizer0">
-                  <!--bindings={
-                     "ng-reflect-ng-for-of": "[object Object],[object Object"
-                     }-->
-                  <tbody _ngcontent-bdo-c4="">
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">LIVE AFF GOOGLE 29APRIL.xlsx</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">Success with errors</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> 4/29/2020 9:23:53 PM </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> 4/29/2020 9:23:53 PM </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                          <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                             <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="">Empty Value</div>
-                             </div>
-                          </div>
-                       </td>
-                      
-                     <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                      <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                         <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                            <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="">Row 0</div>
-                         </div>
-                      </div>
-                   </td>
-                   <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                    <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                       <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                          <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""></div>
+   <div class="main-holder">
+    <div id="content">
+       <div class="tab-content main-tabs-content">
+          <div role="tabpanel" class="tab-pane active" id="emailsetting">
+           <div>
+             <div _ngcontent-jgg-c8="" class="email" id="email">
+               <div _ngcontent-jgg-c8="" class="email-grid-header email-header-scrollbar">
+                   <table _ngcontent-jgg-c8="" class="email-table">
+                       <tbody _ngcontent-jgg-c8="">
+                           <tr _ngcontent-jgg-c8="" class="email-header-row">
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Title</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Status</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Date</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">FinishDate</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Created By</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Errors</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">DeletedDate</span></div>
+                                   </div>
+                               </th>
+                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">DeletedBy</span></div>
+                                   </div>
+                               </th>
+                           
+                     <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                       <div _ngcontent-jgg-c8="" class="email-cell-content">
+                           <div _ngcontent-jgg-c8="" class="text-ellipsis">
+                             <span _ngcontent-jgg-c8=""></span></div>
                        </div>
-                    </div>
+                   </th>
+                           </tr>
+                           <tr _ngcontent-jgg-c8="" class="email-filter-row">
+                               <td _ngcontent-jgg-c8="" class="email-cell email-align-center headingwidth">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
+                                           <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
+                                               <i
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-expanded="false"
+                                                   aria-haspopup="true"
+                                                   class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger"
+                                                   data-toggle="dropdown"
+                                                   id="firstid"
+                                               >=</i>
+                                               <div
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-labelledby="firstid"
+                                                   class="drop dropdown-menu radiondrop"
+                                                   style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                                   x-placement="bottom-start"
+                                               >
+                                                   <form _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                                       <ul _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Starts With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4" />
+                                                                       </span>
+                                                                   </div>
+                                                                   End With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Empty
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12" />
+                                                                       </span>
+                                                                   </div>
+                                                                   NotEmpty
+                                                               </label>
+                                                           </li>
+                                                       </ul>
+                                                   </form>
+                                               </div>
+                                           </div>
+                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text" />
+                                           <i _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear">
+                                               <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span>
+                                           </i>
+                                       </div>
+                                   </div>
+                               </td>
+                             
+                        
+                 
+                   <td _ngcontent-gdn-c3="" _ngcontent-jgg-c8="" class="email-cell email-align-left headingwidth">
+                     <div _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="jsgrid-cell-content">
+                         <select _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="btn-group bootstrap-select form-control emailinpt">
+                             <option _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="selected" data-original-index="1">
+                                 <a _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                     <span _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="text">All</span>
+                                 </a>
+                             </option>
+                             <option _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="selected" data-original-index="1">
+                                 <a _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                     <span _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="text">Yes</span>
+                                 </a>
+                             </option>
+                             <option _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="selected" data-original-index="1">
+                                 <a _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                     <span _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="text">No</span>
+                                 </a>
+                             </option>
+                         </select>
+                     </div>
                  </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-alt-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">_sendemail</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                  </tbody>
-                  <tbody _ngcontent-bdo-c4="">
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-alt-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">_sendemail</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                  </tbody>
-                  <tbody _ngcontent-bdo-c4="">
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-alt-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">_sendemail</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                  </tbody>
-                  <tbody _ngcontent-bdo-c4="">
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                        </td>
-                     </tr>
-                     <tr _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-alt-row">
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">_sendemail</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">JsTranslations</div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> English </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                              <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                 <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15=""> _sendEmail </div>
-                              </div>
-                           </div>
-                        </td>
-                        <td _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                           <div _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop ">
-                            <i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-arrow-down bg-primary1 fa-lg greyiconn"></i>
-
-                            <i _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-arrow-down bg-primary1 fa-lg greyiconn"></i>
-                            </div>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
+                                   
+                               <td _ngcontent-jgg-c8="" class="email-cell email-align-center headingwidth">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
+                                           <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
+                                               <i
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-expanded="false"
+                                                   aria-haspopup="true"
+                                                   class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger"
+                                                   data-toggle="dropdown"
+                                                   id="firstid"
+                                               >
+                                                   =
+                                               </i>
+                                               <div
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-labelledby="firstid"
+                                                   class="drop dropdown-menu radiondrop"
+                                                   style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                                   x-placement="bottom-start"
+                                               >
+                                                   <form _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                                       <ul _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Starts With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4" />
+                                                                       </span>
+                                                                   </div>
+                                                                   End With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Empty
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12" />
+                                                                       </span>
+                                                                   </div>
+                                                                   NotEmpty
+                                                               </label>
+                                                           </li>
+                                                       </ul>
+                                                   </form>
+                                               </div>
+                                               <span _ngcontent-jgg-c8="" class="input-group-addon"><i _ngcontent-jgg-c8="" class="fa fa-calendar"></i></span>
+                                           </div>
+                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text" />
+                                           <i _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear">
+                                               <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span>
+                                           </i>
+                                       </div>
+                                   </div>
+                               </td>
+                  
+                               <td _ngcontent-jgg-c8="" class="email-cell email-align-center headingwidth">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
+                                           <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
+                                               <i
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-expanded="false"
+                                                   aria-haspopup="true"
+                                                   class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger"
+                                                   data-toggle="dropdown"
+                                                   id="firstid"
+                                               >
+                                                   =
+                                               </i>
+                                               <div
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-labelledby="firstid"
+                                                   class="drop dropdown-menu radiondrop"
+                                                   style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                                   x-placement="bottom-start"
+                                               >
+                                                   <form _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                                       <ul _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Starts With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4" />
+                                                                       </span>
+                                                                   </div>
+                                                                   End With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Empty
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12" />
+                                                                       </span>
+                                                                   </div>
+                                                                   NotEmpty
+                                                               </label>
+                                                           </li>
+                                                       </ul>
+                                                   </form>
+                                               </div>
+                                               <span _ngcontent-jgg-c8="" class="input-group-addon"><i _ngcontent-jgg-c8="" class="fa fa-calendar"></i></span>
+                                           </div>
+                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text" />
+                                           <i _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear">
+                                               <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span>
+                                           </i>
+                                       </div>
+                                   </div>
+                               </td>
+                                                 
+                     <td _ngcontent-gdn-c3="" _ngcontent-jgg-c8="" class="email-cell email-align-left headingwidth">
+                        <div _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="jsgrid-cell-content">
+                            <select _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="btn-group bootstrap-select form-control emailinpt">
+                                <option _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="selected" data-original-index="1">
+                                    <a _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                        <span _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="text">All</span>
+                                    </a>
+                                </option>
+                                <option _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="selected" data-original-index="1">
+                                    <a _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                        <span _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="text">Yes</span>
+                                    </a>
+                                </option>
+                                <option _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="selected" data-original-index="1">
+                                    <a _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                        <span _ngcontent-gdn-c3="" _ngcontent-eme-c5="" _ngcontent-jgg-c8="" class="text">No</span>
+                                    </a>
+                                </option>
+                            </select>
+                        </div>
+                    </td>
+                    <td _ngcontent-jgg-c8="" class="email-cell email-align-center headingwidth">
+                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
+                         <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
+                             <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
+                                 <i
+                                     _ngcontent-jgg-c8=""
+                                     _ngcontent-cwf-c3=""
+                                     _ngcontent-eql-c3=""
+                                     _ngcontent-ruh-c3=""
+                                     aria-expanded="false"
+                                     aria-haspopup="true"
+                                     class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger"
+                                     data-toggle="dropdown"
+                                     id="firstid"
+                                 >=</i>
+                                 <div
+                                     _ngcontent-jgg-c8=""
+                                     _ngcontent-cwf-c3=""
+                                     _ngcontent-eql-c3=""
+                                     _ngcontent-ruh-c3=""
+                                     aria-labelledby="firstid"
+                                     class="drop dropdown-menu radiondrop"
+                                     style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                     x-placement="bottom-start"
+                                 >
+                                     <form _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                         <ul _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5" />
+                                                         </span>
+                                                     </div>
+                                                     Contains
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6" />
+                                                         </span>
+                                                     </div>
+                                                     Not Contains
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1" />
+                                                         </span>
+                                                     </div>
+                                                     Equals
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2" />
+                                                         </span>
+                                                     </div>
+                                                     Not Equals
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3" />
+                                                         </span>
+                                                     </div>
+                                                     Starts With
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4" />
+                                                         </span>
+                                                     </div>
+                                                     End With
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11" />
+                                                         </span>
+                                                     </div>
+                                                     Empty
+                                                 </label>
+                                             </li>
+                                             <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                 <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                     <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                         <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12" />
+                                                         </span>
+                                                     </div>
+                                                     NotEmpty
+                                                 </label>
+                                             </li>
+                                         </ul>
+                                     </form>
+                                 </div>
+                             </div>
+                             <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text" />
+                             <i _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear">
+                                 <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span>
+                             </i>
+                         </div>
+                     </div>
+                 </td>
+                               <td _ngcontent-jgg-c8="" class="email-cell email-align-center headingwidth">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="jsgrid-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="cstm-search input-control empty">
+                                           <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checkbox-dd">
+                                               <i
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-expanded="false"
+                                                   aria-haspopup="true"
+                                                   class="fa fa-chevron-down1 comparation-type-3 cstm-search-btn-trigger"
+                                                   data-toggle="dropdown"
+                                                   id="firstid"
+                                               >
+                                                   =
+                                               </i>
+                                               <div
+                                                   _ngcontent-jgg-c8=""
+                                                   _ngcontent-cwf-c3=""
+                                                   _ngcontent-eql-c3=""
+                                                   _ngcontent-ruh-c3=""
+                                                   aria-labelledby="firstid"
+                                                   class="drop dropdown-menu radiondrop"
+                                                   style="position: absolute; transform: translate3d(6px, 19px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                                   x-placement="bottom-start"
+                                               >
+                                                   <form _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                                       <ul _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Contains
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Not Equals
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="active">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="checked">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Starts With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4" />
+                                                                       </span>
+                                                                   </div>
+                                                                   End With
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11" />
+                                                                       </span>
+                                                                   </div>
+                                                                   Empty
+                                                               </label>
+                                                           </li>
+                                                           <li _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                               <label _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                   <div _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="input-radio fistinpt">
+                                                                       <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="">
+                                                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12" />
+                                                                       </span>
+                                                                   </div>
+                                                                   NotEmpty
+                                                               </label>
+                                                           </li>
+                                                       </ul>
+                                                   </form>
+                                               </div>
+                                               <span _ngcontent-jgg-c8="" class="input-group-addon"><i _ngcontent-jgg-c8="" class="fa fa-calendar"></i></span>
+                                           </div>
+                                           <input _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text" />
+                                           <i _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3="" class="clear cstm-search-btn-clear">
+                                               <span _ngcontent-jgg-c8="" _ngcontent-cwf-c3="" _ngcontent-eql-c3="" _ngcontent-ruh-c3=""></span>
+                                           </i>
+                                       </div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" class="email-cell email-align-left headingwidth">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="jsgrid-cell-content">
+                                       <select _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
+                                           <option _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="selected" data-original-index="1">
+                                               <a _ngcontent-jgg-c8="" _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                                   <span _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="text">All</span>
+                                               </a>
+                                           </option>
+                                           <option _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="selected" data-original-index="1">
+                                               <a _ngcontent-jgg-c8="" _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                                   <span _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="text">Yes</span>
+                                               </a>
+                                           </option>
+                                           <option _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="selected" data-original-index="1">
+                                               <a _ngcontent-jgg-c8="" _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                                   <span _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="text">No</span>
+                                               </a>
+                                           </option>
+                                       </select>
+                                   </div>
+                               </td>
+                              
+                             
+                               <td _ngcontent-jgg-c8="" _ngcontent-agf-c19="" class="email-cell email-control-field email-align-center">
+                                   <span _ngcontent-jgg-c8="" _ngcontent-agf-c19="" _ngcontent-lrx-c3="">
+                                       <i _ngcontent-jgg-c8="" _ngcontent-agf-c19="" _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i>
+                                   </span>
+                               </td>
+                           </tr>
+                       </tbody>
+                   </table>
                </div>
-              
-              
-            </div>
-          
-         </div>
+               <div _ngcontent-jgg-c8="" class="jsgrid-grid-body">
+                   <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table1 JColResizer" id="JColResizer0">
+                       <tbody _ngcontent-jgg-c8="" _ngcontent-bdo-c4="">
+                           <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
+                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail" class="text-ellipsis">LIVE AFF GOOGLE 29APRIL.xlsx</div>
+                                       </div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
+                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations" class="text-ellipsis">Success with errors</div>
+                                       </div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">4/29/2020 9:23:53 PM</div></div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">4/29/2020 9:23:57 PM</div></div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">Empty Value</div></div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
+                                          Row '28': 400 - Client with the same 'Email' already existsRow '29': 400 - Client with the same 'Email' already exists</div></div>
+                                   
+                                 </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis"></div></div>
+                                   </div>
+                               </td>
+                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
+                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
+                                     
+                                   </div>
+                               </td>
+                               
+                           
+                         
+                      
+                               <td _ngcontent-ukx-c12="" class="email-cell email-control-field email-align-center" style="width: 84px;">
+                                 <div _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="dropleft droptop">
+                                   <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
+                                      <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-file greyiconnn"></i>
+                                  </a>
+                                     <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
+                                         <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-trash greyiconnn"></i>
+                                     </a>
+                                     <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="javascript:void(0)" id="ico9" title="Open in new tab">
+                                         <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-download greyiconnn" disabled=""></i>
+                                     </a>
+                                  
+                                 </div>
+                             </td>
+                   
+                           </tr>
+                           <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-alt-row">
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail" class="text-ellipsis">LIVE AFF GOOGLE 29APRIL.xlsx</div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations" class="text-ellipsis">Success with errors</div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">4/29/2020 9:23:53 PM</div></div>
+                                  </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">4/29/2020 9:23:57 PM</div></div>
+                                  </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">Empty Value</div></div>
+                                  </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
+                                         Row '28': 400 - Client with the same 'Email' already existsRow '29': 400 - Client with the same 'Email' already exists</div></div>
+                                  
+                                </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis"></div></div>
+                                  </div>
+                              </td>
+                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
+                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
+                                    
+                                  </div>
+                              </td>
+                              
+                          
+                        
+                     
+                    <td _ngcontent-ukx-c12="" class="email-cell email-control-field email-align-center" style="width: 84px;">
+                      <div _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="dropleft droptop">
+                        <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
+                           <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-file greyiconnn"></i>
+                       </a>
+                          <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
+                              <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-trash greyiconnn"></i>
+                          </a>
+                          <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="javascript:void(0)" id="ico9" title="Open in new tab">
+                              <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-download greyiconnn" disabled=""></i>
+                          </a>
+                       
+                      </div>
+                  </td>
+                  
+                          </tr>
+                       </tbody>
+                      
+                      
+                     
+                   </table>
+               </div>
+           </div>
+           
+           
+          </div>
+          </div>
          
+         
+         
+          
+       </div>
+    </div>
+   
+ </div>
+ <div class="row padd18 fxdpsn">
+   <div class="col-md-6">
+   <div class="copy">
+      <p>© 2020 Trade Fx CRM </p>
+   </div>
+ </div>
+   <div class="col-md-6 end">
+      <div class="email-pager-perpage" style="display: block;">
+         <label>
+            Records per page
+               
+               <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="250">250</option>
+               </select>
+            
+         </label>
+      </div>
       </div>
    </div>
-  
-</div>
-<div class="row padd18 fxdpsn">
-  <div class="col-md-4">
-  <div class="copy">
-     <p>© 2020 Trade Fx CRM </p>
-  </div>
-</div>
-  <div class="col-md-8 end">
-    <div class="jsgrid-pager">Pages: 
-      <span class="jsgrid-pager-nav-button first jsgrid-pager-nav-inactive-button">
-        <a href="javascript:void(0);"><i class="fa fa-fast-backward" aria-hidden="true"></i>
-        </a></span> 
-        <span class="jsgrid-pager-nav-button prev jsgrid-pager-nav-inactive-button">
-          <a href="javascript:void(0);"><i class="fa fa-step-backward" aria-hidden="true"></i></a></span> 
-          <span class="jsgrid-pager-page jsgrid-pager-current-page">1</span>
-          <span class="jsgrid-pager-page"><a href="javascript:void(0);">2</a></span>
-          <span class="jsgrid-pager-page"><a href="javascript:void(0);">3</a></span>
-          <span class="jsgrid-pager-page"><a href="javascript:void(0);">4</a></span>
-          <span class="jsgrid-pager-page"><a href="javascript:void(0);">5</a></span>
-          <span class="jsgrid-pager-nav-button empty"><a href="javascript:void(0);">...</a></span>
-
-           <span class="jsgrid-pager-nav-button next"><a href="javascript:void(0);"><i class="fa fa-step-forward" aria-hidden="true"></i></a></span>
-            <span class="jsgrid-pager-nav-button last">
-      <a href="javascript:void(0);"><i class="fa fa-fast-forward" aria-hidden="true"></i></a></span> &nbsp;&nbsp; 1 of 132 
-     </div>
-     <div class="email-pager-perpage" style="display: block;">
-        <label>
-           Records per page
-              
-              <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
-                 <option value="20">20</option>
-                 <option value="25">25</option>
-                 <option value="50">50</option>
-                 <option value="100">100</option>
-                 <option value="250">250</option>
-              </select>
-           
-        </label>
-      
-     </div>
-     
-     </div>
-  </div>
-</div> 
-
-
-
-
+ </div> 
+ 
+ 
+ 
+ 
+ 

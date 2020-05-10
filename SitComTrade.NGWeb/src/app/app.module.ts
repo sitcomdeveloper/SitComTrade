@@ -100,6 +100,7 @@ import { InfoCasesComponent } from './clients_info/info-cases/info-cases.compone
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
 import { RouterModule } from '@angular/router';
+import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 
 @NgModule({
   declarations: [
@@ -185,6 +186,7 @@ import { RouterModule } from '@angular/router';
     InfoCasesComponent,
     GroupsInfoComponent,
     TranslationsFilterComponent,
+    ImportedClientsComponent,
   ],
   imports: [
     BrowserModule,
