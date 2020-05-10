@@ -161,8 +161,8 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
-        [Route("InsertAdditionalInfo")]
-        public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionalVM)
+        [Route("InsertUpdateAdditionalInfo")]
+        public AdditionalInfo InsertUpdateAdditionalInfo(AdditionalInfo additionalVM)
         {
             if (additionalVM != null)
                 return _additionalInfoeService.InsertAdditionalInfo(additionalVM);

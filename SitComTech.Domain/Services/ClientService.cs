@@ -382,9 +382,7 @@ namespace SitComTech.Domain.Services
             {
                 var additionaldataexist = _repository.GetAll().Where(x => x.OwnerId == additionaldata.OwnerId).FirstOrDefault();
                 if (additionaldataexist == null)
-                {
-                    if (additionaldata == null)
-                        throw new ArgumentNullException("User");
+                {                   
                     AdditionalInfo entity = new AdditionalInfo
                     {
                         Active = true,
@@ -392,13 +390,32 @@ namespace SitComTech.Domain.Services
                         CreatedAt = DateTime.Now,
                         CreatedBy = 0,
                         CreatedByName = "",
+                        AcceptedTermConditions = additionaldata.AcceptedTermConditions,
+                        Description = additionaldata.Description,
+                        IsOnline = additionaldata.IsOnline,
                         OwnerId = additionaldata.OwnerId,
-                    };
+                        PromoCode = additionaldata.PromoCode,
+                        SubscribedNewsletter = additionaldata.SubscribedNewsletter,
+                        SuppliedDocs = additionaldata.SuppliedDocs,
+                };
                     _repository.Insert(entity);
                     SaveChanges();
                     return entity;
                 }
-                return additionaldata;
+                else
+                {
+                    additionaldataexist.AcceptedTermConditions = additionaldata.AcceptedTermConditions;
+                    additionaldataexist.Description = additionaldata.Description;
+                    additionaldataexist.IsOnline = additionaldata.IsOnline;
+                    additionaldataexist.OwnerId = additionaldata.OwnerId;
+                    additionaldataexist.PromoCode = additionaldata.PromoCode;
+                    additionaldataexist.SubscribedNewsletter = additionaldata.SubscribedNewsletter;
+                    additionaldataexist.SuppliedDocs = additionaldata.SuppliedDocs;
+                    additionaldataexist.UpdatedAt = DateTime.Now;
+                    _repository.Update(additionaldataexist);
+                    SaveChanges();
+                    return additionaldataexist;
+                }
             }
             catch (Exception ex)
             {

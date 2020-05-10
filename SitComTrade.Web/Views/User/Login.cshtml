@@ -214,27 +214,37 @@
             Password: ko.observable('admin123')
         };
 
-          UserVM.MarketingInfo = {
-              AffiliateID: ko.observable('fdfd'),
-              AffiliateUser: ko.observable('Ldgdgdead'),
-              AffiliateUserId: ko.observable('1'),
-              AffTransactionID: ko.observable(0),
-              CampaignID: ko.observable('hdfdf'),
-              IPAddress: ko.observable('Lead'),
-              IPCountry: ko.observable('dgdg'),
-              Referrer: ko.observable('wewew'),
-              Source: ko.observable(0),
-              SubAffiliateID: ko.observable(1),
-              OwnerId: ko.observable('3'),
-              Tag1: ko.observable('85'),
-              Tag2: ko.observable('24234224'),
-              UtmCampaign: ko.observable('wewew'),
-              UtmContent: ko.observable(0),
-              UtmCreative: ko.observable(1),
-              UtmMedium: ko.observable('1'),
-              UtmSource: ko.observable('85'),
-              GoogleKeyword: ko.observable('24234224'),
+          UserVM.AdditionInfo = {
+             
+              AcceptedTermConditions: ko.observable(0),
+              Description: ko.observable('dfhdf'),
+              OwnerId: ko.observable('3'),             
+              IsOnline: ko.observable(0),
+              PromoCode: ko.observable('ghd'),
+              SubscribedNewsletter: ko.observable(1),
+              SuppliedDocs: ko.observable(1),
         };
+        //UserVM.MarketingInfo = {
+        //    AffiliateID: ko.observable('fdfd'),
+        //    AffiliateUser: ko.observable('Ldgdgdead'),
+        //    AffiliateUserId: ko.observable('1'),
+        //    AffTransactionID: ko.observable(0),
+        //    CampaignID: ko.observable('hdfdf'),
+        //    IPAddress: ko.observable('Lead'),
+        //    IPCountry: ko.observable('dgdg'),
+        //    Referrer: ko.observable('wewew'),
+        //    Source: ko.observable(0),
+        //    SubAffiliateID: ko.observable(1),
+        //    OwnerId: ko.observable('3'),
+        //    Tag1: ko.observable('85'),
+        //    Tag2: ko.observable('24234224'),
+        //    UtmCampaign: ko.observable('wewew'),
+        //    UtmContent: ko.observable(0),
+        //    UtmCreative: ko.observable(1),
+        //    UtmMedium: ko.observable('1'),
+        //    UtmSource: ko.observable('85'),
+        //    GoogleKeyword: ko.observable('24234224'),
+        //};
         //UserVM.Register = {
         //    Description: ko.observable('jgjj'),
         //    Name: ko.observable('kk gg'),
@@ -261,6 +271,18 @@
 
         $(document).ready(function () {
 
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/InsertUpdateAdditionalInfo",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.AdditionInfo),
+                success: function (result) {
+                    alert(result);
+                }
+            });
+
+
             // $.ajax({
             //    type: 'Post',
             //     url: apiURl + "api/TradeGroup/UpdateTradeGroup",
@@ -272,16 +294,16 @@
             //    }
             //});
 
-             $.ajax({
-                type: 'Post',
-                 url: apiURl + "api/Client/InsertUpdateMarketingInfo",
-                 contentType: 'application/json',
-                 processData: false,
-                 data: ko.toJSON(UserVM.MarketingInfo),
-                 success: function (result) {
-                    alert(result);
-                }
-            });
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Client/InsertUpdateMarketingInfo",
+            //     contentType: 'application/json',
+            //     processData: false,
+            //     data: ko.toJSON(UserVM.MarketingInfo),
+            //     success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             // $.ajax({
             //    type: 'Post',
