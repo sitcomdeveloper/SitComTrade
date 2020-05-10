@@ -1,37 +1,60 @@
-#body, .dashboard-calendar table, .jsgrid-table, .table-type01 table, .table-type03.table-style01 table, .table-type04 table {
-    table-layout: fixed;
-}
-.headingwidth
-{
-    width: 18.9%;
-}
-/* .text-ellipsis {
+
+.text-ellipsis {
     
-    width:400px;
-} */
+    width:131px;
+}
+.email-cell-content:first-child
 
-
+{
+    width: 400px;
+}
 .email-cell-content
 
 {
-    width: 140px!important;
+    width: 90px!important;
+}
+.jsgrid-cell-content {
+    width: 144px;
 }
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
 }
-.text-ellipsis {
-    width: 96px!important;
+.email-table1
+{
+    width: 100%;
 }
 .email-alt-row {
     background: #f5f8fc;
 }
-tr.email-filter-row {
-    background: #fff;
+
+
+.content-tabs3 .nav-tabs {
+    border-color: #c9d4e7;
 }
-th.email-header-cell {
-    width: 121px;
+
+
+.form-control {
+    font-size: 13px;
+    color: #45596a;
+    height: 33px;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
-.cstm-search {
-  ]
-    width: 153px;
+.btn, .form-control {
+    /* padding: 6px 15px; */
+}
+.inner {
+    position: static;
+    float: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.greyiconnn {
+  
+    padding-left: 11px;
 }

@@ -99,6 +99,7 @@ import { InfoDocumentsComponent } from './clients_info/info-documents/info-docum
 import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
+import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 
 
 @NgModule({
@@ -184,6 +185,7 @@ import { TranslationsFilterComponent } from './settings/translations/translation
     InfoCasesComponent,
     GroupsInfoComponent,
     TranslationsFilterComponent,
+    ImportedClientsComponent,
   ],
   imports: [
     BrowserModule,
