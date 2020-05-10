@@ -210,16 +210,48 @@
     <script>
         var UserVM = {}
         UserVM.Login = {
-            CommentDescription: ko.observable('test comm desc'),
-            OwnerId: ko.observable(1)
+            UserName: ko.observable('ravi@gmail.com'),
+            Password: ko.observable('admin123')
         };
-        UserVM.Register = {
-            Description: ko.observable('jgjj'),
-            Name: ko.observable('kk gg'),
-            CurrencyId: ko.observable(1),           
-            CurrencyName: ko.observable('phd'),
-            Id: ko.observable('1'),
+
+          UserVM.AdditionInfo = {
+             
+              AcceptedTermConditions: ko.observable(0),
+              Description: ko.observable('dfhdf'),
+              OwnerId: ko.observable('3'),             
+              IsOnline: ko.observable(0),
+              PromoCode: ko.observable('ghd'),
+              SubscribedNewsletter: ko.observable(1),
+              SuppliedDocs: ko.observable(1),
         };
+        //UserVM.MarketingInfo = {
+        //    AffiliateID: ko.observable('fdfd'),
+        //    AffiliateUser: ko.observable('Ldgdgdead'),
+        //    AffiliateUserId: ko.observable('1'),
+        //    AffTransactionID: ko.observable(0),
+        //    CampaignID: ko.observable('hdfdf'),
+        //    IPAddress: ko.observable('Lead'),
+        //    IPCountry: ko.observable('dgdg'),
+        //    Referrer: ko.observable('wewew'),
+        //    Source: ko.observable(0),
+        //    SubAffiliateID: ko.observable(1),
+        //    OwnerId: ko.observable('3'),
+        //    Tag1: ko.observable('85'),
+        //    Tag2: ko.observable('24234224'),
+        //    UtmCampaign: ko.observable('wewew'),
+        //    UtmContent: ko.observable(0),
+        //    UtmCreative: ko.observable(1),
+        //    UtmMedium: ko.observable('1'),
+        //    UtmSource: ko.observable('85'),
+        //    GoogleKeyword: ko.observable('24234224'),
+        //};
+        //UserVM.Register = {
+        //    Description: ko.observable('jgjj'),
+        //    Name: ko.observable('kk gg'),
+        //    CurrencyId: ko.observable(1),           
+        //    CurrencyName: ko.observable('phd'),
+        //    Id: ko.observable('1'),
+        //};
         //UserVM.Register = {
         //    FirstName: ko.observable('fdfd'),
         //    LastName: ko.observable('Ldgdgdead'),
@@ -235,36 +267,43 @@
         //    Id: ko.observable('85'),
         //    Phone: ko.observable('24234224'),
         //};
-        //ko.applyBindings(UserVM, document.getElementById("logindiv"));
-        //$(function () {
-        //    $('#login-form-link').click(function (e) {
-        //        $("#login-form").delay(100).fadeIn(100);
-        //        $("#register-form").fadeOut(100);
-        //        $('#register-form-link').removeClass('active');
-        //        $(this).addClass('active');
-        //        e.preventDefault();
-        //    });
-        //    $('#register-form-link').click(function (e) {
-        //        $("#register-form").delay(100).fadeIn(100);
-        //        $("#login-form").fadeOut(100);
-        //        $('#login-form-link').removeClass('active');
-        //        $(this).addClass('active');
-        //        e.preventDefault();
-        //    });
-        //});
+
 
         $(document).ready(function () {
 
-             $.ajax({
+            $.ajax({
                 type: 'Post',
-                 url: apiURl + "api/TradeGroup/UpdateTradeGroup",
+                url: apiURl + "api/Client/InsertUpdateAdditionalInfo",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.Register),
+                data: ko.toJSON(UserVM.AdditionInfo),
                 success: function (result) {
                     alert(result);
                 }
             });
+
+
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/TradeGroup/UpdateTradeGroup",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.Register),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Client/InsertUpdateMarketingInfo",
+            //     contentType: 'application/json',
+            //     processData: false,
+            //     data: ko.toJSON(UserVM.MarketingInfo),
+            //     success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             // $.ajax({
             //    type: 'Post',
