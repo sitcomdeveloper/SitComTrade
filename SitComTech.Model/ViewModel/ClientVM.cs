@@ -53,6 +53,8 @@ namespace SitComTech.Model.ViewModel
         public bool? FTD { get; set; }
         public string Group { get; set; }
         public string Desk { get; set; }
+        public bool? IsEditable { get; set; }
+
     }
 
     public class TradeAccountVM
