@@ -506,7 +506,7 @@ i.fa.fa-refresh {
     z-index: 9;
     background: #e9ecef;
 }
-.modal-lg {
+.modal-lg1 {
     max-width: 100%;
     height: 100%;
     background: #fff;
@@ -839,7 +839,7 @@ i.fa.fa-refresh {
 }
 .jsgrid-grid-body {
     overflow-y: scroll;
-    height: 420px;
+    height: 420px;padding-bottom: 13px;
 }
 
 .input-group-addon {
