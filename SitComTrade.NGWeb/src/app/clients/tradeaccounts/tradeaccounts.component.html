@@ -1,3 +1,4 @@
+{{tradeAccountLength}} items
 <div class="container-fluid ">
     <div class="row fist1">
         <div class="col-md-12 sub-header">
@@ -13,21 +14,22 @@
                         
                         </div>
                         
-                        <div class="col-md-6">
-                          <a routerLink=""><i class="fa fa-refresh"></i></a>
-                          <a routerLink="">
+                        <div class="col-md-6" [attr.disabled]="deletbtnn ==true ? true : false">
+                          <a href="javascript:void(0);" (click) = "tradeDetails()"><i class="fa fa-refresh"></i></a>
+                          <a href="javascript:void(0);">
                             <select class="browser-default custom-select" style="width:43%;">
                               <option selected>All</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
                             </select>
                             <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i></a>
                           <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true" style="padding-right:10px;margin-right:10px"></i>
                           <i class="fa fa-" aria-hidden="true"></i>
                           <a routerLink=""><i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i></a>
+                          <a href="javascript:void(0);" class="brdr-right" [class.disabled] = deletbtnn>
                           <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
-                          <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true"></i>
+                        </a>
+                          <a href="javascript:void(0);" class="brdr-right" [class.disabled] = deletbtnn>
+                          <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true" (click)="deleteClient(Id)"></i>
+                        </a>
                           <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i>
 
                         </div>
@@ -262,7 +264,7 @@
           <td class="" >
               <div class="jsgrid-cell-content">
                   <div class="input-checkbox"><span>
-                    <input type="checkbox" data-item-selector="true" class="tablecheckbox"></span>
+                    <input type="checkbox" data-item-selector="true" class="tablecheckbox" (change)="deletbtn($event.target.checked,item.Id)"></span>
                   <span><i  class="fa fa-star" title="Clear filter"></i></span></div>
               </div>
           </td>
@@ -291,7 +293,7 @@
           <td class="jsgrid-cell jsgrid-align-left" >
               <div class="jsgrid-cell-content">
                   <div data-display-for="27_Country">
-                      <div class="text-ellipsis"><span class="flag it" tooltip="{{item.LastName}}"></span>{{item.LastName}}</div>
+                      <div class="text-ellipsis" tooltip="{{item.LastName}}">{{item.LastName}}</div>
                   </div>
               </div>
           </td>
@@ -398,3 +400,4 @@
     </div>
     
   </div>
+  <ng4-loading-spinner> </ng4-loading-spinner>

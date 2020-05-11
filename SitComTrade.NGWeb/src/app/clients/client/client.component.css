@@ -528,9 +528,9 @@ grid-auto-columns: max-content;
     width: 16px;
     height: 16px;
 }
-.disabled {
+/* .disabled {
     cursor: not-allowed;
-  }
+  } */
   a.brdr-right.disabled,a.disabled {
     opacity: 0.5;
 }

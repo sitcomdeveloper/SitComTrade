@@ -12,7 +12,7 @@ export class CommentsService {
 
   constructor(private http: HttpClient) { }
   getComments(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'Client/GetCommentByOwnerId/1', obj);
+    return this.http.post<any>(API_URL + 'Client/GetCommentByOwnerId/2', obj);
   }
   insertComments(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/InsertComment', obj);

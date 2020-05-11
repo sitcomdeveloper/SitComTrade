@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { DeleteComponent } from 'src/app/common/delete/delete.component';
+import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-tradeaccounts',
@@ -7,25 +10,61 @@ import { ClientsService } from 'src/app/header/clients/clients.service';
   styleUrls: ['./tradeaccounts.component.css']
 })
 export class TradeaccountsComponent implements OnInit {
-
-  constructor(private clientsservice: ClientsService) { }
   tradeInfo: any[];
   fetchTradeDetails: any[];
-  TypeName = 'Real';
-	OwnerId  = 1;
+  tradeAccountLength: any;
+  UserId: any;
+  a: number;
 
+  constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
+              private modalService: BsModalService) { }
+    bsModalRef: BsModalRef;
+
+  TypeName = 'Real';
+	// tslint:disable-next-line: indent
+  OwnerId  = 1;
+  deletbtnn = true;
   ngOnInit() {
     this.tradeDetails();
   }
   tradeDetails() {
-    let obj = {
-      TypeName :'Real',
-  	OwnerId  : 1
-    }
-    this.clientsservice.getTradeUsers(obj).subscribe(res =>{
+    const obj = {
+      TypeName : 'Real',
+      OwnerId  : 1
+    };
+    this.clientsservice.getTradeUsers(obj).subscribe(res => {
+      this.spinnerService.show();
       this.fetchTradeDetails = res;
-      console.log('tradeusers',res);
-    })
+      this.tradeAccountLength = res.length;
+      console.log('tradeusers', res);
+    });
   }
-
+  deletbtn(val, userid) {
+    this.UserId = userid;
+    const count = 1;
+    if (val === true) {
+    this.a = count + 1;
+    this.deletbtnn = false;
+} else {
+  // tslint:disable-next-line: no-shadowed-variable
+  let count = 1;
+  this.a = count--;
+  this.deletbtnn = true;
+}
+  }
+  deleteClient(userid) {
+    const initialState = {
+      title: 'Delete Item',
+      userId: this.UserId,
+      // for div close or hide
+      rmvClient: 'rmvClient'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.tradeDetails();
+      // window.location.reload();
+    });
+  }
 }
