@@ -212,7 +212,8 @@ namespace SitComTech.Domain.Services
                 Tag1 = x.MarketInfo.Tag2,
                 FTD = x.UserOwner.clients.FTD,
                 Group = "",
-                Desk = x.UserOwner.clients.Desk
+                Desk = x.UserOwner.clients.Desk,
+                IsEditable=false
             }).ToList();
         }
     }
