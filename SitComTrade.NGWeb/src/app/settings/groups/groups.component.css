@@ -1,8 +1,8 @@
 
-.headingwidth
+/* .headingwidth
 {
     width: 18.9%;
-}
+} */
 .text-ellipsis {
     
     width: 182px;
@@ -13,5 +13,5 @@
 }
 .email-cell-content
 {
-    width: 199px;
+    width: 187px;
 }
