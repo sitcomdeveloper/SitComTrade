@@ -34,6 +34,8 @@ changePageSize: any;
 all = true;
 accounts = false;
 leads = false;
+editMode = false;
+normalMode = true;
 
   ngOnInit() {
     this.userDetails();
@@ -139,6 +141,32 @@ leads = false;
     this.all = false;
     this.accounts = false;
     this.leads = true;
+  }
+  // pencil
+  openEditableMode(selectedId) {
+    this.rowData.forEach( t => {
+      if (t.Id === +selectedId ) {
+  this.normalMode = false;
+  this.editMode = true;
+   } 
+  //  else {
+  //   this.normalMode = true;
+  //   this.editMode = false;
+  //  }
+
+    });
+    console.log(selectedId);
+
+  }
+  // check btn
+  saveDetails() {
+    this.normalMode = true;
+    this.editMode = false;
+  }
+  // cancel
+  closeEditableMode() {
+    this.normalMode = true;
+    this.editMode = false;
   }
 
 }
