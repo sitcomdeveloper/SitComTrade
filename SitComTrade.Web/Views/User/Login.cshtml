@@ -271,16 +271,16 @@
 
         $(document).ready(function () {
 
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Client/InsertUpdateAdditionalInfo",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.AdditionInfo),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/InsertUpdateAdditionalInfo",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.AdditionInfo),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
 
             // $.ajax({
@@ -388,15 +388,15 @@
             //        alert(result);
             //    }
             //});
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/Client/GetAllClientsByOwnerId/1",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/GetAllClientsByOwnerId/1",
+                contentType: 'application/json',
+                processData: false,
+                success: function (result) {
+                    alert(result);
+                }
+            });
             //$.ajax({
             //    type: "get",
             //    url: 'http://localhost:59122/api/Client/GetClientDetailById/1',
