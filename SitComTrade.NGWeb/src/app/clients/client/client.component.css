@@ -541,3 +541,35 @@ i.fa.fa-plus.bg-primary1.fa-lg {
    
     padding-top: 5px;
 }
+.jsgrid-cell-content .form-control {
+    height: 27px;
+    padding: 0;
+    width: 73px;
+}
+ .jsgrid-control-field a, .jsgrid-control-field input {
+    margin-left: 2px;
+}
+
+ .jsgrid-button {
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+    /* background-image: url("./assets/images/jsgrid-icons.png"); */
+    background: url(/assets/images/jsgrid-icons.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.jsgrid-update-button {
+    background-position: 0 -336px;
+    width: 16px;
+    height: 16px;
+}
+ .jsgrid-control-field a,  .jsgrid-control-field input {
+    margin-left: 2px;
+}
+.jsgrid-cancel-edit-button {
+    background-position: 0 0;
+    width: 16px;
+    height: 16px;
+}
