@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MarketingInfoService } from './marketing-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,7 +18,11 @@ export class MarketingInfoComponent implements OnInit {
   Country: any;
   marketingInfoEdit = false;
   MarketingInfo = true;
-  constructor(private marketinginfoservice: MarketingInfoService, private fb: FormBuilder, private countryService: CountryService) { }
+  updtdMarketingInfo: any;
+  // details: number;
+  // detail: number;
+  constructor(private marketinginfoservice: MarketingInfoService, private fb: FormBuilder,
+              private countryService: CountryService, private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this.marketingInfoForm = this.fb.group({
@@ -38,18 +44,21 @@ export class MarketingInfoComponent implements OnInit {
       afftransactionid: [''],
       affiliateuser: ['']
 
-    })
+
+    });
     this.marketingInfo();
     this.getcountryName();
   }
   marketingInfo() {
+    // const details = +this._route.snapshot.paramMap.get('selectedItem');
+    // this.detail = details;
     this.marketinginfoservice.getMarketingInfo().subscribe(res => {
       this.userMarketingInfo = res;
       this.marketingInfoForm.patchValue({
         tag1: this.userMarketingInfo.Tag1,
         tag2: this.userMarketingInfo.Tag2,
         campaignid: this.userMarketingInfo.CampaignID,
-        // affilateid: this.userMarketingInfo.
+        affilateid: this.userMarketingInfo.AffiliateID,
         subaffilateid: this.userMarketingInfo.SubAffiliateID,
         source: this.userMarketingInfo.Source,
         ipaddress: this.userMarketingInfo.IPAddress,
@@ -63,11 +72,11 @@ export class MarketingInfoComponent implements OnInit {
       googlekeyword: this.userMarketingInfo.GoogleKeyword,
       afftransactionid: this.userMarketingInfo.AffTransactionID,
       affiliateuser: this.userMarketingInfo.AffiliateUser
-      })
+      });
       console.log('Marketinginfo', res);
     });
   }
- 
+
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
@@ -79,16 +88,42 @@ export class MarketingInfoComponent implements OnInit {
     this.marketingInfoEdit = true;
     this.MarketingInfo = false;
   }
-  // apply
+  // apply btn.update
   closeshowhide() {
+    const obj = {
+      AffiliateID: this.userMarketingInfo.AffiliateID,
+      AffiliateUser: this.marketingInfoForm.value.affiliateuser,
+      AffiliateUserId: this.userMarketingInfo.AffiliateUserId,
+      AffTransactionID: this.marketingInfoForm.value.afftransactionid,
+      CampaignID: this.marketingInfoForm.value.campaignid,
+      IPAddress: this.marketingInfoForm.value.ipaddress,
+      IPCountry: this.marketingInfoForm.value.ipcountry,
+      Referrer: this.marketingInfoForm.value.referrer,
+      Source: this.marketingInfoForm.value.source,
+      SubAffiliateID: this.marketingInfoForm.value.subaffilateid,
+      OwnerId: this.userMarketingInfo.OwnerId,
+      Tag1: this.marketingInfoForm.value.tag1,
+      Tag2: this.marketingInfoForm.value.tag2,
+      UtmCampaign: this.marketingInfoForm.value.utmcampaign,
+      UtmContent: this.marketingInfoForm.value.utmcontent,
+      UtmCreative: this.marketingInfoForm.value.utmcreative,
+      UtmMedium: this.marketingInfoForm.value.utmmedium,
+      UtmSource: this.marketingInfoForm.value.utmsource,
+      GoogleKeyword: this.marketingInfoForm.value.googlekeyword,
+      Id: this.userMarketingInfo.Id
+    };
+    this.marketinginfoservice.updateMarketingInfo(obj).subscribe(res => {
+      this.updtdMarketingInfo = res;
+      this.spinnerService.show();
+      this.marketingInfo();
+      console.log('updtdMarketingInfo', res);
+    });
     this.marketingInfoEdit = false;
     this.MarketingInfo = true;
   }
-  // cancel
+  // cancel btn
   close() {
     this.marketingInfoEdit = false;
     this.MarketingInfo = true;
   }
-
-
 }

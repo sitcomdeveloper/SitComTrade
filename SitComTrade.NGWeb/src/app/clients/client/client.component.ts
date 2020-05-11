@@ -146,6 +146,7 @@ normalMode = true;
   openEditableMode(selectedId) {
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
+        
   this.normalMode = false;
   this.editMode = true;
    } 
