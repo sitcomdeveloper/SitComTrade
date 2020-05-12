@@ -34,6 +34,7 @@ changePageSize: any;
 all = true;
 accounts = false;
 leads = false;
+// normalMode = true;
 
 
 
@@ -146,8 +147,8 @@ leads = false;
   openEditableMode(selectedId) {
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
-  // this.normalMode = false;
   t.IsEditable = true;
+  // this.normalMode = false;
 }
 });
     console.log(selectedId);
