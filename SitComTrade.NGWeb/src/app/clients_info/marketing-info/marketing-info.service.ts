@@ -11,8 +11,10 @@ const API_URL = environment.API_URL;
 export class MarketingInfoService {
 
   constructor(private http: HttpClient) { }
-  getMarketingInfo(): Observable<any> {
-    return this.http.get<any>(API_URL + 'Client/GetMarketingInfoByOwnerId/3');
+  getMarketingInfo(obj: any): Observable<any> {
+    return this.http.get<any>(API_URL + 'Client/GetMarketingInfoByOwnerId/' + obj);
+    // return this.http.get<any>(API_URL + 'Client/GetClientDetailById/' + obj);
+
   }
   // insert-update
   updateMarketingInfo(obj: any): Observable<any> {

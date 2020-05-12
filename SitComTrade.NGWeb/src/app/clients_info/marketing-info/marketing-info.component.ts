@@ -50,10 +50,9 @@ export class MarketingInfoComponent implements OnInit {
     this.getcountryName();
   }
   marketingInfo() {
-    // const details = +this._route.snapshot.paramMap.get('selectedItem');
-    // this.detail = details;
+    const details = +this._route.snapshot.paramMap.get('selectedItem');   
     
-    this.marketinginfoservice.getMarketingInfo().subscribe(res => {
+    this.marketinginfoservice.getMarketingInfo(details).subscribe(res => {
       this.userMarketingInfo = res;
       this.marketingInfoForm.patchValue({
         tag1: this.userMarketingInfo.Tag1,
