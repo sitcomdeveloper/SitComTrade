@@ -15,6 +15,8 @@ export class AddressComponent implements OnInit {
   addressForm: FormGroup;
   clientAddress: any;
   modifyAddress: any;
+  normalMode = true;
+  editMode = false;
   // tslint:disable-next-line: max-line-length
   constructor(private addressservice: AddressService, private fb: FormBuilder, private countryService: CountryService) {this.editAddress(); }
 
@@ -76,6 +78,21 @@ export class AddressComponent implements OnInit {
       this.Country = result;
       console.log('countryname', result);
     });
+  }
+  // pencil
+  showhide() {
+    this.normalMode = false;
+    this.editMode = true;
+  }
+  // apply btn
+  closeshowhide() {
+    this.normalMode = true;
+    this.editMode = false;
+  }
+  // cancel
+  cancel() {
+    this.normalMode = true;
+    this.editMode = false;
   }
 
 }

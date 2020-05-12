@@ -1582,7 +1582,7 @@
           <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
+                <div class="text-ellipsis">{{item.Group}}</div>
               </div>
             </div>
           </td>
@@ -1622,6 +1622,7 @@
           
             
               <tbody> -->
+                <!-- <form class= "form-control" > -->
               <div  *ngIf = item.IsEditable style="position: absolute;
               /* left: 0; */
               right: 0;
@@ -1630,7 +1631,7 @@
               padding-right: 15px;
               padding-left: 15px;
               margin-right: auto;
-              margin-left: auto;">  
+              margin-left: auto;" [formGroup]="clientForm">  
                 <tr class="tablectn" >
             
                   <td  style="width: 20px;">
@@ -1650,7 +1651,18 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="id" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </td>
+                  <td >
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="firstname" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1659,125 +1671,169 @@
                   </td>
                   <td class="">
                     <div class="">
-                      <div data-display-for="27_FirstName">
-                        <div class="jsgrid-cell-content">
-                          <select _ngcontent-vdb-c3="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="list" title="Please select ">
-                            <option _ngcontent-vdb-c3="">Others</option>
-                            <option _ngcontent-vdb-c3="">Accounts</option>
-                            <option _ngcontent-vdb-c3="">All</option>
-                            <option _ngcontent-vdb-c3="">Leads</option>
-                            <option _ngcontent-vdb-c3="">Shared</option>
-                            <option _ngcontent-vdb-c3="">Online</option>
-                         </select>
-                        </div>    
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="lastname" type="text"  aria-required="true" aria-invalid="false"></div>    
             
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_LastName">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-                      </div>
-                    </div>
-                  </td>
-                  <td class="jsgrid-cell jsgrid-align-left">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_Country">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-                      </div>
-                    </div>
-                  </td>
-                  <td class="jsgrid-cell">
-                    <div class="jsgrid-cell-content" >
-                      <div data-display-for="27_Email">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="countryname" type="text"  aria-required="true" aria-invalid="false"></div>    
             
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell jsgrid-align-left">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_Type">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="email" type="text"  aria-required="true" aria-invalid="false"></div>    
             
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_Phone">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="type" type="text"  aria-required="true" aria-invalid="false"></div>    
             
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell jsgrid-align-left">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_OwnerId">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="phone" type="text"  aria-required="true" aria-invalid="false"></div>    
             
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell jsgrid-align-left">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_StatusId">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="owner" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell" style="width:115px;">
-                    <div class="jsgrid-cell-content">
-                      <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
+                      </div>
+                      
                     </div>
                   </td>
-                  <td class="jsgrid-cell">
-                    <div class="jsgrid-cell-content">
-                      <div data-display-for="27_CampaignId">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="createddate" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
+                    </div>
+                  </td>
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="campaignid" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </td>
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="tag" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
+                      </div>
+                      
                     </div>
                   </td>
             
                   <td class="">
                     <div class="">
-                      <div data-display-for="27_HasDeposit">
-                        <div><i class="ico-sz2 ico-status"></i></div>
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="tag1" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
             
                   <td class="">
                     <div class="">
-                      <div data-display-for="27_DeskId">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="ftd" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
-                  <td class="">
+                  <!-- <td class="">
                     <div class="">
                       <div data-display-for="27_DeskId">
                         <div class="text-ellipsis" style="text-align:center">
             
-                          <!-- <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                            [ngStyle]="{'color': item.FTD ? 'green':'grey' }"></i> -->
+                          <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                            [ngStyle]="{'color': item.FTD ? 'green':'grey' }"></i>
                         </div>
                       </div>
                     </div>
-                  </td>
+                  </td> -->
                   <td class="">
                     <div class="">
-                      <div data-display-for="27_DeskId">
-                        <div class="text-ellipsis"></div>
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="group" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
                   <td class="">
                     <div class="">
-                      <div data-display-for="27_DeskId">
-                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="desk" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
                     </div>
                   </td>
                   <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
@@ -1791,6 +1847,8 @@
                   </td>
                 </tr>
               </div>
+            <!-- </form> -->
+           
                 <!-- </tbody>
             
               </table>

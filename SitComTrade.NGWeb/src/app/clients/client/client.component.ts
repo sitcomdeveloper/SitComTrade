@@ -5,6 +5,8 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ItemComponent } from '../item/item.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 
 @Component({
   selector: 'app-client',
@@ -12,8 +14,9 @@ import { DeleteComponent } from 'src/app/common/delete/delete.component';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
+  updatedDtls: any;
   // tslint:disable-next-line: max-line-length
-  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute) { }
+  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService) { }
   bsModalRef: BsModalRef;
 
   rowData = [];
@@ -34,11 +37,30 @@ changePageSize: any;
 all = true;
 accounts = false;
 leads = false;
-// normalMode = true;
+clientForm: FormGroup;
 
 
 
   ngOnInit() {
+    this.clientForm = this.fb.group({
+      id: [''],
+      firstname: [''],
+      lastname: [''],
+      countryname: [''],
+      email: [''],
+      type: [''],
+      phone: [''],
+      owner: [''],
+      status: [''],
+      createddate: [''],
+      campaignid: [''],
+      tag: [''],
+      tag1: [''],
+      ftd: [''],
+      group: [''],
+      desk: [''],
+      countryid: ['']
+    });
     this.userDetails();
   }
   userDetails() {
@@ -148,7 +170,29 @@ leads = false;
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
   t.IsEditable = true;
-  // this.normalMode = false;
+  // this.clientService.getUsers(this.clientInfo).subscribe(res => {
+  //   if (res !== null && res !== undefined && res !== '') {
+  //     this.rowData = res.reverse();
+  this.clientForm.patchValue({
+          id: t.Id,
+          firstname: t.FirstName,
+          lastname: t.LastName,
+          countryname: t.CountryName,
+          email: t.Email,
+          type: t.TypeName,
+          phone: t.Phone,
+      owner: t.OwnerName,
+      status: t.ResponseStatus,
+      createddate: t.CreatedDate,
+      campaignid: t.CampaignId,
+      tag: t.Tag,
+      tag1: t.Tag1,
+      ftd: t.FTD,
+      group: t.Group,
+      desk: t.Desk
+        });
+    // }
+  // });
 }
 });
     console.log(selectedId);
@@ -158,17 +202,36 @@ leads = false;
   saveDetails(selectedId) {
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
-  
   t.IsEditable = false;
 }
 });
+//     const obj = {
+//   Id: t.Id,
+//   FirstName: t.clientForm.value.firstname,
+//   LastName: t.clientForm.value.lastname,
+//   Email: t.clientForm.value.email,
+//   GroupName: t.clientForm.value.group,
+//   TypeName: t.clientForm.value.type,
+//   Password: t.clientForm.value.Password,
+//   CountryName: t.clientForm.value.countryname,
+//   CountryId: t.countryid,
+//   GroupId: t.Group,
+//   ISendEmail: t.ISendEmail,
+//   OwnerId: t.OwnerName,
+//   Phone: t.phone,
+// };
+  //   this._generalinfoservice.updateClient(obj).subscribe(res => {
+  // this.updatedDtls = res;
+  // console.log('updatedDtls', res);
+  // this.spinnerService.show();
+
+// });
   }
   // cancel
   closeEditableMode(selectedId) {
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
-  
-  t.IsEditable = false;
+        t.IsEditable = false;
 }
 });
 

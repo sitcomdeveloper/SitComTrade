@@ -26,7 +26,8 @@ export class GeneralInfoComponent implements OnInit {
   updatedDtls: any;
   detail: number;
   // tslint:disable-next-line: max-line-length
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, 
+    private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
   ngOnInit() {
     // this._route.params.subscribe(params => console.log(params));

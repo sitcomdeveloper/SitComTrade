@@ -118,7 +118,7 @@
                                                    formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors,'form-control':true }" data-live-search="true" id="lunc"
                                                    title="Please select a lunch ..." >
                                                    <option ngcontent-qpo-c3="">Choose your Country</option>
-                                                   <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+                                                   <option ngcontent-qpo-c3="" value= "{{country.Id}}" *ngFor="let country of Country">
                                                       {{country.Name}}</option>
 
                                                 </select>
@@ -182,7 +182,7 @@
                                                    title="Please select a lunch ..." data-show-subtext="true"
                                                    data-live-search="true">
                                                    <option ngcontent-qpo-c3="" class="other">All</option>
-                                                   <option ngcontent-qpo-c3="" class="other" *ngFor = "let group of Group">{{group?.Name}}</option>
+                                                   <option ngcontent-qpo-c3="" class="other" value="{{group?.Id}}" *ngFor = "let group of Group">{{group?.Name}}</option>
 
                                                 </select>
                                                 <div *ngIf="submitted && f.group.errors" class="invalid-feedback">

@@ -45,24 +45,34 @@ export class ItemComponent implements OnInit {
       countryid: [''],
       currencyname: [''],
       // promocode: [''],
-      // currencyid: [''],
+      groupid: [''],
       ownerid: [''],
       sendemail: ['']
     }),
       this.getcountryName();
-      this.getGroups();
+    this.getGroups();
   }
   newClients() {
     if (this.newUserForm.valid) {
-    const obj = {
+      this.Group.forEach(element => {
+        if ( element.Id === +this.newUserForm.value.group) {
+          this.newUserForm.value.groupid = element.Name;
+        }
+      });
+      this.Country.forEach(element => {
+        if ( element.Id === +this.newUserForm.value.country) {
+          this.newUserForm.value.countryid = element.Name;
+        }
+      });
+      const obj = {
       FirstName: this.newUserForm.value.firstname,
       LastName: this.newUserForm.value.lastname,
       Email: this.newUserForm.value.email,
       // CountryId: 0,
-      GroupName: this.newUserForm.value.group,
+      GroupName: this.newUserForm.value.groupid,
       AccountType: this.acttype,
       Password: this.newUserForm.value.password,
-      CountryName: this.newUserForm.value.country,
+      CountryName: this.newUserForm.value.countryid,
       GroupId: this.newUserForm.value.group,
       ISendEmail: this.sedemailbyuser,
       OwnerId: 1,
@@ -75,7 +85,7 @@ export class ItemComponent implements OnInit {
 
     };
 
-    this.clientService.addnewClients(obj).subscribe(res => {
+      this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
 
       this.clddata.emit(res);
