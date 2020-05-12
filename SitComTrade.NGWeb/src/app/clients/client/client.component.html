@@ -3105,9 +3105,8 @@
                     <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
                       <div class="dropleft droptop">
                 
-                          <input class="jsgrid-button jsgrid-update-button" type="button" title="Update" ><i class="fa fa-check" aria-hidden="true" (click)="saveDetails(item.Id)"></i>
-                          <input class="jsgrid-button jsgrid-cancel-edit-button" type="button" title="Cancel edit" ><i class="fa fa-times" aria-hidden="true" (click)="closeEditableMode(item.Id)"></i>
-                         
+                          <input class="jsgrid-button jsgrid-update-button" type="button" title="Update" (click)="saveDetails(item.Id)" >
+                          <input class="jsgrid-button jsgrid-cancel-edit-button" type="button" title="Cancel edit" (click)="closeEditableMode(item.Id)">
                           
                         
                       </div>
