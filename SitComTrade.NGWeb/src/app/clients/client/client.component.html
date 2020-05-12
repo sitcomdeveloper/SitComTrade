@@ -1623,19 +1623,11 @@
             
               <tbody> -->
                 <!-- <form class= "form-control" > -->
-              <div  *ngIf = item.IsEditable style="position: absolute;
-              /* left: 0; */
-              right: 0;
-              width: 100%;
-              width: 100%;
-              padding-right: 15px;
-              padding-left: 15px;
-              margin-right: auto;
-              margin-left: auto;" [formGroup]="clientForm">  
+              <div  *ngIf = item.IsEditable class="editingclient"style="" [formGroup]="clientForm">  
                 <tr class="tablectn" >
             
-                  <td  style="width: 20px;">
-                    <div class="">
+                  <td  style="width: 20px!important;">
+                    <div class="" style="width: 20px!important;">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
                           <div class="jsgrid-cell-content">
@@ -1651,7 +1643,8 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="id" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content">
+                            <input class="form-control valid" name="FirstName" formControlName="id" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>

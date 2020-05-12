@@ -841,7 +841,21 @@ i.fa.fa-refresh {
     overflow-y: scroll;
     height: 420px;padding-bottom: 13px;
 }
-
+.editingclient tr td {
+    width: 115px!important;
+}
+.editingclient
+{
+    position: absolute;
+              /* left: 0; */
+              right: 0;
+              width: 100%;
+              width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+              margin-right: auto;
+              margin-left: auto;
+}
 .input-group-addon {
     /* min-width: 34px; */
     /* background: #fff; */
