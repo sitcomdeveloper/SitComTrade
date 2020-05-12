@@ -1,4 +1,4 @@
-{{tradeAccountLength}} items
+<!-- {{tradeAccountLength}} items
 <div class="container-fluid ">
     <div class="row fist1">
         <div class="col-md-12 sub-header">
@@ -37,15 +37,81 @@
                     </div>
                   </div>
                 </div>
-              </div>
- 
+              </div> -->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12 subheader">
+                    <div class="container-fluid container-padd">
+                     <div class="row">
+                        <div class="tools-panel-addon">
+                          <div _ngcontent-ubb-c3="" class="jsgrid-items-counter"><span _ngcontent-ubb-c3="">{{tradeAccountLength}} item</span></div>
+                           <div class="breadcrumbs">
+                              <ul>
+                                 <li itemscope="">
+                                    <span itemprop="title">Clients</span>
+                                 </li>
+                                 <li itemscope="">
+                                    <span itemprop="title">Trade Accounts</span>
+                                 </li>
+                              </ul>
+                           </div>
+                       </div>
+                     </div>
+                  </div>
+                     <div class="container-fluid container-padd">
+                      <div class="row subhedarpadd">
+                        <div _ngcontent-mew-c3="" class="col-md-5 main-tab">
+                           <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
+                              <li _ngcontent-mew-c3="" class="nav-item">
+                                 <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#">
+                                    All</a>
+                                 </li>
+                              
+                           </ul>
+                        </div>
+                        <div _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend" [attr.disabled]="deletbtnn ==true ? true : false">
+                          <div _ngcontent-boj-c6="" aria-label="Toolbar with button groups" class="btn-toolbar searchbtn" role="toolbar">
+                             <div _ngcontent-boj-c6="" aria-label="First group" class="btn-group mr-2" role="group">
+                                 <a _ngcontent-boj-c6="" routerlink="" ng-reflect-router-link="" href="javascript:void(0);" (click) = "tradeDetails()">
+                                 <i _ngcontent-boj-c6="" class="fa fa-refresh"></i></a></div>
+                             <div _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
+                                <div _ngcontent-boj-c6="" class="input-group selecticon grpselect">
+                                   <select _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
+                                      <option _ngcontent-boj-c6="">Groups</option>
+                                      
+                                   </select>
+                                   <span _ngcontent-boj-c6="" class="serachicon brdr-right">
+                                       <a _ngcontent-boj-c6="" class="" href="#">
+                                       <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-boj-c6="" class="serachicon">
+                                       <a _ngcontent-boj-c6="" href="#">
+                                           <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
+                                </div>
+                             </div>
+                             <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group">
+                                 <a _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" (click)="newGroup()" data-toggle="modal" href="#">
+                                     <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a>
+                                     <a _ngcontent-boj-c6="" class="brdr-right" href="javascript:void(0);" [class.disabled] = deletbtnn>
+                                         <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" disabled=""></i>
+                                        </a><a _ngcontent-boj-c6="" href="javascript:void(0);" [class.disabled] = deletbtnn>
+                                            <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled="" (click)="deleteClient(Id)"></i>
+                                        </a></div>
+                             
+                          </div>
+                       </div>
+                     </div>
+                     
+                  </div>
+         
+                 </div>
+                    
+                </div>
   
   
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div id="all" class="container-fluid tab-pane active"><br>
-      <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table class="email-table">
         <thead>
           <tr class="tablewidth">
             <th class="" >
