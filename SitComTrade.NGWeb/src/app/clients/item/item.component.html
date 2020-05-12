@@ -182,7 +182,7 @@
                                                    title="Please select a lunch ..." data-show-subtext="true"
                                                    data-live-search="true">
                                                    <option ngcontent-qpo-c3="" class="other">All</option>
-                                                   <option ngcontent-qpo-c3="" class="other">One</option>
+                                                   <option ngcontent-qpo-c3="" class="other" *ngFor = "let group of Group">{{group?.Name}}</option>
 
                                                 </select>
                                                 <div *ngIf="submitted && f.group.errors" class="invalid-feedback">

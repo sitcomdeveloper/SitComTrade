@@ -3,6 +3,7 @@ import { ClientsService } from 'src/app/header/clients/clients.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tradeaccounts',
@@ -15,9 +16,10 @@ export class TradeaccountsComponent implements OnInit {
   tradeAccountLength: any;
   UserId: any;
   a: number;
+  Id: any;
 
   constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
-              private modalService: BsModalService) { }
+              private modalService: BsModalService, private router: Router) { }
     bsModalRef: BsModalRef;
 
   TypeName = 'Real';
@@ -66,5 +68,9 @@ export class TradeaccountsComponent implements OnInit {
       this.tradeDetails();
       // window.location.reload();
     });
+  }
+  // move data to info page by Id
+  moveToInfoPage(selectedItem: any) {
+    this.router.navigate(['/info', selectedItem]);
   }
 }

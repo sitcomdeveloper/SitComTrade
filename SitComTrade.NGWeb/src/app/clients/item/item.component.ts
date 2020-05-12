@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { LoginService } from 'src/app/login/login.service';
+import { GroupsService } from 'src/app/settings/groups/groups.service';
 // import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -25,9 +26,12 @@ export class ItemComponent implements OnInit {
   title: any;
   btndisable: true;
   response: any;
+  getGroupsData: any;
+  Group: any;
 
   constructor(private clientService: ClientsService, private bsmodal: BsModalRef,
-              private countryService: CountryService, private fb: FormBuilder, private loginservice: LoginService) { }
+              private countryService: CountryService, private fb: FormBuilder, private loginservice: LoginService,
+              private groupsService: GroupsService) { }
   ngOnInit() {
     this.newUserForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
@@ -46,6 +50,7 @@ export class ItemComponent implements OnInit {
       sendemail: ['']
     }),
       this.getcountryName();
+      this.getGroups();
   }
   newClients() {
     if (this.newUserForm.valid) {
@@ -130,4 +135,12 @@ if (val === true) {
   hideModal() {
     this.bsmodal.hide();
   }
+  // get all groups
+  getGroups() {
+    this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
+      this.Group = result.reverse();
+      console.log('Group', result);
+    });
+
+   }
 }

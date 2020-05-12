@@ -115,7 +115,7 @@
 
 
 <div class="tab-content" id="content">
-  <div id="all" class="container-fluid tab-pane active" *ngIf = normalMode><br>
+  <div id="all" class="container-fluid tab-pane active"><br>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
      
       <thead>
@@ -1612,7 +1612,1513 @@
               </a>
               
             </div>
+            <!-- ------------------Editing MODE -------------------------------------------------------------- -->
+            <div class="container-fluid " *ngIf = item.IsEditable>
+              <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                   
+                <thead>
+                  <tr class="tablewidth">
+                    <th class="chkCol">
+                      <div class="cell-content">
+                        <div class=""><span class=""><input type="checkbox" id="ckbCheckAll"></span></div>
+                      </div>
+                    </th>
+              
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Item ID</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis" data-toggle="tooltip" title="First Name"><span>First Name</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis" data-toggle="tooltip" title="Last Name"><span>Last Name</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis" data-original-title="" title=""><span>Country</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Email</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Type</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Phone</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Owner</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Status</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis" data-toggle="tooltip" title="Created Date"><span>Created Date</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis" data-toggle="tooltip" title="Campaign ID"><span>Campaign ID</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Tag</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Tag1</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>FTD</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Group</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+                      <div class="cell-content">
+                        <div class="text-ellipsis"><span>Desk</span></div>
+                      </div>
+                    </th>
+                    <th class="">
+              
+                    </th>
+                  </tr>
+                </thead>
+              
+                <tbody>
+                  <tr class="filterrow ">
+                    <td class="" style="width: 20px;">
+                      <div class=""><span>x</span><i class="fa fa-star" title="Clear filter"></i></div>
+                    </td>
+                    <td class="">
+              
+                      <!-------------------------------->
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+              
+              
+                      <!------------------------->
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="jsgrid-cell-content">
+                        <div class="cstm-search input-control empty">
+                          <div class="checkbox-dd">
+              
+                            <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
+                              <form>
+                                <ul>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="">
+                                          <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
+                                        </span>
+                                      </div>
+                                      Contains
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="6"></span></div>
+                                      Not Contains
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="1"></span></div>
+                                      Equals
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="2"></span></div>
+                                      Not Equals
+                                    </label>
+                                  </li>
+                                  <li class="active">
+                                    <label>
+                                      <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="3"></span></div>
+                                      Starts With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="4"></span></div>
+                                      End With
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="11"></span></div>
+                                      Empty
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
+                                            name="filterparam" type="radio" value="12"></span></div>
+                                      NotEmpty
+                                    </label>
+                                  </li>
+                                </ul>
+                              </form>
+                            </div>
+                          </div>
+                          <input class="form-control dropform" name="ItemId_condition" type="text" 
+                            data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
+                    </td>
+                  </tr>
+                  <tr class="tablectn">
+              
+                    
+                    <td class="chkCol">
+                      <div class="jsgrid-cell-content">
+                        <div class="input-checkbox">
+                          <div class="jsgrid-cell-content">
+                            </div>    
+                        </div>
+              
+                      </div>
+                    </td>
+                    <td  >
+                      <div class="">
+                        <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                          <a href="javascript:void(0)">
+                            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+              
+                          </a>
+                        </div>
+                        
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="">
+                        <div data-display-for="27_FirstName">
+                          <div class="jsgrid-cell-content">
+                            <select _ngcontent-vdb-c3="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="list" title="Please select ">
+                              <option _ngcontent-vdb-c3="">Others</option>
+                              <option _ngcontent-vdb-c3="">Accounts</option>
+                              <option _ngcontent-vdb-c3="">All</option>
+                              <option _ngcontent-vdb-c3="">Leads</option>
+                              <option _ngcontent-vdb-c3="">Shared</option>
+                              <option _ngcontent-vdb-c3="">Online</option>
+                           </select>
+                          </div>    
+              
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_LastName">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell jsgrid-align-left">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_Country">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell">
+                      <div class="jsgrid-cell-content" >
+                        <div data-display-for="27_Email">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+              
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell jsgrid-align-left">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_Type">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+              
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_Phone">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+              
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell jsgrid-align-left">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_OwnerId">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+              
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell jsgrid-align-left">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_StatusId">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell" style="width:115px;">
+                      <div class="jsgrid-cell-content">
+                        <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell">
+                      <div class="jsgrid-cell-content">
+                        <div data-display-for="27_CampaignId">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                        </div>
+                      </div>
+                    </td>
+              
+                    <td class="">
+                      <div class="">
+                        <div data-display-for="27_HasDeposit">
+                          <div><i class="ico-sz2 ico-status"></i></div>
+                        </div>
+                      </div>
+                    </td>
+              
+                    <td class="">
+                      <div class="">
+                        <div data-display-for="27_DeskId">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="">
+                        <div data-display-for="27_DeskId">
+                          <div class="text-ellipsis" style="text-align:center">
+              
+                            <!-- <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                              [ngStyle]="{'color': item.FTD ? 'green':'grey' }"></i> -->
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="">
+                        <div data-display-for="27_DeskId">
+                          <div class="text-ellipsis"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="">
+                        <div data-display-for="27_DeskId">
+                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
+                        </div>
+                      </div>
+                    </td>
+                    <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
+                      <div class="dropleft droptop">
+                
+                          <input class="jsgrid-button jsgrid-update-button" type="button" title="Update" ><i class="fa fa-check" aria-hidden="true" (click)="saveDetails(item.Id)"></i>
+                          <input class="jsgrid-button jsgrid-cancel-edit-button" type="button" title="Cancel edit" ><i class="fa fa-times" aria-hidden="true" (click)="closeEditableMode(item.Id)"></i>
+                         
+                          
+                        
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+              
+                </table>
+              </div>
           </td>
+
         </tr>
 
 <!------------------------------------->
@@ -4228,1510 +5734,7 @@
 
 <!---------------EDITING MODE------------>
 
-<div class="container-fluid " *ngIf = editMode>
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-     
-  <thead>
-    <tr class="tablewidth">
-      <th class="chkCol">
-        <div class="cell-content">
-          <div class=""><span class=""><input type="checkbox" id="ckbCheckAll"></span></div>
-        </div>
-      </th>
 
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Item ID</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis" data-toggle="tooltip" title="First Name"><span>First Name</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis" data-toggle="tooltip" title="Last Name"><span>Last Name</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis" data-original-title="" title=""><span>Country</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Email</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Type</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Phone</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Owner</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Status</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis" data-toggle="tooltip" title="Created Date"><span>Created Date</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis" data-toggle="tooltip" title="Campaign ID"><span>Campaign ID</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Tag</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Tag1</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>FTD</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Group</span></div>
-        </div>
-      </th>
-      <th class="">
-        <div class="cell-content">
-          <div class="text-ellipsis"><span>Desk</span></div>
-        </div>
-      </th>
-      <th class="">
-
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr class="filterrow ">
-      <td class="" style="width: 20px;">
-        <div class=""><span>x</span><i class="fa fa-star" title="Clear filter"></i></div>
-      </td>
-      <td class="">
-
-        <!-------------------------------->
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-
-
-        <!------------------------->
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="jsgrid-cell-content">
-          <div class="cstm-search input-control empty">
-            <div class="checkbox-dd">
-
-              <i class="fa fa-chevron-down comparation-type-3" id="firstid" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"></i>
-              <div class="drop dropdown-menu radiondrop" aria-labelledby="firstid">
-                <form>
-                  <ul>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="">
-                            <input data-ignore-validation="true" name="filterparam" type="radio" value="5">
-                          </span>
-                        </div>
-                        Contains
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class=""><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="6"></span></div>
-                        Not Contains
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="1"></span></div>
-                        Equals
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="2"></span></div>
-                        Not Equals
-                      </label>
-                    </li>
-                    <li class="active">
-                      <label>
-                        <div class="input-radio fistinpt"><span class="checked"><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="3"></span></div>
-                        Starts With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="4"></span></div>
-                        End With
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="11"></span></div>
-                        Empty
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <div class="input-radio fistinpt"><span><input data-ignore-validation="true"
-                              name="filterparam" type="radio" value="12"></span></div>
-                        NotEmpty
-                      </label>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-            <input class="form-control dropform" name="ItemId_condition" type="text" 
-              data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
-          </div>
-        </div>
-      </td>
-      <td>
-        <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
-      </td>
-    </tr>
-    <tr class="tablectn">
-
-      
-      <td class="chkCol">
-        <div class="jsgrid-cell-content">
-          <div class="input-checkbox">
-            <div class="jsgrid-cell-content">
-              </div>    
-          </div>
-
-        </div>
-      </td>
-      <td  >
-        <div class="">
-          <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
-            <a href="javascript:void(0)">
-              <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-
-            </a>
-          </div>
-          
-        </div>
-      </td>
-      <td class="">
-        <div class="">
-          <div data-display-for="27_FirstName">
-            <div class="jsgrid-cell-content">
-              <select _ngcontent-vdb-c3="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="list" title="Please select ">
-                <option _ngcontent-vdb-c3="">Others</option>
-                <option _ngcontent-vdb-c3="">Accounts</option>
-                <option _ngcontent-vdb-c3="">All</option>
-                <option _ngcontent-vdb-c3="">Leads</option>
-                <option _ngcontent-vdb-c3="">Shared</option>
-                <option _ngcontent-vdb-c3="">Online</option>
-             </select>
-            </div>    
-
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_LastName">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell jsgrid-align-left">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_Country">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell">
-        <div class="jsgrid-cell-content" >
-          <div data-display-for="27_Email">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell jsgrid-align-left">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_Type">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_Phone">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell jsgrid-align-left">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_OwnerId">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell jsgrid-align-left">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_StatusId">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell" style="width:115px;">
-        <div class="jsgrid-cell-content">
-          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-        </div>
-      </td>
-      <td class="jsgrid-cell">
-        <div class="jsgrid-cell-content">
-          <div data-display-for="27_CampaignId">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-          </div>
-        </div>
-      </td>
-
-      <td class="">
-        <div class="">
-          <div data-display-for="27_HasDeposit">
-            <div><i class="ico-sz2 ico-status"></i></div>
-          </div>
-        </div>
-      </td>
-
-      <td class="">
-        <div class="">
-          <div data-display-for="27_DeskId">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="">
-          <div data-display-for="27_DeskId">
-            <div class="text-ellipsis" style="text-align:center">
-
-              <!-- <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                [ngStyle]="{'color': item.FTD ? 'green':'grey' }"></i> -->
-            </div>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="">
-          <div data-display-for="27_DeskId">
-            <div class="text-ellipsis"></div>
-          </div>
-        </div>
-      </td>
-      <td class="">
-        <div class="">
-          <div data-display-for="27_DeskId">
-            <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" type="text"  aria-required="true" aria-invalid="false"></div>    
-          </div>
-        </div>
-      </td>
-      <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
-        <div class="dropleft droptop">
-  
-            <input class="jsgrid-button jsgrid-update-button" type="button" title="Update" ><i class="fa fa-check" aria-hidden="true" (click)="saveDetails()"></i>
-            <input class="jsgrid-button jsgrid-cancel-edit-button" type="button" title="Cancel edit" ><i class="fa fa-times" aria-hidden="true" (click)="closeEditableMode()"></i>
-           
-            
-          
-        </div>
-      </td>
-    </tr>
-    </tbody>
-
-  </table>
-</div>
 <!---------------------------------------->
 
 

@@ -34,8 +34,8 @@ changePageSize: any;
 all = true;
 accounts = false;
 leads = false;
-editMode = false;
-normalMode = true;
+
+
 
   ngOnInit() {
     this.userDetails();
@@ -146,28 +146,31 @@ normalMode = true;
   openEditableMode(selectedId) {
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
-        
-  this.normalMode = false;
-  this.editMode = true;
-   } 
-  //  else {
-  //   this.normalMode = true;
-  //   this.editMode = false;
-  //  }
-
-    });
+  // this.normalMode = false;
+  t.IsEditable = true;
+}
+});
     console.log(selectedId);
 
   }
   // check btn
-  saveDetails() {
-    this.normalMode = true;
-    this.editMode = false;
+  saveDetails(selectedId) {
+    this.rowData.forEach( t => {
+      if (t.Id === +selectedId ) {
+  
+  t.IsEditable = false;
+}
+});
   }
   // cancel
-  closeEditableMode() {
-    this.normalMode = true;
-    this.editMode = false;
+  closeEditableMode(selectedId) {
+    this.rowData.forEach( t => {
+      if (t.Id === +selectedId ) {
+  
+  t.IsEditable = false;
+}
+});
+
   }
 
 }
