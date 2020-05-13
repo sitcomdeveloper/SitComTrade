@@ -13,7 +13,6 @@ export class MarketingInfoService {
   constructor(private http: HttpClient) { }
   getMarketingInfo(obj: any): Observable<any> {
     return this.http.get<any>(API_URL + 'Client/GetMarketingInfoByOwnerId/' + obj);
-    // return this.http.get<any>(API_URL + 'Client/GetClientDetailById/' + obj);
 
   }
   // insert-update

@@ -11,8 +11,8 @@ const API_URL = environment.API_URL;
 export class AdditionalInfoService {
 
   constructor(private http: HttpClient) { }
-  getAdditionalInfo(): Observable<any> {
-    return this.http.get<any>(API_URL + 'Client/GetAdditionalInfoByOwnerId/3');
+  getAdditionalInfo(additionalinfoObj: any): Observable<any> {
+    return this.http.get<any>(API_URL + 'Client/GetAdditionalInfoByOwnerId/' + additionalinfoObj);
   }
   // insert-update
   insertAdditionalInfo(obj: any): Observable<any> {

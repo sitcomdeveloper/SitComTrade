@@ -3,6 +3,8 @@ import { CommentsService } from './comments.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { ActivatedRoute } from '@angular/router';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 
 @Component({
@@ -19,7 +21,10 @@ export class CommentsComponent implements OnInit {
   dltAll: any;
   getLoginDetails: any;
   bindLoginData: any;
-  constructor(private commentsService: CommentsService, private fb: FormBuilder, private modalService: BsModalService) { }
+  detail: number;
+  constructor(private commentsService: CommentsService, private fb: FormBuilder,
+              // tslint:disable-next-line: variable-name
+              private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) { }
    bsModalRef: BsModalRef;
 
   ngOnInit() {
@@ -36,8 +41,11 @@ export class CommentsComponent implements OnInit {
   }
   // get all comments
   userComments() {
-    this.commentsService.getComments(this.infoComment).subscribe(res => {
-      this.comments = res.reverse();
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
+    this.commentsService.getComments(details).subscribe(res => {
+      this.spinnerService.show();
+      this.comments = res;
       console.log('comments', res);
     });
   }
@@ -52,9 +60,10 @@ export class CommentsComponent implements OnInit {
   addComment() {
     const obj = {
       CommentDescription: this.commentsForm.value.commentarea,
-      OwnerId: 1
+      OwnerId: this.detail
     };
     this.commentsService.insertComments(obj).subscribe(res => {
+      this.spinnerService.show();
       this.insert = res;
       this.userComments();
       console.log('insertcomment', res);
@@ -62,7 +71,7 @@ export class CommentsComponent implements OnInit {
     });
   }
   deleteAll() {
-    this.commentsService.deleteAllComment('this.dltAll').subscribe(res => {
+    this.commentsService.deleteAllComment('this.detail').subscribe(res => {
       this.dltAllComment = res;
       this.userComments();
       console.log('dltAllComment', res);

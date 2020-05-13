@@ -19,8 +19,7 @@ export class MarketingInfoComponent implements OnInit {
   marketingInfoEdit = false;
   MarketingInfo = true;
   updtdMarketingInfo: any;
-  // details: number;
-  // detail: number;
+  detail: number;
   constructor(private marketinginfoservice: MarketingInfoService, private fb: FormBuilder,
               private countryService: CountryService, private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute) { }
 
@@ -50,8 +49,8 @@ export class MarketingInfoComponent implements OnInit {
     this.getcountryName();
   }
   marketingInfo() {
-    const details = +this._route.snapshot.paramMap.get('selectedItem');   
-    
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
     this.marketinginfoservice.getMarketingInfo(details).subscribe(res => {
       this.userMarketingInfo = res;
       this.marketingInfoForm.patchValue({
@@ -101,7 +100,7 @@ export class MarketingInfoComponent implements OnInit {
       Referrer: this.marketingInfoForm.value.referrer,
       Source: this.marketingInfoForm.value.source,
       SubAffiliateID: this.marketingInfoForm.value.subaffilateid,
-      OwnerId: this.userMarketingInfo.OwnerId,
+      OwnerId: this.detail,
       Tag1: this.marketingInfoForm.value.tag1,
       Tag2: this.marketingInfoForm.value.tag2,
       UtmCampaign: this.marketingInfoForm.value.utmcampaign,
@@ -110,7 +109,7 @@ export class MarketingInfoComponent implements OnInit {
       UtmMedium: this.marketingInfoForm.value.utmmedium,
       UtmSource: this.marketingInfoForm.value.utmsource,
       GoogleKeyword: this.marketingInfoForm.value.googlekeyword,
-      Id: this.userMarketingInfo.Id
+      // Id: this.userMarketingInfo.Id
     };
     this.marketinginfoservice.updateMarketingInfo(obj).subscribe(res => {
       this.updtdMarketingInfo = res;

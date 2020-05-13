@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdditionalInfoService } from './additional-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-additional-info',
@@ -14,9 +15,10 @@ export class AdditionalInfoComponent implements OnInit {
   AdditionalInfo = true;
   additionalInfoEdit = false;
   getinsertInfo: any;
+  detail: number;
 
-  constructor(private additionalinfoservice: AdditionalInfoService, private fb: FormBuilder, 
-              private spinnerService: Ng4LoadingSpinnerService) {  }
+  constructor(private additionalinfoservice: AdditionalInfoService, private fb: FormBuilder,
+              private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute) {  }
 
   ngOnInit() {
     this.additionalForm = this.fb.group({
@@ -30,7 +32,9 @@ export class AdditionalInfoComponent implements OnInit {
     this.additionalInfo();
   }
   additionalInfo() {
-    this.additionalinfoservice.getAdditionalInfo().subscribe(res => {
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
+    this.additionalinfoservice.getAdditionalInfo(details).subscribe(res => {
       this.userAdditionalInfo = res;
       this.additionalForm.patchValue({
         supplieddocs: this.userAdditionalInfo.SuppliedDocs,
@@ -54,12 +58,12 @@ export class AdditionalInfoComponent implements OnInit {
     const obj = {
       AcceptedTermConditions: this.additionalForm.value.acceptedtermsconditions,
       Description: this.additionalForm.value.description,
-      OwnerId: this.userAdditionalInfo.OwnerId,
+      OwnerId: this.detail,
       IsOnline: this.additionalForm.value.isonline,
       PromoCode: this.additionalForm.value.promocode,
       SubscribedNewsletter: this.additionalForm.value.subscribednewsletter,
       SuppliedDocs: this.additionalForm.value.supplieddocs,
-      Id: this.userAdditionalInfo.Id,
+      // Id: this.userAdditionalInfo.Id
     };
     this.additionalinfoservice.insertAdditionalInfo(obj).subscribe(res => {
       this.getinsertInfo = res;
