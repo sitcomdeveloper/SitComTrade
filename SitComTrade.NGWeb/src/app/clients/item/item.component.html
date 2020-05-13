@@ -14,25 +14,23 @@
                      <ul class="nav nav-tabs nav-justified" role="tablist">
                         <li class="nav-item ">
                            <a class="nav-link ">
-                              <!-- <label for="optDaily">Account</label> -->
+                             
                               <div class="input-radio" id="uniform-clientType0"><span class="">
                                     <input type="radio" name="clientType" id="clientType0" class="itemradio"
                                        (change)='actrealifo($event.target.checked)' checked></span></div>
                               <label for="clientType0">Account</label>
-                              <!-- <label for="optDaily">Account</label>
-                       <input id="optDaily" checked="checked" name="intervaltype" type="radio" > -->
+                             
                            </a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link">
-                              <!-- <label for="clientType1">Lead</label> -->
+                              
                               <div class="input-radio" id="uniform-clientType1"><span class="">
                                     <input type="radio" name="clientType" id="clientType1"
-                                       (change)='actrealifo1($event.target.checked)' class="itemradio"></span>
+                                       (change)='actrealifo1($event.target.checked)'  class="itemradio"></span>
                               </div>
                               <label for="clientType1">Lead</label>
-                              <!--<label for="optDaily">Daily</label>
-      <input id="optDaily" checked="checked" name="intervaltype1" type="radio" > -->
+                              
                            </a>
                         </li>
                      </ul>
@@ -45,7 +43,7 @@
                            <form [formGroup]="newUserForm">
                               <div class="items form-horizontal">
                                  <div class="row form-group">
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6 col-md-6" *ngIf = show>
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3">
                                              <label class="valign-label" for="FirstName">
@@ -62,7 +60,7 @@
                                              </div>
                                        </div>
                                     </div>
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6 col-md-6" *ngIf = show>
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label"
                                                 for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
@@ -78,7 +76,7 @@
                                        </div>
                                     </div>
                                  </div>
-                                 <div class="row form-group">
+                                 <div class="row form-group" *ngIf = show>
                                     <div class="col-xs-6 col-md-6">
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="Email"><span
@@ -93,7 +91,7 @@
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6 col-md-6" *ngIf = show>
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="Phone"><span
                                                    data-tooltip-el="">Phone</span></label></div>
@@ -107,7 +105,7 @@
                                        </div>
                                     </div>
                                  </div>
-                                 <div class="row form-group">
+                                 <div class="row form-group" *ngIf = show>
                                     <div class="col-xs-6 col-md-6">
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label" for="Country"><span
@@ -132,9 +130,9 @@
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6 col-md-6" *ngIf = hiddden>
                                        <div class="row crtclintvsl">
-                                          <div class="col-xs-3 col-md-3"><label class="valign-label"
+                                          <div class="col-xs-3 col-md-3" ><label class="valign-label"
                                                 for="Password"><span data-tooltip-el="">Password</span></label>
                                           </div>
                                           <div class="col-xs-9 col-md-9">
@@ -150,7 +148,7 @@
                                        </div>
                                     </div>
                                  </div>
-                                 <div class="row form-group">
+                                 <div class="row form-group" *ngIf = show>
                                     <div class="col-xs-6 col-md-6">
                                        <div class="row">
                                           <div class="col-xs-3 col-md-3"><label class="valign-label"
@@ -171,9 +169,10 @@
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-xs-6 col-md-6" *ngIf = hiddden>
                                        <div class="row crtclintvsl">
-                                          <div class="col-xs-3 col-md-3"><label class="valign-label" for="GroupId"><span
+                                          <div class="col-xs-3 col-md-3" >
+                                             <label class="valign-label" for="GroupId"><span
                                                    data-tooltip-el="">Group</span></label></div>
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">

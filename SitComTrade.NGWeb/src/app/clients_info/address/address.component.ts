@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AddressService } from './address.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CountryService } from 'src/app/services/country.service';
+import { ActivatedRoute } from '@angular/router';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
   selector: 'app-address',
@@ -17,8 +19,10 @@ export class AddressComponent implements OnInit {
   modifyAddress: any;
   normalMode = true;
   editMode = false;
+  detail: number;
   // tslint:disable-next-line: max-line-length
-  constructor(private addressservice: AddressService, private fb: FormBuilder, private countryService: CountryService) {this.editAddress(); }
+  constructor(private addressservice: AddressService, private fb: FormBuilder, private countryService: CountryService,
+              private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {}
 
   ngOnInit() {
     this.addressForm = this.fb.group({
@@ -33,14 +37,9 @@ export class AddressComponent implements OnInit {
     this.getcountryName();
   }
   address() {
-    this.addressservice.getAddress(this.clientAddress).subscribe(res => {
-      this.userAddress = res;
-      console.log('address', res);
-    });
-  }
-
-  editAddress() {
-    this.addressservice.getAddress(this.clientAddress).subscribe(res => {
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
+    this.addressservice.getAddress(details).subscribe(res => {
       this.userAddress = res;
       this.addressForm.patchValue({
         ipcountry: this.userAddress.CountryName,
@@ -49,29 +48,8 @@ export class AddressComponent implements OnInit {
         state: this.userAddress.State,
         address: this.userAddress.StreetAddress,
       });
+      console.log('address', res);
     });
-  }
-  updateAddress() {
-    // this.Country.forEach(element => {
-    //   if ( element.Id === +this.addressForm.value.ipcountry) {
-    //     this.addressForm.value.countryid = element.Name;
-    //   }
-    // });
-    const obj = {
-    City: this.addressForm.value.city,
-    State: this.addressForm.value.state,
-    ZipCode: this.addressForm.value.zipcode,
-    CountryId: 1,
-    CountryName: this.addressForm.value.ipcountry,
-    OwnerId: '1',
-    StreetAddress: this.addressForm.value.address,
-    Id: this.userAddress.Id
-    }
-    this.addressservice.insertAddress(obj).subscribe(res => {
-      this.modifyAddress = res;
-      console.log('modifyadd', res);
-    });
-    this.editAddress();
   }
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
@@ -86,6 +64,27 @@ export class AddressComponent implements OnInit {
   }
   // apply btn
   closeshowhide() {
+    this.Country.forEach(element => {
+      if ( element.Id === +this.addressForm.value.ipcountry) {
+        this.addressForm.value.countryid = element.Name;
+      }
+    });
+    const obj = {
+      City: this.addressForm.value.city,
+      State: this.addressForm.value.state,
+      ZipCode: this.addressForm.value.zipcode,
+      CountryId: this.addressForm.value.ipcountry,
+      CountryName: this.addressForm.value.countryid,
+      OwnerId: this.detail,
+      StreetAddress: this.addressForm.value.address,
+      // Id: this.userAddress.Id
+      };
+    this.addressservice.insertAddress(obj).subscribe(res => {
+      this.spinnerService.show();
+      this.modifyAddress = res;
+      this.address();
+      console.log('modifyadd', res);
+      });
     this.normalMode = true;
     this.editMode = false;
   }

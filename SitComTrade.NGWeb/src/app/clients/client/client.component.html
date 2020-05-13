@@ -1677,7 +1677,17 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="countryname" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <!-- <div class="jsgrid-cell-content">
+                            <input class="form-control valid" name="FirstName" formControlName="countryname" type="text"  aria-required="true" aria-invalid="false">
+                          </div>     -->
+                          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+                                                   formControlName="countryname"  data-live-search="true" id="lunc"
+                                                   title="Please select a lunch ..." >
+                                                   <option ngcontent-qpo-c3="">Choose your Country</option>
+                                                   <option ngcontent-qpo-c3="" value= "{{country.Id}}" *ngFor="let country of Country">
+                                                      {{country.Name}}</option>
+
+                                                </select>
             
                         </a>
                       </div>

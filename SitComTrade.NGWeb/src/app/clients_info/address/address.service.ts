@@ -12,7 +12,7 @@ export class AddressService {
 
   constructor(private http: HttpClient) { }
   getAddress(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'Client/GetAddressByOwnerId/1', obj);
+    return this.http.post<any>(API_URL + 'Client/GetAddressByOwnerId/', obj);
   }
   insertAddress(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/InsertUpdateAddress', obj);

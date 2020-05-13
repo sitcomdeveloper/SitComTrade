@@ -7,6 +7,7 @@ import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bo
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
+import { CountryService } from 'src/app/services/country.service';
 
 @Component({
   selector: 'app-client',
@@ -15,10 +16,7 @@ import { GeneralInfoService } from 'src/app/clients_info/general-info/general-in
 })
 export class ClientComponent implements OnInit {
   updatedDtls: any;
-  // tslint:disable-next-line: max-line-length
-  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService) { }
-  bsModalRef: BsModalRef;
-
+  getLoginDetails: any;
   rowData = [];
   deletbtnn = true;
   showMsg: any;
@@ -38,8 +36,14 @@ all = true;
 accounts = false;
 leads = false;
 clientForm: FormGroup;
-
-
+bindLoginData: any;
+  name: any;
+  Country: any;
+  
+  // tslint:disable-next-line: max-line-length
+  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute, 
+    private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
+  bsModalRef: BsModalRef;
 
   ngOnInit() {
     this.clientForm = this.fb.group({
@@ -62,8 +66,14 @@ clientForm: FormGroup;
       countryid: ['']
     });
     this.userDetails();
+    this.getcountryName();
   }
   userDetails() {
+    // this.bindLoginData.Id
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
     this.spinnerService.show();
     setTimeout( () => {
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
@@ -170,9 +180,6 @@ clientForm: FormGroup;
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
   t.IsEditable = true;
-  // this.clientService.getUsers(this.clientInfo).subscribe(res => {
-  //   if (res !== null && res !== undefined && res !== '') {
-  //     this.rowData = res.reverse();
   this.clientForm.patchValue({
           id: t.Id,
           firstname: t.FirstName,
@@ -235,6 +242,12 @@ clientForm: FormGroup;
 }
 });
 
+  }
+  // get country
+  getcountryName() {
+    this.countryService.countryName(this.name).subscribe(result => {
+      this.Country = result;
+    });
   }
 
 }

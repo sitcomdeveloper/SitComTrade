@@ -28,6 +28,10 @@ export class ItemComponent implements OnInit {
   response: any;
   getGroupsData: any;
   Group: any;
+  getLoginDetails: any;
+  bindLoginData: any;
+  hiddden = true;
+  show = true;
 
   constructor(private clientService: ClientsService, private bsmodal: BsModalRef,
               private countryService: CountryService, private fb: FormBuilder, private loginservice: LoginService,
@@ -53,6 +57,10 @@ export class ItemComponent implements OnInit {
     this.getGroups();
   }
   newClients() {
+    // code for receiving login details and bind to header at place of name
+    // this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
+    // console.log('LoginData', this.getLoginDetails);
+    // this.bindLoginData = this.getLoginDetails;
     if (this.newUserForm.valid) {
       this.Group.forEach(element => {
         if ( element.Id === +this.newUserForm.value.group) {
@@ -115,12 +123,17 @@ export class ItemComponent implements OnInit {
     if (val === true) {
       this.acttype = 'Real';
     }
+    this.show = true;
+    this.hiddden = true;
+
   }
   actrealifo1(val: any) {
     this.acttype = 'Real';
     if (val === true) {
       this.acttype = 'Lead';
     }
+    this.show = true;
+    this.hiddden = false;
   }
   // for send email
   sendemailuser(val: any) {
@@ -133,12 +146,6 @@ if (val === true) {
   this.sedemailbyuser = false;
 }
   }
-  // onSubmit() {
-  //   this.submitted = true;
-  //   if (this.newUserForm.invalid) {
-  //     return;
-  //   }
-  // }
   get f() {
     return this.newUserForm.controls;
   }
@@ -153,4 +160,7 @@ if (val === true) {
     });
 
    }
+  //  hidePwdGroup() {
+  //    this.hiddden = false;
+  //  }
 }
