@@ -460,7 +460,7 @@
                 </a>
                 <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled=""></i></a>
                   <br>
-                <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab">&nbsp;&nbsp;<i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+                <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab" data-toggle="modal" data-target="#livedetail">&nbsp;&nbsp;<i class="fa fa-window-maximize greyicon" aria-hidden="true"></i>
                 </a>
                 </div>
           </td>
@@ -475,4 +475,26 @@
   </div>
   </div>
   </div>
+  <!------------------create Import Client model------------->
+<div class="modal " id="livedetail" >
+    <div class="modal-dialog modal-lg1">
+      <div class="modal-content">
+        <div class="modal-header" style="height: 4rem;">
+          <h1 class="modal-title popupheader">
+            IMPORT CLIENT
+          </h1>
+          <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+        </div>
+        <div class="modal-body nopadd">
+          <app-live-detail></app-live-detail>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <!--------------End create Import Client model--------------->
   <ng4-loading-spinner> </ng4-loading-spinner>

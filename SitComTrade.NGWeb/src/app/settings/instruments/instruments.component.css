@@ -1,6 +1,9 @@
 .jsgrid-cell-content {
-    width: 99px;
+    width: 83px;
 }
 .text-ellipsis {
-    width: auto;
+    width: 83px;
+}
+.email-cell-content {
+    width: 83px;
 }

@@ -1,0 +1,149 @@
+.subheader1 .main-holder {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.subheader1 .account-panel {
+    display: table;
+    width: 100%;
+    margin-top: 0;
+    background: 0 0;
+    position: relative;
+}
+.subheader1 .account-panel .account-main-details {
+    vertical-align: top;
+    font: 12px/17px Poppins,Arial,sans-serif;
+    padding: 15px 0;
+    color: #000;
+    background: 0 0;
+    min-width: 1px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.account-panel .account-main-details .type {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background: #12baee;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    min-width: 60px;
+    padding: 5px 15px;
+    margin: -3px 25px;
+    font-size: 10px;
+}
+.color11 {
+    color: #88bdec;
+}
+.subheader1 .account-panel .account-main-details h2 {
+    font: 20px/28px Poppins,Arial,sans-serif;
+    color: #45596a;
+}
+.subheader1 .account-panel .account-main-details dl {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+.subheader1 .account-panel .content-tabs {
+    vertical-align: bottom;
+}
+
+.subheader1 .account-panel>div {
+    display: table-cell;
+    height: 95px;
+}
+.content-tabs {
+    font: 700 13px/19px Poppins,Arial,sans-serif;
+    text-transform: uppercase;
+}
+.subheader1 .account-panel .content-tabs .nav-tabs {
+    float: right;
+}
+
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+}
+
+.content-tabs .nav-tabs>li.active>a, .content-tabs .nav-tabs>li.active>a:focus, .content-tabs .nav-tabs>li.active>a:hover {
+    color: #3d75e1;
+    background: #f9fbfd;
+    border: 0;
+}
+.content-tabs .nav-tabs>li>a {
+    text-align: center;
+    margin: 0;
+    color: #8da5ba;
+    padding: 13px 20px;
+    min-width: 170px;
+    line-height: 1.35714;
+    line-height: 19px;
+    border-radius: 2px 2px 0 0;
+    border: 0;
+    -webkit-box-shadow: 0 -2px 5px 0 rgba(0,0,0,.1);
+    box-shadow: 0 -2px 5px 0 rgba(0,0,0,.1);
+}
+.account-trading-details .form-inline .form-group {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin: 7px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.subheader1 .account-trading-details label:not(.input-validation-error) {
+    width: 85px;
+}
+
+ label {
+    margin-right: 10px;
+    color: #8da5ba;
+    display: inline-flex;
+    height: auto;
+    width: auto;
+}
+ label {
+    margin-right: 10px;
+    color: #8da5ba;
+    display: inline-flex;
+    height: auto;
+    width: auto;
+}
+.heading02 h3 {
+    font-size: 13px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 0;
+}
+ label {
+    margin-right: 10px;
+    color: #8da5ba;
+    display: inline-flex;
+    height: auto;
+    width: auto;
+}
+.valign-label
+{
+    width:145px;
+}
+.heading02 {
+    background: #f9fbfd;
+    padding: 9px 0;
+}
+
+.box-heading, .heading01, .heading02 {
+    color: #000;
+}
+.btn-type01 {
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: #8da5ba;
+    background: 0,0!important;
+}
+.value-edit div select {
+    width: 97px!important;
+}
+.value-edit div input {
+    width: 97px!important;
+}

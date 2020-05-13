@@ -100,6 +100,7 @@ import { InfoCasesComponent } from './clients_info/info-cases/info-cases.compone
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
 import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
+import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 
 
 @NgModule({
@@ -186,6 +187,7 @@ import { ImportedClientsComponent } from './settings/imports/imported-clients/im
     GroupsInfoComponent,
     TranslationsFilterComponent,
     ImportedClientsComponent,
+    LiveDetailComponent,
   ],
   imports: [
     BrowserModule,
