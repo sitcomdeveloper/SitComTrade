@@ -855,6 +855,13 @@ i.fa.fa-refresh {
               padding-left: 15px;
               margin-right: auto;
               margin-left: auto;
+              background: #fff;
+              z-index: 999999999;
+              padding: 10px;
+}
+tr.tablectn {
+    background: #fff;
+    /* z-index: 999999; */
 }
 .input-group-addon {
     /* min-width: 34px; */
