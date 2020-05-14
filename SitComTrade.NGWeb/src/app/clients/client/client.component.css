@@ -511,9 +511,9 @@ i.fa.fa-plus.bg-primary1.fa-lg {
     padding: 0;
     width: 73px;
 }
- .jsgrid-control-field a, .jsgrid-control-field input {
+ /* .jsgrid-control-field a, .jsgrid-control-field input {
     margin-left: 2px;
-}
+} */
 
  .jsgrid-button {
     width: 16px;
@@ -529,11 +529,15 @@ i.fa.fa-plus.bg-primary1.fa-lg {
     width: 16px;
     height: 16px;
 }
- .jsgrid-control-field a,  .jsgrid-control-field input {
+ /* .jsgrid-control-field a,  .jsgrid-control-field input {
     margin-left: 2px;
-}
+} */
 .jsgrid-cancel-edit-button {
     background-position: 0 0;
     width: 16px;
     height: 16px;
+}
+.tablectn select
+{
+    height:27px!important;
 }
