@@ -35,6 +35,8 @@ export class AdditionalInfoComponent implements OnInit {
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
     this.additionalinfoservice.getAdditionalInfo(details).subscribe(res => {
+      if (res !== null && res !== undefined && res !== '') {
+
       this.userAdditionalInfo = res;
       this.additionalForm.patchValue({
         supplieddocs: this.userAdditionalInfo.SuppliedDocs,
@@ -45,6 +47,7 @@ export class AdditionalInfoComponent implements OnInit {
         promocode: this.userAdditionalInfo.PromoCode
       });
       console.log('additionalinfo', res);
+    }
     });
   }
   // div show hide

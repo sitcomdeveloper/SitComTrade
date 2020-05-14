@@ -51,7 +51,9 @@ export class MarketingInfoComponent implements OnInit {
   marketingInfo() {
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
+
     this.marketinginfoservice.getMarketingInfo(details).subscribe(res => {
+      if (res !== null && res !== undefined && res !== '') {
       this.userMarketingInfo = res;
       this.marketingInfoForm.patchValue({
         tag1: this.userMarketingInfo.Tag1,
@@ -73,6 +75,7 @@ export class MarketingInfoComponent implements OnInit {
       affiliateuser: this.userMarketingInfo.AffiliateUser
       });
       console.log('Marketinginfo', res);
+    }
     });
   }
 
@@ -109,16 +112,15 @@ export class MarketingInfoComponent implements OnInit {
       UtmMedium: this.marketingInfoForm.value.utmmedium,
       UtmSource: this.marketingInfoForm.value.utmsource,
       GoogleKeyword: this.marketingInfoForm.value.googlekeyword,
-      // Id: this.userMarketingInfo.Id
     };
     this.marketinginfoservice.updateMarketingInfo(obj).subscribe(res => {
       this.updtdMarketingInfo = res;
+      this.marketingInfoEdit = false;
+      this.MarketingInfo = true;
       this.spinnerService.show();
       this.marketingInfo();
       console.log('updtdMarketingInfo', res);
     });
-    this.marketingInfoEdit = false;
-    this.MarketingInfo = true;
   }
   // cancel btn
   close() {

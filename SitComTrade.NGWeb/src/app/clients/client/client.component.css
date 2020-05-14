@@ -85,15 +85,6 @@ body {
     height: 25px;
     font-size: 17px;
 }
-/* .impdrp :after {
-    content: "";
-    position: absolute;
-    right: 19px;
-    top: -7px;
-    border-style: solid;
-    border-width: 0 6px 7px;
-    border-color: #fff transparent;
-} */
 .impdrp li :hover {
   
     color: #12baee;
@@ -111,11 +102,6 @@ body {
 {
     width:68px;
 }
-/* #.z_co_dropdown option {
-      width: 520px;
-} */
-
-
 .breadcrumb
 {
     margin-left: 5px;
@@ -289,23 +275,6 @@ select.browser-default.custom-select {
 {
     margin-left:12px;
 }
-
-/* i.fa.fa-plus.bg-primary.fa-lg,i.fa.fa-pencil.bg-primary.fa-lg,i.fa.fa-user.bg-primary.fa-lg,i.fa.fa-trash.bg-primary.fa-lg,i.fa.fa-ellipsis-h.bg-primary.fa-lg{
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    width: 50px;
-    height: 41px;
-    text-decoration: none;
-    overflow: hidden;
-    position: relative;
-    background-position: -175px -145px;
-    color:white;
-    
-} */
 .serachicon  a
 {
     display: block;
@@ -319,7 +288,6 @@ select.browser-default.custom-select {
 .serachicon
 {
     background: #12baee;
-    /* border-radius: 2px; */
 }
 .brdr-right {
     border-right: 1px solid #105996;
@@ -415,9 +383,6 @@ grid-auto-columns: max-content;
     z-index: 1;
     color: #45596a;
 }
-/* .filterrow, .rightsubopt, .chkCol {
-  display: none;
-} */
 .rightsubopt .input-group select{
     width:230px;
     background: 0 0!important;
@@ -555,7 +520,6 @@ i.fa.fa-plus.bg-primary1.fa-lg {
     height: 16px;
     border: none;
     cursor: pointer;
-    /* background-image: url("./assets/images/jsgrid-icons.png"); */
     background: url(/assets/images/jsgrid-icons.png);
     background-repeat: no-repeat;
     background-color: transparent;

@@ -3,10 +3,6 @@
 {
     width: 18.9%;
 }
-.text-ellipsis {
-    
-    /* width:auto; */
-}
 .email-cell-content:first-child
 
 {
@@ -217,7 +213,6 @@
   border-color: #adb8c0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
 }
-/* CSS3 on/off switches */
 .switch + .lable {
   margin: 0 4px;
   min-height: 24px;
@@ -495,7 +490,6 @@
     height: 20px;
     text-indent: -9999px;
     overflow: hidden;
-    /* background: url(images/sprite.png) -120px -715px no-repeat; */
 }
 .bootstrap-select.btn-group .dropdown-menu {
     min-width: 100%;
@@ -510,9 +504,6 @@
     width: 100%;
 }
 .bootstrap-select>select {
-    /* position: absolute!important;
-    bottom: 0;
-    left: 50%; */
     display: block!important;
     width: 150px!important;
     height: 100%!important;
@@ -531,7 +522,6 @@
     width: 15px;
     height: 15px;
     margin: -7px 0 0;
-    /* background: url(images/sprite.png) 0 -280px no-repeat; */
 }
 .affiliate-settings .fielditem-group .form-control {
     width: 100%;
