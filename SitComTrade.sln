@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29920.165
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitComTech.API", "SitComTech.API\SitComTech.API.csproj", "{72D38EF4-BDB6-466D-8749-527CA38A28F4}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitComTrade.Web", "SitComTrade.Web\SitComTrade.Web.csproj", "{F872FA08-7F57-4042-B3EC-EA4195816D24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitComTrade.NGWeb", "SitComTrade.NGWeb\SitComTrade.NGWeb.csproj", "{129E36E3-4DD8-4D98-BD6E-981C20272070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitComTrade.Framework", "SitComTrade.Framework\SitComTrade.Framework.csproj", "{2E428FE2-4D04-41AC-8EFD-D7A1B8468E62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{129E36E3-4DD8-4D98-BD6E-981C20272070}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{129E36E3-4DD8-4D98-BD6E-981C20272070}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{129E36E3-4DD8-4D98-BD6E-981C20272070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E428FE2-4D04-41AC-8EFD-D7A1B8468E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E428FE2-4D04-41AC-8EFD-D7A1B8468E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E428FE2-4D04-41AC-8EFD-D7A1B8468E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E428FE2-4D04-41AC-8EFD-D7A1B8468E62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,12 @@
 ﻿using SitComTech.Data.Interface;
+using SitComTech.Framework.Services;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
 using System.Collections.Generic;
 
 namespace SitComTech.Core.Interface
 {
-    public interface IUserService:IUnitOfWork<User>
+    public interface IUserService:IService<User>
     {
         User IsAuthenticated(UserVM userVM);
         UserDataVM Insert(UserDataVM userDataVM);

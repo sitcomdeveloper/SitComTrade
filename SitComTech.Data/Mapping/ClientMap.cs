@@ -1,6 +1,4 @@
-﻿using System;
-using SitComTech.Model.Common;
-using SitComTech.Model.DataObject;
+﻿using SitComTech.Model.DataObject;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 

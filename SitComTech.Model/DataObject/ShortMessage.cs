@@ -1,9 +1,9 @@
-﻿using System;
-using SitComTech.Model.Common;
+﻿using SitComTech.Framework.DataContext;
+using System;
 
 namespace SitComTech.Model.DataObject
 {
-    public class ShortMessage :BaseConfig
+    public class ShortMessage : BaseEntity
     {
         public long OwnerId { get; set; }
 

@@ -1,5 +1,7 @@
 ﻿using SitComTech.Core.Interface;
 using SitComTech.Data.Interface;
+using SitComTech.Framework.Repositories;
+using SitComTech.Framework.Services;
 using SitComTech.Model.DataObject;
 using System;
 using System.Collections.Generic;
@@ -8,35 +10,26 @@ using System.Linq;
 namespace SitComTech.Domain.Services
 {
    
-    public class TradeGroupService : ITradeGroupService
+    public class TradeGroupService : Service<TradeGroup>,ITradeGroupService
     {
-        private IUnitOfWork<TradeGroup> _repository;
-        public TradeGroupService(IUnitOfWork<TradeGroup> repository)
+        private IGenericRepository<TradeGroup> _repository;
+        public TradeGroupService(IGenericRepository<TradeGroup> repository)
+            :base(repository)
         {
             this._repository = repository;
-
-        }
-        public void Delete(TradeGroup entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<TradeGroup> GetAll()
-        {
-            throw new NotImplementedException();
         }
 
         public TradeGroup GetById(object Id)
         {
             if ((long)Id == 0)
                 return null;
-            TradeGroup vTradeGroup = _repository.GetById(Id);
+            TradeGroup vTradeGroup = _repository.Queryable().FirstOrDefault(x=>x.Id==(long)Id);
             return vTradeGroup;
         }
 
         public List<TradeGroup> GetTradeGroupList()
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted).ToList();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted).ToList();
         }       
 
         public void Insert(TradeGroup entity)
@@ -65,22 +58,16 @@ namespace SitComTech.Domain.Services
                     LeverageName=entity.LeverageName
                 };
                 _repository.Insert(tradegrp);
-                SaveChanges();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
        
         public void Update(TradeGroup entity)
         {
-            TradeGroup _tradegroup = _repository.GetById(entity.Id);
+            TradeGroup _tradegroup = _repository.Queryable().FirstOrDefault(x=>x.Id==entity.Id);
             if (_tradegroup != null)
             {
                 _tradegroup.UpdatedAt = DateTime.Now;
@@ -97,8 +84,7 @@ namespace SitComTech.Domain.Services
                 _tradegroup.CurrencyName = entity.CurrencyName;
                 _tradegroup.LeverageId = entity.LeverageId;
                 _tradegroup.LeverageName = entity.LeverageName;
-                _repository.Update(_tradegroup);
-                SaveChanges();
+                _repository.Update(_tradegroup);                
             }
             if (entity == null || _tradegroup == null)
                 throw new ArgumentNullException("Tradegroup");

@@ -1,9 +1,9 @@
-﻿using SitComTech.Model.Common;
+﻿using SitComTech.Framework.DataContext;
 using System;
 
 namespace SitComTech.Model.DataObject
 {
-    public class MarketingInfo :BaseConfig
+    public class MarketingInfo : BaseEntity
     {
         public long OwnerId { get; set; }
 
@@ -21,7 +21,7 @@ namespace SitComTech.Model.DataObject
         public string UtmSource { get; set; }
         public string UtmCampaign { get; set; }
         public string UtmCreative { get; set; }
-        public string UtmMedium { get; set; }        
+        public string UtmMedium { get; set; }
         public string GoogleKeyword { get; set; }
 
         public string AffTransactionID { get; set; }
@@ -33,7 +33,7 @@ namespace SitComTech.Model.DataObject
         public virtual Client ClientTable { get; set; }
     }
 
-    public class AffiliateUser : BaseConfig
+    public class AffiliateUser : BaseEntity
     {
         public string Name { get; set; }
 

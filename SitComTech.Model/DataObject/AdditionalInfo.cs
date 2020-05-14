@@ -1,8 +1,8 @@
-﻿using SitComTech.Model.Common;
+﻿using SitComTech.Framework.DataContext;
 
 namespace SitComTech.Model.DataObject
 {
-    public class AdditionalInfo :BaseConfig
+    public class AdditionalInfo :BaseEntity
     {
         public long OwnerId { get; set; }
         public bool? SuppliedDocs { get; set; }

@@ -11,11 +11,11 @@ namespace SitComTech.API.Controllers
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
-        private IUserService _userService;
-        private IMarketingInfoService _marketingInfoService;
-        private IAdditionalInfoService _additionalInfoeService;
-        private IEmailService _emailService;
-        private IShortMessageService _shortMeassageService;
+        private readonly IUserService _userService;
+        private readonly IMarketingInfoService _marketingInfoService;
+        private readonly IAdditionalInfoService _additionalInfoeService;
+        private readonly IEmailService _emailService;
+        private readonly IShortMessageService _shortMeassageService;
         public UserController(IUserService userService, IMarketingInfoService marketingInfoService, IAdditionalInfoService additionalInfoeService
             , IEmailService emailService, IShortMessageService shortMeassageService)
         {
@@ -26,14 +26,18 @@ namespace SitComTech.API.Controllers
             this._shortMeassageService = shortMeassageService;
         }
         [Route("DummyUsers")]
-        [HttpPost]
-        public List<User> GetUserList()
+        
+        public List<dynamic> GetUserList()
         {
-            var userList = new List<User>();
-            //userList.Add(new User { Id=1, UserName = "Abc", Password = "Xyz",Email="abc@gmail.com",Phone="123456789",Active=true,Deleted=false,CreatedBy=1,CreatedTime=DateTime.Now,UpdatedBy=1,UpdatedTime=DateTime.Now });
+            var userList = new List<dynamic>
+            {
+                new { Id = 1, UserName = "Krishankant", Password = "admin123", Email = "kksingh84@gmail.com", Phone = "123456789", Active = true, Deleted = false, CreatedBy = 1, CreatedTime = DateTime.Now, UpdatedBy = 1, UpdatedTime = DateTime.Now },
+                new { Id = 2, UserName = "Rohan", Password = "admin987", Email = "rohan@gmail.com", Phone = "554545665", Active = true, Deleted = false, CreatedBy = 1, CreatedTime = DateTime.Now, UpdatedBy = 1, UpdatedTime = DateTime.Now },
+                new { Id = 3, UserName = "Ravi", Password = "admin553", Email = "ravi@gmail.com", Phone = "4747374785", Active = true, Deleted = false, CreatedBy = 1, CreatedTime = DateTime.Now, UpdatedBy = 1, UpdatedTime = DateTime.Now }
+            };
             return userList;
         }
-       
+
         [HttpPost]
         [Route("IsAuthenticated")]
         public User IsAuthenticated(UserVM userVM)
@@ -81,13 +85,13 @@ namespace SitComTech.API.Controllers
         {
             return _userService.GetCountryISDCodeById(countryid);
         }
-       
+
         [HttpGet]
         [Route("GetLeadStatusList")]
         public List<UserResponseStatus> GetLeadStatusList()
         {
             return _userService.GetLeadStatusList();
-        }      
+        }
 
         [HttpPost]
         [Route("ForgotPassword")]

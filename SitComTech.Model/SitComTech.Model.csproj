@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\BaseConfig.cs" />
     <Compile Include="Constants\Enums.cs" />
     <Compile Include="DataObject\AdditionalInfo.cs" />
     <Compile Include="DataObject\Client.cs" />
@@ -56,6 +55,15 @@
     <Compile Include="DataObject\OwnerTask.cs" />
     <Compile Include="ViewModel\ClientVM.cs" />
     <Compile Include="ViewModel\UserVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SitComTrade.Framework\SitComTrade.Framework.csproj">
+      <Project>{2e428fe2-4d04-41ac-8efd-d7a1b8468e62}</Project>
+      <Name>SitComTrade.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

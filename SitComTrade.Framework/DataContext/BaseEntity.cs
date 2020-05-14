@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SitComTech.Model.Common
+namespace SitComTech.Framework.DataContext
 {
-    public abstract class BaseConfig
-    {     
-
+    public abstract class BaseEntity : IObjectState
+    {
         public long Id { get; set; }
         public bool Active { get; set; }
         public bool Deleted { get; set; }
@@ -18,6 +14,13 @@ namespace SitComTech.Model.Common
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public Nullable<long> UpdatedBy { get; set; }
         public string UpdatedByName { get; set; }
-        
+
+        [NotMapped]
+        public ObjectState ObjectState { get; set; }
+    }
+    public abstract class BaseEntityState : IObjectState
+    {
+        [NotMapped]
+        public ObjectState ObjectState { get; set; }
     }
 }
