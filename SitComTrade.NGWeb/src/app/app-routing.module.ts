@@ -6,8 +6,6 @@ import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportComponent } from './reports/report/report.component';
 import { SettingsComponent } from './header/settings/settings.component';
 
-
-
 import { ClientComponent } from './clients/client/client.component';
 
 import { HeaderComponent } from './header/header.component';
@@ -45,15 +43,16 @@ import { IplistComponent } from './settings/iplist/iplist.component';
 import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
 import { WorkflowsComponent } from './settings/workflows/workflows.component';
 import { ReportsComponent } from './header/reports/reports.component';
-import { AccountsComponent } from './clients/accounts/accounts.component';
-import { AllComponent } from './clients/all/all.component';
-import { AuthGuard } from './auth.guard';
-import { TermsComponent } from './terms/terms.component';
+// import { AccountsComponent } from './clients/accounts/accounts.component';
+// import { AllComponent } from './clients/all/all.component';
+// import { AuthGuard } from './auth.guard';
+// import { TermsComponent } from './terms/terms.component';
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
-import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
+// import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
 import { ItemComponent } from './clients/item/item.component';
 import { ImportClientComponent } from './clients/import-client/import-client.component';
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
+import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 
 
 
@@ -67,17 +66,10 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'client', pathMatch: 'full'},
       {path: 'client', component: ClientComponent,
-          // children:[
-          //   {path:'',redirectTo:'',pathMatch:'full'},
-          //   {path:'all',component:AllComponent},
-          //   {path:'accounts',component:AccountsComponent}
-          // ]
     },
       {path: 'client', component: ClientComponent},
       {path: 'tradeaccounts', component: TradeaccountsComponent}
     ]},
-
-
   {path: '', component: ActivitiesComponent},
   {path: 'activities', component: ActivitiesComponent,
     children: [
@@ -107,8 +99,6 @@ const routes: Routes = [
     ]
 },
 
-
-
 {path: '', component: SettingsComponent},
 {path: 'settings', component: SettingsComponent,
   children: [
@@ -129,17 +119,20 @@ const routes: Routes = [
      {path: 'imports', component: ImportsComponent}
   ]
 },
-{path: 'terms', component: TermsComponent},
+// terms and conditions
+// {path: 'terms', component: TermsComponent},
 
 // clients-info
 {path: 'info/:selectedItem', component: ClientsInfoComponent},
-{path: 'generalinfo/:userid', component: GeneralInfoComponent},
-{path: 'user', component: ItemComponent},
+// {path: 'generalinfo/:userid', component: GeneralInfoComponent},
+// {path: 'user', component: ItemComponent},
+// for group(general-info)
 {path: 'groups-info/:setItem', component: GroupsInfoComponent},
+// {path: 'importclients', component: ImportClientComponent},
 
-{path: 'importclients', component: ImportClientComponent}
-
-
+// tradeaccount
+{path: 'livetrade/:trdingDtls', component: LiveDetailComponent}
+// /:trdingDtls
 
 
 

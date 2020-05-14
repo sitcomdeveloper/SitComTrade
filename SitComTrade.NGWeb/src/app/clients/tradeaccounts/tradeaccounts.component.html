@@ -77,7 +77,7 @@
                              <div _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
                                 <div _ngcontent-boj-c6="" class="input-group selecticon grpselect">
                                    <select _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
-                                      <option _ngcontent-boj-c6="">Groups</option>
+                                      <option _ngcontent-boj-c6="">All</option>
                                       
                                    </select>
                                    <span _ngcontent-boj-c6="" class="serachicon brdr-right">
@@ -123,22 +123,22 @@
            
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis"><span>TP Account</span></div>
+                    <div class="text-ellipsis" data-toggle="tooltip" title="TP Account"><span>TP Account</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis"><span>Account ID</span></div>
+                    <div class="text-ellipsis" data-toggle="tooltip" title="Account ID"><span>Account ID</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" title=""><span>First Name</span></div>
+                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="First Name"><span>First Name</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" title=""><span>Last Name</span></div>
+                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="Last Name"><span>Last Name</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
@@ -154,32 +154,32 @@
             
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis"><span>Leverage</span></div>
+                    <div class="text-ellipsis" data-toggle="tooltip" title="Leverage"><span>Leverage</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis"><span>Stop Out</span></div>
+                    <div class="text-ellipsis" data-toggle="tooltip" title="Stop Out"><span>Stop Out</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis"><span>Min Deposit</span></div>
+                    <div class="text-ellipsis" data-toggle="tooltip" title="Min Deposit"><span>Min Deposit</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis"><span>Allow Trade</span></div>
+                    <div class="text-ellipsis" data-toggle="tooltip" title="Allow Trade"><span>Allow Trade</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" title=""><span>Registration Date</span></div>
+                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="Registration Date"><span>Registration Date</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" title=""><span>Close Profit and Loss</span></div>
+                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="Close Profit and Loss"><span>Close Profit and Loss</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
@@ -332,7 +332,7 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
            </td>
         </tr>
-        <tr class="tablectn" *ngFor="let item of fetchTradeDetails">
+        <tr class="tablectn" *ngFor="let item of fetchTradeDetails,let group of Group">
           <td class="email-cell" >
               <div class="email-cell-content">
                   <div class="input-checkbox"><span>
@@ -377,10 +377,10 @@
                   </div>
               </div>
           </td>
-          <td class="jsgrid-cell jsgrid-align-left" >
+          <td class="jsgrid-cell jsgrid-align-left">
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_Type">
-                      <div class="text-ellipsis"></div>
+                      <a href="javascript:void(0);"><div class="text-ellipsis" tooltip="{{item.GroupName}}" (click)="getGeneralInfo(group.GroupId)" >{{item.GroupName}}</div></a>
                   </div>
               </div>
           </td>
@@ -460,8 +460,12 @@
                 </a>
                 <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled=""></i></a>
                   <br>
-                <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab" data-toggle="modal" data-target="#livedetail">&nbsp;&nbsp;<i class="fa fa-window-maximize greyicon" aria-hidden="true"></i>
+                <a href="javascript:void(0);"  class="ico-sz3 ico-link dh"  data-jsgrid-rule="link" title="Open in new tab"  (click)="liveTrade(item.Id)">&nbsp;&nbsp;<i class="fa fa-window-maximize greyicon" aria-hidden="true"></i>
                 </a>
+                <!-- data-toggle="modal" data-target="#livedetail" -->
+                <!-- , item.Id -->
+                <!-- (click)="liveTrade('/livetrade', item.Id )" -->
+                <!-- target="_blank" -->
                 </div>
           </td>
       </tr>

@@ -25,6 +25,6 @@ export class ClientsService {
   // client.componet.ts
   // delete client
   dltClient(obj): Observable<any> {
-    return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj ,{});
+    return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj , {});
   }
 }

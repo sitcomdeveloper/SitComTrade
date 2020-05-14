@@ -4,6 +4,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
+import { GroupsService } from 'src/app/settings/groups/groups.service';
 
 @Component({
   selector: 'app-tradeaccounts',
@@ -17,13 +18,14 @@ export class TradeaccountsComponent implements OnInit {
   UserId: any;
   a: number;
   Id: any;
+  Group: any;
+  getGroupsData: any;
 
   constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
-              private modalService: BsModalService, private router: Router) { }
+              private modalService: BsModalService, private router: Router, private groupsService: GroupsService) { }
     bsModalRef: BsModalRef;
 
   TypeName = 'Real';
-	// tslint:disable-next-line: indent
   OwnerId  = 1;
   deletbtnn = true;
   ngOnInit() {
@@ -35,8 +37,8 @@ export class TradeaccountsComponent implements OnInit {
       OwnerId  : 1
     };
     this.clientsservice.getTradeUsers(obj).subscribe(res => {
-      this.spinnerService.show();
-      this.fetchTradeDetails = res;
+      // this.spinnerService.show();
+      this.fetchTradeDetails = res.reverse();
       this.tradeAccountLength = res.length;
       console.log('tradeusers', res);
     });
@@ -73,4 +75,18 @@ export class TradeaccountsComponent implements OnInit {
   moveToInfoPage(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
   }
+  // live trade frame
+  liveTrade(trdingDtls: any) {
+    this.router.navigate(['/livetrade', trdingDtls]);
+  }
+  // liveTrade(url: string, trdingDtls: any) {
+  //   console.log('TAC', trdingDtls);
+  //   window.open(url, '_blank', trdingDtls);
+  //   this.router.navigate(['/livetrade', trdingDtls]);
+  //   }
+// for sending groups info on groups-info
+ getGeneralInfo(setItem: any) {
+  this.router.navigate(['/groups-info', setItem]);
+  console.log('GID', setItem);
+}
 }

@@ -39,10 +39,9 @@ clientForm: FormGroup;
 bindLoginData: any;
   name: any;
   Country: any;
-  
-  // tslint:disable-next-line: max-line-length
-  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute, 
-    private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
+// tslint:disable-next-line: max-line-length
+  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
+              private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
