@@ -28,13 +28,13 @@
         <div class="col-md-5 main-tab">
           <ul class="nav nav-pills tablist " role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="pill" href="#all" (click)="alll()">All</a>
+              <a class="nav-link active" data-toggle="pill" href="#all" (click)="alll()" [ngClass]="{ 'active':activeTab==='all'}">All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="#account" (click)="account()">Accounts</a>
+              <a class="nav-link" data-toggle="pill" href="#account" (click)="account()" [ngClass]="{ 'active':activeTab==='account'}">Accounts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="#leads" (click)="lead()">Leads</a>
+              <a class="nav-link" data-toggle="pill" href="#leads" (click)="lead()" [ngClass]="{ 'active':activeTab==='lead'}">Leads</a>
             </li>
           </ul>
         </div>
@@ -43,8 +43,7 @@
         <div class="col-md-7 rightsubopt displayend">
           <div class="btn-toolbar searchbtn" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="userDetails()"></i></a>
-               
+              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="act('all')"></i></a>
               
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
@@ -115,7 +114,7 @@
 
 
 <div class="tab-content" id="content">
-  <div id="all" class="container-fluid tab-pane active"><br>
+  <div id="all" [ngClass]="{ 'active':activeTab==='all'}" class="container-fluid tab-pane active"><br>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
      
       <thead >
@@ -1865,7 +1864,7 @@
     </table>
   </div>
 
-  <div id="account" class="container-fluid tab-pane fade"><br>
+  <div id="account" [ngClass]="{ 'active':activeTab==='account'}" class="container-fluid tab-pane fade"><br>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead>
         <tr class="tablewidth">
@@ -3407,7 +3406,7 @@
       </tbody>
     </table>
   </div>
-  <div id="leads" class="container-fluid tab-pane fade" ><br>
+  <div id="leads" [ngClass]="{ 'active':activeTab==='leads'}"class="container-fluid tab-pane fade" ><br>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead>
         <tr class="tablewidth">

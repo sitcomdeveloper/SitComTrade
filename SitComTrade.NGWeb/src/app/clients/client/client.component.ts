@@ -39,6 +39,7 @@ clientForm: FormGroup;
 bindLoginData: any;
   name: any;
   Country: any;
+  activeTab = 'all';
 // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
               private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
@@ -136,7 +137,7 @@ bindLoginData: any;
       title: 'Create Item',
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ItemComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef = this.modalService.show(ItemComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
@@ -246,6 +247,12 @@ bindLoginData: any;
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
     });
+  }
+  // for making the tab change
+  act(activeTab){
+    this.activeTab = activeTab;
+    this.spinnerService.show();
+    this.userDetails();
   }
 
 }

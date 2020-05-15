@@ -160,7 +160,4 @@ if (val === true) {
     });
 
    }
-  //  hidePwdGroup() {
-  //    this.hiddden = false;
-  //  }
 }

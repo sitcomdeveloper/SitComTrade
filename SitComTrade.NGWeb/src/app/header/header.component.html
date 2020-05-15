@@ -356,8 +356,16 @@
               padding: 3px;">{{todayDate | date:'shortTime':'UTC +9:30 / +10:30'}}</span>
           </li>
           <li class="nav-item brdr-right nohover">
-            <a class="nav-link" routerLink="#"><i class="fa fa-search" aria-hidden="true"></i>
+            <a class="nav-link" routerLink="#">
+              <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
               <!-- <input type="text" [(ngModel)]="terms" placeholder="Serach any fields"/> -->
+              <div class="right">
+              <form id="search">
+                <input #search type="search" [placeholder]="filled?'Search':''" [ngClass]="{'filled':filled}" 
+                     (click)="filled=!filled" (blur)="filled=search.value?true:false">
+                     <button class="close" *ngIf="filled" (click)="search.value='';filled=false">X</button>
+              </form>
+            </div>
             </a>
         </li>
         <li class="nav-item brdr-right nohover">
