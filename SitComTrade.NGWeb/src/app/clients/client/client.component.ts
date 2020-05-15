@@ -249,7 +249,7 @@ bindLoginData: any;
     });
   }
   // for making the tab change
-  act(activeTab){
+  act(activeTab) {
     this.activeTab = activeTab;
     this.spinnerService.show();
     this.userDetails();
