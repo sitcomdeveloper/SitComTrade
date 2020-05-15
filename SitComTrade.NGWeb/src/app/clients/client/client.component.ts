@@ -152,7 +152,7 @@ bindLoginData: any;
       rmvClient: 'rmvClient'
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
