@@ -101,6 +101,7 @@ import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.c
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
 import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
+import { SrchPipe } from './clients/client/srch.pipe';
 
 
 @NgModule({
@@ -188,6 +189,7 @@ import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-de
     TranslationsFilterComponent,
     ImportedClientsComponent,
     LiveDetailComponent,
+    SrchPipe,
   ],
   imports: [
     BrowserModule,
@@ -198,8 +200,7 @@ import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-de
     AgGridModule.withComponents(null),
     // TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    PopoverModule.forRoot(), TooltipModule.forRoot(),
-
+    PopoverModule.forRoot(), TooltipModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
     CreateTemplateComponent, TranslationsFilterComponent],

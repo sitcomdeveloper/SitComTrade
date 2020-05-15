@@ -25,7 +25,6 @@ export class GroupsComponent implements OnInit {
  getGroups() {
   this.spinnerService.show();
   this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
-    
     setTimeout( () => {
     this.Group = result.reverse();
     this.spinnerService.hide();
