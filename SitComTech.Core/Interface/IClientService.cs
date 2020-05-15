@@ -19,6 +19,8 @@ namespace SitComTech.Core.Interface
 
         List<Client> GetTradeAccountByType(TradeAccountVM tradeVM);
         Client GetById(object Id);
+        void DeleteClient(Client entity);
+        void UpdateClient(Client entity);
     }
 
     public interface IMarketingInfoService : IService<MarketingInfo>
@@ -46,10 +48,13 @@ namespace SitComTech.Core.Interface
         List<Comment> GetCommentByOwnerId(long ownerid);
         Comment GetById(object Id);
         IQueryable<Comment> GetAll();
+        void DeleteComment(Comment entity);
+        void InsertComment(Comment comm);
     }
 
     public interface IAddressService : IService<Address>
     {
         List<Address> GetAddressByOwnerId(long ownerid);
+        void UpdateAddress(Address entity);
     }
 }

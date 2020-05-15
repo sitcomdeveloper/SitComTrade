@@ -2,6 +2,7 @@
 using SitComTech.Data.Interface;
 using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
+using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
 using System;
@@ -17,13 +18,15 @@ namespace SitComTech.Domain.Services
         private IGenericRepository<Country> _countryrepository;
         private IGenericRepository<Currency> _currencyrepository;
         private IGenericRepository<MarketingInfo> _marketinginforepository;
-        public UserService(IGenericRepository<User> repository, IGenericRepository<Country> countryrepository, IGenericRepository<Currency> currencyrepository, IGenericRepository<MarketingInfo> marketinginforepository)
+        private IUnitOfWork _unitOfWork;
+        public UserService(IGenericRepository<User> repository, IGenericRepository<Country> countryrepository, IGenericRepository<Currency> currencyrepository, IGenericRepository<MarketingInfo> marketinginforepository,IUnitOfWork unitOfWork)
             :base(repository)
         {
             this._repository = repository;
             this._countryrepository = countryrepository;
             this._currencyrepository = currencyrepository;
             this._marketinginforepository = marketinginforepository;
+            this._unitOfWork = unitOfWork;
         }
         public IQueryable<User> GetAll()
         {
@@ -36,14 +39,8 @@ namespace SitComTech.Domain.Services
                 return null;
             User user = _repository.Queryable().FirstOrDefault(x=>x.Id==(long)Id);
             return user;
-        }
-        public void Insert(User entity)
-        {
-            if (entity == null)
-                throw new ArgumentNullException("User");
-            _repository.Insert(entity);
-        }
-        public UserDataVM Insert(UserDataVM userdata)
+        }       
+        public UserDataVM InsertUser(UserDataVM userdata)
         {
             try
             {
@@ -78,6 +75,7 @@ namespace SitComTech.Domain.Services
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
+                    _unitOfWork.SaveChanges();
                 }
                 return userdata;
             }
@@ -87,7 +85,7 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public void Update(User entity)
+        public void UpdateUser(User entity)
         {
             User userdata = _repository.Queryable().FirstOrDefault(x=>x.Id==entity.Id);
             if (userdata != null)
@@ -95,15 +93,17 @@ namespace SitComTech.Domain.Services
                 userdata.UpdatedAt = DateTime.Now;
                 userdata.UpdatedBy = entity.OwnerId;
                 userdata.UpdatedByName = entity.FirstName;
-                _repository.Update(userdata);                
+                _repository.Update(userdata);
+                _unitOfWork.SaveChanges();
             }
         }
 
-        public void Delete(User entity)
+        public void DeleteUser(User entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("User");
             _repository.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
         public List<User> IsAuthenticated(UserVM userVM)
@@ -151,6 +151,6 @@ namespace SitComTech.Domain.Services
         public User GetUserbyusername(string username)
         {
             return _repository.Queryable().Where(x => x.Email == username && x.Active == true && x.Deleted == false).FirstOrDefault();
-        }
+        }       
     }   
 }

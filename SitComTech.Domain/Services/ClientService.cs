@@ -77,6 +77,7 @@ namespace SitComTech.Domain.Services
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
+                    _unitOfWork.SaveChanges();
                     if (clientdata.ISendEmail == true)
                     {
                         SendEmilToClient(clientdata);
@@ -118,7 +119,7 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public void Update(Client entity)
+        public void UpdateClient(Client entity)
         {
             Client clientdata = base.Queryable().FirstOrDefault(x => x.Id == entity.Id);
             if (clientdata != null)
@@ -144,7 +145,7 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public void Delete(Client entity)
+        public void DeleteClient(Client entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("Client");
@@ -218,10 +219,12 @@ namespace SitComTech.Domain.Services
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
     {
         private IGenericRepository<MarketingInfo> _repository;
-        public MarketingInfoService(IGenericRepository<MarketingInfo> repository)
+        private IUnitOfWork _unitOfWork;
+        public MarketingInfoService(IGenericRepository<MarketingInfo> repository,IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
         }
 
@@ -270,6 +273,7 @@ namespace SitComTech.Domain.Services
                         GoogleKeyword = marketingdata.GoogleKeyword,
                     };
                     _repository.Insert(entity);
+                    _unitOfWork.SaveChanges();
                     return entity;
                 }
                 else
@@ -295,7 +299,7 @@ namespace SitComTech.Domain.Services
                     marketingdataexist.GoogleKeyword = marketingdata.GoogleKeyword;
                     marketingdataexist.UpdatedAt = DateTime.Now;
                     _repository.Update(marketingdataexist);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     return marketingdataexist;
                 }
             }
@@ -310,10 +314,12 @@ namespace SitComTech.Domain.Services
     public class AdditionalInfoService : Service<AdditionalInfo>, IAdditionalInfoService
     {
         private IGenericRepository<AdditionalInfo> _repository;
-        public AdditionalInfoService(IGenericRepository<AdditionalInfo> repository)
+        private IUnitOfWork _unitOfWork;
+        public AdditionalInfoService(IGenericRepository<AdditionalInfo> repository,IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
         }
 
@@ -350,6 +356,7 @@ namespace SitComTech.Domain.Services
                         SuppliedDocs = additionaldata.SuppliedDocs,
                 };
                     _repository.Insert(entity);
+                    _unitOfWork.SaveChanges();
                     return entity;
                 }
                 else
@@ -363,7 +370,7 @@ namespace SitComTech.Domain.Services
                     additionaldataexist.SuppliedDocs = additionaldata.SuppliedDocs;
                     additionaldataexist.UpdatedAt = DateTime.Now;
                     _repository.Update(additionaldataexist);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     return additionaldataexist;
                 }
             }
@@ -397,11 +404,11 @@ namespace SitComTech.Domain.Services
     public class ShortMessageService : Service<ShortMessage>, IShortMessageService
     {
         private IGenericRepository<ShortMessage> _repository;
+        
         public ShortMessageService(IGenericRepository<ShortMessage> repository)
             : base(repository)
         {
             this._repository = repository;
-
         }
 
         public IQueryable<ShortMessage> GetAll()
@@ -418,18 +425,20 @@ namespace SitComTech.Domain.Services
     public class CommentService : Service<Comment>, ICommentService
     {
         private IGenericRepository<Comment> _repository;
-        public CommentService(IGenericRepository<Comment> repository)
+        private IUnitOfWork _unitOfWork;
+        public CommentService(IGenericRepository<Comment> repository,IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
-
+            this._unitOfWork = unitOfWork;
         }
 
-        public void Delete(Comment entity)
+        public void DeleteComment(Comment entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("Client");
-            _repository.Delete(entity);            
+            _repository.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
         public IQueryable<Comment> GetAll()
@@ -450,7 +459,7 @@ namespace SitComTech.Domain.Services
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
-        public void Insert(Comment comm)
+        public void InsertComment(Comment comm)
         {
             try
             {
@@ -476,10 +485,12 @@ namespace SitComTech.Domain.Services
     public class AddressService : Service<Address>, IAddressService
     {
         private IGenericRepository<Address> _repository;
-        public AddressService(IGenericRepository<Address> repository)
+        private IUnitOfWork _unitOfWork;
+        public AddressService(IGenericRepository<Address> repository,IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
         }
 
@@ -488,7 +499,7 @@ namespace SitComTech.Domain.Services
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
-        public void Update(Address entity)
+        public void UpdateAddress(Address entity)
         {
             Address userdata = _repository.Queryable().FirstOrDefault(x => x.Id == entity.Id);
             if (userdata != null)
@@ -502,6 +513,7 @@ namespace SitComTech.Domain.Services
                 userdata.CountryName = entity.CountryName;
                 userdata.OwnerId = entity.OwnerId;
                 _repository.Update(userdata);
+                _unitOfWork.SaveChanges();
             }
             else
             {
@@ -521,6 +533,7 @@ namespace SitComTech.Domain.Services
                     StreetAddress = entity.StreetAddress,
                 };
                 _repository.Insert(addr);
+                _unitOfWork.SaveChanges();
             }
         }
     }

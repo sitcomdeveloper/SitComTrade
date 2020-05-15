@@ -54,12 +54,7 @@ namespace SitComTech.API.Auth
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        {
-            var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
-
-            if (allowedOrigin == null) allowedOrigin = "*";
-
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
+        {            
             userService = UnityConfig.GetConfiguredContainer().Resolve<IUserService>();
             try
             {
@@ -89,9 +84,19 @@ namespace SitComTech.API.Auth
             {
                 throw;
             }
-
         }
+        public override Task MatchEndpoint(OAuthMatchEndpointContext context)
+        {
+            if (context.IsTokenEndpoint && context.Request.Method == "OPTIONS")
+            {
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Headers", new[] { "authorization" });
+                context.RequestCompleted();
+                return Task.FromResult(0);
+            }
 
+            return base.MatchEndpoint(context);
+        }
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
             foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)

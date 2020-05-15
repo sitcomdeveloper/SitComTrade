@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace SitComTech.API.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
@@ -25,6 +26,7 @@ namespace SitComTech.API.Controllers
             this._emailService = emailService;
             this._shortMeassageService = shortMeassageService;
         }
+        
         [Route("DummyUsers")]
         
         public List<dynamic> GetUserList()
@@ -40,7 +42,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("IsAuthenticated")]
-        public User IsAuthenticated(UserVM userVM)
+        public List<User> IsAuthenticated(UserVM userVM)
         {
             if (userVM != null)
                 return _userService.IsAuthenticated(userVM);
@@ -53,7 +55,7 @@ namespace SitComTech.API.Controllers
         public UserDataVM RegisterUser(UserDataVM userVM)
         {
             if (userVM != null)
-                return _userService.Insert(userVM);
+                return _userService.InsertUser(userVM);
             else
                 return null;
         }
@@ -62,7 +64,7 @@ namespace SitComTech.API.Controllers
         [Route("UpdateUserDetail")]
         public void UpdateUserDetail(User userVM)
         {
-            _userService.Update(userVM);
+            _userService.UpdateUser(userVM);
         }
 
         [HttpPost]

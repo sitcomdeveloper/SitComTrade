@@ -34,33 +34,7 @@ namespace SitComTech.API.Controllers
             this._commentService = commentService;
             this._addressService = addressService;
         }
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
-
+        
         [HttpPost]
         [Route("AddClient")]
         public Client AddClient(ClientDataVM clientVM)
@@ -80,7 +54,7 @@ namespace SitComTech.API.Controllers
                 Client clientdata = _clientService.GetById(Id);
                 if (clientdata != null)
                 {
-                    _clientService.Delete(clientdata);
+                    _clientService.DeleteClient(clientdata);
                 }
                 else
                 {
@@ -98,7 +72,7 @@ namespace SitComTech.API.Controllers
         [Route("UpdateClient")]
         public void UpdateClient(Client userVM)
         {
-            _clientService.Update(userVM);
+            _clientService.UpdateClient(userVM);
         }
 
         [HttpPost]
@@ -181,7 +155,7 @@ namespace SitComTech.API.Controllers
         [Route("InsertComment")]
         public void InsertComment(Comment entity)
         {
-             _commentService.Insert(entity);
+             _commentService.InsertComment(entity);
         }
 
         [HttpPost]
@@ -193,7 +167,7 @@ namespace SitComTech.API.Controllers
                 Comment commentdata = _commentService.GetById(Id);
                 if (commentdata != null)
                 {
-                    _commentService.Delete(commentdata);
+                    _commentService.DeleteComment(commentdata);
                 }
                 else
                 {
@@ -216,7 +190,7 @@ namespace SitComTech.API.Controllers
                 List<Comment> commentdata = _commentService.GetAll().ToList();
                 foreach(var item in commentdata)
                 {
-                    _commentService.Delete(item);
+                    _commentService.DeleteComment(item);
                 }
             }
             catch (Exception ex)
@@ -237,7 +211,7 @@ namespace SitComTech.API.Controllers
         [Route("InsertUpdateAddress")]
         public void InsertUpdateAddress(Address entity)
         {
-            _addressService.Update(entity);
+            _addressService.UpdateAddress(entity);
         }
 
         [HttpGet]

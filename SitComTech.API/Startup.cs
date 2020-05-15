@@ -17,13 +17,14 @@ namespace SitComTech.API
         public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
         public void Configuration(IAppBuilder app)
         {
-            HttpConfiguration config = new HttpConfiguration();
-            config.DependencyResolver = new UnityDependencyResolver(
-                UnityConfig.GetConfiguredContainer());
-
-            ConfigureAuth(app);
-            WebApiConfig.Register(config);
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            HttpConfiguration config = new HttpConfiguration
+            {
+                DependencyResolver = new UnityDependencyResolver(
+                UnityConfig.GetConfiguredContainer())
+            };
+            ConfigureAuth(app);
+            WebApiConfig.Register(config);            
             app.UseWebApi(config);
         }
         private void ConfigureAuth(IAppBuilder app)
