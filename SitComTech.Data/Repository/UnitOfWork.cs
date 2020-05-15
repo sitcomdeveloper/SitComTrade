@@ -1,69 +1,106 @@
-﻿using SitComTech.Data.Interface;
+﻿using CommonServiceLocator;
+using SitComTech.Framework.DataContext;
+using SitComTech.Framework.Repositories;
+using SitComTech.Framework.UnitOfWork;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Validation;
-using System.Linq;
 
 namespace SitComTech.Data.Repository
 {
-    public class UnitOfWork<TEntity> : IUnitOfWork<TEntity> where TEntity : class
+    public class UnitOfWork : IUnitOfWork
     {
-        private IDbContext Context;
-        private IDbSet<TEntity> Entities
+        private IDataContext _dataContext;
+        private AppDbContext _dbContext;
+        private bool _disposed;
+        private DbContextTransaction _transaction;
+        private Dictionary<string, dynamic> _repositories;
+
+
+        public UnitOfWork(string connectionString)
         {
-            get
-            {
-                return this.Context.Set<TEntity>();
-            }
-        }
-        public UnitOfWork(IDbContext context)
-        {
-            this.Context = context;
+            _dataContext = new AppDbContext(connectionString);
+            _repositories = new Dictionary<string, dynamic>();
         }
 
-        public IQueryable<TEntity> GetAll()
+        public void BeginTransaction()
         {
-            return Entities.AsQueryable();
+            _dbContext = ((AppDbContext)_dataContext);
+            if (_dbContext.Database.Connection.State != System.Data.ConnectionState.Open)
+                _dbContext.Database.Connection.Open();
+            _transaction = _dbContext.Database.BeginTransaction(System.Data.IsolationLevel.Snapshot);
         }
-        public TEntity GetById(object Id)
+
+        public void Commit()
         {
-            return Entities.Find(Id);
+            _dataContext.SaveChanges();
+            _transaction.Commit();
         }
-        public void Insert(TEntity entity)
+
+        public void Dispose()
         {
-            Entities.Add(entity);
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
-        public void Update(TEntity entity)
+
+        public virtual void Dispose(bool disposing)
         {
-            if (entity == null)
-                throw new ArgumentNullException("Entity");
-            this.Context.SaveChanges();
-        }
-        public void Delete(TEntity entity)
-        {
-            Entities.Remove(entity);
-        }
-        public virtual void SaveChanges()
-        {
-            try
+            if (!_disposed)
             {
-                this.Context.SaveChanges();
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                var msg = string.Empty;
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                if (disposing)
                 {
-                    foreach (var validationError in validationErrors.ValidationErrors)
+                    if (_dataContext != null)
                     {
-                        msg += Environment.NewLine + string.Format("Property: {0} Error: {1}",validationError.PropertyName,validationError.ErrorMessage);
+                        _dbContext = ((AppDbContext)_dataContext);
+
+                        if (_dbContext.Database.Connection.State == System.Data.ConnectionState.Open)
+                            _dbContext.Database.Connection.Close();
+
+                        _dataContext.Dispose();
+                        _dataContext = null;
                     }
-                    var fail = new Exception(msg, dbEx);
-                    throw fail;
+
+                    if (_repositories != null)
+                        _repositories = null;
                 }
+                _disposed = true;
             }
         }
 
-        
+        public IGenericRepository<TEntity> Repository<TEntity>() where TEntity : class, IObjectState
+        {
+            if (ServiceLocator.IsLocationProviderSet)
+                return ServiceLocator.Current.GetInstance<IGenericRepository<TEntity>>();
+
+            if (_repositories == null)
+                _repositories = new Dictionary<string, dynamic>();
+
+            var type = typeof(TEntity).Name;
+
+            if (_repositories.ContainsKey(type))
+            {
+                return (IGenericRepository<TEntity>)_repositories[type];
+            }
+
+            var repositoryType = typeof(GenericRepository<>);
+            _repositories.Add(type, Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), this));
+
+            return _repositories[type];
+        }
+
+        public void Rollback()
+        {
+            _transaction.Rollback();
+        }
+
+        public int SaveChanges()
+        {
+            return _dataContext.SaveChanges();
+        }
+
+        public IDataContext Context
+        {
+            get { return _dataContext; }
+        }
     }
 }

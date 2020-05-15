@@ -1,14 +1,15 @@
 ﻿using SitComTech.Data.Interface;
+using SitComTech.Framework.Services;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
 using System.Collections.Generic;
 
 namespace SitComTech.Core.Interface
 {
-    public interface IUserService:IUnitOfWork<User>
+    public interface IUserService:IService<User>
     {
-        User IsAuthenticated(UserVM userVM);
-        UserDataVM Insert(UserDataVM userDataVM);
+        List<User> IsAuthenticated(UserVM userVM);
+        UserDataVM InsertUser(UserDataVM userDataVM);
         List<Country> GetCountries();
         List<Currency> GetCurrencies();
         string GetCountryISDCodeById(int countryid);
@@ -20,6 +21,8 @@ namespace SitComTech.Core.Interface
         List<User> GetTradeAccountByType(TradeAccountVM tradeVM);
 
         User GetUserbyusername(string username);
+        void UpdateUser(User entity);
+        void DeleteUser(User entity);
     }
 
 }

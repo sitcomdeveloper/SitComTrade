@@ -1,12 +1,12 @@
-﻿using SitComTech.Model.Common;
+﻿using SitComTech.Framework.DataContext;
 using System;
 
 namespace SitComTech.Model.DataObject
 {
-    public class Email :BaseConfig
+    public class Email : BaseEntity
     {
         public long OwnerId { get; set; }
-        
+
         public string Subject { get; set; }
 
         public Nullable<System.DateTime> SendDate { get; set; }

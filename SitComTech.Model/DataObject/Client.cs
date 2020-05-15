@@ -1,10 +1,9 @@
-﻿using System;
-using SitComTech.Model.Common;
-using SitComTech.Model.DataObject;
+﻿using SitComTech.Framework.DataContext;
+using System;
 
 namespace SitComTech.Model.DataObject
 {
-    public class Client : BaseConfig
+    public class Client : BaseEntity
     {
         public long OwnerId { get; set; }
         public string FirstName { get; set; }
@@ -46,7 +45,7 @@ namespace SitComTech.Model.DataObject
         public virtual User UserTable { get; set; }
     }
 
-    public class Comment : BaseConfig
+    public class Comment : BaseEntity
     {
 
         public long OwnerId { get; set; }

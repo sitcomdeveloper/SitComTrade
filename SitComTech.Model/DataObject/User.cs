@@ -1,9 +1,9 @@
-﻿using SitComTech.Model.Common;
+﻿using SitComTech.Framework.DataContext;
 using System;
 
 namespace SitComTech.Model.DataObject
 {
-    public class User : BaseConfig
+    public class User : BaseEntity
     {
 
         public string FirstName { get; set; }
@@ -12,9 +12,9 @@ namespace SitComTech.Model.DataObject
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public string SecondEmail { get; set; }
-        public string Password { get; set; }        
+        public string Password { get; set; }
         public Nullable<long> ResponseStatusId { get; set; }
-        public string ResponseStatus { get; set; }       
+        public string ResponseStatus { get; set; }
         public Nullable<long> CurrencyId { get; set; }
         public string CurrencyName { get; set; }
         public Nullable<long> CountryId { get; set; }
@@ -30,7 +30,7 @@ namespace SitComTech.Model.DataObject
         public Nullable<DateTime> FirstRegistrationDate { get; set; }
         public string ImportId { get; set; }
         public string StatusGroup { get; set; }
-        public string Desk { get; set; }        
+        public string Desk { get; set; }
         public string RegistrationType { get; set; }
         public string LastTaskDaysPast { get; set; }
         public string DaysAgoClientCreated { get; set; }
@@ -43,7 +43,7 @@ namespace SitComTech.Model.DataObject
         public string ItemId { get; set; }
     }
 
-    public class UserResponseStatus : BaseConfig
+    public class UserResponseStatus : BaseEntity
     {
         public string Name { get; set; }
 

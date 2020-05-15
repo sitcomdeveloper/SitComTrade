@@ -1,6 +1,8 @@
 ﻿using SitComTech.Core.Interface;
 using SitComTech.Core.Utils;
-using SitComTech.Data.Interface;
+using SitComTech.Framework.Repositories;
+using SitComTech.Framework.Services;
+using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
 using System;
@@ -9,25 +11,28 @@ using System.Linq;
 
 namespace SitComTech.Domain.Services
 {
-    public class ClientService : IClientService
+    public class ClientService : Service<Client>, IClientService
     {
-        private IUnitOfWork<Client> _repository;       
-        private IUnitOfWork<MarketingInfo> _marketinginforepository;
-        public ClientService(IUnitOfWork<Client> repository,  IUnitOfWork<MarketingInfo> marketinginforepository)
+        private IGenericRepository<Client> _repository;
+        private IGenericRepository<MarketingInfo> _marketinginforepository;
+        private IUnitOfWork _unitOfWork;
+        public ClientService(IGenericRepository<Client> repository, IGenericRepository<MarketingInfo> marketinginforepository, IUnitOfWork unitOfWork)
+            : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
             this._marketinginforepository = marketinginforepository;
         }
         public IQueryable<Client> GetAll()
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted);
+            return base.Queryable().Where(x => x.Active && !x.Deleted);
         }
-       
+
         public Client GetById(object Id)
         {
             if ((long)Id == 0)
                 return null;
-            Client Client = _repository.GetById(Id);
+            Client Client = base.Queryable().FirstOrDefault(x => x.Active && !x.Deleted && x.Id == (long)Id);
             return Client;
         }
         public void Insert(Client entity)
@@ -40,7 +45,7 @@ namespace SitComTech.Domain.Services
         {
             try
             {
-                var Clientexist = _repository.GetAll().Where(x => x.Email == clientdata.Email).FirstOrDefault();
+                var Clientexist = base.Queryable().Where(x => x.Email == clientdata.Email).FirstOrDefault();
                 if (Clientexist == null)
                 {
                     if (clientdata == null)
@@ -68,11 +73,11 @@ namespace SitComTech.Domain.Services
                         Phone = clientdata.Phone,
                         ResponseStatusId = 7,
                         ResponseStatus = "Interested",
-                        OwnerId=clientdata.OwnerId,
+                        OwnerId = clientdata.OwnerId,
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     if (clientdata.ISendEmail == true)
                     {
                         SendEmilToClient(clientdata);
@@ -92,7 +97,7 @@ namespace SitComTech.Domain.Services
             try
             {
 
-                string content = "<html><body><p>Dear <b>" + clientdata.FirstName +" "+ clientdata.LastName+ ",</b></p>";
+                string content = "<html><body><p>Dear <b>" + clientdata.FirstName + " " + clientdata.LastName + ",</b></p>";
                 content += "<p>We let you know that  with the following details has been created for you in the system :</p>";
 
                 content += "<p>Email: " + clientdata.Email + "</p>";
@@ -114,9 +119,9 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public void Update(Client entity)
+        public void UpdateClient(Client entity)
         {
-            Client clientdata = _repository.GetById(entity.Id);
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Id == entity.Id);
             if (clientdata != null)
             {
                 clientdata.UpdatedAt = DateTime.Now;
@@ -137,29 +142,22 @@ namespace SitComTech.Domain.Services
                 clientdata.ResponseStatusId = entity.ResponseStatusId;
                 clientdata.ItemId = entity.ItemId;
                 _repository.Update(clientdata);
-                SaveChanges();
             }
         }
 
-        public void Delete(Client entity)
+        public void DeleteClient(Client entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("Client");
             _repository.Delete(entity);
-            SaveChanges();
         }
 
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-       
 
         public Client GetClientDetailById(long Id)
         {
             if ((long)Id == 0)
                 return null;
-            Client Client = _repository.GetById(Id);
+            Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id);
             return Client;
         }
 
@@ -173,7 +171,7 @@ namespace SitComTech.Domain.Services
 
         public List<Client> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
-            return _repository.GetAll().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
+            return _repository.Queryable().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
         }
 
         public List<Client> GetAllUsersByOwnerId(long ownerid)
@@ -188,9 +186,9 @@ namespace SitComTech.Domain.Services
 
         public List<ClientListVM> GetAllClientsByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Join(_repository.GetAll(), clients => clients.OwnerId, owner => owner.Id,
+            return _repository.Queryable().Join(_repository.Queryable(), clients => clients.OwnerId, owner => owner.Id,
                 (clients, owner) => new { clients = clients, Owner = owner })
-                .GroupJoin(_marketinginforepository.GetAll(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.OwnerId,
+                .GroupJoin(_marketinginforepository.Queryable(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.OwnerId,
                 (userowner, mrktinfo) => new { UserOwner = userowner, MarketInfo = mrktinfo })
                 .SelectMany(x => x.MarketInfo.DefaultIfEmpty(), (x, y) => new { x.UserOwner, MarketInfo = y })
             .Where(x => x.UserOwner.clients.Active && !x.UserOwner.clients.Deleted && x.UserOwner.clients.OwnerId == ownerid).Select(x =>
@@ -218,54 +216,33 @@ namespace SitComTech.Domain.Services
         }
     }
 
-    public class MarketingInfoService : IMarketingInfoService
+    public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
     {
-        private IUnitOfWork<MarketingInfo> _repository;
-        public MarketingInfoService(IUnitOfWork<MarketingInfo> repository)
+        private IGenericRepository<MarketingInfo> _repository;
+        private IUnitOfWork _unitOfWork;
+        public MarketingInfoService(IGenericRepository<MarketingInfo> repository,IUnitOfWork unitOfWork)
+            : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
-        }
-        public void Delete(MarketingInfo entity)
-        {
-            throw new NotImplementedException();
         }
 
         public IQueryable<MarketingInfo> GetAll()
         {
-            return _repository.GetAll();
-        }
-
-        public MarketingInfo GetById(object ownerId)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable();
         }
 
         public MarketingInfo GetMarketingInfoByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
-        }
-
-        public void Insert(MarketingInfo entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(MarketingInfo entity)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
         }
 
         public MarketingInfo InsertMarketingInfo(MarketingInfo marketingdata)
         {
             try
             {
-                var marketingdataexist = _repository.GetAll().Where(x => x.OwnerId == marketingdata.OwnerId).FirstOrDefault();
+                var marketingdataexist = _repository.Queryable().Where(x => x.OwnerId == marketingdata.OwnerId).FirstOrDefault();
                 if (marketingdataexist == null)
                 {                   
                     MarketingInfo entity = new MarketingInfo
@@ -296,7 +273,7 @@ namespace SitComTech.Domain.Services
                         GoogleKeyword = marketingdata.GoogleKeyword,
                     };
                     _repository.Insert(entity);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     return entity;
                 }
                 else
@@ -322,7 +299,7 @@ namespace SitComTech.Domain.Services
                     marketingdataexist.GoogleKeyword = marketingdata.GoogleKeyword;
                     marketingdataexist.UpdatedAt = DateTime.Now;
                     _repository.Update(marketingdataexist);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     return marketingdataexist;
                 }
             }
@@ -334,54 +311,33 @@ namespace SitComTech.Domain.Services
 
     }
 
-    public class AdditionalInfoService : IAdditionalInfoService
+    public class AdditionalInfoService : Service<AdditionalInfo>, IAdditionalInfoService
     {
-        private IUnitOfWork<AdditionalInfo> _repository;
-        public AdditionalInfoService(IUnitOfWork<AdditionalInfo> repository)
+        private IGenericRepository<AdditionalInfo> _repository;
+        private IUnitOfWork _unitOfWork;
+        public AdditionalInfoService(IGenericRepository<AdditionalInfo> repository,IUnitOfWork unitOfWork)
+            : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
-        }
-        public void Delete(AdditionalInfo entity)
-        {
-            throw new NotImplementedException();
         }
 
         public IQueryable<AdditionalInfo> GetAll()
         {
-            return _repository.GetAll();
-        }
-
-        public AdditionalInfo GetById(object Id)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable();
         }
 
         public AdditionalInfo GetAdditionalInfoByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
-        }
-
-        public void Insert(AdditionalInfo entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(AdditionalInfo entity)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
         }
 
         public AdditionalInfo InsertAdditionalInfo(AdditionalInfo additionaldata)
         {
             try
             {
-                var additionaldataexist = _repository.GetAll().Where(x => x.OwnerId == additionaldata.OwnerId).FirstOrDefault();
+                var additionaldataexist = _repository.Queryable().Where(x => x.OwnerId == additionaldata.OwnerId).FirstOrDefault();
                 if (additionaldataexist == null)
                 {                   
                     AdditionalInfo entity = new AdditionalInfo
@@ -400,7 +356,7 @@ namespace SitComTech.Domain.Services
                         SuppliedDocs = additionaldata.SuppliedDocs,
                 };
                     _repository.Insert(entity);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     return entity;
                 }
                 else
@@ -414,7 +370,7 @@ namespace SitComTech.Domain.Services
                     additionaldataexist.SuppliedDocs = additionaldata.SuppliedDocs;
                     additionaldataexist.UpdatedAt = DateTime.Now;
                     _repository.Update(additionaldataexist);
-                    SaveChanges();
+                    _unitOfWork.SaveChanges();
                     return additionaldataexist;
                 }
             }
@@ -425,129 +381,85 @@ namespace SitComTech.Domain.Services
         }
     }
 
-    public class EmailService : IEmailService
+    public class EmailService : Service<Email>, IEmailService
     {
-        private IUnitOfWork<Email> _repository;
-        public EmailService(IUnitOfWork<Email> repository)
+        private IGenericRepository<Email> _repository;
+        public EmailService(IGenericRepository<Email> repository)
+            : base(repository)
         {
             this._repository = repository;
 
-        }
-        public void Delete(Email entity)
-        {
-            throw new NotImplementedException();
         }
 
         public IQueryable<Email> GetAll()
         {
-            return _repository.GetAll();
-        }
-
-        public Email GetById(object Id)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable();
         }
 
         public List<Email> GetEmailByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
-        }
-
-        public void Insert(Email entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(Email entity)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
     }
-    public class ShortMessageService : IShortMessageService
+    public class ShortMessageService : Service<ShortMessage>, IShortMessageService
     {
-        private IUnitOfWork<ShortMessage> _repository;
-        public ShortMessageService(IUnitOfWork<ShortMessage> repository)
+        private IGenericRepository<ShortMessage> _repository;
+        
+        public ShortMessageService(IGenericRepository<ShortMessage> repository)
+            : base(repository)
         {
             this._repository = repository;
-
-        }
-        public void Delete(ShortMessage entity)
-        {
-            throw new NotImplementedException();
         }
 
         public IQueryable<ShortMessage> GetAll()
         {
-            return _repository.GetAll();
-        }
-
-        public ShortMessage GetById(object Id)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable();
         }
 
         public List<ShortMessage> GetShortMessageByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
-        }
-
-        public void Insert(ShortMessage entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(ShortMessage entity)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
     }
 
-    public class CommentService : ICommentService
+    public class CommentService : Service<Comment>, ICommentService
     {
-        private IUnitOfWork<Comment> _repository;
-        public CommentService(IUnitOfWork<Comment> repository)
+        private IGenericRepository<Comment> _repository;
+        private IUnitOfWork _unitOfWork;
+        public CommentService(IGenericRepository<Comment> repository,IUnitOfWork unitOfWork)
+            : base(repository)
         {
             this._repository = repository;
-
+            this._unitOfWork = unitOfWork;
         }
 
-        public void Delete(Comment entity)
+        public void DeleteComment(Comment entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("Client");
             _repository.Delete(entity);
-            SaveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         public IQueryable<Comment> GetAll()
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted);
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted);
         }
 
         public Comment GetById(object Id)
         {
             if ((long)Id == 0)
                 return null;
-            Comment Client = _repository.GetById(Id);
+            Comment Client = _repository.Queryable().FirstOrDefault(x => x.Id == (long)Id);
             return Client;
         }
 
         public List<Comment> GetCommentByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
-        public void Insert(Comment comm)
+        public void InsertComment(Comment comm)
         {
             try
             {
@@ -558,71 +470,38 @@ namespace SitComTech.Domain.Services
                     CreatedAt = DateTime.Now,
                     CreatedBy = 0,
                     CreatedByName = "",
-                    OwnerId=comm.OwnerId,
-                    CommentDescription=comm.CommentDescription,
+                    OwnerId = comm.OwnerId,
+                    CommentDescription = comm.CommentDescription,
                 };
                 _repository.Insert(entity);
-                SaveChanges();               
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(Comment entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 
-    public class AddressService : IAddressService
+    public class AddressService : Service<Address>, IAddressService
     {
-        private IUnitOfWork<Address> _repository;
-        public AddressService(IUnitOfWork<Address> repository)
+        private IGenericRepository<Address> _repository;
+        private IUnitOfWork _unitOfWork;
+        public AddressService(IGenericRepository<Address> repository,IUnitOfWork unitOfWork)
+            : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
-        }
-
-        public void Delete(Address entity)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Address> GetAddressByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
-        public IQueryable<Address> GetAll()
+        public void UpdateAddress(Address entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public Address GetById(object Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(Address entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(Address entity)
-        {
-            Address userdata = _repository.GetById(entity.Id);
+            Address userdata = _repository.Queryable().FirstOrDefault(x => x.Id == entity.Id);
             if (userdata != null)
             {
                 userdata.UpdatedAt = DateTime.Now;
@@ -634,7 +513,7 @@ namespace SitComTech.Domain.Services
                 userdata.CountryName = entity.CountryName;
                 userdata.OwnerId = entity.OwnerId;
                 _repository.Update(userdata);
-                SaveChanges();
+                _unitOfWork.SaveChanges();
             }
             else
             {
@@ -647,14 +526,14 @@ namespace SitComTech.Domain.Services
                     CreatedByName = "",
                     OwnerId = entity.OwnerId,
                     CountryId = entity.CountryId,
-                    CountryName= entity.CountryName,
-                    ZipCode= entity.ZipCode,
-                    City= entity.City,
-                    State= entity.State,
-                    StreetAddress= entity.StreetAddress,
+                    CountryName = entity.CountryName,
+                    ZipCode = entity.ZipCode,
+                    City = entity.City,
+                    State = entity.State,
+                    StreetAddress = entity.StreetAddress,
                 };
                 _repository.Insert(addr);
-                SaveChanges();
+                _unitOfWork.SaveChanges();
             }
         }
     }

@@ -60,6 +60,10 @@
       <Project>{b3afcfef-1cfe-4cc7-a699-7a6125f52275}</Project>
       <Name>SitComTech.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SitComTrade.Framework\SitComTrade.Framework.csproj">
+      <Project>{2e428fe2-4d04-41ac-8efd-d7a1b8468e62}</Project>
+      <Name>SitComTrade.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

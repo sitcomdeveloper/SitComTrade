@@ -1,5 +1,7 @@
 ﻿using SitComTech.Core.Interface;
 using SitComTech.Data.Interface;
+using SitComTech.Framework.Repositories;
+using SitComTech.Framework.Services;
 using SitComTech.Model.DataObject;
 using System;
 using System.Collections.Generic;
@@ -8,10 +10,11 @@ using System.Linq;
 
 namespace SitComTech.Domain.Services
 {
-    public class OwnerTaskService : IOwnerTaskService
+    public class OwnerTaskService : Service<OwnerTask>,IOwnerTaskService
     {       
-        private IUnitOfWork<OwnerTask> _repository;
-        public OwnerTaskService(IUnitOfWork<OwnerTask> repository)
+        private IGenericRepository<OwnerTask> _repository;
+        public OwnerTaskService(IGenericRepository<OwnerTask> repository)
+            :base(repository)
         {
             this._repository = repository;
 
@@ -36,7 +39,6 @@ namespace SitComTech.Domain.Services
                 entity.CreatedByName = "";
                 entity.Description = userdata.Description;
                 _repository.Insert(entity);
-                SaveChanges();
                 return entity;
             }
             catch (Exception ex)
@@ -47,7 +49,7 @@ namespace SitComTech.Domain.Services
 
         public void Update(OwnerTask entity)
         {           
-            OwnerTask taskdata = _repository.GetById(entity.Id);
+            OwnerTask taskdata = _repository.Queryable().FirstOrDefault(x=>x.Id==entity.Id);
             if (taskdata != null)
             {
                 taskdata.UpdatedAt = DateTime.Now;
@@ -61,123 +63,56 @@ namespace SitComTech.Domain.Services
                 taskdata.TaskTypeId = entity.TaskTypeId;
                 taskdata.OwnerId = entity.OwnerId;
                 _repository.Update(taskdata);
-                SaveChanges();
             }
             if (entity == null || taskdata==null)
                 throw new ArgumentNullException("Task");
         }
 
         public void Delete(OwnerTask entity)
-
         {
             if (entity == null)
                 throw new ArgumentNullException("User");
             _repository.Delete(entity);
         }
 
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
         public IQueryable<OwnerTask> GetAll()
         {
-            return _repository.GetAll();
+            return _repository.Queryable();
         }
         public List<OwnerTask> GetTaskList()
         {
-            return _repository.GetAll().ToList();
+            return _repository.Queryable().ToList();
         }
         public List<OwnerTask> GetTaskByOwnerId(long ownerid)
         {
-            return _repository.GetAll().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
-        }
-        public OwnerTask GetById(object Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IUnitOfWork<OwnerTask>.Insert(OwnerTask entity)
-        {
-            throw new NotImplementedException();
-        }
-
-       
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+        }       
     }
-    public class TaskTypeService : ITaskTypeService
+    public class TaskTypeService : Service<TaskType>,ITaskTypeService
     {
-        private IUnitOfWork<TaskType> _repository;
-        public TaskTypeService(IUnitOfWork<TaskType> repository)
+        private IGenericRepository<TaskType> _repository;
+        public TaskTypeService(IGenericRepository<TaskType> repository)
+            :base(repository)
         {
             this._repository = repository;
 
         }
-        public void Delete(TaskType entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public IQueryable<TaskType> GetAll()
         {
-            return _repository.GetAll();
-        }
-
-        public TaskType GetById(object Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(TaskType entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(TaskType entity)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable();
         }
     }
-    public class TaskStatusService : ITaskStatusService
+    public class TaskStatusService : Service<TaskStatus>,ITaskStatusService
     {
-        private IUnitOfWork<TaskStatus> _repository;
-        public TaskStatusService(IUnitOfWork<TaskStatus> repository)
+        private IGenericRepository<TaskStatus> _repository;
+        public TaskStatusService(IGenericRepository<TaskStatus> repository)
+            :base(repository)
         {
             this._repository = repository;
-
         }
-        public void Delete(TaskStatus entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public IQueryable<TaskStatus> GetAll()
         {
-            return _repository.GetAll();
-        }
-
-        public TaskStatus GetById(object Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(TaskStatus entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveChanges()
-        {
-            _repository.SaveChanges();
-        }
-
-        public void Update(TaskStatus entity)
-        {
-            throw new NotImplementedException();
+            return _repository.Queryable();
         }
     }
 }
