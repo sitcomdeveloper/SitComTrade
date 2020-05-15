@@ -361,7 +361,7 @@
               <div class="right">
               <form id="search">
                 <input #search type="search" [placeholder]="filled?'Search':''" [ngClass]="{'filled':filled}" 
-                     (click)="filled=!filled" (blur)="filled=search.value?true:false">
+                     (click)="filled=!filled" (blur)="filled=search.value?true:true">
                      <button class="close" *ngIf="filled" (click)="search.value='';filled=false">X</button>
               </form>
             </div>
