@@ -83,7 +83,7 @@
     height: 16px;
 }
 
-.radio-tabs ul li a:hover {
+.radio-tabs ul li a:hover,.radio-tabs ul li a:active {
     color: #000!important;
     border-color: #dde7f9;
 
@@ -338,4 +338,7 @@ a.button.submit-button.itembutton,a.button.button2.itembutton1 {
     margin-left: 285px;
     margin-bottom: 5px;
 }
- 
+input[type=radio] + label {
+    color: green;
+    font-style: italic;
+  } 
