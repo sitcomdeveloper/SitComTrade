@@ -5,7 +5,7 @@ td.email-cell {
     width: 88px;
 }
 .roles-hierarchy {
-    padding: 50px;
+    padding: 50px;    margin-bottom: 50px;
 }
 .whitearea {
     background: #fff;
@@ -85,7 +85,7 @@ td.email-cell {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-   
+    text-indent: -9999px;
     overflow: hidden;
     z-index: 1;
     cursor: pointer;
@@ -131,4 +131,22 @@ td.email-cell {
     right: 0;
     bottom: 0;
     margin: auto;
+}
+.roles-hierarchy ul li>div:hover i {
+    display: block;
+}
+.roles-hierarchy ul li>div>i.del {
+    top: auto;
+    bottom: 4px;
+    left: -8px;
+    background: #8c9bb3;
+}
+.roles-hierarchy ul li>div>i.edt {
+    right: -8px;
+    background: #3d75e1;
+}
+.roles-hierarchy ul li>div>.add:after {
+    width: 2px;
+    height: 6px;
+    background: #fff;
 }
