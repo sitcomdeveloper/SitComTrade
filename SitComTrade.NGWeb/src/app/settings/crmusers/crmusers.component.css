@@ -24,7 +24,7 @@ td.email-cell {
     margin: 0 0 30px;
 }
 
-.roles-hierarchy ul li {
+.roles-hierarchy ul li ul li {
     position: relative;
     padding: 0 30px;
     margin: 30px 0;
@@ -101,7 +101,7 @@ td.email-cell {
     width: 1px;
 }
 
-.roles-hierarchy ul li:after, .roles-hierarchy ul li:before {
+.roles-hierarchy ul li ul li:after, .roles-hierarchy ul li ul li:before {
     content: "";
     position: absolute;
     background: #dde7f9;
