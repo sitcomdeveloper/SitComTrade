@@ -1079,7 +1079,15 @@ tr.tablectn {
         color: #8da5ba;
         font-weight: 400;
     }
-
+    .breadcrumbs ul li:before {
+        display: inline-block;
+        vertical-align: top;
+        content: "\2022";
+        margin: 0 8px;
+        color: #fff;
+        font-size: 22px;
+        line-height: 18px;
+    }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

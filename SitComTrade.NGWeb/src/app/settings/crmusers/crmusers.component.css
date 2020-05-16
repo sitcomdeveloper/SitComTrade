@@ -1,56 +1,152 @@
-
-
-.breadcrumb
-{
-    margin-left: 5px;
-    margin-top:-32px;
-   padding:0px;
+.email-cell-content {
+    width: 89px;
 }
-.crumb
-{
-    padding-left: 50px;
+td.email-cell {
+    width: 88px;
+}
+.roles-hierarchy {
+    padding: 50px;    margin-bottom: 50px;
+}
+.whitearea {
+    background: #fff;
+}
+.roles-hierarchy>ul {
+    padding: 0 10px;
+}
+.roles-hierarchy ul {
+    margin: 0 0 -30px;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+.roles-hierarchy>ul>li {
+    padding: 0;
+    margin: 0 0 30px;
 }
 
-.tab{
-    background-color:white;
-    border-radius:2px;
-    width: 493px;
-    height: 38px;
-    padding: 4px 3px 4px 3px;
-    text-align:center;
-    font-size: 16px;
+.roles-hierarchy ul li {
+    position: relative;
+    padding: 0 30px;
+    margin: 30px 0;
 }
-.main-tab .tab li{
+.roles-hierarchy ul li>div {
     display: inline-block;
-    padding:2px;
-}
-.main-tab .tab li a{
-    text-decoration: none;
+    vertical-align: top;
+    min-width: 160px;
+    position: relative;
+    background: #fff;
+    padding: 12px 15px;
+    border: 1px solid #dde7f9;
+    border-radius: 3px;
+    color: #8c9bb3;
+    font-size: 11px;
+    line-height: 1.72727;
+    text-transform: uppercase;
     text-align: center;
-    margin: 0;
-    padding: 14px 7px;
-    min-width: 90px;
-    line-height: 19px;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,.07);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,.07);
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.07);
 }
- .text{
-    font-size:12px;
-    cursor:pointer;
-    padding-right:0px;
+.roles-hierarchy ul li>div>span {
+    display: inline-block;
+    vertical-align: top;
+}
+.roles-hierarchy ul li>div>span {
+    display: inline-block;
+    vertical-align: top;
+}
+.roles-hierarchy ul li>div>em {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -1px 10px;
+    background: #dde7f9;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 18px;
+    font-style: normal;
+}
+.roles-hierarchy ul li>div>i.add {
+    bottom: auto;
+    top: 4px;
+    left: -8px;
+    background: #12eea3;
 }
 
-.btn {
-    background-color: #159ac9; 
-    border: none; 
-    color: white;
-    padding: 7px 17px; 
-    font-size: 16px; 
+.roles-hierarchy ul li>div>i {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    text-indent: -9999px;
+    overflow: hidden;
+    z-index: 1;
     cursor: pointer;
-  }
-.btn btn-primary,.btn btn-primary dropdown-toggle dropdown-toggle-split
-{
-    padding-left:12px;
 }
-.btn btn-primary dropdown-toggle dropdown-toggle-split
-{
-    margin-left:12px;
+.roles-hierarchy ul li>div:hover, .roles-hierarchy ul li>div:hover+ul li div {
+    background: #f5f8fd;
+}
+.roles-hierarchy ul li:before {
+    left: 0;
+    bottom: 100%;
+    margin-bottom: -22px;
+    height: 1000%;
+    width: 1px;
+}
+
+.roles-hierarchy ul li:after, .roles-hierarchy ul li:before {
+    content: "";
+    position: absolute;
+    background: #dde7f9;
+}
+.roles-hierarchy ul li:after {
+    left: 0;
+    top: 22px;
+    height: 1px;
+    width: 30px;
+}
+.roles-hierarchy ul li>div>i.edt:before {
+    width: 10px;
+    height: 10px;
+    background: url(/assets/images/sprite.png) -50px -645px no-repeat;
+}
+
+.roles-hierarchy ul li>div>i:before {
+    width: 6px;
+    height: 2px;
+    background: #fff;
+}
+.roles-hierarchy ul li>div>i:after, .roles-hierarchy ul li>div>i:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.roles-hierarchy ul li>div:hover i {
+    display: block;
+}
+.roles-hierarchy ul li>div>i.del {
+    top: auto;
+    bottom: 4px;
+    left: -8px;
+    background: #8c9bb3;
+}
+.roles-hierarchy ul li>div>i.edt {
+    right: -8px;
+    background: #3d75e1;
+}
+.roles-hierarchy ul li>div>.add:after {
+    width: 2px;
+    height: 6px;
+    background: #fff;
 }
