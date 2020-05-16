@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   router: any;
   getLoginDetails: any;
   bindLoginData: any;
-  terms="";
+  filled: any;
   constructor() { }
 
   ngOnInit() {

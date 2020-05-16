@@ -41,8 +41,8 @@ export class MarketingInfoComponent implements OnInit {
       utmmedium: [''],
       googlekeyword: [''],
       afftransactionid: [''],
-      affiliateuser: ['']
-      // affiliateuserid: ['']
+      affiliateuser: [''],
+      affiliateuserid: ['']
 
 
     });
@@ -96,7 +96,7 @@ export class MarketingInfoComponent implements OnInit {
     const obj = {
       AffiliateID: this.marketingInfoForm.value.affilateid,
       AffiliateUser: this.marketingInfoForm.value.affiliateuser,
-      AffiliateUserId: this.marketingInfoForm.value.affiliateuser,
+      AffiliateUserId: this.marketingInfoForm.value.affiliateuserid,
       AffTransactionID: this.marketingInfoForm.value.afftransactionid,
       CampaignID: this.marketingInfoForm.value.campaignid,
       IPAddress: this.marketingInfoForm.value.ipaddress,
