@@ -7,9 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhoneMaskDirective } from './common/directives/phone-mask.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import {TabModule} from 'angular-tabs-component';
+
 import { BlockCopyPasteDirective } from './block-copy-paste.directive';
-// import { CollapsibleModule } from 'angular2-collapsible';
+
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -22,6 +22,8 @@ import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { ClientsComponent } from './header/clients/clients.component';
+import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ImportClientDataComponent, ItemComponent,
+  SmsAllComponent} from './clients';
 import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportsComponent } from './header/reports/reports.component';
 import { SettingsComponent } from './header/settings/settings.component';
@@ -29,8 +31,8 @@ import { TimeComponent } from './header/time/time.component';
 import { SearchComponent } from './header/search/search.component';
 import { NotificationsComponent } from './header/notifications/notifications.component';
 import { UserComponent } from './header/user/user.component';
-import { ClientComponent } from './clients/client/client.component';
-import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
+// import { ClientComponent } from './clients/client/client.component';
+// import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './reports/dashboard/dashboard.component';
 import { ExposureComponent } from './reports/exposure/exposure.component';
@@ -62,8 +64,6 @@ import { IplistComponent } from './settings/iplist/iplist.component';
 import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
 import { WorkflowsComponent } from './settings/workflows/workflows.component';
 
-import { AccountsComponent } from './clients/accounts/accounts.component';
-import { AllComponent } from './clients/all/all.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { TermsComponent } from './terms/terms.component';
@@ -81,12 +81,12 @@ import { EmailComponent } from './clients_info/email/email.component';
 import { SmsComponent } from './clients_info/sms/sms.component';
 import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
 import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.component';
-import { ItemComponent } from './clients/item/item.component';
-import { ImportClientComponent } from './clients/import-client/import-client.component';
-import { ExportClientComponent } from './clients/export-client/export-client.component';
-import { SmsAllComponent } from './clients/sms-all/sms-all.component';
-import { EmailAllComponent } from './clients/email-all/email-all.component';
-import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
+// import { ItemComponent } from './clients/item/item.component';
+// import { ImportClientComponent } from './clients/import-client/import-client.component';
+// import { ExportClientComponent } from './clients/export-client/export-client.component';
+// import { SmsAllComponent } from './clients/sms-all/sms-all.component';
+// import { EmailAllComponent } from './clients/email-all/email-all.component';
+// import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
@@ -150,8 +150,6 @@ import { SrchPipe } from './clients/client/srch.pipe';
     IplistComponent,
     TradinghoursComponent,
     WorkflowsComponent,
-    AccountsComponent,
-    AllComponent,
     TermsComponent,
     RegisterComponent,
     BlockCopyPasteDirective,

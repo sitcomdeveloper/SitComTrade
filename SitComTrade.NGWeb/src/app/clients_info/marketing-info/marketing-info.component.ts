@@ -42,6 +42,7 @@ export class MarketingInfoComponent implements OnInit {
       googlekeyword: [''],
       afftransactionid: [''],
       affiliateuser: ['']
+      // affiliateuserid: ['']
 
 
     });
@@ -93,9 +94,9 @@ export class MarketingInfoComponent implements OnInit {
   // apply btn.update
   closeshowhide() {
     const obj = {
-      AffiliateID: this.userMarketingInfo.AffiliateID,
+      AffiliateID: this.marketingInfoForm.value.affilateid,
       AffiliateUser: this.marketingInfoForm.value.affiliateuser,
-      AffiliateUserId: this.userMarketingInfo.AffiliateUserId,
+      AffiliateUserId: this.marketingInfoForm.value.affiliateuser,
       AffTransactionID: this.marketingInfoForm.value.afftransactionid,
       CampaignID: this.marketingInfoForm.value.campaignid,
       IPAddress: this.marketingInfoForm.value.ipaddress,

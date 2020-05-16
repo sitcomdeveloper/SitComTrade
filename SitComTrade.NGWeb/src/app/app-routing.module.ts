@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import {ClientComponent, TradeaccountsComponent, ImportClientComponent, ItemComponent} from './clients';
 import { ClientsComponent } from './header/clients/clients.component';
 import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportComponent } from './reports/report/report.component';
 import { SettingsComponent } from './header/settings/settings.component';
 
-import { ClientComponent } from './clients/client/client.component';
+// import { ClientComponent } from './clients/client/client.component';
 
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
+// import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
 import { DashboardComponent } from './reports/dashboard/dashboard.component';
 import { ExposureComponent } from './reports/exposure/exposure.component';
 import { LeaderboardComponent } from './reports/leaderboard/leaderboard.component';
@@ -43,14 +43,12 @@ import { IplistComponent } from './settings/iplist/iplist.component';
 import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
 import { WorkflowsComponent } from './settings/workflows/workflows.component';
 import { ReportsComponent } from './header/reports/reports.component';
-// import { AccountsComponent } from './clients/accounts/accounts.component';
-// import { AllComponent } from './clients/all/all.component';
 // import { AuthGuard } from './auth.guard';
 // import { TermsComponent } from './terms/terms.component';
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
 // import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
-import { ItemComponent } from './clients/item/item.component';
-import { ImportClientComponent } from './clients/import-client/import-client.component';
+// import { ItemComponent } from './clients/item/item.component';
+// import { ImportClientComponent } from './clients/import-client/import-client.component';
 import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 
