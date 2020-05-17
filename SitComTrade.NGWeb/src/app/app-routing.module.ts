@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ClientComponent, TradeaccountsComponent, ImportClientComponent, ItemComponent} from './clients';
+import {BenchmarkComponent, DashboardComponent, ExposureComponent, LeaderboardComponent, ReportComponent, TradingjournalsComponent} from './reports';
 import { ClientsComponent } from './header/clients/clients.component';
 import { ActivitiesComponent } from './header/activities/activities.component';
-import { ReportComponent } from './reports/report/report.component';
+// import { ReportComponent } from './reports/report/report.component';
 import { SettingsComponent } from './header/settings/settings.component';
 
 // import { ClientComponent } from './clients/client/client.component';
@@ -11,12 +12,12 @@ import { SettingsComponent } from './header/settings/settings.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 // import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
-import { DashboardComponent } from './reports/dashboard/dashboard.component';
-import { ExposureComponent } from './reports/exposure/exposure.component';
-import { LeaderboardComponent } from './reports/leaderboard/leaderboard.component';
+// import { DashboardComponent } from './reports/dashboard/dashboard.component';
+// import { ExposureComponent } from './reports/exposure/exposure.component';
+// import { LeaderboardComponent } from './reports/leaderboard/leaderboard.component';
 
-import { TradingjournalsComponent } from './reports/tradingjournals/tradingjournals.component';
-import { BenchmarkComponent } from './reports/benchmark/benchmark.component';
+// import { TradingjournalsComponent } from './reports/tradingjournals/tradingjournals.component';
+// import { BenchmarkComponent } from './reports/benchmark/benchmark.component';
 
 import { MonetarytransactionsComponent } from './activities/monetarytransactions/monetarytransactions.component';
 import { TasksComponent } from './activities/tasks/tasks.component';
