@@ -28,7 +28,9 @@ i.fa.fa-refresh {
     color: #dee2e6;
     font-size: 25px;
 }
-
+.area-white {
+    background: #fff;
+}
 .tablist {
     border: 0;
     display: inline-flex;
