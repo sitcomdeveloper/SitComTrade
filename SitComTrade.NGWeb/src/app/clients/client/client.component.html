@@ -1464,7 +1464,7 @@
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
                   <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)"></span>
-                <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
+                <span><i class="fa fa-star" title="Clear filter"></i></span></div>
             </div>
           </td>
           <td  (click)="userClick(item.Id)">
@@ -1600,12 +1600,26 @@
               <a href="javascript:void(0)" class="ico-sz3 ico-link dh " id="ico9"   data-jsgrid-rule="link" title="Open in new tab">
                 <i  _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon"  disabled="" (click) = "openEditableMode(item.Id)"></i></a>
               <br>
-              
-              <a href="javascript:void(0)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link"
+              <!-- <a href="javascript:void(0)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link"
               popover="lorem"> &nbsp;&nbsp; <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
        
+              </a> -->
+              <a aria-expanded="false" class="link-control dropdown-toggle  dropdown-toggle2" data-toggle="dropdown" >
+                 &nbsp;&nbsp; <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+       
               </a>
-              
+              <!------------------------------------>
+              <div _ngcontent-bih-c1="" class="dropdown-menu pop pull-right" x-placement="bottom-start" style="position: absolute; transform: translate3d(-102px, 42px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <ul class="popcontent"><li><a href="javascript:void(0);" class="ico-sz3 ico-comments dim comments-toggle" aria-describedby="431251" title="Comments" style="opacity:1">
+                  <i class="fa fa-file" aria-hidden="true"></i>
+                </a></li>
+                  <li><a href="javascript:void(0);" class="ico-sz3 ico-addtask dim" data-toggle="modal" data-target="#popup-add-task" title="Tasks" style="opacity:1">
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                  </a></li>
+                </ul>
+                
+             </div>
+              <!------------------------------------>
             </div>
             
             

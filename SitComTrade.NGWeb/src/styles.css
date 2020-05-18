@@ -7,7 +7,7 @@ body {
     color: #45596a;
     background: #e0e8f3;
     min-width: 1263px;
-    font-family: Poppins,Arial,sans-serif;
+    font-family: Poppins,Arial,sans-serif;  overflow-x:hidden!important;
 }
 .text-ellipsis {
     white-space: nowrap;

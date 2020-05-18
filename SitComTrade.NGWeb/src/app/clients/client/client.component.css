@@ -229,7 +229,7 @@ i.fa.fa-refresh {
 }
 .tablecheckbox
 {
-    width: 21px;
+    width: 10px;
     height: 12px;
 }
 
@@ -540,4 +540,57 @@ i.fa.fa-plus.bg-primary1.fa-lg {
 .tablectn select
 {
     height:27px!important;
+}
+.dropdown-toggle2 {
+    padding: 5px;
+    white-space: nowrap;
+}
+.popcontent {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    z-index: 1040;
+    border-color: rgba(0,0,0,.04);
+    -webkit-box-shadow: -3px 3px 7px 0 rgba(0,0,0,.15);
+    box-shadow: -3px 3px 7px 0 rgba(0,0,0,.15);
+    width: 100px;background: #fff;height: 31px;
+    vertical-align: middle;
+    border-radius: 6px;
+    padding-top: 5px;
+}
+.pop
+{
+    position: absolute;
+    transform: translate3d(-63px, -1px, 0px)!important;
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+    width: 0!important;
+    border: 0;
+    text-align: center;
+    background: none;
+    
+}
+.dropleft .dropdown-toggle2::before
+{
+    content: none;
+}
+.popcontent li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    margin: 0 5px;
+    position: relative;
+}
+ul.popcontent li a i {
+    font-size: 15px!important;
+    color: #a5a6a7;
+}
+.ico-sz3 {
+    width: 20px;
+    height: 20px;
+}
+.ico-sz3.ico-comments.dim {
+    background-position: -300px -420px;
 }
