@@ -6,7 +6,7 @@
         <div _ngcontent-eal-c3="" class="row">
            <div _ngcontent-eal-c3="" class="tools-panel-addon">
             <div class="jsgrid-items-counter" *ngIf=all >
-              <span>{{UserLength}} items</span>
+              <span>{{countLength}} checked from  {{UserLength}} items</span>
             </div>
             <div class="jsgrid-items-counter" *ngIf=accounts >
               <span>{{accountLength}} items</span>
@@ -1547,7 +1547,7 @@
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_CampaignId">
-                <div class="text-ellipsis" data-field="CampaignId">{{item.CampaignId}}</div>
+                <div class="text-ellipsis" data-field="CampaignId" tooltip="{{item.CampaignId}}">{{item.CampaignId}}</div>
               </div>
             </div>
           </td>
@@ -1555,7 +1555,7 @@
           <td class="">
             <div class="">
               <div data-display-for="27_HasDeposit">
-                <div class="text-ellipsis">{{item.Tag1}}</div>
+                <div class="text-ellipsis" tooltip="{{item.Tag}}">{{item.Tag}}</div>
               </div>
             </div>
           </td>
@@ -1563,7 +1563,7 @@
           <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">{{item.Tag2}}</div>
+                <div class="text-ellipsis" tooltip="{{item.Tag1}}">{{item.Tag1}}</div>
               </div>
             </div>
           </td>
@@ -1581,7 +1581,7 @@
           <td class="">
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis">{{item.Group}}</div>
+                <div class="text-ellipsis" tooltip="{{item.Group}}">{{item.Group}}</div>
               </div>
             </div>
           </td>
@@ -1594,7 +1594,7 @@
           </td>
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
-              <a href="javascript:void(0);" (click)="userClick(item.Id)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" routerLinkActive="active" (click)="userClick(item.Id)"><i
+              <a  (click)="userClick(item.Id)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" routerLinkActive="active" (click)="userClick(item.Id)" title="Open in new tab"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0)" class="ico-sz3 ico-link dh " id="ico9"   data-jsgrid-rule="link" title="Open in new tab">
@@ -3098,7 +3098,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title=""
-                  title="">{{actinfo.OwnerName}}</div>
+                  title="" tooltip="{{actinfo.OwnerName}}">{{actinfo.OwnerName}}</div>
               </div>
             </div>
           </td>
@@ -3118,25 +3118,26 @@
           </td>
           <td class="jsgrid-cell" style="width:115px;">
             <div class="jsgrid-cell-content">
-              <div data-display-for="27_CreatedDate">{{actinfo.CampaignId}}</div>
+              <div data-display-for="27_CreatedDate" tooltip="{{actinfo.CampaignId}}">{{actinfo.CampaignId}}</div>
             </div>
           </td>
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_CampaignId">
-                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{actinfo.Tag}}
+                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff" tooltip="{{actinfo.Tag}}">{{actinfo.Tag}}
                 </div>
               </div>
             </div>
           </td>
-
-          <td class="">
-            <div class="">
-              <div data-display-for="27_HasDeposit">
-                <div><i class="ico-sz2 ico-status"></i>{{actinfo.Tag1}}</div>
+          <td class="jsgrid-cell">
+            <div class="jsgrid-cell-content">
+              <div data-display-for="27_CampaignId">
+                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff" tooltip="{{actinfo.Tag1}}">{{actinfo.Tag1}}
+                </div>
               </div>
             </div>
           </td>
+         
 
           <td class="">
             <div class="">
@@ -3159,7 +3160,7 @@
 
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
-              <a href="javascript:void(0);" (click)="userClick(actinfo.Id)" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"><i
+              <a  (click)="userClick(actinfo.Id)" class="ico-sz3 ico-link dh"  data-jsgrid-rule="link" title="Open in new tab"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0);" class="ico-sz3 ico-link dh"  data-jsgrid-rule="link"><i
@@ -4478,14 +4479,14 @@
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_OwnerId">
-                <div class="text-ellipsis" data-original-title="" title="">{{leadinfo.Tag}}</div>
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{leadinfo.Tag}}">{{leadinfo.Tag}}</div>
               </div>
             </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_StatusId">
-                <div class="text-ellipsis" data-original-title="" title="">{{leadinfo.Tag1}}</div>
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{leadinfo.Tag1}}">{{leadinfo.Tag1}}</div>
               </div>
             </div>
           </td>
@@ -4497,7 +4498,7 @@
           <td class="jsgrid-cell">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_CampaignId">
-                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">
+                <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff" tooltip="{{leadinfo.CampaignId}}">
                   {{leadinfo.CampaignId}}</div>
               </div>
             </div>
@@ -4514,7 +4515,7 @@
 
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
             <div class="dropleft droptop">
-              <a href="javascript:void(0);" (click)="userClick(leadinfo.Id)" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"><i
+              <a (click)="userClick(leadinfo.Id)" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" title="Open in new tab"><i
                   class="fa fa-link greyicon" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0);" class="ico-sz3 ico-link dh" data-jsgrid-rule="link"><i

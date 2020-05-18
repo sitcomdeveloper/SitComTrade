@@ -38,7 +38,6 @@ export class TasksInfoComponent implements OnInit {
       // after update refresh all the data
       this.getAllTask();
     });
-    
   }
 
 

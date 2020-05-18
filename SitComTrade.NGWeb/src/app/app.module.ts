@@ -22,16 +22,19 @@ import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { ClientsComponent } from './header/clients/clients.component';
+// tslint:disable-next-line: max-line-length
 import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ImportClientDataComponent, ItemComponent,
   SmsAllComponent} from './clients';
+// tslint:disable-next-line: max-line-length
 import {BenchmarkComponent, DashboardComponent, ExposureComponent, LeaderboardComponent, ReportComponent, TradingjournalsComponent} from './reports';
+// tslint:disable-next-line: max-line-length
+import {MonetarytransactionsComponent, TasksComponent, CasesComponent, DocumentsComponent, OpenedordersComponent, ClosedordersComponent, PendingordersComponent, RejectedtransactionComponent, CommonjournalComponent  } from './activities';
 import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportsComponent } from './header/reports/reports.component';
 import { SettingsComponent } from './header/settings/settings.component';
 import { TimeComponent } from './header/time/time.component';
 import { SearchComponent } from './header/search/search.component';
 import { NotificationsComponent } from './header/notifications/notifications.component';
-import { UserComponent } from './header/user/user.component';
 // import { ClientComponent } from './clients/client/client.component';
 // import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
 import { LoginComponent } from './login/login.component';
@@ -41,29 +44,33 @@ import { LoginComponent } from './login/login.component';
 // import { ReportComponent } from './reports/report/report.component';
 // import { TradingjournalsComponent } from './reports/tradingjournals/tradingjournals.component';
 // import { BenchmarkComponent } from './reports/benchmark/benchmark.component';
-import { MonetarytransactionsComponent } from './activities/monetarytransactions/monetarytransactions.component';
-import { TasksComponent } from './activities/tasks/tasks.component';
-import { CasesComponent } from './activities/cases/cases.component';
-import { DocumentsComponent } from './activities/documents/documents.component';
-import { OpenedordersComponent } from './activities/openedorders/openedorders.component';
-import { ClosedordersComponent } from './activities/closedorders/closedorders.component';
-import { PendingordersComponent } from './activities/pendingorders/pendingorders.component';
-import { RejectedtransactionComponent } from './activities/rejectedtransaction/rejectedtransaction.component';
-import { CommonjournalComponent } from './activities/commonjournal/commonjournal.component';
-import { EmailtemplatesComponent } from './settings/emailtemplates/emailtemplates.component';
-import { SendersettingsComponent } from './settings/sendersettings/sendersettings.component';
-import { GroupsComponent } from './settings/groups/groups.component';
-import { InstrumentsComponent } from './settings/instruments/instruments.component';
-import { TranslationsComponent } from './settings/translations/translations.component';
-import { FiltersComponent } from './settings/filters/filters.component';
-import { ImportsComponent } from './settings/imports/imports.component';
-import { CrmusersComponent } from './settings/crmusers/crmusers.component';
-import { AffilateusersComponent } from './settings/affilateusers/affilateusers.component';
-import { AdditionalfieldsComponent } from './settings/additionalfields/additionalfields.component';
-import { ModulefieldsComponent } from './settings/modulefields/modulefields.component';
-import { IplistComponent } from './settings/iplist/iplist.component';
-import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
-import { WorkflowsComponent } from './settings/workflows/workflows.component';
+// import { MonetarytransactionsComponent } from './activities/monetarytransactions/monetarytransactions.component';
+// import { TasksComponent } from './activities/tasks/tasks.component';
+// import { CasesComponent } from './activities/cases/cases.component';
+// import { DocumentsComponent } from './activities/documents/documents.component';
+// import { OpenedordersComponent } from './activities/openedorders/openedorders.component';
+// import { ClosedordersComponent } from './activities/closedorders/closedorders.component';
+// import { PendingordersComponent } from './activities/pendingorders/pendingorders.component';
+// import { RejectedtransactionComponent } from './activities/rejectedtransaction/rejectedtransaction.component';
+// import { CommonjournalComponent } from './activities/commonjournal/commonjournal.component';
+import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, InstrumentsComponent,
+  TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
+  // tslint:disable-next-line: max-line-length
+  ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent} from './settings';
+// import { EmailtemplatesComponent } from './settings/emailtemplates/emailtemplates.component';
+// import { SendersettingsComponent } from './settings/sendersettings/sendersettings.component';
+// import { GroupsComponent } from './settings/groups/groups.component';
+// import { InstrumentsComponent } from './settings/instruments/instruments.component';
+// import { TranslationsComponent } from './settings/translations/translations.component';
+// import { FiltersComponent } from './settings/filters/filters.component';
+// import { ImportsComponent } from './settings/imports/imports.component';
+// import { CrmusersComponent } from './settings/crmusers/crmusers.component';
+// import { AffilateusersComponent } from './settings/affilateusers/affilateusers.component';
+// import { AdditionalfieldsComponent } from './settings/additionalfields/additionalfields.component';
+// import { ModulefieldsComponent } from './settings/modulefields/modulefields.component';
+// import { IplistComponent } from './settings/iplist/iplist.component';
+// import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
+// import { WorkflowsComponent } from './settings/workflows/workflows.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
@@ -72,16 +79,19 @@ import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 // clients-info component
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
-import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
-import { CommentsComponent } from './clients_info/comments/comments.component';
-import { MarketingInfoComponent } from './clients_info/marketing-info/marketing-info.component';
-import { AddressComponent } from './clients_info/address/address.component';
+import {GeneralInfoComponent, CommentsComponent, MarketingInfoComponent, AddressComponent, AdditionalInfoComponent, EmailComponent,
+  // tslint:disable-next-line: max-line-length
+  SmsComponent, RegHisComponent, TasksInfoComponent, InfoCasesComponent, InfoDocumentsComponent, TradeAccountsComponent, FinancialTransactionsComponent } from './clients_info';
+// import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
+// import { CommentsComponent } from './clients_info/comments/comments.component';
+// import { MarketingInfoComponent } from './clients_info/marketing-info/marketing-info.component';
+// import { AddressComponent } from './clients_info/address/address.component';
 
-import { AdditionalInfoComponent } from './clients_info/additional-info/additional-info.component';
-import { EmailComponent } from './clients_info/email/email.component';
-import { SmsComponent } from './clients_info/sms/sms.component';
-import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
-import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.component';
+// import { AdditionalInfoComponent } from './clients_info/additional-info/additional-info.component';
+// import { EmailComponent } from './clients_info/email/email.component';
+// import { SmsComponent } from './clients_info/sms/sms.component';
+// import { RegHisComponent } from './clients_info/reg-his/reg-his.component';
+// import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.component';
 // import { ItemComponent } from './clients/item/item.component';
 // import { ImportClientComponent } from './clients/import-client/import-client.component';
 // import { ExportClientComponent } from './clients/export-client/export-client.component';
@@ -91,18 +101,19 @@ import { TasksInfoComponent } from './clients_info/tasks-info/tasks-info.compone
 import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
-import { CreateItemComponent } from './settings/groups/create-item/create-item.component';
-import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-accounts.component';
-import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
+// import { CreateItemComponent } from './settings/groups/create-item/create-item.component';
+// import { TradeAccountsComponent } from './clients_info/trade-accounts/trade-accounts.component';
+// import { FinancialTransactionsComponent } from './clients_info/financial-transactions/financial-transactions.component';
 import { DeleteComponent } from './common/delete/delete.component';
 import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
-import { InfoDocumentsComponent } from './clients_info/info-documents/info-documents.component';
-import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
-import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
+// import { InfoDocumentsComponent } from './clients_info/info-documents/info-documents.component';
+// import { InfoCasesComponent } from './clients_info/info-cases/info-cases.component';
+// import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
 import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -117,7 +128,6 @@ import { SrchPipe } from './clients/client/srch.pipe';
     TimeComponent,
     SearchComponent,
     NotificationsComponent,
-    UserComponent,
     ClientComponent,
     TradeaccountsComponent,
     LoginComponent,

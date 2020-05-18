@@ -35,7 +35,12 @@ export class GroupsComponent implements OnInit {
 
  }
  getGeneralInfo(setItem: any) {
-   this.router.navigate(['/groups-info', setItem]);
+  //  this.router.navigate(['/groups-info', setItem]);
+  const url = this.router.serializeUrl(
+    this.router.createUrlTree(['/groups-info', setItem])
+  );
+  window.open(url, '_blank');
+
  }
  newGroup() {
   const initialState = {

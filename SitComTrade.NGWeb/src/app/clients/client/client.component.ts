@@ -40,6 +40,9 @@ bindLoginData: any;
   name: any;
   Country: any;
   activeTab = 'all';
+  Editable: boolean;
+  countValue: any[];
+  countLength: number;
 // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
               private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
@@ -105,9 +108,12 @@ bindLoginData: any;
     // console.log('selecteditem', JSON.stringify(selectedItem));
     // this.router.navigateByUrl('/info');
     // console.log('Selected item Id: ', selectedItem.ItemId);
-    console.log(selectedItem);
-    this.router.navigate(['/info', selectedItem]);
-
+    // console.log(selectedItem);
+    // this.router.navigate(['/info', selectedItem]);
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree(['/info', selectedItem])
+    );
+    window.open(url, '_blank');
   }
   newUser() {
     this.router.navigateByUrl('/user');
@@ -115,19 +121,35 @@ bindLoginData: any;
   importClients() {
     this.router.navigateByUrl('/importclients');
   }
+  // checked count implemantation
   deletbtn(val, userid) {
     this.UserId = userid;
-    const count = 1;
     if (val === true) {
-    this.a = count + 1;
-    this.showMsg = 'items checked from';
-    this.deletbtnn = false;
-} else {
-  // tslint:disable-next-line: no-shadowed-variable
-  let count = 1;
-  this.a = count--;
-  this.showMsg = '';
+this.rowData.forEach(element =>  {
+if  (userid === element.Id) {
+element.IsEditable = true;
+this.countValue = this.rowData.filter(checkedCount => {
+  if (checkedCount.IsEditable === true) {
+    return checkedCount;
+}
+});
+this.deletbtnn = false;
+this.countLength = this.countValue.length;
+}
+});
+} else {this.rowData.forEach(element =>  {
+  if  (userid === element.Id) {
+  element.IsEditable = false;
+  this.countValue = this.rowData.filter(checkedCount => {
+    if (checkedCount.IsEditable === true) {
+      return checkedCount;
+}
+});
   this.deletbtnn = true;
+
+  this.countLength = this.countValue.length;
+  }
+  });
 }
 
   }
@@ -179,6 +201,7 @@ bindLoginData: any;
     this.rowData.forEach( t => {
       if (t.Id === +selectedId ) {
   t.IsEditable = true;
+  this.Editable = t.IsEditable;
   this.clientForm.patchValue({
           id: t.Id,
           firstname: t.FirstName,
