@@ -394,3 +394,10 @@ td.email-cell {
 [class*=icomark-].icomark-asterisk.active, a[class*=icomark-].icomark-asterisk:hover {
     background: #e25732;
 }
+[class*=icomark-].icomark-glasses:after {
+    background-position: -30px -865px;
+}
+.tab-content>.active {
+    display: block;
+    margin-bottom: 60px;
+}
