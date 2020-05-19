@@ -18,7 +18,6 @@ import { AuthpipePipe } from './authpipe.pipe';
 
 import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { HeaderComponent } from './header/header.component';
-import { LogoComponent } from './header/logo/logo.component';
 import { ClientsComponent } from './header/clients/clients.component';
 // tslint:disable-next-line: max-line-length
 import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ImportClientDataComponent, ItemComponent,
@@ -30,9 +29,6 @@ import {MonetarytransactionsComponent, TasksComponent, CasesComponent, Documents
 import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportsComponent } from './header/reports/reports.component';
 import { SettingsComponent } from './header/settings/settings.component';
-import { TimeComponent } from './header/time/time.component';
-import { SearchComponent } from './header/search/search.component';
-import { NotificationsComponent } from './header/notifications/notifications.component';
 // import { ClientComponent } from './clients/client/client.component';
 // import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
 import { LoginComponent } from './login/login.component';
@@ -111,21 +107,16 @@ import { TranslationsFilterComponent } from './settings/translations/translation
 import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
-import { from } from 'rxjs';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LogoComponent,
     ClientsComponent,
     ActivitiesComponent,
     ReportsComponent,
     SettingsComponent,
-    TimeComponent,
-    SearchComponent,
-    NotificationsComponent,
     ClientComponent,
     TradeaccountsComponent,
     LoginComponent,
@@ -209,7 +200,7 @@ import { from } from 'rxjs';
     PopoverModule.forRoot(), TooltipModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent, TranslationsFilterComponent],
+    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent],
   exports: [
     PhoneMaskDirective
   ],

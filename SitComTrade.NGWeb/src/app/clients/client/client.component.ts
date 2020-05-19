@@ -8,6 +8,8 @@ import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 import { CountryService } from 'src/app/services/country.service';
+import { CommentsComponent } from 'src/app/clients_info/comments/comments.component';
+import { CommentsService } from 'src/app/clients_info/comments/comments.service';
 
 @Component({
   selector: 'app-client',
@@ -43,9 +45,10 @@ bindLoginData: any;
   Editable: boolean;
   countValue: any[];
   countLength: number;
+  comments: any;
 // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
-              private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
+              private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService, private commentsService: CommentsService) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
@@ -277,5 +280,28 @@ this.countLength = this.countValue.length;
     this.spinnerService.show();
     this.userDetails();
   }
+  // by clicking on 3 dots open comment componet
+  openCommentsComponent(rowId) {
+    const initialState = {
+      title:'',
+    };
+    this.commentsService.getComments(rowId).subscribe(res => {
+      // this.spinnerService.show();
+      this.comments = res;
+      console.log('coment', res);
+    });
+    this.bsModalRef = this.modalService.show(CommentsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    
+  }
+  // userComments() {
+  //   const details = +this.route.snapshot.paramMap.get('RowId');
+  //   this.commentsService.getComments(details).subscribe(res => {
+  //     // this.spinnerService.show();
+  //     this.comments = res;
+  //     console.log('comments', res);
+  //   });
+  // }
+
 
 }

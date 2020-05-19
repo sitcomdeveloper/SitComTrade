@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   API_URL: 'http://topseedtech.in/api/'
-  // API_URL: 'http://localhost:59122/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file
