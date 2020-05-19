@@ -14,8 +14,6 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
-
-import { AgGridModule } from 'ag-grid-angular';
 import { AuthpipePipe } from './authpipe.pipe';
 
 import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -206,7 +204,6 @@ import { from } from 'rxjs';
     HttpClientModule,
     ModalModule.forRoot(),
     AppRoutingModule, FormsModule, ReactiveFormsModule,
-    AgGridModule.withComponents(null),
     // TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
     PopoverModule.forRoot(), TooltipModule.forRoot()
