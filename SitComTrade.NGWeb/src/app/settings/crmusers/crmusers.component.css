@@ -1,3 +1,17 @@
+[class*=icomark-]::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+}
+.content-tabs .nav-tabs>li>a:after, .content-tabs:after, .main-tabs .nav-tabs>li>a:after, .main-tabs:after, .switcher .checkcontrol:before, [class*=icomark-]:after {
+    content: "";
+}
 .email-cell-content {
     width: 89px;
 }
@@ -325,21 +339,13 @@ td.email-cell {
 .el-inline-block {
     display: inline-block!important;
 }
-[class*=icomark-]:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 15px;
-    height: 15px;
-    background: url(/assets/images/sprite.png) -9999px no-repeat;
-}
+
 [class*=icomark-].icomark-invisible.active, [class*=icomark-].icomark-visible.active, a[class*=icomark-].icomark-invisible:hover, a[class*=icomark-].icomark-visible:hover {
     background: #12baee;
 }
-
+[class*=icomark-].icomark-glasses.active, a[class*=icomark-].icomark-glasses:hover {
+    background: #eeb812;
+}
 [class*=icomark-] {
     text-indent: -9999px;
     overflow: hidden;
@@ -358,4 +364,33 @@ td.email-cell {
 }
 [class*=icomark-].icomark-invisible:after {
     background-position: -15px -865px;
+}
+.roles-permissions .item .iconset {
+    margin-right: 15px;
+}
+
+.form-horizontal .iconset {
+    margin: -2px 0;
+}
+.iconset {
+    background: #dde7f9;
+    height: 25px;
+    margin: 4px 0;
+    padding: 2px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+}
+[class*=icomark-].icomark-glasses.active:after, a[class*=icomark-].icomark-glasses:hover:after {
+    background-position: -30px -910px;
+}
+[class*=icomark-].icomark-pen:after {
+    background-position: -45px -865px;
+}
+[class*=icomark-].icomark-pen.active, a[class*=icomark-].icomark-pen:hover {
+    background: #0fc285;
+}
+[class*=icomark-].icomark-asterisk.active, a[class*=icomark-].icomark-asterisk:hover {
+    background: #e25732;
 }
