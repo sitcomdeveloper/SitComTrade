@@ -276,7 +276,7 @@ td.email-cell {
     top: 0!important;
     width: 16px!important;
     height: 16px!important;
-    opacity: 0;
+    opacity: 1;
     margin: 0!important;
 }
 .roles-permissions .item-heading .checkbox-inline {
@@ -285,13 +285,77 @@ td.email-cell {
     min-width: 175px;
     cursor: default;
 }
-.input-checkbox span, .input-radio span {
+/* .input-checkbox span, .input-radio span {
     display: block;
     width: 16px;
     height: 16px;
 
     background: url(/assets/images/sprite.png) -9999px -9999px no-repeat;
-}
+} */
 .btn, .btn-danger.active, .btn-danger:active, .btn-default.active, .btn-default:active, .btn-info.active, .btn-info:active, .btn-primary.active, .btn-primary:active, .btn-warning.active, .btn-warning:active, .btn.active, .btn:active, .dropdown-menu>.disabled>a:focus, .dropdown-menu>.disabled>a:hover, .form-control, .navbar-toggle, .open>.dropdown-toggle.btn-danger, .open>.dropdown-toggle.btn-default, .open>.dropdown-toggle.btn-info, .open>.dropdown-toggle.btn-primary, .open>.dropdown-toggle.btn-warning {
     background-image: none;
+}
+.checkbox-inline label {
+    display: inline-flex;
+    /* vertical-align: middle; */
+    padding-right: ;
+}
+.roles-permissions .item-content {
+    border: 1px solid #dee5f2;
+    border-width: 1px 0 0;
+    padding: 10px 0;
+    width: 100%!important;
+}
+.roles-permissions .item-body .toprow {
+    margin: 0 0 15px;
+}
+.roles-permissions .item-body .form-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.roles-permissions .item .col:first-child {
+    border-width: 0;
+   min-width: 345px;
+    font-weight: 500;
+}
+.roles-permissions .iconmeans>div {
+    margin: 0 0 0 20px;
+}
+
+.el-inline-block {
+    display: inline-block!important;
+}
+[class*=icomark-]:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+}
+[class*=icomark-].icomark-invisible.active, [class*=icomark-].icomark-visible.active, a[class*=icomark-].icomark-invisible:hover, a[class*=icomark-].icomark-visible:hover {
+    background: #12baee;
+}
+
+[class*=icomark-] {
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 21px;
+    height: 21px;
+    margin: 0 5px 0 0;
+    border-radius: 50%;
+}
+.iconset, [class*=icomark-] {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+[class*=icomark-].icomark-invisible.active:after, a[class*=icomark-].icomark-invisible:hover:after {
+    background-position: -15px -910px;
+}
+[class*=icomark-].icomark-invisible:after {
+    background-position: -15px -865px;
 }
