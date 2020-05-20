@@ -23,7 +23,9 @@ body {
     color: #fff;
     height: 82px;
 }
-
+.email-header-scrollbar {
+    padding-right: 17px;
+}
 i.fa.fa-refresh {
     padding-right: 8px;
     color: #dee2e6;
@@ -1090,6 +1092,22 @@ tr.tablectn {
         color: #fff;
         font-size: 22px;
         line-height: 18px;
+    }
+    .tabletxt {
+        margin: 0;
+        color: #8da5ba;
+        line-height: 1.461538;
+        white-space: nowrap;
+        width: auto;
+        font-weight: 500!important;
+        border-bottom: transparent;
+    }
+    .modal870
+    {
+        max-width: 870px;
+    }
+    .width100 {
+        width: 100%;
     }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
