@@ -284,14 +284,19 @@ this.countLength = this.countValue.length;
   }
   // by clicking on 3 dots open comment componet
   openCommentsComponent(rowId) {
-    const initialState = {
-      title:'',
+    const config: ModalOptions = {
+      backdrop: 'static',
+      class: 'modal-lg',
+      keyboard: false,
+      animated: true,
+      ignoreBackdropClick: true,
+      initialState: {
+        moreIdInfo: rowId,
+        iscustomevalue: "more"
+      }
     };
-    this.clientService.getComments(rowId).subscribe(res => {
-      this.comments = res;
-      console.log('coment', res);
-    });
-    this.bsModalRef = this.modalService.show(CommentsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    
+    this.bsModalRef = this.modalService.show(CommentsComponent,config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
     
   }

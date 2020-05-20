@@ -18,8 +18,10 @@ export class CommentsComponent implements OnInit {
   infoComment: any;
   commentsForm: FormGroup;
   dltAllComment: any;
+  moreIdInfo: number
   dltAll: any;
   getLoginDetails: any;
+  iscustomevalue: any;
   bindLoginData: any;
   detail: number;
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
@@ -36,15 +38,26 @@ export class CommentsComponent implements OnInit {
     this.commentsForm = this.fb.group({
       commentarea: ['']
     });
-    this.userComments();
-    this.editComment();
+    if(this.iscustomevalue ==='more') {
+      
+      this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
+        // this.spinnerService.show();
+        this.comments = res;
+        console.log('comments', res);
+      });
+    } else {
+      this.userComments();
+      this.editComment();
+    }
+    
+    
   }
   // get all comments
   userComments() {
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    this.commentsService.getComments(details).subscribe(res => {
-      this.spinnerService.show();
+    this.commentsService.getComments(this.detail).subscribe(res => {
+      // this.spinnerService.show();
       this.comments = res;
       console.log('comments', res);
     });
