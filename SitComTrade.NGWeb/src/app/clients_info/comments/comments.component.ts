@@ -24,7 +24,7 @@ export class CommentsComponent implements OnInit {
   detail: number;
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
-              private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) { }
+              private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {this.userComments(); }
    bsModalRef: BsModalRef;
 
   ngOnInit() {

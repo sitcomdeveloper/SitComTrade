@@ -259,38 +259,9 @@
           </div>
         </div> -->
         <div><app-additional-info></app-additional-info></div>
-        <!-- <div id="tasks"></div> -->
-        <div class="card mb20"  id="tasks" style="padding: 15px;
+        <!-- <div class="card mb20"  id="tasks" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingSeven">
-
-            <!-- <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false"
-              aria-controls="collapseSeven" id="tasks" style="color:#000;">
-              <h5 class="mb-0">
-
-                Tasks
-              </h5>
-              <div class="box-control pull-right1">
-                <div class="records-control-switcher" data-rule="count-record-selector" style="display: inline-block;">
-                   <label>Records per page</label>
-                   <select class="form-control" name="RecordsPerPageSelector" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c">
-                      <option value="5">5</option>
-                      <option value="10">10</option>
-                      <option value="15">15</option>
-                      <option value="20">20</option>
-                      <option value="50">50</option>
-                      <option value="100">100</option>
-                   </select>
-                </div>
-                <a href="javascript:void(0);" class="ico-add ico-sz3" >
-                  <i class="fa fa-plus"></i>
-                
-                </a>
-          
-             </div>
-              <i class="fa fa-chevron-down collpsicon"></i>
-
-            </a> -->
             <div class="box-heading" style="width:100%;">
               <div class="box-control pull-right">
                  <div class="records-control-switcher showrcrd" data-rule="count-record-selector" style="display: none;">
@@ -324,7 +295,8 @@
               <app-tasks-info></app-tasks-info>
             </div>
           </div>
-        </div>
+        </div> -->
+        <div><app-tasks-info></app-tasks-info></div>
         <div *ngIf="realAccountSection"> <app-trade-accounts></app-trade-accounts></div>
         <div class="card mb20" style="padding: 15px;padding-left: 0;">
     
@@ -412,27 +384,7 @@
     </div>
   </div>
 </div>
-<!------------------create task model------------->
-<div class="modal" id="createtask">
-  <div class="modal-dialog modal750">
-    <div class="modal-content">
-      <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title popupheader">
-          <i _ngcontent-jvq-c1="" class="fa fa-plus "></i>
-          <span>
-          CREATE TASK
-          </span>
-        </h1>
-        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
-      </div>
-      <div class="modal-body">
-        <app-create-task></app-create-task>
 
-
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

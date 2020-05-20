@@ -10,6 +10,7 @@ import { GeneralInfoService } from 'src/app/clients_info/general-info/general-in
 import { CountryService } from 'src/app/services/country.service';
 import { CommentsComponent } from 'src/app/clients_info/comments/comments.component';
 import { CommentsService } from 'src/app/clients_info/comments/comments.service';
+import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
 
 @Component({
   selector: 'app-client',
@@ -73,6 +74,7 @@ bindLoginData: any;
     });
     this.userDetails();
     this.getcountryName();
+    
   }
   userDetails() {
     // this.bindLoginData.Id
@@ -285,23 +287,24 @@ this.countLength = this.countValue.length;
     const initialState = {
       title:'',
     };
-    this.commentsService.getComments(rowId).subscribe(res => {
-      // this.spinnerService.show();
+    this.clientService.getComments(rowId).subscribe(res => {
       this.comments = res;
       console.log('coment', res);
     });
-    this.bsModalRef = this.modalService.show(CommentsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
+    this.bsModalRef = this.modalService.show(CommentsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     
   }
-  // userComments() {
-  //   const details = +this.route.snapshot.paramMap.get('RowId');
-  //   this.commentsService.getComments(details).subscribe(res => {
-  //     // this.spinnerService.show();
-  //     this.comments = res;
-  //     console.log('comments', res);
-  //   });
-  // }
-
+  openTasksinfoComponent(rowId) {
+    const initialState = {
+      title:'',
+    };
+    this.clientService.getComments(rowId).subscribe(res => {
+      this.comments = res;
+      console.log('coment', res);
+    });
+    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
 
 }

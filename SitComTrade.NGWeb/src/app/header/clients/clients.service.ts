@@ -27,4 +27,7 @@ export class ClientsService {
   dltClient(obj): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj , {});
   }
+  getComments(obj: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/GetCommentByOwnerId/' + obj, {});
+  }
 }

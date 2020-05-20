@@ -1612,10 +1612,10 @@
               <div _ngcontent-bih-c1="" class="dropdown-menu pop pull-right" x-placement="bottom-start" style="position: absolute; transform: translate3d(-102px, 42px, 0px); top: 0px; left: 0px; will-change: transform;">
                 <ul class="popcontent"><li>
                   <a href="javascript:void(0);" class="ico-sz3 ico-comments dim comments-toggle" aria-describedby="431251" title="Comments" style="opacity:1">
-                  <i class="fa fa-file" aria-hidden="true" (click)="openCommentsComponent(item.Id)"></i>
+                  <i class="fa fa-file" aria-hidden="true" id="clientcomment" (click)="openCommentsComponent(item.Id)"></i>
                 </a></li>
-                  <li><a href="javascript:void(0);" class="ico-sz3 ico-addtask dim" data-toggle="modal" data-target="#popup-add-task" title="Tasks" style="opacity:1">
-                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                  <li><a href="javascript:void(0);" class="ico-sz3 ico-addtask dim" data-toggle="modal" data-target="#createtask" title="Tasks" style="opacity:1">
+                    <i class="fa fa-tasks" aria-hidden="true" (click)="openTasksinfoComponent(item.Id)"></i>
                   </a></li>
                 </ul>
                 
@@ -4941,6 +4941,23 @@
 <ng4-loading-spinner> </ng4-loading-spinner>
 
 <app-footer></app-footer>
-
-
+<!-- CREATE TASk -->
+<!-- <div class="modal" id="createtask">
+  <div class="modal-dialog modal750">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title popupheader">
+          <i _ngcontent-jvq-c1="" class="fa fa-plus "></i>
+          <span>
+          CREATE TASK
+          </span>
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-create-task></app-create-task>
+      </div>
+    </div>
+  </div>
+</div> -->
 

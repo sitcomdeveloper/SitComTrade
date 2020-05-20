@@ -264,16 +264,15 @@ $('#edit-comment').click(function(){
     
 });
 </script>
-<!-- <script>
-  $(document).ready(function () {
-$('#edit12').click(function(){
-  $("#qwe").show();
-  $("#accordion1").hide();
+<script>
   
-})
-
-});
-</script> -->
+  var modal = document.getElementById('clientcomment');
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
 
 </body>
 

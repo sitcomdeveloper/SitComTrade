@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TasksInfoService } from './tasks-info.service';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-tasks-info',
@@ -13,14 +15,15 @@ export class TasksInfoComponent implements OnInit {
   getInfoTasks: any;
 
 
-  constructor(private taskInfoService: TasksInfoService, private modalService: BsModalService) { }
+  constructor(private taskInfoService: TasksInfoService, private modalService: BsModalService, private route: ActivatedRoute) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
     this.getAllTask();
   }
   getAllTask() {
-    this.taskInfoService.getTask(this.getUserTasks).subscribe(res => {
+    const details = +this.route.snapshot.paramMap.get('selectedItem');
+    this.taskInfoService.getTask(details).subscribe(res => {
       this.getInfoTasks = res.reverse();
       console.log('taskget', res);
     });
