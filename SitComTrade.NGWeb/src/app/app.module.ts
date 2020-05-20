@@ -107,6 +107,7 @@ import { TranslationsFilterComponent } from './settings/translations/translation
 import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
+import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
 
 
 @NgModule({
@@ -188,6 +189,7 @@ import { SrchPipe } from './clients/client/srch.pipe';
     ImportedClientsComponent,
     LiveDetailComponent,
     SrchPipe,
+    OoinfoComponent,
   ],
   imports: [
     BrowserModule,
