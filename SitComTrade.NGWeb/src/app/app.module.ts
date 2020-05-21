@@ -13,6 +13,7 @@ import { BlockCopyPasteDirective } from './block-copy-paste.directive';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 import { AuthpipePipe } from './authpipe.pipe';
 
@@ -199,7 +200,7 @@ import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.compone
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     // TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    PopoverModule.forRoot(), TooltipModule.forRoot()
+    PopoverModule.forRoot(), TooltipModule.forRoot(),CollapseModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
     CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent],

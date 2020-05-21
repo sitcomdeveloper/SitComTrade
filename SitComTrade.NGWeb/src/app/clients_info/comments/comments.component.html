@@ -1,4 +1,9 @@
-
+<div class="modal-header">
+  <h4 class="modal-title pull-left"> </h4>
+  <button type="button" class="close pull-right" aria-label="Close" data-dismiss="modal" *ngIf = closeModal>
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <div class="card mb20">
    <div class="card-header1 container" role="tab" id="headingTwo">
      <h5 class="mb-0 mbt">
@@ -57,7 +62,6 @@
    </form>
 </div>
   <!------------comment here----->
-  <pre>hell</pre>
   <div class="comments-list container">
     <div class="comment form-control1" data-comment-id="635171" *ngFor = "let comment of comments">
        <pre class="comment-body " >{{comment?.CommentDescription}}</pre>

@@ -18,6 +18,8 @@ export class CreateTaskComponent implements OnInit {
   getUserTasks: any;
   getInfoTasks: any;
   detail: number;
+  moreId: number;
+  isstaticvalue: any;
 
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder, private route: ActivatedRoute) { }
 
@@ -34,9 +36,38 @@ export class CreateTaskComponent implements OnInit {
       taskName: ['']
 
     });
-    this.getAllTask();
+    if(this.isstaticvalue === 'more') {
+      this.getStatus.forEach(element => {
+        if (element.Id === +this.taskInfoForm.value.status) {
+          this.taskInfoForm.value.statusName = element.Name;
+        }
+      });
+      this.getTasks.forEach(element => {
+        if (element.Id === +this.taskInfoForm.value.type) {
+          this.taskInfoForm.value.taskName = element.Name;
+        }
+      });
+      const obj = {
+        OwnerId: this.moreId,
+        TaskStatusId: this.taskInfoForm.value.status,
+  TaskTypeId: this.taskInfoForm.value.type,
+  NotiTrasportId: 1,
+  TaskType: this.taskInfoForm.value.taskName,
+  Description: this.taskInfoForm.value.description,
+  TaskStatus: this.taskInfoForm.value.statusName,
+  NotiTimeBefore: this.taskInfoForm.value.notitimebefore
+      };
+      this.taskInfoService.insertTask(obj).subscribe(res => {
+      this.userTasks = res;
+      // window.location.reload();
+      console.log('inserttasks', res);
+    });
+    } else {
+      this.getAllTask();
     this.taskType();
     this.taskStatus();
+    }
+    
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');

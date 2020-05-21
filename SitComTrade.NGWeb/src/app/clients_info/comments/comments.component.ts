@@ -22,11 +22,13 @@ export class CommentsComponent implements OnInit {
   dltAll: any;
   getLoginDetails: any;
   iscustomevalue: any;
+  closeModal = false;
   bindLoginData: any;
   detail: number;
+  addcommentsby3Dots: string;
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
-              private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {this.userComments(); }
+              private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {}
    bsModalRef: BsModalRef;
 
   ngOnInit() {
@@ -38,17 +40,32 @@ export class CommentsComponent implements OnInit {
     this.commentsForm = this.fb.group({
       commentarea: ['']
     });
+    // for getting id from client page.Opening popup by  clicking on 3-dots
     if(this.iscustomevalue ==='more') {
-      
+      this.closeModal = true;
       this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
         // this.spinnerService.show();
         this.comments = res;
         console.log('comments', res);
       });
-    } else {
+    } else if(this.addcommentsby3Dots === 'add') {
+      const obj = {
+        CommentDescription: this.commentsForm.value.commentarea,
+        OwnerId: this.moreIdInfo
+      };
+      this.commentsService.insertComments(obj).subscribe(res => {
+        // this.spinnerService.show();
+        this.insert = res;
+        this.userComments();
+        console.log('insertcomment', res);
+        this.commentsForm.reset();
+      });
+    } 
+    else {
       this.userComments();
       this.editComment();
     }
+    
     
     
   }
@@ -105,5 +122,8 @@ openDltComment(userId) {
       // after delete refresh all the data
       this.userComments();
     });
+  }
+  hideModal() {
+    this.bsModalRef.hide();
   }
 }
