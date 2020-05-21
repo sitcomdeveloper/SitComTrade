@@ -127,37 +127,45 @@ bindLoginData: any;
     this.router.navigateByUrl('/importclients');
   }
   // checked count implemantation
-  deletbtn(val, userid) {
-    this.UserId = userid;
-    if (val === true) {
-this.rowData.forEach(element =>  {
-if  (userid === element.Id) {
-element.IsEditable = true;
-this.countValue = this.rowData.filter(checkedCount => {
-  if (checkedCount.IsEditable === true) {
-    return checkedCount;
-}
-});
-this.deletbtnn = false;
-this.countLength = this.countValue.length;
-}
-});
-} else {this.rowData.forEach(element =>  {
-  if  (userid === element.Id) {
-  element.IsEditable = false;
-  this.countValue = this.rowData.filter(checkedCount => {
-    if (checkedCount.IsEditable === true) {
-      return checkedCount;
-}
-});
-  this.deletbtnn = true;
+//   deletbtn(val, userid) {
+//     this.UserId = userid;
+//     if (val === true) {
+// this.rowData.forEach(element =>  {
+// if  (userid === element.Id) {
+// element.IsEditable = true;
+// this.countValue = this.rowData.filter(checkedCount => {
+//   if (checkedCount.IsEditable === true) {
+//     return checkedCount;
+// }
+// });
+// this.deletbtnn = false;
+// this.countLength = this.countValue.length;
+// }
+// });
+// } else {this.rowData.forEach(element =>  {
+//   if  (userid === element.Id) {
+//   element.IsEditable = false;
+//   this.countValue = this.rowData.filter(checkedCount => {
+//     if (checkedCount.IsEditable === true) {
+//       return checkedCount;
+// }
+// });
+//   this.deletbtnn = true;
 
-  this.countLength = this.countValue.length;
-  }
-  });
-}
+//   this.countLength = this.countValue.length;
+//   }
+//   });
+// }
 
+//   }
+deletbtn(val, userid) {
+  this.UserId = userid;
+  if (val === true) {
+    this.deletbtnn = false;
+  } else {
+    this.deletbtnn = true;
   }
+}
   // part of add new client modal
   newClient() {
     const initialState = {
@@ -173,6 +181,7 @@ this.countLength = this.countValue.length;
   }
   // delete client
   deleteClient(userid) {
+    console.log('dltid',userid);
     const initialState = {
       title: 'Delete Item',
       userId: this.UserId,
@@ -292,7 +301,8 @@ this.countLength = this.countValue.length;
       ignoreBackdropClick: true,
       initialState: {
         moreIdInfo: rowId,
-        iscustomevalue: "more"
+        iscustomevalue: "more",
+        addcommentsby3Dots: "add"
       }
     };
     
@@ -301,15 +311,13 @@ this.countLength = this.countValue.length;
     
   }
   openTasksinfoComponent(rowId) {
-    const initialState = {
-      title:'',
-    };
-    this.clientService.getComments(rowId).subscribe(res => {
-      this.comments = res;
-      console.log('coment', res);
-    });
-    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
-    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // const initialState = {
+    //   title:'',
+    // };
+    // this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    // this.bsModalRef.content.closeBtnName = 'Cancel';
+    moreId: rowId
+    isstaticvalue: "more"
   }
 
 }

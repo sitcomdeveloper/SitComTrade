@@ -1,4 +1,4 @@
-
+{{chlength}}
 <div class="container-fluid ">
   <div class="row fist1">
     <div class="col-md-12 sub-header">
@@ -6,7 +6,9 @@
         <div _ngcontent-eal-c3="" class="row">
            <div _ngcontent-eal-c3="" class="tools-panel-addon">
             <div class="jsgrid-items-counter" *ngIf=all >
-              <span>{{countLength}}   {{UserLength}} items</span>
+               <span id="chked"> </span>
+              <span>  {{UserLength}} items</span>
+             
               <!-- checked from -->
             </div>
             <div class="jsgrid-items-counter" *ngIf=accounts >
@@ -122,7 +124,7 @@
         <tr class="tablewidth">
           <th class="chkCol">
             <div class="cell-content">
-              <div class=""><span class=""><input type="checkbox" id="ckbCheckAll"></span></div>
+              <div class=""><span class=""><input type="checkbox" id="ckbCheckAll" onclick="checkboxcheck()"></span></div>
             </div>
           </th>
 
@@ -1464,7 +1466,7 @@
           <td class="chkCol">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)" onclick="checkboxcheck()"></span>
                 <span><i class="fa fa-star" title="Clear filter"></i></span></div>
             </div>
           </td>
@@ -1649,7 +1651,8 @@
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
                           <div class="jsgrid-cell-content">
-                            <input class="form-control valid" name="FirstName" formControlName="id" type="text"  aria-required="true" aria-invalid="false"></div>    
+                            <input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="id" type="text"  aria-required="true" aria-invalid="false" style="display: none;">
+                          </div>    
             
                         </a>
                       </div>
@@ -1660,7 +1663,8 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="firstname" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content">
+                            <input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="firstname" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1671,7 +1675,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="lastname" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="lastname" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1682,10 +1686,8 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <!-- <div class="jsgrid-cell-content">
-                            <input class="form-control valid" name="FirstName" formControlName="countryname" type="text"  aria-required="true" aria-invalid="false">
-                          </div>     -->
-                          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+                         
+                          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol disabledd" onmousedown="return false" onselectstart="return false"
                                                    formControlName="countryname"  data-live-search="true" id="lunc"
                                                    title="Please select a lunch ..." >
                                                    <option ngcontent-qpo-c3="">Choose your Country</option>
@@ -1703,7 +1705,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="email" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="email" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1714,7 +1716,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="type" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="type" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1725,7 +1727,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="phone" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="phone" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1736,7 +1738,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="owner" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="owner" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1747,7 +1749,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid"  name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1758,7 +1760,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="createddate" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="createddate" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1769,7 +1771,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="campaignid" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="campaignid" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1780,19 +1782,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="tag" type="text"  aria-required="true" aria-invalid="false"></div>    
-            
-                        </a>
-                      </div>
-                      
-                    </div>
-                  </td>
-            
-                  <td class="">
-                    <div class="">
-                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
-                        <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="tag1" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="tag" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -1804,24 +1794,26 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="ftd" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="tag1" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
                       
                     </div>
                   </td>
-                  <!-- <td class="">
-                    <div class="">
-                      <div data-display-for="27_DeskId">
-                        <div class="text-ellipsis" style="text-align:center">
             
-                          <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                            [ngStyle]="{'color': item.FTD ? 'green':'grey' }"></i>
-                        </div>
+                  <td class="">
+                    <div class="">
+                      <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+                        <a href="javascript:void(0)">
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="ftd" type="text"  aria-required="true" aria-invalid="false"></div>    
+            
+                        </a>
                       </div>
+                      
                     </div>
-                  </td> -->
+                  </td>
+                  
                   <td class="">
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
@@ -1837,7 +1829,7 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="desk" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content"><input class="form-control valid disabledd" onmousedown="return false" onselectstart="return false" name="FirstName" formControlName="desk" type="text"  aria-required="true" aria-invalid="false"></div>    
             
                         </a>
                       </div>
@@ -4943,7 +4935,7 @@
 
 <app-footer></app-footer>
 <!-- CREATE TASk -->
-<!-- <div class="modal" id="createtask">
+<div class="modal" id="createtask">
   <div class="modal-dialog modal750">
     <div class="modal-content">
       <div class="modal-header" style="height: 4rem;">
@@ -4960,5 +4952,5 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
