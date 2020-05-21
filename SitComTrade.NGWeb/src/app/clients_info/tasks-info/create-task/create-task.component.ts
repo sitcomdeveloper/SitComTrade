@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TasksInfoService } from '../tasks-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-
+// import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -36,7 +36,10 @@ export class CreateTaskComponent implements OnInit {
       taskName: ['']
 
     });
-    if(this.isstaticvalue === 'more') {
+    this.getAllTask();
+    this.taskType();
+    this.taskStatus();
+    if(this.isstaticvalue === 'most') {
       this.getStatus.forEach(element => {
         if (element.Id === +this.taskInfoForm.value.status) {
           this.taskInfoForm.value.statusName = element.Name;

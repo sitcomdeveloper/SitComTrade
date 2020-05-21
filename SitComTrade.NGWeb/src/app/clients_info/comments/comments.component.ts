@@ -26,6 +26,7 @@ export class CommentsComponent implements OnInit {
   bindLoginData: any;
   detail: number;
   addcommentsby3Dots: string;
+  bsModal: any;
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
               private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {}
@@ -124,6 +125,6 @@ openDltComment(userId) {
     });
   }
   hideModal() {
-    this.bsModalRef.hide();
+    this.bsModal.hide();
   }
 }

@@ -9,7 +9,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 import { CountryService } from 'src/app/services/country.service';
 import { CommentsComponent } from 'src/app/clients_info/comments/comments.component';
-import { CommentsService } from 'src/app/clients_info/comments/comments.service';
 import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
 
 @Component({
@@ -49,7 +48,7 @@ bindLoginData: any;
   comments: any;
 // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
-              private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService, private commentsService: CommentsService) { }
+              private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
@@ -311,13 +310,20 @@ deletbtn(val, userid) {
     
   }
   openTasksinfoComponent(rowId) {
-    // const initialState = {
-    //   title:'',
-    // };
-    // this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
-    // this.bsModalRef.content.closeBtnName = 'Cancel';
-    moreId: rowId
-    isstaticvalue: "more"
+    const config: ModalOptions = {
+      backdrop: 'static',
+      class: 'modal-lg',
+      keyboard: false,
+      animated: true,
+      ignoreBackdropClick: true,
+      initialState: {
+        moreId: rowId,
+        isstaticvalue: "most"
+        
+      }
+    };
+    this.bsModalRef = this.modalService.show(CreateTaskComponent, config);
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    
   }
-
 }
