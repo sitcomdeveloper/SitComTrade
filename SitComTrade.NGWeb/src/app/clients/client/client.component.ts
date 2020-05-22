@@ -113,12 +113,18 @@ bindLoginData: any;
     // this.router.navigateByUrl('/info');
     // console.log('Selected item Id: ', selectedItem.ItemId);
     // console.log(selectedItem);
-    // this.router.navigate(['/info', selectedItem]);
-    const url = this.router.serializeUrl(
-      this.router.createUrlTree(['/info', selectedItem])
-    );
-    window.open(url, '_blank');
+    this.router.navigate(['/info', selectedItem]);
+    // const url = this.router.serializeUrl(
+    //   this.router.createUrlTree(['/info', selectedItem])
+    // );
+    // window.open(url, '_blank');
   }
+  // userClck(selectedItem: any) {
+  //   const url = this.router.serializeUrl(
+  //     this.router.createUrlTree(['/info', selectedItem])
+  //   );
+  //   window.open(url, '_blank');
+  // }
   newUser() {
     this.router.navigateByUrl('/user');
   }
@@ -191,6 +197,7 @@ deletbtn(val, userid) {
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
+    
       this.userDetails();
     });
   }

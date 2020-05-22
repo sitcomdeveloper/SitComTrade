@@ -155,12 +155,12 @@ if (val === true) {
       console.log('Group', result);
     });
    }
-   accountLabel() {
-    this.show = true;
-    this.hiddden = true;
-   }
-   leadLabel() {
-    this.show = true;
-    this.hiddden = false;
-   }
+  //  leadLabel() {
+  //   this.show = true;
+  //   this.hiddden = false;
+  //  }
+  //  accountLabel() {
+  //   this.show = true;
+  //   this.hiddden = true;
+  //  }
 }

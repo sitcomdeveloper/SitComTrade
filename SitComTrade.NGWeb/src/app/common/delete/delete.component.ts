@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { CommentsService } from 'src/app/clients_info/comments/comments.service';
 import { ClientsService } from 'src/app/header/clients/clients.service';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class DeleteComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   dltclientRes: any;
-  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService) {}
+  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService) {}
 // delete comment
 id: number;
 dltCmnt: boolean;
@@ -48,6 +49,7 @@ title: any;
   }
   dltClient() {
     this.clientService.dltClient(this.userId).subscribe(res => {
+      this.spinnerService.show();
       this.dltclientRes = res;
       this.clddata.emit(res);
       console.log('dltclientRes', res);
