@@ -860,9 +860,17 @@ i.fa.fa-refresh {
               padding-left: 15px;
               margin-right: auto;
               margin-left: auto;
-              background: #fff;
+              /* background: #fff; */
               z-index: 999999999;
               padding: 10px;
+}
+.nnone
+{
+    display: none;
+}
+.tablectn1:hover
+{
+    background:transparent!important;
 }
 tr.tablectn {
     background: #fff;
