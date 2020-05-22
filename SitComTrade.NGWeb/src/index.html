@@ -272,6 +272,26 @@ $('#edit-comment').click(function(){
     console.log('len', chlength);
   } 
   </script>
+  <script type="application/javascript">
+    function file_name_show()
+    {
+       alert('ok');
+       var files = [];
+        for (var i = 0; i < $(this)[0].files.length; i++) {
+            files.push($(this)[0].files[i].name);
+        }
+        $(this).next('.custom-file-label').html(files.join(', '));
+    }
+    $('.custom-file input').change(function (e) {
+        var files = [];
+        for (var i = 0; i < $(this)[0].files.length; i++) {
+            files.push($(this)[0].files[i].name);
+        }
+        files.join(', ');
+        //$(this).next('.custom-file-label').html(files.join(', '));
+    });
+
+   </script>
 </body>
 
 </html>

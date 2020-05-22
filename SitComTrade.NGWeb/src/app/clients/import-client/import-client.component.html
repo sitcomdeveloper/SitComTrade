@@ -22,9 +22,11 @@
                      <i class="fa fa-upload" aria-hidden="true">&nbsp;</i>
                        Drag your document here or
                         <a href="#">Browse Files
-                            <input type="file" name="files[]" multiple="multiple" ></a>
-                        </div>
-                   <div class="files"></div>
+                            <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()" class="custom-file">
+                        </a>
+                  </div>
+                  
+                   <div class="files">excel</div>
                    <div class="fileupload-progress fade">
                       <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                          <div class="progress-bar progress-bar-success" style="width:0%;"></div>
