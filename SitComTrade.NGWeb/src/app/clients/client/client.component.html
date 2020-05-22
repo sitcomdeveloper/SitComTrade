@@ -3184,7 +3184,7 @@
           <!-- ------------------Editing MODE for account-------------------------------------------------------------- -->
                 
           <div  *ngIf = actinfo.IsEditable class="editingclient"style="" [formGroup]="clientForm">  
-            <tr class="tablectn" >
+            <tr class="tablectn tablectn1" >
         
               <td  style="width: 20px!important;">
                 <div class="" style="width: 20px!important;">
@@ -3399,7 +3399,8 @@
                   
                 </div>
               </td>
-              <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
+              <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" style="background: #f2f2f2;
+              padding-right: 7px;">
                 <div class="dropleft droptop">
           
                     <input class="jsgrid-button jsgrid-update-button" type="button" title="Update" (click)="saveDetails(actinfo.Id)" >
@@ -4539,7 +4540,7 @@
            <!-- ------------------Editing MODE for LEAD-------------------------------------------------------------- -->
                 
            <div  *ngIf = leadinfo.IsEditable class="editingclient"style="" [formGroup]="clientForm">  
-            <tr class="tablectn" >
+            <tr class="tablectn tablectn1" >
         
               <td  style="width: 20px!important;">
                 <div class="" style="width: 20px!important;">
@@ -4759,7 +4760,8 @@
                 </div>
               </td> -->
               
-              <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center">
+              <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" style="background: #f2f2f2;
+              padding-right: 7px;">
                 <div class="dropleft droptop">
           
                     <input class="jsgrid-button jsgrid-update-button" type="button" title="Update" (click)="saveDetails(leadinfo.Id)" >
