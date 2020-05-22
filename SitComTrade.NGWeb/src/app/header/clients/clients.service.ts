@@ -27,4 +27,8 @@ export class ClientsService {
   dltClient(obj): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj , {});
   }
+  importClient(imprtclnt): Observable<any> {
+    
+    return this.http.post<any>('http://localhost/shanky/angu_api/user_api.php', imprtclnt);
+  }
 }
