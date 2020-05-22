@@ -35,12 +35,7 @@ namespace SitComTech.Domain.Services
             Client Client = base.Queryable().FirstOrDefault(x => x.Active && !x.Deleted && x.Id == (long)Id);
             return Client;
         }
-        public void Insert(Client entity)
-        {
-            if (entity == null)
-                throw new ArgumentNullException("Client");
-            _repository.Insert(entity);
-        }
+        
         public Client InsertClient(ClientDataVM clientdata)
         {
             try

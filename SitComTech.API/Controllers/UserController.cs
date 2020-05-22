@@ -7,8 +7,7 @@ using System.Collections.Generic;
 using System.Web.Http;
 
 namespace SitComTech.API.Controllers
-{
-    [Authorize]
+{    
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
@@ -86,13 +85,6 @@ namespace SitComTech.API.Controllers
         public string GetCountryISDCodeById(int countryid)
         {
             return _userService.GetCountryISDCodeById(countryid);
-        }
-
-        [HttpGet]
-        [Route("GetLeadStatusList")]
-        public List<UserResponseStatus> GetLeadStatusList()
-        {
-            return _userService.GetLeadStatusList();
         }
 
         [HttpPost]

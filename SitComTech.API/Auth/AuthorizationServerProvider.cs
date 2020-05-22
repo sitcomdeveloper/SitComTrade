@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using Unity;
 
 namespace SitComTech.API.Auth
@@ -54,26 +53,24 @@ namespace SitComTech.API.Auth
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        {            
+        {
             userService = UnityConfig.GetConfiguredContainer().Resolve<IUserService>();
             try
             {
-                User user = userService.IsAuthenticated(new UserVM { UserName = context.UserName.Trim(), Password = context.Password.Trim() }).FirstOrDefault();
-
+                User user = await userService.AuthUser(new UserVM { UserName = context.UserName.Trim(), Password = context.Password.Trim() });
+                if (user == null)
+                {
+                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    return;
+                }
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
-                identity.AddClaim(new Claim("FullName", user.FirstName+" "+user.LastName));
-                identity.AddClaim(new Claim("Phone", user.Phone??""));
-                identity.AddClaim(new Claim("Mobile", user.Mobile??""));                
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));                
                 var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
-                    {
-                        "as:client_id", (context.ClientId == null) ? string.Empty : context.ClientId
-                    },
-                    {
-                        "userName", context.UserName
-                    }
+                    { "as:client_id", context.ClientId ??string.Empty },
+                    { "UserId",user.Id.ToString() },
+                    { "userName", context.UserName },
+                    { "FullName",user.FirstName+" "+user.LastName },
                 });
 
                 var ticket = new AuthenticationTicket(identity, props);
@@ -85,6 +82,7 @@ namespace SitComTech.API.Auth
                 throw;
             }
         }
+
         public override Task MatchEndpoint(OAuthMatchEndpointContext context)
         {
             if (context.IsTokenEndpoint && context.Request.Method == "OPTIONS")
@@ -103,7 +101,6 @@ namespace SitComTech.API.Auth
             {
                 context.AdditionalResponseParameters.Add(property.Key, property.Value);
             }
-
             return Task.FromResult<object>(null);
         }
     }

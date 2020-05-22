@@ -11,7 +11,8 @@ namespace SitComTech.Core.Interface
         List<OwnerTask> GetTaskList();
         OwnerTask InsertTask(OwnerTask taskentity);
         List<OwnerTask> GetTaskByOwnerId(long ownerid);
-
+        void UpdateOwnerTask(OwnerTask entity);
+        void DeleteOwnerTask(OwnerTask entity);
     }
     public interface ITaskTypeService : IService<TaskType>
     {
