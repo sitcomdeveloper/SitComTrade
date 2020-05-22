@@ -509,7 +509,7 @@ i.fa.fa-plus.bg-primary1.fa-lg {
 .jsgrid-cell-content .form-control {
     height: 27px;
     padding: 0;
-    width: 73px;
+    /* width: 73px; */
 }
  /* .jsgrid-control-field a, .jsgrid-control-field input {
     margin-left: 2px;

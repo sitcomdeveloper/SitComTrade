@@ -861,8 +861,8 @@ i.fa.fa-refresh {
               margin-right: auto;
               margin-left: auto;
               /* background: #fff; */
-              z-index: 999999999;
-              padding: 10px;
+              /* z-index: 999999999; */
+              /* padding: 10px; */
 }
 .nnone
 {
