@@ -15,4 +15,8 @@ export class SettingsService {
   getAffilateUsers(): Observable<any> {
     return this.http.get('assets/affilateusers.json');
   }
+  // sendersettings
+  getSenderSettings(): Observable<any> {
+    return this.http.get('assets/sendersettings.json');
+  }
 }

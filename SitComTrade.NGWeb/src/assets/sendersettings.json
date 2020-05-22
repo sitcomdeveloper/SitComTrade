@@ -1,0 +1,19 @@
+[
+    {
+        "Id": 1,
+        "Name": "client1",
+        "Description": "client1@gmail.com"
+    },
+
+    {
+        "Id": 2,
+        "Name": "client2",
+        "Description": "client2@gmail.com"
+    },
+
+    {
+        "Id": 3,
+        "Name": "client3",
+        "Description": "client3@gmail.com"
+    }
+]

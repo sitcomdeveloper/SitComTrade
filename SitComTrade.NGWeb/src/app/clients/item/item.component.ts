@@ -85,11 +85,7 @@ export class ItemComponent implements OnInit {
       ISendEmail: this.sedemailbyuser,
       OwnerId: 1,
       Phone: this.newUserForm.value.phone,
-      CountryId: this.newUserForm.value.country,
-      //  CurrencyName : this.newUserForm.value.currencyname,
-      // Promocode : this.newUserForm.value.promocode,
-      //  CurrencyId: this.newUserForm.value.currencyid,
-      //  OwnerId: this.newUserForm.value.ownerid,
+      CountryId: this.newUserForm.value.country
 
     };
 
@@ -158,6 +154,13 @@ if (val === true) {
       this.Group = result.reverse();
       console.log('Group', result);
     });
-
+   }
+   accountLabel() {
+    this.show = true;
+    this.hiddden = true;
+   }
+   leadLabel() {
+    this.show = true;
+    this.hiddden = false;
    }
 }
