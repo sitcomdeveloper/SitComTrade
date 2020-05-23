@@ -58,6 +58,7 @@ import { ClientsInfoComponent } from './clients-info/clients-info.component';
 // import { ImportClientComponent } from './clients/import-client/import-client.component';
 // import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -65,15 +66,15 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
 
-{path: '', component: ClientsComponent},
- {path: 'clients', component: ClientsComponent,
+{path: '', component: ClientsComponent,canActivate:[AuthGuard]},
+ {path: 'clients', component: ClientsComponent,canActivate:[AuthGuard],
 
     children: [
       {path: '', redirectTo: 'client', pathMatch: 'full'},
-      {path: 'client', component: ClientComponent,
-    },
       {path: 'client', component: ClientComponent},
-      {path: 'tradeaccounts', component: TradeaccountsComponent}
+    
+      // {path: 'client', component: ClientComponent},
+      {path: 'tradeaccounts', component: TradeaccountsComponent,}
     ]},
   {path: '', component: ActivitiesComponent},
   {path: 'activities', component: ActivitiesComponent,
@@ -104,12 +105,12 @@ const routes: Routes = [
     ]
 },
 
-{path: '', component: SettingsComponent},
-{path: 'settings', component: SettingsComponent,
+{path: '', component: SettingsComponent,canActivate:[AuthGuard]},
+{path: 'settings', component: SettingsComponent,canActivate:[AuthGuard],
   children: [
     {path: '', redirectTo: '', pathMatch: 'full'},
-           {path: 'crmusers', component: CrmusersComponent},
-           {path: 'affilateusers', component: AffilateusersComponent},
+           {path: 'crmusers', component: CrmusersComponent,canActivate:[AuthGuard]},
+           {path: 'affilateusers', component: AffilateusersComponent,canActivate:[AuthGuard]},
     {path: 'emailtemplates', component: EmailtemplatesComponent},
     {path: 'sendersettings', component: SendersettingsComponent},
     {path: 'groups', component: GroupsComponent},

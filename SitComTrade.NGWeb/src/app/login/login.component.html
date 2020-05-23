@@ -27,7 +27,7 @@
   </nav>
 </div>
 <div class="login-form">
-  <form class="form-group" [formGroup]="loginForm" #ff="ngForm" (ngSubmit)="login()">
+  <form class="form-group" [formGroup]="loginForm" #ff="ngForm" (ngSubmit)="authUser()">
     <h2 class="text-center">Log in</h2>
     <div class="form-group">
       <input type="text" class="form-control" formControlName="email" name="email" required placeholder="Email">

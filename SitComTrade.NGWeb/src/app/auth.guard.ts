@@ -8,15 +8,12 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  [x: string]: any;
-  UserName: any;
-  Password: any;
 
   constructor( private ser:AuthService, private router:Router){}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if({UserName: this.UserName, Password: this.Password })
+      if(localStorage.getItem('userToken'))
       {
         return true;
       }

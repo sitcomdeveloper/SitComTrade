@@ -205,7 +205,7 @@ import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.c
     PopoverModule.forRoot(), TooltipModule.forRoot(),CollapseModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent],
+    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent,CrmnewuserComponent],
   exports: [
     PhoneMaskDirective
   ],

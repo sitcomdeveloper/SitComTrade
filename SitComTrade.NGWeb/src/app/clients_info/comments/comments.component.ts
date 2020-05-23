@@ -42,31 +42,33 @@ export class CommentsComponent implements OnInit {
       commentarea: ['']
     });
     // for getting id from client page.Opening popup by  clicking on 3-dots
-    if(this.iscustomevalue ==='more') {
-      this.closeModal = true;
-      this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
-        // this.spinnerService.show();
-        this.comments = res;
-        console.log('comments', res);
-      });
-    } else if(this.addcommentsby3Dots === 'add') {
-      const obj = {
-        CommentDescription: this.commentsForm.value.commentarea,
-        OwnerId: this.moreIdInfo
-      };
-      this.commentsService.insertComments(obj).subscribe(res => {
-        // this.spinnerService.show();
-        this.insert = res;
-        this.userComments();
-        console.log('insertcomment', res);
-        this.commentsForm.reset();
-      });
-    } 
-    else {
-      this.userComments();
+    // if(this.iscustomevalue ==='more') {
+    //   this.closeModal = true;
+    //   this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
+    //     // this.spinnerService.show();
+    //     this.comments = res;
+    //     console.log('comments', res);
+    //   });
+    // } 
+    // else if(this.addcommentsby3Dots === 'add') {
+    //   const obj = {
+    //     CommentDescription: this.commentsForm.value.commentarea,
+    //     OwnerId: this.moreIdInfo
+    //   };
+    //   this.commentsService.insertComments(obj).subscribe(res => {
+    //     // this.spinnerService.show();
+    //     this.insert = res;
+    //     this.userComments();
+    //     console.log('insertcomment', res);
+    //     this.commentsForm.reset();
+    //   });
+    // } 
+    // else {
+    //   this.userComments();
+    //   this.editComment();
+    // }
+    this.userComments();
       this.editComment();
-    }
-    
     
     
   }
