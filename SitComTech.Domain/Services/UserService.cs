@@ -80,15 +80,16 @@ namespace SitComTech.Domain.Services
                         TimezoneId = userdata.TimezoneId,
                         TimezoneName = userdata.TimezoneName,
                         CultureCode = userdata.CultureCode,
+                        CultureCodeId = userdata.CultureCodeId,
                         UiCultureCode = userdata.UiCultureCode,
+                        UiCultureCodeId = userdata.UiCultureCodeId,
                         StartModuleId = userdata.StartModuleId,
                         StartModuleName = userdata.StartModuleName,
                         DefaultSenderId = userdata.DefaultSenderId,
                         DefaultSenderName = userdata.DefaultSenderName,
                         SharedSenderId = userdata.SharedSenderId,
                         SharedSenderName = userdata.SharedSenderName
-                    };
-                    entity.CreatedAt = DateTime.Now;
+                    };                    
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
                 }
@@ -100,14 +101,46 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public void UpdateUser(User entity)
+        public void UpdateUser(UserDataVM entity)
         {
-            User userdata = _repository.Queryable().FirstOrDefault(x=>x.Id==entity.Id);
+            User userdata = _repository.Queryable().FirstOrDefault(x=>x.Email==entity.Email);
             if (userdata != null)
             {
                 userdata.UpdatedAt = DateTime.Now;
-                userdata.UpdatedBy = entity.OwnerId;
                 userdata.UpdatedByName = entity.FirstName;
+                userdata.FirstName = entity.FirstName;
+                userdata.LastName = entity.LastName;
+                userdata.Password = entity.Password;
+                userdata.Email = entity.Email;
+                userdata.Phone = entity.Phone;
+                userdata.DeskId = entity.DeskId;
+                userdata.DeskName = entity.DeskName;
+                userdata.IsDisabled = entity.IsDisabled;
+                userdata.UserName = entity.UserName;
+                userdata.OwnerId = entity.OwnerId;
+                userdata.IsAffiliateUser = entity.IsAffiliateUser;
+                userdata.ImageName = entity.ImageName;
+                userdata.LockoutEnabled = entity.LockoutEnabled;
+                userdata.AffiliateFieldId = entity.AffiliateFieldId;
+                userdata.AffiliateFieldName = entity.AffiliateFieldName;
+                userdata.RoleId = entity.RoleId;
+                userdata.RoleName = entity.RoleName;
+                userdata.DepartmentId = entity.DepartmentId;
+                userdata.DepartmentName = entity.DepartmentName;
+                userdata.SharedDeskId = entity.SharedDeskId;
+                userdata.SharedDeskName = entity.SharedDeskName;
+                userdata.TimezoneId = entity.TimezoneId;
+                userdata.TimezoneName = entity.TimezoneName;
+                userdata.CultureCode = entity.CultureCode;
+                userdata.CultureCodeId = entity.CultureCodeId;
+                userdata.UiCultureCode = entity.UiCultureCode;
+                userdata.UiCultureCodeId = entity.UiCultureCodeId;
+                userdata.StartModuleId = entity.StartModuleId;
+                userdata.StartModuleName = entity.StartModuleName;
+                userdata.DefaultSenderId = entity.DefaultSenderId;
+                userdata.DefaultSenderName = entity.DefaultSenderName;
+                userdata.SharedSenderId = entity.SharedSenderId;
+                userdata.SharedSenderName = entity.SharedSenderName;
                 _repository.Update(userdata);
                 _unitOfWork.SaveChanges();
             }

@@ -36,7 +36,9 @@ namespace SitComTech.Model.ViewModel
         public Nullable<long> TimezoneId { get; set; }
         public string TimezoneName { get; set; }
         public string CultureCode { get; set; }
+        public Nullable<long> CultureCodeId { get; set; }
         public string UiCultureCode { get; set; }
+        public Nullable<long> UiCultureCodeId { get; set; }
         public Nullable<long> StartModuleId { get; set; }
         public string StartModuleName { get; set; }
         public Nullable<long> DefaultSenderId { get; set; }
