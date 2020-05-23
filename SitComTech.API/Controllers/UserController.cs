@@ -62,7 +62,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("UpdateUserDetail")]
-        public void UpdateUserDetail(User userVM)
+        public void UpdateUserDetail(UserDataVM userVM)
         {
             _userService.UpdateUser(userVM);
         }
