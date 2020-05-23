@@ -78,3 +78,29 @@
     height: 115px;
     position: relative;
 }
+.fileupload-control input[type=file] {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    -ms-filter: 'alpha(opacity=0)';
+}
+.form-group.row {
+    width: 100%;
+}
+.switcheble-area {
+    width: 100%;
+}
+i.fa.fa-eye {
+    position: absolute;
+    /* left: 0; */
+    top: 8px;
+    right: 22px;
+    bottom: 0;
+    margin: auto;
+    color: #c7bfbf;
+}

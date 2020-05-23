@@ -8,7 +8,7 @@
                      <div class="col-md-4">
                         <div class="user-photo-control">
                            <div class="files">
-                              <div class="image"><img src="css/images/user-photo-default.png" alt="" data-container="image-holder"></div>
+                              <div class="image"><img src="assets/images/user-photo-default.png" alt="" data-container="image-holder"></div>
                               <div class="controls"></div>
                            </div>
                         </div>
@@ -16,7 +16,7 @@
                      <div class="col-md-8">
                         <div class="fileupload-control">
                            <div class="dropzone">
-                              <div class="dropzone-inner"><i class="ico-sz3 ico-export">&nbsp;</i><br> Drag your document here or <a href="#" class="image-link">browse files</a><input type="file" accept="image/*" outocomplete="off"></div>
+                              <div class="dropzone-inner"><i _ngcontent-kvh-c8="" aria-hidden="true" class="fa fa-upload">&nbsp;</i><br> Drag your document here or <a href="#" class="image-link">browse files</a><input type="file" accept="image/*" outocomplete="off"></div>
                            </div>
                            <div class="general-error" style="display: none;"></div>
                         </div>
@@ -59,7 +59,7 @@
                      <div class="col-md-3"><label class="valign-label" for="LockoutEnabled"><span data-tooltip-el="">Disabled</span></label></div>
                      <div class="col-md-9">
                         <div class="checkbox-inline">
-                           <div class="input-checkbox" id="uniform-a107cd7d2-324a-f50b-29b9-45c864e9557e"><span class=""><input class="form-control" name="LockoutEnabled" type="checkbox" id="a107cd7d2-324a-f50b-29b9-45c864e9557e" value="true"></span></div>
+                           <div class="input-checkbox"><span class=""><input class="form-control" name="LockoutEnabled" type="checkbox" id="a107cd7d2-324a-f50b-29b9-45c864e9557e" value="true"></span></div>
                            &nbsp;
                         </div>
                      </div>
@@ -69,20 +69,13 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="DeskId"><span data-tooltip-el="">Desk</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a6c236fcc-117d-caa3-4654-cb21e3061fd6" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox" style="max-height: 615px; overflow: hidden; min-height: 33px;">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 580px; overflow-y: auto; min-height: 0px;">
-                                 <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li data-original-index="1"><a tabindex="0" class="" style="display: none;" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">IMC</span></a></li>
-                              </ul>
-                           </div>
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="a6c236fcc-117d-caa3-4654-cb21e3061fd6" aria-required="true" tabindex="-98">
+                      
+                           
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
-                              <option value="206" style="display: none;">IMC</option>
+                              <option value="206" style="">IMC</option>
                            </select>
-                        </div>
+                    
                      </div>
                   </div>
                </div>
@@ -92,24 +85,9 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="Roles"><span data-tooltip-el="">Roles</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select show-tick form-control dropup">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a555c98e7-6cc4-8ae8-6f60-ffdd5ee3913e" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox" style="max-height: 403px; overflow: hidden; min-height: 67px;">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <div class="bs-actionsbox">
-                                 <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
-                              </div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 334px; overflow-y: auto; min-height: 0px;">
-                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Owner</span></a></li>
-                                 <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">DESK MANAGER</span></a></li>
-                                 <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Retention</span></a></li>
-                                 <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Agent</span></a></li>
-                                 <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Conversion</span></a></li>
-                                 <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">General Support</span></a></li>
-                                 <li data-original-index="6"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">desk1</span></a></li>
-                              </ul>
-                           </div>
-                           <select class="form-control" name="Roles" data-container="body" data-live-search="true" id="a555c98e7-6cc4-8ae8-6f60-ffdd5ee3913e" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" aria-required="true" tabindex="-98">
+                     
+                          
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
                               <option value="8">Owner</option>
                               <option value="17">DESK MANAGER</option>
                               <option value="32">Retention</option>
@@ -118,7 +96,7 @@
                               <option value="36">General Support</option>
                               <option value="39">desk1</option>
                            </select>
-                        </div>
+                       
                      </div>
                   </div>
                </div>
@@ -126,19 +104,8 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="Department"><span data-tooltip-el="">Department</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="aecf73213-ba89-9750-cbde-42984704b916" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox" style="max-height: 615px; overflow: hidden; min-height: 33px;">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 580px; overflow-y: auto; min-height: 0px;">
-                                 <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">None</span></a></li>
-                                 <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Management</span></a></li>
-                                 <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Sales</span></a></li>
-                                 <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Retention</span></a></li>
-                                 <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Marketing</span></a></li>
-                              </ul>
-                           </div>
+                      
+                          
                            <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98">
                               <option value="">Select...</option>
                               <option value="0">None</option>
@@ -148,7 +115,7 @@
                               <option value="4">Marketing</option>
                            </select>
                         </div>
-                     </div>
+                 
                   </div>
                </div>
             </div>
@@ -157,42 +124,26 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select show-tick form-control">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a5f6873ec-1d67-44b1-3283-0198f93115b9" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <div class="bs-actionsbox">
-                                 <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
-                              </div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">IMC</span></a></li>
-                              </ul>
-                           </div>
-                           <select class="form-control" name="SharedDesks" data-container="body" data-live-search="true" id="a5f6873ec-1d67-44b1-3283-0198f93115b9" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" tabindex="-98">
-                              <option value="206">IMC</option>
-                           </select>
+                        
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
+                           <option value="8">Owner</option>
+                           <option value="17">DESK MANAGER</option>
+                           <option value="32">Retention</option>
+                           <option value="34">Agent</option>
+                           <option value="35">Conversion</option>
+                           <option value="36">General Support</option>
+                           <option value="39">desk1</option>
+                        </select>
                         </div>
-                     </div>
+                    
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="TimeZoneId"><span data-tooltip-el="">Time Zone Id</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" title="(UTC+02:00) Jerusalem" aria-expanded="false"><span class="filter-option pull-left">(UTC+02:00) Jerusalem</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox" style="max-height: 615px; overflow: hidden; min-height: 33px;">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 580px; overflow-y: auto; min-height: 0px;">
-                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">(UTC-12:00) International Date Line West</span></a></li>
-                                 <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">(UTC-11:00) Coordinated Universal Time-11</span></a></li>
-                                 <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">(UTC-10:00) Aleutian Islands</span></a></li>
-                                 <li data-original-index="4"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">(UTC-10:00) Hawaii</span></a></li>
-                                 <li data-original-index="5"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">(UTC-09:30) Marquesas Islands</span></a></li>
-                           
-                              </ul>
-                           </div>
+                     
+                          
                            <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
                               <option value="Dateline Standard Time">(UTC-12:00) International Date Line West</option>
@@ -206,7 +157,7 @@
                               <option value="UTC-08">(UTC-08:00) Coordinated Universal Time-08</option>
                  
                            </select>
-                        </div>
+                     
                      </div>
                   </div>
                </div>
@@ -216,24 +167,15 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="CultureCode"><span data-tooltip-el="">Culture Code</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="a90d25e0a-602f-6fcf-5387-326f21cb4940" title="en-US"><span class="filter-option pull-left">en-US</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li data-original-index="1" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">en-US</span></a></li>
-                                 <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">ar-SA</span></a></li>
-                                 <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">ru-RU</span></a></li>
-                              </ul>
-                           </div>
+                        
+                          
                            <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" id="a90d25e0a-602f-6fcf-5387-326f21cb4940" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
                               <option value="en-US">en-US</option>
                               <option value="ar-SA">ar-SA</option>
                               <option value="ru-RU">ru-RU</option>
                            </select>
-                        </div>
+                     
                      </div>
                   </div>
                </div>
@@ -241,22 +183,14 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="UiCultureCode"><span data-tooltip-el="">Ui Culture Code</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="ad9cab536-ce18-044e-f9fc-a34da4a7a406" title="English"><span class="filter-option pull-left">English</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li data-original-index="1" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">English</span></a></li>
-                                 <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Russian</span></a></li>
-                              </ul>
-                           </div>
+                        
+                         
                            <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="ad9cab536-ce18-044e-f9fc-a34da4a7a406" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
                               <option value="en-US">English</option>
                               <option value="ru-RU">Russian</option>
                            </select>
-                        </div>
+                        
                      </div>
                   </div>
                </div>
@@ -266,35 +200,8 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="StartModuleId" data-original-title="" title=""><span data-tooltip-el="">StartModuleId</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a4ce8f266-eedd-3524-ddc4-291dd07b7e36" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                 <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li class="divider" data-optgroup="1div"></li>
-                                 <li class="dropdown-header" data-optgroup="1"><span class="text">Clients</span></li>
-                                 <li data-original-index="1" data-optgroup="1"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Clients</span></a></li>
-                                 <li data-original-index="2" data-optgroup="1"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Trade Accounts</span></a></li>
-                                 <li class="divider" data-optgroup="2div"></li>
-                                 <li class="dropdown-header" data-optgroup="2"><span class="text">Activities</span></li>
-                                 <li data-original-index="3" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Monetary Transactions</span></a></li>
-                                 <li data-original-index="4" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Tasks</span></a></li>
-                                 <li data-original-index="5" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Cases</span></a></li>
-                                 <li data-original-index="6" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Documents</span></a></li>
-                                 <li data-original-index="7" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Common journal</span></a></li>
-                                 <li data-original-index="8" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Opened Orders</span></a></li>
-                                 <li data-original-index="9" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Closed Orders</span></a></li>
-                                 <li data-original-index="10" data-optgroup="2"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Pending Orders</span></a></li>
-                                 <li class="divider" data-optgroup="3div"></li>
-                                 <li class="dropdown-header" data-optgroup="3"><span class="text">Reports</span></li>
-                                 <li data-original-index="11" data-optgroup="3"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Reports</span></a></li>
-                                 <li data-original-index="12" data-optgroup="3"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Trading Journal</span></a></li>
-                                 <li class="divider" data-optgroup="4div"></li>
-                                 <li class="dropdown-header" data-optgroup="4"><span class="text">Settings</span></li>
-                                 <li data-original-index="13" data-optgroup="4"><a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">Crm Users</span></a></li>
-                              </ul>
-                           </div>
+                     
+                          
                            <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a4ce8f266-eedd-3524-ddc4-291dd07b7e36" tabindex="-98">
                               <option value="">Select...</option>
                               <optgroup label="Clients">
@@ -319,7 +226,7 @@
                                  <option value="2">Crm Users</option>
                               </optgroup>
                            </select>
-                        </div>
+                       
                      </div>
                   </div>
                </div>
@@ -327,20 +234,18 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="DefaultSenderSetting" data-original-title="" title=""><span data-tooltip-el="">DefaultSenderSetting</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select form-control">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a36672ca9-1696-17b3-a382-c3fd8179fa02" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                 <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                                 <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">info@swissfxuk.com</span></a></li>
-                              </ul>
-                           </div>
-                           <select class="form-control" name="DefaultSenderSetting" data-container="body" data-live-search="true" id="a36672ca9-1696-17b3-a382-c3fd8179fa02" aria-required="true" tabindex="-98">
-                              <option value="">Select...</option>
-                              <option value="22">info@swissfxuk.com</option>
-                           </select>
-                        </div>
+                      
+                          
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
+                           <option value="8">Owner</option>
+                           <option value="17">DESK MANAGER</option>
+                           <option value="32">Retention</option>
+                           <option value="34">Agent</option>
+                           <option value="35">Conversion</option>
+                           <option value="36">General Support</option>
+                           <option value="39">desk1</option>
+                        </select>
+                        
                      </div>
                   </div>
                </div>
@@ -350,25 +255,56 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="">SharedSenderSettings</span></label></div>
                      <div class="col-md-9">
-                        <div class="btn-group bootstrap-select show-tick form-control">
-                           <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="ad3a63e46-fbe6-9897-94c3-b80c93b0b44f" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                           <div class="dropdown-menu open" role="combobox">
-                              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                              <div class="bs-actionsbox">
-                                 <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
-                              </div>
-                              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                                 <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">info@swissfxuk.com</span></a></li>
-                              </ul>
+                       
+                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98">
+                           <option value="">Select...</option>
+                           <option value="Dateline Standard Time">(UTC-12:00) International Date Line West</option>
+                           <option value="UTC-11">(UTC-11:00) Coordinated Universal Time-11</option>
+                           <option value="Aleutian Standard Time">(UTC-10:00) Aleutian Islands</option>
+                           <option value="Hawaiian Standard Time">(UTC-10:00) Hawaii</option>
+                           <option value="Marquesas Standard Time">(UTC-09:30) Marquesas Islands</option>
+                           <option value="Alaskan Standard Time">(UTC-09:00) Alaska</option>
+                           <option value="UTC-09">(UTC-09:00) Coordinated Universal Time-09</option>
+                           <option value="Pacific Standard Time (Mexico)">(UTC-08:00) Baja California</option>
+                           <option value="UTC-08">(UTC-08:00) Coordinated Universal Time-08</option>
+              
+                        </select>
+                        </div>
+                    
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row" id="passwords-area">
+               <div class="switcheble-area row">
+                  <div class="col-md-6">
+                     <div class="row">
+                        <div class="col-md-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
+                        <div class="col-md-9">
+                           <div class="input-control">
+                              <input class="form-control valid" name="Password" type="password" id="a7c1d8c66-f809-a6d9-29b5-71b18745a07e" aria-required="true" aria-invalid="false">
+                              <a href="javascript:void(0);" class="input-button show-password">
+                                 <i class="fa fa-eye" aria-hidden="true"></i>
+                              </a>
                            </div>
-                           <select class="form-control" name="SharedSenderSettings" data-container="body" data-live-search="true" id="ad3a63e46-fbe6-9897-94c3-b80c93b0b44f" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" tabindex="-98">
-                              <option value="22">info@swissfxuk.com</option>
-                           </select>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="row">
+                        <div class="col-md-3"><label class="valign-label" for="RepeatPassword"><span data-tooltip-el="">Repeat Password</span></label></div>
+                        <div class="col-md-9">
+                           <div class="input-control">
+                              <input class="form-control" name="RepeatPassword" type="password" id="af702c018-70b2-9a7c-403f-f37417eb0fc9" aria-required="true">
+                              <a href="javascript:void(0);" class="input-button show-password">
+                                 <i class="fa fa-eye" aria-hidden="true"></i>
+                              </a>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
+            <div _ngcontent-nra-c16="" class="col-md-12 padd0"><div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-nra-c16="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]"><a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);">Cancel</a></div></div></div></div>
          </div>
     </form>
 </div>
