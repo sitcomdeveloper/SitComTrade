@@ -47,7 +47,7 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public void Update(OwnerTask entity)
+        public void UpdateOwnerTask(OwnerTask entity)
         {           
             OwnerTask taskdata = _repository.Queryable().FirstOrDefault(x=>x.Id==entity.Id);
             if (taskdata != null)
@@ -68,7 +68,7 @@ namespace SitComTech.Domain.Services
                 throw new ArgumentNullException("Task");
         }
 
-        public void Delete(OwnerTask entity)
+        public void DeleteOwnerTask(OwnerTask entity)
         {
             if (entity == null)
                 throw new ArgumentNullException("User");

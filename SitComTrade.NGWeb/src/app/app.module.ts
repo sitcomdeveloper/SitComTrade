@@ -109,6 +109,7 @@ import { ImportedClientsComponent } from './settings/imports/imported-clients/im
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
 import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
+import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
 
 
 @NgModule({
@@ -191,6 +192,7 @@ import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.compone
     LiveDetailComponent,
     SrchPipe,
     OoinfoComponent,
+    CrmnewuserComponent,
   ],
   imports: [
     BrowserModule,

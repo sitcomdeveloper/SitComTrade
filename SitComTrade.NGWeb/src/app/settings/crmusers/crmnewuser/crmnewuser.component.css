@@ -1,0 +1,106 @@
+.user-info-popup .form-holder {
+    padding: 0 50px;
+}
+.user-info-popup .form-group {
+    margin-bottom: 20px;
+}
+.user-photo-control .files {
+    background: #dee7fa;
+    border-radius: 2px;
+    position: relative;
+    padding: 0 0 100%;
+}
+.user-photo-control .files .image img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    z-index: 1;
+    object-fit: cover;
+    font-family: 'object-fit: cover';
+}
+.user-photo-control .files .controls {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 5;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+.fileupload-style01 .fileupload-control {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.fileupload-control {
+    position: relative;
+    padding: 0 0 20px;
+    margin: 0 0 15px;
+}
+.fileupload-style01 .fileupload-control .dropzone {
+    height: 100%;
+    padding: 5px 45px;
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.fileupload-control .dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #dde7f9;
+    color: #aab8d3;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    height: 115px;
+    position: relative;
+}
+.fileupload-style01 .fileupload-control .dropzone {
+    height: 100%;
+    padding: 5px 45px;
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.fileupload-control .dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #dde7f9;
+    color: #aab8d3;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    height: 115px;
+    position: relative;
+}
+.fileupload-control input[type=file] {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    -ms-filter: 'alpha(opacity=0)';
+}
+.form-group.row {
+    width: 100%;
+}
+.switcheble-area {
+    width: 100%;
+}
+i.fa.fa-eye {
+    position: absolute;
+    /* left: 0; */
+    top: 8px;
+    right: 22px;
+    bottom: 0;
+    margin: auto;
+    color: #c7bfbf;
+}
