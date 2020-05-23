@@ -868,6 +868,10 @@ i.fa.fa-refresh {
 {
     display: none;
 }
+.modal650
+{
+    max-width: 650px;
+}
 .tablectn1:hover
 {
     background:transparent!important;
