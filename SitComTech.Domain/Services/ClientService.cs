@@ -181,8 +181,8 @@ namespace SitComTech.Domain.Services
 
         public List<ClientListVM> GetAllClientsByOwnerId(long ownerid)
         {
-            return _repository.Queryable().Join(_repository.Queryable(), clients => clients.OwnerId, owner => owner.Id,
-                (clients, owner) => new { clients = clients, Owner = owner })
+            return _repository.Queryable().Join(_repository.GetRepository<User>().Queryable(), clients => clients.OwnerId, owner => owner.Id,
+                (clients, owner) => new { clients, Owner = owner })
                 .GroupJoin(_marketinginforepository.Queryable(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.OwnerId,
                 (userowner, mrktinfo) => new { UserOwner = userowner, MarketInfo = mrktinfo })
                 .SelectMany(x => x.MarketInfo.DefaultIfEmpty(), (x, y) => new { x.UserOwner, MarketInfo = y })
