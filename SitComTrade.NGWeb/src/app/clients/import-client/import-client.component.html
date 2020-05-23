@@ -22,11 +22,11 @@
                      <i class="fa fa-upload" aria-hidden="true">&nbsp;</i>
                        Drag your document here or
                         <a href="#">Browse Files
-                            <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()" class="custom-file">
+                            <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()" id="file-upload">
                         </a>
                   </div>
                   
-                   <div class="files">excel</div>
+                   <div id="files_name"></div>
                    <div class="fileupload-progress fade">
                       <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                          <div class="progress-bar progress-bar-success" style="width:0%;"></div>
@@ -36,12 +36,12 @@
              </div>
           </div>
           <div class="col-xs-8 col-xs-offset-4 text-center">
-             <div class="form-group">Click <a href="#">here</a> for download template</div>
+             <div class="form-group">Click <a href="javascript:void(0);">here</a> for download template</div>
           </div>
           <div class="col-md-12" style="padding:0!important"> 
             <div class="modal-footer modal-footernew">
                <div class="text-center margin17">
-                  <a href="#importclientdata" class="button submit-button itembutton " id="closecreateclient" data-toggle="modal" data-dismiss="modal">Next</a>
+                  <a href="" class="button submit-button itembutton " id="closecreateclient" data-toggle="modal" data-target="#importclientdata">Next</a>
                  
                </div>
             </div>
@@ -56,7 +56,7 @@
 
 
  <!------------------create Import Client data model------------->
-<div class="modal fade" id="importclientdata" tabindex="-1" > 
+<div class="modal" id="importclientdata" tabindex="-1" > 
    <div class="modal-dialog modal1250">
      <div class="modal-content">
        <div class="modal-header" style="height: 4rem;">
@@ -77,11 +77,11 @@
  
  
  <!--------------End create Import Client model--------------->
- <!-- <script>
+ <script>
    $(document).ready(function () {
    $('#importclient').on('hidden.bs.modal', function () {
    // Load up a new modal...
    $('#importclientdata').modal('show')
  })
  });
- </script> -->
+ </script>
