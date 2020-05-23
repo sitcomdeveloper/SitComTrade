@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit {
     if (this.resetForm.invalid) {
         return;
     }
-    // alert('SUCCESS!! :-)');
 }
 
 
@@ -93,16 +92,23 @@ export class LoginComponent implements OnInit {
   // }
   authUser() {
     let model = "UserName=" +this.loginForm.value.email + "&Password=" +this.loginForm.value.password + '&grant_type=password';
-    this.loginservice.authuser(model).subscribe(
+    this.loginservice.authuser(model)
+    .subscribe(
       data => {
+        if (data) {
         localStorage.setItem('userToken', data.access_token);
         localStorage.setItem('username', JSON.stringify(data.FullName));
-        // window.sessionStorage.setItem('userToken', data.access_token);
         console.log('setToken', data.access_token)
         this.router.navigateByUrl('clients');
         console.log('testing',data);
-      }
-    )
+        } else {
+          alert('Invalid Credential');
+        }
+      },
+      err => {
+        alert('Error');
+      });
+    
   }
   resetpwd() {
      const obj = this.resetForm.value.email;
