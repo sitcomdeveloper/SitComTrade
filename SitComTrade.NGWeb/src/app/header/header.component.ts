@@ -27,5 +27,9 @@ export class HeaderComponent implements OnInit {
   open() {
     this.router.navigate(['login']);
   }
+  // edit login user
+  editLoginUser() {
+
+  }
 
 }

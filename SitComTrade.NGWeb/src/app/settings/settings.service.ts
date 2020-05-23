@@ -19,4 +19,7 @@ export class SettingsService {
   getSenderSettings(): Observable<any> {
     return this.http.get('assets/sendersettings.json');
   }
+  // getAllDepartments(): Observable<any> {
+  //   return this.http.get(API_URL + '');
+  // }
 }
