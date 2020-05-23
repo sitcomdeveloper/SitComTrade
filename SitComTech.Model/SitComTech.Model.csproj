@@ -57,7 +57,7 @@
     <Compile Include="Masters\ModuleGroup.cs" />
     <Compile Include="Masters\Role.cs" />
     <Compile Include="Masters\SenderSetting.cs" />
-    <Compile Include="Masters\TimeZone.cs" />
+    <Compile Include="Masters\ServerTimeZone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataObject\OwnerTask.cs" />
     <Compile Include="ViewModel\ClientVM.cs" />

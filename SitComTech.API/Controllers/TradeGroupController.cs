@@ -21,7 +21,7 @@ namespace SitComTech.API.Controllers
         [Route("InsertTradeGroup")]
         public void InsertTradeGroup(TradeGroup entity)
         {
-            _tradegroupService.Insert(entity);
+            _tradegroupService.InsertTradeGroup(entity);
         }
 
         [HttpPost]
@@ -42,7 +42,7 @@ namespace SitComTech.API.Controllers
         [Route("UpdateTradeGroup")]
         public void UpdateTradeGroup(TradeGroup groupVM)
         {
-            _tradegroupService.Update(groupVM);
+            _tradegroupService.UpdateTradeGroup(groupVM);
         }
 
     }
