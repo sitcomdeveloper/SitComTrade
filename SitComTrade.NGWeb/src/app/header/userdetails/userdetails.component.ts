@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-userdetails',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userdetails.component.css']
 })
 export class UserdetailsComponent implements OnInit {
-
-  constructor() { }
+  @Input() prtdata: any;
+  @Output() clddata: EventEmitter<any> = new EventEmitter();
+  title: any;
+  constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
+  }
+  hideModal() {
+    this.bsmodal.hide();
   }
 
 }

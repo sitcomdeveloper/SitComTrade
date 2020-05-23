@@ -13,12 +13,18 @@ import { ActivatedRoute } from '@angular/router';
 export class TasksInfoComponent implements OnInit {
   getUserTasks: any;
   getInfoTasks: any;
+  getLoginDetails: any;
+  bindLoginData: any;
 
 
   constructor(private taskInfoService: TasksInfoService, private modalService: BsModalService, private route: ActivatedRoute) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
+    // code for receiving login details and bind to owner name at place of name
+    this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
     this.getAllTask();
   }
   getAllTask() {

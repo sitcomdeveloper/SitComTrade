@@ -1,4 +1,4 @@
-{{chlength}}
+
 <div class="container-fluid ">
   <div class="row fist1">
     <div class="col-md-12 sub-header">
@@ -84,7 +84,7 @@
                  <i class="fa fa-pencil bg-primary1 fa-lg" disabled onmousedown="return false" onselectstart="return false"  ></i>
               </a>
               <a href="javascript:void(0)" [class.disabled] = deletbtnn>
-                <i class="fa fa-trash bg-primary1 fa-lg" disabled onmousedown="return false" onselectstart="return false" aria-hidden="true" (click)="deleteClient(Id)" ></i>
+                <i class="fa fa-trash bg-primary1 fa-lg" disabled onmousedown="return false" onselectstart="return false" aria-hidden="true" (click)="deleteClient()" ></i>
               </a>
             </div>
             <div class="btn-group mr-2 holder" role="group" aria-label="Four group">
@@ -1531,7 +1531,7 @@
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_OwnerId">
-                <div class="text-ellipsis" data-original-title="" title="">{{item.OwnerName}}</div>
+                <div class="text-ellipsis" data-original-title="" title="" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
               </div>
             </div>
           </td>
@@ -3108,7 +3108,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title=""
-                  title="" tooltip="{{actinfo.OwnerName}}">{{actinfo.OwnerName}}</div>
+                  title="" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
               </div>
             </div>
           </td>
@@ -4460,7 +4460,7 @@
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Country">
-                <div class="text-ellipsis"><span class="flag it"></span>{{leadinfo.OwnerName}}</div>
+                <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}"><span class="flag it"></span>{{bindLoginData?.FullName}}</div>
               </div>
             </div>
           </td>

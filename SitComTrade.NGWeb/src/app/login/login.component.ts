@@ -97,7 +97,7 @@ export class LoginComponent implements OnInit {
       data => {
         if (data) {
         localStorage.setItem('userToken', data.access_token);
-        localStorage.setItem('username', JSON.stringify(data.FullName));
+        localStorage.setItem('username', JSON.stringify(data));
         console.log('setToken', data.access_token)
         this.router.navigateByUrl('clients');
         console.log('testing',data);

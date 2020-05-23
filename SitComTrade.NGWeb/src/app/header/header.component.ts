@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,8 @@ export class HeaderComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   filled: any;
-  constructor() { }
+  constructor(private modalService: BsModalService) { }
+  bsModalRef: BsModalRef;
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
@@ -29,7 +32,16 @@ export class HeaderComponent implements OnInit {
   }
   // edit login user
   editLoginUser() {
+    const initialState = {
+      title: 'User Details',
+    };
+    
+    this.bsModalRef = this.modalService.show(UserdetailsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal650', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsModalRef.content.clddata.subscribe(data => {
+    //   this.userDetails();
 
+    // });
   }
 
 }

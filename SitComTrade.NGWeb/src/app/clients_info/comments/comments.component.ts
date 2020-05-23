@@ -33,8 +33,8 @@ export class CommentsComponent implements OnInit {
    bsModalRef: BsModalRef;
 
   ngOnInit() {
-    // code for receiving login details and bind to header at place of name
-    this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
+    // code for receiving login details and bind owner name at place of  name
+    this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
     console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     // comments code

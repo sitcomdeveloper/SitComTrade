@@ -111,6 +111,7 @@ import { SrchPipe } from './clients/client/srch.pipe';
 import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
 import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
+import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
 
 
 @NgModule({
@@ -195,6 +196,7 @@ import { UserdetailsComponent } from './header/userdetails/userdetails.component
     OoinfoComponent,
     CrmnewuserComponent,
     UserdetailsComponent,
+    CrmedituserComponent,
   ],
   imports: [
     BrowserModule,
@@ -207,7 +209,7 @@ import { UserdetailsComponent } from './header/userdetails/userdetails.component
     PopoverModule.forRoot(), TooltipModule.forRoot(),CollapseModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent,CrmnewuserComponent],
+    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent,CrmnewuserComponent,UserdetailsComponent,CrmedituserComponent],
   exports: [
     PhoneMaskDirective
   ],

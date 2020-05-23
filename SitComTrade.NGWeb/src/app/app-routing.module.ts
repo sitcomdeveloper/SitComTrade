@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ClientComponent, TradeaccountsComponent, ImportClientComponent, ItemComponent} from './clients';
+import {ClientComponent, TradeaccountsComponent} from './clients';
 // tslint:disable-next-line: max-line-length
 import {BenchmarkComponent, DashboardComponent, ExposureComponent, LeaderboardComponent, ReportComponent, TradingjournalsComponent} from './reports';
 // tslint:disable-next-line: max-line-length
@@ -15,7 +15,6 @@ import { SettingsComponent } from './header/settings/settings.component';
 
 // import { ClientComponent } from './clients/client/client.component';
 
-import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 // import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
 // import { DashboardComponent } from './reports/dashboard/dashboard.component';
@@ -76,8 +75,8 @@ const routes: Routes = [
       // {path: 'client', component: ClientComponent},
       {path: 'tradeaccounts', component: TradeaccountsComponent,}
     ]},
-  {path: '', component: ActivitiesComponent},
-  {path: 'activities', component: ActivitiesComponent,
+  {path: '', component: ActivitiesComponent,canActivate:[AuthGuard]},
+  {path: 'activities', component: ActivitiesComponent,canActivate:[AuthGuard],
     children: [
       {path: '', redirectTo: '', pathMatch: 'full'},
       {path: 'monetarytransactions', component: MonetarytransactionsComponent},
@@ -92,8 +91,8 @@ const routes: Routes = [
 
     ]},
 
-{path: '', component: ReportsComponent},
-{path: 'reports', component: ReportsComponent,
+{path: '', component: ReportsComponent,canActivate:[AuthGuard]},
+{path: 'reports', component: ReportsComponent,canActivate:[AuthGuard],
     children: [
       {path: '', redirectTo: '', pathMatch: 'full'},
       {path: 'dashboard', component: DashboardComponent},
@@ -109,8 +108,8 @@ const routes: Routes = [
 {path: 'settings', component: SettingsComponent,canActivate:[AuthGuard],
   children: [
     {path: '', redirectTo: '', pathMatch: 'full'},
-           {path: 'crmusers', component: CrmusersComponent,canActivate:[AuthGuard]},
-           {path: 'affilateusers', component: AffilateusersComponent,canActivate:[AuthGuard]},
+           {path: 'crmusers', component: CrmusersComponent},
+           {path: 'affilateusers', component: AffilateusersComponent},
     {path: 'emailtemplates', component: EmailtemplatesComponent},
     {path: 'sendersettings', component: SendersettingsComponent},
     {path: 'groups', component: GroupsComponent},
@@ -129,15 +128,15 @@ const routes: Routes = [
 // {path: 'terms', component: TermsComponent},
 
 // clients-info
-{path: 'info/:selectedItem', component: ClientsInfoComponent},
+{path: 'info/:selectedItem', component: ClientsInfoComponent,canActivate:[AuthGuard]},
 // {path: 'generalinfo/:userid', component: GeneralInfoComponent},
 // {path: 'user', component: ItemComponent},
 // for group(general-info)
-{path: 'groups-info/:setItem', component: GroupsInfoComponent},
+{path: 'groups-info/:setItem', component: GroupsInfoComponent,canActivate:[AuthGuard]},
 // {path: 'importclients', component: ImportClientComponent},
 
 // tradeaccount
-{path: 'livetrade/:trdingDtls', component: LiveDetailComponent}
+{path: 'livetrade/:trdingDtls', component: LiveDetailComponent,canActivate:[AuthGuard]}
 // /:trdingDtls
 
 
