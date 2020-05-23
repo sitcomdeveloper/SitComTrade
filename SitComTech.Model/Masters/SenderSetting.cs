@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SitComTech.Model.Masters
 {
-    class SenderSetting:BaseEntity
+    public class SenderSetting:BaseEntity
     {
         public string SenderMailId { get; set; }
         public Nullable<bool> IsShared { get; set; }

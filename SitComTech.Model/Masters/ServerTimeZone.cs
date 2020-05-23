@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SitComTech.Model.Masters
 {
-    public class TimeZone:BaseEntity
+    public class ServerTimeZone:BaseEntity
     {
         public string DisplayName { get; set; }
         public string StandardName { get; set; }

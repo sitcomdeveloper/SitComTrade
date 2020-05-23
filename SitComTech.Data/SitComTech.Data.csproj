@@ -64,6 +64,7 @@
     <Compile Include="DbInitializer\DatabaseInitializer.cs" />
     <Compile Include="Interface\IDbContext.cs" />
     <Compile Include="Mapping\ClientMap.cs" />
+    <Compile Include="Mapping\MasterMap.cs" />
     <Compile Include="Mapping\OwnerTaskMapping.cs" />
     <Compile Include="Mapping\TradeGroupMap.cs" />
     <Compile Include="Mapping\UserMap.cs" />
