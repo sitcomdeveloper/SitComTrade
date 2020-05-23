@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace SitComTech.API.Controllers
 {    
+    [Authorize]
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
