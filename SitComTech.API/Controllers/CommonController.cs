@@ -1,41 +1,182 @@
 ﻿using SitComTech.Core.Utils;
+using SitComTech.Framework.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SitComTech.Model.Masters;
 
 namespace SitComTech.API.Controllers
 {
+    [RoutePrefix("api/Common")]
     public class CommonController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        private readonly IUnitOfWork _unitOfWork;
+        public CommonController(IUnitOfWork unitOfWork)
         {
-            return new string[] { "value1", "value2" };
+            _unitOfWork = unitOfWork;
+        }        
+
+        /// <summary>
+        ///  Get All Affiliate Fields
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllAffiliateFields")]
+        public List<AffiliateField> GetAllAffiliateFields()
+        {
+            try
+            {
+                var affiliateFields = _unitOfWork.Repository<AffiliateField>().Query(x=>x.Active==true && x.Deleted==false).Select().ToList();
+                return affiliateFields;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        /// <summary>
+        ///  Get All Departments
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllDepartments")]
+        public List<Department> GetAllDepartments()
         {
-            return "value";
+            try
+            {
+                var departments = _unitOfWork.Repository<Department>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return departments;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        /// <summary>
+        ///  Get All Desks
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllDesks")]
+        public List<Desk> GetAllDesks()
         {
+            try
+            {
+                var desks = _unitOfWork.Repository<Desk>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return desks;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        /// <summary>
+        ///  Get All Module Groups
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllModuleGroups")]
+        public List<ModuleGroups> GetAllModuleGroups()
         {
+            try
+            {
+                var moduleGroups = _unitOfWork.Repository<ModuleGroups>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return moduleGroups;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        /// <summary>
+        ///  Get All Modules 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllModules")]
+        public List<Module> GetAllModules()
         {
+            try
+            {
+                var modules = _unitOfWork.Repository<Module>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return modules;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-       
+
+        /// <summary>
+        ///  Get All Roles
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllRoles")]
+        public List<Role> GetAllRoles()
+        {
+            try
+            {
+                var roles = _unitOfWork.Repository<Role>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return roles;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        ///  Get All Sender Setting
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllSenderSettings")]
+        public List<SenderSetting> GetAllSenderSettings()
+        {
+            try
+            {
+                var senderSettings = _unitOfWork.Repository<SenderSetting>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return senderSettings;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        ///  Get All TimeZones
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllTimeZones")]
+        public List<ServerTimeZone> GetAllTimeZones()
+        {
+            try
+            {
+                var timeZones = _unitOfWork.Repository<ServerTimeZone>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return timeZones;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
