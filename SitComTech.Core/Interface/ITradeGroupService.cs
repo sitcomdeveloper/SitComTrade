@@ -9,5 +9,7 @@ namespace SitComTech.Core.Interface
     {
         List<TradeGroup> GetTradeGroupList();
         TradeGroup GetById(object Id);
+        void InsertTradeGroup(TradeGroup entity);
+        void UpdateTradeGroup(TradeGroup entity);
     }
 }

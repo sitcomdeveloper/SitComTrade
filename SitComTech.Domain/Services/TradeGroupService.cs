@@ -32,7 +32,7 @@ namespace SitComTech.Domain.Services
             return _repository.Queryable().Where(x => x.Active && !x.Deleted).ToList();
         }       
 
-        public void Insert(TradeGroup entity)
+        public void InsertTradeGroup(TradeGroup entity)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace SitComTech.Domain.Services
             }
         }
        
-        public void Update(TradeGroup entity)
+        public void UpdateTradeGroup(TradeGroup entity)
         {
             TradeGroup _tradegroup = _repository.Queryable().FirstOrDefault(x=>x.Id==entity.Id);
             if (_tradegroup != null)

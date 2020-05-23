@@ -8,7 +8,7 @@ using SitComTech.Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace SitComTech.Domain.Services
 {
@@ -60,18 +60,33 @@ namespace SitComTech.Domain.Services
                         LastName = userdata.LastName,
                         Password = userdata.Password,
                         Email = userdata.Email,
-                        CurrencyId = userdata.CurrencyId,
-                        CurrencyName = userdata.CurrencyName,
-                        CountryId = userdata.CountryId,
-                        CountryName = userdata.CountryName,    
-                        Enabled = true,
-                        TypeName="Real",
-                        FirstRegistrationDate =DateTime.Now,
-                        RegistrationType = "Direct",
-                        Promocode = userdata.Promocode,
                         Phone = userdata.Phone,
-                        ResponseStatusId = 7,
-                        ResponseStatus = "Interested",
+                        DeskId = userdata.DeskId,
+                        IsDisabled = userdata.IsDisabled,
+                        UserName = userdata.UserName,
+                        IsAffiliateUser = userdata.IsAffiliateUser,
+                        ImageName = userdata.ImageName,
+                        LockoutEnabled = userdata.LockoutEnabled,
+                        CampaignCode = userdata.CampaignCode,
+                        AffiliateFieldId = userdata.AffiliateFieldId,
+                        AffiliateFieldName = userdata.AffiliateFieldName,
+                        DeskName = userdata.DeskName,
+                        RoleId = userdata.RoleId,
+                        RoleName = userdata.RoleName,
+                        DepartmentId = userdata.DepartmentId,
+                        DepartmentName = userdata.DepartmentName,
+                        SharedDeskId = userdata.SharedDeskId,
+                        SharedDeskName = userdata.SharedDeskName,
+                        TimezoneId = userdata.TimezoneId,
+                        TimezoneName = userdata.TimezoneName,
+                        CultureCode = userdata.CultureCode,
+                        UiCultureCode = userdata.UiCultureCode,
+                        StartModuleId = userdata.StartModuleId,
+                        StartModuleName = userdata.StartModuleName,
+                        DefaultSenderId = userdata.DefaultSenderId,
+                        DefaultSenderName = userdata.DefaultSenderName,
+                        SharedSenderId = userdata.SharedSenderId,
+                        SharedSenderName = userdata.SharedSenderName
                     };
                     entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
@@ -105,7 +120,14 @@ namespace SitComTech.Domain.Services
             _repository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
-
+        public async Task<User> AuthUser(UserVM userVM)
+        {
+            var userdata = await Task.Run(() => _repository.Queryable().Where(x => (x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).FirstOrDefault());
+            if (userdata != null)
+                return userdata;
+            else
+                return null;
+        }
         public List<User> IsAuthenticated(UserVM userVM)
         {
             var userdata = _repository.Queryable().Where(x => (x.Email == userVM.UserName) && x.Password == userVM.Password && x.Active == true && x.Deleted == false).FirstOrDefault();
@@ -133,20 +155,7 @@ namespace SitComTech.Domain.Services
         public User GetUserDetailByOwnerId(long ownerid)
         {
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.Id == ownerid).FirstOrDefault();
-        }
-
-        public List<UserResponseStatus> GetLeadStatusList()
-        {
-            //var dpfRep = _repository.GetRepository<UserResponseStatus>();
-            //return dpfRep.Query(x => x.Active).Select().ToList();
-
-            return null;
-        }
-
-        public List<User> GetTradeAccountByType(TradeAccountVM tradeVM)
-        {
-            return _repository.Queryable().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
-        }
+        }        
 
         public User GetUserbyusername(string username)
         {
