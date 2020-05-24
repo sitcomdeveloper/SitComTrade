@@ -52,6 +52,7 @@
     <Compile Include="DataObject\TradeGroup.cs" />
     <Compile Include="DataObject\User.cs" />
     <Compile Include="Masters\AffiliateField.cs" />
+    <Compile Include="Masters\CultureCode.cs" />
     <Compile Include="Masters\Department.cs" />
     <Compile Include="Masters\Desk.cs" />
     <Compile Include="Masters\ModuleGroup.cs" />
