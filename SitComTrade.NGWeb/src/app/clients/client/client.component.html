@@ -12,10 +12,12 @@
               <!-- checked from -->
             </div>
             <div class="jsgrid-items-counter" *ngIf=accounts >
-              <span>{{accountLength}} items</span>
+              <span id="chked"> </span>
+              <span> {{accountLength}} items</span>
             </div>
             <div class="jsgrid-items-counter" *ngIf=leads >
-              <span>{{leadLength}} items</span>
+              <span id="chked"> </span>
+              <span> {{leadLength}} items</span>
             </div>
               <div _ngcontent-eal-c3="" class="breadcrumbs">
                  <ul _ngcontent-eal-c3="">
@@ -3055,7 +3057,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id)"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id)" onclick="checkboxcheck()"></span>
                 <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
             </div>
           </td>
@@ -4430,7 +4432,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id)"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id)" onclick="checkboxcheck()"></span>
                 <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
             </div>
           </td>
