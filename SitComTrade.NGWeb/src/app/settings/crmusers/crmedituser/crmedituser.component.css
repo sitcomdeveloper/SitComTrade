@@ -104,3 +104,166 @@ i.fa.fa-eye {
     margin: auto;
     color: #c7bfbf;
 }
+.content-tabs .nav-tabs>li>a {
+    padding: 13px 35px;
+    min-width: 1px;
+}
+.modal .form-subholder .hightlited-area02 {
+    padding-left: 29px;
+    padding-right: 29px;
+    margin: 0;
+}
+.hightlited03 {
+    border-color: #c9d4e7;
+    background: #f5f8fc;
+}
+
+.hightlited-area02 {
+    border: 1px solid transparent;
+    border-width: 1px 0;
+    margin: 0 -15px 15px;
+    padding: 14px 15px;
+}
+.user-info-popup .form-holder {
+    padding: 0 50px;
+}
+.form-holder .collapse-control .close {
+    margin-right: -35px;
+}
+
+.collapse-control .close {
+    margin-right: -20px;
+    display: none;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.modal h2, .modal h3, .modal h4 {
+    text-transform: uppercase;
+    color: #000;
+}
+
+.h3, h3 {
+    font: 700 14px/18px Poppins,Arial,sans-serif;
+}
+.toggle-switcher .switchcontrol>span:after {
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+}
+.toggle-switcher.inline {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+
+.form-horizontal .toggle-switcher, .form-inline .toggle-switcher {
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+.toggle-switcher {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font: 12px/25px Poppins,Arial,sans-serif;
+    color: #45596a;
+    height: 25px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    min-width: 60px;
+    width: 0;
+}
+.toggle-switcher .switchcontrol {
+    display: block;
+    background: #dde7f9;
+    border-radius: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 60px;
+}
+
+.toggle-switcher .switchcontrol.on .off {
+    margin: 0 0 0 -100%;
+}
+
+.toggle-switcher.clicked .switchcontrol>span {
+    transition: margin .5s ease;
+    -webkit-transition: margin .5s ease;
+    will-change: margin;
+}
+.toggle-switcher .switchcontrol>span {
+    position: relative;
+    float: left;
+    width: 100%;
+    -webkit-transform: translate3d(0,0,0);
+}
+.toggle-switcher .switchcontrol>span.off:before {
+    background: #acbcda;
+}
+
+.toggle-switcher .switchcontrol>span.off:after, .toggle-switcher .switchcontrol>span.off:before {
+    left: 3px;
+}
+.toggle-switcher .switchcontrol>span:after, .toggle-switcher .switchcontrol>span:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+}
+.toggle-switcher .switchcontrol>span.off span {
+    padding: 0 5px 0 30px;
+}
+
+.toggle-switcher .switchcontrol>span span {
+    display: inline-block;
+    vertical-align: top;
+}
+.toggle-switcher .switchcontrol>span.off:after {
+    background-position: -340px -220px;
+}
+.toggle-switcher.clicked .switchcontrol>span {
+    transition: margin .5s ease;
+    -webkit-transition: margin .5s ease;
+    will-change: margin;
+}
+
+.toggle-switcher .switchcontrol .on {
+    margin: 0 -100% 0 0;
+}
+.toggle-switcher .switchcontrol>span.on:before {
+    background: #12baee;
+}
+
+.toggle-switcher .switchcontrol>span.on:after, .toggle-switcher .switchcontrol>span.on:before {
+    right: 3px;
+}
+.toggle-switcher .switchcontrol>span:after, .toggle-switcher .switchcontrol>span:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+}
+.toggle-switcher .switchcontrol>span.on span {
+    padding: 0 30px 0 5px;
+}
+.toggle-switcher .switchcontrol>span.off span {
+    padding: 0 5px 0 30px;
+}
+.toggle-switcher .switchcontrol input {
+    margin: 0!important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+}
