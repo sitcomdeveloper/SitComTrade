@@ -137,6 +137,7 @@ namespace SitComTech.Domain.Services
                 clientdata.ResponseStatusId = entity.ResponseStatusId;
                 clientdata.ItemId = entity.ItemId;
                 _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
             }
         }
 
@@ -145,6 +146,7 @@ namespace SitComTech.Domain.Services
             if (entity == null)
                 throw new ArgumentNullException("Client");
             _repository.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
 
@@ -469,6 +471,7 @@ namespace SitComTech.Domain.Services
                     CommentDescription = comm.CommentDescription,
                 };
                 _repository.Insert(entity);
+                _unitOfWork.SaveChanges();
             }
             catch (Exception ex)
             {

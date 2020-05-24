@@ -100,4 +100,16 @@ namespace SitComTech.Data.Mapping
         }
 
     }
+
+    public class CultureCodeMap : EntityTypeConfiguration<CultureCode>
+    {
+        public CultureCodeMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        }
+
+    }
 }
