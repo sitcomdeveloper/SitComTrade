@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     });
     if (window.sessionStorage.getItem('userToken')!=null){   
       this.router.navigateByUrl('clients');   
-    }  
+    }
   }
 
   get f() {
@@ -97,7 +97,7 @@ export class LoginComponent implements OnInit {
       data => {
         if (data) {
           window.sessionStorage.setItem('userToken', data.access_token);          
-        localStorage.setItem('username', JSON.stringify(data));
+          window.sessionStorage.setItem('username', JSON.stringify(data));
         console.log('setToken', data.access_token)
         this.router.navigateByUrl('clients');
         console.log('testing',data);
