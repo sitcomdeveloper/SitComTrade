@@ -1,3 +1,9 @@
+<div class="modal-header">
+   <h4 class="modal-title pull-left">{{title}} </h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+       <span aria-hidden="true">&times;</span>
+   </button>
+</div>
 <div class="form-holder mt15">
     <form class="form-horizontal upload-photo" autocomplete="off" novalidate="novalidate">
         <div class="row">
@@ -304,7 +310,7 @@
                   </div>
                </div>
             </div>
-            <div _ngcontent-nra-c16="" class="col-md-12 padd0"><div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-nra-c16="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]"><a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);">Cancel</a></div></div></div></div>
+            <div _ngcontent-nra-c16="" class="col-md-12 padd0"><div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-nra-c16="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]"><a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div></div></div></div>
          </div>
     </form>
 </div>

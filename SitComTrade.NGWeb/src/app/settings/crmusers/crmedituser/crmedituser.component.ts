@@ -2,15 +2,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-crmnewuser',
-  templateUrl: './crmnewuser.component.html',
-  styleUrls: ['./crmnewuser.component.css']
+  selector: 'app-crmedituser',
+  templateUrl: './crmedituser.component.html',
+  styleUrls: ['./crmedituser.component.css']
 })
-export class CrmnewuserComponent implements OnInit {
+export class CrmedituserComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   title: any;
-
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
@@ -18,5 +17,4 @@ export class CrmnewuserComponent implements OnInit {
   hideModal() {
     this.bsmodal.hide();
   }
-
 }

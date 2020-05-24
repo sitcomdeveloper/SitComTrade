@@ -110,6 +110,8 @@ import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-de
 import { SrchPipe } from './clients/client/srch.pipe';
 import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
 import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
+import { UserdetailsComponent } from './header/userdetails/userdetails.component';
+import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
 
 
 @NgModule({
@@ -193,6 +195,8 @@ import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.c
     SrchPipe,
     OoinfoComponent,
     CrmnewuserComponent,
+    UserdetailsComponent,
+    CrmedituserComponent,
   ],
   imports: [
     BrowserModule,
@@ -205,7 +209,7 @@ import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.c
     PopoverModule.forRoot(), TooltipModule.forRoot(),CollapseModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent],
+    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent,CrmnewuserComponent,UserdetailsComponent,CrmedituserComponent],
   exports: [
     PhoneMaskDirective
   ],

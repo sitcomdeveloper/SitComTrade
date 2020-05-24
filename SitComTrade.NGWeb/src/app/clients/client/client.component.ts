@@ -73,6 +73,10 @@ bindLoginData: any;
     });
     this.userDetails();
     this.getcountryName();
+    // code for receiving login details and bind OwnerName at place of name
+    this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
     
   }
   userDetails() {
@@ -185,8 +189,7 @@ deletbtn(val, userid) {
     });
   }
   // delete client
-  deleteClient(userid) {
-    console.log('dltid',userid);
+  deleteClient() {
     const initialState = {
       title: 'Delete Item',
       userId: this.UserId,
@@ -197,8 +200,7 @@ deletbtn(val, userid) {
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
-    
-      this.userDetails();
+    this.userDetails();
     });
   }
   alll() {

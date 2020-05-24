@@ -1,0 +1,549 @@
+.user-info-popup .form-holder {
+    padding: 0 50px;
+}
+.user-info-popup .form-group {
+    margin-bottom: 20px;
+}
+.user-photo-control .files {
+    background: #dee7fa;
+    border-radius: 2px;
+    position: relative;
+    padding: 0 0 100%;
+}
+.user-photo-control .files .image img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    z-index: 1;
+    object-fit: cover;
+    font-family: 'object-fit: cover';
+}
+.user-photo-control .files .controls {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 5;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+.fileupload-style01 .fileupload-control {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.fileupload-control {
+    position: relative;
+    padding: 0 0 20px;
+    margin: 0 0 15px;
+}
+.fileupload-style01 .fileupload-control .dropzone {
+    height: 100%;
+    padding: 5px 45px;
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.fileupload-control .dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #dde7f9;
+    color: #aab8d3;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    height: 115px;
+    position: relative;
+}
+.fileupload-style01 .fileupload-control .dropzone {
+    height: 100%;
+    padding: 5px 45px;
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.fileupload-control .dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #dde7f9;
+    color: #aab8d3;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    height: 115px;
+    position: relative;
+}
+.fileupload-control input[type=file] {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    -ms-filter: 'alpha(opacity=0)';
+}
+.form-group.row {
+    width: 100%;
+}
+.switcheble-area {
+    width: 100%;
+}
+i.fa.fa-eye {
+    position: absolute;
+    /* left: 0; */
+    top: 8px;
+    right: 22px;
+    bottom: 0;
+    margin: auto;
+    color: #c7bfbf;
+}
+.content-tabs .nav-tabs>li>a {
+    padding: 13px 35px;
+    min-width: 1px;
+}
+.modal .form-subholder .hightlited-area02 {
+    padding-left: 29px;
+    padding-right: 29px;
+    margin: 0;
+}
+.hightlited03 {
+    border-color: #c9d4e7;
+    background: #f5f8fc;
+}
+
+.hightlited-area02 {
+    border: 1px solid transparent;
+    border-width: 1px 0;
+    margin: 0 -15px 15px;
+    padding: 14px 15px;
+}
+.user-info-popup .form-holder {
+    padding: 0 50px;
+}
+.form-holder .collapse-control .close {
+    margin-right: -35px;
+}
+
+.collapse-control .close {
+    margin-right: -20px;
+    display: none;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.modal h2, .modal h3, .modal h4 {
+    text-transform: uppercase;
+    color: #000;
+}
+
+.h3, h3 {
+    font: 700 14px/18px Poppins,Arial,sans-serif;
+}
+.toggle-switcher .switchcontrol>span:after {
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+}
+.toggle-switcher.inline {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+
+.form-horizontal .toggle-switcher, .form-inline .toggle-switcher {
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+.toggle-switcher {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font: 12px/25px Poppins,Arial,sans-serif;
+    color: #45596a;
+    height: 25px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    min-width: 60px;
+    width: 0;
+}
+.toggle-switcher .switchcontrol {
+    display: block;
+    background: #dde7f9;
+    border-radius: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 60px;
+}
+
+.toggle-switcher .switchcontrol.on .off {
+    margin: 0 0 0 -100%;
+}
+
+.toggle-switcher.clicked .switchcontrol>span {
+    transition: margin .5s ease;
+    -webkit-transition: margin .5s ease;
+    will-change: margin;
+}
+.toggle-switcher .switchcontrol>span {
+    position: relative;
+    float: left;
+    width: 100%;
+    -webkit-transform: translate3d(0,0,0);
+}
+.toggle-switcher .switchcontrol>span.off:before {
+    background: #acbcda;
+}
+
+.toggle-switcher .switchcontrol>span.off:after, .toggle-switcher .switchcontrol>span.off:before {
+    left: 3px;
+}
+.toggle-switcher .switchcontrol>span:after, .toggle-switcher .switchcontrol>span:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+}
+.toggle-switcher .switchcontrol>span.off span {
+    padding: 0 5px 0 30px;
+}
+
+.toggle-switcher .switchcontrol>span span {
+    display: inline-block;
+    vertical-align: top;
+}
+.toggle-switcher .switchcontrol>span.off:after {
+    background-position: -340px -220px;
+}
+.toggle-switcher.clicked .switchcontrol>span {
+    transition: margin .5s ease;
+    -webkit-transition: margin .5s ease;
+    will-change: margin;
+}
+
+.toggle-switcher .switchcontrol .on {
+    margin: 0 -100% 0 0;
+}
+.toggle-switcher .switchcontrol>span.on:before {
+    background: #12baee;
+}
+
+.toggle-switcher .switchcontrol>span.on:after, .toggle-switcher .switchcontrol>span.on:before {
+    right: 3px;
+}
+.toggle-switcher .switchcontrol>span:after, .toggle-switcher .switchcontrol>span:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+}
+.toggle-switcher .switchcontrol>span.on span {
+    padding: 0 30px 0 5px;
+}
+.toggle-switcher .switchcontrol>span.off span {
+    padding: 0 5px 0 30px;
+}
+.toggle-switcher .switchcontrol input {
+    margin: 0!important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+
+.switch{
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .switch + .lable{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 18px;
+    min-width: 18px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .switch + .lable::before{
+    cursor: pointer;
+    font-family: fontAwesome;
+    font-weight: normal;
+    font-size: 12px;
+    color: #32a3ce;
+    content: "\a0";
+    background-color: #FAFAFA;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 14px;
+    min-width: 16px;
+    margin-right: 1px;
+    position: relative;
+    top: -1px;
+  }
+  .switch:checked + .lable::before {
+    display: inline-block;
+    content: '\f00c';
+    background-color: #F5F8FC;
+    border-color: #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  }
+  .switch + .lable {
+    margin: 0 4px;
+    min-height: 24px;
+  }
+  .switch + .lable::before {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 17px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid #CCC;
+    text-align: left;
+    float: left;
+    padding: 0;
+    width: 52px;
+    text-indent: -21px;
+    margin-right: 0;
+    -webkit-transition: text-indent .3s ease;
+    -o-transition: text-indent .3s ease;
+    transition: text-indent .3s ease;
+    top: auto;
+  }
+  .switch.switch-bootstrap + .lable::before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    box-shadow: none;
+    border-width: 0;
+    font-size: 16px;
+    background-color: #a9a9a9;
+    color: #F2F2F2;
+    width: 52px;
+    height: 22px;
+    line-height: 21px;
+    text-indent: 32px;
+    -webkit-transition: background 0.1s ease;
+    -o-transition: background 0.1s ease;
+    transition: background 0.1s ease;
+  }
+  .switch.switch-bootstrap + .lable::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 12px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border: 4px solid #F2F2F2;
+    -webkit-transition: left 0.2s ease;
+    -o-transition: left 0.2s ease;
+    transition: left 0.2s ease;
+  }
+  .switch.switch-bootstrap:checked + .lable::before {
+    content: "\f00c";
+    text-indent: 6px;
+    color: #FFF;
+    border-color: #b7d3e5;
+    
+  }
+  .switch-primary >.switch.switch-bootstrap:checked + .lable::before {
+      background-color: #337ab7;
+  }
+  .switch-success >.switch.switch-bootstrap:checked + .lable::before {
+      background-color: #5cb85c;
+  }
+  .switch-danger >.switch.switch-bootstrap:checked + .lable::before {
+      background-color: #d9534f;
+  }
+  .switch-info >.switch.switch-bootstrap:checked + .lable::before {
+      background-color: #5bc0de;
+  }
+  .switch-warning >.switch.switch-bootstrap:checked + .lable::before {
+      background-color: #f0ad4e;
+  }
+  .switch.switch-bootstrap:checked + .lable::after {
+    left: 32px;
+    background-color: #FFF;
+    border: 4px solid #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 200, 0, 0.25);
+  }
+  /* square */
+  .switch-square{
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .switch-square + .lable{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 18px;
+    min-width: 18px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .switch-square + .lable::before{
+    cursor: pointer;
+    font-family: fontAwesome;
+    font-weight: normal;
+    font-size: 12px;
+    color: #32a3ce;
+    content: "\a0";
+    background-color: #FAFAFA;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 14px;
+    min-width: 16px;
+    margin-right: 1px;
+    position: relative;
+    top: -1px;
+  }
+  .switch-square:checked + .lable::before {
+    display: inline-block;
+    content: '\f00c';
+    background-color: #F5F8FC;
+    border-color: #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  }
+  /* CSS3 on/off switches */
+  .switch-square + .lable {
+    margin: 0 4px;
+    min-height: 24px;
+  }
+  .switch-square + .lable::before {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 17px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid #CCC;
+    text-align: left;
+    float: left;
+    padding: 0;
+    width: 52px;
+    text-indent: -21px;
+    margin-right: 0;
+    -webkit-transition: text-indent .3s ease;
+    -o-transition: text-indent .3s ease;
+    transition: text-indent .3s ease;
+    top: auto;
+  }
+  .switch-square.switch-bootstrap + .lable::before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    box-shadow: none;
+    border-width: 0;
+    font-size: 16px;
+    background-color: #a9a9a9;
+    color: #F2F2F2;
+    width: 52px;
+    height: 22px;
+    line-height: 21px;
+    text-indent: 32px;
+    -webkit-transition: background 0.1s ease;
+    -o-transition: background 0.1s ease;
+    transition: background 0.1s ease;
+  }
+  .switch-square.switch-bootstrap + .lable::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 12px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border: 4px solid #F2F2F2;
+    -webkit-transition: left 0.2s ease;
+    -o-transition: left 0.2s ease;
+    transition: left 0.2s ease;
+  }
+  .switch-square.switch-bootstrap:checked + .lable::before {
+    content: "\f00c";
+    text-indent: 6px;
+    color: #FFF;
+    border-color: #b7d3e5;
+    
+  }
+  .switch-primary >.switch-square.switch-bootstrap:checked + .lable::before {
+      background-color: #337ab7;
+  }
+
+  .switch-square.switch-bootstrap:checked + .lable::after {
+    left: 32px;
+    background-color: #FFF;
+    border: 4px solid #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 200, 0, 0.25);
+  }
+  .switch-square.switch-bootstrap + .lable::after {
+      border-radius: 2px;
+  } 
+  .collapse1>li>a
+  {
+    padding: 13px 35px;
+    min-width: 1px;
+    border-color: #c9d4e7 #c9d4e7 transparent;
+    background: #f5f8fc;
+    color: #12baee;
+    border: 1px solid transparent;    }
+  .collapse1 li
+  {
+    list-style-type: none;
+    max-width: 170px;
+    border-color: #c9d4e7 #c9d4e7 transparent;
+    background: #f5f8fc;
+    color: #12baee;
+    border-top: 1px solid #12baee;  
+  }
+  .collapse1{
+    padding: 0;
+    margin-bottom: 0;
+  }

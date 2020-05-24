@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace SitComTech.API.Controllers
 {    
+    [Authorize]
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
@@ -61,7 +62,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("UpdateUserDetail")]
-        public void UpdateUserDetail(User userVM)
+        public void UpdateUserDetail(UserDataVM userVM)
         {
             _userService.UpdateUser(userVM);
         }

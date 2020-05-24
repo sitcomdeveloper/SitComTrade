@@ -39,7 +39,7 @@
               </ul>
            </div>
            <div _ngcontent-iwb-c9="" class="col-md-6 end">
-              <a _ngcontent-iwb-c9="" class="btn-type03 create-email-template-link" data-toggle="modal" data-target="#crmnewuser" href="javascript:void(0);">
+              <a _ngcontent-iwb-c9="" class="btn-type03 create-email-template-link" data-toggle="modal" data-target="#crmnewuser" href="javascript:void(0);" (click)="newcrmUser()">
               <i _ngcontent-iwb-c9="" class="fa fa-user-plus">&nbsp;</i> New Template</a>
             </div>
         </div>
@@ -1404,7 +1404,7 @@
                      <ng-template #template>
                         <div class="modal-header">
                           <h4 class="modal-title pull-left">Details</h4>
-                          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                          <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
@@ -1424,7 +1424,7 @@
                        <div _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="dropleft droptop">
                            
                            <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="javascript:void(0)" id="ico9">
-                               <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyiconn" disabled=""></i>
+                               <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyiconn" disabled="" (click)="openEditUser()"></i>
                            </a>
                            <br _ngcontent-ukx-c12="" _ngcontent-crh-c6="" />
                        </div>
@@ -17236,12 +17236,12 @@
  
  <!-------------------MODEL--------------->
 
-<div class="modal" id="crmnewuser">
+<!-- <div class="modal" id="crmnewuser">
    <div class="modal-dialog modal870">
      <div class="modal-content">
        <div class="modal-header" style="height: 4rem;">
          <h1 class="modal-title popupheader">
-           <!-- <i _ngcontent-jvq-c1="" class="fa fa-plus "></i> -->
+           
            <span>
             CREATE USER
            </span>
@@ -17255,6 +17255,6 @@
        </div>
      </div>
    </div>
- </div>
+ </div> -->
  
  <!--------------------------------------->

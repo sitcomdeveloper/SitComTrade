@@ -137,6 +137,7 @@ namespace SitComTech.Domain.Services
                 clientdata.ResponseStatusId = entity.ResponseStatusId;
                 clientdata.ItemId = entity.ItemId;
                 _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
             }
         }
 
@@ -145,6 +146,7 @@ namespace SitComTech.Domain.Services
             if (entity == null)
                 throw new ArgumentNullException("Client");
             _repository.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
 
@@ -181,8 +183,8 @@ namespace SitComTech.Domain.Services
 
         public List<ClientListVM> GetAllClientsByOwnerId(long ownerid)
         {
-            return _repository.Queryable().Join(_repository.Queryable(), clients => clients.OwnerId, owner => owner.Id,
-                (clients, owner) => new { clients = clients, Owner = owner })
+            return _repository.Queryable().Join(_repository.GetRepository<User>().Queryable(), clients => clients.OwnerId, owner => owner.Id,
+                (clients, owner) => new { clients, Owner = owner })
                 .GroupJoin(_marketinginforepository.Queryable(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.OwnerId,
                 (userowner, mrktinfo) => new { UserOwner = userowner, MarketInfo = mrktinfo })
                 .SelectMany(x => x.MarketInfo.DefaultIfEmpty(), (x, y) => new { x.UserOwner, MarketInfo = y })
@@ -469,6 +471,7 @@ namespace SitComTech.Domain.Services
                     CommentDescription = comm.CommentDescription,
                 };
                 _repository.Insert(entity);
+                _unitOfWork.SaveChanges();
             }
             catch (Exception ex)
             {

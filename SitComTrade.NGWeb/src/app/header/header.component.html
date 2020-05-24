@@ -241,7 +241,7 @@
               Activities
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <!-- <li><a class="dropdown-item" routerLink="/activities/monetarytransactions"><i class="fa fa-money" aria-hidden="true"></i>
+                <li><a class="dropdown-item" routerLink="/activities/monetarytransactions"><i class="fa fa-money" aria-hidden="true"></i>
                   Monetary Transactions</a></li>
                 <li><a class="dropdown-item" routerLink="/activities/tasks"><i class="fa fa-tasks" aria-hidden="true"></i>
                   Tasks</a></li>
@@ -256,8 +256,8 @@
                 <li><a class="dropdown-item" routerLink="/activities/pendingorders"><i class="fa fa-folder-open" aria-hidden="true"></i>
                   Pending Orders</a></li>
                 <li><a class="dropdown-item" routerLink="/activities/rejectedtransactions"><i class="fa fa-money" aria-hidden="true"></i>Rejected Transaction</a></li>
-                <li><a class="dropdown-item" routerLink="/activities/commonjournal"><i class="fa fa-file-text-o" aria-hidden="true"></i>Common Journal</a></li> -->
-                <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-money" aria-hidden="true"></i>
+                <li><a class="dropdown-item" routerLink="/activities/commonjournal"><i class="fa fa-file-text-o" aria-hidden="true"></i>Common Journal</a></li>
+                <!-- <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-money" aria-hidden="true"></i>
                   Monetary Transactions</a></li>
                 <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-tasks" aria-hidden="true"></i>
                   Tasks</a></li>
@@ -272,7 +272,7 @@
                 <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-folder-open" aria-hidden="true"></i>
                   Pending Orders</a></li>
                 <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-money" aria-hidden="true"></i>Rejected Transaction</a></li>
-                <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-file-text-o" aria-hidden="true"></i>Common Journal</a></li>
+                <li><a class="dropdown-item" routerLink="javascript:void(0);"><i class="fa fa-file-text-o" aria-hidden="true"></i>Common Journal</a></li> -->
 
 
             </ul>
@@ -397,46 +397,13 @@
           <a class="nav-link" routerLink="#"><i class="fa fa-bell-o" aria-hidden="true" popover="No notifications"></i>
           </a>
       </li>
-
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-
-          <i class="fa fa-user-o" aria-hidden="true"></i>
-
-          <span>	
-Krishankant</span>
-        </a>
-
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" routerLink="">Settings</a></li>
-            <li><a class="dropdown-item" routerLink="" (click)="logout()">Logout</a></li>
-            <li>
-              
-
-
-
-
-            </li>
-
-
-
-        </ul>
-    </li> -->
-    <!-- <li class="item-account" data-position="last">
-      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-submenu="">
-        <i class="fa fa-user-o" aria-hidden="true"></i><span>Krishankant</span></a>
-      <ul class="dropdown-menu">
-         <li><a class="dropdown-item" routerLink="">Settings</a></li>
-         <li><a class="dropdown-item" routerLink="" (click)="logout()">Sign out</a></li>
-      </ul>
-   </li> -->
    <li _ngcontent-bih-c1="" class="logindetail">
     <a _ngcontent-bih-c1="" aria-expanded="false" class="link-control dropdown-toggle dropdown-toggle1" data-toggle="dropdown" href="#" role="button" style="color:#fff;">
-      <i class="fa fa-user-o" aria-hidden="true"></i><span>{{bindLoginData?.FirstName}} {{bindLoginData?.LastName}}</span><i class="fa fa-caret-down" style="padding-left: 6px;"></i>
+      <i class="fa fa-user-o" aria-hidden="true"></i><span>{{bindLoginData?.FullName}} </span><i class="fa fa-caret-down" style="padding-left: 6px;"></i>
 
     </a>
     <div _ngcontent-bih-c1="" class="dropdown-menu pull-right" x-placement="bottom-start" style="position: absolute; transform: translate3d(-102px, 42px, 0px); top: 0px; left: 0px; will-change: transform;width:213px;">
-       <p _ngcontent-bih-c1=""><a class="dropdown-item" routerLink="">Settings</a></p>
+       <p _ngcontent-bih-c1=""><a class="dropdown-item" routerLink="" data-toggle="modal" data-target="#userdetails" (click)="editLoginUser()">Settings</a></p>
        <p _ngcontent-bih-c1=""><a class="dropdown-item" routerLink="" (click)="logout()">Sign out</a></p>
        
     </div>
@@ -455,3 +422,27 @@ Krishankant</span>
 
 
 
+<!-------------------MODEL--------------->
+
+<!-- <div class="modal" id="userdetails">
+  <div class="modal-dialog modal650">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 4rem;">
+        <h1 class="modal-title popupheader">
+           <i _ngcontent-jvq-c1="" class="fa fa-user "></i> 
+          <span>
+            USER DETAILS
+          </span>
+        </h1>
+        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+      </div>
+      <div class="modal-body">
+        <app-userdetails></app-userdetails>
+
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!--------------------------------------->

@@ -10,6 +10,7 @@ using SitComTech.Model.Masters;
 
 namespace SitComTech.API.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/Common")]
     public class CommonController : ApiController
     {
@@ -171,6 +172,26 @@ namespace SitComTech.API.Controllers
             {
                 var timeZones = _unitOfWork.Repository<ServerTimeZone>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
                 return timeZones;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        ///  Get All Roles
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllCultureCodes")]
+        public List<CultureCode> GetAllCultureCodes()
+        {
+            try
+            {
+                var cultureCodes = _unitOfWork.Repository<CultureCode>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return cultureCodes;
 
             }
             catch (Exception ex)

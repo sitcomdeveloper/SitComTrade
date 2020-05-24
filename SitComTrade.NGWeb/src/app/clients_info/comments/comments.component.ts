@@ -33,8 +33,8 @@ export class CommentsComponent implements OnInit {
    bsModalRef: BsModalRef;
 
   ngOnInit() {
-    // code for receiving login details and bind to header at place of name
-    this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
+    // code for receiving login details and bind owner name at place of  name
+    this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
     console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     // comments code
@@ -42,31 +42,33 @@ export class CommentsComponent implements OnInit {
       commentarea: ['']
     });
     // for getting id from client page.Opening popup by  clicking on 3-dots
-    if(this.iscustomevalue ==='more') {
-      this.closeModal = true;
-      this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
-        // this.spinnerService.show();
-        this.comments = res;
-        console.log('comments', res);
-      });
-    } else if(this.addcommentsby3Dots === 'add') {
-      const obj = {
-        CommentDescription: this.commentsForm.value.commentarea,
-        OwnerId: this.moreIdInfo
-      };
-      this.commentsService.insertComments(obj).subscribe(res => {
-        // this.spinnerService.show();
-        this.insert = res;
-        this.userComments();
-        console.log('insertcomment', res);
-        this.commentsForm.reset();
-      });
-    } 
-    else {
-      this.userComments();
+    // if(this.iscustomevalue ==='more') {
+    //   this.closeModal = true;
+    //   this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
+    //     // this.spinnerService.show();
+    //     this.comments = res;
+    //     console.log('comments', res);
+    //   });
+    // } 
+    // else if(this.addcommentsby3Dots === 'add') {
+    //   const obj = {
+    //     CommentDescription: this.commentsForm.value.commentarea,
+    //     OwnerId: this.moreIdInfo
+    //   };
+    //   this.commentsService.insertComments(obj).subscribe(res => {
+    //     // this.spinnerService.show();
+    //     this.insert = res;
+    //     this.userComments();
+    //     console.log('insertcomment', res);
+    //     this.commentsForm.reset();
+    //   });
+    // } 
+    // else {
+    //   this.userComments();
+    //   this.editComment();
+    // }
+    this.userComments();
       this.editComment();
-    }
-    
     
     
   }
