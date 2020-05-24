@@ -22,7 +22,9 @@
     crossorigin="anonymous"></script>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  
 </head>
 
 <body style="background-color: #e9ecef;">
@@ -44,6 +46,11 @@
       });
     });
   </script> -->
+  <script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+  </script>
   <script>
     $(document).ready(function () {
       $(function () {
