@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.resetForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]]
     });
-    if(localStorage.getItem('userToken')!=null){   
+    if (window.sessionStorage.getItem('userToken')!=null){   
       this.router.navigateByUrl('clients');   
     }  
   }
@@ -96,7 +96,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       data => {
         if (data) {
-        localStorage.setItem('userToken', data.access_token);
+          window.sessionStorage.setItem('userToken', data.access_token);          
         localStorage.setItem('username', JSON.stringify(data));
         console.log('setToken', data.access_token)
         this.router.navigateByUrl('clients');

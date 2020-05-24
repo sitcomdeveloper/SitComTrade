@@ -97,8 +97,18 @@
     <Content Include="src\app\clients\all\all.component.html" />
     <Content Include="src\app\clients\client\client.component.css" />
     <Content Include="src\app\clients\client\client.component.html" />
+    <Content Include="src\app\clients\email-all\email-all.component.css" />
+    <Content Include="src\app\clients\email-all\email-all.component.html" />
+    <Content Include="src\app\clients\export-client\export-client.component.css" />
+    <Content Include="src\app\clients\export-client\export-client.component.html" />
+    <Content Include="src\app\clients\import-client-data\import-client-data.component.css" />
+    <Content Include="src\app\clients\import-client-data\import-client-data.component.html" />
+    <Content Include="src\app\clients\import-client\import-client.component.css" />
+    <Content Include="src\app\clients\import-client\import-client.component.html" />
     <Content Include="src\app\clients\item\item.component.css" />
     <Content Include="src\app\clients\item\item.component.html" />
+    <Content Include="src\app\clients\sms-all\sms-all.component.css" />
+    <Content Include="src\app\clients\sms-all\sms-all.component.html" />
     <Content Include="src\app\clients\tradeaccounts\tradeaccounts.component.css" />
     <Content Include="src\app\clients\tradeaccounts\tradeaccounts.component.html" />
     <Content Include="src\app\clients_info\additional-info\additional-info.component.css" />
@@ -242,6 +252,7 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\auth.guard.spec.ts" />
     <TypeScriptCompile Include="src\app\auth.guard.ts" />
+    <TypeScriptCompile Include="src\app\auth.interceptor.ts" />
     <TypeScriptCompile Include="src\app\auth.service.spec.ts" />
     <TypeScriptCompile Include="src\app\auth.service.ts" />
     <TypeScriptCompile Include="src\app\authpipe.pipe.spec.ts" />
@@ -256,8 +267,18 @@
     <TypeScriptCompile Include="src\app\clients\all\all.component.ts" />
     <TypeScriptCompile Include="src\app\clients\client\client.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients\client\client.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\email-all\email-all.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\email-all\email-all.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\export-client\export-client.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\export-client\export-client.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\import-client-data\import-client-data.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\import-client-data\import-client-data.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\import-client\import-client.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\import-client\import-client.component.ts" />
     <TypeScriptCompile Include="src\app\clients\item\item.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients\item\item.component.ts" />
+    <TypeScriptCompile Include="src\app\clients\sms-all\sms-all.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients\sms-all\sms-all.component.ts" />
     <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients\tradeaccounts\tradeaccounts.component.ts" />
     <TypeScriptCompile Include="src\app\clients_info\additional-info\additional-info.component.spec.ts" />
@@ -329,6 +350,10 @@
     <TypeScriptCompile Include="src\app\reports\report\report.component.ts" />
     <TypeScriptCompile Include="src\app\reports\tradingjournals\tradingjournals.component.spec.ts" />
     <TypeScriptCompile Include="src\app\reports\tradingjournals\tradingjournals.component.ts" />
+    <TypeScriptCompile Include="src\app\services\country.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\country.service.ts" />
+    <TypeScriptCompile Include="src\app\services\currency.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\currency.service.ts" />
     <TypeScriptCompile Include="src\app\settings\additionalfields\additionalfields.component.spec.ts" />
     <TypeScriptCompile Include="src\app\settings\additionalfields\additionalfields.component.ts" />
     <TypeScriptCompile Include="src\app\settings\affilateusers\affilateusers.component.spec.ts" />
@@ -368,6 +393,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\app\log\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

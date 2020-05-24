@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
+import { AuthInterceptor } from '../app/auth.interceptor';  
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhoneMaskDirective } from './common/directives/phone-mask.directive';
@@ -213,7 +214,11 @@ import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituse
   exports: [
     PhoneMaskDirective
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
