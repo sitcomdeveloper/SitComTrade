@@ -54,7 +54,7 @@ namespace SitComTech.Core.Interface
 
     public interface IAddressService : IService<Address>
     {
-        List<Address> GetAddressByOwnerId(long ownerid);
+        Address GetAddressByOwnerId(long ownerid);
         void UpdateAddress(Address entity);
     }
 }

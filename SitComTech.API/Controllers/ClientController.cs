@@ -203,7 +203,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("GetAddressByOwnerId/{ownerid}")]
-        public List<Address> GetAddressByOwnerId(long ownerid)
+        public Address GetAddressByOwnerId(long ownerid)
         {
             return _addressService.GetAddressByOwnerId(ownerid);
         }

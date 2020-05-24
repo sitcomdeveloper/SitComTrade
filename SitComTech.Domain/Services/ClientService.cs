@@ -492,9 +492,9 @@ namespace SitComTech.Domain.Services
 
         }
 
-        public List<Address> GetAddressByOwnerId(long ownerid)
+        public Address GetAddressByOwnerId(long ownerid)
         {
-            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).FirstOrDefault();
         }
 
         public void UpdateAddress(Address entity)
