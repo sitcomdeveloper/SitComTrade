@@ -2,6 +2,7 @@
 using SitComTech.Data.Interface;
 using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
+using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,12 @@ namespace SitComTech.Domain.Services
     public class TradeGroupService : Service<TradeGroup>,ITradeGroupService
     {
         private IGenericRepository<TradeGroup> _repository;
-        public TradeGroupService(IGenericRepository<TradeGroup> repository)
+        private IUnitOfWork _unitOfWork;
+        public TradeGroupService(IGenericRepository<TradeGroup> repository, IUnitOfWork unitOfWork)
             :base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
         }
 
         public TradeGroup GetById(object Id)
@@ -58,6 +61,7 @@ namespace SitComTech.Domain.Services
                     LeverageName=entity.LeverageName
                 };
                 _repository.Insert(tradegrp);
+                _unitOfWork.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -84,7 +88,8 @@ namespace SitComTech.Domain.Services
                 _tradegroup.CurrencyName = entity.CurrencyName;
                 _tradegroup.LeverageId = entity.LeverageId;
                 _tradegroup.LeverageName = entity.LeverageName;
-                _repository.Update(_tradegroup);                
+                _repository.Update(_tradegroup);
+                _unitOfWork.SaveChanges();
             }
             if (entity == null || _tradegroup == null)
                 throw new ArgumentNullException("Tradegroup");

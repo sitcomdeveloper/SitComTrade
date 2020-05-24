@@ -2,6 +2,7 @@
 using SitComTech.Data.Interface;
 using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
+using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,12 @@ namespace SitComTech.Domain.Services
     public class OwnerTaskService : Service<OwnerTask>,IOwnerTaskService
     {       
         private IGenericRepository<OwnerTask> _repository;
-        public OwnerTaskService(IGenericRepository<OwnerTask> repository)
+        private IUnitOfWork _unitOfWork;
+        public OwnerTaskService(IGenericRepository<OwnerTask> repository, IUnitOfWork unitOfWork)
             :base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
         }
 
@@ -39,6 +42,7 @@ namespace SitComTech.Domain.Services
                 entity.CreatedByName = "";
                 entity.Description = userdata.Description;
                 _repository.Insert(entity);
+                _unitOfWork.SaveChanges();
                 return entity;
             }
             catch (Exception ex)
@@ -63,6 +67,7 @@ namespace SitComTech.Domain.Services
                 taskdata.TaskTypeId = entity.TaskTypeId;
                 taskdata.OwnerId = entity.OwnerId;
                 _repository.Update(taskdata);
+                _unitOfWork.SaveChanges();
             }
             if (entity == null || taskdata==null)
                 throw new ArgumentNullException("Task");
@@ -73,6 +78,7 @@ namespace SitComTech.Domain.Services
             if (entity == null)
                 throw new ArgumentNullException("User");
             _repository.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
         public IQueryable<OwnerTask> GetAll()

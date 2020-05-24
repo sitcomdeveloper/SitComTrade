@@ -179,5 +179,25 @@ namespace SitComTech.API.Controllers
                 throw ex;
             }
         }
+
+        /// <summary>
+        ///  Get All Roles
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllCultureCodes")]
+        public List<CultureCode> GetAllCultureCodes()
+        {
+            try
+            {
+                var cultureCodes = _unitOfWork.Repository<CultureCode>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return cultureCodes;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
