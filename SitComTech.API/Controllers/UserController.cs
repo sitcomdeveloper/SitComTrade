@@ -120,5 +120,12 @@ namespace SitComTech.API.Controllers
                 return "Failure";
             }
         }
+
+        [HttpPost]
+        [Route("GetAllUsersByOwnerId/{ownerid}")]
+        public List<User> GetAllUsersByOwnerId(int ownerid)
+        {
+            return _userService.GetAllUsersByOwnerId(ownerid);
+        }
     }
 }

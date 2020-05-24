@@ -32,7 +32,12 @@ namespace SitComTech.Domain.Services
         {
             return _repository.Queryable().Where(x => x.Active && !x.Deleted);
         }
-       
+
+        public List<User> GetAllUsersByOwnerId(long ownerid)
+        {
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId==ownerid).ToList();
+        }
+
         public User GetById(object Id)
         {
             if ((long)Id == 0)
