@@ -53,5 +53,9 @@ export class SettingsService {
    getAllSenderSettings(): Observable<any> {
     return this.http.get(API_URL + 'Common/GetAllSenderSettings');
    }
+  //  Registr user
+  registeruser(rgstrusr: any): Observable<any> {
+    return this.http.post(API_URL + 'User/RegisterUser', rgstrusr);
+  }
 
 }
