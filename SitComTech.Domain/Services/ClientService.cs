@@ -207,7 +207,7 @@ namespace SitComTech.Domain.Services
                 Tag = x.MarketInfo.Tag1,
                 Tag1 = x.MarketInfo.Tag2,
                 FTD = x.UserOwner.clients.FTD,
-                Group = "",
+                Group = x.UserOwner.clients.GroupName,
                 Desk = x.UserOwner.clients.Desk,
                 IsEditable=false
             }).ToList();
