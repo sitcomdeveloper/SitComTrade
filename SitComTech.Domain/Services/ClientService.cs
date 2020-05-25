@@ -145,7 +145,8 @@ namespace SitComTech.Domain.Services
         {
             if (entity == null)
                 throw new ArgumentNullException("Client");
-            _repository.Delete(entity);
+            entity.Deleted = true;
+            _repository.Update(entity);
             _unitOfWork.SaveChanges();
         }
 
