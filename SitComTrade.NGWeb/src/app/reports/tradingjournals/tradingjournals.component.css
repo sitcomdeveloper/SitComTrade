@@ -25,3 +25,199 @@
     padding:auto;
     padding-top:11px;
 }
+
+
+
+
+
+.jsgrid-cell-content {
+    padding: 7px 10px;
+}
+.input, .input-control, [class*=input-mask-] {
+    position: relative;
+}
+.jsgrid .bootstrap-select.form-control {
+    padding: 0;
+}
+
+.bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*=col-] {
+    float: none;
+    display: inline-block;
+    margin-left: 0;
+}
+.bootstrap-select.form-control:not([class*=col-]) {
+    width: 100%;
+}
+.jsgrid .form-control {
+    height: 27px;
+    padding: 3px 15px;
+}
+.bootstrap-select.form-control {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+}
+.jsgrid .bootstrap-select>.dropdown-toggle {
+    padding-right: 66px;
+}
+
+.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+    color: #a9c1d5;
+}
+.bootstrap-select>.btn.dropdown-toggle {
+    font-size: 13px;
+    background: #fff;
+    border-color: #dde7f9;
+    text-shadow: none;
+    height: 100%;
+    opacity: 1;
+    border-radius: 2px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+    min-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.bs-searchbox {
+    position: relative;
+}
+.bs-searchbox .form-control, .jsgrid-cell .bs-searchbox .form-control {
+    margin-bottom: 0;
+    width: 100%;
+    float: none;
+    border-radius: 0;
+    border-color: transparent transparent #dde7f9;
+    padding-left: 38px;
+    text-align: left;
+}
+
+.jsgrid .form-control {
+    height: 27px;
+    padding: 3px 15px;
+}
+.input-control input, [class*=input-mask-right] input {
+    padding-right: 33px;
+}
+.bs-searchbox+.bs-actionsbox {
+    padding: 0 4px 4px;
+    margin-top: 4px;
+}
+
+.bs-actionsbox {
+    width: 100%;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+.btn-block {
+    min-width: 1px!important;
+    display: block;
+}
+.bs-emptychecker {
+    border: 1px solid #dde7f9;
+    border-width: 0 0 1px;
+    background-color: #f9f9f9;
+}
+.bs-emptychecker a, .bs-singleaction a {
+    display: block;
+    color: #45596a;
+    line-height: 1.53845;
+    padding: 3px 15px;
+    cursor: pointer;
+}
+.bootstrap-select.btn-group .dropdown-menu.inner {
+    position: static;
+    float: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+    min-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.bootstrap-select.btn-group .dropdown-menu li, .bootstrap-select.btn-group .dropdown-menu li a.opt {
+    position: relative;
+}
+.bootstrap-select>select {
+    position: absolute!important;
+    bottom: 0;
+    left: 50%;
+    display: block!important;
+    width: .5px!important;
+    height: 100%!important;
+    padding: 0!important;
+    opacity: 0!important;
+    border: none;
+}
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+    display: inline-block;
+}
+.dropdown-menu>li>a {
+    padding: 3px 30px 3px 15px;
+    color: #45596a;
+    line-height: 1.53845;
+}
+.bootstrap-select.btn-group.show-tick .bs-emptychecker a span.check-mark, .bootstrap-select.btn-group.show-tick .bs-singleaction a.actions-btn span.check-mark, .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.check-mark {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    background: url(/assets/images/sprite.png) 0 -220px no-repeat;
+    margin: 0 5px 0 0;
+    padding: 0!important;
+    min-height: 16px!important;
+}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.jsgrid .bootstrap-select>.dropdown-toggle {
+    padding-right: 66px;
+}
+.jsgrid .bootstrap-select.form-control {
+    padding: 0;
+}
+
+.bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*=col-] {
+    float: none;
+    display: inline-block;
+    margin-left: 0;
+}
+.bootstrap-select.form-control:not([class*=col-]) {
+    width: 100%;
+}
+.jsgrid .form-control {
+    height: 27px;
+    padding: 3px 15px;
+}
+.bootstrap-select.form-control {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+}
+.jsgrid-table {
+    background: #fff;
+    width: 100%!important;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.jsgrid-table .jsgrid-alt-row, .jsgrid-table .jsgrid-cell, .jsgrid-table .jsgrid-row {
+    position: relative;
+}
+.bootstrap-select.btn-group.show-tick .bs-emptychecker a.selected span.check-mark, .bootstrap-select.btn-group.show-tick .bs-singleaction a.actions-btn span.check-mark, .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+    background-position: 0 -240px;
+}
