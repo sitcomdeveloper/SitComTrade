@@ -22,6 +22,8 @@ export class EditTaskComponent implements OnInit {
   getInfoTasks: any;
   title: any;
   wholeData: any;
+  getLoginDetails: any;
+  bindLoginData: any;
 
   constructor(private bsmodal: BsModalRef, private taskInfoService: TasksInfoService, private fb: FormBuilder) { }
 
@@ -32,6 +34,11 @@ export class EditTaskComponent implements OnInit {
       status: [''],
       description: ['']
     });
+     // code for receiving login details and bind to owner name at place of name
+     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+     console.log('LoginData', this.getLoginDetails);
+     this.bindLoginData = this.getLoginDetails;
+     
     this.getAllTask();
     this.taskType();
     this.taskStatus();
@@ -66,7 +73,8 @@ NotiTrasportId: this.wholeData.NotiTrasportId,
 NotiTimeBefore: this.wholeData.NotiTimeBefore,
       TaskType : this.taskInfoForm.value.type,
       TaskStatus: this.taskInfoForm.value.status,
-      Description: this.taskInfoForm.value.description
+      Description: this.taskInfoForm.value.description,
+      TaskDate: this.taskInfoForm.value.taskdate
     };
     this.taskInfoService.edtTsk(obj).subscribe(res => {
       this.taskeditRes = res;

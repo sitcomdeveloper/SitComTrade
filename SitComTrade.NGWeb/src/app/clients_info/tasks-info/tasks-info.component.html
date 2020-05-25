@@ -57,17 +57,17 @@ padding-left: 0;">
                 <tr *ngFor="let trade of getInfoTasks" data-index="0" data-rule="body">
                    <td style="max-width: 300px;">
                       <div data-display-for="16_UserId">
-                         <div class="text-ellipsis">{{bindLoginData?.FullName}}</div>
+                         <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_Type">
-                         <div class="text-ellipsis">{{trade?.TaskType}}</div>
+                         <div class="text-ellipsis" tooltip="{{trade?.TaskType}}">{{trade?.TaskType}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_Status">
-                         <div class="text-ellipsis">{{trade?.TaskStatus}}</div>
+                         <div class="text-ellipsis" tooltip="{{trade?.TaskStatus}}">{{trade?.TaskStatus}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">
@@ -80,7 +80,7 @@ padding-left: 0;">
                    </td>
                    <td style="max-width: 300px;">
                       <div data-display-for="16_CreatedBy">
-                         <div class="text-ellipsis">{{bindLoginData?.FullName}}</div>
+                         <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
                       </div>
                    </td>
                    <td style="max-width: 300px;">

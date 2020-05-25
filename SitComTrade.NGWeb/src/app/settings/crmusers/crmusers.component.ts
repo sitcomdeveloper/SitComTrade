@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CrmnewuserComponent } from './crmnewuser/crmnewuser.component';
 import { CrmedituserComponent } from './crmedituser/crmedituser.component';
+import { SettingsService } from '../settings.service';
 
 @Component({
   selector: 'app-crmusers',
@@ -12,15 +13,26 @@ export class CrmusersComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   bsModalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  GetUser: any;
+  constructor(private modalService: BsModalService, private settingsService: SettingsService) {}
 
   ngOnInit() {
      // code for receiving login details and bind to header at place of name
-     this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
-     this.bindLoginData = this.getLoginDetails;
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
+
+     this.getAllUsers();
   }
   openModal(template: TemplateRef<any>) {
     this.bsModalRef = this.modalService.show(template);
+  }
+  // get all crm users
+  getAllUsers() {
+this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
+  this.GetUser = getuser;
+  console.log('GetUser', getuser);
+})
   }
   // open popup for create new user
   newcrmUser() {

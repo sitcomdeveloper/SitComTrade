@@ -40,7 +40,7 @@
            </div>
            <div _ngcontent-iwb-c9="" class="col-md-6 end">
               <a _ngcontent-iwb-c9="" class="btn-type03 create-email-template-link" data-toggle="modal" data-target="#crmnewuser" href="javascript:void(0);" (click)="newcrmUser()">
-              <i _ngcontent-iwb-c9="" class="fa fa-user-plus">&nbsp;</i> New Template</a>
+              <i _ngcontent-iwb-c9="" class="fa fa-user-plus">&nbsp;</i> New User</a>
             </div>
         </div>
         
@@ -1297,12 +1297,12 @@
                <div _ngcontent-jgg-c8="" class="jsgrid-grid-body">
                    <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table1 JColResizer" id="JColResizer0">
                        <tbody _ngcontent-jgg-c8="" _ngcontent-bdo-c4="">
-                           <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
+                           <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row" *ngFor="let usersdata of GetUser">
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
                                            <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail" class="text-ellipsis">
-                                             {{bindLoginData?.Id}}
+                                             {{usersdata?.Id}}
                                              </div>
                                        </div>
                                    </div>
@@ -1310,15 +1310,15 @@
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="">
-                                           </div></div>
+                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{usersdata?.UserName}}">
+                                           {{usersdata?.UserName}}</div></div>
                                  </div>
                              </td>
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{bindLoginData?.FirstName}}">
-                                             {{bindLoginData?.FirstName}}
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{usersdata?.FirstName}}">
+                                             {{usersdata?.FirstName}}
                                           </div>
                                        </div>
                                    </div>
@@ -1326,48 +1326,48 @@
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip=" {{bindLoginData?.LastName}}">
-                                             {{bindLoginData?.LastName}}
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip=" {{usersdata?.LastName}}">
+                                             {{usersdata?.LastName}}
                                           </div></div>
                                    </div>
                                </td>
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{bindLoginData?.Email}}">
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{usersdata?.Email}}">
                                              <a
-                    href="mailto:{{bindLoginData?.Email}}">
-                                             {{bindLoginData?.Email}}</a></div></div>
+                    href="mailto:{{usersdata?.Email}}">
+                                             {{usersdata?.Email}}</a></div></div>
                                    </div>
                                </td>
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{bindLoginData?.Mobile}}">
-                                             {{bindLoginData?.Mobile}}</div></div>
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{usersdata?.Phone}}">
+                                             {{usersdata?.Phone}}</div></div>
                                    </div>
                                </td>
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{bindLoginData?.CreatedAt}}">
-                                             {{bindLoginData?.CreatedAt}}
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{usersdata?.CreatedAt}}">
+                                             {{usersdata?.CreatedAt}}
                                           </div></div>
                                    </div>
                                </td>
                                <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{bindLoginData?.CreatedAt}}">
-                                          {{bindLoginData?.CreatedAt}}
+                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="">
+                                          
                                         </div></div>
                                  </div>
                              </td>
                              <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                               <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                     <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{bindLoginData?.CreatedAt}}">
-                                       {{bindLoginData?.CreatedAt}}
+                                     <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" tooltip="{{usersdata?.UpdatedAt}}">
+                                       {{usersdata?.UpdatedAt}}
                                      </div></div>
                               </div>
                           </td>
@@ -1382,7 +1382,9 @@
                              <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                  <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                     <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                       <i _ngcontent-xxd-c4="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" _ngcontent-jgg-c8="" aria-hidden="true" class="fa fa-check-circle bg-primary1 fa-lg greyiconn"></i>
+                                       <!-- <i _ngcontent-xxd-c4="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" _ngcontent-jgg-c8="" aria-hidden="true" class="fa fa-check-circle bg-primary1 fa-lg greyiconn"></i> -->
+                                       <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                       [ngStyle]="{'color': usersdata.IsDisabled ? 'green':'grey' }"></i>
                                     </div></div>
                              </div>
                          </td>
@@ -1390,14 +1392,14 @@
                            <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                    {{bindLoginData?.Desk}}</div></div>
+                                    {{usersdata?.DeskName}}</div></div>
                            </div>
                        </td>
                        <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content ">
                              <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                 <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                 <a href="javascript:void(0);" (click)="openModal(template)">Agent</a></div></div>
+                                 <a href="javascript:void(0);" (click)="openModal(template)">{{usersdata?.RoleName}}</a></div></div>
                          </div>
                      </td>
                      <!-- Modal -->
@@ -1409,7 +1411,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          Agent
+                           {{usersdata?.RoleName}}
                         </div>
                       </ng-template>
                       <!-- ------------------------------------------------------------------------ -->
@@ -1417,7 +1419,7 @@
                         <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content ">
                             <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                 None</div></div>
+                                 {{usersdata?.DepartmentName}}</div></div>
                         </div>
                     </td>
                      <td _ngcontent-ukx-c12="" class="email-cell email-control-field email-align-center" style="width: 84px;">
@@ -1984,7 +1986,7 @@
                                                        <div class="checkboxes">
                                                           <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                              <label>
-                                                                <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                                <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                                 View
                                                              </label>
                                                           </div>
@@ -2130,7 +2132,7 @@
                                                           </div>
                                                           <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                              <label>
-                                                                <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                                <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                                 EditOwn
                                                              </label>
                                                           </div>
@@ -2152,7 +2154,7 @@
                                                        <div class="checkboxes">
                                                           <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                              <label>
-                                                                <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                                <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                                 View
                                                              </label>
                                                           </div>
@@ -2210,7 +2212,7 @@
                                                           </div>
                                                           <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                              <label>
-                                                                <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                                <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                                 Edit
                                                              </label>
                                                           </div>
@@ -2313,7 +2315,7 @@
                                                        <div class="checkboxes">
                                                           <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                              <label>
-                                                                <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                                <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                                 ManageOwn
                                                              </label>
                                                           </div>
@@ -3432,7 +3434,7 @@
                                                        <div class="checkboxes">
                                                           <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                              <label>
-                                                                <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                                <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" value="true"></span></div>
                                                                 View
                                                              </label>
                                                           </div>
@@ -4224,7 +4226,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -4370,7 +4372,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                               EditOwn
                                                            </label>
                                                         </div>
@@ -4392,7 +4394,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -4450,7 +4452,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                               Edit
                                                            </label>
                                                         </div>
@@ -4553,7 +4555,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                               ManageOwn
                                                            </label>
                                                         </div>
@@ -5672,7 +5674,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -6464,7 +6466,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -6610,7 +6612,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                               EditOwn
                                                            </label>
                                                         </div>
@@ -6632,7 +6634,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -6690,7 +6692,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                               Edit
                                                            </label>
                                                         </div>
@@ -6793,7 +6795,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                               ManageOwn
                                                            </label>
                                                         </div>
@@ -7912,7 +7914,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -8704,7 +8706,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -8850,7 +8852,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                               EditOwn
                                                            </label>
                                                         </div>
@@ -8872,7 +8874,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -8930,7 +8932,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                               Edit
                                                            </label>
                                                         </div>
@@ -9033,7 +9035,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                               ManageOwn
                                                            </label>
                                                         </div>
@@ -10152,7 +10154,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -10944,7 +10946,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -11090,7 +11092,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                               EditOwn
                                                            </label>
                                                         </div>
@@ -11112,7 +11114,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -11170,7 +11172,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                               Edit
                                                            </label>
                                                         </div>
@@ -11273,7 +11275,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                               ManageOwn
                                                            </label>
                                                         </div>
@@ -12392,7 +12394,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -13184,7 +13186,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -13330,7 +13332,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                               EditOwn
                                                            </label>
                                                         </div>
@@ -13352,7 +13354,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -13410,7 +13412,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                               Edit
                                                            </label>
                                                         </div>
@@ -13513,7 +13515,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                               ManageOwn
                                                            </label>
                                                         </div>
@@ -14632,7 +14634,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -15424,7 +15426,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox" id="3cd67293-f851-d7a0-03c7-57b9f10acb1d" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3cd67293-f851-d7a0-03c7-57b9f10acb1d"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -15570,7 +15572,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox" id="26adc604-b70c-4db7-44e2-3fd6a27a0466" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-26adc604-b70c-4db7-44e2-3fd6a27a0466"><span class="checked"><input class="form-control" name="EditOwn" type="checkbox"  value="true"></span></div>
                                                               EditOwn
                                                            </label>
                                                         </div>
@@ -15592,7 +15594,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox" id="0372b494-058e-11be-8864-8be674420d42" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-0372b494-058e-11be-8864-8be674420d42"><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>
@@ -15650,7 +15652,7 @@
                                                         </div>
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox" id="206665a5-ac0d-b56c-54d3-61bc4384a812" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-206665a5-ac0d-b56c-54d3-61bc4384a812"><span class="checked"><input class="form-control" name="Edit" type="checkbox"  value="true"></span></div>
                                                               Edit
                                                            </label>
                                                         </div>
@@ -15753,7 +15755,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox" id="3708e0f8-d536-0979-b1d4-8fd244902fa2" value="true"></span></div>
+                                                              <div class="input-checkbox" id="uniform-3708e0f8-d536-0979-b1d4-8fd244902fa2"><span class="checked"><input class="form-control" name="ManageOwn" type="checkbox"  value="true"></span></div>
                                                               ManageOwn
                                                            </label>
                                                         </div>
@@ -16872,7 +16874,7 @@
                                                      <div class="checkboxes">
                                                         <div class="checkbox-inline" data-item="checkbox-div-holder">
                                                            <label>
-                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox" id="ec179cea-43c3-3dc5-bf8a-2c74325326a5" value="true"></span></div>
+                                                              <div class="input-checkbox" id=""><span class="checked"><input class="form-control" name="View" type="checkbox"  value="true"></span></div>
                                                               View
                                                            </label>
                                                         </div>

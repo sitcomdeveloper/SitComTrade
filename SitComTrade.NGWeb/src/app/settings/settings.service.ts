@@ -19,7 +19,39 @@ export class SettingsService {
   getSenderSettings(): Observable<any> {
     return this.http.get('assets/sendersettings.json');
   }
-  // getAllDepartments(): Observable<any> {
-  //   return this.http.get(API_URL + '');
-  // }
+  // crm users.get all crm users
+  getAllCrmUsers(users: any): Observable<any> {
+    return this.http.post(API_URL + 'User/GetAllUsersByOwnerId/' + users, {});
+  }
+  // crm users.create user.component.ts
+  getAllDepartments(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllDepartments');
+  }
+   // crm users.create user.component.ts
+   getAllDesks(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllDesks');
+   }
+   // crm users.create user.component.ts
+   getAllTimeZones(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllTimeZones');
+   }
+   // crm users.create user.component.ts
+   getAllModules(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllModules');
+   }
+   // crm users.create user.component.ts
+   getAllCultureCodes(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllCultureCodes');
+   }
+   // crm users.create user.component.ts
+   getAllRoles(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllRoles');
+   }
+   getAllAffiliateFields(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllAffiliateFields');
+   }
+   getAllSenderSettings(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllSenderSettings');
+   }
+
 }

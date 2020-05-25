@@ -19,7 +19,7 @@
                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false"
                         aria-selected="true">
 
-                        <span class="text">Owner</span>
+                        <span class="text">{{bindLoginData?.FullName}}</span>
                      </a>
                   </option>
 
@@ -66,7 +66,7 @@
          <div class="row">
             <div class="col-xs-2 col-md-2"><label class="valign-label" for="Date"><span
                      data-tooltip-el="">Date</span></label></div>
-            <div class="col-xs-10 col-md-10"><input class="form-control datetimepicker valid" name="Date" type="date"
+            <div class="col-xs-10 col-md-10"><input class="form-control datetimepicker valid" name="Date" type="date" formControlName="taskdate"
                   autocomlete="off" aria-required="true" aria-invalid="false"></div>
          </div>
       </div>

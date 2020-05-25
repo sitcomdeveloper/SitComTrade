@@ -79,7 +79,7 @@
                            
                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
-                              <option value="206" style="">IMC</option>
+                              <option value="206" *ngFor="let getdesks of Desks">{{getdesks?.Name}}</option>
                            </select>
                     
                      </div>
@@ -94,13 +94,8 @@
                      
                           
                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
-                              <option value="8">Owner</option>
-                              <option value="17">DESK MANAGER</option>
-                              <option value="32">Retention</option>
-                              <option value="34">Agent</option>
-                              <option value="35">Conversion</option>
-                              <option value="36">General Support</option>
-                              <option value="39">desk1</option>
+                              <option value="">Select</option>
+                              <option value="" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
                        
                      </div>
@@ -114,11 +109,7 @@
                           
                            <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98">
                               <option value="">Select...</option>
-                              <option value="0">None</option>
-                              <option value="1">Management</option>
-                              <option value="2">Sales</option>
-                              <option value="3">Retention</option>
-                              <option value="4">Marketing</option>
+                              <option value="0" *ngFor="let getdepartments of Departments">{{getdepartments?.Name}}</option>
                            </select>
                         </div>
                  
@@ -133,12 +124,8 @@
                         
                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
                            <option value="8">Owner</option>
-                           <option value="17">DESK MANAGER</option>
-                           <option value="32">Retention</option>
-                           <option value="34">Agent</option>
-                           <option value="35">Conversion</option>
-                           <option value="36">General Support</option>
-                           <option value="39">desk1</option>
+                           <!-- <option value="17">DESK MANAGER</option>
+                           <option value="32">Retention</option> -->
                         </select>
                         </div>
                     
@@ -152,16 +139,7 @@
                           
                            <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
-                              <option value="Dateline Standard Time">(UTC-12:00) International Date Line West</option>
-                              <option value="UTC-11">(UTC-11:00) Coordinated Universal Time-11</option>
-                              <option value="Aleutian Standard Time">(UTC-10:00) Aleutian Islands</option>
-                              <option value="Hawaiian Standard Time">(UTC-10:00) Hawaii</option>
-                              <option value="Marquesas Standard Time">(UTC-09:30) Marquesas Islands</option>
-                              <option value="Alaskan Standard Time">(UTC-09:00) Alaska</option>
-                              <option value="UTC-09">(UTC-09:00) Coordinated Universal Time-09</option>
-                              <option value="Pacific Standard Time (Mexico)">(UTC-08:00) Baja California</option>
-                              <option value="UTC-08">(UTC-08:00) Coordinated Universal Time-08</option>
-                 
+                              <option value="Dateline Standard Time" *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
                            </select>
                      
                      </div>
@@ -177,9 +155,7 @@
                           
                            <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" id="a90d25e0a-602f-6fcf-5387-326f21cb4940" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
-                              <option value="en-US">en-US</option>
-                              <option value="ar-SA">ar-SA</option>
-                              <option value="ru-RU">ru-RU</option>
+                              <option value="" *ngFor="let getculturecode of CultureCode">{{getculturecode?.CultureCodeName}}</option>
                            </select>
                      
                      </div>
@@ -193,8 +169,7 @@
                          
                            <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="ad9cab536-ce18-044e-f9fc-a34da4a7a406" aria-required="true" tabindex="-98">
                               <option value="">Select...</option>
-                              <option value="en-US">English</option>
-                              <option value="ru-RU">Russian</option>
+                              <option value="" *ngFor="let getculturecode of CultureCode">{{getculturecode?.UICultureCodeName}}</option>
                            </select>
                         
                      </div>
@@ -204,32 +179,24 @@
             <div class="form-group row">
                <div class="col-md-6">
                   <div class="row">
-                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="StartModuleId" data-original-title="" title=""><span data-tooltip-el="">StartModuleId</span></label></div>
+                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="StartModuleId" data-original-title="" title=""><span data-tooltip-el="" tooltip="StartModuleId">StartModuleId</span></label></div>
                      <div class="col-md-9">
                      
                           
                            <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a4ce8f266-eedd-3524-ddc4-291dd07b7e36" tabindex="-98">
                               <option value="">Select...</option>
                               <optgroup label="Clients">
-                                 <option value="27">Clients</option>
-                                 <option value="9">Trade Accounts</option>
+                                 <option value="" *ngFor="let Clients of Modules">{{Clients?.Name}}</option>
+                                 
                               </optgroup>
                               <optgroup label="Activities">
-                                 <option value="14">Monetary Transactions</option>
-                                 <option value="16">Tasks</option>
-                                 <option value="22">Cases</option>
-                                 <option value="5">Documents</option>
-                                 <option value="109">Common journal</option>
-                                 <option value="15">Opened Orders</option>
-                                 <option value="13">Closed Orders</option>
-                                 <option value="52">Pending Orders</option>
+                                 <option value="" *ngFor="let Activities of Modules">{{Activities?.Name}}</option>
                               </optgroup>
                               <optgroup label="Reports">
-                                 <option value="59">Reports</option>
-                                 <option value="60">Trading Journal</option>
+                                 <option value="" *ngFor="let Reports of Modules">{{Reports?.Name}}</option>
                               </optgroup>
                               <optgroup label="Settings">
-                                 <option value="2">Crm Users</option>
+                                 <option value="" *ngFor="let Settings of Modules">{{Settings?.Name}}</option>
                               </optgroup>
                            </select>
                        
@@ -238,18 +205,13 @@
                </div>
                <div class="col-md-6">
                   <div class="row">
-                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="DefaultSenderSetting" data-original-title="" title=""><span data-tooltip-el="">DefaultSenderSetting</span></label></div>
+                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="DefaultSenderSetting" data-original-title="" title=""><span data-tooltip-el="" tooltip="DefaultSenderSetting">DefaultSenderSetting</span></label></div>
                      <div class="col-md-9">
                       
                           
                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
-                           <option value="8">Owner</option>
-                           <option value="17">DESK MANAGER</option>
-                           <option value="32">Retention</option>
-                           <option value="34">Agent</option>
-                           <option value="35">Conversion</option>
-                           <option value="36">General Support</option>
-                           <option value="39">desk1</option>
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let getsndrsettings of SenderSettings">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
                         
                      </div>
@@ -259,21 +221,12 @@
             <div class="form-group row">
                <div class="col-md-6">
                   <div class="row">
-                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="">SharedSenderSettings</span></label></div>
+                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">SharedSenderSettings</span></label></div>
                      <div class="col-md-9">
                        
                         <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98">
                            <option value="">Select...</option>
-                           <option value="Dateline Standard Time">(UTC-12:00) International Date Line West</option>
-                           <option value="UTC-11">(UTC-11:00) Coordinated Universal Time-11</option>
-                           <option value="Aleutian Standard Time">(UTC-10:00) Aleutian Islands</option>
-                           <option value="Hawaiian Standard Time">(UTC-10:00) Hawaii</option>
-                           <option value="Marquesas Standard Time">(UTC-09:30) Marquesas Islands</option>
-                           <option value="Alaskan Standard Time">(UTC-09:00) Alaska</option>
-                           <option value="UTC-09">(UTC-09:00) Coordinated Universal Time-09</option>
-                           <option value="Pacific Standard Time (Mexico)">(UTC-08:00) Baja California</option>
-                           <option value="UTC-08">(UTC-08:00) Coordinated Universal Time-08</option>
-              
+                           <option value="" *ngFor="let getsndrsettings of SenderSettings">{{getsndrsettings?.IsShared}}</option>
                         </select>
                         </div>
                     

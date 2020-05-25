@@ -20,6 +20,8 @@ export class CreateTaskComponent implements OnInit {
   detail: number;
   moreId: number;
   isstaticvalue: any;
+  getLoginDetails: any;
+  bindLoginData: any;
 
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder, private route: ActivatedRoute) { }
 
@@ -34,8 +36,12 @@ export class CreateTaskComponent implements OnInit {
       taskStatusId: [''],
       statusName: [''],
       taskName: ['']
-
-    });
+});
+ // code for receiving login details and bind to owner name at place of name
+ this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+ console.log('LoginData', this.getLoginDetails);
+ this.bindLoginData = this.getLoginDetails;
+ 
     this.getAllTask();
     this.taskType();
     this.taskStatus();
@@ -112,7 +118,8 @@ NotiTrasportId: 1,
 TaskType: this.taskInfoForm.value.taskName,
 Description: this.taskInfoForm.value.description,
 TaskStatus: this.taskInfoForm.value.statusName,
-NotiTimeBefore: this.taskInfoForm.value.notitimebefore
+NotiTimeBefore: this.taskInfoForm.value.notitimebefore,
+TaskDate: this.taskInfoForm.value.taskdate
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
