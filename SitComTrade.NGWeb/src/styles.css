@@ -1121,6 +1121,26 @@ tr.tablectn {
     .width100 {
         width: 100%;
     }
+    .form-subholder {
+        margin: 0 -43px;
+    }
+    .hightlited-area02 {
+        padding-left: 29px;
+        padding-right: 29px;
+        margin: 0;
+    }
+    
+    
+    .hightlited02 {
+        border-color: #dde7f9;
+        background: #eff3fb;
+    }
+    .hightlited-area02 {
+        border: 1px solid transparent;
+        border-width: 1px 0;
+        margin: 0 -15px 15px;
+        padding: 14px 15px;
+    }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

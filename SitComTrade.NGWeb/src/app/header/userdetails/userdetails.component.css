@@ -3,3 +3,33 @@
     font-weight: 400;
     line-height: 28px;
 }
+.modal h2, .modal h3, .modal h4 {
+    text-transform: uppercase;
+    color: #000;
+}
+.h3, h3 {
+    font: 700 14px/18px Poppins,Arial,sans-serif;
+}
+i.fa.fa-eye {
+    position: absolute;
+    /* left: 0; */
+    top: 9px;
+    right: 24px;
+    bottom: 0;
+    margin: auto;
+    color: #c1c1c1;
+}
+.form-holder .collapse-control .close {
+    margin-right: -35px;
+}
+
+.collapsed .close {
+    margin-right: -20px;
+    display: none;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.collapse .collapse-control .close {
+    display: block;
+}
