@@ -39,6 +39,9 @@ export class SettingsService {
    getAllModules(): Observable<any> {
     return this.http.get(API_URL + 'Common/GetAllModules');
    }
+   getAllModulesGroups(): Observable<any> {
+    return this.http.get(API_URL + 'Common/GetAllModuleGroups');
+   }
    // crm users.create user.component.ts
    getAllCultureCodes(): Observable<any> {
     return this.http.get(API_URL + 'Common/GetAllCultureCodes');

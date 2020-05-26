@@ -293,6 +293,17 @@ $('#edit-comment').click(function(){
       $("#files_name").html('');
     }
    </script>
+   <!-- for showing pwd by clicking on eye -->
+   <script>
+    function hideshowpwd() {
+      var x = document.getElementById("eye");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
 </body>
 
 </html>

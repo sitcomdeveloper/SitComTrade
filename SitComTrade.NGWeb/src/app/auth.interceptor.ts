@@ -1,7 +1,8 @@
-import { HttpInterceptor, HttpHandler, HttpEvent, HttpRequest } from '@angular/common/http';
+import { HttpInterceptor, HttpHandler, HttpEvent, HttpRequest,HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 @Injectable()
@@ -11,7 +12,16 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.headers.get('No-Auth') == "True") {
       return next.handle(req.clone());
-    }
+    } 
+    // else {
+    //   catchError((err: HttpErrorResponse) => {
+    //           if (err.status === 401) {
+    //             alert('Your session is expired!!.Please login again to continue');
+    //             this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
+    //           }
+    //           return throwError(err);
+    //         })
+    // }
 
     if (window.sessionStorage.getItem('userToken') != null) {
       const clonedReq = req.clone({
@@ -20,7 +30,16 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(clonedReq);
     }
     else {
-      this.router.navigateByUrl("/login");
+      // this.router.navigateByUrl("/login");
+      catchError((err: HttpErrorResponse) => {
+        if (err.status === 401) {
+          alert('Your session is expired!!.Please login again to continue');
+          this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
+          window.sessionStorage.clear;
+        }
+        return throwError(err);
+      })
     }
   }
-}   
+ 
+}
