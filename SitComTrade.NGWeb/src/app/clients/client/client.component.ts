@@ -313,10 +313,8 @@ deletbtn(val, userid) {
         addcommentsby3Dots: "add"
       }
     };
-    
-    this.bsModalRef = this.modalService.show(CommentsComponent,config);
+this.bsModalRef = this.modalService.show(CommentsComponent,config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    
   }
   openTasksinfoComponent(rowId) {
     const config: ModalOptions = {

@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TasksInfoService } from '../tasks-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-// import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
+  @Input() prtdata: any;
+  @Output() clddata: EventEmitter<any> = new EventEmitter();
   getTasks: any;
   getTaskTypeData: any;
   getStatus: any;
@@ -23,7 +25,7 @@ export class CreateTaskComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
 
-  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.taskInfoForm = this.fb.group({
@@ -124,9 +126,13 @@ TaskDate: this.taskInfoForm.value.taskdate
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
-    window.location.reload();
+    this.clddata.emit(res);
     console.log('inserttasks', res);
+    this.hideModal();
   });
+}
+hideModal() {
+  this.bsModalRef.hide();
 }
 
 }

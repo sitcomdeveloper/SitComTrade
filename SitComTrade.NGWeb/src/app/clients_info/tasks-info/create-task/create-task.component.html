@@ -1,3 +1,9 @@
+<div class="modal-header">
+   <h4 class="modal-title pull-left">{{title}} </h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+       <span aria-hidden="true">&times;</span>
+   </button>
+</div>
 <div class="form-holder">
 
    <form class="form-horizontal" novalidate="novalidate">
@@ -116,12 +122,6 @@
                         <option ngcontent-qpo-c3="">15 min</option>
                         <option ngcontent-qpo-c3="">30 min</option>
                         <option ngcontent-qpo-c3="">1 hour</option>
-
-
-
-
-
-
                      </select>
                   </div>
                </div>
@@ -158,7 +158,7 @@
             <a _ngcontent-yvm-c4="" id="create-task-refersh" class="button submit-button itembutton" href="javascript:void(0)"
                data-dismiss="modal" (click)="infoTasks()">Save</a>
             <a _ngcontent-yvm-c4="" class="button button2 itembutton1" data-dismiss="modal"
-               href="javascript:void(0);">Cancel</a>
+               href="javascript:void(0);" (click)=" hideModal()">Cancel</a>
          </div>
       </div>
    </div>
