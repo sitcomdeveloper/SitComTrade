@@ -14,4 +14,16 @@ namespace SitComTech.Data.Mapping
             Property(x => x.InitialDeposit).HasPrecision(18, 6);
         }
     }
+
+    public class LeverageMap : EntityTypeConfiguration<Leverage>
+    {
+        public LeverageMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        }
+
+    }
 }

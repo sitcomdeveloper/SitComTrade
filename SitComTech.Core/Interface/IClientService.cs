@@ -15,8 +15,6 @@ namespace SitComTech.Core.Interface
 
         Client GetClientDetailById(long id);
 
-        List<UserResponseStatus> GetLeadStatusList();
-
         List<Client> GetTradeAccountByType(TradeAccountVM tradeVM);
         Client GetById(object Id);
         void DeleteClient(Client entity);
