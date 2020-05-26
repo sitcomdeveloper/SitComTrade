@@ -157,15 +157,7 @@ namespace SitComTech.Domain.Services
                 return null;
             Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id);
             return Client;
-        }
-
-        public List<UserResponseStatus> GetLeadStatusList()
-        {
-            //var dpfRep = _repository.GetRepository<UserResponseStatus>();
-            //return dpfRep.Query(x => x.Active).Select().ToList();
-
-            return null;
-        }
+        }      
 
         public List<Client> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
