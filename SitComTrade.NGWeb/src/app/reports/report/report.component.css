@@ -2,3 +2,60 @@
 {
     display: table-column;    padding-top: 11px;
 }
+
+
+.text-ellipsis {
+    
+    width:61px;
+}
+
+td
+
+{
+    width: 75px!important;
+}
+/* .jsgrid-cell-content {
+    width: 64px;
+} */
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+}
+.email-table1
+{
+    width: 100%;
+}
+.email-alt-row {
+    background: #f5f8fc;
+}
+
+
+.content-tabs3 .nav-tabs {
+    border-color: #c9d4e7;
+}
+
+
+.form-control {
+    font-size: 13px;
+    color: #45596a;
+    height: 33px;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.btn, .form-control {
+    /* padding: 6px 15px; */
+}
+.inner {
+    position: static;
+    float: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.greyiconnn {
+  
+    padding-left: 11px;
+}
