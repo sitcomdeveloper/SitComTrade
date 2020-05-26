@@ -93,10 +93,44 @@
                      <div class="col-md-9">
                      
                           
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles">
+                           <!-- <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles">
                               <option value="">Select</option>
                               <option value="" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
-                           </select>
+                           </select> -->
+                           <div class="btn-group bootstrap-select show-tick form-control">
+                              <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a1a206e37-c3d3-4fe0-415d-f82eb611ff26" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
+                              <div class="dropdown-menu open" role="combobox" style="max-height: 417px; overflow: hidden; min-height: 67px;">
+                                 <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
+                                 <div class="bs-actionsbox">
+                                    <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
+                                 </div>
+                                 <ul class="dropdown-menu2 inner1" role="listbox" aria-expanded="false" style="max-height: 321px;overflow-y: auto;min-height: 0px;">
+                                    <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                        <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
+</span><span class="text">None</span></a></li>
+                                        <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                            <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
+</span><span class="text">CRM</span></a></li>
+                                            <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
+</span><span class="text">WebTrader</span></a></li>
+                                                <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                                                    <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
+</span><span class="text">Terminal</span></a></li>
+                                                    
+                                                </ul>
+                                 <!-- <select class="form-control" name="Roles" data-container="body" data-live-search="true" id="a1a206e37-c3d3-4fe0-415d-f82eb611ff26" multiple="multiple" data-single-action-box="true" data-actions-box="true" data-clear-icon="true" aria-required="true" tabindex="-98">
+                                    <option value="8">Owner</option>
+                                    <option value="17">DESK MANAGER</option>
+                                    <option value="32">Retention</option>
+                                    <option value="34">Agent</option>
+                                    <option value="35">Conversion</option>
+                                    <option value="36">General Support</option>
+                                    <option value="39">desk1</option>
+                                 </select> -->
+                              </div>
+                           
+                           </div>
                        
                      </div>
                   </div>

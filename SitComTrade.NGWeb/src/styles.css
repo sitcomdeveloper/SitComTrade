@@ -1141,6 +1141,30 @@ tr.tablectn {
         margin: 0 -15px 15px;
         padding: 14px 15px;
     }
+    .tools-panel-addon {
+        min-height: 35px;
+      
+        font: 13px/19px Poppins,Arial,sans-serif;
+    }
+    .extra-nav {
+        font: 12px Poppins,Arial,sans-serif;
+    }
+    
+    .navbar-nav {
+        margin: 0;
+    }
+    #sidebar, .formitem, .navbar-header, .navbar-nav, .navbar-nav>li {
+        float: left;
+    }
+    .extra-nav>li>a {
+        color: #fff;
+        padding: 20px 15px;
+    }
+    
+    .extra-nav>li>a, .main-tabs, .text-upper {
+        text-transform: uppercase;
+    }
+    
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

@@ -97,6 +97,13 @@ namespace SitComTech.API.Auth
         }
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
+            //Ravi To set token expiration time out
+            //if (context.TokenIssued)
+            //{
+            //    // client information
+            //    var accessExpiration = DateTimeOffset.Now.AddHours(2);
+            //    context.Properties.ExpiresUtc = accessExpiration;
+            //}
             foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
             {
                 context.AdditionalResponseParameters.Add(property.Key, property.Value);
