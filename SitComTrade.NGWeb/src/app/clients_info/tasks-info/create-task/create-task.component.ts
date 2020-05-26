@@ -35,7 +35,8 @@ export class CreateTaskComponent implements OnInit {
       notitimebefore: [''],
       taskStatusId: [''],
       statusName: [''],
-      taskName: ['']
+      taskName: [''],
+      taskdate: ['']
 });
  // code for receiving login details and bind to owner name at place of name
  this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));

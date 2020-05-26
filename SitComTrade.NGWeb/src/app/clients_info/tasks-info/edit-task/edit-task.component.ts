@@ -32,7 +32,8 @@ export class EditTaskComponent implements OnInit {
       owner: [''],
       type: [''],
       status: [''],
-      description: ['']
+      description: [''],
+      taskdate: ['']
     });
      // code for receiving login details and bind to owner name at place of name
      this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
@@ -60,7 +61,8 @@ export class EditTaskComponent implements OnInit {
       this.taskInfoForm.patchValue({
         type: this.wholeData.TaskType,
         status: this.wholeData.TaskStatus,
-        description: this.wholeData.Description
+        description: this.wholeData.Description,
+        taskdate: this.wholeData.TaskDate
       });
   }
   saveEditTaskData() {
