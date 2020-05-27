@@ -1162,7 +1162,135 @@ tr.tablectn {
     .extra-nav>li>a, .main-tabs, .text-upper {
         text-transform: uppercase;
     }
+    .checkbox-inline, .radio-inline {
+        position: relative;
+        display: inline-block;
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: 400;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    .switcher {
+        margin: 0;
+        padding: 7px 0;
+    }
+    .switcher .checkcontrol {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        background: #e0e8f3;
+        border-radius: 9px;
+        width: 28px;
+        height: 19px;
+        cursor: pointer;
+        margin: 0 3px;
+    }
+    .switcher .checkcontrol input {
+        margin: 0!important;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        opacity: 0;
+    }
+    .switcher .checkcontrol:before {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 2px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+        -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+    }
+     .switcher .checkcontrol:before, [class*=icomark-]:after {
+        content: "";
+    }
+    .switcher .checkcontrol.on:before {
+        right: 10px;
+    }
+    .switcher .checkcontrol:before {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 2px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+        -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+    }
+    .switcher .checkcontrol.on:before {
+        right: 10px;
+    }
     
+    input[type="checkbox"].switch_1{
+    
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+            display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        background: #e0e8f3;
+        border-radius: 9px;
+        width: 28px;
+        height: 19px;
+        cursor: pointer;
+        margin: 0 3px;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+      }
+      
+      input[type="checkbox"].switch_1:checked{
+        background: #0ebeff;
+      }
+      
+      input[type="checkbox"].switch_1:after{
+        position: absolute;
+        content: "";
+            width: 14px;
+        height: 14px;
+       
+       top:2px;
+        border-radius: 50%;
+        background: #fff;
+        -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+                box-shadow: 0 0 .25em rgba(0,0,0,.3);
+        -webkit-transform: scale(.7);
+                transform: scale(.7);
+        left: 0;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+      }
+      
+      input[type="checkbox"].switch_1:checked:after{
+        left: calc(100% - 1.0em);
+      }
+      .switchboxtext
+      {
+          font-weight: 500;
+        display: inline-table;
+        line-height: initial;
+        line-height: 1.230769;
+        margin: 0;
+        padding: 7px 0;
+      }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

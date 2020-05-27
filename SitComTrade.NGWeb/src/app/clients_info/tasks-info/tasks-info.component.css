@@ -30,3 +30,7 @@
 .scroll-area {
     width: 100%;
 }
+.box-control {
+    
+    display: flex;
+}
