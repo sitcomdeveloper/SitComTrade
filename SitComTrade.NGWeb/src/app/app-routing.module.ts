@@ -10,56 +10,12 @@ import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, Instr
   ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, GroupsInfoComponent } from './settings';
 import { ClientsComponent } from './header/clients/clients.component';
 import { ActivitiesComponent } from './header/activities/activities.component';
-// import { ReportComponent } from './reports/report/report.component';
 import { SettingsComponent } from './header/settings/settings.component';
-
-// import { ClientComponent } from './clients/client/client.component';
-
 import { LoginComponent } from './login/login.component';
-// import { TradeaccountsComponent } from './clients/tradeaccounts/tradeaccounts.component';
-// import { DashboardComponent } from './reports/dashboard/dashboard.component';
-// import { ExposureComponent } from './reports/exposure/exposure.component';
-// import { LeaderboardComponent } from './reports/leaderboard/leaderboard.component';
-
-// import { TradingjournalsComponent } from './reports/tradingjournals/tradingjournals.component';
-// import { BenchmarkComponent } from './reports/benchmark/benchmark.component';
-
-// import { MonetarytransactionsComponent } from './activities/monetarytransactions/monetarytransactions.component';
-// import { TasksComponent } from './activities/tasks/tasks.component';
-// import { CasesComponent } from './activities/cases/cases.component';
-// import { DocumentsComponent } from './activities/documents/documents.component';
-// import { OpenedordersComponent } from './activities/openedorders/openedorders.component';
-// import { ClosedordersComponent } from './activities/closedorders/closedorders.component';
-// import { PendingordersComponent } from './activities/pendingorders/pendingorders.component';
-// import { RejectedtransactionComponent } from './activities/rejectedtransaction/rejectedtransaction.component';
-// import { CommonjournalComponent } from './activities/commonjournal/commonjournal.component';
-// import { EmailtemplatesComponent } from './settings/emailtemplates/emailtemplates.component';
-// import { SendersettingsComponent } from './settings/sendersettings/sendersettings.component';
-// import { GroupsComponent } from './settings/groups/groups.component';
-// import { InstrumentsComponent } from './settings/instruments/instruments.component';
-// import { TranslationsComponent } from './settings/translations/translations.component';
-// import { FiltersComponent } from './settings/filters/filters.component';
-// import { ImportsComponent } from './settings/imports/imports.component';
-
-// import { CrmusersComponent } from './settings/crmusers/crmusers.component';
-// import { AffilateusersComponent } from './settings/affilateusers/affilateusers.component';
-// import { AdditionalfieldsComponent } from './settings/additionalfields/additionalfields.component';
-// import { ModulefieldsComponent } from './settings/modulefields/modulefields.component';
-// import { IplistComponent } from './settings/iplist/iplist.component';
-// import { TradinghoursComponent } from './settings/tradinghours/tradinghours.component';
-// import { WorkflowsComponent } from './settings/workflows/workflows.component';
 import { ReportsComponent } from './header/reports/reports.component';
-// import { AuthGuard } from './auth.guard';
-// import { TermsComponent } from './terms/terms.component';
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
-// import { GeneralInfoComponent } from './clients_info/general-info/general-info.component';
-// import { ItemComponent } from './clients/item/item.component';
-// import { ImportClientComponent } from './clients/import-client/import-client.component';
-// import { GroupsInfoComponent } from './settings/groups/groups-info/groups-info.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { AuthGuard } from './auth.guard';
-
-
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -71,12 +27,11 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'client', pathMatch: 'full'},
       {path: 'client', component: ClientComponent},
-    
       // {path: 'client', component: ClientComponent},
       {path: 'tradeaccounts', component: TradeaccountsComponent,}
     ]},
-  {path: '', component: ActivitiesComponent,canActivate:[AuthGuard]},
-  {path: 'activities', component: ActivitiesComponent,canActivate:[AuthGuard],
+  {path: '', component: ActivitiesComponent},
+  {path: 'activities', component: ActivitiesComponent,
     children: [
       {path: '', redirectTo: '', pathMatch: 'full'},
       {path: 'monetarytransactions', component: MonetarytransactionsComponent},
@@ -91,8 +46,8 @@ const routes: Routes = [
 
     ]},
 
-{path: '', component: ReportsComponent,canActivate:[AuthGuard]},
-{path: 'reports', component: ReportsComponent,canActivate:[AuthGuard],
+{path: '', component: ReportsComponent},
+{path: 'reports', component: ReportsComponent,
     children: [
       {path: '', redirectTo: '', pathMatch: 'full'},
       {path: 'dashboard', component: DashboardComponent},
@@ -104,8 +59,8 @@ const routes: Routes = [
     ]
 },
 
-{path: '', component: SettingsComponent,canActivate:[AuthGuard]},
-{path: 'settings', component: SettingsComponent,canActivate:[AuthGuard],
+{path: '', component: SettingsComponent},
+{path: 'settings', component: SettingsComponent,
   children: [
     {path: '', redirectTo: '', pathMatch: 'full'},
            {path: 'crmusers', component: CrmusersComponent},
@@ -126,19 +81,14 @@ const routes: Routes = [
 },
 // terms and conditions
 // {path: 'terms', component: TermsComponent},
-
 // clients-info
-{path: 'info/:selectedItem', component: ClientsInfoComponent,canActivate:[AuthGuard]},
-// {path: 'generalinfo/:userid', component: GeneralInfoComponent},
-// {path: 'user', component: ItemComponent},
+{path: 'info/:selectedItem', component: ClientsInfoComponent},
 // for group(general-info)
-{path: 'groups-info/:setItem', component: GroupsInfoComponent,canActivate:[AuthGuard]},
-// {path: 'importclients', component: ImportClientComponent},
-
+{path: 'groups-info/:setItem', component: GroupsInfoComponent},
 // tradeaccount
-{path: 'livetrade/:trdingDtls', component: LiveDetailComponent,canActivate:[AuthGuard]}
+{path: 'livetrade/:trdingDtls', component: LiveDetailComponent}
 // /:trdingDtls
-
+// ,canActivate:[AuthGuard]
 
 
 
