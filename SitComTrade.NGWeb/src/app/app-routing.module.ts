@@ -65,8 +65,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
 
-{path: '', component: ClientsComponent,canActivate:[AuthGuard]},
- {path: 'clients', component: ClientsComponent,canActivate:[AuthGuard],
+{path: '', component: ClientsComponent},
+ {path: 'clients', component: ClientsComponent,
 
     children: [
       {path: '', redirectTo: 'client', pathMatch: 'full'},

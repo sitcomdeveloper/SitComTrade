@@ -59,8 +59,8 @@ export class CrmnewuserComponent implements OnInit {
       password: [''],
       repeatpassword: [''],
 
-      deskid:[''],
-      rolesid:[''],
+      deskid: [''],
+      rolesid: [''],
       departmentid: [''],
       shareddesksid: [''],
       timezoneid: [''],
@@ -86,37 +86,37 @@ export class CrmnewuserComponent implements OnInit {
     this.settingsService.getAllDesks().subscribe(desks => {
       this.Desks = desks;
       console.log('Desks', desks);
-    })
+    });
   }
   getDepartments() {
     this.settingsService.getAllDepartments().subscribe(departments => {
       this.Departments = departments;
       console.log('Departments', departments);
-    })
+    });
   }
   getTimeZone() {
     this.settingsService.getAllTimeZones().subscribe(timezone => {
       this.TimeZones = timezone;
       console.log('TimeZones', timezone);
-    })
+    });
   }
   getCultureCodes() {
     this.settingsService.getAllCultureCodes().subscribe(cultrecode => {
       this.CultureCode = cultrecode;
       console.log('CultureCode', cultrecode);
-    })
+    });
   }
   getRoles() {
-    this.settingsService.getAllRoles().subscribe(roles =>{
+    this.settingsService.getAllRoles().subscribe(roles => {
       this.Roles = roles;
       console.log('Roles', roles);
-    })
+    });
   }
   getSenderSettings() {
     this.settingsService.getAllSenderSettings().subscribe(sndrsettings => {
       this.SenderSettings = sndrsettings;
       console.log('SenderSettings', sndrsettings);
-    })
+    });
   }
   // getModulesGroup() {
   //   this.settingsService.getAllModulesGroups().subscribe(res => {
@@ -128,31 +128,31 @@ export class CrmnewuserComponent implements OnInit {
     this.settingsService.getAllModules().subscribe(modules => {
       this.Modules = modules;
       this.Clients = this.Modules.filter(clients => {
-        if(clients.ModuleGroupName === 'Clients') {
+        if (clients.ModuleGroupName === 'Clients') {
           return clients;
         }
-      })
+      });
       this.mdlen = this.Clients.length;
       console.log('clients', this.Clients.length);
       this.Activities = this.Modules.filter(activities => {
-        if(activities.ModuleGroupName === 'Activities') {
+        if (activities.ModuleGroupName === 'Activities') {
           return activities;
         }
-      })
+      });
       this.Reports = this.Modules.filter(reports => {
-        if(reports.ModuleGroupName === 'Reports') {
+        if (reports.ModuleGroupName === 'Reports') {
           return reports;
         }
-      })
+      });
       this.Settings = this.Modules.filter(settings => {
-        if(settings.ModuleGroupName === 'Settings') {
+        if (settings.ModuleGroupName === 'Settings') {
           return settings;
         }
-      })
+      });
 
       console.log('Modules', modules);
-    })
-   
+    });
+
   }
   // make the user registered
   svingDtls() {
@@ -209,42 +209,61 @@ export class CrmnewuserComponent implements OnInit {
     const rgstrusr = {
       FirstName: this.newRegisterForm.value.firstname,
       LastName: this.newRegisterForm.value.lastname,
-      Email: this.newRegisterForm.value.email, 
+      Email: this.newRegisterForm.value.email,
       Phone: this.newRegisterForm.value.phone,
       Password: this.newRegisterForm.value.password,
-      DeskId: this.newRegisterForm.value.desk, 
+      DeskId: this.newRegisterForm.value.desk,
       DeskName: this.newRegisterForm.value.deskid,
       IsDisabled: this.newRegisterForm.value.disabled,
       UserName: this.newRegisterForm.value.username,
-      // IsAffiliateUser: this.newRegisterForm.value.,
       ImageName: this.newRegisterForm.value.image,
-      // LockoutEnabled: this.newRegisterForm.value.,
-      // CampaignCode: this.newRegisterForm.value.,
-      // AffiliateFieldId: this.newRegisterForm.value.,
-      // AffiliateFieldName: this.newRegisterForm.value.,
       RoleId: this.newRegisterForm.value.roles,
       RoleName: this.newRegisterForm.value.rolesid,
       DepartmentId: this.newRegisterForm.value.department,
       DepartmentName: this.newRegisterForm.value.departmentid,
-      SharedDeskId: this.newRegisterForm.value.shareddesks,
-      SharedDeskName: this.newRegisterForm.value.shareddesksid,
-      TimezoneId: this.newRegisterForm.value.timezone,
-      TimezoneName: this.newRegisterForm.value.timezoneid,
-      CultureCode: this.newRegisterForm.value.culturecodeid,
-      CultureCodeId: this.newRegisterForm.value.culturecode,
-      UiCultureCode: this.newRegisterForm.value.uiculturecodeid,
-      UiCultureCodeId: this.newRegisterForm.value.uiculturecode,
-      StartModuleId: this.newRegisterForm.value.startmodule,
-      StartModuleName: this.newRegisterForm.value.startmoduleid,
-      DefaultSenderId: this.newRegisterForm.value.defaultsendersetting,
-      DefaultSenderName: this.newRegisterForm.value.defaultsendersettingid,
-      SharedSenderId: this.newRegisterForm.value.sharedsendersettings,
-      SharedSenderName: this.newRegisterForm.value.sharedsendersettingsid,
-      OwnerId: this.bindLoginData.UserId
+      // SharedDeskId: this.newRegisterForm.value.shareddesks,
+      // SharedDeskName: this.newRegisterForm.value.shareddesksid,
+      SharedDeskId: '2',
+      SharedDeskName: 'de',
+      // TimezoneId: this.newRegisterForm.value.TimezoneId,
+      TimezoneId: '1',
+      TimezoneName: this.newRegisterForm.value.timezone,
+      // CultureCode: this.newRegisterForm.value.culturecode,
+      CultureCode: 'fg',
+      // CultureCodeId: this.newRegisterForm.value.culturecodeid,
+      CultureCodeId: '1',
+      // UiCultureCode: this.newRegisterForm.value.uiculturecode,
+      // UiCultureCodeId: this.newRegisterForm.value.uiculturecodeid,
+      UiCultureCode: 'f',
+      UiCultureCodeId: '1',
+      // StartModuleId: this.newRegisterForm.value.startmoduleid,
+      // StartModuleName: this.newRegisterForm.value.startmodule,
+      StartModuleId: '5',
+      StartModuleName: 'clients',
+      // DefaultSenderId: this.newRegisterForm.value.defaultsendersettingid,
+      DefaultSenderId: '1',
+      // DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+      DefaultSenderName: 'gh',
+      // SharedSenderId: this.newRegisterForm.value.sharedsendersettingsid,
+      SharedSenderId: '1',
+      // SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
+      SharedSenderName: 'fg',
+      OwnerId: this.bindLoginData.UserId,
+      LockoutEnabled: 'true',
+      CampaignCode: 'gh',
+      AffiliateFieldId: '6',
+      AffiliateFieldName: 'gh',
+      IsAffiliateUser: 'true'
     };
     this.settingsService.registeruser(rgstrusr).subscribe(user => {
       this.RegisteredUser = user;
-      console.log('RegisteredUser',user);
-    })
+      console.log('RegisteredUser', user);
+    });
   }
 }
+
+// LockoutEnabled: this.newRegisterForm.value.,
+      // CampaignCode: this.newRegisterForm.value.,
+      // AffiliateFieldId: this.newRegisterForm.value.,
+      // AffiliateFieldName: this.newRegisterForm.value.,
+       // IsAffiliateUser: this.newRegisterForm.value.,

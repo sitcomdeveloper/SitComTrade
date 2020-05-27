@@ -151,7 +151,7 @@ import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituse
     PopoverModule.forRoot(), TooltipModule.forRoot(),CollapseModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent,CrmnewuserComponent,UserdetailsComponent,CrmedituserComponent],
+    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent,CrmedituserComponent],
   exports: [
     PhoneMaskDirective
   ],
