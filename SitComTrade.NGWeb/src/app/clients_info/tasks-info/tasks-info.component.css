@@ -27,3 +27,10 @@
 .box-heading {
     width: 100%!important;
 }
+.scroll-area {
+    width: 100%;
+}
+.box-control {
+    
+    display: flex;
+}

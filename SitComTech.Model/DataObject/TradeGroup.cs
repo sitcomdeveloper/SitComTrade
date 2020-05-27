@@ -20,4 +20,8 @@ namespace SitComTech.Model.DataObject
         public string LeverageName { get; set; }
     }
 
+    public class Leverage : BaseEntity
+    {
+        public string Name { get; set; }
+    }
 }

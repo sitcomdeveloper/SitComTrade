@@ -3,6 +3,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../clients_info/general-info/general-info.service';
 import { ClientsService } from '../header/clients/clients.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { CreateTaskComponent } from '../clients_info/tasks-info/create-task/create-task.component';
+import { TasksInfoService } from '../clients_info/tasks-info/tasks-info.service';
+import { ActcrtaccComponent } from './actcrtacc/actcrtacc.component';
 
 
 @Component({
@@ -21,14 +25,17 @@ export class ClientsInfoComponent implements OnInit {
   TypeName: any;
   accountInfo: any[];
   leadInfo: any[];
+  getInfoTasks: any;
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
-              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService
+              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService, 
+              private taskInfoService: TasksInfoService
                ) {
       // tslint:disable-next-line: only-arrow-functions
       this.router.routeReuseStrategy.shouldReuseRoute = function() {
         return false;
         };
      }
+     bsModalRef: BsModalRef;
 
   ngOnInit() {
     // For jump to specific clients.see below method "sendData"
@@ -62,6 +69,38 @@ export class ClientsInfoComponent implements OnInit {
   // in route send Id for jump to clients
   sendData(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
+  }
+  // for opening create task popup
+  createtask() {
+    const initialState = {
+      title: 'Create Task',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      // after update refresh all the data
+      this.getAllTask();
+    });
+  }
+  getAllTask() {
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.taskInfoService.getTask(details).subscribe(res => {
+      this.getInfoTasks = res.reverse();
+      console.log('taskget', res);
+    });
+  }
+  // open crt acc popup
+  crtacc() {
+    const initialState = {
+      title: 'Create Account',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsModalRef.content.clddata.subscribe(data => {
+    //   this.getAllTask();
+    // });
   }
 }
 

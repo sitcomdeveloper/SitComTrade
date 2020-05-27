@@ -19,8 +19,9 @@ export class CreateItemComponent implements OnInit {
   response: any;
   submitted = false;
   title: any;
+  Leverage: any;
     constructor(private bsmodal: BsModalRef, private currencyService: CurrencyService, private groupService: GroupsService,
-                private fb: FormBuilder) { }
+                private fb: FormBuilder, private groupsService: GroupsService) { }
 
   ngOnInit() {
     this.newGroupForm = this.fb.group({
@@ -39,6 +40,7 @@ export class CreateItemComponent implements OnInit {
       leverageid: ['']
     });
     this.currency();
+    this.getLeverages();
   }
   // get all currency
   currency() {
@@ -99,5 +101,12 @@ export class CreateItemComponent implements OnInit {
   hideModal() {
     this.bsmodal.hide();
   }
+  // get Leverages
+getLeverages() {
+  this.groupsService.getAllLverages().subscribe(rspnse => {
+    this.Leverage = rspnse;
+    console.log('Leverage', rspnse);
+  });
+}
 
 }

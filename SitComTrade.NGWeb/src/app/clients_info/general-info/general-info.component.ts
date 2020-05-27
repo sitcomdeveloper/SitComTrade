@@ -25,23 +25,20 @@ export class GeneralInfoComponent implements OnInit {
   details: number;
   updatedDtls: any;
   detail: number;
+  Status: any;
+  getLoginDetails: any;
+  bindLoginData: any;
   // tslint:disable-next-line: max-line-length
-  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router, 
-    private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
+  constructor(private _generalinfoservice: GeneralInfoService, private _router: Router,
+              // tslint:disable-next-line: max-line-length
+              private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
   ngOnInit() {
-    // this._route.params.subscribe(params => console.log(params));
-    // this._route.paramMap.subscribe(params => {
-    //   this.stk = params.get('userid');
-    //   if (this.stk === '1') {
+    // code for receiving login details and bind owner name at place of  name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
 
-    //     this.editGeneralInfo = true;
-
-    //     this.editInfo = false;
-    //   } else {
-    //     this.editInfo = true;
-    //   }
-    // });
     this.userInfoForm = this.fb.group({
       firstName: [''],
       lastName: [''],
@@ -83,14 +80,10 @@ export class GeneralInfoComponent implements OnInit {
     });
     this.spinnerService.show();
     setTimeout( () => {
-    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    // this.spinnerService.hide();
-    // console.log('getclientdata', this.Apptitle);
-    // this.userGenralinfo = this.Apptitle;
-    // this.usersInfo();
   }, );
     this.getcountryName();
     this.getRegistrationFromType();
+    this.getAllStatus();
 
     // receiving data from client page for general-info
     const details = +this._route.snapshot.paramMap.get('selectedItem');
@@ -206,5 +199,12 @@ export class GeneralInfoComponent implements OnInit {
     this._generalinfoservice.getUsersInfo(this.detail).subscribe(res => {
       this.userGenralinfo = res;
   });
+  }
+  // get status
+  getAllStatus() {
+    this._generalinfoservice.getStatus().subscribe(response => {
+      this.Status = response;
+      console.log('Status', response);
+    });
   }
 }

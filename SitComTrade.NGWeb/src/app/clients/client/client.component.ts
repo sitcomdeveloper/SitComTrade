@@ -77,7 +77,7 @@ bindLoginData: any;
     this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
     console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
-    
+
   }
   userDetails() {
     // this.bindLoginData.Id
@@ -309,14 +309,12 @@ deletbtn(val, userid) {
       ignoreBackdropClick: true,
       initialState: {
         moreIdInfo: rowId,
-        iscustomevalue: "more",
-        addcommentsby3Dots: "add"
+        iscustomevalue: 'more',
+        addcommentsby3Dots: 'add'
       }
     };
-    
-    this.bsModalRef = this.modalService.show(CommentsComponent,config);
+    this.bsModalRef = this.modalService.show(CommentsComponent, config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    
   }
   openTasksinfoComponent(rowId) {
     const config: ModalOptions = {
@@ -327,12 +325,12 @@ deletbtn(val, userid) {
       ignoreBackdropClick: true,
       initialState: {
         moreId: rowId,
-        isstaticvalue: "most"
-        
+        isstaticvalue: 'most'
+
       }
     };
     this.bsModalRef = this.modalService.show(CreateTaskComponent, config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    
+
   }
 }

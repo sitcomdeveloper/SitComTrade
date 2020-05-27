@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SitComTech.Model.Masters;
+using SitComTech.Model.DataObject;
 
 namespace SitComTech.API.Controllers
 {    
@@ -191,6 +192,26 @@ namespace SitComTech.API.Controllers
             {
                 var cultureCodes = _unitOfWork.Repository<CultureCode>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
                 return cultureCodes;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        ///  Get All Lead Status
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllLeadStatus")]
+        public List<UserResponseStatus> GetAllLeadStatus()
+        {
+            try
+            {
+                var leadstatus = _unitOfWork.Repository<UserResponseStatus>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return leadstatus;
 
             }
             catch (Exception ex)

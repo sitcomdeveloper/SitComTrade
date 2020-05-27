@@ -166,7 +166,7 @@
                           
                            <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98" formControlName="timezone">
                               <option value="">Select...</option>
-                              <option value="Dateline Standard Time" value="{{gettimezones?.Id}}" *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
+                              <option value="Dateline Standard Time"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
                            </select>
                      
                      </div>
@@ -196,7 +196,7 @@
                          
                            <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="ad9cab536-ce18-044e-f9fc-a34da4a7a406" aria-required="true" tabindex="-98" formControlName="uiculturecode">
                               <option value="">Select...</option>
-                              <option value="" value="{{getculturecode?.Id}}" *ngFor="let getculturecode of CultureCode">{{getculturecode?.UICultureCodeName}}</option>
+                              <option value=""  *ngFor="let getculturecode of CultureCode">{{getculturecode?.UICultureCodeName}}</option>
                            </select>
                         
                      </div>
@@ -239,7 +239,7 @@
                           
                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="defaultsendersetting">
                            <option value="">Select</option>
-                           <option value="" value="{{getsndrsettings?.Id}}" *ngFor="let getsndrsettings of SenderSettings">{{getsndrsettings?.SenderMailId}}</option>
+                           <option value=""  *ngFor="let getsndrsettings of SenderSettings">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
                         
                      </div>
@@ -254,7 +254,7 @@
                        
                         <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98" formControlName="sharedsendersettings">
                            <option value="">Select...</option>
-                           <option value="" value="{{getsndrsettings?.Id}}" *ngFor="let getsndrsettings of SenderSettings">{{getsndrsettings?.IsShared}}</option>
+                           <option value=""  *ngFor="let getsndrsettings of SenderSettings">{{getsndrsettings?.IsShared}}</option>
                         </select>
                         </div>
                     
@@ -268,7 +268,7 @@
                         <div class="col-md-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
                         <div class="col-md-9">
                            <div class="input-control">
-                              <input class="form-control valid" name="Password" type="password" id="eye" aria-required="true" aria-invalid="false" formControlName="password" >
+                              <input class="form-control valid" name="Password" type="password" id="" aria-required="true" aria-invalid="false" formControlName="password" >
                               <a href="javascript:void(0);" class="input-button show-password">
                                  <i class="fa fa-eye" aria-hidden="true" onclick="hideshowpwd()"></i>
                               </a>
@@ -281,7 +281,7 @@
                         <div class="col-md-3"><label class="valign-label" for="RepeatPassword"><span data-tooltip-el="">Repeat Password</span></label></div>
                         <div class="col-md-9">
                            <div class="input-control">
-                              <input class="form-control" name="RepeatPassword" type="password" id="eye1" aria-required="true" formControlName="repeatpassword">
+                              <input class="form-control" name="RepeatPassword" type="password" aria-required="true" formControlName="repeatpassword" id="">
                               <a href="javascript:void(0);" class="input-button show-password">
                                  <i class="fa fa-eye" aria-hidden="true" onclick="hideshowpwd()"></i>
                               </a>

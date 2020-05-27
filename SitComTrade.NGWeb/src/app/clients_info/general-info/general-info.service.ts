@@ -22,4 +22,8 @@ export class GeneralInfoService {
   updateClient(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/UpdateClient', obj);
   }
+  // get all status
+  getStatus(): Observable<any> {
+    return this.http.get<any>(API_URL + 'Common/GetAllLeadStatus');
+  }
 }

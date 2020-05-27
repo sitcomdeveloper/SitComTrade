@@ -259,7 +259,7 @@
           </div>
         </div> -->
         <div><app-additional-info></app-additional-info></div>
-        <div class="card mb20"  id="tasks" style="padding: 15px;
+        <!-- <div class="card mb20"  id="tasks" style="padding: 15px;
     padding-left: 0;">
           <div class="card-header1 container" role="tab" id="headingSeven">
             <div class="box-heading" style="width:100%;">
@@ -295,7 +295,8 @@
               <app-tasks-info></app-tasks-info>
             </div>
           </div>
-        </div>
+        </div> -->
+        <div><app-tasks-info></app-tasks-info></div>
         
         <div *ngIf="realAccountSection"> <app-trade-accounts></app-trade-accounts></div>
         <div class="card mb20" style="padding: 15px;padding-left: 0;">
@@ -371,10 +372,10 @@
         <div class="sidenav" style="display: block;">
           <h2>Actions</h2>
           <ul style="display: block;">
-            <li><a href="javascript:void(0);"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
+            <li><a href="javascript:void(0);" (click)="crtacc()"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
           </ul>
           <ul style="display: block;">
-            <li><a href="javascript:void(0);"><i class="fa fa-refresh">&nbsp;</i>Add task</a></li>
+            <li><a href="javascript:void(0);" (click)="createtask()"><i class="fa fa-refresh">&nbsp;</i>Add task</a></li>
             <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send email</a></li>
             <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
             <li><a href="javascript:void(0);"><i class="fa fa-history">&nbsp;</i>View history</a></li>
