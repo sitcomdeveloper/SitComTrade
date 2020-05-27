@@ -459,7 +459,13 @@
           </tr>
           <tr>
             <th>Status</th>
-            <td><input type="text"  class="form-control"formControlName="status"></td>
+            <td>
+              <!-- <input type="text"  class="form-control"formControlName="status"> -->
+              <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
+                <option value="">Select...</option>
+                <option value="0" value="{{status?.Id}}" *ngFor="let status of Status">{{status?.Name}}</option>
+             </select>
+            </td>
             <th>Created Date</th>
             <td><input type="text" class="form-control disabledd" formControlName="createddate" onmousedown="return false" onselectstart="return false"></td>
           </tr>

@@ -12,16 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.headers.get('No-Auth') == "True") {
       return next.handle(req.clone());
-    } 
-    // else {
-    //   catchError((err: HttpErrorResponse) => {
-    //           if (err.status === 401) {
-    //             alert('Your session is expired!!.Please login again to continue');
-    //             this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
-    //           }
-    //           return throwError(err);
-    //         })
-    // }
+    }
 
     if (window.sessionStorage.getItem('userToken') != null) {
       const clonedReq = req.clone({
@@ -32,14 +23,15 @@ export class AuthInterceptor implements HttpInterceptor {
     // this.router.navigateByUrl('login');
     // else {
       
-    //   catchError((err: HttpErrorResponse) => {
-    //     if (err.status === 401) {
-    //       alert('Your session is expired!!.Please login again to continue');
-    //       this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
-    //       window.sessionStorage.clear;
-    //     }
-    //     return throwError(err);
-    //   })
+      // catchError((err: HttpErrorResponse) => {
+      //   if (err.status === 401) {
+      //     alert('Your session is expired!!.Please login again to continue');
+      //     this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
+      //     window.sessionStorage.clear;
+      //   }
+      //   return throwError(err);
+      // })
+      // this.router.navigateByUrl('login');
     // }
   }
  

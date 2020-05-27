@@ -14,6 +14,7 @@ export class GroupsComponent implements OnInit {
   getGroupsData: any;
   Group: any;
   GroupLength: any;
+  Leverage: any;
 
   constructor(private groupsService: GroupsService, private router: Router, private spinnerService: Ng4LoadingSpinnerService,
               private modalService: BsModalService) { }

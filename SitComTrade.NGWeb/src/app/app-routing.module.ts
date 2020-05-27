@@ -28,7 +28,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'client', pathMatch: 'full'},
       {path: 'client', component: ClientComponent},
       // {path: 'client', component: ClientComponent},
-      {path: 'tradeaccounts', component: TradeaccountsComponent,}
+      {path: 'tradeaccounts', component: TradeaccountsComponent, }
     ]},
   {path: '', component: ActivitiesComponent},
   {path: 'activities', component: ActivitiesComponent,
