@@ -1291,6 +1291,37 @@ tr.tablectn {
         margin: 0;
         padding: 7px 0;
       }
+      .steps-style01 .item-inner:after {
+        background: url(/assets/images/sprite.png) -200px -520px no-repeat;
+    }
+    
+    .steps-style01 .item-inner:after, .steps-style01 .item-inner:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin: -10px 0 0;
+        width: 20px;
+        height: 20px;
+    }
+    .steps-style01 .item.done .item-inner:before {
+        background: #12baee!important;
+        border-color: #12baee;
+    }
+    
+    .steps-style01 .item-inner:before {
+        border: 1px solid #94a0a9;
+        border-radius: 50%;
+    }
+    .steps-style01 .item-inner:after, .steps-style01 .item-inner:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin: -10px 0 0;
+        width: 20px;
+        height: 20px;
+    }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
