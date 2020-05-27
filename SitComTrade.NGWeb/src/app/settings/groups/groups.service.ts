@@ -23,7 +23,10 @@ export class GroupsService {
     return this.http.post<any>(API_URL + 'TradeGroup/GetTradeGroupDetailById/' + obj, {});
   }
   // update trade group
-  updateGroup(obj:any): Observable<any> {
+  updateGroup(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'TradeGroup/UpdateTradeGroup', obj);
+  }
+  getAllLverages(): Observable<any> {
+    return this.http.get<any>(API_URL + 'TradeGroup/GetAllLeverageList');
   }
 }

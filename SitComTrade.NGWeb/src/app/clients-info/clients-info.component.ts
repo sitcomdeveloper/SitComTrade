@@ -6,6 +6,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreateTaskComponent } from '../clients_info/tasks-info/create-task/create-task.component';
 import { TasksInfoService } from '../clients_info/tasks-info/tasks-info.service';
+import { ActcrtaccComponent } from './actcrtacc/actcrtacc.component';
 
 
 @Component({
@@ -88,6 +89,18 @@ export class ClientsInfoComponent implements OnInit {
       this.getInfoTasks = res.reverse();
       console.log('taskget', res);
     });
+  }
+  // open crt acc popup
+  crtacc() {
+    const initialState = {
+      title: 'Create Account',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsModalRef.content.clddata.subscribe(data => {
+    //   this.getAllTask();
+    // });
   }
 }
 

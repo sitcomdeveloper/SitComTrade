@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { AuthInterceptor } from '../app/auth.interceptor';  
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
+import { AuthInterceptor } from '../app/auth.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhoneMaskDirective } from './common/directives/phone-mask.directive';
@@ -55,6 +55,7 @@ import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.compone
 import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
 import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
+import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
 
 @NgModule({
   declarations: [
@@ -139,6 +140,7 @@ import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituse
     CrmnewuserComponent,
     UserdetailsComponent,
     CrmedituserComponent,
+    ActcrtaccComponent,
   ],
   imports: [
     BrowserModule,
@@ -148,10 +150,12 @@ import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituse
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     // TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    PopoverModule.forRoot(), TooltipModule.forRoot(),CollapseModule.forRoot()
+    PopoverModule.forRoot(), TooltipModule.forRoot(), CollapseModule.forRoot()
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
-    CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent,CrmedituserComponent],
+     // tslint:disable-next-line: max-line-length
+     CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent, 
+     ActcrtaccComponent],
   exports: [
     PhoneMaskDirective
   ],

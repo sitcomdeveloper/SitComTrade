@@ -15,8 +15,8 @@ export class LoginService {
   //   return this.http.post<any>(API_URL + 'User/IsAuthenticated', obj);
   // }
   authuser(model: any): Observable<any> {
-    var reqHeader = new HttpHeaders({'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });   
-    return this.http.post<any>(API_URL + 'token', encodeURI(model),{headers:reqHeader});
+    var reqHeader = new HttpHeaders({'Content-Type': 'application/x-www-urlencoded', 'No-Auth': 'True' });
+    return this.http.post<any>(API_URL + 'token', encodeURI(model), {headers: reqHeader});
   }
   saveUserInfo(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'User/RegisterUser', obj);
@@ -33,4 +33,3 @@ export class LoginService {
     return this.http.post<any>(API_URL + 'User/ForgotPassword?username=' + obj, {});
     }
 }
-// kk84singh
