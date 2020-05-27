@@ -35,7 +35,7 @@ namespace SitComTech.Domain.Services
             Client Client = base.Queryable().FirstOrDefault(x => x.Active && !x.Deleted && x.Id == (long)Id);
             return Client;
         }
-        
+
         public Client InsertClient(ClientDataVM clientdata)
         {
             try
@@ -207,9 +207,10 @@ namespace SitComTech.Domain.Services
                 Tag = x.MarketInfo.Tag1,
                 Tag1 = x.MarketInfo.Tag2,
                 FTD = x.UserOwner.clients.FTD,
-                Group = x.UserOwner.clients.GroupName,
+                GroupId = x.UserOwner.clients.GroupId,
+                GroupName = x.UserOwner.clients.GroupName,
                 Desk = x.UserOwner.clients.Desk,
-                IsEditable=false
+                IsEditable = false
             }).ToList();
         }
     }
@@ -218,7 +219,7 @@ namespace SitComTech.Domain.Services
     {
         private IGenericRepository<MarketingInfo> _repository;
         private IUnitOfWork _unitOfWork;
-        public MarketingInfoService(IGenericRepository<MarketingInfo> repository,IUnitOfWork unitOfWork)
+        public MarketingInfoService(IGenericRepository<MarketingInfo> repository, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
@@ -242,7 +243,7 @@ namespace SitComTech.Domain.Services
             {
                 var marketingdataexist = _repository.Queryable().Where(x => x.OwnerId == marketingdata.OwnerId).FirstOrDefault();
                 if (marketingdataexist == null)
-                {                   
+                {
                     MarketingInfo entity = new MarketingInfo
                     {
                         Active = true,
@@ -313,7 +314,7 @@ namespace SitComTech.Domain.Services
     {
         private IGenericRepository<AdditionalInfo> _repository;
         private IUnitOfWork _unitOfWork;
-        public AdditionalInfoService(IGenericRepository<AdditionalInfo> repository,IUnitOfWork unitOfWork)
+        public AdditionalInfoService(IGenericRepository<AdditionalInfo> repository, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
@@ -337,7 +338,7 @@ namespace SitComTech.Domain.Services
             {
                 var additionaldataexist = _repository.Queryable().Where(x => x.OwnerId == additionaldata.OwnerId).FirstOrDefault();
                 if (additionaldataexist == null)
-                {                   
+                {
                     AdditionalInfo entity = new AdditionalInfo
                     {
                         Active = true,
@@ -352,7 +353,7 @@ namespace SitComTech.Domain.Services
                         PromoCode = additionaldata.PromoCode,
                         SubscribedNewsletter = additionaldata.SubscribedNewsletter,
                         SuppliedDocs = additionaldata.SuppliedDocs,
-                };
+                    };
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
                     return entity;
@@ -402,7 +403,7 @@ namespace SitComTech.Domain.Services
     public class ShortMessageService : Service<ShortMessage>, IShortMessageService
     {
         private IGenericRepository<ShortMessage> _repository;
-        
+
         public ShortMessageService(IGenericRepository<ShortMessage> repository)
             : base(repository)
         {
@@ -424,7 +425,7 @@ namespace SitComTech.Domain.Services
     {
         private IGenericRepository<Comment> _repository;
         private IUnitOfWork _unitOfWork;
-        public CommentService(IGenericRepository<Comment> repository,IUnitOfWork unitOfWork)
+        public CommentService(IGenericRepository<Comment> repository, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
@@ -485,7 +486,7 @@ namespace SitComTech.Domain.Services
     {
         private IGenericRepository<Address> _repository;
         private IUnitOfWork _unitOfWork;
-        public AddressService(IGenericRepository<Address> repository,IUnitOfWork unitOfWork)
+        public AddressService(IGenericRepository<Address> repository, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;

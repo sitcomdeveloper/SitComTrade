@@ -11,8 +11,7 @@ using System.Web.Http;
 using Newtonsoft.Json;
 
 namespace SitComTech.API.Controllers
-{
-    [Authorize]
+{    
     [RoutePrefix("api/Client")]
     public class ClientController : ApiController
     {

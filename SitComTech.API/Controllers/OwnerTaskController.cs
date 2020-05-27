@@ -5,8 +5,7 @@ using System.Linq;
 using System.Web.Http;
 
 namespace SitComTech.API.Controllers
-{
-    [Authorize]
+{    
     [RoutePrefix("api/Task")]
     public class OwnerTaskController : ApiController
     {

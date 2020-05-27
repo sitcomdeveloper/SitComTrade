@@ -47,7 +47,8 @@ namespace SitComTech.Model.ViewModel
         public string Tag { get; set; }
         public string Tag1 { get; set; }
         public bool? FTD { get; set; }
-        public string Group { get; set; }
+        public long? GroupId { get; set; }
+        public string GroupName { get; set; }
         public string Desk { get; set; }
         public bool? IsEditable { get; set; }
 

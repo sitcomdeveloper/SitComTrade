@@ -9,8 +9,7 @@ using System.Web.Http;
 using SitComTech.Model.Masters;
 
 namespace SitComTech.API.Controllers
-{
-    [Authorize]
+{    
     [RoutePrefix("api/Common")]
     public class CommonController : ApiController
     {
