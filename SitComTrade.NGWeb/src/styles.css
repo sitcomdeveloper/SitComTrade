@@ -1153,9 +1153,7 @@ tr.tablectn {
     .navbar-nav {
         margin: 0;
     }
-    #sidebar, .formitem, .navbar-header, .navbar-nav, .navbar-nav>li {
-        float: left;
-    }
+   
     .extra-nav>li>a {
         color: #fff;
         padding: 20px 15px;

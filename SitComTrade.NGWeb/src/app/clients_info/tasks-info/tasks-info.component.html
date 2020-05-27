@@ -1,4 +1,5 @@
-<div class="card mb20"  id="tasks" style="padding: 15px;
+<div class="card-bodynew mb20">
+<div class="card1 mb20"  id="tasks" style="padding: 15px;
 padding-left: 0;">
       <div class="card-header1 container" role="tab" id="headingSeven">
         <div class="box-heading" style="width:100%;">
@@ -31,76 +32,77 @@ padding-left: 0;">
       </div>
       <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
         <div class="card-body">
-          
+         <div class="box-content">
+            <div class="table-type02 margin-bottom-0">
+               <div  class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+                  <table class="table-style01 dataTable">
+                     <thead>
+                        <tr data-rule="titles">
+                           <th>Owner<span class="fixel"><span><span></span></span></span></th>
+                           <th>Type<span class="fixel" ><span><span></span></span></span></th>
+                           <th>Status<span class="fixel"><span><span></span></span></span></th>
+                           <th>Date<span class="fixel"><span><span></span></span></span></th>
+                           <th>Description<span class="fixel"><span><span></span></span></span></th>
+                           <th>Created By<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
+                           <th>Task<span class="fixel"><span><span></span></span></span></th>
+                           <th>Created Date<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
+                           <th></th>
+                        </tr>
+                     </thead>
+                     <tfoot></tfoot>
+                     <tbody>
+                        <tr *ngFor="let trade of getInfoTasks" data-index="0" data-rule="body">
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_UserId">
+                                 <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
+                              </div>
+                           </td>
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_Type">
+                                 <div class="text-ellipsis" tooltip="{{trade?.TaskType}}">{{trade?.TaskType}}</div>
+                              </div>
+                           </td>
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_Status">
+                                 <div class="text-ellipsis" tooltip="{{trade?.TaskStatus}}">{{trade?.TaskStatus}}</div>
+                              </div>
+                           </td>
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_Date">{{trade?.CreatedAt}}</div>
+                           </td>
+                           <td style="max-width: 200px;">
+                              <div data-display-for="16_Description">
+                                 <div class="text-ellipsis" data-field="Description" data-original-value="info">{{trade?.Description}}</div>
+                              </div>
+                           </td>
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_CreatedBy">
+                                 <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
+                              </div>
+                           </td>
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_ItemId">
+                                 <div class="text-ellipsis"><a href="javascript:void(0);" (click)="edittask(trade)"><span>{{trade?.OwnerId}}</span></a></div>
+                              </div>
+                           </td>
+                           <td style="max-width: 300px;">
+                              <div data-display-for="16_CreatedDate">{{trade?.TaskDate}}</div>
+                           </td>
+                           <td class="nowrap"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                 
+                 
+               </div>
+            </div>
+         </div>
         </div>
       </div>
     </div>
-<div class="box-content">
-    <div class="table-type02 margin-bottom-0">
-       <div  class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
-          <table class="table-style01 dataTable">
-             <thead>
-                <tr data-rule="titles">
-                   <th>Owner<span class="fixel"><span><span></span></span></span></th>
-                   <th>Type<span class="fixel" ><span><span></span></span></span></th>
-                   <th>Status<span class="fixel"><span><span></span></span></span></th>
-                   <th>Date<span class="fixel"><span><span></span></span></span></th>
-                   <th>Description<span class="fixel"><span><span></span></span></span></th>
-                   <th>Created By<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
-                   <th>Task<span class="fixel"><span><span></span></span></span></th>
-                   <th>Created Date<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
-                   <th></th>
-                </tr>
-             </thead>
-             <tfoot></tfoot>
-             <tbody>
-                <tr *ngFor="let trade of getInfoTasks" data-index="0" data-rule="body">
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_UserId">
-                         <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
-                      </div>
-                   </td>
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_Type">
-                         <div class="text-ellipsis" tooltip="{{trade?.TaskType}}">{{trade?.TaskType}}</div>
-                      </div>
-                   </td>
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_Status">
-                         <div class="text-ellipsis" tooltip="{{trade?.TaskStatus}}">{{trade?.TaskStatus}}</div>
-                      </div>
-                   </td>
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_Date">{{trade?.CreatedAt}}</div>
-                   </td>
-                   <td style="max-width: 200px;">
-                      <div data-display-for="16_Description">
-                         <div class="text-ellipsis" data-field="Description" data-original-value="info">{{trade?.Description}}</div>
-                      </div>
-                   </td>
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_CreatedBy">
-                         <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
-                      </div>
-                   </td>
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_ItemId">
-                         <div class="text-ellipsis"><a href="javascript:void(0);" (click)="edittask(trade)"><span>{{trade?.OwnerId}}</span></a></div>
-                      </div>
-                   </td>
-                   <td style="max-width: 300px;">
-                      <div data-display-for="16_CreatedDate">{{trade?.TaskDate}}</div>
-                   </td>
-                   <td class="nowrap"></td>
-                </tr>
-             </tbody>
-          </table>
-         
-         
-       </div>
-    </div>
- </div>
+   
 
+</div>
  <!------------------create task model------------->
 <!-- <div class="modal" id="createtask">
    <div class="modal-dialog modal750">
