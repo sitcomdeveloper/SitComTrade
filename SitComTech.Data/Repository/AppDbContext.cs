@@ -13,7 +13,7 @@ namespace SitComTech.Data.Repository
     {
 
         public AppDbContext(string connectionString)
-            : base("Name=AppDbContext")
+            : base(connectionString)
         {
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
