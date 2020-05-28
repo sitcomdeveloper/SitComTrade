@@ -343,7 +343,12 @@ deletbtn(val, userid) {
     // this.userDetails();
     // });
   }
-  // hideModal() {
-  //   this.bsmodal.hide();
-  // }
+  // groups-info
+  getGeneralInfo(setItem: any) {
+    //  this.router.navigate(['/groups-info', setItem]);
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree(['/groups-info', setItem])
+    );
+    window.open(url, '_blank');
+  }
 }

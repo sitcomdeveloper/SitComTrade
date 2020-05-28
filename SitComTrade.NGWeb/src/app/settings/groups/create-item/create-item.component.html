@@ -148,14 +148,14 @@
                    <div class="btn-group bootstrap-select form-control col-xs-9 col-md-9">                      
                       <select class="form-control" name="Leverage" formControlName="leveragename" data-container="body" data-live-search="true" id="99916a34-3200-ac21-10fd-d4e015e7c6b4" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" style="    position: relative;">
                          <option value="">Select...</option>
-                         <option value="1:1">1:1</option>
-                         <option value="1:5">1:5</option>
+                         <option value="{{leverage?.Id}}" *ngFor="let leverage of Leverage">{{leverage?.Name}}</option>
+                         <!-- <option value="1:5">1:5</option>
                          <option value="1:10">1:10</option>
                          <option value="1:33">1:33</option>
                          <option value="1:100">1:100</option>
                          <option value="1:200">1:200</option>
                          <option value="1:500">1:500</option>
-                         <option value="1:1000">1:1000</option>
+                         <option value="1:1000">1:1000</option> -->
                       </select>
                       <div *ngIf="submitted && f.leveragename.errors" class="invalid-feedback " style="position: relative;
                       left: -264px;

@@ -21,8 +21,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
 
-{path: '', component: ClientsComponent},
- {path: 'clients', component: ClientsComponent,
+{path: '', component: ClientsComponent, canActivate: [AuthGuard]},
+ {path: 'clients', component: ClientsComponent, canActivate: [AuthGuard],
 
     children: [
       {path: '', redirectTo: 'client', pathMatch: 'full'},
@@ -89,16 +89,6 @@ const routes: Routes = [
 {path: 'livetrade/:trdingDtls', component: LiveDetailComponent}
 // /:trdingDtls
 // ,canActivate:[AuthGuard]
-
-
-
-
-
-
-
-
-
-
 
 ];
 

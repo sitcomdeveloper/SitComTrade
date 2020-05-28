@@ -66,50 +66,50 @@ export class LoginComponent implements OnInit {
 }
 
 
-  login() {
-    this.userinfo = {
-      UserName: this.loginForm.value.email,
-      Password: this.loginForm.value.password
-    };
-    this.loginservice.loginUser(this.userinfo)
-      .subscribe(
-        (
-          data: boolean[]) => {
-          if (data) {
-            this.router.navigateByUrl('clients');
-            console.log('LoginDetails', data);
-            // localStorage.clear();
-            localStorage.setItem('project', JSON.stringify(data));
-            console.log('stringifydata', JSON.stringify(data));
-            localStorage.setItem('uid', this.UserName);
-          } else {
-            alert('Invalid Credential');
-          }
-        },
-        err => {
-          alert('Error');
-        });
-  }
-  // authUser() {
-  //   let model = "UserName=" +this.loginForm.value.email + "&Password=" +this.loginForm.value.password + '&grant_type=password';
-  //   this.loginservice.authuser(model)
-  //   .subscribe(
-  //     data => {
-  //       if (data) {
-  //         window.sessionStorage.setItem('userToken', data.access_token);
-  //         window.sessionStorage.setItem('username', JSON.stringify(data));
-  //       console.log('setToken', data.access_token)
-  //       this.router.navigateByUrl('clients');
-  //       console.log('testing',data);
-  //       } else {
-  //         alert('Invalid Credential');
-  //       }
-  //     },
-  //     err => {
-  //       alert('Error');
-  //     });
-
+  // login() {
+  //   this.userinfo = {
+  //     UserName: this.loginForm.value.email,
+  //     Password: this.loginForm.value.password
+  //   };
+  //   this.loginservice.loginUser(this.userinfo)
+  //     .subscribe(
+  //       (
+  //         data: boolean[]) => {
+  //         if (data) {
+  //           this.router.navigateByUrl('clients');
+  //           console.log('LoginDetails', data);
+  //           // localStorage.clear();
+  //           localStorage.setItem('project', JSON.stringify(data));
+  //           console.log('stringifydata', JSON.stringify(data));
+  //           localStorage.setItem('uid', this.UserName);
+  //         } else {
+  //           alert('Invalid Credential');
+  //         }
+  //       },
+  //       err => {
+  //         alert('Error');
+  //       });
   // }
+  authUser() {
+    let model = "UserName=" +this.loginForm.value.email + "&Password=" +this.loginForm.value.password + '&grant_type=password';
+    this.loginservice.authuser(model)
+    .subscribe(
+      data => {
+        if (data) {
+          window.sessionStorage.setItem('userToken', data.access_token);
+          window.sessionStorage.setItem('username', JSON.stringify(data));
+        console.log('setToken', data.access_token)
+        this.router.navigateByUrl('clients');
+        console.log('testing',data);
+        } else {
+          alert('Invalid Credential');
+        }
+      },
+      err => {
+        alert('Error');
+      });
+
+  }
   resetpwd() {
      const obj = this.resetForm.value.email;
      if (this.resetForm.valid) {

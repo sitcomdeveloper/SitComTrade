@@ -49,6 +49,7 @@ export class GeneralInfoComponent implements OnInit {
       itemid: [''],
       owner: [''],
       status: [''],
+      statusid: [''],
       createddate: [''],
       lastcommentdate: [''],
       modifieddate: [''],

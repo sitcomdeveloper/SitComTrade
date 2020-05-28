@@ -372,11 +372,11 @@
         <div class="sidenav" style="display: block;">
           <h2>Actions</h2>
           <ul style="display: block;">
-            <li><a href="javascript:void(0);" (click)="crtacc()"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
+            <li><a href="javascript:void(0);" *ngIf = createacc (click)="crtacc()"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
           </ul>
           <ul style="display: block;">
             <li><a href="javascript:void(0);" (click)="createtask()"><i class="fa fa-refresh">&nbsp;</i>Add task</a></li>
-            <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send email</a></li>
+            <li><a href="javascript:void(0);" *ngIf = sndemail (click)="sendemail()"><i class="fa fa-envelope">&nbsp;</i>Send email</a></li>
             <li><a href="javascript:void(0);"><i class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
             <li><a href="javascript:void(0);"><i class="fa fa-history">&nbsp;</i>View history</a></li>
           </ul>

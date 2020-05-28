@@ -26,8 +26,10 @@ export class ClientsInfoComponent implements OnInit {
   accountInfo: any[];
   leadInfo: any[];
   getInfoTasks: any;
+  createacc = true;
+  sndemail = true;
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
-              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService, 
+              private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService,
               private taskInfoService: TasksInfoService
                ) {
       // tslint:disable-next-line: only-arrow-functions
@@ -92,8 +94,22 @@ export class ClientsInfoComponent implements OnInit {
   }
   // open crt acc popup
   crtacc() {
+    this.sndemail = false;
     const initialState = {
       title: 'Create Account',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsModalRef.content.clddata.subscribe(data => {
+    //   this.getAllTask();
+    // });
+  }
+  sendemail() {
+    this.createacc = false;
+
+    const initialState = {
+      title: 'sndemail',
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));

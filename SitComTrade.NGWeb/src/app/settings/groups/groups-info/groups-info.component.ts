@@ -24,6 +24,7 @@ export class GroupsInfoComponent implements OnInit {
   currencies: any;
   submitted: any;
   f: any;
+  Leverage: any;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
               private currencyService: CurrencyService) { }
@@ -41,7 +42,8 @@ export class GroupsInfoComponent implements OnInit {
       description: [''],
       leverage: [''],
       mindeposit: [''],
-      currencyid: ['']
+      currencyid: [''],
+      leverageid: ['']
     });
     // for getting data for general-info
     const info = +this.route.snapshot.paramMap.get('setItem');
@@ -66,6 +68,7 @@ export class GroupsInfoComponent implements OnInit {
     });
     });
     this.currency();
+    this.getLeverages();
   }
   // hide front div and show back div(by click on pencil)
   hideshow() {
@@ -96,6 +99,11 @@ export class GroupsInfoComponent implements OnInit {
         this.groupsinfoForm.value.currencyid = element.Name;
       }
     });
+    this.Leverage.forEach(element => {
+      if ( element.Id === +this.groupsinfoForm.value.leverage) {
+        this.groupsinfoForm.value.leverageid = element.Name;
+      }
+    });
     const obj = {
       Id: this.groupDetails.Id,
       Name: this.groupsinfoForm.value.names,
@@ -109,8 +117,8 @@ export class GroupsInfoComponent implements OnInit {
       AllowTrade: this.groupsinfoForm.value.allowtrade,
       CurrencyId: this.groupsinfoForm.value.currency,
       CurrencyName: this.groupsinfoForm.value.currencyid,
-      LeverageId: 1,
-      LeverageName: this.groupsinfoForm.value.leverage
+      LeverageId: this.groupsinfoForm.value.leverage,
+      LeverageName: this.groupsinfoForm.value.leverageid
     };
     this.groupService.updateGroup(obj).subscribe(res => {
   this.updatedDetails = res;
@@ -128,6 +136,12 @@ updateshowonPage() {
   this.groupService.getGroupDetails(this.groupid).subscribe(res => {
     this.groupDetails = res;
   });
-};
+}
+// get Leverages
+getLeverages() {
+  this.groupService.getAllLverages().subscribe(rspnse => {
+    this.Leverage = rspnse;
+  });
+}
 }
 

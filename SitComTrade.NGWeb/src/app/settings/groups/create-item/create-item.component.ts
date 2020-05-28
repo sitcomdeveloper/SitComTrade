@@ -57,6 +57,11 @@ export class CreateItemComponent implements OnInit {
         this.newGroupForm.value.currencyid = element.Name;
       }
     });
+    this.Leverage.forEach(element => {
+      if ( element.Id === +this.newGroupForm.value.leveragename) {
+        this.newGroupForm.value.leverageid = element.Name;
+      }
+    });
     // for ( let i = 0; i < this.getAllCurrency.length; i++)  {
     //   if (this.getAllCurrency[i].Id === +this.newGroupForm.value.currencyname) {
     //     this.newGroupForm.value.currencyid = this.getAllCurrency[i].Name;
@@ -76,8 +81,8 @@ export class CreateItemComponent implements OnInit {
       CurrencyId: this.newGroupForm.value.currencyname,
       // currency name
       CurrencyName: this.newGroupForm.value.currencyid,
-      LeverageId: 1,
-      LeverageName: this.newGroupForm.value.leveragename
+      LeverageId: this.newGroupForm.value.leveragename,
+      LeverageName: this.newGroupForm.value.leverageid
 
     };
     this.groupService.addTradeGroups(obj).subscribe(res => {
