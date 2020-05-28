@@ -10,6 +10,7 @@ import { GeneralInfoService } from 'src/app/clients_info/general-info/general-in
 import { CountryService } from 'src/app/services/country.service';
 import { CommentsComponent } from 'src/app/clients_info/comments/comments.component';
 import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
+import { ImportClientComponent } from '../import-client/import-client.component';
 
 @Component({
   selector: 'app-client',
@@ -50,7 +51,7 @@ bindLoginData: any;
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
               private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
   bsModalRef: BsModalRef;
-
+  // private bsmodal: BsModalRef
   ngOnInit() {
     this.clientForm = this.fb.group({
       id: [''],
@@ -131,9 +132,6 @@ bindLoginData: any;
   // }
   newUser() {
     this.router.navigateByUrl('/user');
-  }
-  importClients() {
-    this.router.navigateByUrl('/importclients');
   }
   // checked count implemantation
 //   deletbtn(val, userid) {
@@ -331,6 +329,21 @@ deletbtn(val, userid) {
     };
     this.bsModalRef = this.modalService.show(CreateTaskComponent, config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
-
   }
+  // import client
+  openImprtClient() {
+    const initialState = {
+      title: 'Import Clients',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ImportClientComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsmodal.hide();
+    // this.bsModalRef.content.clddata.subscribe(data => {
+    // this.userDetails();
+    // });
+  }
+  // hideModal() {
+  //   this.bsmodal.hide();
+  // }
 }

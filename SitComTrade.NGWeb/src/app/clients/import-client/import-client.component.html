@@ -1,3 +1,10 @@
+<div *ngIf = closefirstpopup>
+<div class="modal-header">
+   <h4 class="modal-title pull-left">{{title}} </h4>
+   <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+       <span aria-hidden="true">&times;</span>
+   </button>
+</div>
 <div class="steps steps-style01">
     <div class="item active">
        <div class="item-inner">Step 1<strong>Uploading files</strong></div>
@@ -41,7 +48,7 @@
           <div class="col-md-12" style="padding:0!important"> 
             <div class="modal-footer modal-footernew">
                <div class="text-center margin17">
-                  <a href="#importclientdata" class="button submit-button itembutton "  data-toggle="modal" >Next</a>
+                  <a href="#importclientdata" class="button submit-button itembutton "  data-toggle="modal" (click)="opennextpopup()">Next</a>
                  
                </div>
             </div>
@@ -50,13 +57,14 @@
     </div>
     
 </div>
+</div>
 
  <!--------------------------------------------------------->
 
 
 
  <!------------------create Import Client data model------------->
-<div class="modal" id="importclientdata" tabindex="-1" > 
+<!-- <div class="modal" id="importclientdata" tabindex="-1" > 
    <div class="modal-dialog modal1250">
      <div class="modal-content">
        <div class="modal-header" style="height: 4rem;">
@@ -72,7 +80,7 @@
        </div>
      </div>
    </div>
- </div>
+ </div> -->
  
  
  

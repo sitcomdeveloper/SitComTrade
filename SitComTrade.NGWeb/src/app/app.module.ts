@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { AuthInterceptor } from '../app/auth.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +17,7 @@ import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { HeaderComponent } from './header/header.component';
 import { ClientsComponent } from './header/clients/clients.component';
 // tslint:disable-next-line: max-line-length
-import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ImportClientDataComponent, ItemComponent,
+import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ItemComponent,
   SmsAllComponent} from './clients';
 // tslint:disable-next-line: max-line-length
 import {BenchmarkComponent, DashboardComponent, ExposureComponent, LeaderboardComponent, ReportComponent, TradingjournalsComponent} from './reports';
@@ -32,7 +31,6 @@ import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, Instr
   TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
   // tslint:disable-next-line: max-line-length
   ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent} from './settings';
-import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { TermsComponent } from './terms/terms.component';
 import { RegisterComponent } from './register/register.component';
@@ -56,6 +54,8 @@ import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.c
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
 import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
 import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
+import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
+import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +120,6 @@ import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component
     ExportClientComponent,
     SmsAllComponent,
     EmailAllComponent,
-    ImportClientDataComponent,
     CreateTaskComponent,
     CreateTemplateComponent,
     EditTemplateComponent,
@@ -141,6 +140,8 @@ import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component
     UserdetailsComponent,
     CrmedituserComponent,
     ActcrtaccComponent,
+    ImprtclntdtaComponent,
+    ImportClientDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -154,12 +155,12 @@ import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
-     CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent, 
-     ActcrtaccComponent],
+     CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent],
   exports: [
     PhoneMaskDirective
   ],
-  providers: [AuthService, AuthGuard, {
+  providers: [AuthGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

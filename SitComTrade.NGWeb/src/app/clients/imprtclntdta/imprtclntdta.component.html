@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}} </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+ </div>
+ <div class="steps steps-style01">
+    <div class="item done">
+       <div class="item-inner">Step 1<strong>Uploading files</strong></div>
+    </div>
+    <div class="item done">
+       <div class="item-inner">Step 2<strong>Matching fields</strong></div>
+    </div>
+    <div class="item active">
+       <div class="item-inner">Step 3<strong>Importing data</strong></div>
+    </div>
+ </div>
+ <form class="form-horizontal import-clients-step3">
+    <div class="form-holder mt15 mb25">
+       <div class="chold-w02 centered">
+          <div class="fileupload-control">
+             <div class="files"></div>
+             <div class="fileupload-progress fade">
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                   <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                </div>
+             </div>
+             <div class="progress progress-striped active">
+                <div class="progress-bar progress-bar-success" id="importProcessedDiv"></div>
+             </div>
+          </div>
+          <div class="fileupload-report">
+             <div class="fileupload-report-status" id="importPopupStatus"><span data-progress-timer="" style="min-width: 40px; float: left;">02:09</span><span> | </span><span data-progress-text=""></span></div>
+          </div>
+       </div>
+    </div>
+ </form>
+ <a _ngcontent-bct-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Ok</a>
