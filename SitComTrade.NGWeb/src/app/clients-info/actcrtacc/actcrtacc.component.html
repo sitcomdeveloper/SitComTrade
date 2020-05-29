@@ -4,6 +4,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
  </div>
+ <div *ngIf = crtacct>
  <div class="form-holder mt40">
      <form novalidate="novalidate">
         
@@ -52,13 +53,31 @@
         
         <div _ngcontent-npk-c14="" class="col-md-12 padd0"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
            <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
-          <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div></div></div></div>
+          <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a>
+         </div>
+      </div>
+   </div>
+</div>
      </form>
   </div>
+</div>
   <!--             Create Account        ------------------------------ -->
   <!-- SendEmail----------------------- -->
- 
+ <div *ngIf = sndeml>
+    hjh
+    <button>Save</button>
+    <button (click)="hideModal()">Cancel</button>
+   </div>
   <!-- Send Sms------------------------------------------------------- -->
-  
+  <div *ngIf = sndsms>
+     send sms
+     <button>Save</button>
+     <button (click)="hideModal()">Cancel</button>
+  </div>
   <!-- View History-------------------------------------------------------------------- -->
+  <div *ngIf = vwhistory>
+     history
+     <button>Save</button>
+    <button (click)="hideModal()">Cancel</button>
+  </div>
   

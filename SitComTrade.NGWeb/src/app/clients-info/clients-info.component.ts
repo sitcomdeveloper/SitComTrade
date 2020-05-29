@@ -26,8 +26,6 @@ export class ClientsInfoComponent implements OnInit {
   accountInfo: any[];
   leadInfo: any[];
   getInfoTasks: any;
-  createacc = true;
-  sndemail = true;
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
               private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService,
               private taskInfoService: TasksInfoService
@@ -94,9 +92,9 @@ export class ClientsInfoComponent implements OnInit {
   }
   // open crt acc popup
   crtacc() {
-    this.sndemail = false;
     const initialState = {
       title: 'Create Account',
+      createaccount: 'createaccount'
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
@@ -106,17 +104,31 @@ export class ClientsInfoComponent implements OnInit {
     // });
   }
   sendemail() {
-    this.createacc = false;
-
     const initialState = {
-      title: 'sndemail',
+      title: 'SEND EMAIL',
+      sendemail: 'sendemail'
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.getAllTask();
-    // });
+  }
+  sendsms() {
+    const initialState = {
+      title: 'SMS: SEND',
+      sendsms: 'sendsms'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
+  viewhistory() {
+    const initialState = {
+      title: 'VIEW HISTORY',
+      viewhistory: 'viewhistory'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-1250', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
   }
 }
 
