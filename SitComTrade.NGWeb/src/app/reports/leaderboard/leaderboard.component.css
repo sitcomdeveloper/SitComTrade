@@ -38,3 +38,30 @@ tr.email-filter-row {
 {
   overflow-y: auto;
 }
+ .progress-bar.gold {
+  background: url(/assets/images/bg-progressbar01.png) repeat-x #fad060;
+  background-size: 24px 24px;
+}
+.button {
+  position: relative;
+  padding: 11px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.46666;
+  text-align: center;
+  background: #12baee;
+  color: #fff;
+  border-radius: 3px;
+  min-width: 125px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+}
+.button.btn-sm3 {
+  font-size: 12px;
+  min-width: 100px;
+  line-height: 1.16666;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
