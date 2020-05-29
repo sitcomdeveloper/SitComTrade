@@ -109,7 +109,7 @@ export class ClientsInfoComponent implements OnInit {
       sendemail: 'sendemail'
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   sendsms() {
@@ -118,7 +118,7 @@ export class ClientsInfoComponent implements OnInit {
       sendsms: 'sendsms'
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal600', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   viewhistory() {
@@ -127,7 +127,7 @@ export class ClientsInfoComponent implements OnInit {
       viewhistory: 'viewhistory'
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-1250', initialState }));
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
 }

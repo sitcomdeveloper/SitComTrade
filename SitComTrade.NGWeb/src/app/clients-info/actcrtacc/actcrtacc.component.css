@@ -1,3 +1,60 @@
 .form-holder {
     padding: 20px 60px 10px;
 }
+.modal .hightlited-area02 {
+    padding-left: 29px;
+    padding-right: 29px;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.hightlited01 {
+    border-color: #dde7f9;
+    background: #f1f6fc;
+}
+.hightlited-area02 {
+    border: 1px solid transparent;
+    border-width: 1px 0;
+    margin: 0 -15px 15px;
+    padding: 14px 15px;
+}
+#body, .dashboard-calendar table, .jsgrid-table, .table-type01 table, .table-type03.table-style01 table, .table-type04 table {
+    table-layout: fixed;
+}
+.headingwidth
+{
+    width: 18.9%;
+}
+/* .text-ellipsis {
+    
+    width:400px;
+} */
+.email-cell-content:first-child
+
+{
+    width: 300px;
+}
+td.email-cell {
+    min-width:75px;
+}
+.email-cell-content
+
+{
+    width: 173px!important;
+}
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+}
+.text-ellipsis {
+    width: auto!important;
+}
+.email-alt-row {
+    background: #f5f8fc;
+}
+tr.email-filter-row {
+    background: #fff;
+}
+.jsgrid-header-scrollbar
+{
+    overflow-y: auto;
+}

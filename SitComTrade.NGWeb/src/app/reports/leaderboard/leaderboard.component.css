@@ -1,62 +1,40 @@
-.sub-header{
-    position: relative;
-    z-index: 10;
-    padding: 35px 0 0;
-    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
-    color: #fff;
-   height: 94px;
-    margin:0px 15px;
+#body, .dashboard-calendar table, .jsgrid-table, .table-type01 table, .table-type03.table-style01 table, .table-type04 table {
+  table-layout: fixed;
 }
-.breadcrumb
+.headingwidth
 {
-    margin-left: 34px;
-    margin-top:-32px;
-    padding:0px;
-    
+  width: 18.9%;
 }
-/* .tab{
-    border:0px solid;
-    border-radius: 3px;
-    text-align: center;
-    width:836px;
-    height:47px;
-    margin-left: 34px;
-    color: #3d75e1;
+/* .text-ellipsis {
+  
+  width:400px;
 } */
-.sub-header-bottom
-{
-  background-color: white;
-  
-  margin-left: 43px;
-  white-space: initial;
-  
-  border-radius: 3px;
-  width:100%;
-  padding-top:9px;
-}
-.sub-header-bottom .nav ul li
-{
-    list-style-type: none;
-    display:inline-block;
-}
+.email-cell-content:first-child
 
-.sub-header-bottom .nav ul li a
 {
-  color:grey;
-  margin-right:23px;
-  margin-left: -12px;
-  font-size: 15px;
-  text-decoration-style: solid;
-  
-  text-align: center;
-  text-decoration: none;
-  text-shadow: darkgrey;
-  font-weight: 50px;
-  
+  width: 300px;
 }
-.sub-header-bottom .nav ul li a:hover
+td.email-cell {
+  min-width:75px;
+}
+.email-cell-content
+
 {
-  color:#3D55E1;
-  font-weight: 50%;
-  
+  width: 148px!important;
+}
+.form-control, .form-control:focus, .nav-tabs {
+  border-color: #dde7f9;
+}
+.text-ellipsis {
+  width: auto!important;
+}
+.email-alt-row {
+  background: #f5f8fc;
+}
+tr.email-filter-row {
+  background: #fff;
+}
+.jsgrid-header-scrollbar
+{
+  overflow-y: auto;
 }
