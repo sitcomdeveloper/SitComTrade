@@ -29,6 +29,10 @@ export class CrmnewuserComponent implements OnInit {
   bindLoginData: any;
   ModulesGroups: any;
   mdlen: any;
+  isshared: any;
+  notshared: any;
+  isharedsender: any;
+  notsharedsender: any;
 
   constructor(private bsmodal: BsModalRef, private settingsService: SettingsService, private fb: FormBuilder) { }
 
@@ -84,20 +88,34 @@ export class CrmnewuserComponent implements OnInit {
   }
   getDesks() {
     this.settingsService.getAllDesks().subscribe(desks => {
+      if (desks !== null && desks !== undefined && desks !== '') {
       this.Desks = desks;
-      console.log('Desks', desks);
+      this.isshared = this.Desks.filter(shareddata => {
+        if (shareddata.IsShared === true) {
+          return shareddata;
+        }
+        // console.log('isshared',this.isshared);
+      });
+      this.notshared = this.Desks.filter(notshareddata => {
+        if (notshareddata.IsShared === false) {
+          return notshareddata;
+        }
+        // console.log('notshareddata',this.notshared);
+      });
+      // console.log('Desks', desks);
+    }
     });
   }
   getDepartments() {
     this.settingsService.getAllDepartments().subscribe(departments => {
       this.Departments = departments;
-      console.log('Departments', departments);
+      // console.log('Departments', departments);
     });
   }
   getTimeZone() {
     this.settingsService.getAllTimeZones().subscribe(timezone => {
       this.TimeZones = timezone;
-      console.log('TimeZones', timezone);
+      // console.log('TimeZones', timezone);
     });
   }
   getCultureCodes() {
@@ -115,15 +133,19 @@ export class CrmnewuserComponent implements OnInit {
   getSenderSettings() {
     this.settingsService.getAllSenderSettings().subscribe(sndrsettings => {
       this.SenderSettings = sndrsettings;
+      this.isharedsender = this.SenderSettings.filter( sharedsenderdata => {
+        if (sharedsenderdata.IsShared === true) {
+          return sharedsenderdata;
+        }
+      });
+      this.notsharedsender = this.SenderSettings.filter(notsharedsenderdata => {
+        if (notsharedsenderdata.IsShared === false) {
+          return notsharedsenderdata;
+        }
+      });
       console.log('SenderSettings', sndrsettings);
     });
   }
-  // getModulesGroup() {
-  //   this.settingsService.getAllModulesGroups().subscribe(res => {
-  //     this.ModulesGroups = res;
-  //     console.log('ModulesGroups',res);
-  //   })
-  // }
   getModules() {
     this.settingsService.getAllModules().subscribe(modules => {
       this.Modules = modules;
@@ -156,12 +178,12 @@ export class CrmnewuserComponent implements OnInit {
   }
   // make the user registered
   svingDtls() {
-    this.Desks.forEach(element => {
+    this.notshared.forEach(element => {
       if ( element.Id === +this.newRegisterForm.value.desk) {
         this.newRegisterForm.value.deskid = element.Name;
       }
     });
-    this.Desks.forEach(element => {
+    this.isshared.forEach(element => {
       if ( element.Id === +this.newRegisterForm.value.shareddesks) {
         this.newRegisterForm.value.shareddesksid = element.Name;
       }
@@ -196,12 +218,12 @@ export class CrmnewuserComponent implements OnInit {
         this.newRegisterForm.value.startmoduleid = element.Name;
       }
     });
-    this.SenderSettings.forEach(element => {
+    this.notsharedsender.forEach(element => {
       if ( element.Id === +this.newRegisterForm.value.defaultsendersetting) {
         this.newRegisterForm.value.defaultsendersettingid = element.Name;
       }
     });
-    this.SenderSettings.forEach(element => {
+    this.isharedsender.forEach(element => {
       if ( element.Id === +this.newRegisterForm.value.sharedsendersettings) {
         this.newRegisterForm.value.sharedsendersettingsid = element.Name;
       }
@@ -221,10 +243,10 @@ export class CrmnewuserComponent implements OnInit {
       RoleName: this.newRegisterForm.value.rolesid,
       DepartmentId: this.newRegisterForm.value.department,
       DepartmentName: this.newRegisterForm.value.departmentid,
-      // SharedDeskId: this.newRegisterForm.value.shareddesks,
-      // SharedDeskName: this.newRegisterForm.value.shareddesksid,
-      SharedDeskId: '2',
-      SharedDeskName: 'de',
+      SharedDeskId: this.newRegisterForm.value.shareddesks,
+      SharedDeskName: this.newRegisterForm.value.shareddesksid,
+      // SharedDeskId: '2',
+      // SharedDeskName: 'de',
       // TimezoneId: this.newRegisterForm.value.TimezoneId,
       TimezoneId: '1',
       TimezoneName: this.newRegisterForm.value.timezone,
@@ -240,14 +262,14 @@ export class CrmnewuserComponent implements OnInit {
       // StartModuleName: this.newRegisterForm.value.startmodule,
       StartModuleId: '5',
       StartModuleName: 'clients',
-      // DefaultSenderId: this.newRegisterForm.value.defaultsendersettingid,
-      DefaultSenderId: '1',
-      // DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
-      DefaultSenderName: 'gh',
-      // SharedSenderId: this.newRegisterForm.value.sharedsendersettingsid,
-      SharedSenderId: '1',
-      // SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
-      SharedSenderName: 'fg',
+      DefaultSenderId: this.newRegisterForm.value.defaultsendersettingid,
+      // DefaultSenderId: '1',
+      DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+      // DefaultSenderName: 'gh',
+      SharedSenderId: this.newRegisterForm.value.sharedsendersettingsid,
+      // SharedSenderId: '1',
+      SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
+      // SharedSenderName: 'fg',
       OwnerId: this.bindLoginData.UserId,
       LockoutEnabled: 'true',
       CampaignCode: 'gh',

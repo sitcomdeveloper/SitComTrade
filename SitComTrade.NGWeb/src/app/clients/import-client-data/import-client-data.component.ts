@@ -22,7 +22,7 @@ export class ImportClientDataComponent implements OnInit {
     this.closesecondpopup = false;
     this.bsmodal.hide();
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ImprtclntdtaComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef = this.modalService.show(ImprtclntdtaComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   hideModal() {

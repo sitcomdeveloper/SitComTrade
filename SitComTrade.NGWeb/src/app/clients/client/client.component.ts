@@ -111,13 +111,6 @@ bindLoginData: any;
   }, );
   }
   userClick(selectedItem: any) {
-    // let userid = selectedItem;
-    // localStorage.clear();
-    // localStorage.setItem('project', JSON.stringify(selectedItem));
-    // console.log('selecteditem', JSON.stringify(selectedItem));
-    // this.router.navigateByUrl('/info');
-    // console.log('Selected item Id: ', selectedItem.ItemId);
-    // console.log(selectedItem);
     this.router.navigate(['/info', selectedItem]);
     // const url = this.router.serializeUrl(
     //   this.router.createUrlTree(['/info', selectedItem])
