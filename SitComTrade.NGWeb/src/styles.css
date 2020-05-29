@@ -1322,6 +1322,19 @@ tr.tablectn {
         width: 20px;
         height: 20px;
     }
+    .modal750 {
+        max-width: 750px;
+    }
+    .modal600 {
+        max-width: 600px;
+    }
+    .modal .form-holder {
+    padding: 0 50px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
