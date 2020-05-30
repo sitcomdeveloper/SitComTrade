@@ -50,7 +50,6 @@ namespace SitComTech.Model.ViewModel
         public long? GroupId { get; set; }
         public string GroupName { get; set; }
         public string Desk { get; set; }
-        public bool? IsEditable { get; set; }
         public long OwnerId { get; set; }
         public string Mobile { get; set; }
         public string SecondEmail { get; set; }

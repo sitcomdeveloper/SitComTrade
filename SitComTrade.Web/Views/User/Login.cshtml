@@ -213,43 +213,81 @@
             UserName: ko.observable('ravi@gmail.com'),
             Password: ko.observable('admin123')
         };
-        UserVM.UserEdit = {
-              
-              FirstName: ko.observable('fdfd'),
-              LastName: ko.observable('Ldgdgdead'),
-              Email: ko.observable('tomnick@gmail.com'),
-              Phone: ko.observable(0),
-              Password: ko.observable('hdfdf'),
-              OwnerId: ko.observable('Lead'),
-              DeskId: ko.observable(1),
-              IsDisabled: ko.observable(0),
-              UserName: ko.observable('wewew'),
-              IsAffiliateUser: ko.observable(1),
-              ImageName: ko.observable('3'),
-              LockoutEnabled: ko.observable(0),
-              CampaignCode: ko.observable('24234224'),
-              AffiliateFieldId: ko.observable(1),
-              AffiliateFieldName: ko.observable('wewew'),
-              DeskName: ko.observable('wewew'),
-              RoleId: ko.observable(1),
-              RoleName: ko.observable('85'),
-              DepartmentId: ko.observable(1),
-              DepartmentName: ko.observable('fdfd'),
-              SharedDeskId: ko.observable(1),
-              SharedDeskName: ko.observable('1'),
-              TimezoneId: ko.observable(1),
-              TimezoneName: ko.observable('hdfdf'),
-              CultureCode: ko.observable('Lead'),
-              CultureCodeId: ko.observable(1),
-              UiCultureCode: ko.observable('wewew'),
-              UiCultureCodeId: ko.observable(1),
-              StartModuleId: ko.observable(1),
-              StartModuleName: ko.observable('3'),
-              DefaultSenderId: ko.observable(1),
-              DefaultSenderName: ko.observable('24234224'),
-              SharedSenderId: ko.observable(1),
-              SharedSenderName: ko.observable('wewew'),
+
+        UserVM.UserInsert = {
+
+            FirstName: ko.observable('fdfd'),
+            LastName: ko.observable('Ldgdgdead'),
+            Email: ko.observable('gghg@gmail.com'),
+            Phone: ko.observable(0),
+            Password: ko.observable('hdfdf'),
+            OwnerId: ko.observable('Lead'),
+            DeskId: ko.observable(1),
+            IsDisabled: ko.observable(0),
+            UserName: ko.observable('wewew'),
+            IsAffiliateUser: ko.observable(1),
+            ImageName: ko.observable('3'),
+            LockoutEnabled: ko.observable(0),
+            CampaignCode: ko.observable('24234224'),
+            AffiliateFieldId: ko.observable(1),
+            AffiliateFieldName: ko.observable('wewew'),
+            DeskName: ko.observable('wewew'),
+            RoleId: ko.observable(1),
+            RoleName: ko.observable('85'),
+            DepartmentId: ko.observable(1),
+            DepartmentName: ko.observable('fdfd'),
+            SharedDeskId: ko.observable(1),
+            SharedDeskName: ko.observable('1'),
+            TimezoneId: ko.observable(1),
+            TimezoneName: ko.observable('hdfdf'),
+            CultureCode: ko.observable('Lead'),
+            CultureCodeId: ko.observable(1),
+            UiCultureCode: ko.observable('wewew'),
+            UiCultureCodeId: ko.observable(1),
+            StartModuleId: ko.observable(1),
+            StartModuleName: ko.observable('3'),
+            DefaultSenderId: ko.observable(1),
+            DefaultSenderName: ko.observable('24234224'),
+            SharedSenderId: ko.observable(1),
+            SharedSenderName: ko.observable('wewew'),
         };
+        //UserVM.UserEdit = {
+              
+        //      FirstName: ko.observable('fdfd'),
+        //      LastName: ko.observable('Ldgdgdead'),
+        //      Email: ko.observable('tomnick@gmail.com'),
+        //      Phone: ko.observable(0),
+        //      Password: ko.observable('hdfdf'),
+        //      OwnerId: ko.observable('Lead'),
+        //      DeskId: ko.observable(1),
+        //      IsDisabled: ko.observable(0),
+        //      UserName: ko.observable('wewew'),
+        //      IsAffiliateUser: ko.observable(1),
+        //      ImageName: ko.observable('3'),
+        //      LockoutEnabled: ko.observable(0),
+        //      CampaignCode: ko.observable('24234224'),
+        //      AffiliateFieldId: ko.observable(1),
+        //      AffiliateFieldName: ko.observable('wewew'),
+        //      DeskName: ko.observable('wewew'),
+        //      RoleId: ko.observable(1),
+        //      RoleName: ko.observable('85'),
+        //      DepartmentId: ko.observable(1),
+        //      DepartmentName: ko.observable('fdfd'),
+        //      SharedDeskId: ko.observable(1),
+        //      SharedDeskName: ko.observable('1'),
+        //      TimezoneId: ko.observable(1),
+        //      TimezoneName: ko.observable('hdfdf'),
+        //      CultureCode: ko.observable('Lead'),
+        //      CultureCodeId: ko.observable(1),
+        //      UiCultureCode: ko.observable('wewew'),
+        //      UiCultureCodeId: ko.observable(1),
+        //      StartModuleId: ko.observable(1),
+        //      StartModuleName: ko.observable('3'),
+        //      DefaultSenderId: ko.observable(1),
+        //      DefaultSenderName: ko.observable('24234224'),
+        //      SharedSenderId: ko.observable(1),
+        //      SharedSenderName: ko.observable('wewew'),
+        //};
 
         //  UserVM.AdditionInfo = {
              
@@ -310,14 +348,24 @@
 
              $.ajax({
                 type: 'Post',
-                 url: apiURl + "api/User/UpdateUserDetail",
+                 url: apiURl + "api/User/RegisterUser",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.UserEdit),
+                data: ko.toJSON(UserVM.UserInsert),
                 success: function (result) {
                     alert(result);
                 }
-            });
+             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/User/UpdateUserDetail",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.UserEdit),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: "get",
