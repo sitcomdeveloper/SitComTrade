@@ -65,3 +65,7 @@ tr.email-filter-row {
     padding: 4px 10px;
     border-radius: 2px;
 }
+tr.total-row td {
+  position: relative;
+  padding-top: 15px;
+}

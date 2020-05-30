@@ -1335,6 +1335,15 @@ tr.tablectn {
 .mt40 {
     margin-top: 40px;
 }
+ .total-row>.email-cell:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 15px;
+    background: #e0e8f3;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
