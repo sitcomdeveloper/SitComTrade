@@ -126,6 +126,7 @@ namespace SitComTech.Domain.Services
                 userdata.IsAffiliateUser = entity.IsAffiliateUser;
                 userdata.ImageName = entity.ImageName;
                 userdata.LockoutEnabled = entity.LockoutEnabled;
+                userdata.CampaignCode = entity.CampaignCode;
                 userdata.AffiliateFieldId = entity.AffiliateFieldId;
                 userdata.AffiliateFieldName = entity.AffiliateFieldName;
                 userdata.RoleId = entity.RoleId;

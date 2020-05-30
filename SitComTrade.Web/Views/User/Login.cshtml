@@ -213,17 +213,54 @@
             UserName: ko.observable('ravi@gmail.com'),
             Password: ko.observable('admin123')
         };
-
-          UserVM.AdditionInfo = {
-             
-              AcceptedTermConditions: ko.observable(0),
-              Description: ko.observable('dfhdf'),
-              OwnerId: ko.observable('3'),             
-              IsOnline: ko.observable(0),
-              PromoCode: ko.observable('ghd'),
-              SubscribedNewsletter: ko.observable(1),
-              SuppliedDocs: ko.observable(1),
+        UserVM.UserEdit = {
+              
+              FirstName: ko.observable('fdfd'),
+              LastName: ko.observable('Ldgdgdead'),
+              Email: ko.observable('tomnick@gmail.com'),
+              Phone: ko.observable(0),
+              Password: ko.observable('hdfdf'),
+              OwnerId: ko.observable('Lead'),
+              DeskId: ko.observable(1),
+              IsDisabled: ko.observable(0),
+              UserName: ko.observable('wewew'),
+              IsAffiliateUser: ko.observable(1),
+              ImageName: ko.observable('3'),
+              LockoutEnabled: ko.observable(0),
+              CampaignCode: ko.observable('24234224'),
+              AffiliateFieldId: ko.observable(1),
+              AffiliateFieldName: ko.observable('wewew'),
+              DeskName: ko.observable('wewew'),
+              RoleId: ko.observable(1),
+              RoleName: ko.observable('85'),
+              DepartmentId: ko.observable(1),
+              DepartmentName: ko.observable('fdfd'),
+              SharedDeskId: ko.observable(1),
+              SharedDeskName: ko.observable('1'),
+              TimezoneId: ko.observable(1),
+              TimezoneName: ko.observable('hdfdf'),
+              CultureCode: ko.observable('Lead'),
+              CultureCodeId: ko.observable(1),
+              UiCultureCode: ko.observable('wewew'),
+              UiCultureCodeId: ko.observable(1),
+              StartModuleId: ko.observable(1),
+              StartModuleName: ko.observable('3'),
+              DefaultSenderId: ko.observable(1),
+              DefaultSenderName: ko.observable('24234224'),
+              SharedSenderId: ko.observable(1),
+              SharedSenderName: ko.observable('wewew'),
         };
+
+        //  UserVM.AdditionInfo = {
+             
+        //      AcceptedTermConditions: ko.observable(0),
+        //      Description: ko.observable('dfhdf'),
+        //      OwnerId: ko.observable('3'),             
+        //      IsOnline: ko.observable(0),
+        //      PromoCode: ko.observable('ghd'),
+        //      SubscribedNewsletter: ko.observable(1),
+        //      SuppliedDocs: ko.observable(1),
+        //};
         //UserVM.MarketingInfo = {
         //    AffiliateID: ko.observable('fdfd'),
         //    AffiliateUser: ko.observable('Ldgdgdead'),
@@ -271,79 +308,89 @@
 
         $(document).ready(function () {
 
-
              $.ajax({
-                type: "get",
-                 url: 'http://localhost:59122/api/Common/GetAllDepartments',
+                type: 'Post',
+                 url: apiURl + "api/User/UpdateUserDetail",
                 contentType: 'application/json',
                 processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
-                }
-             });
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/Common/GetAllDesks',
-                contentType: 'application/json',
-                processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
+                data: ko.toJSON(UserVM.UserEdit),
+                success: function (result) {
+                    alert(result);
                 }
             });
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/Common/GetAllModuleGroups',
-                contentType: 'application/json',
-                processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
-                }
-            });
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/Common/GetAllModules',
-                contentType: 'application/json',
-                processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
-                }
-            });
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/Common/GetAllRoles',
-                contentType: 'application/json',
-                processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
-                }
-            });
-            $.ajax({
-                type: "get",
-                url: 'http://localhost:59122/api/Common/GetAllTimeZones',
-                contentType: 'application/json',
-                processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
-                }
-            });
+
+            //$.ajax({
+            //    type: "get",
+            //     url: 'http://localhost:59122/api/Common/GetAllDepartments',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            // });
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/Common/GetAllDesks',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/Common/GetAllModuleGroups',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/Common/GetAllModules',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/Common/GetAllRoles',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
+            //$.ajax({
+            //    type: "get",
+            //    url: 'http://localhost:59122/api/Common/GetAllTimeZones',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/InsertUpdateAdditionalInfo",
