@@ -115,7 +115,7 @@ export class CrmnewuserComponent implements OnInit {
   getTimeZone() {
     this.settingsService.getAllTimeZones().subscribe(timezone => {
       this.TimeZones = timezone;
-      // console.log('TimeZones', timezone);
+      console.log('TimeZones', timezone);
     });
   }
   getCultureCodes() {
