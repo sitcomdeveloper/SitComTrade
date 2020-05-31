@@ -48,4 +48,14 @@ namespace SitComTech.Data.Mapping
             Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
+
+    public class UserSharedDeskMap : EntityTypeConfiguration<UserSharedDesk>
+    {
+        public UserSharedDeskMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasRequired(a => a.UserTable).WithMany().HasForeignKey(x => x.UserId).WillCascadeOnDelete(false);
+        }
+    }
 }
