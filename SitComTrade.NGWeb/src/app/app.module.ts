@@ -56,6 +56,7 @@ import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituse
 import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
 import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
 import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
+import { AffilatenewuserComponent } from './settings/affilateusers/affilatenewuser/affilatenewuser.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { ImportClientDataComponent } from './clients/import-client-data/import-c
     ActcrtaccComponent,
     ImprtclntdtaComponent,
     ImportClientDataComponent,
+    AffilatenewuserComponent,
   ],
   imports: [
     BrowserModule,
@@ -156,7 +158,7 @@ import { ImportClientDataComponent } from './clients/import-client-data/import-c
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
      CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
-     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent],
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent],
   exports: [
     PhoneMaskDirective
   ],

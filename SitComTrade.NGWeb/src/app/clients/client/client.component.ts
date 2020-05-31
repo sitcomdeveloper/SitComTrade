@@ -81,6 +81,7 @@ bindLoginData: any;
 
   }
   userDetails() {
+    // this.clientInfo
     // this.bindLoginData.Id
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(localStorage.getItem('project'));

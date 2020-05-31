@@ -32,6 +32,7 @@ export class CrmusersComponent implements OnInit {
 this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
   this.GetUser = getuser;
   console.log('GetUser', getuser);
+  // this.bindLoginData.UserId
 })
   }
   // open popup for create new user
@@ -42,10 +43,9 @@ this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CrmnewuserComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.userDetails();
-
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.getAllUsers();
+});
   }
   // popup for edit user
   openEditUser() {

@@ -221,3 +221,9 @@ ul.dropdown-menu2.inner1 li a
 .bootstrap-select.btn-group.show-tick .bs-emptychecker a.selected span.check-mark, .bootstrap-select.btn-group.show-tick .bs-singleaction a.actions-btn span.check-mark, .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
     background-position: 0 -240px;
 }
+.message{
+    color: green;
+    text-align: center;
+    margin-left: 285px;
+    margin-bottom: 5px;
+}
