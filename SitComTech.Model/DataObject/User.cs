@@ -46,4 +46,12 @@ namespace SitComTech.Model.DataObject
         public string Name { get; set; }
 
     }
+    public class UserSharedDesk : BaseEntity
+    {
+        public long UserId { get; set; }
+        public Nullable<long> SharedDeskId { get; set; }
+        public string SharedDeskName { get; set; }
+        public virtual User UserTable { get; set; }
+
+    }
 }
