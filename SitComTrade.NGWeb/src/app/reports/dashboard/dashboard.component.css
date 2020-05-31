@@ -96,3 +96,37 @@
     -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
     box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
 }
+.dashboard-info-box.retentiontarget {
+    background: #49cbc9;
+    background: -moz-linear-gradient(left,#49cbc9 0,#7decc1 100%);
+    background: -webkit-linear-gradient(left,#49cbc9 0,#7decc1 100%);
+    background: linear-gradient(to right,#49cbc9 0,#7decc1 100%);
+    color: #fff;
+}
+.dashboard-info-box.salestarget {
+    background: #ffe400;
+    background: -moz-linear-gradient(left,#ffe400 0,#ffcc01 100%);
+    background: -webkit-linear-gradient(left,#ffe400 0,#ffcc01 100%);
+    background: linear-gradient(to right,#ffe400 0,#ffcc01 100%);
+    color: #fff;
+}
+.dashboard-info-box.marketingtarget {
+    background: #ff5c53;
+    background: -moz-linear-gradient(left,#ff5c53 0,#f33233 100%);
+    background: -webkit-linear-gradient(left,#ff5c53 0,#f33233 100%);
+    background: linear-gradient(to right,#ff5c53 0,#f33233 100%);
+    color: #fff;
+}
+.dashboard-info-box.onlinecustomers {
+    background: #207cda;
+    background: -moz-linear-gradient(left,#207cda 0,#60adff 100%);
+    background: -webkit-linear-gradient(left,#207cda 0,#60adff 100%);
+    background: linear-gradient(to right,#207cda 0,#60adff 100%);
+    color: #fff;
+}
+.dashboard-info-box.totalnet [class*=icon-], .dashboard-info-box.totalnet strong {
+    color: #8ec73f;
+    background: linear-gradient(45deg,#8ec73f 0,#03b9e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
