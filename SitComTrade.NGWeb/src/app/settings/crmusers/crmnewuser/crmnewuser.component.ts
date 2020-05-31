@@ -252,36 +252,18 @@ DepartmentId: this.newRegisterForm.value.department,
 DepartmentName: this.newRegisterForm.value.departmentid,
 SharedDeskId: this.newRegisterForm.value.shareddesks,
 SharedDeskName: this.newRegisterForm.value.shareddesksid,
-// SharedDeskId: '2',
-// SharedDeskName: 'de',
-// TimezoneId: this.newRegisterForm.value.TimezoneId,
 TimezoneId: '',
 TimezoneName: this.newRegisterForm.value.timezone,
 CultureCode: this.newRegisterForm.value.culturecode,
-// CultureCodeId: this.newRegisterForm.value.culturecode,
-// CultureCode: 'fg',
 CultureCodeId: '',
 UiCultureCode: this.newRegisterForm.value.uiculturecode,
-// UiCultureCodeId: this.newRegisterForm.value.uiculturecodeid,
-// UiCultureCode: 'f',
 UiCultureCodeId: '',
-// StartModuleId: this.newRegisterForm.value.startmoduleid,
-// StartModuleName: this.newRegisterForm.value.startmodule,
 StartModuleId: '5',
 StartModuleName: 'clients',
-// DefaultSenderId: this.newRegisterForm.value.defaultsendersettingid,
 DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
 DefaultSenderId: '',
-// DefaultSenderName: 'gh',
-// SharedSenderId: this.newRegisterForm.value.sharedsendersettingsid,
 SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
 SharedSenderId: '',
-// SharedSenderName: 'fg', 
-
-        
-        
-        
-        
     };
     this.settingsService.registeruser(rgstrusr).subscribe(user => {
       this.RegisteredUser = user;

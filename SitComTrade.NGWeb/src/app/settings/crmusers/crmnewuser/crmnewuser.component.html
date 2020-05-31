@@ -7,7 +7,7 @@
 <div class="form-holder mt15">
     <form class="form-horizontal upload-photo" autocomplete="off" novalidate="novalidate" [formGroup]="newRegisterForm">
         <div class="row">
-            <input class="form-control" name="Id" type="hidden" id="a0935dd58-af1c-764d-3499-88bedb5ceda4" value="">
+            <input class="form-control" name="Id" type="hidden" value="">
             <div class="form-group row">
                <div class="col-md-6">
                   <div class="form-group row fileupload-style01 fileupload">
@@ -33,15 +33,15 @@
                <div class="col-md-6">
                   <div class="form-group row">
                      <div class="col-md-3"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="firstname" name="FirstName" type="text" id="ad6c72ec5-c8aa-db30-30b3-f1a2abf7fb20" aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="firstname" name="FirstName" type="text" aria-required="true"></div>
                   </div>
                   <div class="form-group row">
                      <div class="col-md-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="lastname" name="LastName" type="text" id="a53e8ed9e-39b7-c153-d009-86b34b671478" aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="lastname" name="LastName" type="text" aria-required="true"></div>
                   </div>
                   <div class="form-group row">
                      <div class="col-md-3"><label class="valign-label" for="UserName"><span data-tooltip-el="">User Name</span></label></div>
-                     <div class="col-md-9"><input class="form-control valid" formControlName="username" name="UserName" type="text" id="a3d471a79-2762-28f6-d33c-1a1f5fba3ac4" aria-required="true" aria-invalid="false"></div>
+                     <div class="col-md-9"><input class="form-control valid" formControlName="username" name="UserName" type="text" aria-required="true" aria-invalid="false"></div>
                   </div>
                </div>
             </div>
@@ -49,13 +49,13 @@
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="email" name="Email" type="text" id="a64d794e9-ef45-3e57-d963-4c64922770c8" aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="email" name="Email" type="text"  aria-required="true"></div>
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="phone" name="Phone" type="text" id="af563fe43-83c5-1f90-88b3-3902716eae8c" aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="phone" name="Phone" type="text"  aria-required="true"></div>
                   </div>
                </div>
             </div>
@@ -65,7 +65,7 @@
                      <div class="col-md-3"><label class="valign-label" for="LockoutEnabled"><span data-tooltip-el="">Disabled</span></label></div>
                      <div class="col-md-9">
                         <div class="checkbox-inline">
-                           <div class="input-checkbox"><span class=""><input class="form-control" formControlName="disabled" name="LockoutEnabled" type="checkbox" id="a107cd7d2-324a-f50b-29b9-45c864e9557e" value="true"></span></div>
+                           <div class="input-checkbox"><span class=""><input class="form-control" formControlName="disabled" name="LockoutEnabled" type="checkbox"  value="true"></span></div>
                            &nbsp;
                         </div>
                      </div>
@@ -77,7 +77,7 @@
                      <div class="col-md-9">
                       
                            
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="desk">
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="desk">
                               <option value="">Select...</option>
                               <option value="206" value="{{getdesks?.Id}}" *ngFor="let getdesks of notshared">{{getdesks?.Name}}</option>
                            </select>
@@ -93,38 +93,11 @@
                      <div class="col-md-9">
                      
                           
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles">
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="roles">
                               <option value="">Select</option>
                               <option value="" value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
-                           <!-- <div class="btn-group bootstrap-select show-tick form-control">
-                              <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="a1a206e37-c3d3-4fe0-415d-f82eb611ff26" title="Select..." aria-expanded="false"><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                              <div class="dropdown-menu open" role="combobox" style="max-height: 417px; overflow: hidden; min-height: 67px;">
-                                 <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                                 <div class="bs-actionsbox">
-                                    <div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div>
-                                 </div>
-                                 <ul class="dropdown-menu2 inner1" role="listbox" aria-expanded="false" style="max-height: 321px;overflow-y: auto;min-height: 0px;">
-                                    <li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                                        <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search" *ngFor="let getroles of Roles">
-</span>
-<span class="text">{{getroles?.Name}}</span></a></li>
-                                        <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                                            <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
-</span><span class="text">CRM</span></a></li>
-                                            <li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                                                <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
-</span><span class="text">WebTrader</span></a></li>
-                                                <li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                                                    <span class="checkbox  check-mark">                            <input type="checkbox" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search">
-</span><span class="text">Terminal</span></a></li>
-                                                    
-                                                </ul>
-                                
-                              </div>
                            
-                           </div> -->
-                       
                      </div>
                   </div>
                </div>
@@ -134,7 +107,7 @@
                      <div class="col-md-9">
                       
                           
-                           <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="department">
+                           <select class="form-control" name="Department" data-container="body" data-live-search="true" tabindex="-98" formControlName="department">
                               <option value="">Select...</option>
                               <option value="0" value="{{getdepartments?.Id}}" *ngFor="let getdepartments of Departments">{{getdepartments?.Name}}</option>
                            </select>
@@ -149,7 +122,7 @@
                      <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
                      <div class="col-md-9">
                         
-                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="shareddesks">
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks">
                            <option value="">Select...</option>
                            <option value="" value="{{shared?.Id}}" *ngFor="let shared of isshared">{{shared?.Name}}</option>
                            <!-- <option value="17">DESK MANAGER</option> -->
@@ -164,7 +137,7 @@
                      <div class="col-md-9">
                      
                           
-                           <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98" formControlName="timezone">
+                           <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone">
                               <option value="">Select...</option>
                               <option value="{{gettimezones?.DisplayName}}"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
                            </select>
@@ -180,7 +153,7 @@
                      <div class="col-md-9">
                         
                           
-                           <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" id="a90d25e0a-602f-6fcf-5387-326f21cb4940" aria-required="true" tabindex="-98" formControlName="culturecode">
+                           <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="culturecode">
                               <option value="">Select...</option>
                               <option value="" value="{{getculturecode?.CultureCodeName}}" *ngFor="let getculturecode of CultureCode">{{getculturecode?.CultureCodeName}}</option>
                            </select>
@@ -194,7 +167,7 @@
                      <div class="col-md-9">
                         
                          
-                           <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="ad9cab536-ce18-044e-f9fc-a34da4a7a406" aria-required="true" tabindex="-98" formControlName="uiculturecode">
+                           <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="uiculturecode">
                               <option value="">Select...</option>
                               <option value="{{getculturecode?.UICultureCodeName}}"  *ngFor="let getculturecode of CultureCode">{{getculturecode?.UICultureCodeName}}</option>
                            </select>
@@ -208,7 +181,7 @@
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="StartModuleId" data-original-title="" title=""><span data-tooltip-el="" tooltip="StartModuleId">StartModuleId</span></label></div>
                      <div class="col-md-9">
-                        <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a4ce8f266-eedd-3524-ddc4-291dd07b7e36" tabindex="-98">
+                        <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" tabindex="-98" formControlName="startmodule">
                            <option value="">Select...</option>
                            <optgroup label="Clients">
                               <option value="27">Clients</option>
@@ -260,7 +233,7 @@
                      <div class="col-md-9">
                       
                           
-                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="defaultsendersetting">
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="defaultsendersetting">
                            <option value="">Select</option>
                            <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of notsharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
@@ -275,7 +248,7 @@
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">SharedSenderSettings</span></label></div>
                      <div class="col-md-9">
                        
-                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98" formControlName="sharedsendersettings">
+                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings">
                            <option value="">Select...</option>
                            <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
@@ -291,7 +264,7 @@
                         <div class="col-md-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
                         <div class="col-md-9">
                            <div class="input-control">
-                              <input class="form-control valid" name="Password" type="password" id="" aria-required="true" aria-invalid="false" formControlName="password" >
+                              <input class="form-control valid" name="Password" type="password"  aria-required="true" aria-invalid="false" formControlName="password" >
                               <a href="javascript:void(0);" class="input-button show-password">
                                  <i class="fa fa-eye" aria-hidden="true" onclick="hideshowpwd()"></i>
                               </a>
@@ -304,7 +277,7 @@
                         <div class="col-md-3"><label class="valign-label" for="RepeatPassword"><span data-tooltip-el="">Repeat Password</span></label></div>
                         <div class="col-md-9">
                            <div class="input-control">
-                              <input class="form-control" name="RepeatPassword" type="password" aria-required="true" formControlName="repeatpassword" id="">
+                              <input class="form-control" name="RepeatPassword" type="password" aria-required="true" formControlName="repeatpassword" >
                               <a href="javascript:void(0);" class="input-button show-password">
                                  <i class="fa fa-eye" aria-hidden="true" onclick="hideshowpwd()"></i>
                               </a>

@@ -5,281 +5,258 @@
     </button>
  </div>
  <div class="form-holder mt15">
-     <form class="form-horizontal upload-photo" autocomplete="off" novalidate="novalidate">
+     <form class="form-horizontal upload-photo" autocomplete="off" novalidate="novalidate" [formGroup]="newRegisterForm">
          <div class="row">
              <input class="form-control" name="Id" type="hidden" id="a0935dd58-af1c-764d-3499-88bedb5ceda4" value="">
              <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="form-group row fileupload-style01 fileupload">
-                      <div class="col-md-4">
-                         <div class="user-photo-control">
-                            <div class="files">
-                               <div class="image"><img src="assets/images/user-photo-default.png" alt="" data-container="image-holder"></div>
-                               <div class="controls"></div>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="col-md-8">
-                         <div class="fileupload-control">
-                            <div class="dropzone">
-                               <div class="dropzone-inner"><i _ngcontent-kvh-c8="" aria-hidden="true" class="fa fa-upload">&nbsp;</i><br> Drag your document here or <a href="#" class="image-link">browse files</a><input type="file" accept="image/*" outocomplete="off"></div>
-                            </div>
-                            <div class="general-error" style="display: none;"></div>
-                         </div>
-                      </div>
-                      <input type="hidden" name="Avatar" value=""><input type="hidden" name="AvatarWasChanged" value="">
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="form-group row">
-                      <div class="col-md-3"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
-                      <div class="col-md-9"><input class="form-control" name="FirstName" type="text" id="ad6c72ec5-c8aa-db30-30b3-f1a2abf7fb20" aria-required="true"></div>
-                   </div>
-                   <div class="form-group row">
-                      <div class="col-md-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
-                      <div class="col-md-9"><input class="form-control" name="LastName" type="text" id="a53e8ed9e-39b7-c153-d009-86b34b671478" aria-required="true"></div>
-                   </div>
-                   <div class="form-group row">
-                      <div class="col-md-3"><label class="valign-label" for="UserName"><span data-tooltip-el="">User Name</span></label></div>
-                      <div class="col-md-9"><input class="form-control valid" name="UserName" type="text" id="a3d471a79-2762-28f6-d33c-1a1f5fba3ac4" aria-required="true" aria-invalid="false"></div>
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
-                      <div class="col-md-9"><input class="form-control" name="Email" type="text" id="a64d794e9-ef45-3e57-d963-4c64922770c8" aria-required="true"></div>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-                      <div class="col-md-9"><input class="form-control" name="Phone" type="text" id="af563fe43-83c5-1f90-88b3-3902716eae8c" aria-required="true"></div>
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="LockoutEnabled"><span data-tooltip-el="">Disabled</span></label></div>
-                      <div class="col-md-9">
-                         <div class="checkbox-inline">
-                            <div class="input-checkbox"><span class=""><input class="form-control" name="LockoutEnabled" type="checkbox" id="a107cd7d2-324a-f50b-29b9-45c864e9557e" value="true"></span></div>
-                            &nbsp;
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="DeskId"><span data-tooltip-el="">Desk</span></label></div>
-                      <div class="col-md-9">
-                       
-                            
-                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
-                               <option value="">Select...</option>
-                               <option value="206">IMC</option>
-                            </select>
+               <div class="col-md-6">
+                  <div class="form-group row fileupload-style01 fileupload">
+                     <div class="col-md-4">
+                        <div class="user-photo-control">
+                           <div class="files">
+                              <div class="image"><img src="assets/images/user-photo-default.png" alt="" data-container="image-holder"></div>
+                              <div class="controls"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="fileupload-control">
+                           <div class="dropzone">
+                              <div class="dropzone-inner"><i _ngcontent-kvh-c8="" aria-hidden="true" class="fa fa-upload">&nbsp;</i><br> Drag your document here or <a href="#" class="image-link">browse files</a><input type="file" accept="image/*" outocomplete="off" formControlName="image"></div>
+                           </div>
+                           <div class="general-error" style="display: none;"></div>
+                        </div>
+                     </div>
+                     <input type="hidden" name="Avatar" value=""><input type="hidden" name="AvatarWasChanged" value="">
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group row">
+                     <div class="col-md-3"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="firstname" name="FirstName" type="text" id="ad6c72ec5-c8aa-db30-30b3-f1a2abf7fb20" aria-required="true"></div>
+                  </div>
+                  <div class="form-group row">
+                     <div class="col-md-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="lastname" name="LastName" type="text" id="a53e8ed9e-39b7-c153-d009-86b34b671478" aria-required="true"></div>
+                  </div>
+                  <div class="form-group row">
+                     <div class="col-md-3"><label class="valign-label" for="UserName"><span data-tooltip-el="">User Name</span></label></div>
+                     <div class="col-md-9"><input class="form-control valid" formControlName="username" name="UserName" type="text" id="a3d471a79-2762-28f6-d33c-1a1f5fba3ac4" aria-required="true" aria-invalid="false"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="email" name="Email" type="text" id="a64d794e9-ef45-3e57-d963-4c64922770c8" aria-required="true"></div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="phone" name="Phone" type="text" id="af563fe43-83c5-1f90-88b3-3902716eae8c" aria-required="true"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="LockoutEnabled"><span data-tooltip-el="">Disabled</span></label></div>
+                     <div class="col-md-9">
+                        <div class="checkbox-inline">
+                           <div class="input-checkbox"><span class=""><input class="form-control" formControlName="disabled" name="LockoutEnabled" type="checkbox" id="a107cd7d2-324a-f50b-29b9-45c864e9557e" value="true"></span></div>
+                           &nbsp;
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="DeskId"><span data-tooltip-el="">Desk</span></label></div>
+                     <div class="col-md-9">
+                      
+                           
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="desk">
+                              <option value="">Select...</option>
+                              <option value="206" value="{{getdesks?.Id}}" *ngFor="let getdesks of notshared">{{getdesks?.Name}}</option>
+                           </select>
+                    
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="Roles"><span data-tooltip-el="">Roles</span></label></div>
+                     <div class="col-md-9">
                      
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="Roles"><span data-tooltip-el="">Roles</span></label></div>
-                      <div class="col-md-9">
-                      
-                           
-                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
-                               <option value="8">Owner</option>
-                               <option value="17">DESK MANAGER</option>
-                               <option value="32">Retention</option>
-                               <option value="34">Agent</option>
-                               <option value="35">Conversion</option>
-                               <option value="36">General Support</option>
-                               <option value="39">desk1</option>
-                            </select>
-                        
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="Department"><span data-tooltip-el="">Department</span></label></div>
-                      <div class="col-md-9">
-                       
-                           
-                            <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98">
-                               <option value="">Select...</option>
-                               <option value="0">None</option>
-                               <option value="1">Management</option>
-                               <option value="2">Sales</option>
-                               <option value="3">Retention</option>
-                               <option value="4">Marketing</option>
-                            </select>
-                         </div>
-                  
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
-                      <div class="col-md-9">
-                         
-                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
-                            <option value="8">Owner</option>
-                            <option value="17">DESK MANAGER</option>
-                            <option value="32">Retention</option>
-                            <option value="34">Agent</option>
-                            <option value="35">Conversion</option>
-                            <option value="36">General Support</option>
-                            <option value="39">desk1</option>
-                         </select>
-                         </div>
-                     
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="TimeZoneId"><span data-tooltip-el="">Time Zone Id</span></label></div>
-                      <div class="col-md-9">
-                      
-                           
-                            <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98">
-                               <option value="">Select...</option>
-                               <option value="Dateline Standard Time">(UTC-12:00) International Date Line West</option>
-                               <option value="UTC-11">(UTC-11:00) Coordinated Universal Time-11</option>
-                               <option value="Aleutian Standard Time">(UTC-10:00) Aleutian Islands</option>
-                               <option value="Hawaiian Standard Time">(UTC-10:00) Hawaii</option>
-                               <option value="Marquesas Standard Time">(UTC-09:30) Marquesas Islands</option>
-                               <option value="Alaskan Standard Time">(UTC-09:00) Alaska</option>
-                               <option value="UTC-09">(UTC-09:00) Coordinated Universal Time-09</option>
-                               <option value="Pacific Standard Time (Mexico)">(UTC-08:00) Baja California</option>
-                               <option value="UTC-08">(UTC-08:00) Coordinated Universal Time-08</option>
-                  
-                            </select>
-                      
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="CultureCode"><span data-tooltip-el="">Culture Code</span></label></div>
-                      <div class="col-md-9">
-                         
-                           
-                            <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" id="a90d25e0a-602f-6fcf-5387-326f21cb4940" aria-required="true" tabindex="-98">
-                               <option value="">Select...</option>
-                               <option value="en-US">en-US</option>
-                               <option value="ar-SA">ar-SA</option>
-                               <option value="ru-RU">ru-RU</option>
-                            </select>
-                      
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label" for="UiCultureCode"><span data-tooltip-el="">Ui Culture Code</span></label></div>
-                      <div class="col-md-9">
-                         
                           
-                            <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="ad9cab536-ce18-044e-f9fc-a34da4a7a406" aria-required="true" tabindex="-98">
-                               <option value="">Select...</option>
-                               <option value="en-US">English</option>
-                               <option value="ru-RU">Russian</option>
-                            </select>
-                         
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="StartModuleId" data-original-title="" title=""><span data-tooltip-el="">StartModuleId</span></label></div>
-                      <div class="col-md-9">
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles">
+                              <option value="">Select</option>
+                              <option value="" value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
+                           </select>
+                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="Department"><span data-tooltip-el="">Department</span></label></div>
+                     <div class="col-md-9">
                       
-                           
-                            <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a4ce8f266-eedd-3524-ddc4-291dd07b7e36" tabindex="-98">
-                               <option value="">Select...</option>
-                               <optgroup label="Clients">
-                                  <option value="27">Clients</option>
-                                  <option value="9">Trade Accounts</option>
-                               </optgroup>
-                               <optgroup label="Activities">
-                                  <option value="14">Monetary Transactions</option>
-                                  <option value="16">Tasks</option>
-                                  <option value="22">Cases</option>
-                                  <option value="5">Documents</option>
-                                  <option value="109">Common journal</option>
-                                  <option value="15">Opened Orders</option>
-                                  <option value="13">Closed Orders</option>
-                                  <option value="52">Pending Orders</option>
-                               </optgroup>
-                               <optgroup label="Reports">
-                                  <option value="59">Reports</option>
-                                  <option value="60">Trading Journal</option>
-                               </optgroup>
-                               <optgroup label="Settings">
-                                  <option value="2">Crm Users</option>
-                               </optgroup>
-                            </select>
+                          
+                           <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="department">
+                              <option value="">Select...</option>
+                              <option value="0" value="{{getdepartments?.Id}}" *ngFor="let getdepartments of Departments">{{getdepartments?.Name}}</option>
+                           </select>
+                        </div>
+                 
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
+                     <div class="col-md-9">
                         
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="DefaultSenderSetting" data-original-title="" title=""><span data-tooltip-el="">DefaultSenderSetting</span></label></div>
-                      <div class="col-md-9">
-                       
-                           
-                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98">
-                            <option value="8">Owner</option>
-                            <option value="17">DESK MANAGER</option>
-                            <option value="32">Retention</option>
-                            <option value="34">Agent</option>
-                            <option value="35">Conversion</option>
-                            <option value="36">General Support</option>
-                            <option value="39">desk1</option>
-                         </select>
-                         
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="form-group row">
-                <div class="col-md-6">
-                   <div class="row">
-                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="">SharedSenderSettings</span></label></div>
-                      <div class="col-md-9">
-                        
-                         <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="abdefd063-1abf-7b90-87e7-0d4c0c34a369" aria-required="true" tabindex="-98">
-                            <option value="">Select...</option>
-                            <option value="Dateline Standard Time">(UTC-12:00) International Date Line West</option>
-                            <option value="UTC-11">(UTC-11:00) Coordinated Universal Time-11</option>
-                            <option value="Aleutian Standard Time">(UTC-10:00) Aleutian Islands</option>
-                            <option value="Hawaiian Standard Time">(UTC-10:00) Hawaii</option>
-                            <option value="Marquesas Standard Time">(UTC-09:30) Marquesas Islands</option>
-                            <option value="Alaskan Standard Time">(UTC-09:00) Alaska</option>
-                            <option value="UTC-09">(UTC-09:00) Coordinated Universal Time-09</option>
-                            <option value="Pacific Standard Time (Mexico)">(UTC-08:00) Baja California</option>
-                            <option value="UTC-08">(UTC-08:00) Coordinated Universal Time-08</option>
-               
-                         </select>
-                         </div>
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks">
+                           <option value="">Select...</option>
+                           <option value="" value="{{shared?.Id}}" *ngFor="let shared of isshared">{{shared?.Name}}</option>
+                           <!-- <option value="17">DESK MANAGER</option> -->
+                        </select>
+                        </div>
+                    
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="TimeZoneId"><span data-tooltip-el="">Time Zone Id</span></label></div>
+                     <div class="col-md-9">
                      
-                   </div>
-                </div>
-             </div>
+                          
+                           <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone">
+                              <option value="">Select...</option>
+                              <option value="{{gettimezones?.DisplayName}}"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
+                           </select>
+                     
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="CultureCode"><span data-tooltip-el="">Culture Code</span></label></div>
+                     <div class="col-md-9">
+                        
+                          
+                           <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="culturecode">
+                              <option value="">Select...</option>
+                              <option value="" value="{{getculturecode?.CultureCodeName}}" *ngFor="let getculturecode of CultureCode">{{getculturecode?.CultureCodeName}}</option>
+                           </select>
+                     
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label" for="UiCultureCode"><span data-tooltip-el="">Ui Culture Code</span></label></div>
+                     <div class="col-md-9">
+                        
+                         
+                           <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="uiculturecode">
+                              <option value="">Select...</option>
+                              <option value="{{getculturecode?.UICultureCodeName}}"  *ngFor="let getculturecode of CultureCode">{{getculturecode?.UICultureCodeName}}</option>
+                           </select>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="StartModuleId" data-original-title="" title=""><span data-tooltip-el="" tooltip="StartModuleId">StartModuleId</span></label></div>
+                     <div class="col-md-9">
+                        <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" tabindex="-98" formControlName="startmodule">
+                           <option value="">Select...</option>
+                           <optgroup label="Clients">
+                              <option value="27">Clients</option>
+                              <option value="9">Trade Accounts</option>
+                           </optgroup>
+                           <optgroup label="Activities">
+                              <option value="14">Monetary Transactions</option>
+                              <option value="16">Tasks</option>
+                              <option value="22">Cases</option>
+                              <option value="5">Documents</option>
+                              <option value="109">Common journal</option>
+                              <option value="15">Opened Orders</option>
+                              <option value="13">Closed Orders</option>
+                              <option value="52">Pending Orders</option>
+                           </optgroup>
+                           <optgroup label="Reports">
+                              <option value="59">Reports</option>
+                              <option value="60">Trading Journal</option>
+                           </optgroup>
+                           <optgroup label="Settings">
+                              <option value="2">Crm Users</option>
+                           </optgroup>
+                        </select>
+                          
+                           <!-- <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a4ce8f266-eedd-3524-ddc4-291dd07b7e36" tabindex="-98" formControlName="startmodule">
+                              <option value="">Select...</option>
+                        
+                              <optgroup label="Clients">
+                                 <option value="" *ngFor="let Clients of Modules">{{Clients?.Name}}</option>
+                                 
+                              </optgroup>
+                              <optgroup label="Activities">
+                                 <option value="" *ngFor="let Activities of Modules">{{Activities?.Name}}</option>
+                              </optgroup>
+                              <optgroup label="Reports">
+                                 <option value="" *ngFor="let Reports of Modules">{{Reports?.Name}}</option>
+                              </optgroup>
+                              <optgroup label="Settings">
+                                 <option value="" *ngFor="let Settings of Modules">{{Settings?.Name}}</option>
+                              </optgroup>
+                           </select> -->
+                       
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="DefaultSenderSetting" data-original-title="" title=""><span data-tooltip-el="" tooltip="DefaultSenderSetting">DefaultSenderSetting</span></label></div>
+                     <div class="col-md-9">
+                      
+                          
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="defaultsendersetting">
+                           <option value="">Select</option>
+                           <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of notsharedsender">{{getsndrsettings?.SenderMailId}}</option>
+                        </select>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">SharedSenderSettings</span></label></div>
+                     <div class="col-md-9">
+                       
+                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings">
+                           <option value="">Select...</option>
+                           <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
+                        </select>
+                        </div>
+                    
+                  </div>
+               </div>
+            </div>
              <div class="collapse-area" style="display: block;">
                <div class="collapse-control" >
                   <button type="button" class="close" aria-label="Close" aria-expanded="false" data-toggle="collapse"><span aria-hidden="true">×</span></button>
@@ -413,7 +390,7 @@
                    <div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="text-center">
                       <div _ngcontent-nra-c16="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
                          <a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
-                         <a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a>
+                         <a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a>
                         </div>
                      </div>
                   </div>

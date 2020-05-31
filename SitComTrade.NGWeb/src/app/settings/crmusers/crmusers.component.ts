@@ -48,9 +48,10 @@ this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser
 });
   }
   // popup for edit user
-  openEditUser() {
+  openEditUser(completedata) {
     const initialState = {
       title: 'Update User Info',
+      takewholedata: completedata
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CrmedituserComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
