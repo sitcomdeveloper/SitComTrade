@@ -69,6 +69,7 @@ namespace SitComTech.Domain.Services
                         DeskId = userdata.DeskId,
                         IsDisabled = userdata.IsDisabled,
                         UserName = userdata.UserName,
+                        OwnerId = userdata.OwnerId,
                         IsAffiliateUser = userdata.IsAffiliateUser,
                         ImageName = userdata.ImageName,
                         LockoutEnabled = userdata.LockoutEnabled,
