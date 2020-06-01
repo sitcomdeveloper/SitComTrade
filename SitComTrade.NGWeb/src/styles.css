@@ -1346,6 +1346,81 @@ tr.tablectn {
     height: 15px;
     background: #e0e8f3;
 }
+.modal h2, .modal h3, .modal h4 {
+    text-transform: uppercase;
+    color: #000;
+}
+.advanced-filter .groupset, .affiliate-conditions .groupset {
+    margin: 0 0 8px;
+}
+
+.groupset {
+    border: 1px solid #eff3fb;
+}
+.user-info-popup .groupset-body {
+    padding: 9px 15px;
+}
+.groupset .item:last-child {
+    margin: 0;
+}
+
+.groupset .item {
+    background: #eff3fb;
+    padding: 10px 15px;
+    margin: 0 0 2px;
+}
+.link-add-control {
+    color: #8da5ba;
+    font-size: 15px;
+}
+.ico-sz2 {
+    width: 15px;
+    height: 15px;
+}
+
+/* [class*=ico-] {
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    overflow: hidden;
+   
+    line-height: 0;
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+} */
+.groupset .item>.row>.link-remove-group {
+    position: absolute;
+    right: 15px;
+    top: 9px;
+    margin: 0;
+}
+.button, [class*=btn-type], [class*=ico-] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.groupset-footer, .groupset-header {
+    padding: 5px 15px;
+    min-height: 30px;
+}
+.groupset-header .custom-close {
+    float: right;
+}
+
+.custom-close {
+    display: inline-block;
+    text-align: center;
+    color: #8da5ba;
+    font-style: normal;
+    cursor: pointer;
+}
+.user-info-popup .groupset-body {
+    padding: 9px 15px;
+}
+
+.ico-sz2.ico-trash {
+    background-position: -45px -280px;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

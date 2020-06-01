@@ -227,3 +227,10 @@ ul.dropdown-menu2.inner1 li a
     margin-left: 285px;
     margin-bottom: 5px;
 }
+.h4, h4 {
+    font-size: 18px;
+}
+.box-content
+{
+    width: 100%;
+}
