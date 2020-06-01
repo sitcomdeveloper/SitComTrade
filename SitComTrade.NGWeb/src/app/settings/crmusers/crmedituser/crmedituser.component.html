@@ -79,7 +79,7 @@
                            
                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="desk">
                               <option value="">Select...</option>
-                              <option value="206" value="{{getdesks?.Id}}" *ngFor="let getdesks of notshared">{{getdesks?.Name}}</option>
+                              <option value="206" value="{{getdesks?.Name}}" *ngFor="let getdesks of notshared">{{getdesks?.Name}}</option>
                            </select>
                     
                      </div>
@@ -95,7 +95,7 @@
                           
                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles">
                               <option value="">Select</option>
-                              <option value="" value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
+                              <option value="" value="{{getroles?.Name}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
                            
                      </div>
@@ -109,7 +109,7 @@
                           
                            <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="department">
                               <option value="">Select...</option>
-                              <option value="0" value="{{getdepartments?.Id}}" *ngFor="let getdepartments of Departments">{{getdepartments?.Name}}</option>
+                              <option value="0" value="{{getdepartments?.Name}}" *ngFor="let getdepartments of Departments">{{getdepartments?.Name}}</option>
                            </select>
                         </div>
                  
@@ -124,7 +124,7 @@
                         
                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks">
                            <option value="">Select...</option>
-                           <option value="" value="{{shared?.Id}}" *ngFor="let shared of isshared">{{shared?.Name}}</option>
+                           <option value="" value="{{shared?.Name}}" *ngFor="let shared of isshared">{{shared?.Name}}</option>
                            <!-- <option value="17">DESK MANAGER</option> -->
                         </select>
                         </div>
@@ -351,45 +351,13 @@
                </div>
             </div>
          </div>
-             <!-- <div class="form-group row" id="passwords-area">
-                <div class="switcheble-area row">
-                   <div class="col-md-6">
-                      <div class="row">
-                         <div class="col-md-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
-                         <div class="col-md-9">
-                            <div class="input-control">
-                               <input class="form-control valid" name="Password" type="password" id="a7c1d8c66-f809-a6d9-29b5-71b18745a07e" aria-required="true" aria-invalid="false">
-                               <a href="javascript:void(0);" class="input-button show-password">
-                                  <i class="fa fa-eye" aria-hidden="true"></i>
-                               </a>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="row">
-                         <div class="col-md-3"><label class="valign-label" for="RepeatPassword"><span data-tooltip-el="">Repeat Password</span></label></div>
-                         <div class="col-md-9">
-                            <div class="input-control">
-                               <input class="form-control" name="RepeatPassword" type="password" id="af702c018-70b2-9a7c-403f-f37417eb0fc9" aria-required="true">
-                               <a href="javascript:void(0);" class="input-button show-password">
-                                  <i class="fa fa-eye" aria-hidden="true"></i>
-                               </a>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div> -->
-        
-        
-          
             </div>
+            <div class="message">{{response}}</div>
              <div _ngcontent-nra-c16="" class="col-md-12 padd0">
                 <div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
                    <div _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="text-center">
                       <div _ngcontent-nra-c16="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
-                         <a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
+                         <a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="saveeditinfo()">Save</a>
                          <a _ngcontent-nra-c16="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a>
                         </div>
                      </div>

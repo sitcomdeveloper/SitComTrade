@@ -56,10 +56,9 @@ this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CrmedituserComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.userDetails();
-
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.getAllUsers();
+    });
   }
 
 }

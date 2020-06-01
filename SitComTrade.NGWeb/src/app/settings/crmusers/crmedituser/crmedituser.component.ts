@@ -24,9 +24,18 @@ export class CrmedituserComponent implements OnInit {
   isharedsender: any;
   notsharedsender: any;
   takewholedata: any;
+  savedtls: any;
+  response: string;
+  getLoginDetails: any;
+  bindLoginData: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
+    
     this.newRegisterForm = this.fb.group({
       image: [''],
       firstname: [''],
@@ -130,7 +139,7 @@ export class CrmedituserComponent implements OnInit {
   // patch value
   patchCrmUsers() {
     this.newRegisterForm.patchValue({
-      image:this.takewholedata.ImageName,
+      // image:this.takewholedata.ImageName,
       firstname:this.takewholedata.FirstName,
       lastname:this.takewholedata.LastName,
       username:this.takewholedata.UserName,
@@ -148,6 +157,57 @@ export class CrmedituserComponent implements OnInit {
       defaultsendersetting:this.takewholedata.DefaultSenderName,
       sharedsendersettings:this.takewholedata.SharedSenderName,
     })
+  }
+  // save details of user after patch
+  saveeditinfo() {
+    const updt = {
+      FirstName: this.newRegisterForm.value.firstname,
+      LastName: this.newRegisterForm.value.lastname,
+      Email: this.newRegisterForm.value.email,
+      Phone: this.newRegisterForm.value.phone,
+      Password: this.newRegisterForm.value.password,
+      OwnerId: this.bindLoginData.UserId,
+      Id: this.takewholedata.Id,
+      DeskId: '',
+      DeskName: this.newRegisterForm.value.desk,
+      IsDisabled: this.newRegisterForm.value.disabled,
+      UserName: this.newRegisterForm.value.username,
+      IsAffiliateUser: 'true',
+      ImageName: this.newRegisterForm.value.image,
+      LockoutEnabled: 'true',
+      CampaignCode: 'gh',
+      AffiliateFieldId: '',
+      AffiliateFieldName: 'gh',
+      RoleId: '',
+      RoleName: this.newRegisterForm.value.roles,
+      DepartmentId: '',
+      DepartmentName: this.newRegisterForm.value.department,
+      SharedDeskId: this.takewholedata.shareddesks,
+      SharedDeskName: this.newRegisterForm.value.shareddesksid,
+      TimezoneId: '',
+      TimezoneName: this.newRegisterForm.value.timezone,
+      CultureCode: this.newRegisterForm.value.culturecode,
+      CultureCodeId: '',
+      UiCultureCode: this.newRegisterForm.value.uiculturecode,
+      UiCultureCodeId: '',
+      StartModuleId: '5',
+      StartModuleName: 'clients',
+      DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+      DefaultSenderId: '',
+      SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
+      SharedSenderId: '',
+    };
+this.settingsService.updateUser(updt).subscribe(updateusr => {
+  this.savedtls = updateusr;
+  this.clddata.emit(updateusr);
+      if (updateusr === 'null') {
+        this.response = '';
+      } else {
+        this.response = 'User is updated successfully!';
+      }
+      this.newRegisterForm.reset();
+  console.log('savedtls',updateusr);
+})
   }
   hideModal() {
     this.bsmodal.hide();

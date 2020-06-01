@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-affilatenewuser',
@@ -13,7 +14,8 @@ export class AffilatenewuserComponent implements OnInit {
   addrole: any;
   crtusr = false;
   adrole = false;
-  constructor(private bsmodal: BsModalRef) { }
+  newRegisterForm: FormGroup;
+  constructor(private bsmodal: BsModalRef, private fb: FormBuilder) { }
 
   ngOnInit() {
     if(this.createuser === 'createuser') {
@@ -26,6 +28,38 @@ export class AffilatenewuserComponent implements OnInit {
     } else {
       this.adrole = false;
     }
+    this.newRegisterForm = this.fb.group({
+      image: [''],
+      firstname: [''],
+      lastname: [''],
+      username: [''],
+      email: [''],
+      phone: [''],
+      disabled: [''],
+      desk: [''],
+      roles: [''],
+      department: [''],
+      shareddesks: [''],
+      timezone: [''],
+      culturecode: [''],
+      uiculturecode: [''],
+      startmodule: [''],
+      defaultsendersetting: [''],
+      sharedsendersettings: [''],
+      password: [''],
+      repeatpassword: [''],
+
+      deskid: [''],
+      rolesid: [''],
+      departmentid: [''],
+      shareddesksid: [''],
+      timezoneid: [''],
+      culturecodeid: [''],
+      uiculturecodeid: [''],
+      startmoduleid: [''],
+      defaultsendersettingid: [''],
+      sharedsendersettingsid: ['']
+    });
   }
   hideModal() {
     this.bsmodal.hide();
