@@ -227,3 +227,11 @@ ul.dropdown-menu2.inner1 li a
     margin-left: 285px;
     margin-bottom: 5px;
 }
+.checkbox-inline
+{
+    width: 52px;
+}
+.checkbox-inline, .radio-inline
+{
+    top:10px;
+}
