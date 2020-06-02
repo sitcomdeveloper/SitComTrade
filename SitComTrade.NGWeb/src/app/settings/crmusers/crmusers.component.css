@@ -312,7 +312,6 @@ td.email-cell {
 .checkbox-inline label {
     display: inline-flex;
     /* vertical-align: middle; */
-    padding-right: ;
 }
 .roles-permissions .item-content {
     border: 1px solid #dee5f2;
@@ -400,4 +399,7 @@ td.email-cell {
 .tab-content>.active {
     display: block;
     margin-bottom: 60px;
+}
+a.btn-type03.create-email-template-link {
+    line-height: 0.42857;
 }
