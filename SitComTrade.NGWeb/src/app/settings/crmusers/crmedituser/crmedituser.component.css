@@ -553,3 +553,11 @@ i.fa.fa-eye {
     margin-left: 13px;
     margin-bottom: 5px;
 }
+.checkbox-inline
+{
+    width: 52px;
+}
+.checkbox-inline, .radio-inline
+{
+    top:10px;
+}

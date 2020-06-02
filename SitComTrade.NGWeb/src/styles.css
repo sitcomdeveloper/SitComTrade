@@ -1421,6 +1421,9 @@ tr.tablectn {
 .ico-sz2.ico-trash {
     background-position: -45px -280px;
 }
+.mt15 {
+    margin-top: 15px;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
