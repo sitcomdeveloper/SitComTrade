@@ -60,7 +60,7 @@ export class AffilatenewuserComponent implements OnInit {
       startmodule: [''],
       defaultsendersetting: [''],
       sharedsendersettings: [''],
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       repeatpassword: ['', [Validators.required]],
       lockoutenabled: [''],
       campaigncode: [''],

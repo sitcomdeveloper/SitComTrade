@@ -33,15 +33,29 @@
                <div class="col-md-6">
                   <div class="form-group row">
                      <div class="col-md-3"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="firstname" name="FirstName" type="text" aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="firstname" name="FirstName" type="text" aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                           <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                           <div *ngIf="f.firstname.errors.minlength">First Name must be at least 2 characters</div>
+                         </div>
+                     </div>
                   </div>
                   <div class="form-group row">
                      <div class="col-md-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="lastname" name="LastName" type="text" aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="lastname" name="LastName" type="text" aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
+                        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                           <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                           <div *ngIf="f.lastname.errors.minlength">Last Name must be at least 3 characters</div>
+                         </div>
+                     </div>
                   </div>
                   <div class="form-group row">
                      <div class="col-md-3"><label class="valign-label" for="UserName"><span data-tooltip-el="">User Name</span></label></div>
-                     <div class="col-md-9"><input class="form-control valid" formControlName="username" name="UserName" type="text" aria-required="true" aria-invalid="false"></div>
+                     <div class="col-md-9"><input class="form-control valid" formControlName="username" name="UserName" type="text" aria-required="true" aria-invalid="false" [ngClass]="{ 'is-invalid': submitted && f.username.errors,'form-control':true}">
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                           <div *ngIf="f.username.errors.required">User Name is required</div>
+                         </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -49,13 +63,22 @@
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="email" name="Email" type="text"  aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="email" name="Email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" aria-required="true" >
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                           <div *ngIf="f.email.errors.required">Email is required</div>
+                           <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                         </div>
+                     </div>
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-                     <div class="col-md-9"><input class="form-control" formControlName="phone" appPhoneMask name="Phone" type="text"  aria-required="true"></div>
+                     <div class="col-md-9"><input class="form-control" formControlName="phone" appPhoneMask name="Phone" type="text" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}" aria-required="true">
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                           <div *ngIf="f.phone.errors.required">Phone is required</div>
+                         </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -77,11 +100,13 @@
                      <div class="col-md-9">
                       
                            
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="desk">
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" [ngClass]="{ 'is-invalid': submitted && f.desk.errors,'form-control':true}" aria-required="true" tabindex="-98" formControlName="desk">
                               <option value="">Select...</option>
                               <option value="206" value="{{getdesks?.Id}}" *ngFor="let getdesks of notshared">{{getdesks?.Name}}</option>
                            </select>
-                    
+                           <div *ngIf="submitted && f.desk.errors" class="invalid-feedback">
+                              <div *ngIf="f.desk.errors.required">Desk is required</div>
+                            </div>
                      </div>
                   </div>
                </div>
@@ -93,11 +118,13 @@
                      <div class="col-md-9">
                      
                           
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="roles">
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.roles.errors,'form-control':true}" tabindex="-98" formControlName="roles">
                               <option value="">Select</option>
                               <option value="" value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
-                           
+                           <div *ngIf="submitted && f.roles.errors" class="invalid-feedback">
+                              <div *ngIf="f.roles.errors.required">Roles is required</div>
+                            </div>
                      </div>
                   </div>
                </div>
@@ -235,11 +262,13 @@
                      <div class="col-md-9">
                       
                           
-                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="defaultsendersetting">
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="defaultsendersetting" [ngClass]="{ 'is-invalid': submitted && f.defaultsendersetting.errors,'form-control':true}">
                            <option value="">Select</option>
                            <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of notsharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
-                        
+                        <div *ngIf="submitted && f.defaultsendersetting.errors" class="invalid-feedback">
+                           <div *ngIf="f.defaultsendersetting.errors.required">DefaultSenderSetting is required</div>
+                         </div>
                      </div>
                   </div>
                </div>
@@ -266,10 +295,16 @@
                         <div class="col-md-3"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
                         <div class="col-md-9">
                            <div class="input-control">
-                              <input class="form-control valid" name="Password" type="password"  aria-required="true" aria-invalid="false" formControlName="password" >
+                              <input class="form-control valid" name="Password" type="password"  aria-required="true" aria-invalid="false" formControlName="password" pattern="^[A-Za-z0-9]*$"
+                              [ngClass]="{ 'is-invalid': submitted && f.password.errors,'form-control':true }">
                               <a href="javascript:void(0);" class="input-button show-password">
                                  <i class="fa fa-eye" aria-hidden="true" onclick="hideshowpwd()"></i>
                               </a>
+                              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                 <div *ngIf="f.password.errors.required">Password is required</div>
+                                 <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                 <div *ngIf="f.password.errors.pattern">Password should not contain special characters</div>
+                               </div>
                            </div>
                         </div>
                      </div>
@@ -279,10 +314,16 @@
                         <div class="col-md-3"><label class="valign-label" for="RepeatPassword"><span data-tooltip-el="">Repeat Password</span></label></div>
                         <div class="col-md-9">
                            <div class="input-control">
-                              <input class="form-control" name="RepeatPassword" type="password" aria-required="true" formControlName="repeatpassword" >
+                              <input class="form-control" name="RepeatPassword" type="password" aria-required="true" formControlName="repeatpassword" pattern="^[A-Za-z0-9]*$"
+                              [ngClass]="{ 'is-invalid': submitted && f.repeatpassword.errors,'form-control':true }">
                               <a href="javascript:void(0);" class="input-button show-password">
                                  <i class="fa fa-eye" aria-hidden="true" onclick="hideshowpwd()"></i>
                               </a>
+                              <div *ngIf="submitted && f.repeatpassword.errors" class="invalid-feedback">
+                                 <div *ngIf="f.repeatpassword.errors.required">Password is required</div>
+                                 <div *ngIf="f.repeatpassword.errors.minlength">Password must be at least 6 characters</div>
+                                 <div *ngIf="f.repeatpassword.errors.pattern">Password should not contain special characters</div>
+                               </div>
                            </div>
                         </div>
                      </div>

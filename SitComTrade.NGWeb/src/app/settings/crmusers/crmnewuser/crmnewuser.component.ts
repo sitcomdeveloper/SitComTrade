@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SettingsService } from '../../settings.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crmnewuser',
@@ -34,6 +34,7 @@ export class CrmnewuserComponent implements OnInit {
   isharedsender: any;
   notsharedsender: any;
   response: string;
+  submitted = false;
 
   constructor(private bsmodal: BsModalRef, private settingsService: SettingsService, private fb: FormBuilder) { }
 
@@ -45,14 +46,14 @@ export class CrmnewuserComponent implements OnInit {
     // form group
     this.newRegisterForm = this.fb.group({
       image: [''],
-      firstname: [''],
-      lastname: [''],
-      username: [''],
-      email: [''],
-      phone: [''],
+      firstname: ['',[Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]],
+      phone: ['', [Validators.required]],
       disabled: [''],
-      desk: [''],
-      roles: [''],
+      desk: ['', [Validators.required]],
+      roles: ['', [Validators.required]],
       department: [''],
       shareddesks: [''],
       timezone: [''],
@@ -61,8 +62,8 @@ export class CrmnewuserComponent implements OnInit {
       startmodule: [''],
       defaultsendersetting: [''],
       sharedsendersettings: [''],
-      password: [''],
-      repeatpassword: [''],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      repeatpassword: ['', [Validators.required]],  
 
       deskid: [''],
       rolesid: [''],
@@ -179,6 +180,7 @@ export class CrmnewuserComponent implements OnInit {
   // }
   // make the user registered
   svingDtls() {
+    if (this.newRegisterForm.valid) {
     this.notshared.forEach(element => {
       if ( element.Id === +this.newRegisterForm.value.desk) {
         this.newRegisterForm.value.deskid = element.Name;
@@ -276,8 +278,15 @@ SharedSenderId: '',
       this.newRegisterForm.reset();
       console.log('RegisteredUser', user);
     });
+  } else {
+    this.submitted = true;
+  }
+  }
+  get f() {
+    return this.newRegisterForm.controls;
   }
 }
+
 
 // LockoutEnabled: this.newRegisterForm.value.,
       // CampaignCode: this.newRegisterForm.value.,

@@ -30,7 +30,7 @@ export class CrmusersComponent implements OnInit {
   // get all crm users
   getAllUsers() {
 this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
-  this.GetUser = getuser;
+  this.GetUser = getuser.reverse();
   console.log('GetUser', getuser);
   // this.bindLoginData.UserId
 })
