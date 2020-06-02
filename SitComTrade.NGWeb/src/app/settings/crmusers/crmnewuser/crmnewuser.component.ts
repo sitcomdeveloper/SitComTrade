@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SettingsService } from '../../settings.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MustMatch } from 'src/app/common/validators/confirm-password.validator';
 
 @Component({
   selector: 'app-crmnewuser',
@@ -75,6 +76,8 @@ export class CrmnewuserComponent implements OnInit {
       startmoduleid: [''],
       defaultsendersettingid: [''],
       sharedsendersettingsid: ['']
+    }, {
+      validator: MustMatch('password', 'repeatpassword')
     });
     this.getDesks();
     this.getDepartments();
@@ -284,6 +287,11 @@ SharedSenderId: '',
   }
   get f() {
     return this.newRegisterForm.controls;
+  }
+  password(formGroup: FormGroup) {
+    const { value: password } = formGroup.get('password');
+    const { value: repeatpassword } = formGroup.get('repeatpassword');
+    return password === repeatpassword ? null : { passwordNotMatch: true };
   }
 }
 

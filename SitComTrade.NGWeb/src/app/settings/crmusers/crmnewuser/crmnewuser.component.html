@@ -321,8 +321,7 @@
                               </a>
                               <div *ngIf="submitted && f.repeatpassword.errors" class="invalid-feedback">
                                  <div *ngIf="f.repeatpassword.errors.required">Password is required</div>
-                                 <div *ngIf="f.repeatpassword.errors.minlength">Password must be at least 6 characters</div>
-                                 <div *ngIf="f.repeatpassword.errors.pattern">Password should not contain special characters</div>
+                                 <div *ngIf="f.repeatpassword.errors.mustMatch">Passwords must match</div>
                                </div>
                            </div>
                         </div>
