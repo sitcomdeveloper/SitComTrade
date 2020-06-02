@@ -12,15 +12,23 @@ export class AffilateusersComponent implements OnInit {
   affiliateUsers: any;
   newuser = true;
   newrole = false;
+  afilteusers: any;
+  getLoginDetails: any;
+  bindLoginData: any;
   constructor(private settingsService: SettingsService, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    console.log('LoginData', this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
+    
     this.getUsersData();
   }
   // get all afiliate users
   getUsersData() {
-    this.settingsService.getAffilateUsers().subscribe(res => {
+    this.settingsService.getAffilateUsers(this.bindLoginData.UserId).subscribe(res => {
       this.affiliateUsers = res;
       console.log('affiliateUsers', res);
     });

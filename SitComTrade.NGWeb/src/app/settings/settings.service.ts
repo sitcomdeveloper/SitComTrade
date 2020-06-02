@@ -11,10 +11,6 @@ const API_URL = environment.API_URL;
 export class SettingsService {
 
   constructor(private http: HttpClient) { }
-  // affilate users.Get all affilate users
-  getAffilateUsers(): Observable<any> {
-    return this.http.get('assets/affilateusers.json');
-  }
   // sendersettings
   getSenderSettings(): Observable<any> {
     return this.http.get('assets/sendersettings.json');
@@ -22,6 +18,10 @@ export class SettingsService {
   // crm users.get all crm users
   getAllCrmUsers(users: any): Observable<any> {
     return this.http.post(API_URL + 'User/GetAllUsersByOwnerId/' + users, {});
+  }
+   // affilate users.Get all affilate users
+   getAffilateUsers(afilteusers: any): Observable<any> {
+    return this.http.post(API_URL + 'User/GetAllUsersByOwnerId/' + afilteusers, {});
   }
   // crm users.create user.component.ts
   getAllDepartments(): Observable<any> {
@@ -63,5 +63,9 @@ export class SettingsService {
   // crmedituser.save details of user after patch
 updateUser(updt: any): Observable<any> {
   return this.http.post(API_URL + 'User/UpdateUserDetail', updt);
+}
+// affilate user.create affilate user
+registeraffilateuser(rgstrafflteuser: any): Observable<any> {
+  return this.http.post(API_URL + 'User/RegisterUser', rgstrafflteuser);
 }
 }
