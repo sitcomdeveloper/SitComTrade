@@ -9,12 +9,14 @@ import { AffilatenewuserComponent } from './affilatenewuser/affilatenewuser.comp
   styleUrls: ['./affilateusers.component.css']
 })
 export class AffilateusersComponent implements OnInit {
-  affiliateUsers: any;
+  // affiliateUsers: any;
   newuser = true;
   newrole = false;
   afilteusers: any;
   getLoginDetails: any;
   bindLoginData: any;
+  isaffiliate: any;
+  affiliateUsers: any;
   constructor(private settingsService: SettingsService, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
 
@@ -29,8 +31,13 @@ export class AffilateusersComponent implements OnInit {
   // get all afiliate users
   getUsersData() {
     this.settingsService.getAffilateUsers(this.bindLoginData.UserId).subscribe(res => {
-      this.affiliateUsers = res;
-      console.log('affiliateUsers', res);
+      this.isaffiliate = res;
+      this.affiliateUsers = this.isaffiliate.filter(useraffiliate => {
+        if(useraffiliate.RoleName === 'Affilate') {
+        return useraffiliate;
+        }
+      })
+      console.log('isaffiliate', res);
     });
   }
   // for adjust tabs
@@ -51,10 +58,9 @@ export class AffilateusersComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(AffilatenewuserComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.userDetails();
-
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.getUsersData();
+    });
   }
   newrolepopup() {
     const initialState = {

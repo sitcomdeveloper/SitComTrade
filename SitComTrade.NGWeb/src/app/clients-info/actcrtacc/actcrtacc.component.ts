@@ -20,6 +20,7 @@ export class ActcrtaccComponent implements OnInit {
   sendsms: any;
   vwhistory = false;
   viewhistory: any;
+  title: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService) { }
 
   ngOnInit() {

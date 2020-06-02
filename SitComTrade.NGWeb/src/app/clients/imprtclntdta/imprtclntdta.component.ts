@@ -7,6 +7,7 @@ import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 })
 export class ImprtclntdtaComponent implements OnInit {
   bsModalRef: BsModalRef;
+  title: any;
   constructor(private modalService: BsModalService, private bsmodal: BsModalRef) { }
 
   ngOnInit() {

@@ -14,6 +14,7 @@ export class ImportClientComponent implements OnInit {
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   importclientResponse: any;
   closefirstpopup = true;
+  title: any;
 
 
 

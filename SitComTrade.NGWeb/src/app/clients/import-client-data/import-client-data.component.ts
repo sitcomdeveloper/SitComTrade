@@ -8,7 +8,8 @@ import { ImprtclntdtaComponent } from '../imprtclntdta/imprtclntdta.component';
   styleUrls: ['./import-client-data.component.css']
 })
 export class ImportClientDataComponent implements OnInit {
-
+  title: any;
+  
   constructor(private modalService: BsModalService, private bsmodal: BsModalRef) { }
   bsModalRef: BsModalRef;
   closesecondpopup = true;

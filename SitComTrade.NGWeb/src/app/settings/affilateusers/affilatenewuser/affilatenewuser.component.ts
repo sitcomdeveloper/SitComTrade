@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SettingsService } from '../../settings.service';
 
 @Component({
@@ -21,6 +21,9 @@ export class AffilatenewuserComponent implements OnInit {
   TimeZones: any;
   CultureCode: any;
   affnewuser: any;
+  response: string;
+  submitted = false;
+  title: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
@@ -41,14 +44,14 @@ export class AffilatenewuserComponent implements OnInit {
     }
     this.newRegisterForm = this.fb.group({
      
-      firstname: [''],
-      lastname: [''],
-      username: [''],
-      email: [''],
-      phone: [''],
+      firstname: ['',[Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]],
+      username: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
       disabled: [''],
       desk: [''],
-      roles: [''],
+      roles: ['', [Validators.required]],
       department: [''],
       shareddesks: [''],
       timezone: [''],
@@ -57,8 +60,8 @@ export class AffilatenewuserComponent implements OnInit {
       startmodule: [''],
       defaultsendersetting: [''],
       sharedsendersettings: [''],
-      password: [''],
-      repeatpassword: [''],
+      password: ['', [Validators.required]],
+      repeatpassword: ['', [Validators.required]],
       lockoutenabled: [''],
       campaigncode: [''],
       owner: [''],
@@ -88,6 +91,7 @@ export class AffilatenewuserComponent implements OnInit {
   }
   // create new affilate user
   crtaffilateuser() {
+    if (this.newRegisterForm.valid) {
     const rgstrafflteuser = {
       FirstName: this.newRegisterForm.value.firstname,
 LastName: this.newRegisterForm.value.lastname,
@@ -97,37 +101,50 @@ Password: this.newRegisterForm.value.password,
 OwnerId: this.bindLoginData.UserId,
 DeskId: '',
 DeskName: '',
-IsDisabled: this.newRegisterForm.value.disabled,
+IsDisabled: '',
 UserName: this.newRegisterForm.value.username,
-IsAffiliateUser: 'true',
-ImageName: this.newRegisterForm.value.image,
+IsAffiliateUser: '',
+ImageName: '',
 LockoutEnabled: this.newRegisterForm.value.lockoutenabled,
 CampaignCode: this.newRegisterForm.value.campaigncode,
 AffiliateFieldId: '',
-AffiliateFieldName: 'gh',
+AffiliateFieldName: '',
 RoleId: '',
 RoleName: this.newRegisterForm.value.roles,
 DepartmentId: '',
-DepartmentName: this.newRegisterForm.value.departmentid,
+DepartmentName: '',
 SharedDeskId: '',
-SharedDeskName: this.newRegisterForm.value.shareddesksid,
+SharedDeskName: '',
 TimezoneId: '',
 TimezoneName: this.newRegisterForm.value.timezone,
 CultureCode: this.newRegisterForm.value.culturecode,
 CultureCodeId: '',
 UiCultureCode: this.newRegisterForm.value.uiculturecode,
 UiCultureCodeId: '',
-StartModuleId: '5',
-StartModuleName: 'clients',
-DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+StartModuleId: '',
+StartModuleName: '',
+DefaultSenderName: '',
 DefaultSenderId: '',
-SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
+SharedSenderName: '',
 SharedSenderId: '',
     };
     this.settingsService.registeraffilateuser(rgstrafflteuser).subscribe(aafusrres => {
       this.affnewuser = aafusrres;
+      this.clddata.emit(aafusrres);
+      if (aafusrres === 'null') {
+        this.response = '';
+      } else {
+        this.response = 'Affiliate User is added successfully!';
+      }
+      this.newRegisterForm.reset();
       console.log('affnewuser',aafusrres);
     })
+  } else {
+    this.submitted = true;
+  }
+  }
+  get f() {
+    return this.newRegisterForm.controls;
   }
   hideModal() {
     this.bsmodal.hide();

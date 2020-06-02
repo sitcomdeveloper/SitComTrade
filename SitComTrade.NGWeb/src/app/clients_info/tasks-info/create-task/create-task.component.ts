@@ -24,7 +24,7 @@ export class CreateTaskComponent implements OnInit {
   isstaticvalue: any;
   getLoginDetails: any;
   bindLoginData: any;
-
+  title: any;
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute) { }
 
   ngOnInit() {
