@@ -306,9 +306,17 @@ $('#edit-comment').click(function(){
     $(document).ready(function () {
     $(document).on('click', '.show-password', function() {
 
-$(this).toggleClass("fa-eye");
+$(this).toggleClass("fa-eye1");
 
 var input = $("#pass_log_id");
+input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+
+});
+$(document).on('click', '.show-password1', function() {
+
+$(this).toggleClass("fa-eye1");
+
+var input = $("#pass_log_id1");
 input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
 
 });
