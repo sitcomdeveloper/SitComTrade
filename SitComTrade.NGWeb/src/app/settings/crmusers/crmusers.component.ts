@@ -14,6 +14,7 @@ export class CrmusersComponent implements OnInit {
   bindLoginData: any;
   bsModalRef: BsModalRef;
   GetUser: any;
+  crmuserlength: any;
   constructor(private modalService: BsModalService, private settingsService: SettingsService) {}
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class CrmusersComponent implements OnInit {
   getAllUsers() {
 this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
   this.GetUser = getuser.reverse();
+ this.crmuserlength = this.GetUser.length;
   console.log('GetUser', getuser);
   // this.bindLoginData.UserId
 })

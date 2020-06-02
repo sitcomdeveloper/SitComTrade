@@ -162,7 +162,7 @@
                         <div class="row">
                            <div class="col-md-3">
                               <label class="valign-label" for="Roles">
-                                 <span data-tooltip-el="">CampaignCode</span></label>
+                                 <span data-tooltip-el="" tooltip="CampaignCode">CampaignCode</span></label>
                               </div>
                            <div class="col-md-9">
                            
@@ -190,7 +190,7 @@
                  <div class="form-group row">
                     <div class="col-md-6">
                        <div class="row">
-                          <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">Password</span></label></div>
+                          <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="Password">Password</span></label></div>
                           <div class="col-md-9">
                             
                            <div class="input-control">
@@ -223,8 +223,7 @@
                               </a>
                               <div *ngIf="submitted && f.repeatpassword.errors" class="invalid-feedback">
                                  <div *ngIf="f.repeatpassword.errors.required">Password is required</div>
-                                 <div *ngIf="f.repeatpassword.errors.minlength">Password must be at least 6 characters</div>
-                                 <div *ngIf="f.repeatpassword.errors.pattern">Password should not contain special characters</div>
+                                 <div *ngIf="f.repeatpassword.errors.mustMatch">Passwords must match</div>
                                </div>
                            </div>
                            </div>

@@ -17,6 +17,7 @@ export class AffilateusersComponent implements OnInit {
   bindLoginData: any;
   isaffiliate: any;
   affiliateUsers: any;
+  affusrlength: any;
   constructor(private settingsService: SettingsService, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
 
@@ -37,6 +38,7 @@ export class AffilateusersComponent implements OnInit {
         return useraffiliate;
         }
       })
+      this.affusrlength = this.affiliateUsers.length;
       console.log('isaffiliate', res);
     });
   }

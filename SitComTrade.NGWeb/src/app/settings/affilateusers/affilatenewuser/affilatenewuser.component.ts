@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SettingsService } from '../../settings.service';
+import { MustMatch } from 'src/app/common/validators/confirm-password.validator';
 
 @Component({
   selector: 'app-affilatenewuser',
@@ -73,6 +74,8 @@ export class AffilatenewuserComponent implements OnInit {
       timezoneid: [''],
       culturecodeid: [''],
       uiculturecodeid: ['']
+    }, {
+      validator: MustMatch('password', 'repeatpassword')
     });
     this.getTimeZone();
     this.getCultureCodes();
@@ -148,6 +151,11 @@ SharedSenderId: '',
   }
   hideModal() {
     this.bsmodal.hide();
+  }
+  password(formGroup: FormGroup) {
+    const { value: password } = formGroup.get('password');
+    const { value: repeatpassword } = formGroup.get('repeatpassword');
+    return password === repeatpassword ? null : { passwordNotMatch: true };
   }
 
 }
