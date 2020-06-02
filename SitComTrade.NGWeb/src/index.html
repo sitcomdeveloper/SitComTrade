@@ -295,7 +295,6 @@ $('#edit-comment').click(function(){
    </script>
    <!-- for showing pwd by clicking on eye -->
    <script>
-     $(document).ready(function () {
     function hideshowpwd() {
       var x = document.getElementByClass("eye");
       if (x.type === "password") {
@@ -304,8 +303,16 @@ $('#edit-comment').click(function(){
         x.type = "password";
       }
     }
-    
-  });
+    $(document).ready(function () {
+    $(document).on('click', '.show-password', function() {
+
+$(this).toggleClass("fa-eye");
+
+var input = $("#pass_log_id");
+input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+
+});
+});
   </script>
 </body>
 
