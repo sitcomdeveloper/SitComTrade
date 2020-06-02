@@ -86,7 +86,7 @@ const routes: Routes = [
 // for group(general-info)
 {path: 'groups-info/:setItem', component: GroupsInfoComponent},
 // tradeaccount
-{path: 'livetrade/:trdingDtls', component: LiveDetailComponent}
+{path: 'livetrade/:trdingDtls', component: LiveDetailComponent},
 // /:trdingDtls
 // ,canActivate:[AuthGuard]
 
