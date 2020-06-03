@@ -11,6 +11,7 @@ import { CountryService } from 'src/app/services/country.service';
 import { CommentsComponent } from 'src/app/clients_info/comments/comments.component';
 import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
 import { ImportClientComponent } from '../import-client/import-client.component';
+import { GroupsService } from 'src/app/settings/groups/groups.service';
 
 @Component({
   selector: 'app-client',
@@ -26,20 +27,20 @@ export class ClientComponent implements OnInit {
   accountInfo: any[];
   leadInfo: any[];
   clientInfo: any[];
-a: any;
-UserId: any;
-UserLength: any;
-accountLength: any;
-leadLength: any;
-Id: any;
-msg: string;
-pageSize: any;
-changePageSize: any;
-all = true;
-accounts = false;
-leads = false;
-clientForm: FormGroup;
-bindLoginData: any;
+  a: any;
+  UserId: any;
+  UserLength: any;
+  accountLength: any;
+  leadLength: any;
+  Id: any;
+  msg: string;
+  pageSize: any;
+  changePageSize: any;
+  all = true;
+  accounts = false;
+  leads = false;
+  clientForm: FormGroup;
+  bindLoginData: any;
   name: any;
   Country: any;
   activeTab = 'all';
@@ -47,9 +48,14 @@ bindLoginData: any;
   countValue: any[];
   countLength: number;
   comments: any;
-// tslint:disable-next-line: max-line-length
+  Status: any;
+  Group: any;
+  getGroupsData: any;
+  assignselectedrow: any;
+  // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
-              private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService) { }
+    private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
+    private groupsService: GroupsService) { }
   bsModalRef: BsModalRef;
   // private bsmodal: BsModalRef
   ngOnInit() {
@@ -74,6 +80,8 @@ bindLoginData: any;
     });
     this.userDetails();
     this.getcountryName();
+    this.getAllStatus();
+    this.getGroups();
     // code for receiving login details and bind OwnerName at place of name
     this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
     console.log('LoginData', this.getLoginDetails);
@@ -88,28 +96,28 @@ bindLoginData: any;
     console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     this.spinnerService.show();
-    setTimeout( () => {
-    this.clientService.getUsers(this.clientInfo).subscribe(res => {
-      if (res !== null && res !== undefined && res !== '') {
-        this.rowData = res.reverse();
-        this.UserLength = res.length;
-        this.spinnerService.hide();
-        this.accountInfo = this.rowData.filter(m => {
-          if (m.TypeName === 'Real') {
-            return m;
-          }
-        });
-        this.accountLength = this.accountInfo.length;
-        console.log('new', this.accountInfo.length);
-        this.leadInfo = this.rowData.filter(p => {
-          if (p.TypeName === 'Lead') {
-            return p;
-          }
-        });
-        this.leadLength = this.leadInfo.length;
-      }
+    setTimeout(() => {
+      this.clientService.getUsers(this.clientInfo).subscribe(res => {
+        if (res !== null && res !== undefined && res !== '') {
+          this.rowData = res.reverse();
+          this.UserLength = res.length;
+          this.spinnerService.hide();
+          this.accountInfo = this.rowData.filter(m => {
+            if (m.TypeName === 'Real') {
+              return m;
+            }
+          });
+          this.accountLength = this.accountInfo.length;
+          console.log('new', this.accountInfo.length);
+          this.leadInfo = this.rowData.filter(p => {
+            if (p.TypeName === 'Lead') {
+              return p;
+            }
+          });
+          this.leadLength = this.leadInfo.length;
+        }
+      });
     });
-  }, );
   }
   userClick(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
@@ -128,45 +136,45 @@ bindLoginData: any;
     this.router.navigateByUrl('/user');
   }
   // checked count implemantation
-//   deletbtn(val, userid) {
-//     this.UserId = userid;
-//     if (val === true) {
-// this.rowData.forEach(element =>  {
-// if  (userid === element.Id) {
-// element.IsEditable = true;
-// this.countValue = this.rowData.filter(checkedCount => {
-//   if (checkedCount.IsEditable === true) {
-//     return checkedCount;
-// }
-// });
-// this.deletbtnn = false;
-// this.countLength = this.countValue.length;
-// }
-// });
-// } else {this.rowData.forEach(element =>  {
-//   if  (userid === element.Id) {
-//   element.IsEditable = false;
-//   this.countValue = this.rowData.filter(checkedCount => {
-//     if (checkedCount.IsEditable === true) {
-//       return checkedCount;
-// }
-// });
-//   this.deletbtnn = true;
+  //   deletbtn(val, userid) {
+  //     this.UserId = userid;
+  //     if (val === true) {
+  // this.rowData.forEach(element =>  {
+  // if  (userid === element.Id) {
+  // element.IsEditable = true;
+  // this.countValue = this.rowData.filter(checkedCount => {
+  //   if (checkedCount.IsEditable === true) {
+  //     return checkedCount;
+  // }
+  // });
+  // this.deletbtnn = false;
+  // this.countLength = this.countValue.length;
+  // }
+  // });
+  // } else {this.rowData.forEach(element =>  {
+  //   if  (userid === element.Id) {
+  //   element.IsEditable = false;
+  //   this.countValue = this.rowData.filter(checkedCount => {
+  //     if (checkedCount.IsEditable === true) {
+  //       return checkedCount;
+  // }
+  // });
+  //   this.deletbtnn = true;
 
-//   this.countLength = this.countValue.length;
-//   }
-//   });
-// }
+  //   this.countLength = this.countValue.length;
+  //   }
+  //   });
+  // }
 
-//   }
-deletbtn(val, userid) {
-  this.UserId = userid;
-  if (val === true) {
-    this.deletbtnn = false;
-  } else {
-    this.deletbtnn = true;
+  //   }
+  deletbtn(val, userid) {
+    this.UserId = userid;
+    if (val === true) {
+      this.deletbtnn = false;
+    } else {
+      this.deletbtnn = true;
+    }
   }
-}
   // part of add new client modal
   newClient() {
     const initialState = {
@@ -192,7 +200,7 @@ deletbtn(val, userid) {
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
-    this.userDetails();
+      this.userDetails();
     });
   }
   alll() {
@@ -212,71 +220,95 @@ deletbtn(val, userid) {
   }
   // pencil
   openEditableMode(selectedId) {
-    this.rowData.forEach( t => {
-      if (t.Id === +selectedId ) {
-  t.IsEditable = true;
-  this.Editable = t.IsEditable;
-  this.clientForm.patchValue({
-          id: t.Id,
-          firstname: t.FirstName,
-          lastname: t.LastName,
-          countryname: t.CountryName,
-          email: t.Email,
-          type: t.TypeName,
-          phone: t.Phone,
-      owner: t.OwnerName,
-      status: t.ResponseStatus,
-      createddate: t.CreatedDate,
-      campaignid: t.CampaignId,
-      tag: t.Tag,
-      tag1: t.Tag1,
-      ftd: t.FTD,
-      group: t.Group,
-      desk: t.Desk
+    this.rowData.forEach(selectedrow => {
+      if (selectedrow.Id === +selectedId) {
+        selectedrow.IsEditable = true;
+        this.Editable = selectedrow.IsEditable;
+        this.assignselectedrow = selectedrow;
+        this.clientForm.patchValue({
+          //     id: t.Id,
+          //     firstname: t.FirstName,
+          //     lastname: t.LastName,
+          //     countryname: t.CountryName,
+          //     email: t.Email,
+          //     type: t.TypeName,
+          //     phone: t.Phone,
+          // owner: t.OwnerName,
+          status: selectedrow.ResponseStatus,
+          // createddate: t.CreatedDate,
+          // campaignid: t.CampaignId,
+          // tag: t.Tag,
+          // tag1: t.Tag1,
+          // ftd: t.FTD,
+          group: selectedrow.GroupName,
+          // desk: t.Desk
         });
-    // }
-  // });
-}
-});
+        // }
+        // });
+      }
+    });
     console.log(selectedId);
 
   }
   // check btn
   saveDetails(selectedId) {
-    this.rowData.forEach( t => {
-      if (t.Id === +selectedId ) {
-  t.IsEditable = false;
-}
-});
-//     const obj = {
-//   Id: t.Id,
-//   FirstName: t.clientForm.value.firstname,
-//   LastName: t.clientForm.value.lastname,
-//   Email: t.clientForm.value.email,
-//   GroupName: t.clientForm.value.group,
-//   TypeName: t.clientForm.value.type,
-//   Password: t.clientForm.value.Password,
-//   CountryName: t.clientForm.value.countryname,
-//   CountryId: t.countryid,
-//   GroupId: t.Group,
-//   ISendEmail: t.ISendEmail,
-//   OwnerId: t.OwnerName,
-//   Phone: t.phone,
-// };
-  //   this._generalinfoservice.updateClient(obj).subscribe(res => {
-  // this.updatedDtls = res;
-  // console.log('updatedDtls', res);
-  // this.spinnerService.show();
+    this.rowData.forEach(selectedrow => {
+      if (selectedrow.Id === +selectedId) {
+        selectedrow.IsEditable = false;
+      }
+    });
+    const obj = {
+      OwnerId: '',
+      FirstName: '',
+      LastName: '',
+      Email: '',
+      Phone: '',
+      Mobile: '',
+      SecondEmail: '',
+      Password: '',
+      ResponseStatusId: '',
+      ResponseStatus: this.clientForm.value.status,
+      CurrencyId: '',
+      CurrencyName: '',
+      CountryId: '',
+      CountryName: '',
+      DateOfBirth: '',
+      FTD: '',
+      FTDDate: '',
+      Enabled: '',
+      RetentionOwner: '',
+      ConvertionOwner: '',
+      TypeName: '',
+      AssignedDate: '',
+      FirstRegistrationDate: '',
+      ImportId: '',
+      GroupName: this.clientForm.value.group,
+      GroupId: '',
+      Desk: '',
+      RegistrationType: '',
+      LastTaskDaysPast: '',
+      DaysAgoClientCreated: '',
+      ISendEmail: '',
+      CitizenshipId: '',
+      DeskId: '',
+      TypeId: '',
+      RegistrationTypeId: '',
+      ItemId: ''
+    };
+    this._generalinfoservice.updateClient(obj).subscribe(res => {
+      this.updatedDtls = res;
+      console.log('updatedDtls', res);
+      this.spinnerService.show();
 
-// });
+    });
   }
   // cancel
   closeEditableMode(selectedId) {
-    this.rowData.forEach( t => {
-      if (t.Id === +selectedId ) {
-        t.IsEditable = false;
-}
-});
+    this.rowData.forEach(selectedrow => {
+      if (selectedrow.Id === +selectedId) {
+        selectedrow.IsEditable = false;
+      }
+    });
 
   }
   // get country
@@ -344,5 +376,17 @@ deletbtn(val, userid) {
       this.router.createUrlTree(['/groups-info', setItem])
     );
     window.open(url, '_blank');
+  }
+  // get status
+  getAllStatus() {
+    this._generalinfoservice.getStatus().subscribe(response => {
+      this.Status = response;
+    });
+  }
+  // get all groups
+  getGroups() {
+    this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
+      this.Group = result.reverse();
+    });
   }
 }

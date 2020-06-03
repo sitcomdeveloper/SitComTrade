@@ -1750,7 +1750,13 @@
                     width: 127px;">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)" >
-                          <div class="jsgrid-cell-content"><input class="form-control valid"  name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content">
+                            <!-- <input class="form-control valid"  name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"> -->
+                            <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
+                              <option value="">Select...</option>
+                              <option value="0" value="{{status?.Id}}" *ngFor="let status of Status">{{status?.Name}}</option>
+                           </select>
+                          </div>    
             
                         </a>
                       </div>
@@ -1819,7 +1825,17 @@
                     <div class="">
                       <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                         <a href="javascript:void(0)">
-                          <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="group" type="text"  aria-required="true" aria-invalid="false"></div>    
+                          <div class="jsgrid-cell-content">
+                            <!-- <input class="form-control valid" name="FirstName" formControlName="group" type="text"  aria-required="true" aria-invalid="false"> -->
+                            <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol "
+                                                   formControlName="group" data-live-search="true" id="lunch"
+                                                   title="Please select a lunch ..." data-show-subtext="true"
+                                                   data-live-search="true">
+                                                   <option ngcontent-qpo-c3="" value="">Select..</option>
+                                                   <option ngcontent-qpo-c3="" value="{{group?.Name}}" *ngFor = "let group of Group">{{group?.Name}}</option>
+
+                                                </select>
+                          </div>    
             
                         </a>
                       </div>
