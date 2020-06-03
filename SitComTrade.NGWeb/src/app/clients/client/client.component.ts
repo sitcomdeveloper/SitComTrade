@@ -51,13 +51,12 @@ export class ClientComponent implements OnInit {
   Status: any;
   Group: any;
   getGroupsData: any;
-  assignselectedrow: any;
+  assignedselectedrow: any;
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
     private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
     private groupsService: GroupsService) { }
   bsModalRef: BsModalRef;
-  // private bsmodal: BsModalRef
   ngOnInit() {
     this.clientForm = this.fb.group({
       id: [''],
@@ -89,8 +88,6 @@ export class ClientComponent implements OnInit {
 
   }
   userDetails() {
-    // this.clientInfo
-    // this.bindLoginData.Id
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
     console.log('LoginData', this.getLoginDetails);
@@ -224,31 +221,14 @@ export class ClientComponent implements OnInit {
       if (selectedrow.Id === +selectedId) {
         selectedrow.IsEditable = true;
         this.Editable = selectedrow.IsEditable;
-        this.assignselectedrow = selectedrow;
+        this.assignedselectedrow = selectedrow;
         this.clientForm.patchValue({
-          //     id: t.Id,
-          //     firstname: t.FirstName,
-          //     lastname: t.LastName,
-          //     countryname: t.CountryName,
-          //     email: t.Email,
-          //     type: t.TypeName,
-          //     phone: t.Phone,
-          // owner: t.OwnerName,
           status: selectedrow.ResponseStatus,
-          // createddate: t.CreatedDate,
-          // campaignid: t.CampaignId,
-          // tag: t.Tag,
-          // tag1: t.Tag1,
-          // ftd: t.FTD,
           group: selectedrow.GroupName,
-          // desk: t.Desk
         });
-        // }
-        // });
       }
     });
     console.log(selectedId);
-
   }
   // check btn
   saveDetails(selectedId) {
@@ -258,7 +238,7 @@ export class ClientComponent implements OnInit {
       }
     });
     const obj = {
-      OwnerId: '',
+      OwnerId: this.assignedselectedrow.OwnerId,
       FirstName: '',
       LastName: '',
       Email: '',
@@ -293,13 +273,13 @@ export class ClientComponent implements OnInit {
       DeskId: '',
       TypeId: '',
       RegistrationTypeId: '',
-      ItemId: ''
+      ItemId: '',
+      Id: selectedId
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       this.updatedDtls = res;
       console.log('updatedDtls', res);
       this.spinnerService.show();
-
     });
   }
   // cancel

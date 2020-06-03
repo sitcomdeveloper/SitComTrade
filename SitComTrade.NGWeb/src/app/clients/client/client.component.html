@@ -1754,7 +1754,7 @@
                             <!-- <input class="form-control valid"  name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"> -->
                             <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
                               <option value="">Select...</option>
-                              <option value="0" value="{{status?.Id}}" *ngFor="let status of Status">{{status?.Name}}</option>
+                              <option value="0" value="{{status?.Name}}" *ngFor="let status of Status">{{status?.Name}}</option>
                            </select>
                           </div>    
             
@@ -3124,7 +3124,7 @@
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Phone">
                 <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title=""
-                  title="" tooltip="{{bindLoginData?.FullName}}">{{bindLoginData?.FullName}}</div>
+                  title="" tooltip="{{actinfo.OwnerName}}">{{actinfo.OwnerName}}</div>
               </div>
             </div>
           </td>
@@ -4476,7 +4476,7 @@
           <td class="jsgrid-cell jsgrid-align-left">
             <div class="jsgrid-cell-content">
               <div data-display-for="27_Country">
-                <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}"><span class="flag it"></span>{{bindLoginData?.FullName}}</div>
+                <div class="text-ellipsis" tooltip="{{leadinfo.OwnerName}}"><span class="flag it"></span>{{leadinfo.OwnerName}}</div>
               </div>
             </div>
           </td>
