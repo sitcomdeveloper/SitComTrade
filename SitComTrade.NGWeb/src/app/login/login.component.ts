@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
   resetForm: FormGroup;
   ResetPWdResponse: any;
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
-    console.log('login loaded');
   }
 
   ngOnInit() {
@@ -98,9 +97,9 @@ export class LoginComponent implements OnInit {
         if (data) {
           window.sessionStorage.setItem('userToken', data.access_token);
           window.sessionStorage.setItem('username', JSON.stringify(data));
-        console.log('setToken', data.access_token)
+        // console.log('setToken', data.access_token)
         this.router.navigateByUrl('clients');
-        console.log('testing',data);
+        // console.log('testing',data);
         } else {
           alert('Invalid Credential');
         }
@@ -115,7 +114,7 @@ export class LoginComponent implements OnInit {
      if (this.resetForm.valid) {
       // this.resetForm.controls.email.enable();
       this.loginservice.resetPassword(obj).subscribe(res => {
-       console.log('rstpwd', res);
+      //  console.log('rstpwd', res);
        if (res === 'Invalid User') {
         // this.ResetPWdResponse = '!Invalid User';
         this.green = false;

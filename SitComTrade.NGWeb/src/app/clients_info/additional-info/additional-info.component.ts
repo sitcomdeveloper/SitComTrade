@@ -46,7 +46,7 @@ export class AdditionalInfoComponent implements OnInit {
         description: this.userAdditionalInfo.Description,
         promocode: this.userAdditionalInfo.PromoCode
       });
-      console.log('additionalinfo', res);
+      // console.log('additionalinfo', res);
     }
     });
   }
@@ -72,7 +72,7 @@ export class AdditionalInfoComponent implements OnInit {
       this.getinsertInfo = res;
       this.spinnerService.show();
       this.additionalInfo();
-      console.log('getinsertInfo', res);
+      // console.log('getinsertInfo', res);
     });
     this.AdditionalInfo = true;
     this.additionalInfoEdit = false;

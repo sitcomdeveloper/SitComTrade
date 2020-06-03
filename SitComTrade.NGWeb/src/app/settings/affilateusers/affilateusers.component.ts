@@ -24,7 +24,6 @@ export class AffilateusersComponent implements OnInit {
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     
     this.getUsersData();
@@ -39,7 +38,7 @@ export class AffilateusersComponent implements OnInit {
         }
       })
       this.affusrlength = this.affiliateUsers.length;
-      console.log('isaffiliate', res);
+      // console.log('isaffiliate', res);
     });
   }
   // for adjust tabs

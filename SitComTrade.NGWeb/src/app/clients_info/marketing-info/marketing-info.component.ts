@@ -75,7 +75,7 @@ export class MarketingInfoComponent implements OnInit {
       afftransactionid: this.userMarketingInfo.AffTransactionID,
       affiliateuser: this.userMarketingInfo.AffiliateUser
       });
-      console.log('Marketinginfo', res);
+      // console.log('Marketinginfo', res);
     }
     });
   }
@@ -83,7 +83,6 @@ export class MarketingInfoComponent implements OnInit {
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
-      console.log('countryname', result);
     });
   }
   // pencil
@@ -120,7 +119,7 @@ export class MarketingInfoComponent implements OnInit {
       this.MarketingInfo = true;
       this.spinnerService.show();
       this.marketingInfo();
-      console.log('updtdMarketingInfo', res);
+      // console.log('updtdMarketingInfo', res);
     });
   }
   // cancel btn

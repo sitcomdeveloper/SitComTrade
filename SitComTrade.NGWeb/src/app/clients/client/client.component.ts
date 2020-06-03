@@ -83,14 +83,12 @@ export class ClientComponent implements OnInit {
     this.getGroups();
     // code for receiving login details and bind OwnerName at place of name
     this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
 
   }
   userDetails() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     this.spinnerService.show();
     setTimeout(() => {
@@ -105,7 +103,6 @@ export class ClientComponent implements OnInit {
             }
           });
           this.accountLength = this.accountInfo.length;
-          console.log('new', this.accountInfo.length);
           this.leadInfo = this.rowData.filter(p => {
             if (p.TypeName === 'Lead') {
               return p;
@@ -228,7 +225,7 @@ export class ClientComponent implements OnInit {
         });
       }
     });
-    console.log(selectedId);
+    // console.log(selectedId);
   }
   // check btn
   saveDetails(selectedId) {
@@ -239,10 +236,10 @@ export class ClientComponent implements OnInit {
     });
     const obj = {
       OwnerId: this.assignedselectedrow.OwnerId,
-      FirstName: '',
-      LastName: '',
-      Email: '',
-      Phone: '',
+      FirstName: this.assignedselectedrow.FirstName,
+      LastName: this.assignedselectedrow.LastName,
+      Email: this.assignedselectedrow.Email,
+      Phone: this.assignedselectedrow.Phone,
       Mobile: '',
       SecondEmail: '',
       Password: '',
@@ -251,20 +248,20 @@ export class ClientComponent implements OnInit {
       CurrencyId: '',
       CurrencyName: '',
       CountryId: '',
-      CountryName: '',
+      CountryName: this.assignedselectedrow.CountryName,
       DateOfBirth: '',
-      FTD: '',
+      FTD: this.assignedselectedrow.FTD,
       FTDDate: '',
       Enabled: '',
       RetentionOwner: '',
       ConvertionOwner: '',
-      TypeName: '',
+      TypeName: this.assignedselectedrow.TypeName,
       AssignedDate: '',
       FirstRegistrationDate: '',
       ImportId: '',
       GroupName: this.clientForm.value.group,
       GroupId: '',
-      Desk: '',
+      Desk: this.assignedselectedrow.Desk,
       RegistrationType: '',
       LastTaskDaysPast: '',
       DaysAgoClientCreated: '',
@@ -278,7 +275,8 @@ export class ClientComponent implements OnInit {
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       this.updatedDtls = res;
-      console.log('updatedDtls', res);
+      this.userDetails();
+      // console.log('updatedDtls', res);
       this.spinnerService.show();
     });
   }

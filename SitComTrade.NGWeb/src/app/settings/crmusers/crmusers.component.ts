@@ -20,7 +20,6 @@ export class CrmusersComponent implements OnInit {
   ngOnInit() {
      // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
 
      this.getAllUsers();
@@ -33,8 +32,7 @@ export class CrmusersComponent implements OnInit {
 this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
   this.GetUser = getuser.reverse();
  this.crmuserlength = this.GetUser.length;
-  console.log('GetUser', getuser);
-  // this.bindLoginData.UserId
+  // console.log('GetUser', getuser);
 })
   }
   // open popup for create new user

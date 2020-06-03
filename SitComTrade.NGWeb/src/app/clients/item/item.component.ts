@@ -99,7 +99,7 @@ export class ItemComponent implements OnInit {
         this.response = 'Client is added successfully!';
       }
       this.newUserForm.reset();
-      console.log('newuser', res);
+      // console.log('newuser', res);
 
     });
     } else {
@@ -110,7 +110,6 @@ export class ItemComponent implements OnInit {
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
-      console.log('countryname', result);
     });
   }
   // for separtion between account and lead on the select of radio button
@@ -152,7 +151,6 @@ if (val === true) {
   getGroups() {
     this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
       this.Group = result.reverse();
-      console.log('Group', result);
     });
    }
   //  leadLabel() {

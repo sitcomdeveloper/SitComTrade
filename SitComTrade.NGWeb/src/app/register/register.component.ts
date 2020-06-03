@@ -30,9 +30,7 @@ export class RegisterComponent implements OnInit {
   @ViewChild('myModalClose', { static: false }) modalClose;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
-    console.log('register loaded');
   }
-
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],

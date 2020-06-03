@@ -42,7 +42,6 @@ export class CrmnewuserComponent implements OnInit {
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     // form group
     this.newRegisterForm = this.fb.group({
@@ -120,19 +119,16 @@ export class CrmnewuserComponent implements OnInit {
   getTimeZone() {
     this.settingsService.getAllTimeZones().subscribe(timezone => {
       this.TimeZones = timezone;
-      console.log('TimeZones', timezone);
     });
   }
   getCultureCodes() {
     this.settingsService.getAllCultureCodes().subscribe(cultrecode => {
       this.CultureCode = cultrecode;
-      console.log('CultureCode', cultrecode);
     });
   }
   getRoles() {
     this.settingsService.getAllRoles().subscribe(roles => {
       this.Roles = roles;
-      console.log('Roles', roles);
     });
   }
   getSenderSettings() {
@@ -148,7 +144,7 @@ export class CrmnewuserComponent implements OnInit {
           return notsharedsenderdata;
         }
       });
-      console.log('SenderSettings', sndrsettings);
+      // console.log('SenderSettings', sndrsettings);
     });
   }
   // getModules() {
@@ -279,7 +275,7 @@ SharedSenderId: '',
         this.response = 'User is added successfully!';
       }
       this.newRegisterForm.reset();
-      console.log('RegisteredUser', user);
+      // console.log('RegisteredUser', user);
     });
   } else {
     this.submitted = true;

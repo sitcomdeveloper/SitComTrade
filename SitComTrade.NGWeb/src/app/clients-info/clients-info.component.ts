@@ -40,13 +40,12 @@ export class ClientsInfoComponent implements OnInit {
   ngOnInit() {
     // For jump to specific clients.see below method "sendData"
     const details = +this._route.snapshot.paramMap.get('selectedItem');
-    console.log(details);
     // API of general section use for showing name of selected client
     this.spinnerService.show();
     setTimeout( () => {
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
-      console.log('generalinfo', res);
+      // console.log('generalinfo', res);
       if ( this.userGenralinfo.TypeName === 'Real') {
         this.realAccountSection = true;
       } else {
@@ -61,7 +60,7 @@ export class ClientsInfoComponent implements OnInit {
     this.clientService.getUsers(this.clientInfo).subscribe(res => {
       if (res !== null && res !== undefined && res !== '') {
         this.rowData = res.reverse();
-        console.log('res', res);
+        // console.log('res', res);
       }
     });
 
@@ -87,7 +86,7 @@ export class ClientsInfoComponent implements OnInit {
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.taskInfoService.getTask(details).subscribe(res => {
       this.getInfoTasks = res.reverse();
-      console.log('taskget', res);
+      // console.log('taskget', res);
     });
   }
   // open crt acc popup

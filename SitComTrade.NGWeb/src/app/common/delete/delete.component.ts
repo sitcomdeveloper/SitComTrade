@@ -41,7 +41,7 @@ title: any;
   dltComment() {
     this.commentsService.deleteComment(this.id).subscribe(res => {
       this.dltCmnt = res;
-      console.log('dltCmnt', res);
+      // console.log('dltCmnt', res);
       this.clddata.emit(res);
       this.hideModal();
     },

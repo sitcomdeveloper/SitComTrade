@@ -30,7 +30,6 @@ export class AffilatenewuserComponent implements OnInit {
   ngOnInit() {
     // code for receiving login details and bind owner name at place of  name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     
     if(this.createuser === 'createuser') {
@@ -83,13 +82,11 @@ export class AffilatenewuserComponent implements OnInit {
   getTimeZone() {
     this.settingsService.getAllTimeZones().subscribe(timezone => {
       this.TimeZones = timezone;
-      console.log('TimeZones', timezone);
     });
   }
   getCultureCodes() {
     this.settingsService.getAllCultureCodes().subscribe(cultrecode => {
       this.CultureCode = cultrecode;
-      console.log('CultureCode', cultrecode);
     });
   }
   // create new affilate user
@@ -140,7 +137,7 @@ SharedSenderId: '',
         this.response = 'Affiliate User is added successfully!';
       }
       this.newRegisterForm.reset();
-      console.log('affnewuser',aafusrres);
+      // console.log('affnewuser',aafusrres);
     })
   } else {
     this.submitted = true;

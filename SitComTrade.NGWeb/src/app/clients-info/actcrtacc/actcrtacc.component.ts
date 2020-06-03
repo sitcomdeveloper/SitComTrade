@@ -53,7 +53,6 @@ export class ActcrtaccComponent implements OnInit {
   getGroups() {
     this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
       this.Group = result.reverse();
-      console.log('Group', result);
     });
    }
 }

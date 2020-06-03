@@ -3318,7 +3318,13 @@
                 <div class="">
                   <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                     <a href="javascript:void(0)">
-                      <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"></div>    
+                      <div class="jsgrid-cell-content">
+                        <!-- <input class="form-control valid" name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"> -->
+                        <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
+                          <option value="">Select...</option>
+                          <option value="0" value="{{status?.Name}}" *ngFor="let status of Status">{{status?.Name}}</option>
+                       </select>
+                      </div>    
         
                     </a>
                   </div>
@@ -4641,7 +4647,13 @@
                 <div class="">
                   <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
                     <a href="javascript:void(0)">
-                      <div class="jsgrid-cell-content"><input class="form-control valid" name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"></div>    
+                      <div class="jsgrid-cell-content">
+                        <!-- <input class="form-control valid" name="FirstName" formControlName="status" type="text"  aria-required="true" aria-invalid="false"> -->
+                        <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
+                          <option value="">Select...</option>
+                          <option value="0" value="{{status?.Name}}" *ngFor="let status of Status">{{status?.Name}}</option>
+                       </select>
+                      </div>    
         
                     </a>
                   </div>

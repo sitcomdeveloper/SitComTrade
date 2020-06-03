@@ -36,7 +36,6 @@ export class GeneralInfoComponent implements OnInit {
   ngOnInit() {
     // code for receiving login details and bind owner name at place of  name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
 
     this.userInfoForm = this.fb.group({
@@ -89,7 +88,6 @@ export class GeneralInfoComponent implements OnInit {
     // receiving data from client page for general-info
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    console.log(details);
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
       this.userInfoForm.patchValue({
@@ -130,26 +128,20 @@ export class GeneralInfoComponent implements OnInit {
       // lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
       daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
       });
-      console.log('generalinfo', res);
+      // console.log('generalinfo', res);
     });
   }
-    // this._generalinfoservice.getUsersInfo().subscribe(res => {
-    // this.Apptitle = JSON.parse(localStorage.getItem('project'));
-    // console.log('geteditdata', this.Apptitle);
-    // this.userGenralinfo = this.Apptitle;
     // this.useraddinfo = this.userGenralinfo;
     // const date = this.userGenralinfo.CreatedAt.split('T');
     // const userDate = date[0];
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
-      console.log('countryname', result);
     });
   }
   getRegistrationFromType() {
     this._generalinfoservice.getRegistrationType().subscribe(res => {
       this.registrationType = res;
-      console.log('registeredtype', res);
     });
   }
   // for hide show div
@@ -187,7 +179,7 @@ export class GeneralInfoComponent implements OnInit {
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       this.updatedDtls = res;
-      console.log('updatedDtls', res);
+      // console.log('updatedDtls', res);
       this.spinnerService.show();
       this.afterUpdate();
       this.frontGeneralInfo = true;
@@ -205,7 +197,6 @@ export class GeneralInfoComponent implements OnInit {
   getAllStatus() {
     this._generalinfoservice.getStatus().subscribe(response => {
       this.Status = response;
-      console.log('Status', response);
     });
   }
 }
