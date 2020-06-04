@@ -15,7 +15,7 @@ export class SendersettingsComponent implements OnInit {
     this.sendersettingsData();
   }
   sendersettingsData() {
-    this.settingsService.getSenderSettings().subscribe( result => {
+    this.settingsService.getAllSenderSettings().subscribe( result => {
       this.getSendersData = result;
       console.log('getSendersData', result);
     })

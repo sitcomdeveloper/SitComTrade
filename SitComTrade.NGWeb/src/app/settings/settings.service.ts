@@ -12,9 +12,9 @@ export class SettingsService {
 
   constructor(private http: HttpClient) { }
   // sendersettings
-  getSenderSettings(): Observable<any> {
-    return this.http.get('assets/sendersettings.json');
-  }
+  // getSenderSettings(): Observable<any> {
+  //   return this.http.get('assets/sendersettings.json');
+  // }
   // crm users.get all crm users
   getAllCrmUsers(users: any): Observable<any> {
     return this.http.post(API_URL + 'User/GetAllUsersByOwnerId/' + users, {});
