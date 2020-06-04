@@ -111,29 +111,15 @@ export class ClientsInfoComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
-  // sendsms(Ide) {
-  //   const initialState = {
-  //     title: 'SMS: SEND',
-  //     sendsms: 'sendsms',
-  //     details: Ide
-  //   };
-  //   // tslint:disable-next-line: max-line-length
-  //   this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal600', initialState }));
-  //   this.bsModalRef.content.closeBtnName = 'Cancel';
-  // }
   sendsms(Ide) {
-    const config: ModalOptions = {
-      backdrop: 'static',
-      class: 'modal-lg',
-      keyboard: false,
-      animated: true,
-      ignoreBackdropClick: true,
-      initialState: {
-        sendsms: 'sendsms',
-        details: Ide
-      }
+    const initialState = {
+      title: 'SMS: SEND',
+      sendsms: 'sendsms',
+      // get Id for showing phone no. on popup
+      detailss: Ide
     };
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, config);
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal600', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   viewhistory() {

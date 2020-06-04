@@ -24,12 +24,10 @@ export class ActcrtaccComponent implements OnInit {
   viewhistory: any;
   title: any;
   userGenralinfo: any;
+  detailss: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute) { }
 
   ngOnInit() {
-     
-    
-
     if (this.createaccount === 'createaccount') {
       this.crtacct = true;
     } else {
@@ -42,10 +40,8 @@ export class ActcrtaccComponent implements OnInit {
     }
     if (this.sendsms === 'sendsms') {
       this.sndsms = true;
-      // For jump to specific clients.see below method "sendData"
-     const details = +this._route.snapshot.paramMap.get('selectedItem');
-     // API of general section use for showing name of selected client
-     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
+     // API of general section use for showing phone no. on actions 'sendsms' popup
+     this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
        this.userGenralinfo = res;
        console.log('generalinfop', res)
      });
