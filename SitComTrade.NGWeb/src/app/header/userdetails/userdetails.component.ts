@@ -20,7 +20,7 @@ export class UserdetailsComponent implements OnInit {
   savedtls: any;
   getLoginDetails: any;
   bindLoginData: any;
-  takewholedata: any;
+  wholeuserdetails: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
@@ -68,20 +68,32 @@ export class UserdetailsComponent implements OnInit {
   getDepartments() {
     this.settingsService.getAllDepartments().subscribe(departments => {
       this.Departments = departments;
-      // console.log('Departments', departments);
     });
   }
   getTimeZone() {
     this.settingsService.getAllTimeZones().subscribe(timezone => {
       this.TimeZones = timezone;
-      console.log('TimeZones', timezone);
     });
   }
   getCultureCodes() {
     this.settingsService.getAllCultureCodes().subscribe(cultrecode => {
       this.CultureCode = cultrecode;
-      console.log('CultureCode', cultrecode);
     });
+  }
+  // patch value
+  patchCrmUsers() {
+    this.newRegisterForm.patchValue({
+      firstname:this.wholeuserdetails.FirstName,
+      lastname:this.wholeuserdetails.LastName,
+      username:this.wholeuserdetails.UserName,
+      email:this.wholeuserdetails.Email,
+      phone:this.wholeuserdetails.Phone,
+      department:this.wholeuserdetails.DepartmentName,
+      timezone:this.wholeuserdetails.TimezoneName,
+      culturecode:this.wholeuserdetails.CultureCode,
+      uiculturecode:this.wholeuserdetails.UiCultureCode,
+      startmodule:this.wholeuserdetails.StartModuleName,
+    })
   }
   // save details of user after patch
   saveeditinfo() {
@@ -92,7 +104,7 @@ export class UserdetailsComponent implements OnInit {
       Phone: this.newRegisterForm.value.phone,
       Password: this.newRegisterForm.value.password,
       OwnerId: this.bindLoginData.UserId,
-      Id: this.takewholedata.Id,
+      Id: this.wholeuserdetails.Id,
       DeskId: '',
       DeskName: this.newRegisterForm.value.desk,
       IsDisabled: this.newRegisterForm.value.disabled,

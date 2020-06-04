@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { SettingsService } from '../settings/settings.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   filled: any;
-  constructor(private modalService: BsModalService) { }
+  GetUser: any;
+  constructor(private modalService: BsModalService, private settingsService:SettingsService) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
@@ -21,21 +23,26 @@ export class HeaderComponent implements OnInit {
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
+
+    this.getAllUsers();
   }
   logout() {
     // localStorage.removeItem('uid');
     window.sessionStorage.clear();
     this.router.navigate(['login']);
   }
-  open() {
-    this.router.navigate(['login']);
+  // get all crm users
+  getAllUsers() {
+    this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
+      this.GetUser = getuser.reverse();
+    })
   }
   // edit login user
-  editLoginUser() {
+  editLoginUser(whleusrdtls) {
     const initialState = {
       title: 'User Details',
+      wholeuserdetails: whleusrdtls
     };
-    
     this.bsModalRef = this.modalService.show(UserdetailsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal650', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     // this.bsModalRef.content.clddata.subscribe(data => {
