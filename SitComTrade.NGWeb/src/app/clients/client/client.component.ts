@@ -52,6 +52,7 @@ export class ClientComponent implements OnInit {
   Group: any;
   getGroupsData: any;
   assignedselectedrow: any;
+  selected: any[];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
     private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
@@ -165,8 +166,11 @@ export class ClientComponent implements OnInit {
     this.UserId = userid;
     if (val === true) {
       this.deletbtnn = false;
+      this.selected.push(userid);
+      console.log('checked',this.selected.length);
     } else {
       this.deletbtnn = true;
+      this.selected.splice(this.selected.indexOf(userid), 1)
     }
   }
   // part of add new client modal
