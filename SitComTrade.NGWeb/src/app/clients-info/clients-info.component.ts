@@ -45,7 +45,7 @@ export class ClientsInfoComponent implements OnInit {
     setTimeout( () => {
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
-      // console.log('generalinfo', res);
+      console.log('generalinfo', res);
       if ( this.userGenralinfo.TypeName === 'Real') {
         this.realAccountSection = true;
       } else {
@@ -111,13 +111,29 @@ export class ClientsInfoComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
-  sendsms() {
-    const initialState = {
-      title: 'SMS: SEND',
-      sendsms: 'sendsms'
+  // sendsms(Ide) {
+  //   const initialState = {
+  //     title: 'SMS: SEND',
+  //     sendsms: 'sendsms',
+  //     details: Ide
+  //   };
+  //   // tslint:disable-next-line: max-line-length
+  //   this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal600', initialState }));
+  //   this.bsModalRef.content.closeBtnName = 'Cancel';
+  // }
+  sendsms(Ide) {
+    const config: ModalOptions = {
+      backdrop: 'static',
+      class: 'modal-lg',
+      keyboard: false,
+      animated: true,
+      ignoreBackdropClick: true,
+      initialState: {
+        sendsms: 'sendsms',
+        details: Ide
+      }
     };
-    // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal600', initialState }));
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   viewhistory() {

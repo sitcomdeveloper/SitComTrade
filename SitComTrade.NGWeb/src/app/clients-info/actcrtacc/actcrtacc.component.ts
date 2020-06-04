@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
+import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-actcrtacc',
@@ -21,9 +23,13 @@ export class ActcrtaccComponent implements OnInit {
   vwhistory = false;
   viewhistory: any;
   title: any;
-  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService) { }
+  userGenralinfo: any;
+  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute) { }
 
   ngOnInit() {
+     
+    
+
     if (this.createaccount === 'createaccount') {
       this.crtacct = true;
     } else {
@@ -36,6 +42,13 @@ export class ActcrtaccComponent implements OnInit {
     }
     if (this.sendsms === 'sendsms') {
       this.sndsms = true;
+      // For jump to specific clients.see below method "sendData"
+     const details = +this._route.snapshot.paramMap.get('selectedItem');
+     // API of general section use for showing name of selected client
+     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
+       this.userGenralinfo = res;
+       console.log('generalinfop', res)
+     });
     } else {
       this.sndsms = false;
     }
