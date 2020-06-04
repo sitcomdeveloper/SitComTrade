@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
           window.sessionStorage.setItem('username', JSON.stringify(data));
         // console.log('setToken', data.access_token)
         this.router.navigateByUrl('clients');
-        // console.log('testing',data);
+        console.log('testing',data);
         } else {
           alert('Invalid Credential');
         }
