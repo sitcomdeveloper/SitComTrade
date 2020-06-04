@@ -1,58 +1,69 @@
-<form class="form-horizontal" id="sendEmailForm" enctype="multipart/form-data" novalidate="novalidate">
-    <div class="hightlited-area02 hightlited01">
-       <div class="form-group">
-          <div class="col-xs-2 control-label"><label class="valign-label" for="settingsId"><span data-tooltip-el="">Settings:</span></label></div>
-          <div class="col-xs-10">
-             <div class="btn-group bootstrap-select form-control">
-                <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="8f393402-466e-be21-ee27-17656e8d6df4" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                <div class="dropdown-menu open" role="combobox">
-                   <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                   <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                      <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                      <li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="checkbox  check-mark"></span><span class="text">info@swissfxuk.com</span></a></li>
-                   </ul>
-                </div>
-                <select class="form-control" name="settingsId" data-container="body" data-live-search="true" id="8f393402-466e-be21-ee27-17656e8d6df4" aria-required="true" tabindex="-98">
-                   <option value="">Select...</option>
-                   <option value="22">info@swissfxuk.com</option>
-                </select>
-             </div>
-          </div>
-       </div>
-       <div class="form-group">
-          <div class="col-xs-2 control-label"><label class="valign-label" for="cc"><span data-tooltip-el="">Cc:</span></label></div>
-          <div class="col-xs-10"><input class="form-control" name="cc" type="text" id="1df5ee23-0ba3-5ff4-0ff9-676013e08e37"></div>
-       </div>
-       <div class="email-options-area" style="display: block;">
-          <div class="form-group">
-             <div class="col-xs-2 control-label"><label class="valign-label" for="bcc"><span data-tooltip-el="">Bcc:</span></label></div>
-             <div class="col-xs-10"><input class="form-control" name="bcc" type="text" id="f71704d0-5399-376d-7ff4-78cb6da2986a"></div>
-          </div>
-          <div class="form-group">
-             <div class="col-xs-2 control-label"><label class="valign-label" for="template"><span data-tooltip-el="">Template:</span></label></div>
-             <div class="col-xs-10">
-                <div class="btn-group bootstrap-select form-control">
-                   <button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="button" data-id="206d92e4-816f-202a-780b-170ce38fc914" title="Select..."><span class="filter-option pull-left">Select...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
-                   <div class="dropdown-menu open" role="combobox">
-                      <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" placeholder="Search" role="textbox" aria-label="Search"></div>
-                      <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                         <li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="checkbox  check-mark"></span><span class="text">Select...</span></a></li>
-                      </ul>
-                   </div>
-                   <select class="form-control" name="template" data-container="body" data-live-search="true" id="206d92e4-816f-202a-780b-170ce38fc914" tabindex="-98">
-                      <option value="">Select...</option>
-                   </select>
-                </div>
-             </div>
-          </div>
-          <div class="form-group">
-             <div class="col-xs-2 control-label"><label for="attachment">Attachment:</label></div>
-             <div class="col-xs-10"><input type="file" name="attachment" id="attachment"></div>
-          </div>
-          <div class="form-group"><input type="hidden" class="not-resetable" name="isHtml" value="true"></div>
-       </div>
-    </div>
+   <div >
+      <div class="form-holder1" style="">
+         <form novalidate="novalidate">
+            <div class="hightlited-area02 hightlited01">
+               <div class="form-group row">
+                  <div class="col-md-2 control-label"><label class="valign-label" for="settingsId">Settings:</label></div>
+                  <div class="col-md-10">
+                     <select class="form-control" name="settingsId" data-container="body" data-live-search="true" id="a64e4e2c9-de37-c496-ee8b-d7c54b3e13bb" aria-required="true">
+                        <option value="22">info@swissfxuk.com</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="form-group row">
+                  <div class="col-md-2 control-label"><label class="valign-label" for="to">To:</label></div>
+                  <div class="col-md-10"><input class="form-control" name="to" type="text" id="aa161a8ec-538f-8fea-e9cf-22c794976dc3" aria-required="true"></div>
+               </div>
+               <div class="form-group row">
+                  <div class="col-md-2 control-label"><label class="valign-label" for="cc">Cc:</label></div>
+                  <div class="col-md-10"><input class="form-control" name="cc" type="text" id="a115dc90b-296c-9751-0995-1cb11730992b"></div>
+               </div>
+               <div class="email-options-area">
+                  <div class="form-group row">
+                     <div class="col-md-2 control-label"><label class="valign-label" for="bcc">Bcc:</label></div>
+                     <div class="col-md-10"><input class="form-control" name="bcc" type="text" id="a484d2f8d-18db-7523-9c28-8174716bacf3"></div>
+                  </div>
+                 
+                  
+                  <div class="form-group"><input type="hidden" class="not-resetable" name="isHtml" value="true"></div>
+               </div>
+               <div class="form-group row">
+                  <div class="col-md-2 control-label"><label class="valign-label" for="cc">Template:</label></div>
+                  <div class="col-md-10">
+                     <select class="form-control" name="template" data-container="body" data-live-search="true" id="">
+                        <option value="">Select...</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="form-group row">
+                  <div class="col-md-2 control-label"><label for="attachment">Attachment:</label></div>
+                  <div class="col-md-10"><input type="file" name="attachment" id="attachment"></div>
+               </div>
+            
+            </div>
+            <div class="form-group row">
+               <div class="col-md-12">
+                  <ckeditor data="<p>Hello, world!</p>"></ckeditor>
+               </div>
+               </div>
+         </form>
+      </div>
+      <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="col-md-12 padd0">
+         <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="">
+            <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="row">
+               <div class="col-md-6">
+                  <a href="#" class="btn-type04 email-options-control"><i class="ico-sz3 ico-eye dark">&nbsp;</i> <span>Hide</span> Advanced Options</a></div>
+               <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid col-md-6" ng-reflect-form="[object Object]">
+                  <a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1 pull-right" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a>
+                  <a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton pull-right" data-dismiss="modal" href="javascript:void(0);">Save</a>
+                  </div>
+            </div>
+         </div>
+      </div>
+       <!-- <button>Save</button> -->
+       <!-- <button (click)="hideModal()">Cancel</button> -->
+      </div>
    
     
    
- </form>
+ 
