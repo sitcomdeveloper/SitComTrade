@@ -11,5 +11,4 @@ export class EmailAllComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

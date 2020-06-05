@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../clients_info/general-info/general-info.service';
 import { ClientsService } from '../header/clients/clients.service';
@@ -27,6 +27,10 @@ export class ClientsInfoComponent implements OnInit {
   leadInfo: any[];
   getInfoTasks: any;
   detail: number;
+ 
+  @HostListener("window:scroll", []) onWindowScroll() {
+    this.scrollFunction();
+  }
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
               private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService,
               private taskInfoService: TasksInfoService
@@ -47,7 +51,7 @@ export class ClientsInfoComponent implements OnInit {
     setTimeout( () => {
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
-      console.log('generalinfo', res);
+      // console.log('generalinfo', res);
       if ( this.userGenralinfo.TypeName === 'Real') {
         this.realAccountSection = true;
       } else {
@@ -133,5 +137,17 @@ export class ClientsInfoComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
+   // When the user scrolls down 20px from the top of the document, show the button
+scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myBtn").style.display = "block";
+  } else {
+      document.getElementById("myBtn").style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+topFunction() {
+  document.documentElement.scrollTop = 0;
+} 
 }
 
