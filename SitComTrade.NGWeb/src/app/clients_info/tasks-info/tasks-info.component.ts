@@ -16,6 +16,7 @@ export class TasksInfoComponent implements OnInit {
   getInfoTasks: any;
   getLoginDetails: any;
   bindLoginData: any;
+  detail: number;
 
 
   constructor(private taskInfoService: TasksInfoService, private modalService: BsModalService, private route: ActivatedRoute) { }
@@ -30,6 +31,7 @@ export class TasksInfoComponent implements OnInit {
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
     this.taskInfoService.getTask(details).subscribe(res => {
       this.getInfoTasks = res.reverse();
       console.log('taskget', res);
@@ -38,6 +40,8 @@ export class TasksInfoComponent implements OnInit {
   createtask() {
     const initialState = {
       title: 'Create Task',
+      id: this.detail
+     
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));

@@ -25,6 +25,7 @@ export class CreateTaskComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   title: any;
+  id: any;
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -114,7 +115,7 @@ export class CreateTaskComponent implements OnInit {
       }
     });
     const obj = {
-      OwnerId: this.detail,
+      OwnerId: this.id,
       TaskStatusId: this.taskInfoForm.value.status,
 TaskTypeId: this.taskInfoForm.value.type,
 NotiTrasportId: 1,

@@ -26,6 +26,7 @@ export class ClientsInfoComponent implements OnInit {
   accountInfo: any[];
   leadInfo: any[];
   getInfoTasks: any;
+  detail: number;
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
               private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService,
               private taskInfoService: TasksInfoService
@@ -40,6 +41,7 @@ export class ClientsInfoComponent implements OnInit {
   ngOnInit() {
     // For jump to specific clients.see below method "sendData"
     const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
     // API of general section use for showing name of selected client
     this.spinnerService.show();
     setTimeout( () => {
