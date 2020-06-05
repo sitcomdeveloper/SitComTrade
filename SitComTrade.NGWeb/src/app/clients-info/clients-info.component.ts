@@ -79,6 +79,7 @@ export class ClientsInfoComponent implements OnInit {
   createtask() {
     const initialState = {
       title: 'Create Task',
+      id: this.detail
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));

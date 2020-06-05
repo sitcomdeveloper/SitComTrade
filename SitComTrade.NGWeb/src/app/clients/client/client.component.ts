@@ -330,13 +330,14 @@ export class ClientComponent implements OnInit {
       animated: true,
       ignoreBackdropClick: true,
       initialState: {
-        moreId: rowId,
+        id: rowId,
         isstaticvalue: 'most'
 
       }
     };
     this.bsModalRef = this.modalService.show(CreateTaskComponent, config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
+    
   }
   // import client
   openImprtClient() {

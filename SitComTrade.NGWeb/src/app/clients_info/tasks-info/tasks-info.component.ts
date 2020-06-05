@@ -18,7 +18,6 @@ export class TasksInfoComponent implements OnInit {
   bindLoginData: any;
   detail: number;
 
-
   constructor(private taskInfoService: TasksInfoService, private modalService: BsModalService, private route: ActivatedRoute) { }
   bsModalRef: BsModalRef;
 
@@ -65,7 +64,4 @@ export class TasksInfoComponent implements OnInit {
       this.getAllTask();
     });
   }
-
-
-
 }
