@@ -126,5 +126,12 @@ namespace SitComTech.API.Controllers
         {
             return _userService.GetAllUsersByOwnerId(ownerid);
         }
+
+        [HttpPost]
+        [Route("GetUserById/{id}")]
+        public User GetUserById(int id)
+        {
+            return _userService.GetUserById(id);
+        }
     }
 }

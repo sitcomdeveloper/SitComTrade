@@ -69,6 +69,28 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("DeleteMultipleClients")]
+        public bool DeleteMultipleClients(List<long> clientIds)
+        {
+            try
+            {                
+                if (clientIds != null && clientIds.Count>0)
+                {
+                    return _clientService.DeleteMultipleClients(clientIds);
+                     
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        [HttpPost]
         [Route("UpdateClient")]
         public void UpdateClient(Client userVM)
         {
