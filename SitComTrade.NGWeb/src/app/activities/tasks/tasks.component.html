@@ -1,3 +1,4 @@
+{{taskslen}}
 <div class="container-fluid">
   <div class="row">
     <div _ngcontent-ena-c12="" class="col-md-12 subheader">
@@ -60,7 +61,8 @@
                         <span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil-alt bg-primary1 fa-lg"></i></a></span>
                      </div>
                   </div>
-                  <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil-alt bg-primary1 fa-lg" disabled=""></i></a><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled=""></i></a></div>
+                  <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#">
+                     <i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white" (click)="createtask()"></i></a><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil-alt bg-primary1 fa-lg" disabled=""></i></a><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled=""></i></a></div>
                   <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-label="Four group" class="btn-group mr-2 holder" role="group">
                      <i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-expanded="false" aria-haspopup="true" aria-hidden="true" class="fa fa-ellipsis-h" data-toggle="dropdown" id="clientcret"></i>
                      <ul _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-labelledby="clientcret" class="dropdown-menu impdrp ">
@@ -124,12 +126,12 @@
                           </th>
                           <th class="email-header-cell email-header-sortable">
                              <div class="email-cell-content">
-                                <div class="text-ellipsis"><span>Description</span></div>
+                                <div class="text-ellipsis" tooltip="Description"><span>Description</span></div>
                              </div>
                           </th>
                           <th class="email-header-cell email-header-sortable">
                              <div class="email-cell-content">
-                                <div class="text-ellipsis"><span>Created By</span></div>
+                                <div class="text-ellipsis" tooltip="Created By"><span>Created By</span></div>
                              </div>
                           </th>
                           <th class="email-header-cell email-align-left email-header-sortable">
@@ -139,7 +141,7 @@
                           </th>
                           <th class="email-header-cell email-align-left email-header-sortable">
                              <div class="email-cell-content">
-                                <div class="text-ellipsis" data-original-title="" title=""><span>Created Date</span></div>
+                                <div class="text-ellipsis" data-original-title="" title="" tooltip="Created Date"><span>Created Date</span></div>
                              </div>
                           </th>
                           
@@ -515,7 +517,7 @@
                                          </form>
                                       </div>
                                    </div>
-                                   <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                   <input class="form-control daterange" name="ModifiedDate" type="text"  placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                 </div>
                              </div>
                           </td>
@@ -549,7 +551,7 @@
                                         </form>
                                      </div>
                                   </div>
-                                  <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                  <input class="form-control daterange" name="ModifiedDate" type="text"  placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                </div>
                             </div>
                          </td>
@@ -583,7 +585,7 @@
                                       </form>
                                    </div>
                                 </div>
-                                <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                <input class="form-control daterange" name="ModifiedDate" type="text"  placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                              </div>
                           </div>
                        </td>
@@ -600,7 +602,7 @@
               <div class="email-grid-body" style="height: 407px;">
                  <table class="email-table" style="width: 1306px;">
                     <tbody>
-                       <tr class="email-row email-selected-row">
+                       <tr class="email-row email-selected-row" *ngFor="let trade of getInfoTasks">
                           <td class="email-cell email-align-center" style="width: 17px;">
                              <div class="email-cell-content">
                                 <div class="input-checkbox"><span><input type="checkbox" data-item-selector="true"></span></div>
@@ -608,62 +610,62 @@
                           </td>
                           <td class="email-cell" style="width: 85px;">
                              <div class="email-cell-content">
-                                <div class="text-ellipsis"><a href=""><span>41156</span></a></div>
+                                <div class="text-ellipsis" (click)="edittask(trade)"><a href="javascript:void(0)"><span>TSK{{trade?.OwnerId}}</span></a></div>
                              </div>
                           </td>
                           <td class="email-cell" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_AccountId">
-                                   <div class="text-ellipsis"><a href=""><span>102921</span></a></div>
+                                   <div class="text-ellipsis" tooltip="{{bindLoginData?.FullName}}"><span>{{bindLoginData?.FullName}}</span></div>
                                 </div>
                              </div>
                           </td>
                           <td class="email-cell" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_Equity">
-                                   <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                   <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true"> {{trade?.TaskType}}</div>
                                 </div>
                              </div>
                           </td>
                           <td class="email-cell email-align-left" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_Currency">
-                                   <div class="text-ellipsis">EUR</div>
+                                   <div class="text-ellipsis" tooltip="{{trade?.TaskStatus}}">{{trade?.TaskStatus}}</div>
                                 </div>
                              </div>
                           </td>
                           <td class="email-cell" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_UsdAmount">
-                                   <div class="text-ellipsis" data-field="UsdAmount" data-original-value="1105.93" data-isformatted="true">$ 1'105.93</div>
+                                   <div class="text-ellipsis" data-field="UsdAmount" data-original-value="1105.93" data-isformatted="true" tooltip="{{trade?.CreatedAt}}">{{trade?.CreatedAt}}</div>
                                 </div>
                              </div>
                           </td>
                           <td class="email-cell" style="width: 136px;">
                              <div class="email-cell-content">
-                                <div data-display-for="14_Date">11/22/2019 12:32:34 PM</div>
+                                <div data-display-for="14_Date">{{trade?.Description}}</div>
                              </div>
                           </td>
                           <td class="email-cell" style="width: 136px;">
                              <div class="email-cell-content">
-                                <div data-display-for="14_ModifiedDate"></div>
+                                <div data-display-for="14_ModifiedDate">{{bindLoginData?.FullName}}</div>
                              </div>
                           </td>
                           <td class="email-cell email-align-left" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_TransactionType">
-                                   <div class="text-ellipsis">Deposit</div>
+                                   <div class="text-ellipsis"></div>
                                 </div>
                              </div>
                           </td>
                           <td class="email-cell email-align-left" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_ManualAuto">
-                                   <div class="text-ellipsis">Manual</div>
+                                   <div class="text-ellipsis" tooltip="{{trade?.CreatedAt}}">{{trade?.CreatedAt}}</div>
                                 </div>
                              </div>
                           </td>
-                          <td class="email-cell email-align-left" style="width: 85px;">
+                          <!-- <td class="email-cell email-align-left" style="width: 85px;">
                              <div class="email-cell-content">
                                 <div data-display-for="14_TradingEnvironment">
                                    <div class="text-ellipsis">Real</div>
@@ -690,12 +692,12 @@
                                    <div class="text-ellipsis">IMC</div>
                                 </div>
                              </div>
-                          </td>
+                          </td> -->
                           <td class="email-cell email-control-field email-align-center" style="width: 84px;">
                             <div _ngcontent-crh-c6="" class="dropleft droptop">
                               <a _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
                                 <i _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-link greyiconn"></i></a>
-                                <a _ngcontent-crh-c6="" class="ico-sz3 ico-link dh " data-jsgrid-rule="link" href="javascript:void(0)" id="ico9" title="Open in new tab"><i _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyiconn" disabled=""></i></a><br _ngcontent-crh-c6="">
+                                <a _ngcontent-crh-c6="" class="ico-sz3 ico-link dh " data-jsgrid-rule="link" href="javascript:void(0)" id="ico9" title="Open in new tab"><i _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyiconn" disabled="" (click)="edittask(trade)"></i></a><br _ngcontent-crh-c6="">
                                 </div>
                           </td>
                        </tr>
@@ -1155,7 +1157,7 @@
                                         </form>
                                      </div>
                                   </div>
-                                  <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                  <input class="form-control daterange" name="ModifiedDate" type="text"  placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                </div>
                             </div>
                          </td>
@@ -2359,7 +2361,7 @@
                                         </form>
                                      </div>
                                   </div>
-                                  <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                  <input class="form-control daterange" name="ModifiedDate" type="text"  placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                </div>
                             </div>
                          </td>

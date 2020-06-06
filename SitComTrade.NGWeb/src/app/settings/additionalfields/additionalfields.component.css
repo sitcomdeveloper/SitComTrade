@@ -7,10 +7,6 @@
     color: #fff;
     height: 82px;
 }
-
-.main-tab{
-    /* padding-left: 51px; */
-}
 .tab{
     background-color:white;
     border-radius:2px;
@@ -101,4 +97,7 @@ td.email-cell {
 }
 .email-pager-perpage {
     float: right;
+}
+i.fa.fa-check-circle.greenbtn {
+    margin-right: 206px;
 }

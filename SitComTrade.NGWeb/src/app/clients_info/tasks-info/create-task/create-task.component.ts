@@ -43,44 +43,11 @@ export class CreateTaskComponent implements OnInit {
 });
  // code for receiving login details and bind to owner name at place of name
  this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
- console.log('LoginData', this.getLoginDetails);
  this.bindLoginData = this.getLoginDetails;
  
     this.getAllTask();
     this.taskType();
     this.taskStatus();
-  //   if(this.isstaticvalue === 'most') {
-  //     this.getStatus.forEach(element => {
-  //       if (element.Id === +this.taskInfoForm.value.status) {
-  //         this.taskInfoForm.value.statusName = element.Name;
-  //       }
-  //     });
-  //     this.getTasks.forEach(element => {
-  //       if (element.Id === +this.taskInfoForm.value.type) {
-  //         this.taskInfoForm.value.taskName = element.Name;
-  //       }
-  //     });
-  //     const obj = {
-  //       OwnerId: this.moreId,
-  //       TaskStatusId: this.taskInfoForm.value.status,
-  // TaskTypeId: this.taskInfoForm.value.type,
-  // NotiTrasportId: 1,
-  // TaskType: this.taskInfoForm.value.taskName,
-  // Description: this.taskInfoForm.value.description,
-  // TaskStatus: this.taskInfoForm.value.statusName,
-  // NotiTimeBefore: this.taskInfoForm.value.notitimebefore
-  //     };
-  //     this.taskInfoService.insertTask(obj).subscribe(res => {
-  //     this.userTasks = res;
-  //     // window.location.reload();
-  //     console.log('inserttasks', res);
-  //   });
-  //   } else {
-  //     this.getAllTask();
-  //   this.taskType();
-  //   this.taskStatus();
-  //   }
-    
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
@@ -123,7 +90,8 @@ TaskType: this.taskInfoForm.value.taskName,
 Description: this.taskInfoForm.value.description,
 TaskStatus: this.taskInfoForm.value.statusName,
 NotiTimeBefore: this.taskInfoForm.value.notitimebefore,
-TaskDate: this.taskInfoForm.value.taskdate
+TaskDate: Date(),
+// this.taskInfoForm.value.taskdate
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
