@@ -243,5 +243,12 @@ namespace SitComTech.API.Controllers
             var entities = EnumExtensions.GetList<RegistrationTypeEnum>(true);
             return JArray.Parse(JsonConvert.SerializeObject(entities));
         }
+
+        [HttpPost]
+        [Route("CreateEmail")]
+        public void CreateEmail(Email entity)
+        {
+            _emailService.CreateEmail(entity);
+        }
     }
 }
