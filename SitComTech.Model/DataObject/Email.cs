@@ -23,6 +23,8 @@ namespace SitComTech.Model.DataObject
         public string ErrorMessage { get; set; }
 
         public string Body { get; set; }
+        public string CC { get; set; }
+        public string AttachementFileName { get; set; }
         public virtual Client ClientTable { get; set; }
     }
 }

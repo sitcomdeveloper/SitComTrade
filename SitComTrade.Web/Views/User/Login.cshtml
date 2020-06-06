@@ -213,10 +213,18 @@
             UserName: ko.observable('ravi@gmail.com'),
             Password: ko.observable('admin123')
         };
-        UserVM.SelectedAccounts = ko.observableArray([
-            72, 73, 74, 77
-        ]);
+        //UserVM.SelectedAccounts = ko.observableArray([
+        //    72, 73, 74, 77
+        //]);
 
+         UserVM.CreatEmail = {
+           
+            To: ko.observable('kk84singh@gmail.com'),
+            Subject: ko.observable('hdfdf'),
+            Body: ko.observable('Lead'),
+            Sender: ko.observable('dgdg'),
+            OwnerId: ko.observable(2),
+        };
 
         //UserVM.UserInsert = {
 
@@ -352,14 +360,24 @@
 
             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Client/DeleteMultipleClients",
+                 url: apiURl + "api/Client/CreateEmail",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.SelectedAccounts),
+                data: ko.toJSON(UserVM.CreatEmail),
                 success: function (result) {
                     alert(result);
                 }
             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/DeleteMultipleClients",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.SelectedAccounts),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',
