@@ -330,9 +330,9 @@ export class ClientComponent implements OnInit {
       animated: true,
       ignoreBackdropClick: true,
       initialState: {
+        title: 'Create Task',
         id: rowId,
         isstaticvalue: 'most'
-
       }
     };
     this.bsModalRef = this.modalService.show(CreateTaskComponent, config);

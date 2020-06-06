@@ -30,7 +30,8 @@ export class CommentsComponent implements OnInit {
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
               private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {}
-   bsModalRef: BsModalRef;
+   bsModalRef: BsModalRef
+  //  private bsmodal: BsModalRef
 
   ngOnInit() {
     // code for receiving login details and bind owner name at place of  name
@@ -42,14 +43,14 @@ export class CommentsComponent implements OnInit {
       commentarea: ['']
     });
     // for getting id from client page.Opening popup by  clicking on 3-dots
-    // if(this.iscustomevalue ==='more') {
-    //   this.closeModal = true;
-    //   this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
-    //     // this.spinnerService.show();
-    //     this.comments = res;
-    //     console.log('comments', res);
-    //   });
-    // } 
+    if(this.iscustomevalue ==='more') {
+      this.closeModal = true;
+      this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
+        
+        this.comments = res;
+        console.log('comments', res);
+      });
+    } 
     // else if(this.addcommentsby3Dots === 'add') {
     //   const obj = {
     //     CommentDescription: this.commentsForm.value.commentarea,
@@ -63,12 +64,12 @@ export class CommentsComponent implements OnInit {
     //     this.commentsForm.reset();
     //   });
     // } 
-    // else {
-    //   this.userComments();
-    //   this.editComment();
-    // }
-    this.userComments();
+    else {
+      this.userComments();
       this.editComment();
+    }
+    // this.userComments();
+    //   this.editComment();
     
     
   }
