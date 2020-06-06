@@ -70,7 +70,6 @@ namespace SitComTech.Domain.Services
                         ResponseStatus = "Interested",
                         OwnerId = clientdata.OwnerId,
                     };
-                    entity.CreatedAt = DateTime.Now;
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
                     if (clientdata.ISendEmail == true)
@@ -413,10 +412,12 @@ namespace SitComTech.Domain.Services
     public class EmailService : Service<Email>, IEmailService
     {
         private IGenericRepository<Email> _repository;
-        public EmailService(IGenericRepository<Email> repository)
+        private IUnitOfWork _unitOfWork;
+        public EmailService(IGenericRepository<Email> repository, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
 
         }
 
@@ -428,6 +429,58 @@ namespace SitComTech.Domain.Services
         public List<Email> GetEmailByOwnerId(long ownerid)
         {
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+        }
+
+        public void CreateEmail(Email email)
+        {
+            try
+            {
+                Email entity = new Email
+                {
+                    Active = true,
+                    Deleted = false,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = 0,
+                    CreatedByName = "",
+                    OwnerId = email.OwnerId,
+                    To = email.To,
+                    CC = email.CC,
+                    Bcc = email.Bcc,
+                    Body = email.Body,
+                    Subject = email.Subject,
+                    SendDate = DateTime.Now,
+                    Sender = email.Sender,
+                    AttachementFileName = email.AttachementFileName,
+
+                };
+                _repository.Insert(entity);
+                _unitOfWork.SaveChanges();
+                SendCreateEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void SendCreateEmail(Email clientdata)
+        {
+            try
+            {
+                MailManager oMailManager = new MailManager();
+                oMailManager.Subject = clientdata.Subject;
+                oMailManager.Body = clientdata.Body;
+                oMailManager.IsBodyHtml = true;
+                if (clientdata !=null && clientdata.To !=string.Empty )
+                {
+                    oMailManager.To = clientdata.To;
+                }               
+                oMailManager.SendEmail();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
     public class ShortMessageService : Service<ShortMessage>, IShortMessageService
