@@ -200,6 +200,10 @@ namespace SitComTech.Domain.Services
         public User GetUserbyusername(string username)
         {
             return _repository.Queryable().Where(x => x.Email == username && x.Active == true && x.Deleted == false).FirstOrDefault();
-        }       
+        }
+        public User GetUserById(long id)
+        {
+            return _repository.Queryable().Where(x => x.Id == id && x.Active == true && x.Deleted == false).FirstOrDefault();
+        }
     }   
 }

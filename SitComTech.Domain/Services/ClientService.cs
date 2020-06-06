@@ -150,12 +150,31 @@ namespace SitComTech.Domain.Services
             _unitOfWork.SaveChanges();
         }
 
+        public bool DeleteMultipleClients(List<long> clientIds)
+        {
+            try
+            {
+                if (clientIds != null && clientIds.Count > 0)
+                {
 
+                    List<Client> Clients = base.Queryable().Where(x => x.Active && !x.Deleted && clientIds.Contains(x.Id)).ToList();
+                    foreach (var client in Clients)
+                    {
+                        DeleteClient(client);
+                    }                    
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
         public Client GetClientDetailById(long Id)
         {
             if ((long)Id == 0)
                 return null;
-            Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id);
+            Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id && x.Active && !x.Deleted);
             return Client;
         }      
 
