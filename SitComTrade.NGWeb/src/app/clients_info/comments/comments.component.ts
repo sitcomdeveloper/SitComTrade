@@ -26,20 +26,19 @@ export class CommentsComponent implements OnInit {
   bindLoginData: any;
   detail: number;
   addcommentsby3Dots: string;
-  bsModal: any;
+
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
               private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {}
    bsModalRef: BsModalRef
-  //  private bsmodal: BsModalRef
+ 
 
   ngOnInit() {
     // code for receiving login details and bind owner name at place of  name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     // comments code
-    this.commentsForm = this.fb.group({
+    this.commentsForm = this.fb.group({ 
       commentarea: ['']
     });
     // for getting id from client page.Opening popup by  clicking on 3-dots
@@ -127,7 +126,7 @@ openDltComment(userId) {
       this.userComments();
     });
   }
-  hideModal() {
-    this.bsModal.hide();
-  }
+  // hideModal() {
+  //   this.bsmodal.hide();
+  // }
 }
