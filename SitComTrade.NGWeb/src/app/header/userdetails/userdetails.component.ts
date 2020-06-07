@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SettingsService } from 'src/app/settings/settings.service';
+import { MustMatch } from 'src/app/common/validators/confirm-password.validator';
 
 @Component({
   selector: 'app-userdetails',
@@ -22,6 +23,7 @@ export class UserdetailsComponent implements OnInit {
   bindLoginData: any;
   wholeuserdetails: any;
   loginusrdtls: any;
+  submitted = false;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
@@ -31,23 +33,23 @@ export class UserdetailsComponent implements OnInit {
     
     this.newRegisterForm = this.fb.group({
       image: [''],
-      firstname: [''],
-      lastname: [''],
-      username: [''],
-      email: [''],
-      phone: [''],
+      firstname: ['',[Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastname: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]],
+      phone: ['', [Validators.required]],
       disabled: [''],
       desk: [''],
       roles: [''],
-      department: [''],
+      department: ['', [Validators.required]],
       shareddesks: [''],
-      timezone: [''],
-      culturecode: [''],
-      uiculturecode: [''],
-      startmodule: [''],
+      timezone: ['', [Validators.required]],
+      culturecode: ['', [Validators.required]],
+      uiculturecode: ['', [Validators.required]],
+      startmodule: ['', [Validators.required]],
       defaultsendersetting: [''],
       sharedsendersettings: [''],
-      password: [''],
+      password: ['', [ Validators.minLength(6)]],
       repeatpassword: [''],
 
       deskid: [''],
@@ -60,6 +62,8 @@ export class UserdetailsComponent implements OnInit {
       startmoduleid: [''],
       defaultsendersettingid: [''],
       sharedsendersettingsid: ['']
+    }, {
+      validator: MustMatch('password', 'repeatpassword')
     });
     this.getDepartments();
     this.getTimeZone();
@@ -68,8 +72,20 @@ export class UserdetailsComponent implements OnInit {
   }
   // get user details
   userDetails() {
-    this.settingsService.getUserDetails(this.bindLoginData.UserId).subscribe(usrdtls => {
+    this.settingsService.getUserDetails(this.bindLoginData.UserId).subscribe(usrdtls => { 
       this.loginusrdtls = usrdtls;
+      this.newRegisterForm.patchValue({
+        username: this.loginusrdtls.UserName,
+           firstname: this.loginusrdtls.FirstName,
+           lastname: this.loginusrdtls.LastName,
+           email: this.loginusrdtls.Email,
+           phone: this.loginusrdtls.Phone,
+           department: this.loginusrdtls.DepartmentName,
+           timezone: this.loginusrdtls.TimezoneName,
+           culturecode: this.loginusrdtls.CultureCode,
+           uiculturecode: this.loginusrdtls.UiCultureCode,
+           startmodule: this.loginusrdtls.StartModuleName   
+      });
       console.log('loginusrdtls',usrdtls);
     })
   }
@@ -105,6 +121,7 @@ export class UserdetailsComponent implements OnInit {
   // }
   // save details of user after patch
   saveeditinfo() {
+    if (this.newRegisterForm.valid) {
     const updt = {
       FirstName: this.newRegisterForm.value.firstname,
       LastName: this.newRegisterForm.value.lastname,
@@ -144,18 +161,29 @@ export class UserdetailsComponent implements OnInit {
     };
 this.settingsService.updateUser(updt).subscribe(updateusr => {
   this.savedtls = updateusr;
+  this.userDetails();
   this.clddata.emit(updateusr);
       if (updateusr === 'null') {
-        this.response = '';
-      } else {
         this.response = 'User is updated successfully!';
+      } else {
+        this.response = '';
       }
       // this.newRegisterForm.reset();
   console.log('savedtls',updateusr);
 })
+} else {
+  this.submitted = true;
+}
   }
   hideModal() {
     this.bsmodal.hide();
   }
-
+  get f() {
+    return this.newRegisterForm.controls;
+  }
+  password(formGroup: FormGroup) {
+    const { value: password } = formGroup.get('password');
+    const { value: repeatpassword } = formGroup.get('repeatpassword');
+    return password === repeatpassword ? null : { passwordNotMatch: true };
+  }
 }

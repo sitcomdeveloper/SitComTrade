@@ -33,3 +33,15 @@ i.fa.fa-eye {
 .collapse .collapse-control .close {
     display: block;
 }
+.message{
+    color: green;
+    text-align: center;
+    margin-left: 285px;
+    margin-bottom: 5px;
+}
+.modal .hightlited-area02 {
+    padding-left: 29px;
+    padding-right: 29px;
+    margin-left: -6px!important;
+    margin-right: -5px!important;
+}

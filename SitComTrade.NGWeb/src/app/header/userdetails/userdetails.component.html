@@ -9,23 +9,47 @@
        <div class="form-horizontal">
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="UserName"><span data-tooltip-el="">User Name</span></label></div>
-             <div class="col-md-9"><input class="form-control valid" name="UserName" formControlName="username" type="text" id="a98cd82f3-b82f-b534-0211-e9112239844c" aria-required="true" aria-invalid="false" value="{{loginusrdtls?.UserName}}"></div>
+             <div class="col-md-9"><input class="form-control valid" name="UserName" formControlName="username" type="text" id="a98cd82f3-b82f-b534-0211-e9112239844c" aria-required="true" aria-invalid="false" value="{{loginusrdtls?.UserName}}" [ngClass]="{ 'is-invalid': submitted && f.username.errors,'form-control':true}">
+               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required">User Name is required</div>
+                </div>
+            </div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="FirstName" formControlName="firstname" type="text" id="a19160dbe-ed22-9a7d-7c99-09cfa27cbb73" aria-required="true" value="{{loginusrdtls?.FirstName}}"></div>
+             <div class="col-md-9"><input class="form-control" name="FirstName" formControlName="firstname" type="text" id="a19160dbe-ed22-9a7d-7c99-09cfa27cbb73" aria-required="true" value="{{loginusrdtls?.FirstName}}" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+               <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                  <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                  <div *ngIf="f.firstname.errors.minlength">First Name must be at least 2 characters</div>
+                </div>
+            </div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="LastName" formControlName="lastname"  type="text" id="a8316f05e-d4c9-f68e-3142-0a2e505f1839" aria-required="true" value="{{loginusrdtls?.LastName}}"></div>
+             <div class="col-md-9"><input class="form-control" name="LastName" formControlName="lastname"  type="text" id="a8316f05e-d4c9-f68e-3142-0a2e505f1839" aria-required="true" value="{{loginusrdtls?.LastName}}" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
+               <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                  <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                  <div *ngIf="f.lastname.errors.minlength">Last Name must be at least 3 characters</div>
+                </div>
+            </div>
+            </div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="Email" formControlName="email" type="text" id="a5bd514f2-ee89-e777-49e6-773b1733bea7" aria-required="true" value="{{loginusrdtls?.Email}}"></div>
+             <div class="col-md-9"><input class="form-control" name="Email" formControlName="email" type="text" id="a5bd514f2-ee89-e777-49e6-773b1733bea7" aria-required="true" value="{{loginusrdtls?.Email}}" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="Phone" formControlName="phone" type="text" id="a145e9026-184f-f4e2-5f03-637a9abef3d8" aria-required="true" value="{{loginusrdtls?.Phone}}"></div>
+             <div class="col-md-9"><input class="form-control" name="Phone" formControlName="phone" type="text" id="a145e9026-184f-f4e2-5f03-637a9abef3d8" aria-required="true" value="{{loginusrdtls?.Phone}}" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}">
+               <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                  <div *ngIf="f.phone.errors.required">Phone is required</div>
+                </div>
+            </div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Department"><span data-tooltip-el="">Department</span></label></div>
@@ -33,10 +57,13 @@
                 <div class="">
                    
                    
-                   <select class="form-control" name="Department" formControlName="department" data-container="body" data-live-search="true" id="aead80e78-bdb0-afc9-ce86-e3fef3c63f53" tabindex="-98">
+                   <select class="form-control" name="Department" formControlName="department" data-container="body" data-live-search="true" id="aead80e78-bdb0-afc9-ce86-e3fef3c63f53" tabindex="-98"  [ngClass]="{ 'is-invalid': submitted && f.department.errors,'form-control':true}">
                      <option value="">Select...</option>
                      <option value="0" value="{{getdepartments?.Name}}" *ngFor="let getdepartments of Departments">{{getdepartments?.Name}}</option>
                    </select>
+                   <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
+                     <div *ngIf="f.department.errors.required">Department is required</div>
+                   </div>
                 </div>
              </div>
           </div>
@@ -45,11 +72,14 @@
              <div class="col-md-9">
                 <div class="">
                   
-                   <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="ad802513d-a9be-f3d6-74bf-f1603bd8c593" tabindex="-98" aria-required="true" formControlName="timezone">
+                   <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" id="ad802513d-a9be-f3d6-74bf-f1603bd8c593" tabindex="-98" aria-required="true" formControlName="timezone" [ngClass]="{ 'is-invalid': submitted && f.timezone.errors,'form-control':true}">
                      <option value="">Select...</option>
                      <option value="{{gettimezones?.DisplayName}}"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
                     
                    </select>
+                   <div *ngIf="submitted && f.timezone.errors" class="invalid-feedback">
+                     <div *ngIf="f.timezone.errors.required">Time Zone is required</div>
+                   </div>
                 </div>
              </div>
           </div>
@@ -58,10 +88,13 @@
              <div class="col-md-9">
                 <div class="">
                   
-                   <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" id="a7c3c0531-4153-0a22-94b0-81d87ee36e47" tabindex="-98" aria-required="true" formControlName="culturecode">
+                   <select class="form-control" name="CultureCode" data-container="body" data-live-search="true" id="a7c3c0531-4153-0a22-94b0-81d87ee36e47" tabindex="-98" aria-required="true" formControlName="culturecode" [ngClass]="{ 'is-invalid': submitted && f.culturecode.errors,'form-control':true}">
                      <option value="">Select...</option>
                      <option value="" value="{{getculturecode?.CultureCodeName}}" *ngFor="let getculturecode of CultureCode">{{getculturecode?.CultureCodeName}}</option>
                    </select>
+                   <div *ngIf="submitted && f.culturecode.errors" class="invalid-feedback">
+                     <div *ngIf="f.culturecode.errors.required">Culture Code is required</div>
+                   </div>
                 </div>
              </div>
           </div>
@@ -70,10 +103,13 @@
              <div class="col-md-9">
                 <div class="">
                    
-                   <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="a86cb8d01-838b-c64f-15c2-9f975648ed46" tabindex="-98" aria-required="true" formControlName="uiculturecode">
+                   <select class="form-control" name="UiCultureCode" data-container="body" data-live-search="true" id="a86cb8d01-838b-c64f-15c2-9f975648ed46" tabindex="-98" aria-required="true" formControlName="uiculturecode" [ngClass]="{ 'is-invalid': submitted && f.uiculturecode.errors,'form-control':true}">
                      <option value="">Select...</option>
                               <option value="{{getculturecode?.UICultureCodeName}}"  *ngFor="let getculturecode of CultureCode">{{getculturecode?.UICultureCodeName}}</option>
                    </select>
+                   <div *ngIf="submitted && f.uiculturecode.errors" class="invalid-feedback">
+                     <div *ngIf="f.uiculturecode.errors.required">UICultureCode is required</div>
+                   </div>
                 </div>
              </div>
           </div>
@@ -82,7 +118,7 @@
             <div class="col-md-9">
                <div class="">
                  
-                  <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a2a2a0ec6-84cd-db3c-1dc4-96d3cbf6baeb" tabindex="-98" formControlName="startmodule">
+                  <select class="form-control" name="StartModuleId" data-container="body" data-live-search="true" id="a2a2a0ec6-84cd-db3c-1dc4-96d3cbf6baeb" tabindex="-98" formControlName="startmodule" [ngClass]="{ 'is-invalid': submitted && f.startmodule.errors,'form-control':true}">
                      <option value="">Select...</option>
                      <optgroup label="Clients">
                         <option value="Clients">Clients</option>
@@ -129,7 +165,7 @@
                             <div class="col-md-4"><label class="valign-label" for="OldPassword"><span data-tooltip-el="">Old Password</span></label></div>
                             <div class="col-md-8">
                                <div class="input-control">
-                                  <input class="form-control valid" name="OldPassword" type="password" id="aa54aec66-84ac-e734-54cc-0a6eb8e84b22" aria-required="true" aria-invalid="false" value="{{loginusrdtls?.Password}}">
+                                  <input class="form-control valid" name="OldPassword" type="password"  aria-required="true" aria-invalid="false" id="pass_log_id" value="{{loginusrdtls?.Password}}">
                                   <a href="javascript:void(0);" class="input-button show-password">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                   </a>
@@ -140,10 +176,16 @@
                             <div class="col-md-4"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
                             <div class="col-md-8">
                                <div class="input-control">
-                                  <input class="form-control" name="Password" type="password" id="a5ca18e8d-c70c-28df-6e6b-8bd896528170" aria-required="true" formControlName="password">
-                                  <a href="javascript:void(0);" class="input-button show-password">
+                                  <input class="form-control" name="Password" type="password"  id="pass_log_id1" aria-required="true" formControlName="password" pattern="^[A-Za-z0-9]*$"
+                                  [ngClass]="{ 'is-invalid': submitted && f.password.errors,'form-control':true }">
+                                  <a href="javascript:void(0);" class="input-button show-password1">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                   </a>
+                                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    
+                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                    <div *ngIf="f.password.errors.pattern">Password should not contain special characters</div>
+                                  </div>
                                </div>
                             </div>
                          </div>
@@ -151,10 +193,15 @@
                             <div class="col-md-4"><label class="valign-label" for="RepeatPassword"><span data-tooltip-el="">Repeat Password</span></label></div>
                             <div class="col-md-8">
                                <div class="input-control">
-                                  <input class="form-control" name="RepeatPassword" type="password" id="a229b919e-cd04-1712-0494-2b1273372240">
-                                  <a href="javascript:void(0);" class="input-button show-password">
+                                  <input class="form-control" name="RepeatPassword" type="password"  id="pass_log_id2" formControlName="repeatpassword" pattern="^[A-Za-z0-9]*$"
+                                  [ngClass]="{ 'is-invalid': submitted && f.repeatpassword.errors,'form-control':true }">
+                                  <a href="javascript:void(0);" class="input-button show-password2">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                   </a>
+                                  <div *ngIf="submitted && f.repeatpassword.errors" class="invalid-feedback">
+                                   
+                                    <div *ngIf="f.repeatpassword.errors.mustMatch">Passwords must match</div>
+                                  </div>
                                </div>
                             </div>
                          </div>
@@ -162,8 +209,9 @@
                    </div>
                 </div>
              </div>
-          </div>  
+          <!-- </div>   -->
        </div>
+       <div class="message">{{response}}</div>
        <div _ngcontent-npk-c14="" class="col-md-12 padd0"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
           <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="saveeditinfo()">Save</a>
          <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div></div></div></div>

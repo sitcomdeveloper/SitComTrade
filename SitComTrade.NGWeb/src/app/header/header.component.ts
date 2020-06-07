@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   filled: any;
+  GetUser: any;
  
   constructor(private modalService: BsModalService, private settingsService:SettingsService) { }
   bsModalRef: BsModalRef;
@@ -22,13 +23,19 @@ export class HeaderComponent implements OnInit {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
+
+    this.getAllUsers();
   }
   logout() {
     // localStorage.removeItem('uid');
     window.sessionStorage.clear();
     this.router.navigate(['login']);
   }
-
+  getAllUsers() {
+    this.settingsService.getAllCrmUsers(this.bindLoginData.UserId).subscribe(getuser => {
+      this.GetUser = getuser.reverse();
+    })
+  }
   // edit login user
   editLoginUser(whleusrdtls) {
     const initialState = {
@@ -37,10 +44,9 @@ export class HeaderComponent implements OnInit {
     };
     this.bsModalRef = this.modalService.show(UserdetailsComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal650', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.userDetails();
-
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.getAllUsers();
+    });
   }
 
 }

@@ -126,3 +126,6 @@ td.text-ellipsis {
     font: 15px/1.53845 Poppins,Arial,sans-serif;
     text-transform: capitalize;
 }
+h5.mb-0 {
+  padding-top: 22px;
+}

@@ -290,10 +290,3 @@ SharedSenderId: '',
     return password === repeatpassword ? null : { passwordNotMatch: true };
   }
 }
-
-
-// LockoutEnabled: this.newRegisterForm.value.,
-      // CampaignCode: this.newRegisterForm.value.,
-      // AffiliateFieldId: this.newRegisterForm.value.,
-      // AffiliateFieldName: this.newRegisterForm.value.,
-       // IsAffiliateUser: this.newRegisterForm.value.,
