@@ -1472,9 +1472,9 @@
           </td>
           <td  (click)="userClick(item.Id)">
             <div class="">
-              <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="">
+              <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="" tooltip="{{item.ItemId}}">
                 <a href="javascript:void(0)">
-                  <span>{{item.Id}}</span>
+                  <span>{{item.ItemId}}</span>
                 </a>
               </div>
               <!-- <div class="jsgrid-cell-content1" ngstyle=" display:iseditable: none,block">
@@ -3078,9 +3078,9 @@
 
           <td class="" (click)="userClick(actinfo.Id)">
             <div class="">
-              <div class="text-ellipsis" data-original-title="" title="">
+              <div class="text-ellipsis" data-original-title="" title="" tooltip="{{actinfo.ItemId}}">
                 <a href="javascript:void(0)">
-                  <span>{{actinfo.Id}}</span></a></div>
+                  <span>{{actinfo.ItemId}}</span></a></div>
             </div>
           </td>
           <td class="">
@@ -4459,9 +4459,9 @@
 
           <td class="" (click)="userClick(leadinfo.Id)">
             <div class="">
-              <div class="text-ellipsis" data-toggle="tooltip" title="">
+              <div class="text-ellipsis" data-toggle="tooltip" title="" tooltip="{{leadinfo.ItemId}}">
                 <a href="javascript:void(0)">
-                  <span>{{leadinfo.Id}}</span></a></div>
+                  <span>{{leadinfo.ItemId}}</span></a></div>
             </div>
           </td>
           <td class="">

@@ -21,12 +21,12 @@ export class UserdetailsComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   wholeuserdetails: any;
+  loginusrdtls: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('LoginData', this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     
     this.newRegisterForm = this.fb.group({
@@ -64,6 +64,14 @@ export class UserdetailsComponent implements OnInit {
     this.getDepartments();
     this.getTimeZone();
     this.getCultureCodes();
+    this.userDetails();
+  }
+  // get user details
+  userDetails() {
+    this.settingsService.getUserDetails(this.bindLoginData.UserId).subscribe(usrdtls => {
+      this.loginusrdtls = usrdtls;
+      console.log('loginusrdtls',usrdtls);
+    })
   }
   getDepartments() {
     this.settingsService.getAllDepartments().subscribe(departments => {
@@ -81,20 +89,20 @@ export class UserdetailsComponent implements OnInit {
     });
   }
   // patch value
-  patchCrmUsers() {
-    this.newRegisterForm.patchValue({
-      firstname:this.wholeuserdetails.FirstName,
-      lastname:this.wholeuserdetails.LastName,
-      username:this.wholeuserdetails.UserName,
-      email:this.wholeuserdetails.Email,
-      phone:this.wholeuserdetails.Phone,
-      department:this.wholeuserdetails.DepartmentName,
-      timezone:this.wholeuserdetails.TimezoneName,
-      culturecode:this.wholeuserdetails.CultureCode,
-      uiculturecode:this.wholeuserdetails.UiCultureCode,
-      startmodule:this.wholeuserdetails.StartModuleName,
-    })
-  }
+  // patchCrmUsers() {
+  //   this.newRegisterForm.patchValue({
+  //     firstname:this.wholeuserdetails.FirstName,
+  //     lastname:this.wholeuserdetails.LastName,
+  //     username:this.wholeuserdetails.UserName,
+  //     email:this.wholeuserdetails.Email,
+  //     phone:this.wholeuserdetails.Phone,
+  //     department:this.wholeuserdetails.DepartmentName,
+  //     timezone:this.wholeuserdetails.TimezoneName,
+  //     culturecode:this.wholeuserdetails.CultureCode,
+  //     uiculturecode:this.wholeuserdetails.UiCultureCode,
+  //     startmodule:this.wholeuserdetails.StartModuleName,
+  //   })
+  // }
   // save details of user after patch
   saveeditinfo() {
     const updt = {
@@ -104,34 +112,34 @@ export class UserdetailsComponent implements OnInit {
       Phone: this.newRegisterForm.value.phone,
       Password: this.newRegisterForm.value.password,
       OwnerId: this.bindLoginData.UserId,
-      Id: this.wholeuserdetails.Id,
+      Id: this.loginusrdtls.Id,
       DeskId: '',
-      DeskName: this.newRegisterForm.value.desk,
-      IsDisabled: this.newRegisterForm.value.disabled,
+      DeskName: '',
+      IsDisabled: '',
       UserName: this.newRegisterForm.value.username,
-      IsAffiliateUser: 'true',
-      ImageName: this.newRegisterForm.value.image,
-      LockoutEnabled: 'true',
-      CampaignCode: 'gh',
+      IsAffiliateUser: '',
+      ImageName: '',
+      LockoutEnabled: '',
+      CampaignCode: '',
       AffiliateFieldId: '',
-      AffiliateFieldName: 'gh',
+      AffiliateFieldName: '',
       RoleId: '',
-      RoleName: this.newRegisterForm.value.roles,
+      RoleName: '',
       DepartmentId: '',
       DepartmentName: this.newRegisterForm.value.department,
       SharedDeskId: '',
-      SharedDeskName: this.newRegisterForm.value.shareddesks,
+      SharedDeskName: '',
       TimezoneId: '',
       TimezoneName: this.newRegisterForm.value.timezone,
       CultureCode: this.newRegisterForm.value.culturecode,
       CultureCodeId: '',
       UiCultureCode: this.newRegisterForm.value.uiculturecode,
       UiCultureCodeId: '',
-      StartModuleId: '5',
-      StartModuleName: 'clients',
-      DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+      StartModuleId: '',
+      StartModuleName: this.newRegisterForm.value.startmodule,
+      DefaultSenderName: '',
       DefaultSenderId: '',
-      SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
+      SharedSenderName: '',
       SharedSenderId: '',
     };
 this.settingsService.updateUser(updt).subscribe(updateusr => {
@@ -142,7 +150,7 @@ this.settingsService.updateUser(updt).subscribe(updateusr => {
       } else {
         this.response = 'User is updated successfully!';
       }
-      this.newRegisterForm.reset();
+      // this.newRegisterForm.reset();
   console.log('savedtls',updateusr);
 })
   }

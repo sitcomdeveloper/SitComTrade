@@ -9,23 +9,23 @@
        <div class="form-horizontal">
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="UserName"><span data-tooltip-el="">User Name</span></label></div>
-             <div class="col-md-9"><input class="form-control valid" name="UserName" formControlName="username" type="text" id="a98cd82f3-b82f-b534-0211-e9112239844c" aria-required="true" aria-invalid="false"></div>
+             <div class="col-md-9"><input class="form-control valid" name="UserName" formControlName="username" type="text" id="a98cd82f3-b82f-b534-0211-e9112239844c" aria-required="true" aria-invalid="false" value="{{loginusrdtls?.UserName}}"></div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="FirstName" formControlName="firstname" type="text" id="a19160dbe-ed22-9a7d-7c99-09cfa27cbb73" aria-required="true"></div>
+             <div class="col-md-9"><input class="form-control" name="FirstName" formControlName="firstname" type="text" id="a19160dbe-ed22-9a7d-7c99-09cfa27cbb73" aria-required="true" value="{{loginusrdtls?.FirstName}}"></div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="LastName"><span data-tooltip-el="">Last Name</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="LastName" formControlName="lastname"  type="text" id="a8316f05e-d4c9-f68e-3142-0a2e505f1839" aria-required="true"></div>
+             <div class="col-md-9"><input class="form-control" name="LastName" formControlName="lastname"  type="text" id="a8316f05e-d4c9-f68e-3142-0a2e505f1839" aria-required="true" value="{{loginusrdtls?.LastName}}"></div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Email"><span data-tooltip-el="">Email</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="Email" formControlName="email" type="text" id="a5bd514f2-ee89-e777-49e6-773b1733bea7" aria-required="true"></div>
+             <div class="col-md-9"><input class="form-control" name="Email" formControlName="email" type="text" id="a5bd514f2-ee89-e777-49e6-773b1733bea7" aria-required="true" value="{{loginusrdtls?.Email}}"></div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="Phone" formControlName="phone" type="text" id="a145e9026-184f-f4e2-5f03-637a9abef3d8" aria-required="true"></div>
+             <div class="col-md-9"><input class="form-control" name="Phone" formControlName="phone" type="text" id="a145e9026-184f-f4e2-5f03-637a9abef3d8" aria-required="true" value="{{loginusrdtls?.Phone}}"></div>
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Department"><span data-tooltip-el="">Department</span></label></div>
@@ -129,7 +129,7 @@
                             <div class="col-md-4"><label class="valign-label" for="OldPassword"><span data-tooltip-el="">Old Password</span></label></div>
                             <div class="col-md-8">
                                <div class="input-control">
-                                  <input class="form-control valid" name="OldPassword" type="password" id="aa54aec66-84ac-e734-54cc-0a6eb8e84b22" aria-required="true" aria-invalid="false">
+                                  <input class="form-control valid" name="OldPassword" type="password" id="aa54aec66-84ac-e734-54cc-0a6eb8e84b22" aria-required="true" aria-invalid="false" value="{{loginusrdtls?.Password}}">
                                   <a href="javascript:void(0);" class="input-button show-password">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                   </a>
@@ -140,7 +140,7 @@
                             <div class="col-md-4"><label class="valign-label" for="Password"><span data-tooltip-el="">Password</span></label></div>
                             <div class="col-md-8">
                                <div class="input-control">
-                                  <input class="form-control" name="Password" type="password" id="a5ca18e8d-c70c-28df-6e6b-8bd896528170" aria-required="true">
+                                  <input class="form-control" name="Password" type="password" id="a5ca18e8d-c70c-28df-6e6b-8bd896528170" aria-required="true" formControlName="password">
                                   <a href="javascript:void(0);" class="input-button show-password">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                   </a>
@@ -165,7 +165,7 @@
           </div>  
        </div>
        <div _ngcontent-npk-c14="" class="col-md-12 padd0"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
-          <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
+          <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="saveeditinfo()">Save</a>
          <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div></div></div></div>
     </form>
  </div>

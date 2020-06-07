@@ -68,4 +68,8 @@ updateUser(updt: any): Observable<any> {
 registeraffilateuser(rgstrafflteuser: any): Observable<any> {
   return this.http.post(API_URL + 'User/RegisterUser', rgstrafflteuser);
 }
+// usersettings.get login user details
+getUserDetails(gtusrdtls: any): Observable<any> {
+  return this.http.post(API_URL + 'User/GetUserById/' + gtusrdtls, {});
+}
 }
