@@ -49,6 +49,11 @@ td.text-ellipsis {
 .table td, .table th {
    
     vertical-align: middle;
+    border:none!important;
+}
+.form-control, .form-control:focus, .nav-tabs {
+  
+  width: 198px;
 }
 /* Hide default HTML checkbox */
 .switch input {display:none;}

@@ -431,33 +431,33 @@
       <table class="table">
         <thead>
           <tr>
-            <th>First Name</th>
+            <th class="tabletxt">First Name</th>
             <td><input type="text" class="form-control" formControlName="firstName"></td>
-            <th>Last Name</th>
+            <th class="tabletxt">Last Name</th>
             <td><input type="text"  class="form-control" formControlName="lastName"></td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>Email</th>
+            <th class="tabletxt">Email</th>
             <td><input type="text" class="form-control" formControlName="email"></td>
-            <th>Phone</th>
+            <th class="tabletxt">Phone</th>
             <td><input type="text" class="form-control" formControlName="phone" appPhoneMask></td>
           </tr>
           <tr>
-            <th>Mobile</th>
+            <th class="tabletxt">Mobile</th>
             <td><input type="text" class="form-control" formControlName="mobile"></td>
-            <th>Second Email</th>
+            <th class="tabletxt">Second Email</th>
             <td><input type="text" class="form-control" formControlName="secondemail"></td>
           </tr>
           <tr>
-            <th>Item ID</th>
+            <th class="tabletxt">Item ID</th>
             <td><input type="text" class="form-control disabledd" formControlName="itemid" onmousedown="return false" onselectstart="return false"></td>
-            <th>Owner</th>
+            <th class="tabletxt">Owner</th>
             <td><input type="text" class="form-control" formControlName="owner"></td>
           </tr>
           <tr>
-            <th>Status</th>
+            <th class="tabletxt">Status</th>
             <td>
               <!-- <input type="text"  class="form-control"formControlName="status"> -->
               <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
@@ -465,23 +465,23 @@
                 <option value="0" value="{{status?.Id}}" *ngFor="let status of Status">{{status?.Name}}</option>
              </select>
             </td>
-            <th>Created Date</th>
+            <th class="tabletxt">Created Date</th>
             <td><input type="text" class="form-control disabledd" formControlName="createddate" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>LastCommentDate</th>
+            <th class="tabletxt">LastCommentDate</th>
             <td><input type="text" class="form-control disabledd" formControlName="lastcommentdate" onmousedown="return false" onselectstart="return false"></td>
-            <th>Modified Date</th>
+            <th class="tabletxt">Modified Date</th>
             <td><input type="text"  class="form-control disabledd" formControlName="modifieddate" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>Convention Owner</th>
+            <th class="tabletxt">Convention Owner</th>
             <td><input type="text" class="form-control" formControlName="conventionowner"></td>
-            <th>Retention Owner</th>
+            <th class="tabletxt">Retention Owner</th>
             <td><input type="text"  class="form-control" formControlName="retentionowner"></td>
           </tr>
           <tr>
-            <th>Citizenship</th>
+            <th class="tabletxt">Citizenship</th>
             <td>
               <!-- <input type="text" formControlName="citizenship"> -->
               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
@@ -491,76 +491,84 @@
              {{country.Name}}</option>
             </select>
             </td>
-            <th>Date of Birth</th>
+            <th class="tabletxt">Date of Birth</th>
             <td><input type="text" class="form-control" formControlName="dob"></td>
           </tr>
           <tr>
-            <th>FTD</th>
+            <th class="tabletxt">FTD</th>
             <td>
               <!-- <input type="text" formControlName="ftd"> -->
-              <label class="switch " >
+              <!-- <label class="switch " >
                 <input type="checkbox" formControlName="ftd" class="primary " disabled>
                 <span class="slider round disabledd" name="Ftd" ></span>
-              </label>
+              </label> -->
+              <div _ngcontent-vpp-c22="" class="checkbox-inline">
+                <div _ngcontent-vpp-c22="" class="switch_box box_1">
+                  <label _ngcontent-vpp-c22="" class="switchboxtext" disabledd>No</label>
+                  <input _ngcontent-vpp-c22="" class="switch_1" type="checkbox" formControlName="ftd" disabled>
+                  <label _ngcontent-vpp-c22="" class="switchboxtext" disabledd>Yes</label></div></div>
             </td>
-            <th>FTD Date</th>
+            <th class="tabletxt">FTD Date</th>
             <td><input type="text" class="form-control disabledd" formControlName="ftddate" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>Enabled</th>
+            <th class="tabletxt">Enabled</th>
             <td>
               <!-- <input type="text" formControlName="enabled"> -->
-              <label class="switch " >
+              <!-- <label class="switch " >
                 
                 <input type="checkbox" formControlName="enabled" class="primary">
                 
                 <span class="slider round" name="Ftd"></span>
-              </label>
+              </label> -->
+              <div _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-vpp-c22="" class="switchboxtext">No</label><input _ngcontent-vpp-c22="" class="switch_1" type="checkbox"><label _ngcontent-vpp-c22="" class="switchboxtext">Yes</label></div></div>
             </td>
-            <th>ClientTime</th>
+            <th class="tabletxt">ClientTime</th>
             <td><input type="text" class="form-control disabledd" formControlName="clienttime" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>Last Login Date</th>
+            <th class="tabletxt">Last Login Date</th>
             <td><input type="text" class="form-control disabledd" formControlName="lastlogindate" onmousedown="return false" onselectstart="return false"></td>
-            <th>Desk</th>
+            <th class="tabletxt">Desk</th>
             <td><input type="text" class="form-control disabledd" formControlName="desk" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>HasTasks</th>
+            <th class="tabletxt">HasTasks</th>
             <td><input type="text" class="form-control disabledd" formControlName="hastasks" onmousedown="return false" onselectstart="return false"></td>
-            <th>Task Created Date</th>
+            <th class="tabletxt">Task Created Date</th>
             <td><input type="text" class="form-control disabledd" formControlName="taskcreateddate" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>TaskDate</th>
+            <th class="tabletxt">TaskDate</th>
             <td><input type="text" class="form-control disabledd" formControlName="taskdate" onmousedown="return false" onselectstart="return false"></td>
-            <th>AssignedDate</th>
+            <th class="tabletxt">AssignedDate</th>
             <td><input type="text" class="form-control" formControlName="assigneddate"></td>
           </tr>
           <tr>
-            <th>HasNotCompletedTasks</th>
+            <th class="tabletxt">HasNotCompletedTasks</th>
             <td><input type="text" class="form-control disabledd" formControlName="hasnotcompletedtasks" onmousedown="return false" onselectstart="return false"></td>
-            <th>TotalDeposits</th>
+            <th class="tabletxt">TotalDeposits</th>
             <td><input type="text" class="form-control disabledd" formControlName="totaldeposits" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>Ftd Amount</th>
-            <td><input type="text" class="form-control disabledd" formControlName="ftdamount" onmousedown="return false" onselectstart="return false"></td>
-            <th>Total Withdrawals</th>
+            <th class="tabletxt">Ftd Amount</th>
+            <td>
+              <input type="text" class="form-control disabledd" formControlName="ftdamount" onmousedown="return false" onselectstart="return false">
+            </td>
+            <th class="tabletxt">Total Withdrawals</th>
             <td><input type="text" class="form-control disabledd" formControlName="totalwithdrawals" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>NetDeposits</th>
+            <th class="tabletxt">NetDeposits</th>
             <td><input type="text" class="form-control disabledd" formControlName="netdeposits" onmousedown="return false" onselectstart="return false"></td>
-            <th>Type</th>
+            <th class="tabletxt">Type</th>
            
             <td><input type="text"  class="form-control disabledd" formControlName="type" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
-            <th>FirstRegistrationDate</th>
+            <th class="tabletxt">FirstRegistrationDate</th>
             <td><input type="text" class="form-control disabledd" formControlName="firstregistrationdate" onmousedown="return false" onselectstart="return false"></td>
-            <th>RegistrationType</th>
+            <th class="tabletxt">RegistrationType</th>
             <td>
               <!-- <input type="text" formControlName="registrationtype"> -->
               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
@@ -571,9 +579,9 @@
                 </select></td>
           </tr>
           <tr>
-            <th>LastTaskDaysPast</th>
+            <th class="tabletxt">LastTaskDaysPast</th>
             <td><input type="text" class="form-control disabledd" formControlName="lasttaskdayspast" onmousedown="return false" onselectstart="return false"></td>
-            <th>DaysAgoClientCreated
+            <th class="tabletxt">DaysAgoClientCreated
             </th>
             <td><input type="text" class="form-control disabledd" formControlName="daysagoclientcreated" onmousedown="return false" onselectstart="return false"></td>
           </tr>

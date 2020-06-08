@@ -22,6 +22,10 @@ form {
 .table td, .table th {
    
     vertical-align: middle;
+    border:none!important;
+}
+h5.mb-0{
+  padding-top: 22px;
 }
 .value-edit1
 {
@@ -125,4 +129,8 @@ input:checked + .slider:before {
 td.text-ellipsis {
     font: 15px/1.53845 Poppins,Arial,sans-serif;
     text-transform: capitalize;
+}
+.table tr {
+  
+  border-top: 1px solid #dee2e6;
 }
