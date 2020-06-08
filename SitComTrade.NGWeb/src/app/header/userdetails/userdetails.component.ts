@@ -163,12 +163,11 @@ this.settingsService.updateUser(updt).subscribe(updateusr => {
   this.savedtls = updateusr;
   this.userDetails();
   this.clddata.emit(updateusr);
-      if (updateusr === 'null') {
+      if (updateusr === null) {
         this.response = 'User is updated successfully!';
       } else {
         this.response = '';
       }
-      // this.newRegisterForm.reset();
   console.log('savedtls',updateusr);
 })
 } else {

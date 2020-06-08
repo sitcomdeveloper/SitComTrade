@@ -36,12 +36,10 @@ i.fa.fa-eye {
 .message{
     color: green;
     text-align: center;
-    margin-left: 285px;
+    margin-left: -6px;
     margin-bottom: 5px;
 }
-.modal .hightlited-area02 {
-    padding-left: 29px;
-    padding-right: 29px;
-    margin-left: -6px!important;
-    margin-right: -5px!important;
+.hightlited-area02.hightlited02 {
+    margin-left: -5px;
+    margin-right: -5px;
 }

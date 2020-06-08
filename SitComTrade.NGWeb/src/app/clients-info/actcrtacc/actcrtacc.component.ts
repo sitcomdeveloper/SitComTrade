@@ -107,7 +107,6 @@ export class ActcrtaccComponent implements OnInit {
       // Body: 'hello',
       // Sender: 'kk84singh@gmail.com',
       // OwnerId: 1,
-
     }
 this._generalinfoservice.sendmail(email).subscribe(getmail => {
   this.sentmails = getmail;
@@ -118,7 +117,7 @@ this._generalinfoservice.sendmail(email).subscribe(getmail => {
         this.response = '';
       }
       this.actionsForm.reset();
-  console.log('sentmails',getmail);
+  // console.log('sentmails',getmail);
 })
   }
 }

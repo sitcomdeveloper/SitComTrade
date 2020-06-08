@@ -61,6 +61,6 @@ tr.email-filter-row {
 .message{
     color: green;
     text-align: center;
-    margin-left: 285px;
+    margin-left: -12px;
     margin-bottom: 5px;
 }
