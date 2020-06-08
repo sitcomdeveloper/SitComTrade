@@ -109,10 +109,12 @@ export class ClientsInfoComponent implements OnInit {
     //   this.getAllTask();
     // });
   }
-  sendemail() {
+  sendemail(Ide) {
     const initialState = {
       title: 'SEND EMAIL',
-      sendemail: 'sendemail'
+      sendemail: 'sendemail',
+      // get Id for showing email on popup
+      detailss: Ide
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));

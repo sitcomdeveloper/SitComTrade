@@ -3,6 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-actcrtacc',
@@ -25,9 +26,19 @@ export class ActcrtaccComponent implements OnInit {
   title: any;
   userGenralinfo: any;
   detailss: any;
-  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute) { }
+  actionsForm: FormGroup;
+  getLoginDetails: any;
+  bindLoginData: any;
+  sentmails: any;
+  response: string;
+  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    console.log('lndtls',this.getLoginDetails);
+    this.bindLoginData = this.getLoginDetails;
+    
     if (this.createaccount === 'createaccount') {
       this.crtacct = true;
     } else {
@@ -35,6 +46,15 @@ export class ActcrtaccComponent implements OnInit {
     }
     if (this.sendemail === 'sendemail') {
       this.sndeml = true;
+      // API of general section use for showing email on actions 'sendemail' popup
+     this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
+      this.userGenralinfo = res;
+      this.actionsForm.patchValue({
+       to: this.userGenralinfo.Email,
+      //  settings: this.bindLoginData.userName
+      })
+      console.log('generalinfop', res)
+    });
     } else {
       this.sndeml = false;
     }
@@ -43,6 +63,10 @@ export class ActcrtaccComponent implements OnInit {
      // API of general section use for showing phone no. on actions 'sendsms' popup
      this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
        this.userGenralinfo = res;
+       this.actionsForm.patchValue({
+        to: this.userGenralinfo.Phone,
+       
+       })
        console.log('generalinfop', res)
      });
     } else {
@@ -53,6 +77,12 @@ export class ActcrtaccComponent implements OnInit {
     } else {
       this.vwhistory = false;
     }
+    this.actionsForm = this.fb.group({
+      settings: [''],
+      to: [''],
+      subject: [''],
+      body: ['']
+    })
     this.getGroups();
   }
   hideModal() {
@@ -64,4 +94,31 @@ export class ActcrtaccComponent implements OnInit {
       this.Group = result.reverse();
     });
    }
+  //  sendemail
+  sendtheemail() {
+    const email = {
+      To: this.actionsForm.value.to,
+      Subject: this.actionsForm.value.subject,
+      Body: this.actionsForm.value.body,
+      Sender: this.actionsForm.value.settings,
+      OwnerId: this.bindLoginData.UserId,
+      // To: 'sitcomdeveloper43@gmail.com',
+      // Subject: 'test',
+      // Body: 'hello',
+      // Sender: 'kk84singh@gmail.com',
+      // OwnerId: 1,
+
+    }
+this._generalinfoservice.sendmail(email).subscribe(getmail => {
+  this.sentmails = getmail;
+  this.clddata.emit(getmail);
+      if (getmail === null) {
+        this.response = 'Mail is sent successfully!';
+      } else {
+        this.response = '';
+      }
+      this.actionsForm.reset();
+  console.log('sentmails',getmail);
+})
+  }
 }

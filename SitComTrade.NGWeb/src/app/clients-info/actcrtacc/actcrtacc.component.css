@@ -58,3 +58,9 @@ tr.email-filter-row {
 {
     overflow-y: auto;
 }
+.message{
+    color: green;
+    text-align: center;
+    margin-left: 285px;
+    margin-bottom: 5px;
+}

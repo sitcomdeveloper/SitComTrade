@@ -26,4 +26,9 @@ export class GeneralInfoService {
   getStatus(): Observable<any> {
     return this.http.get<any>(API_URL + 'Common/GetAllLeadStatus');
   }
+  // actions service.
+  // send email
+  sendmail(email: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/CreateEmail', email);
+  }
 }
