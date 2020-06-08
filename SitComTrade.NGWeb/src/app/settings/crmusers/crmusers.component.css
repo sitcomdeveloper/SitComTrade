@@ -288,8 +288,8 @@ td.email-cell {
     right: auto!important;
     left: 0!important;
     top: 0!important;
-    width: 16px!important;
-    height: 16px!important;
+    /* width: 16px!important;
+    height: 16px!important; */
     opacity: 1;
     margin: 0!important;
 }
@@ -402,4 +402,9 @@ td.email-cell {
 }
 a.btn-type03.create-email-template-link {
     line-height: 0.42857;
+}
+.tablecheckbox
+{
+    height:10px;
+    width: 10px;
 }
