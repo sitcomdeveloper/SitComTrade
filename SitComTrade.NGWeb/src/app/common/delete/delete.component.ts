@@ -3,6 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { CommentsService } from 'src/app/clients_info/comments/comments.service';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,12 +15,18 @@ export class DeleteComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   dltclientRes: any;
-  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService) {}
+  detail: number;
+  dltAllComment: any;
+  comments: any;
+  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute) {}
 // delete comment
 id: number;
 dltCmnt: boolean;
 comment: any;
 deleteComment = false;
+// all comment
+deleteallComment = false;
+allcomment: any;
 // delete client
 userId: number;
 rmvClient: any;
@@ -32,11 +39,27 @@ title: any;
     } else {
       this.deleteComment = false;
     }
+    if (this.allcomment === 'allcomment') {
+      this.deleteallComment = true;
+    } else {
+      this.deleteallComment = false;
+    }
     if (this.rmvClient === 'rmvClient') {
       this.removeClient = true;
     } else {
       this.removeClient = false;
     }
+    this.userComments();
+  }
+  // get all comments
+  userComments() {
+    const details = +this._route.snapshot.paramMap.get('selectedItem');
+    this.detail = details;
+    this.commentsService.getComments(this.detail).subscribe(res => {
+      // this.spinnerService.show();
+      this.comments = res;
+      console.log('comments', res);
+    });
   }
   dltComment() {
     this.commentsService.deleteComment(this.id).subscribe(res => {
@@ -46,6 +69,15 @@ title: any;
       this.hideModal();
     },
     );
+  }
+  dltallComment() {
+    this.commentsService.deleteAllComment('this.detail').subscribe(res => {
+      this.dltAllComment = res;
+      this.userComments();
+      this.clddata.emit(res);
+      this.hideModal();
+      // console.log('dltAllComment', res);
+    });
   }
   dltClient() {
     this.clientService.dltClient(this.userId).subscribe(res => {

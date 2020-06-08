@@ -254,10 +254,6 @@ $('#edit-comment').click(function(){
     });
 });
     </script>
-    <!-- for refreshing all tab -->
-    <!-- <script>
-     $( "#all" ).load( "clients/client.component.html" );
-    </script> -->
     <script>
         $(document).ready(function () {
           $("[data-toggle=popover]").popover({
@@ -305,20 +301,19 @@ $('#edit-comment').click(function(){
     }
     $(document).ready(function () {
     $(document).on('click', '.show-password', function() {
-
 $(this).toggleClass("fa-eye1");
-
 var input = $("#pass_log_id");
 input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
-
 });
 $(document).on('click', '.show-password1', function() {
-
 $(this).toggleClass("fa-eye1");
-
 var input = $("#pass_log_id1");
 input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
-
+});
+$(document).on('click', '.show-password2', function() {
+$(this).toggleClass("fa-eye1");
+var input = $("#pass_log_id2");
+input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
 });
 });
   </script>

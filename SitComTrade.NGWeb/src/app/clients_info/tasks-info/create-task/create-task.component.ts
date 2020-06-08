@@ -48,6 +48,17 @@ export class CreateTaskComponent implements OnInit {
     this.getAllTask();
     this.taskType();
     this.taskStatus();
+//     let d = new Date();
+//     let date: number | string = d.getDate();
+// date.toString().length == 1 ?  date = '0' + date: date;
+// let Month: number | string = d.getMonth();
+// Month.toString().length == 1 ?  Month = '0' + Month: Month;
+// let year = d.getFullYear();
+// let hour=d.getHours();
+// let minute = d.getMinutes();
+// let second = d.getSeconds();
+// let millisecond = d.getMilliseconds();
+// console.log(date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond);
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
@@ -81,6 +92,7 @@ export class CreateTaskComponent implements OnInit {
         this.taskInfoForm.value.taskName = element.Name;
       }
     });
+    
     const obj = {
       OwnerId: this.id,
       TaskStatusId: this.taskInfoForm.value.status,

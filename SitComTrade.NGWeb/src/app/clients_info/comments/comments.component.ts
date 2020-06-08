@@ -96,24 +96,31 @@ export class CommentsComponent implements OnInit {
       OwnerId: this.detail
     };
     this.commentsService.insertComments(obj).subscribe(res => {
-      this.spinnerService.show();
+      // this.spinnerService.show();
       this.insert = res;
       this.userComments();
       console.log('insertcomment', res);
       this.commentsForm.reset();
     });
   }
-  deleteAll() {
-    this.commentsService.deleteAllComment('this.detail').subscribe(res => {
-      this.dltAllComment = res;
+  opendeleteAll() {
+    const initialState = {
+      title: 'Delete Comment',
+      // div show hide.see in delete component
+      allcomment: 'allcomment'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      // after delete refresh all the data
       this.userComments();
-      console.log('dltAllComment', res);
     });
   }
 // open modal for delete comment by id
 openDltComment(userId) {
     const initialState = {
-      title: 'DELETE COMMENT',
+      title: 'Delete Comment',
       id: userId,
       // div show hide.see in delete component
       comment: 'comment'
