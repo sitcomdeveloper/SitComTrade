@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreateItemComponent } from './create-item/create-item.component';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',
@@ -22,6 +22,14 @@ export class GroupsComponent implements OnInit {
 
   ngOnInit() {
     this.getGroups();
+
+    $(document).ready(function () {
+      $("#ckbCheckAll").click(function () {
+          $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+          var chlength = $('.checkBoxClass:checked').length;
+        $("#chked").html("<span>"+chlength+ " items checked from</span>");
+      });
+    })
   }
  getGroups() {
   this.spinnerService.show();
