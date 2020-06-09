@@ -26,6 +26,8 @@ export class CreateTaskComponent implements OnInit {
   bindLoginData: any;
   title: any;
   id: any;
+  taskdate: string;
+  
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -48,17 +50,19 @@ export class CreateTaskComponent implements OnInit {
     this.getAllTask();
     this.taskType();
     this.taskStatus();
-//     let d = new Date();
-//     let date: number | string = d.getDate();
-// date.toString().length == 1 ?  date = '0' + date: date;
-// let Month: number | string = d.getMonth();
-// Month.toString().length == 1 ?  Month = '0' + Month: Month;
-// let year = d.getFullYear();
-// let hour=d.getHours();
-// let minute = d.getMinutes();
-// let second = d.getSeconds();
-// let millisecond = d.getMilliseconds();
-// console.log(date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond);
+    let d = new Date();
+    let date: number | string = d.getDate();
+date.toString().length == 1 ?  date = '0' + date: date;
+let Month: number | string = d.getMonth();
+Month.toString().length == 1 ?  Month = '0' + Month: Month;
+let year = d.getFullYear();
+let hour=d.getHours();
+let minute = d.getMinutes();
+let second = d.getSeconds();
+let millisecond = d.getMilliseconds();
+const Tdate = date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond;
+this.taskdate = Tdate;
+console.log(date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond);
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
@@ -102,7 +106,8 @@ TaskType: this.taskInfoForm.value.taskName,
 Description: this.taskInfoForm.value.description,
 TaskStatus: this.taskInfoForm.value.statusName,
 NotiTimeBefore: this.taskInfoForm.value.notitimebefore,
-TaskDate: Date(),
+TaskDate: this.taskdate,
+// Date()
 // this.taskInfoForm.value.taskdate
     };
     this.taskInfoService.insertTask(obj).subscribe(res => {

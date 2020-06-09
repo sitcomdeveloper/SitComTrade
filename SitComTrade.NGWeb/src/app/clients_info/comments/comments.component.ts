@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ActivatedRoute } from '@angular/router';
-import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+// import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 
 @Component({
@@ -29,7 +29,7 @@ export class CommentsComponent implements OnInit {
 
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
-              private modalService: BsModalService, private _route: ActivatedRoute, private spinnerService: Ng4LoadingSpinnerService) {}
+              private modalService: BsModalService, private _route: ActivatedRoute) {}
    bsModalRef: BsModalRef
  
 
