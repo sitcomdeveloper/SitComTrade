@@ -514,7 +514,10 @@ i.fa.fa-plus.bg-primary1.fa-lg {
  /* .jsgrid-control-field a, .jsgrid-control-field input {
     margin-left: 2px;
 } */
-
+optgroup {
+    color: #cecece;
+    font-weight: normal;
+}
  .jsgrid-button {
     width: 16px;
     height: 16px;

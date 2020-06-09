@@ -54,7 +54,7 @@
             <div class="btn-group mr-2" role="group" aria-label="Second group">
               <div class="input-group selecticon grpselect">
 
-                <select id="list" data-live-search="true"  title="Please select " data-live-search-placeholder="All" class="selectpicker form-control">
+                <!-- <select id="list" data-live-search="true"  title="Please select " data-live-search-placeholder="All" class="selectpicker form-control">
                   <option>Others</option>
                   <option>Accounts</option>
                   <option>All</option>
@@ -62,7 +62,18 @@
                   <option>Shared</option>
                   <option>Online</option>
 
-                </select>
+                </select> -->
+                <select id="list" data-live-search="true"  title="Please select " data-live-search-placeholder="All" class="selectpicker form-control">
+                  
+                  <optgroup label="Others">
+                     <option data-can-edit="False" value="1200">Accounts</option>
+                     <option data-can-edit="False" value="2683" selected="selected">ALL</option>
+                     <option data-can-edit="False" value="5">Leads</option>
+                  </optgroup>
+                  <optgroup label="Shared">
+                     <option data-can-edit="False" value="2724">online</option>
+                  </optgroup>
+               </select>
                 <span class="serachicon brdr-right">
                 <a href="#" class="">
                 <i class="fa fa-plus bg-primary1 fa-lg" aria-hidden="true" style="color: white;"></i>
@@ -1471,7 +1482,7 @@
             </div>
           </td>
           <td  (click)="userClick(item.Id)">
-            <div class="">
+            <div class="" >
               <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="" tooltip="{{item.ItemId}}">
                 <a href="javascript:void(0)">
                   <span>{{item.ItemId}}</span>
@@ -1608,7 +1619,7 @@
        
               </a> -->
               <a aria-expanded="false" class="link-control dropdown-toggle  dropdown-toggle2" data-toggle="dropdown" >
-                 &nbsp;&nbsp; <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+                  <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
        
               </a>
               <!------------------------------------>
@@ -3193,7 +3204,7 @@
                   _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled="" (click) = "openEditableMode(actinfo.Id)"></i></a>
               <br>
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"
-                title="Open in new tab">&nbsp;&nbsp;<i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+                title="Open in new tab"><i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
               </a>
             </div>
           </td>
@@ -4555,7 +4566,7 @@
                   _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled="" (click) = "openEditableMode(leadinfo.Id)"></i></a>
               <br>
               <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"
-                title="Open in new tab">&nbsp;&nbsp;<i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+                title="Open in new tab"><i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
               </a>
             </div>
           </td>
