@@ -33,13 +33,13 @@
         <div class="col-md-5 main-tab">
           <ul class="nav nav-pills tablist " role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="pill" href="#all" (click)="alll()" [ngClass]="{ 'active':activeTab==='all'}">All</a>
+              <a class="nav-link active" data-toggle="pill" href="#all" (click)="alll()">All</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="#account" (click)="account()" [ngClass]="{ 'active':activeTab==='account'}">Accounts</a>
+              <a class="nav-link" data-toggle="pill" href="#account" (click)="account()">Accounts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="#leads" (click)="lead()" [ngClass]="{ 'active':activeTab==='lead'}">Leads</a>
+              <a class="nav-link" data-toggle="pill" href="#leads" (click)="lead()">Leads</a>
             </li>
           </ul>
         </div>
@@ -48,7 +48,7 @@
         <div class="col-md-7 rightsubopt displayend">
           <div class="btn-toolbar searchbtn" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="act('all')"></i></a>
+              <a href="javascript:void(0)"><i class="fa fa-refresh rotate" id="rotate" (click)="refresh()"></i></a>
               
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
@@ -120,7 +120,8 @@
 
 <div class="tab-content" id="content">
   <div id="all" [ngClass]="{ 'active':activeTab==='all'}" class="container-fluid tab-pane active"><br>
-    <table id="myTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <!-- <table id="myTable" class="table table-striped table-bordered" cellspacing="0" width="100%"></table> -->
       <thead>
         <tr class="tablewidth">
           <th class="chkCol">

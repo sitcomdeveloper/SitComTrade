@@ -12,7 +12,7 @@ import { CommentsComponent } from 'src/app/clients_info/comments/comments.compon
 import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
 import { ImportClientComponent } from '../import-client/import-client.component';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
-
+import * as $ from 'jquery' 
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -80,17 +80,34 @@ export class ClientComponent implements OnInit {
     });
     this.userDetails();
     this.getcountryName();
-    this.getAllStatus();
+    this.getAllStatus(); 
     this.getGroups();
     // code for receiving login details and bind OwnerName at place of name
     this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
+    
+      $(document).ready(function () {
+    $("#ckbCheckAll").click(function () {
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+    });
+    $("#ckbCheckAll1").click(function () {
+        $(".checkBoxClass1").prop('checked', $(this).prop('checked'));
+    });
+    $("#ckbCheckAll2").click(function () {
+        $(".checkBoxClass2").prop('checked', $(this).prop('checked'));
+    });
+});
 
+$(document).ready(function () {
+  $("#rotate").on('click', function() {
+ $(this).toggleClass('rotate');
+});
+     });
   }
   userDetails() {
     // code for receiving login details and bind to header at place of name
-    this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
-    this.bindLoginData = this.getLoginDetails;
+    // this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
+    // this.bindLoginData = this.getLoginDetails;
     this.spinnerService.show();
     setTimeout(() => {
       this.clientService.getUsers(this.clientInfo).subscribe(res => {
@@ -113,6 +130,10 @@ export class ClientComponent implements OnInit {
         }
       });
     });
+  }
+  refresh() {
+    this.userDetails();
+    this.spinnerService.show();
   }
   userClick(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
@@ -192,7 +213,7 @@ export class ClientComponent implements OnInit {
       title: 'Delete Item',
       userId: this.UserId,
       // for div close or hide
-      rmvClient: 'rmvClient'
+      rmvClient: 'rmvClient' 
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
@@ -298,12 +319,6 @@ export class ClientComponent implements OnInit {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
     });
-  }
-  // for making the tab change
-  act(activeTab) {
-    this.activeTab = activeTab;
-    this.spinnerService.show();
-    this.userDetails();
   }
   // by clicking on 3 dots open comment componet
   openCommentsComponent(rowId) {

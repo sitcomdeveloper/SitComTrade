@@ -4,7 +4,7 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ActivatedRoute } from '@angular/router';
 import { CreateTaskComponent } from './create-task/create-task.component';
-
+import * as $ from 'jquery' 
 
 @Component({
   selector: 'app-tasks-info',
@@ -26,6 +26,12 @@ export class TasksInfoComponent implements OnInit {
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
     this.getAllTask();
+// when click on fa fa-chevron it opens a pane for create component
+    $(document).ready(function () {
+      $("#tasks").click(function () {
+        $(".showrcrd").toggle();
+      });
+    });
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');

@@ -46,11 +46,13 @@
       });
     });
   </script> -->
+  <!-- Data Table -->
   <script>
     $(document).ready( function () {
     $('#myTable').DataTable();
 } );
   </script>
+  <!-- Tooltip -->
   <script>
     $(document).ready(function () {
       $(function () {
@@ -59,6 +61,7 @@
 
     });
   </script>
+  <!-- login rmbr me -->
   <script>
     function rememberme(rmbrme) {
       if (rmbrme.checked) {
@@ -90,68 +93,10 @@
         $("#generalinfo td, #generalinfo th").css("border-top", "1px solid #dee2e6");
       });
     });
-
-    $(document).ready(function () {
-
-      $("#edit1").click(function () {
-        $(".value-edit1").show();
-        $(".valueshhow1").hide();
-        $(".pencil1").hide();
-        $(".edit-data-options1").show();
-        $("#marketinginfo td, #marketinginfo th").css("border", "none");
-      });
-
-      $(".edit-data-options1").click(function () {
-        $(".value-edit1").hide();
-        $(".valueshhow1").show();
-        $(".pencil1").show();
-        $(".edit-data-options1").hide();
-        $("#marketinginfo td, #marketinginfo th").css("border-top", "1px solid #dee2e6");
-      });
-    });
-    $(document).ready(function () {
-
-      $("#edit2").click(function () {
-        $(".value-edit2").show();
-        $(".valueshhow2").hide();
-        $(".pencil2").hide();
-        $(".edit-data-options2").show();
-        $("#address td, #address th").css("border", "none");
-      });
-
-      $(".edit-data-options2").click(function () {
-        $(".value-edit2").hide();
-        $(".valueshhow2").show();
-        $(".pencil2").show();
-        $(".edit-data-options2").hide();
-        $("#address td, #address th").css("border-top", "1px solid #dee2e6");
-      });
-    });
-    $(document).ready(function () {
-
-      $("#edit3").click(function () {
-        $(".value-edit3").show();
-        $(".valueshhow3").hide();
-        $(".pencil3").hide();
-        $(".edit-data-options3").show();
-        $("#additionalinfo td, #additionalinfo th").css("border", "none");
-      });
-
-      $(".edit-data-options3").click(function () {
-        $(".value-edit3").hide();
-        $(".valueshhow3").show();
-        $(".pencil3").show();
-        $(".edit-data-options3").hide();
-        $("#additionalinfo td, #additionalinfo th").css("border-top", "1px solid #dee2e6");
-      });
-    });
-
   </script> -->
 
   <script>
     $(document).ready(function () {
-
-
       $('.card-header1').click(function () {
         $(this).find('fa-chevron-down').toggleClass('fa-chevron-up fa-chevron-down');
       });
@@ -170,21 +115,19 @@
   </script>
   <script>
     $(document).ready(function () {
-
       $(".link-add-control").click(function () {
         $(".notification").show();
         $(".addoption").hide();
       });
-
     });
   </script>
  
   <script>
     $(document).ready(function () {
 
-      $("#tasks").click(function () {
-        $(".showrcrd").toggle();
-      });
+      // $("#tasks").click(function () {
+      //   $(".showrcrd").toggle();
+      // });
       $("#tradeacc").click(function () {
         $(".showrcrd1").toggle();
       });
@@ -204,17 +147,6 @@
   </script>
   
   <script>
-//         $(document).ready(function () {
-
-
-// // $('#edit-comment').click(function(){
-// //     var $edit=$('.form-control1'), isEditable=$edit.is('.editable');
-// //     $('.comment').prop('contenteditable',!isEditable).toggleClass('editable')
-// // })
-// $( "#edit-comment" ).click(function() {
-//     $('.form-control1').attr('contenteditable','true');
-// });
-// });
 $( "#edit-comment" ).click(function() {
     var value = $('.form-control1').attr('contenteditable');
 
@@ -235,13 +167,13 @@ $('#edit-comment').click(function(){
 
     </script>
      <script>
-      $(document).ready(function () {
-  
-        $("#rotate").on('click', function() {
-  $(this).toggleClass('rotate');
-});
-
-      });
+//       $(document).ready(function () {
+//    $("#rotate").on('click', function() {
+//   $(this).toggleClass('rotate');
+// });
+//       });
+    </script>
+    <!-- <script>
       $(document).ready(function () {
     $("#ckbCheckAll").click(function () {
         $(".checkBoxClass").prop('checked', $(this).prop('checked'));
@@ -253,7 +185,7 @@ $('#edit-comment').click(function(){
         $(".checkBoxClass2").prop('checked', $(this).prop('checked'));
     });
 });
-    </script>
+    </script> -->
     <script>
         $(document).ready(function () {
           $("[data-toggle=popover]").popover({
@@ -291,14 +223,14 @@ $('#edit-comment').click(function(){
    </script>
    <!-- for showing pwd by clicking on eye -->
    <script>
-    function hideshowpwd() {
-      var x = document.getElementByClass("eye");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
-    }
+    // function hideshowpwd() {
+    //   var x = document.getElementByClass("eye");
+    //   if (x.type === "password") {
+    //     x.type = "text";
+    //   } else {
+    //     x.type = "password";
+    //   }
+    // }
     $(document).ready(function () {
     $(document).on('click', '.show-password', function() {
 $(this).toggleClass("fa-eye1");
