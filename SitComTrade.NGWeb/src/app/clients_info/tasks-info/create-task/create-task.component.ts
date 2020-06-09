@@ -50,6 +50,7 @@ export class CreateTaskComponent implements OnInit {
     this.getAllTask();
     this.taskType();
     this.taskStatus();
+    
     let d = new Date();
     let date: number | string = d.getDate();
 date.toString().length == 1 ?  date = '0' + date: date;

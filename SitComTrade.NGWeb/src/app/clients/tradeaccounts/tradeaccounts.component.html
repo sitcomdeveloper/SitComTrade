@@ -1,43 +1,3 @@
-<!-- {{tradeAccountLength}} items
-<div class="container-fluid ">
-    <div class="row fist1">
-        <div class="col-md-12 sub-header">
-           
-            <div class="row container-padd">
-                    <div class="col-md-6 main-tab">
-                      <ul class="nav nav-pills tablist" role="tablist">
-                        <li class="nav-item">
-                          <a class="nav-link active" data-toggle="pill" href="#all">All</a>
-                        </li>
-                        
-                      </ul>
-                        
-                        </div>
-                        
-                        <div class="col-md-6" [attr.disabled]="deletbtnn ==true ? true : false">
-                          <a href="javascript:void(0);" (click) = "tradeDetails()"><i class="fa fa-refresh"></i></a>
-                          <a href="javascript:void(0);">
-                            <select class="browser-default custom-select" style="width:43%;">
-                              <option selected>All</option>
-                            </select>
-                            <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true" style="color: white;"></i></a>
-                          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true" style="padding-right:10px;margin-right:10px"></i>
-                          <i class="fa fa-" aria-hidden="true"></i>
-                          <a routerLink=""><i class="fa fa-user bg-primary fa-lg" aria-hidden="true" style="color: white"></i></a>
-                          <a href="javascript:void(0);" class="brdr-right" [class.disabled] = deletbtnn>
-                          <i class="fa fa-pencil bg-primary fa-lg" disabled aria-hidden="true"></i>
-                        </a>
-                          <a href="javascript:void(0);" class="brdr-right" [class.disabled] = deletbtnn>
-                          <i class="fa fa-trash bg-primary fa-lg" disabled aria-hidden="true" (click)="deleteClient(Id)"></i>
-                        </a>
-                          <i class="fa fa-ellipsis-h" aria-hidden="true" style="padding-left: 12px;"></i>
-
-                        </div>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div> -->
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-12 subheader">
@@ -211,10 +171,10 @@
         </thead>
         
         <tbody>
-          <tr class="filterrow ">
+          <!-- <tr class="filterrow ">
             <td class="" style="width: 20px;">
               <div class=""><span>x</span></div>
-              <!-- <i class="fa fa-star" title="Clear filter"></i> -->
+              
           </td>
           <td class="" >
             <select  class="browser-default custom-select1">
@@ -331,7 +291,7 @@
            <td>
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
            </td>
-        </tr>
+        </tr> -->
         <tr class="tablectn" *ngFor="let item of fetchTradeDetails,let group of Group">
           <td class="email-cell" >
               <div class="email-cell-content">
