@@ -1437,6 +1437,9 @@ tr.tablectn {
 .ico-sz3.ico-eye.dark {
     background-position: -340px -480px;
 }
+.tablectn:hover {
+    background-color: #f5f5f5;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
