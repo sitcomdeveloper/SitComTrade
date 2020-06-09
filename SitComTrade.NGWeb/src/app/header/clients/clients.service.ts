@@ -24,9 +24,9 @@ export class ClientsService {
   }
   // client.componet.ts
   // delete client
-  dltClient(obj): Observable<any> {
-    return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj , {});
-  }
+  // dltClient(obj): Observable<any> {
+  //   return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj , {});
+  // }
   // dlt multiple clients
   dltmultipleClient(dmc: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/DeleteMultipleClients',dmc);

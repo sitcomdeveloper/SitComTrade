@@ -141,7 +141,7 @@
                                                 formControlName="password"  pattern="^[A-Za-z0-9]*$"
                                                 [ngClass]="{ 'is-invalid': submitted && f.password.errors,'form-control':true }" type="password" aria-required="true">
                                                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                                   <div *ngIf="f.password.errors.required">Password is required</div>
+                                                   <!-- <div *ngIf="f.password.errors.required">Password is required</div> -->
                                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
                                                    <div *ngIf="f.password.errors.pattern">Password should not contain special characters</div>
                                                  </div>
@@ -178,16 +178,16 @@
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">
                                                 <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol "
-                                                   formControlName="group" [ngClass]="{ 'is-invalid': submitted && f.password.errors,'form-control':true }" data-live-search="true" id="lunch"
+                                                   formControlName="group"  data-live-search="true" id="lunch"
                                                    title="Please select a lunch ..." data-show-subtext="true"
                                                    data-live-search="true">
                                                    <option ngcontent-qpo-c3="" value="">Select..</option>
                                                    <option ngcontent-qpo-c3="" value="{{group?.Id}}" *ngFor = "let group of Group">{{group?.Name}}</option>
-
+                                                   <!-- [ngClass]="{ 'is-invalid': submitted && f.group.errors,'form-control':true }" -->
                                                 </select>
-                                                <div *ngIf="submitted && f.group.errors" class="invalid-feedback">
+                                                <!-- <div *ngIf="submitted && f.group.errors" class="invalid-feedback">
                                                    <div *ngIf="f.group.errors.required">Group is required</div>
-                                                 </div>
+                                                 </div> -->
 
                                              </div>
 

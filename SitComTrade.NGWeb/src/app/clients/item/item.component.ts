@@ -44,8 +44,8 @@ export class ItemComponent implements OnInit {
 
       phone: ['', [Validators.required]],
       country: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      group: ['', Validators.required],
+      password: ['', [ Validators.minLength(6)]],
+      group: [''],
       countryid: [''],
       currencyname: [''],
       // promocode: [''],
@@ -86,12 +86,9 @@ export class ItemComponent implements OnInit {
       OwnerId: 1,
       Phone: this.newUserForm.value.phone,
       CountryId: this.newUserForm.value.country
-
     };
-
       this.clientService.addnewClients(obj).subscribe(res => {
       this.getnewClients = res;
-
       this.clddata.emit(res);
       if (res === 'null') {
         this.response = '';

@@ -45,7 +45,7 @@
           </div>
           <div class="form-group row">
              <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-             <div class="col-md-9"><input class="form-control" name="Phone" formControlName="phone" type="text" id="a145e9026-184f-f4e2-5f03-637a9abef3d8" aria-required="true" value="{{loginusrdtls?.Phone}}" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}">
+             <div class="col-md-9"><input class="form-control" name="Phone" formControlName="phone" type="text" id="a145e9026-184f-f4e2-5f03-637a9abef3d8" aria-required="true" appPhoneMask value="{{loginusrdtls?.Phone}}" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}">
                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                   <div *ngIf="f.phone.errors.required">Phone is required</div>
                 </div>

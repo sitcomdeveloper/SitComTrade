@@ -80,7 +80,7 @@ title: any;
     });
   }
   dltClient() {
-    this.clientService.dltClient(this.userId).subscribe(res => {
+    this.clientService.dltmultipleClient(this.userId).subscribe(res => {
       this.spinnerService.show();
       this.dltclientRes = res;
       this.clddata.emit(res);

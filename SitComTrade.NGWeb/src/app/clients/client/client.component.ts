@@ -52,7 +52,7 @@ export class ClientComponent implements OnInit {
   Group: any;
   getGroupsData: any;
   assignedselectedrow: any;
-  selected: any[];
+  // selectedvalue: any[] =[];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
     private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
@@ -89,12 +89,18 @@ export class ClientComponent implements OnInit {
       $(document).ready(function () {
     $("#ckbCheckAll").click(function () {
         $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+        var chlength = $('.checkBoxClass:checked').length;
+      $("#chked").html("<span>"+chlength+ " items checked from</span>");
     });
     $("#ckbCheckAll1").click(function () {
         $(".checkBoxClass1").prop('checked', $(this).prop('checked'));
+        var chlength = $('.checkBoxClass1:checked').length;
+      $("#chked").html("<span>"+chlength+ " items checked from</span>");
     });
     $("#ckbCheckAll2").click(function () {
         $(".checkBoxClass2").prop('checked', $(this).prop('checked'));
+        var chlength = $('.checkBoxClass2:checked').length;
+      $("#chked").html("<span>"+chlength+ " items checked from</span>");
     });
 });
 
@@ -105,9 +111,6 @@ $(document).ready(function () {
      });
   }
   userDetails() {
-    // code for receiving login details and bind to header at place of name
-    // this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
-    // this.bindLoginData = this.getLoginDetails;
     this.spinnerService.show();
     setTimeout(() => {
       this.clientService.getUsers(this.clientInfo).subscribe(res => {
@@ -137,10 +140,6 @@ $(document).ready(function () {
   }
   userClick(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
-    // const url = this.router.serializeUrl(
-    //   this.router.createUrlTree(['/info', selectedItem])
-    // );
-    // window.open(url, '_blank');
   }
   // userClck(selectedItem: any) {
   //   const url = this.router.serializeUrl(
@@ -151,48 +150,34 @@ $(document).ready(function () {
   newUser() {
     this.router.navigateByUrl('/user');
   }
-  // checked count implemantation
-  //   deletbtn(val, userid) {
-  //     this.UserId = userid;
-  //     if (val === true) {
-  // this.rowData.forEach(element =>  {
-  // if  (userid === element.Id) {
-  // element.IsEditable = true;
-  // this.countValue = this.rowData.filter(checkedCount => {
-  //   if (checkedCount.IsEditable === true) {
-  //     return checkedCount;
-  // }
-  // });
-  // this.deletbtnn = false;
-  // this.countLength = this.countValue.length;
-  // }
-  // });
-  // } else {this.rowData.forEach(element =>  {
-  //   if  (userid === element.Id) {
-  //   element.IsEditable = false;
-  //   this.countValue = this.rowData.filter(checkedCount => {
-  //     if (checkedCount.IsEditable === true) {
-  //       return checkedCount;
-  // }
-  // });
-  //   this.deletbtnn = true;
-
-  //   this.countLength = this.countValue.length;
-  //   }
-  //   });
-  // }
-
-  //   }
+ 
+  selectedchkbxfrdltclnt = [];
+  // selectedname: number[]
   deletbtn(val, userid) {
-    this.UserId = userid;
+    this.UserId = userid
     if (val === true) {
       this.deletbtnn = false;
-      this.selected.push(userid);
-      console.log('checked',this.selected.length);
+   this.selectedchkbxfrdltclnt.push(userid);
     } else {
       this.deletbtnn = true;
-      this.selected.splice(this.selected.indexOf(userid), 1)
+     this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
     }
+  }
+  // delete client
+  deleteClient() 
+  {
+    const initialState = {
+      title: 'Delete Item',
+      userId: this.selectedchkbxfrdltclnt,
+      // for div close or hide
+      rmvClient: 'rmvClient' 
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.userDetails();
+    });
   }
   // part of add new client modal
   newClient() {
@@ -205,21 +190,6 @@ $(document).ready(function () {
     this.bsModalRef.content.clddata.subscribe(data => {
       this.userDetails();
 
-    });
-  }
-  // delete client
-  deleteClient() {
-    const initialState = {
-      title: 'Delete Item',
-      userId: this.UserId,
-      // for div close or hide
-      rmvClient: 'rmvClient' 
-    };
-    // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
-    this.bsModalRef.content.closeBtnName = 'Cancel';
-    this.bsModalRef.content.clddata.subscribe(data => {
-      this.userDetails();
     });
   }
   alll() {
@@ -250,7 +220,6 @@ $(document).ready(function () {
         });
       }
     });
-    // console.log(selectedId);
   }
   // check btn
   saveDetails(selectedId) {
