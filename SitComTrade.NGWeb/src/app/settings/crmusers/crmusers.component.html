@@ -5,7 +5,8 @@
        <div class="container-fluid container-padd">
         <div class="row">
            <div class="tools-panel-addon">
-            <div _ngcontent-dvw-c7="" class="jsgrid-items-counter"><span _ngcontent-dvw-c7="" id="chked"></span><span _ngcontent-dvw-c7=""> {{crmuserlength}} items</span></div>
+            <div _ngcontent-dvw-c7="" class="jsgrid-items-counter"><span _ngcontent-dvw-c7="" id="chked"></span>
+               <span _ngcontent-dvw-c7=""> {{crmuserlength}} items</span></div>
               <div class="breadcrumbs">
                  <ul>
                     <li itemscope="">
@@ -62,7 +63,7 @@
                        <tbody _ngcontent-jgg-c8="">
                            <tr _ngcontent-jgg-c8="" class="email-header-row">
                               <th _ngcontent-otb-c7="" class="" style="width: 17px;">
-                                 <div _ngcontent-otb-c7="" class=""><div _ngcontent-otb-c7="" class="input-checkbox"><span _ngcontent-otb-c7=""><input _ngcontent-otb-c7="" type="checkbox"></span></div></div></th>
+                                 <div _ngcontent-otb-c7="" class=""><div _ngcontent-otb-c7="" class="input-checkbox"><span _ngcontent-otb-c7=""><input _ngcontent-otb-c7="" type="checkbox" id="ckbCheckAll"></span></div></div></th>
                                <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
                                    <div _ngcontent-jgg-c8="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" class="text-ellipsis" tooltip=""><span _ngcontent-jgg-c8="">ID</span></div>
@@ -1303,7 +1304,8 @@
                    <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table table-striped" id="JColResizer0 ">
                        <tbody _ngcontent-jgg-c8="" _ngcontent-bdo-c4="">
                            <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row" *ngFor="let usersdata of GetUser">
-                              <td _ngcontent-uej-c4="" class="" style="width: 17px;"><div _ngcontent-uej-c4="" class=""><div _ngcontent-uej-c4="" class="input-checkbox"><span _ngcontent-uej-c4=""><input _ngcontent-uej-c4="" data-item-selector="true" type="checkbox" class="tablecheckbox"></span></div></div></td> 
+                              <td _ngcontent-uej-c4="" class="" style="width: 17px;"><div _ngcontent-uej-c4="" class=""><div _ngcontent-uej-c4="" class="input-checkbox"><span _ngcontent-uej-c4="">
+                                 <input _ngcontent-uej-c4="" data-item-selector="true" type="checkbox" class="tablecheckbox checkBoxClass" onclick="checkboxcheck()"></span></div></div></td> 
                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
                                    <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                        <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">

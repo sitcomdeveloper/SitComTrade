@@ -4,7 +4,9 @@
                     <div class="container-fluid container-padd">
                      <div class="row">
                         <div class="tools-panel-addon">
-                          <div _ngcontent-ubb-c3="" class="jsgrid-items-counter"><span _ngcontent-ubb-c3="">{{tradeAccountLength}} item</span></div>
+                          <div _ngcontent-ubb-c3="" class="jsgrid-items-counter">
+                            <span id="chked"> </span>
+                              <span _ngcontent-ubb-c3="">{{tradeAccountLength}} items</span></div>
                            <div class="breadcrumbs">
                               <ul>
                                  <li itemscope="">
@@ -43,13 +45,11 @@
                                    <span _ngcontent-boj-c6="" class="serachicon brdr-right">
                                        <a _ngcontent-boj-c6="" class="" href="#">
                                        <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-boj-c6="" class="serachicon">
-                                       <a _ngcontent-boj-c6="" href="#">
+                                       <a _ngcontent-boj-c6="" href="javascript:void(0);" disabled>
                                            <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
                                 </div>
                              </div>
                              <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group">
-                                 <!-- <a _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#">
-                                     <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a> -->
                                      <a _ngcontent-boj-c6="" class="brdr-right" href="javascript:void(0);" [class.disabled] = deletbtnn>
                                          <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" disabled=""></i>
                                         </a><a _ngcontent-boj-c6="" href="javascript:void(0);" [class.disabled] = deletbtnn>
@@ -77,7 +77,7 @@
           <tr class="email-header-row">
             <th class="" >
                 <div class="email-cell-content">
-                    <div class=""><span class=""><input type="checkbox"></span></div>
+                    <div class=""><span class=""><input type="checkbox" id="ckbCheckAll"></span></div>
                 </div>
             </th>
            
@@ -296,7 +296,7 @@
           <td class="email-cell" >
               <div class="email-cell-content">
                   <div class="input-checkbox"><span>
-                    <input type="checkbox" data-item-selector="true" class="tablecheckbox" (change)="deletbtn($event.target.checked,item.Id)"></span>
+                    <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)" onclick="checkboxcheck()"></span>
                 </div>
                     <!--  <span><i  class="fa fa-star" title="Clear filter"></i></span> -->
               </div>

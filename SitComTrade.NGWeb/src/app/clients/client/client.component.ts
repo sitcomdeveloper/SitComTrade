@@ -52,6 +52,7 @@ export class ClientComponent implements OnInit {
   Group: any;
   getGroupsData: any;
   assignedselectedrow: any;
+  selectedchkbxfrdltclnt = [];
   // selectedvalue: any[] =[];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
@@ -150,9 +151,7 @@ $(document).ready(function () {
   newUser() {
     this.router.navigateByUrl('/user');
   }
- 
-  selectedchkbxfrdltclnt = [];
-  // selectedname: number[]
+ // selectedname: number[]
   deletbtn(val, userid) {
     this.UserId = userid
     if (val === true) {

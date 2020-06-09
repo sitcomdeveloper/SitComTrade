@@ -5,7 +5,7 @@ import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-tradeaccounts',
   templateUrl: './tradeaccounts.component.html',
@@ -20,6 +20,7 @@ export class TradeaccountsComponent implements OnInit {
   Id: any;
   Group: any;
   getGroupsData: any;
+  selectedchkbxfrdltclnt = [];
 
   constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
               private modalService: BsModalService, private router: Router, private groupsService: GroupsService) { }
@@ -30,6 +31,14 @@ export class TradeaccountsComponent implements OnInit {
   deletbtnn = true;
   ngOnInit() {
     this.tradeDetails();
+
+    $(document).ready(function () {
+      $("#ckbCheckAll").click(function () {
+          $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+          var chlength = $('.checkBoxClass:checked').length;
+        $("#chked").html("<span>"+chlength+ " items checked from</span>");
+      });
+    });
   }
   tradeDetails() {
     const obj = {
@@ -44,17 +53,14 @@ export class TradeaccountsComponent implements OnInit {
     });
   }
   deletbtn(val, userid) {
-    this.UserId = userid;
-    const count = 1;
+    this.UserId = userid
     if (val === true) {
-    this.a = count + 1;
-    this.deletbtnn = false;
-} else {
-  // tslint:disable-next-line: no-shadowed-variable
-  let count = 1;
-  this.a = count--;
-  this.deletbtnn = true;
-}
+      this.deletbtnn = false;
+   this.selectedchkbxfrdltclnt.push(userid);
+    } else {
+      this.deletbtnn = true;
+     this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+    }
   }
   deleteClient(userid) {
     const initialState = {

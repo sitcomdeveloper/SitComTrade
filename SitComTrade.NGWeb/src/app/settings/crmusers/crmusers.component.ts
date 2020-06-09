@@ -3,7 +3,7 @@ import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bo
 import { CrmnewuserComponent } from './crmnewuser/crmnewuser.component';
 import { CrmedituserComponent } from './crmedituser/crmedituser.component';
 import { SettingsService } from '../settings.service';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-crmusers',
   templateUrl: './crmusers.component.html',
@@ -23,6 +23,14 @@ export class CrmusersComponent implements OnInit {
     this.bindLoginData = this.getLoginDetails;
 
      this.getAllUsers();
+
+     $(document).ready(function () {
+      $("#ckbCheckAll").click(function () {
+          $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+          var chlength = $('.checkBoxClass:checked').length;
+        $("#chked").html("<span>"+chlength+ " items checked from</span>");
+      });
+    })
   }
   openModal(template: TemplateRef<any>) {
     this.bsModalRef = this.modalService.show(template);
