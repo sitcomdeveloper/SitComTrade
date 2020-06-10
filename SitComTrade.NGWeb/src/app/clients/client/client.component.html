@@ -69,8 +69,8 @@
                 </a>
                 </span>
                 <span class="serachicon">
-                <a href="javascript:void(0)">
-                <i class="fa fa-pencil bg-primary1 fa-lg" aria-hidden="true"
+                <a href="javascript:void(0)" class="disabled-button">
+                <i class="fa fa-pencil bg-primary1 fa-lg " aria-hidden="true"
                   ></i>
                   </a>
                   </span>
@@ -3192,9 +3192,21 @@
               <a href="javascript:void(0);" class="ico-sz3 ico-link dh"  data-jsgrid-rule="link"><i
                   _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled="" (click) = "openEditableMode(actinfo.Id)"></i></a>
               <br>
-              <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"
-                title="Open in new tab"><i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
-              </a>
+              <a aria-expanded="false" class="link-control dropdown-toggle  dropdown-toggle2" data-toggle="dropdown" >
+                <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+     
+            </a>
+              <div _ngcontent-bih-c1="" class="dropdown-menu pop pull-right" x-placement="bottom-start" style="position: absolute; transform: translate3d(-102px, 42px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <ul class="popcontent"><li>
+                  <a href="javascript:void(0);" class="ico-sz3 ico-comments dim comments-toggle" aria-describedby="431251" title="Comments" style="opacity:1">
+                  <i class="fa fa-file" aria-hidden="true" id="clientcomment" (click)="openCommentsComponent(actinfo.Id)"></i>
+                </a></li>
+                  <li><a href="javascript:void(0);" class="ico-sz3 ico-addtask dim" title="Tasks" style="opacity:1">
+                    <i class="fa fa-tasks" aria-hidden="true" (click)="openTasksinfoComponent(actinfo.Id)"></i>
+                  </a></li>
+                </ul>
+                
+             </div>
             </div>
           </td>
           <!-- ------------------Editing MODE for account-------------------------------------------------------------- -->
@@ -4554,9 +4566,21 @@
               <a href="javascript:void(0);" class="ico-sz3 ico-link dh" data-jsgrid-rule="link"><i
                   _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled="" (click) = "openEditableMode(leadinfo.Id)"></i></a>
               <br>
-              <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link"
-                title="Open in new tab"><i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
-              </a>
+              <a aria-expanded="false" class="link-control dropdown-toggle  dropdown-toggle2" data-toggle="dropdown" >
+                <i class="fa fa-ellipsis-h greyicon" aria-hidden="true"></i>
+     
+            </a>
+              <div _ngcontent-bih-c1="" class="dropdown-menu pop pull-right" x-placement="bottom-start" style="position: absolute; transform: translate3d(-102px, 42px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <ul class="popcontent"><li>
+                  <a href="javascript:void(0);" class="ico-sz3 ico-comments dim comments-toggle" aria-describedby="431251" title="Comments" style="opacity:1">
+                  <i class="fa fa-file" aria-hidden="true" id="clientcomment" (click)="openCommentsComponent(leadinfo.Id)"></i>
+                </a></li>
+                  <li><a href="javascript:void(0);" class="ico-sz3 ico-addtask dim" title="Tasks" style="opacity:1">
+                    <i class="fa fa-tasks" aria-hidden="true" (click)="openTasksinfoComponent(leadinfo.Id)"></i>
+                  </a></li>
+                </ul>
+                
+             </div>
             </div>
           </td>
            <!-- ------------------Editing MODE for LEAD-------------------------------------------------------------- -->
