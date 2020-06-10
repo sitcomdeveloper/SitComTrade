@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from './login.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -91,9 +90,7 @@ export class LoginComponent implements OnInit {
   // }
   authUser() {
     let model = "UserName=" +this.loginForm.value.email + "&Password=" +this.loginForm.value.password + '&grant_type=password';
-    this.loginservice.authuser(model)
-    .subscribe(
-      data => {
+    this.loginservice.authuser(model).subscribe( data => {
         if (data) {
           window.sessionStorage.setItem('userToken', data.access_token);
           window.sessionStorage.setItem('username', JSON.stringify(data));

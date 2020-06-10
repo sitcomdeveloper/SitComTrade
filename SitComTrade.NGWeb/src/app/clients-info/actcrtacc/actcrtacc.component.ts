@@ -101,12 +101,8 @@ export class ActcrtaccComponent implements OnInit {
       Subject: this.actionsForm.value.subject,
       Body: this.actionsForm.value.body,
       Sender: this.actionsForm.value.settings,
-      OwnerId: this.bindLoginData.UserId,
-      // To: 'sitcomdeveloper43@gmail.com',
-      // Subject: 'test',
-      // Body: 'hello',
-      // Sender: 'kk84singh@gmail.com',
-      // OwnerId: 1,
+      OwnerId: this.userGenralinfo.OwnerId,
+      // this.bindLoginData.UserId
     }
 this._generalinfoservice.sendmail(email).subscribe(getmail => {
   this.sentmails = getmail;
