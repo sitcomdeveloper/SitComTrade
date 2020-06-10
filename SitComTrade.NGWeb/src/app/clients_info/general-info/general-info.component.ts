@@ -97,7 +97,7 @@ export class GeneralInfoComponent implements OnInit {
       phone: this.userGenralinfo.Phone,
       mobile: this.userGenralinfo.Mobile,
       secondemail: this.userGenralinfo.SecondEmail,
-      itemid: this.userGenralinfo.Id,
+      itemid: this.userGenralinfo.ItemId,
       owner: this.userGenralinfo.OwnerId,
       status: this.userGenralinfo.ResponseStatus,
       createddate: this.userGenralinfo.CreatedAt,
