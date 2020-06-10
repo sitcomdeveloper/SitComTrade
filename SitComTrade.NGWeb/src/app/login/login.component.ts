@@ -69,14 +69,11 @@ export class LoginComponent implements OnInit {
   //     UserName: this.loginForm.value.email,
   //     Password: this.loginForm.value.password
   //   };
-  //   this.loginservice.loginUser(this.userinfo)
-  //     .subscribe(
-  //       (
-  //         data: boolean[]) => {
+  //   this.loginservice.loginUser(this.userinfo).subscribe(( data: boolean[]) => {
   //         if (data) {
   //           this.router.navigateByUrl('clients');
   //           console.log('LoginDetails', data);
-  //           // localStorage.clear();
+            
   //           localStorage.setItem('project', JSON.stringify(data));
   //           console.log('stringifydata', JSON.stringify(data));
   //           localStorage.setItem('uid', this.UserName);
