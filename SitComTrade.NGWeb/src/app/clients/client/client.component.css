@@ -494,7 +494,7 @@ grid-auto-columns: max-content;
     height: 16px;
 }
 .disabled {
-    cursor: not-allowed;
+    cursor: not-allowed;pointer-events: none;
   }
   a.brdr-right.disabled,a.disabled {
     opacity: 0.5;
