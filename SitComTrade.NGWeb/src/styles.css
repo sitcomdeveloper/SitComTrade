@@ -1,10 +1,8 @@
 
 /* @import 'ag-grid-community/dist/styles/ag-grid.css';
 @import 'ag-grid-community/dist/styles/ag-theme-balham.css'; */
-@font-face {font-family: "icomoon";
-     src: url("//db.onlinewebfonts.com/t/0265b98b68ecf1b3d801b5df4dc155e7.eot"); 
-     src: url("//db.onlinewebfonts.com/t/0265b98b68ecf1b3d801b5df4dc155e7.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0265b98b68ecf1b3d801b5df4dc155e7.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0265b98b68ecf1b3d801b5df4dc155e7.woff") format("woff"), url("//db.onlinewebfonts.com/t/0265b98b68ecf1b3d801b5df4dc155e7.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0265b98b68ecf1b3d801b5df4dc155e7.svg#icomoon") format("svg"); }
-body {
+
+     body {
     
     color: #45596a;
     background: #e0e8f3;
