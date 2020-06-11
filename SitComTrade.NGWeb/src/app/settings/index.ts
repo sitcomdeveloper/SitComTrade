@@ -16,3 +16,6 @@ export * from '../settings/groups/create-item/create-item.component';
 export * from '../settings/groups/groups-info/groups-info.component';
 export * from '../settings/crmusers/crmnewuser/crmnewuser.component';
 export * from '../settings/crmusers/crmedituser/crmedituser.component';
+export * from '../settings/affilateusers/affilatenewuser/affilatenewuser.component';
+export * from '../settings/translations/translations-filter/translations-filter.component';
+export * from '../settings/imports/imported-clients/imported-clients.component';

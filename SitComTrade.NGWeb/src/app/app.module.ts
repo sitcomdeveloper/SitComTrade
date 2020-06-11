@@ -28,10 +28,7 @@ import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportsComponent } from './header/reports/reports.component';
 import { SettingsComponent } from './header/settings/settings.component';
 import { LoginComponent } from './login/login.component';
-import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, InstrumentsComponent,
-  TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
-  // tslint:disable-next-line: max-line-length
-  ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent, CrmnewuserComponent, CrmedituserComponent} from './settings';
+
 import { AuthGuard } from './auth.guard';
 // import { TermsComponent } from './terms/terms.component';
 // import { RegisterComponent } from './register/register.component';
@@ -46,8 +43,12 @@ import { CreateTemplateComponent } from './settings/emailtemplates/create-templa
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 import { DeleteComponent } from './common/delete/delete.component';
 // import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
-import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
-import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
+import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, InstrumentsComponent,
+  TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
+  // tslint:disable-next-line: max-line-length
+  ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent, CrmnewuserComponent, CrmedituserComponent, AffilatenewuserComponent, TranslationsFilterComponent, ImportedClientsComponent} from './settings';
+// import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
+// import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
 import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
@@ -57,7 +58,7 @@ import { UserdetailsComponent } from './header/userdetails/userdetails.component
 // import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
 import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
 import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
-import { AffilatenewuserComponent } from './settings/affilateusers/affilatenewuser/affilatenewuser.component';
+// import { AffilatenewuserComponent } from './settings/affilateusers/affilatenewuser/affilatenewuser.component';
 
 @NgModule({
   declarations: [
