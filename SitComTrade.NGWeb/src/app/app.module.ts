@@ -31,30 +31,30 @@ import { LoginComponent } from './login/login.component';
 import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, InstrumentsComponent,
   TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
   // tslint:disable-next-line: max-line-length
-  ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent} from './settings';
+  ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent, CrmnewuserComponent, CrmedituserComponent} from './settings';
 import { AuthGuard } from './auth.guard';
-import { TermsComponent } from './terms/terms.component';
-import { RegisterComponent } from './register/register.component';
+// import { TermsComponent } from './terms/terms.component';
+// import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 // clients-info component
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
 import {GeneralInfoComponent, CommentsComponent, MarketingInfoComponent, AddressComponent, AdditionalInfoComponent, EmailComponent,
   // tslint:disable-next-line: max-line-length
-  SmsComponent, RegHisComponent, TasksInfoComponent, InfoCasesComponent, InfoDocumentsComponent, TradeAccountsComponent, FinancialTransactionsComponent } from './clients_info';
-import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
+  SmsComponent, RegHisComponent, TasksInfoComponent, CreateTaskComponent,EditTaskComponent, InfoCasesComponent, InfoDocumentsComponent, TradeAccountsComponent, FinancialTransactionsComponent, ActcrtaccComponent} from './clients_info';
+// import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 import { DeleteComponent } from './common/delete/delete.component';
-import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
+// import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
 import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
 import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
 import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
-import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
+// import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
-import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
-import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
+// import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
+// import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
 import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
 import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 import { AffilatenewuserComponent } from './settings/affilateusers/affilatenewuser/affilatenewuser.component';
@@ -100,8 +100,8 @@ import { AffilatenewuserComponent } from './settings/affilateusers/affilatenewus
     IplistComponent,
     TradinghoursComponent,
     WorkflowsComponent,
-    TermsComponent,
-    RegisterComponent,
+    // TermsComponent,
+    // RegisterComponent,
     BlockCopyPasteDirective,
     FooterComponent,
     ClientsInfoComponent,

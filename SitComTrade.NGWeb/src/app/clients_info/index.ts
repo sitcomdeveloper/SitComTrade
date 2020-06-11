@@ -11,3 +11,6 @@ export * from '../clients_info/info-cases/info-cases.component';
 export * from '../clients_info/info-documents/info-documents.component';
 export * from '../clients_info/trade-accounts/trade-accounts.component';
 export * from '../clients_info/financial-transactions/financial-transactions.component';
+export * from '../clients_info/tasks-info/create-task/create-task.component';
+export * from '../clients_info/tasks-info/edit-task/edit-task.component';
+export * from '../clients-info/actcrtacc/actcrtacc.component';

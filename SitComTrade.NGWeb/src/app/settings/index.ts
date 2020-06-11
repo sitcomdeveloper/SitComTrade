@@ -14,3 +14,5 @@ export * from '../settings/tradinghours/tradinghours.component';
 export * from '../settings/workflows/workflows.component';
 export * from '../settings/groups/create-item/create-item.component';
 export * from '../settings/groups/groups-info/groups-info.component';
+export * from '../settings/crmusers/crmnewuser/crmnewuser.component';
+export * from '../settings/crmusers/crmedituser/crmedituser.component';
