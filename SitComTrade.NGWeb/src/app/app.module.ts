@@ -30,8 +30,8 @@ import { SettingsComponent } from './header/settings/settings.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './auth.guard';
-// import { TermsComponent } from './terms/terms.component';
-// import { RegisterComponent } from './register/register.component';
+import { TermsComponent } from './terms/terms.component';
+import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 // clients-info component
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
@@ -101,8 +101,8 @@ import { ImportClientDataComponent } from './clients/import-client-data/import-c
     IplistComponent,
     TradinghoursComponent,
     WorkflowsComponent,
-    // TermsComponent,
-    // RegisterComponent,
+    TermsComponent,
+    RegisterComponent,
     BlockCopyPasteDirective,
     FooterComponent,
     ClientsInfoComponent,

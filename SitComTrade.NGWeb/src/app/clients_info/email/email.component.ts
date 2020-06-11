@@ -3,6 +3,8 @@ import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.com
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ActivatedRoute } from '@angular/router';
 import { GeneralInfoService } from '../general-info/general-info.service';
+import * as $ from 'jquery' 
+    
 
 @Component({
   selector: 'app-email',
@@ -25,6 +27,12 @@ export class EmailComponent implements OnInit {
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
     });
+
+    // $(document).ready(function () {
+    //   $("#tasks").click(function () {
+    //     $(".showrcrd").toggle();
+    //   });
+    // });
   }
   sendemail(Ide) {
     const initialState = {
