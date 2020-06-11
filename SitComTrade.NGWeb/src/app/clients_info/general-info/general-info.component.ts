@@ -163,7 +163,7 @@ export class GeneralInfoComponent implements OnInit {
       }
     });
     const obj = {
-      Id: this.userGenralinfo.Id,
+      ItemId: this.userGenralinfo.ItemId,
       FirstName: this.userInfoForm.value.firstName,
       LastName: this.userInfoForm.value.lastName,
       Email: this.userInfoForm.value.email,
@@ -176,6 +176,8 @@ export class GeneralInfoComponent implements OnInit {
       ISendEmail: this.userGenralinfo.ISendEmail,
       OwnerId: this.userGenralinfo.OwnerId,
       Phone: this.userInfoForm.value.phone,
+      ResponseStatus: this.userInfoForm.value.status,
+      RegistrationType: this.userInfoForm.value.registrationtype,
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       this.updatedDtls = res;
