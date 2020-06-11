@@ -28,11 +28,11 @@ export class EmailComponent implements OnInit {
       this.userGenralinfo = res;
     });
 
-    // $(document).ready(function () {
-    //   $("#tasks").click(function () {
-    //     $(".showrcrd").toggle();
-    //   });
-    // });
+     $(document).ready(function () {
+       $("#email").click(function () {
+         $(".showrcrd1").toggle();
+       });
+     });
   }
   sendemail(Ide) {
     const initialState = {

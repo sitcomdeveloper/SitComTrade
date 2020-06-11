@@ -4,3 +4,39 @@ p {
   color: grey;
   font-size: 16px;
 }
+.box-pd01 .box-content {
+  padding: 0 40px;
+}
+.table-type02 table {
+  border: 0 hidden transparent;
+  border: 1px solid #dde7f9;
+  border-width: 1px 0;
+}
+.table-type02 {
+  margin: 0 0 35px;
+  line-height: 19px;
+  position: relative;
+}
+.table-type02 table th {
+  color: #8da5ba;
+  font-weight: 400;
+}
+
+.table-type02 table td, .table-type02 table th {
+  white-space: nowrap;
+  position: relative;
+  padding: 10px 15px;
+  vertical-align: top;
+  border: 1px solid #dde7f9;
+  border-width: 1px 0;
+}
+.box-heading {
+  width: 100%!important;
+}
+.scroll-area {
+  width: 100%;
+}
+.box-control {
+  
+  display: flex;
+}

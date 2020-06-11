@@ -1,2 +1,99 @@
-<p>No Email</p>
-<i class="fa fa-plus" (click)="sendemail(userGenralinfo.Id)"></i>
+<!-- <p>No Email</p>
+<i class="fa fa-plus" (click)="sendemail(userGenralinfo.Id)"></i> -->
+<div class="card-bodynew mb20">
+    <div class="card1 mb20"  id="tasks" style="padding: 15px;
+    padding-left: 0;">
+          <div class="card-header1 container" role="tab" id="headingEight">
+            <div class="box-heading" style="width:100%;">
+              <div class="box-control pull-right">
+                 <div class="records-control-switcher showrcrd1" data-rule="count-record-selector" style="display: none;">
+                    <label>Records per page</label>
+                    <select class="form-control" name="RecordsPerPageSelector" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c">
+                       <option value="5">5</option>
+                       <option value="10">10</option>
+                       <option value="15">15</option>
+                       <option value="20">20</option>
+                       <option value="50">50</option>
+                       <option value="100">100</option>
+                    </select>
+                 </div>
+                 <a href="javascript:void(0);" class="ico-add ico-sz3 showrcrd1 popupicon " data-rule="add-link" style="display:none;" (click)="sendemail(userGenralinfo.Id)">
+                  <i class="fa fa-plus" ></i>
+                </a>
+                 <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false"
+                 aria-controls="collapseEight" id="email" style="color:#000;">
+                 <i class="fa fa-chevron-down collpsicon"></i>
+                </a>
+              </div>
+              <h2>Email</h2>
+              <div class="records-control showrcrd" style="display: none;">Showing Records 
+                <a href="javascript:void(0);" class="prev" style="visibility:hidden">Prev</a>
+                 <a href="javascript:void(0);" class="next" style="visibility:hidden">Next</a>
+                  <span style="width: 30px;">1 - 1</span> of <span style="width: 20px;">1</span></div>
+           </div>
+          </div>
+          <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+            <div class="card-body">
+             <div class="box-content">
+                <div class="table-type02 margin-bottom-0">
+                   <div  class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+                      <table class="table-style01 dataTable">
+                         <thead>
+                            <tr data-rule="titles">
+                               <th>Subject<span class="fixel"><span><span></span></span></span></th>
+                               <th>Date	<span class="fixel" ><span><span></span></span></span></th>
+                               <th>To	<span class="fixel"><span><span></span></span></span></th>
+                               <th>Sender	<span class="fixel"><span><span></span></span></span></th>
+                               <th>Status<span class="fixel"><span><span></span></span></span></th>
+                               <th>Error	<span class="fixel"><span><span><br class="visible-xs visible-sm visible-md"> </span></span></span></th>
+                               
+                            </tr>
+                         </thead>
+                         <tfoot></tfoot>
+                         <tbody>
+                            <!-- <tr data-index="0" data-rule="body">
+                               <td style="max-width: 300px;">
+                                  <div data-display-for="16_UserId">
+                                     <div class="text-ellipsis" ></div>
+                                  </div>
+                               </td>
+                               <td style="max-width: 300px;">
+                                  <div data-display-for="16_Type">
+                                    <div class="text-ellipsis" ></div>
+                                  </div>
+                               </td>
+                               <td style="max-width: 300px;">
+                                  <div data-display-for="16_Status">
+                                    <div class="text-ellipsis" ></div>
+                                  </div>
+                               </td>
+                               <td style="max-width: 300px;">
+                                <div class="text-ellipsis" ></div>
+                               </td>
+                               <td style="max-width: 200px;">
+                                  <div data-display-for="16_Description">
+                                    <div class="text-ellipsis" ></div>
+                                  </div>
+                               </td>
+                               <td style="max-width: 300px;">
+                                  <div data-display-for="16_CreatedBy">
+                                    <div class="text-ellipsis" ></div>
+                                  </div>
+                               </td>
+                              
+                            </tr> -->
+                         </tbody>
+                      </table>
+                     
+                     
+                   </div>
+                </div>
+             </div>
+            </div>
+          </div>
+        </div>
+       
+    
+    </div>
+    
+    
