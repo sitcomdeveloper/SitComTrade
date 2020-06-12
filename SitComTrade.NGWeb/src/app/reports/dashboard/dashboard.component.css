@@ -70,9 +70,7 @@
     white-space: nowrap;
     font: 700 20px/34px Poppins,Arial,sans-serif;
 }
-.icon-users2:before {
-    content: "\67";
-}
+
 .dashboard-info-box {
     height: 100%;
     margin: 0;
@@ -129,4 +127,111 @@
     background: linear-gradient(45deg,#8ec73f 0,#03b9e9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.dashboard-data-box .box-heading {
+    border: 1px solid #ecf1f8;
+    border-width: 0 0 2px;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    color: #45596a;
+    position: relative;
+    padding: 0 30px;
+}
+.dashboard-data-box .box-heading .item {
+    flex: 1;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.colsgrid:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.dashboard-data-box .box-heading label {
+    width: auto;
+}
+
+.dashboard-data-box label {
+    font-weight: 500;
+}
+.colsgrid .col-md-6 {
+    padding: 3px;
+    margin: 0;
+}
+.colsgrid3 {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.colsgrid {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.dashboard-data-box .box-heading-button {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #dde7f9;
+    border-radius: 3px;
+    min-width: 35px;
+    text-align: center;
+    color: #dde7f9;
+    font-size: 18px;
+    line-height: 31px;
+    height: 37px;
+}
+.dashboard-data-box .box-heading [class*=icon-trash] {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    text-align: center;
+    color: #b3bac1;
+    font-size: 18px;
+}
+a.box-heading-button.dropdown-toggle:after {
+    content: none;
+}
+.dashboard-data-box .box-footer {
+    padding: 15px 30px;
+    border: 1px solid #ecf1f8;
+    border-width: 2px 0 0;
+}
+.dashboard-boxes .box .box-content {
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex: 1;
+}
+
+.dashboard-data-box .box-content {
+    padding: 15px 30px;
+}
+.dashboard-data-add .box-heading h2 {
+    font-size: 24px;
+}
+.dashboard-data-box .add {
+    display: table-cell;
+    margin: 0 auto 70px;
+    background: #f9fafe;
+    border-radius: 50%;
+    color: #adbcdb;
+    width: 230px;
+    text-align: center;
+    height: 230px;
+    vertical-align: middle;
+    font-size: 57px;
+}
+.graphsection
+{
+    transform: translate(0, 50%);
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
 }
