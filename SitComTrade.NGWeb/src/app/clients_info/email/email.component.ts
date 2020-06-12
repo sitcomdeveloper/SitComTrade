@@ -42,7 +42,7 @@ export class EmailComponent implements OnInit {
       detailss: Ide
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
 }

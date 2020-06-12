@@ -37,21 +37,13 @@
           <td class="text-ellipsis ">
           <div class="valueshhow">
           {{userGenralinfo?.FirstName}}
-          </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text" formControlName="firstName" aria-required="true">
-          
-          </div>
-          </td> -->
+          </div> 
+          </td>
           <th class="tabletxt">Last Name</th>
           <td class="text-ellipsis">
            <div class="valueshhow">
           {{userGenralinfo?.LastName}}
-          </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="LasttName" type="text" formControlName="lastName" aria-required="true">
-          
-          </div> -->
+          </div> 
           </td>
         </tr>
       </thead>
@@ -62,20 +54,12 @@
            <div class="valueshhow">
           {{userGenralinfo?.Email}}
           </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="Email" type="text" formControlName="email" aria-required="true">
-          
-          </div> -->
           </td>
           <th class="tabletxt">Phone</th>
           <td>
             <div class="valueshhow">
           {{userGenralinfo?.Phone}}
           </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="Phone" type="text" formControlName="phone" appPhoneMask aria-required="true">
-          
-          </div> -->
           </td>
         </tr>
         <tr>
@@ -84,20 +68,12 @@
             <div class="valueshhow">
           {{userGenralinfo?.Mobile}}
           </div>
-           <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="Mobile" type="text" formControlName="mobile" aria-required="true">
-          
-          </div> -->
           </td>
           <th class="tabletxt">Second Email</th>
           <td>
             <div class="valueshhow">
           {{userGenralinfo?.SecondEmail}}
           </div>
-           <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="SecondEmail" type="text" formControlName="secondemail" aria-required="true">
-          
-          </div> -->
           </td>
         </tr>
         <tr>
@@ -106,20 +82,12 @@
             <div class="valueshhow">
               {{userGenralinfo?.ItemId}}
             </div>
-            <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-              <input class="form-control" name="ItemId" type="text" formControlName="itemid" aria-required="true">
-            </div> -->
           </td>
           <th class="tabletxt">Owner</th>
           <td>
            <div class="valueshhow">          
           {{bindLoginData?.FullName}}
           </div>          
-           <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">        
-          <select id="cars" class="form-control">
-            <option value="Krishankant">Krishankant</option> 
-          </select>
-          </div> -->
           </td>
         </tr>
         <tr>
@@ -128,38 +96,24 @@
             <div class="valueshhow">
               {{userGenralinfo?.ResponseStatus}}
             </div>
-           <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="Status" type="text" formControlName="status"  aria-required="true">          
-          </div> -->
           </td>
           <th class="tabletxt">Created Date</th>
           <td>
            <div class="valueshhow">
           {{userGenralinfo?.CreatedAt}}
             </div>
-           <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="CretedDate" type="text" formControlName="createddate"  aria-required="true">
-          
-          </div> -->
+
           </td>
         </tr>
         <tr>
           <th class="tabletxt">LastCommentDate</th>
           <td>
-          
-            <div class="value-edit" data-rule="valueEdit" style="display:none;">
-            <input class="form-control" name="LastCommentDate" type="text" formControlName="lastcommentdate" aria-required="true">
-          
-          </div>
           </td>
           <th class="tabletxt">Modified Date</th>
           <td>
             <div class="valueshhow">
               {{userGenralinfo?.UpdatedAt}}
             </div>
-            <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-              <input class="form-control" name="CretedDate" type="text" formControlName="modifieddate" aria-required="true">
-            </div> -->
           </td>
         </tr>
         <tr>
@@ -168,19 +122,12 @@
            <div class="valueshhow">
             {{userGenralinfo?.ConvertionOwner}}
           </div>
-            <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="ConventionOwner" type="text" formControlName="conventionowner" aria-required="true">          
-          </div> -->
           </td>
           <th class="tabletxt">Retention Owner</th>
           <td>
             <div class="valueshhow">
               {{userGenralinfo?.RetentionOwner}}
           </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="RetentionOwner" type="text" formControlName="retentionowner" aria-required="true">
-          
-          </div> -->
           </td>
         </tr>
         <tr>
@@ -191,24 +138,12 @@
               {{userGenralinfo?.CountryName}}
 
             </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-         
-          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-          data-live-search="true" formControlName="citizenship">
-          <option ngcontent-qpo-c3="">Select</option>
-          <option ngcontent-qpo-c3="" value="{{country.Id}}" *ngFor="let country of Country">
-             {{country.Name}}</option>
-            </select>
-          </div> -->
           </td>
           <th class="tabletxt">Date of Birth</th>
           <td>
            <div class="valueshhow">          
               {{userGenralinfo?.DateOfBirth}}
           </div>
-          <!-- <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="Dob" type="text" formControlName="dob" aria-required="true">          
-          </div> -->
           </td>
         </tr>
         <tr>
@@ -229,11 +164,7 @@
           
            <div class="valueshhow">
           {{userGenralinfo?.FTDDate}}
-          </div>
-          <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FtdDate" type="text" formControlName="ftddate"  aria-required="true">
-          
-          </div>
+          </div> 
           </td>
         </tr>
         <tr>
@@ -260,19 +191,15 @@
         </tr>
         <tr>
           <th class="tabletxt">Last Login Date</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
           <th class="tabletxt">Desk</th>
           <td class="text-ellipsis ">
             <div class="valueshhow">
             {{userGenralinfo?.Desk}}
             </div>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="desk" formControlName="desk" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
         </tr>
         <tr>
           <th class="tabletxt">HasTasks</th>
@@ -281,38 +208,28 @@
           
           </div></td>
           <th class="tabletxt">Task Created Date</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td> 
+        </td>
         </tr>
         <tr>
           <th class="tabletxt">TaskDate</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
           <th class="tabletxt">AssignedDate</th>
           <td class="text-ellipsis ">
             <div class="valueshhow">
             {{userGenralinfo?.AssignedDate}}
             </div>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="AssignedDate" formControlName="assigneddate" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
         </tr>
         <tr>
           <th class="tabletxt">HasNotCompletedTasks</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
           <th class="tabletxt">TotalDeposits</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
         </tr>
         <tr>
           <th class="tabletxt">Ftd Amount</th>
@@ -321,46 +238,29 @@
           
           </div></td>
           <th class="tabletxt">Total Withdrawals</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
         </tr>
         <tr>
           <th class="tabletxt">NetDeposits</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
           <th class="tabletxt">Type</th>
           <td class="text-ellipsis ">
             <div class="valueshhow">
             {{userGenralinfo?.TypeName}}
             </div>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstName" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
         </tr>
         <tr>
           <th class="tabletxt">FirstRegistrationDate</th>
-          <td><div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="FirstRegistrationDate" formControlName="firstregistrationdate" type="text"  aria-required="true">
-          
-          </div></td>
+          <td>
+        </td>
           <th class="tabletxt">RegistrationType</th>
           <td>          
             <div class="valueshhow">
           {{userGenralinfo?.RegistrationType}}
-          </div>
-          <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <!-- <input class="form-control" name="FirstName" type="text"  aria-required="true"> -->
-          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-          data-live-search="true" formControlName="registrationtype">
-          <option ngcontent-qpo-c3="">Select</option>
-          <option ngcontent-qpo-c3="" *ngFor="let type of registrationType">
-             {{type.Name}}</option>
-            </select>
           </div>
           </td>
         </tr>
@@ -369,11 +269,7 @@
           <td>
            <div class="valueshhow">
           {{userGenralinfo?.LastTaskDaysPast}}
-          </div>
-          <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="lasttaskdayspast" formControlName="lasttaskdayspast" type="text" aria-required="true">
-          
-          </div>
+          </div> 
           </td>
           <th class="tabletxt">DaysAgoClientCreated
           </th>
@@ -381,14 +277,8 @@
            <div class="valueshhow">
           {{userGenralinfo?.DaysAgoClientCreated}}
           </div>
-          <div class="value-edit" data-rule="valueEdit" style="display:none;">
-          <input class="form-control" name="DaysAgoClientCreated" formControlName="daysagoclientcreated" type="text"  aria-required="true">
-          
-          </div>
           </td>
         </tr>
-
-
       </tbody>
     </table>
   </form>
@@ -454,7 +344,7 @@
             <th class="tabletxt">Item ID</th>
             <td><input type="text" class="form-control disabledd" formControlName="itemid" onmousedown="return false" onselectstart="return false"></td>
             <th class="tabletxt">Owner</th>
-            <td><input type="text" class="form-control" formControlName="owner"></td>
+            <td><input type="text" class="form-control disabledd" formControlName="owner" onmousedown="return false" onselectstart="return false"></td>
           </tr>
           <tr>
             <th class="tabletxt">Status</th>
@@ -462,7 +352,7 @@
               <!-- <input type="text"  class="form-control"formControlName="status"> -->
               <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="status">
                 <option>Select...</option>
-                <option value="0" value="{{status?.Id}}" *ngFor="let status of Status">{{status?.Name}}</option>
+                <option value="0" value="{{status?.Name}}" *ngFor="let status of Status">{{status?.Name}}</option>
              </select>
             </td>
             <th class="tabletxt">Created Date</th>
@@ -487,7 +377,7 @@
               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
           data-live-search="true" formControlName="citizenship">
           <option ngcontent-qpo-c3="">Select</option>
-          <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+          <option ngcontent-qpo-c3="" value="{{country.Name}}" *ngFor="let country of Country">
              {{country.Name}}</option>
             </select>
             </td>
@@ -574,7 +464,7 @@
               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
               data-live-search="true" formControlName="registrationtype">
               <option ngcontent-qpo-c3="">Select</option>
-              <option ngcontent-qpo-c3="" *ngFor="let type of registrationType">
+              <option ngcontent-qpo-c3="" value="{{type.Name}}" *ngFor="let type of registrationType">
                  {{type.Name}}</option>
                 </select></td>
           </tr>

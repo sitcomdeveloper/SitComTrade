@@ -133,7 +133,7 @@
           <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
           data-live-search="true" formControlName="ipcountry">
           <option ngcontent-qpo-c3="">Select</option>
-          <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+          <option ngcontent-qpo-c3="" value="{{country.Name}}" *ngFor="let country of Country">
              {{country.Name}}</option>
             </select>
           </div>
@@ -373,10 +373,11 @@
                        <div _ngcontent-jhd-c5="" class="valueshhow1" style="display: none;"> 423525</div>
                        <div _ngcontent-jhd-c5="" class="value-edit1" data-rule="valueEdit" >
                          
-                          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-                          data-live-search="true" formControlName="ipcountry">
-                          <option ngcontent-qpo-c3="">Select</option>
-                          <option ngcontent-qpo-c3="" *ngFor="let country of Country">
+                          <!-- <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+                          data-live-search="true" formControlName="ipcountry"> -->
+                          <select class="form-control" name="Department" data-container="body" data-live-search="true" id="aecf73213-ba89-9750-cbde-42984704b916" tabindex="-98" formControlName="ipcountry">
+                          <option value="Select">Select</option>
+                          <option ngcontent-qpo-c3="" value="{{country.Name}}" *ngFor="let country of Country">
                              {{country.Name}}</option>
                             </select>
                        </div>

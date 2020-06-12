@@ -74,6 +74,7 @@ export class GeneralInfoComponent implements OnInit {
       type: [''],
       firstregistrationdate: [''],
       registrationtype: [''],
+      registrationtypeid: [''],
       lasttaskdayspast: [''],
       daysagoclientcreated: [''],
       countryid: ['']
@@ -98,7 +99,7 @@ export class GeneralInfoComponent implements OnInit {
       mobile: this.userGenralinfo.Mobile,
       secondemail: this.userGenralinfo.SecondEmail,
       itemid: this.userGenralinfo.ItemId,
-      owner: this.userGenralinfo.OwnerId,
+      owner: this.bindLoginData.FullName,
       status: this.userGenralinfo.ResponseStatus,
       createddate: this.userGenralinfo.CreatedAt,
       // lastcommentdate:: this.userGenralinfo.,
@@ -162,26 +163,75 @@ export class GeneralInfoComponent implements OnInit {
         this.userInfoForm.value.countryid = element.Name;
       }
     });
+    this.Status.forEach(element => {
+      if ( element.Id === +this.userInfoForm.value.status) {
+        this.userInfoForm.value.statusid = element.Name;
+      }
+    });
+    this.registrationType.forEach(element => {
+      if ( element.Id === +this.userInfoForm.value.registrationtype) {
+        this.userInfoForm.value.registrationtypeid = element.Name;
+      }
+    });
     const obj = {
-      ItemId: this.userGenralinfo.ItemId,
+      // ItemId: this.userGenralinfo.ItemId,
+      // FirstName: this.userInfoForm.value.firstName,
+      // LastName: this.userInfoForm.value.lastName,
+      // Email: this.userInfoForm.value.email,
+      // GroupName: this.userGenralinfo.GroupName,
+      // TypeName: this.userInfoForm.value.type,
+      // Password: this.userGenralinfo.Password,
+      // CountryName: this.userInfoForm.value.citizenship,
+      // CountryId: this.userInfoForm.value.countryid,
+      // GroupId: this.userGenralinfo.GroupId,
+      // ISendEmail: this.userGenralinfo.ISendEmail,
+      // OwnerId: this.userGenralinfo.OwnerId,
+      // Phone: this.userInfoForm.value.phone,
+      // ResponseStatus: this.userInfoForm.value.status,
+      // RegistrationType: this.userInfoForm.value.registrationtype,
+
+      OwnerId: this.userGenralinfo.OwnerId,
       FirstName: this.userInfoForm.value.firstName,
       LastName: this.userInfoForm.value.lastName,
       Email: this.userInfoForm.value.email,
-      GroupName: this.userGenralinfo.GroupName,
-      TypeName: this.userInfoForm.value.type,
-      Password: this.userGenralinfo.Password,
-      CountryName: this.userInfoForm.value.citizenship,
-      CountryId: this.userInfoForm.value.countryid,
-      GroupId: this.userGenralinfo.GroupId,
-      ISendEmail: this.userGenralinfo.ISendEmail,
-      OwnerId: this.userGenralinfo.OwnerId,
       Phone: this.userInfoForm.value.phone,
+      Mobile: '',
+      SecondEmail: '',
+      Password: this.userGenralinfo.Password,
+      ResponseStatusId: this.userInfoForm.value.statusid,
       ResponseStatus: this.userInfoForm.value.status,
+      CurrencyId: '',
+      CurrencyName: '',
+      CountryId: this.userInfoForm.value.countryid,
+      CountryName: this.userInfoForm.value.citizenship,
+      DateOfBirth: '',
+      FTD: '',
+      FTDDate: '',
+      Enabled: '',
+      RetentionOwner: '',
+      ConvertionOwner: '',
+      TypeName: this.userInfoForm.value.type,
+      AssignedDate: '',
+      FirstRegistrationDate: '',
+      ImportId: '',
+      GroupName: this.userGenralinfo.GroupName,
+      GroupId: this.userGenralinfo.GroupId,
+      Desk: '',
       RegistrationType: this.userInfoForm.value.registrationtype,
+      RegistrationTypeId: this.userInfoForm.value.registrationtypeid,
+      LastTaskDaysPast: '',
+      DaysAgoClientCreated: '',
+      ISendEmail: this.userGenralinfo.ISendEmail,
+      CitizenshipId: '',
+      DeskId: '',
+      TypeId: '', 
+      ItemId: this.userGenralinfo.ItemId,
+      Id: this.userGenralinfo.Id,
+      
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       this.updatedDtls = res;
-      // console.log('updatedDtls', res);
+      console.log('updatedDtls', res);
       this.spinnerService.show();
       this.afterUpdate();
       this.frontGeneralInfo = true;
