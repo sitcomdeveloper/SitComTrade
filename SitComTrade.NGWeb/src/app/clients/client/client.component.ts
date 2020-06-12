@@ -13,6 +13,7 @@ import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task
 import { ImportClientComponent } from '../import-client/import-client.component';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import * as $ from 'jquery' 
+import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -83,9 +84,9 @@ export class ClientComponent implements OnInit {
     this.getcountryName();
     this.getAllStatus(); 
     this.getGroups();
-    // code for receiving login details and bind OwnerName at place of name
-    this.getLoginDetails = JSON.parse(localStorage.getItem('username'));
-    this.bindLoginData = this.getLoginDetails;
+   // code for receiving login details and bind to header at place of name
+   this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+   this.bindLoginData = this.getLoginDetails;
     
       $(document).ready(function () {
     $("#ckbCheckAll").click(function () {
@@ -263,7 +264,7 @@ $(document).ready(function () {
       DeskId: '',
       TypeId: '',
       RegistrationTypeId: '',
-      ItemId: '',
+      ItemId: this.assignedselectedrow.ItemId,
       Id: selectedId
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
@@ -354,5 +355,17 @@ $(document).ready(function () {
     this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
       this.Group = result.reverse();
     });
+  }
+  // selected checkbox will send email
+  sendemail() {
+    const initialState = {
+      title: 'SEND EMAIL',
+      sendemail: 'sendemail',
+      // get Id for showing email on popup
+      detailss: this.UserId
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
   }
 }
