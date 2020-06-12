@@ -107,7 +107,7 @@ export class GeneralInfoComponent implements OnInit {
       // conventionowner: this.userGenralinfo.
       // retentionowner: this.userGenralinfo.
       citizenship: this.userGenralinfo.CountryName,
-      // dob: this.userGenralinfo.,
+      dob: this.userGenralinfo.DateOfBirth,
       ftd: this.userGenralinfo.Ftd,
       // ftdate: this.userGenralinfo.,
       enabled: this.userGenralinfo.Enabled,
@@ -174,29 +174,13 @@ export class GeneralInfoComponent implements OnInit {
       }
     });
     const obj = {
-      // ItemId: this.userGenralinfo.ItemId,
-      // FirstName: this.userInfoForm.value.firstName,
-      // LastName: this.userInfoForm.value.lastName,
-      // Email: this.userInfoForm.value.email,
-      // GroupName: this.userGenralinfo.GroupName,
-      // TypeName: this.userInfoForm.value.type,
-      // Password: this.userGenralinfo.Password,
-      // CountryName: this.userInfoForm.value.citizenship,
-      // CountryId: this.userInfoForm.value.countryid,
-      // GroupId: this.userGenralinfo.GroupId,
-      // ISendEmail: this.userGenralinfo.ISendEmail,
-      // OwnerId: this.userGenralinfo.OwnerId,
-      // Phone: this.userInfoForm.value.phone,
-      // ResponseStatus: this.userInfoForm.value.status,
-      // RegistrationType: this.userInfoForm.value.registrationtype,
-
       OwnerId: this.userGenralinfo.OwnerId,
       FirstName: this.userInfoForm.value.firstName,
       LastName: this.userInfoForm.value.lastName,
       Email: this.userInfoForm.value.email,
       Phone: this.userInfoForm.value.phone,
-      Mobile: '',
-      SecondEmail: '',
+      Mobile: this.userInfoForm.value.mobile,
+      SecondEmail: this.userInfoForm.value.secondemail,
       Password: this.userGenralinfo.Password,
       ResponseStatusId: this.userInfoForm.value.statusid,
       ResponseStatus: this.userInfoForm.value.status,
@@ -204,10 +188,10 @@ export class GeneralInfoComponent implements OnInit {
       CurrencyName: '',
       CountryId: this.userInfoForm.value.countryid,
       CountryName: this.userInfoForm.value.citizenship,
-      DateOfBirth: '',
-      FTD: '',
+      DateOfBirth: this.userInfoForm.value.dob,
+      FTD: this.userInfoForm.value.ftd,
       FTDDate: '',
-      Enabled: '',
+      Enabled: this.userInfoForm.value.enabled,
       RetentionOwner: '',
       ConvertionOwner: '',
       TypeName: this.userInfoForm.value.type,
@@ -227,7 +211,6 @@ export class GeneralInfoComponent implements OnInit {
       TypeId: '', 
       ItemId: this.userGenralinfo.ItemId,
       Id: this.userGenralinfo.Id,
-      
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       this.updatedDtls = res;

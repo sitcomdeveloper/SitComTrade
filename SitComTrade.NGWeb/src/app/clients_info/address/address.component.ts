@@ -73,11 +73,11 @@ export class AddressComponent implements OnInit {
       City: this.addressForm.value.city,
       State: this.addressForm.value.state,
       ZipCode: this.addressForm.value.zipcode,
-      CountryId: this.addressForm.value.countryid,
-      CountryName: this.addressForm.value.ipcountry,
+      CountryId: this.addressForm.value.ipcountry,
+      CountryName: this.addressForm.value.countryid,
       OwnerId: this.detail,
       StreetAddress: this.addressForm.value.address,
-      Id: this.userAddress.Id,
+      // Id: this.userAddress.Id,
       };
     this.addressservice.insertAddress(obj).subscribe(res => {
       this.spinnerService.show();
