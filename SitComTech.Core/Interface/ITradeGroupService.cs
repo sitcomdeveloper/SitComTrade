@@ -11,5 +11,6 @@ namespace SitComTech.Core.Interface
         TradeGroup GetById(object Id);
         void InsertTradeGroup(TradeGroup entity);
         void UpdateTradeGroup(TradeGroup entity);
+        bool DeleteMultipleTradeGroup(List<long> groupids);
     }
 }
