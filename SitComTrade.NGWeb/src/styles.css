@@ -15,6 +15,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+[role=button] {
+    cursor: pointer;
+}
+.nowrap {
+    white-space: nowrap;
+}
 .subheader {
     position: relative;
     z-index: 10;
