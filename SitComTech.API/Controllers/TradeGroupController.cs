@@ -68,5 +68,27 @@ namespace SitComTech.API.Controllers
                 throw ex;
             }
         }
+
+        [HttpPost]
+        [Route("DeleteMultipleTradeGroup")]
+        public bool v(List<long> groupIds)
+        {
+            try
+            {
+                if (groupIds != null && groupIds.Count > 0)
+                {
+                    return _tradegroupService.DeleteMultipleTradeGroup(groupIds);
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
