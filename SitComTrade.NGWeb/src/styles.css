@@ -1455,6 +1455,28 @@ tr.tablectn {
   a.brdr-right.disabled,a.disabled {
     opacity: 0.5;
 }
+.jsgrid-button {
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+    background: url(/assets/images/jsgrid-icons.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.jsgrid-update-button {
+    background-position: 0 -336px;
+    width: 16px;
+    height: 16px;
+}
+ /* .jsgrid-control-field a,  .jsgrid-control-field input {
+    margin-left: 2px;
+} */
+.jsgrid-cancel-edit-button {
+    background-position: 0 0;
+    width: 16px;
+    height: 16px;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */

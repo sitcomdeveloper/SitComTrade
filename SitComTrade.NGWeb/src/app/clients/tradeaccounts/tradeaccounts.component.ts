@@ -39,6 +39,12 @@ export class TradeaccountsComponent implements OnInit {
         $("#chked").html("<span>"+chlength+ " items checked from</span>");
       });
     });
+    $(document).ready(function () {
+      $("#tradepencil").click(function(){
+        $(".showtrade").show();
+        $(".hidetrade").hide();
+      });
+    });
   }
   tradeDetails() {
     const obj = {
