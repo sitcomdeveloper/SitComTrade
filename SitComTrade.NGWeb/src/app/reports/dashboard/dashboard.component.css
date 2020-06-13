@@ -42,7 +42,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.dashboard-info-box [class*=icon-] {
+.dashboard-info-box [class*=lni-] {
     font-size: 35px;
     margin: 0 15px 0 0;
 }
