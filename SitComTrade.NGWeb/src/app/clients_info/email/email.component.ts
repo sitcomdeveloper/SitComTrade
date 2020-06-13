@@ -14,6 +14,7 @@ import * as $ from 'jquery'
 export class EmailComponent implements OnInit {
   detail: number;
   userGenralinfo: any;
+  tkemail: any;
 
   constructor(private modalService: BsModalService,private _route: ActivatedRoute,private _generalinfoservice:GeneralInfoService) { }
   bsModalRef: BsModalRef;
@@ -33,6 +34,15 @@ export class EmailComponent implements OnInit {
          $(".showrcrd1").toggle();
        });
      });
+     this.gettheMail();
+  }
+  // get all mails
+  gettheMail() {
+    this._generalinfoservice.getMail(1).subscribe(gtmal => {
+      this.tkemail = gtmal;
+
+      console.log('tkemail',gtmal);
+    })
   }
   sendemail(Ide) {
     const initialState = {
@@ -40,6 +50,17 @@ export class EmailComponent implements OnInit {
       sendemail: 'sendemail',
       // get Id for showing email on popup
       detailss: Ide
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
+  getupdteMail(sentmaildata) {
+    const initialState = {
+      title: 'Email Details',
+      emaildtls: 'emaildtls',
+      // get Id for showing email on popup
+      sntmldta: sentmaildata
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));

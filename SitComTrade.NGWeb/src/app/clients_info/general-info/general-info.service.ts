@@ -31,4 +31,8 @@ export class GeneralInfoService {
   sendmail(email: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/CreateEmail', email);
   }
+  // get all mails
+  getMail(mail: any): Observable<any> {
+    return this.http.get<any>(API_URL + 'Client/GetEmailByOwnerId/' + mail);
+  }
 }
