@@ -40,8 +40,6 @@ export class EmailComponent implements OnInit {
   gettheMail() {
     this._generalinfoservice.getMail(1).subscribe(gtmal => {
       this.tkemail = gtmal;
-
-      console.log('tkemail',gtmal);
     })
   }
   sendemail(Ide) {
@@ -55,12 +53,13 @@ export class EmailComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
-  getupdteMail(sentmaildata) {
+  getupdteMail(sentmaildata,Ide) {
     const initialState = {
       title: 'Email Details',
       emaildtls: 'emaildtls',
       // get Id for showing email on popup
-      sntmldta: sentmaildata
+      sntmldta: sentmaildata,
+      detailss: Ide
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));

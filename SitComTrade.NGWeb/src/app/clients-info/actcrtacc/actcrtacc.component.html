@@ -599,7 +599,7 @@
             <div class="form-group row">
                <div class="col-md-2 control-label"><label class="valign-label" for="to">To:</label></div>
                <div class="col-md-10">
-                  <input class="form-control" name="to" type="text" id="aa161a8ec-538f-8fea-e9cf-22c794976dc3" aria-required="true" formControlName="to" onmousedown="return false" onselectstart="return false" style="width: 50%;"><a href="javascript:void(0)" (click)="sendtheemail()">Resend</a>
+                  <input class="form-control" name="to" type="text" id="aa161a8ec-538f-8fea-e9cf-22c794976dc3" aria-required="true" formControlName="to" onmousedown="return false" onselectstart="return false" style="width: 70%;"><a href="javascript:void(0)" (click)="sendtheemail()">Resend</a>
                </div>
             </div>
             <div class="form-group row">
@@ -607,12 +607,10 @@
                <div class="col-md-10"><input class="form-control" name="cc" type="text" id="a115dc90b-296c-9751-0995-1cb11730992b" onmousedown="return false" onselectstart="return false"></div>
             </div> 
             <div class="email-options-area">
-               <!-- <div class="form-group row">
+               <div class="form-group row">
                   <div class="col-md-2 control-label"><label class="valign-label" for="bcc">Bcc:</label></div>
-                  <div class="col-md-10"><input class="form-control" name="bcc" type="text" id="a484d2f8d-18db-7523-9c28-8174716bacf3"></div>
-               </div> -->
-              
-               
+                  <div class="col-md-10"><input class="form-control" name="bcc" type="text" id="a484d2f8d-18db-7523-9c28-8174716bacf3" onmousedown="return false" onselectstart="return false"></div>
+               </div>
                <div class="form-group"><input type="hidden" class="not-resetable" name="isHtml" value="true"></div>
             </div>
              <div class="form-group row">
@@ -620,17 +618,9 @@
                   <div class="col-md-10"><input class="form-control" name="bcc" type="text" id="a484d2f8d-18db-7523-9c28-8174716bacf3" formControlName="subject" onmousedown="return false" onselectstart="return false"></div>
                </div>
          </div>
-         <ckeditor data="" formControlName="body" disabled></ckeditor>
+         <ckeditor data="" formControlName="body" class="disabled"></ckeditor>
       </form>
    </div>
    <div class="message">{{response}}</div>
-   <!-- <ckeditor data="<p>Hello, world!</p>"></ckeditor> -->
-   <!-- <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="col-md-12 padd0">
-      <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
-         <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center">
-            <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]"><a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" >Send</a><a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a></div>
-         </div>
-      </div>
-   </div> -->
    </div>
  

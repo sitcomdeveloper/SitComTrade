@@ -83,6 +83,14 @@ export class ActcrtaccComponent implements OnInit {
     // emaildtls popup on info page
     if (this.emaildtls === 'emaildtls') {
       this.emldetails = true;
+      this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
+        this.userGenralinfo = res;
+        this.actionsForm.patchValue({
+          to: this.userGenralinfo.Email,
+          subject: this.sntmldta.Subject,
+      body: this.sntmldta.Body,
+         })
+      });
     } else {
       this.emldetails = false;
     }
@@ -93,7 +101,6 @@ export class ActcrtaccComponent implements OnInit {
       body: ['']
     })
     this.getGroups();
-    this.patchemailDetails();
   }
   hideModal() {
     this.bsmodal.hide();
@@ -123,12 +130,5 @@ this._generalinfoservice.sendmail(email).subscribe(getmail => {
       }
       this.actionsForm.reset();
 })
-  }
-  patchemailDetails() {
-    this.actionsForm.patchValue({
-      to: this.sntmldta.To,
-      subject: this.sntmldta.Subject,
-      body: this.sntmldta.Body,
-    })
   }
 }
