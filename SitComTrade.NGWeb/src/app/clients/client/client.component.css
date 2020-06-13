@@ -527,6 +527,11 @@ optgroup {
     padding: 5px;
     white-space: nowrap;
 }
+.fa-star
+{
+    color: #45596a;
+    cursor: pointer;
+}
 .popcontent {
     margin: 0;
     padding: 0;
