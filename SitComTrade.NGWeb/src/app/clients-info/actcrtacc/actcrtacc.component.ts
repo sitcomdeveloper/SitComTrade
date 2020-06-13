@@ -23,6 +23,8 @@ export class ActcrtaccComponent implements OnInit {
   sendsms: any;
   vwhistory = false;
   viewhistory: any;
+  emldetails = false;
+  emaildtls: any;
   title: any;
   userGenralinfo: any;
   detailss: any;
@@ -31,6 +33,7 @@ export class ActcrtaccComponent implements OnInit {
   bindLoginData: any;
   sentmails: any;
   response: string;
+  sntmldta: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -77,6 +80,12 @@ export class ActcrtaccComponent implements OnInit {
     } else {
       this.vwhistory = false;
     }
+    // emaildtls popup on info page
+    if (this.emaildtls === 'emaildtls') {
+      this.emldetails = true;
+    } else {
+      this.emldetails = false;
+    }
     this.actionsForm = this.fb.group({
       settings: [''],
       to: [''],
@@ -84,6 +93,7 @@ export class ActcrtaccComponent implements OnInit {
       body: ['']
     })
     this.getGroups();
+    this.patchemailDetails();
   }
   hideModal() {
     this.bsmodal.hide();
@@ -102,7 +112,6 @@ export class ActcrtaccComponent implements OnInit {
       Body: this.actionsForm.value.body,
       Sender: this.actionsForm.value.settings,
       OwnerId: this.userGenralinfo.OwnerId,
-      // this.bindLoginData.UserId
     }
 this._generalinfoservice.sendmail(email).subscribe(getmail => {
   this.sentmails = getmail;
@@ -113,7 +122,13 @@ this._generalinfoservice.sendmail(email).subscribe(getmail => {
         this.response = '';
       }
       this.actionsForm.reset();
-  // console.log('sentmails',getmail);
 })
+  }
+  patchemailDetails() {
+    this.actionsForm.patchValue({
+      to: this.sntmldta.To,
+      subject: this.sntmldta.Subject,
+      body: this.sntmldta.Body,
+    })
   }
 }
