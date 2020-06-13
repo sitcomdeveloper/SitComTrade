@@ -15,7 +15,8 @@ export class GroupsComponent implements OnInit {
   Group: any;
   GroupLength: any;
   Leverage: any;
-
+  deletbtnn = true;
+  UserId: any;
   constructor(private groupsService: GroupsService, private router: Router, private spinnerService: Ng4LoadingSpinnerService,
               private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
@@ -61,5 +62,15 @@ export class GroupsComponent implements OnInit {
   this.bsModalRef.content.clddata.subscribe(data => {
     this.getGroups();
   });
+}
+deletbtn(val, userid) {
+  this.UserId = userid
+  if (val === true) {
+    this.deletbtnn = false;
+//  this.selectedchkbxfrdltclnt.push(userid);
+  } else {
+    this.deletbtnn = true;
+  //  this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+  }
 }
 }
