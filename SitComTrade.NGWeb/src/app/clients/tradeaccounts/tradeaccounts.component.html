@@ -418,8 +418,12 @@
               <div class="dropleft droptop hidetrade">
                 <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i class="fa fa-link greyicon" aria-hidden="true"></i>
                 </a>
-                    <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" disabled="" id="tradepencil"></i>
-                
+                <!-- <a href="#" class="ico-sz3 ico-link dh"  id="tradepencil">
+                    <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" ></i>
+                </a> -->
+                <span  id="tradepencil">
+                    <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" ></i>
+                </span>
                   <br>
                 <a href="javascript:void(0);"  class="ico-sz3 ico-link dh"  data-jsgrid-rule="link" title="Open in new tab"  (click)="liveTrade(item.Id)">&nbsp;&nbsp;<i class="fa fa-window-maximize greyicon" aria-hidden="true"></i>
                 </a>
@@ -428,12 +432,171 @@
                 <!-- (click)="liveTrade('/livetrade', item.Id )" -->
                 <!-- target="_blank" -->
                 </div>
-                <div _ngcontent-epc-c9="" class="dropleft droptop showtrade" style=""><input _ngcontent-epc-c9="" class="jsgrid-button jsgrid-update-button" title="Update" type="button"><input _ngcontent-epc-c9="" class="jsgrid-button jsgrid-cancel-edit-button" title="Cancel edit" type="button"></div>
+                <div _ngcontent-epc-c9="" class="dropleft droptop showtrade">
+                    <input _ngcontent-epc-c9="" class="jsgrid-button jsgrid-update-button" title="Update" type="button">
+                    <input _ngcontent-epc-c9="" class="jsgrid-button jsgrid-cancel-edit-button" title="Cancel edit" type="button">
+                </div>
           </td>
       </tr>
-   
+   <!----------editing-------------->
+   <tr class="jsgrid-edit-row" style="display: none;">
+    <td class="jsgrid-cell jsgrid-align-center" style="width: 15px;">
+       <form>
+          <div class="jsgrid-cell-content"></div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" >
+       <form>
+          <div class="jsgrid-cell-content">
+             <div class="text-ellipsis"><a href="#"><span></span></a></div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" >
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_AccountId">
+                <div class="text-ellipsis" data-original-title="" title="">
+                    <a href="#"><span></span></a></div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" >
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_FirstName">
+                <div class="text-ellipsis" data-field="FirstName" data-original-value="Linus"></div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" >
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_LastName">
+                <div class="text-ellipsis" data-field="LastName" data-original-value="Test"></div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" >
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_Email">
+                <div class="text-ellipsis" data-field="Email"  data-original-title="" title=""></div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell jsgrid-align-left" >
+       <form novalidate="novalidate">
+          <div class="jsgrid-cell-content">
+             <div class="">
        
-          
+                <select class="form-control" name="GroupId" data-container="body" data-live-search="true" id="a88630551-3a0a-4948-a2fe-66058443332d" data-empty-checker="true" tabindex="-98" aria-required="true">
+                   <option value="42" data-currency="2" data-is-demo="false" data-is-bundle="">TradePro Markets Limited EUR</option>
+                </select>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell jsgrid-align-left">
+       <form novalidate="novalidate">
+          <div class="jsgrid-cell-content">
+             <div >
+                
+                <select class="form-control" name="Leverage" data-container="body" data-live-search="true" id="aaa3a2206-4cb4-f515-6c85-3402ff1fd6f5" data-empty-checker="true" tabindex="-98" aria-required="true">
+                   <option value="">Select...</option>
+                   <option value="1">1:1</option>
+                   <option value="5">1:5</option>
+                   <option value="10">1:10</option>
+                   <option value="33">1:33</option>
+                   <option value="100">1:100</option>
+                   <option value="200">1:200</option>
+                   <option value="500">1:500</option>
+                   <option value="1000">1:1000</option>
+                </select>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell">
+       <form novalidate="novalidate">
+          <div class="jsgrid-cell-content"><input class="form-control" name="StopOut" type="text" id="a472e0df9-c5d5-94c8-9a62-f032eec04890" aria-required="true"></div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" >
+       <form novalidate="novalidate">
+          <div class="jsgrid-cell-content"><input class="form-control" name="MinDeposit" type="text" id="a00006b1f-a8a0-aeaf-629b-7b2afc3b8444" aria-required="true"></div>
+       </form>
+    </td>
+    <td class="jsgrid-cell jsgrid-align-center">
+       <form novalidate="novalidate">
+          <div class="jsgrid-cell-content">
+             <div class="input-checkbox" id="uniform-a41d50741-2c39-eb58-18b5-eef7dbf0c051">
+                 <span class="checked">
+                     <input class="form-control" name="AllowTrade" type="checkbox" id="a41d50741-2c39-eb58-18b5-eef7dbf0c051" value="true"></span></div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell">
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_RegistrationDate"></div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell">
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_CloseProfitAndLoss">
+                <div class="text-ellipsis color09" data-field="CloseProfitAndLoss" data-original-value="8.69662955" data-isformatted="true"></div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell jsgrid-align-center" style="width: 73px;">
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_IsOnline">
+                <div><i class="ico-sz2 ico-status"></i></div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" style="width: 73px;">
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_Balance">
+                <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true">1008.70</div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" style="width: 73px;">
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_Equity">
+                <div class="text-ellipsis" data-field="Equity" data-original-value="810.92979553" data-isformatted="true">810.93</div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell" style="width: 73px;">
+       <form>
+          <div class="jsgrid-cell-content">
+             <div data-display-for="9_Volume">
+                <div class="text-ellipsis" data-field="Volume" data-original-value="32620.9274294" data-isformatted="true" data-original-title="" title="">32620.93</div>
+             </div>
+          </div>
+       </form>
+    </td>
+    <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" style="width: 73px;">
+       <form><input class="jsgrid-button jsgrid-update-button" type="button" title="Update"><input class="jsgrid-button jsgrid-cancel-edit-button" type="button" title="Cancel edit"></form>
+    </td>
+ </tr>
+    <!----------------------------->
         </tbody>
       </table>
     </div>

@@ -41,8 +41,8 @@ export class TradeaccountsComponent implements OnInit {
     });
     $(document).ready(function () {
       $("#tradepencil").click(function(){
-        $(".showtrade").show();
-        $(".hidetrade").hide();
+        $(".showtrade").css("display", "block");
+        $(".hidetrade").css("display", "none");
       });
     });
   }
