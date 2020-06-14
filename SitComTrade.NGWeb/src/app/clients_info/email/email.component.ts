@@ -38,7 +38,7 @@ export class EmailComponent implements OnInit {
   }
   // get all mails
   gettheMail() {
-    this._generalinfoservice.getMail(this.detail).subscribe(gtmal => {
+    this._generalinfoservice.getMail(1).subscribe(gtmal => {
       this.tkemail = gtmal;
     })
   }
