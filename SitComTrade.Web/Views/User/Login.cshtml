@@ -216,11 +216,22 @@
         //UserVM.SelectedAccounts = ko.observableArray([
         //    20, 21, 22, 23
         //]);
-        UserVM.ClientS = {
+        //UserVM.ClientS = {
 
           
-            IsStarred: ko.observable(0),
-            ClientId: ko.observable(62),
+        //    IsStarred: ko.observable(0),
+        //    ClientId: ko.observable(62),
+        //};
+
+
+        UserVM.CreatEmail = {
+
+            To: ko.observable('kk84singh@gmail.com'),
+            Subject: ko.observable('hdfdf'),
+            Body: ko.observable('Lead'),
+            Sender: ko.observable('dgdg'),
+            OwnerId: ko.observable(2),
+            UserId: ko.observable(2),
         };
 
         // UserVM.CreatEmail = {
@@ -364,26 +375,26 @@
 
         $(document).ready(function () {
 
-            //$.ajax({
-            //    type: 'Post',
-            //     url: apiURl + "api/Client/CreateEmail",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    data: ko.toJSON(UserVM.CreatEmail),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Client/UpdateClientStarred",
+                url: apiURl + "api/Client/EmailToAllClients",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.ClientS),
+                data: ko.toJSON(UserVM.CreatEmail),
                 success: function (result) {
                     alert(result);
                 }
             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/UpdateClientStarred",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.ClientS),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',
