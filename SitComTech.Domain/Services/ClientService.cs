@@ -239,7 +239,8 @@ namespace SitComTech.Domain.Services
                 LastTaskDaysPast = x.UserOwner.clients.LastTaskDaysPast,
                 DaysAgoClientCreated = x.UserOwner.clients.DaysAgoClientCreated,
                 ISendEmail = x.UserOwner.clients.ISendEmail,
-                CitizenshipId = x.UserOwner.clients.CitizenshipId
+                CitizenshipId = x.UserOwner.clients.CitizenshipId,
+                IsStarred = x.UserOwner.clients.IsStarred
             }).ToList();
         }
 

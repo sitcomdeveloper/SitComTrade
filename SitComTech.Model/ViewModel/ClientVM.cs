@@ -72,7 +72,7 @@ namespace SitComTech.Model.ViewModel
         public Nullable<long> CitizenshipId { get; set; }
         public Nullable<long> DeskId { get; set; }
         public Nullable<long> RegistrationTypeId { get; set; }
-
+        public Nullable<bool> IsStarred { get; set; }
     }
 
     public class TradeAccountVM
