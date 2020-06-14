@@ -49,8 +49,8 @@
                      <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" [attr.disabled]="deletbtnn ==true ? true : false">
                         <a _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" (click)="newGroup()" data-toggle="modal" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a>
                         <a href="javascript:void(0)" class="brdr-right" [class.disabled] = deletbtnn>
-                           <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" disabled=""></i></a>
-                        <a _ngcontent-boj-c6="" href="javascript:void(0)" [class.disabled] = deletbtnn><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled=""></i></a>
+                           <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" ></i></a>
+                        <a _ngcontent-boj-c6="" href="javascript:void(0)" [class.disabled] = deletbtnn><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" (click)="opendltgrppopup()"></i></a>
                      </div> 
                   </div>
                </div>
@@ -359,7 +359,7 @@
                                     <div class="email-cell-content1">
                                        <div class="input-checkbox"><span>
                                           
-                                          <input type="checkbox" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,actinfo.Id)" onclick="checkboxcheck()" data-item-selector="true"></span>
+                                          <input type="checkbox" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,group.Id)" onclick="checkboxcheck()" data-item-selector="true"></span>
                                        </div>
                                     </div>
                                  </td>

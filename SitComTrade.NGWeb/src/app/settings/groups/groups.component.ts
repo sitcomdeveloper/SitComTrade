@@ -5,6 +5,7 @@ import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bo
 import { CreateItemComponent } from './create-item/create-item.component';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import * as $ from 'jquery'
+import { DeleteComponent } from 'src/app/common/delete/delete.component';
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.component.html',
@@ -17,6 +18,7 @@ export class GroupsComponent implements OnInit {
   Leverage: any;
   deletbtnn = true;
   UserId: any;
+  selectedchkbxfrdltgrp = [];
   constructor(private groupsService: GroupsService, private router: Router, private spinnerService: Ng4LoadingSpinnerService,
               private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
@@ -67,10 +69,25 @@ deletbtn(val, userid) {
   this.UserId = userid
   if (val === true) {
     this.deletbtnn = false;
-//  this.selectedchkbxfrdltclnt.push(userid);
+ this.selectedchkbxfrdltgrp.push(userid);
   } else {
     this.deletbtnn = true;
-  //  this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+   this.selectedchkbxfrdltgrp.splice(this.selectedchkbxfrdltgrp.indexOf(userid), 1)
   }
+}
+// delete group
+opendltgrppopup() {
+  const initialState = {
+    title: 'Delete Group',
+    selectedgrpwilldltd: this.selectedchkbxfrdltgrp,
+    // for div close or hide
+    rmvGroup: 'rmvGroup' 
+  };
+  // tslint:disable-next-line: max-line-length
+  this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+  this.bsModalRef.content.closeBtnName = 'Cancel';
+  this.bsModalRef.content.clddata.subscribe(data => {
+    this.getGroups();
+  });
 }
 }

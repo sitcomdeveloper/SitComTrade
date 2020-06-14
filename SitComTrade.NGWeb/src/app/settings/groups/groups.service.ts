@@ -29,4 +29,7 @@ export class GroupsService {
   getAllLverages(): Observable<any> {
     return this.http.get<any>(API_URL + 'TradeGroup/GetAllLeverageList');
   }
+  deleteGroups(dltgrps: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'TradeGroup/DeleteMultipleTradeGroup',dltgrps);
+  }
 }

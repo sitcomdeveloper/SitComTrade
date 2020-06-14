@@ -4,6 +4,7 @@ import { CommentsService } from 'src/app/clients_info/comments/comments.service'
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ActivatedRoute } from '@angular/router';
+import { GroupsService } from 'src/app/settings/groups/groups.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class DeleteComponent implements OnInit {
   detail: number;
   dltAllComment: any;
   comments: any;
-  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute) {}
+  
+  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute, private groupsService: GroupsService) {}
 // delete comment
 id: number;
 dltCmnt: boolean;
@@ -31,6 +33,11 @@ allcomment: any;
 userId: number;
 rmvClient: any;
 removeClient = false;
+// remove groups
+removeGroups = false;
+rmvGroup: any;
+removegroup: any;
+selectedgrpwilldltd: number;
 title: any;
 
   ngOnInit() {
@@ -48,6 +55,11 @@ title: any;
       this.removeClient = true;
     } else {
       this.removeClient = false;
+    }
+    if (this.rmvGroup === 'rmvGroup') {
+      this.removeGroups = true;
+    } else {
+      this.removeGroups = false;
     }
     this.userComments();
   }
@@ -87,6 +99,12 @@ title: any;
       console.log('dltclientRes', res);
       this.hideModal();
     });
+  }
+  dltGroups() {
+    this.groupsService.deleteGroups(this.selectedgrpwilldltd).subscribe(rmvgrp => {
+      this.removegroup = rmvgrp;
+      console.log('removegroup',rmvgrp);
+    })
   }
   hideModal() {
 this.bsmodal.hide();
