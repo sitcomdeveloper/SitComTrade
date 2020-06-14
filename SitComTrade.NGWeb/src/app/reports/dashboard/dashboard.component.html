@@ -23,11 +23,11 @@
             <div _ngcontent-mew-c3="" class="col-md-12 main-tab">
                <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
                   <li _ngcontent-mew-c3="" class="nav-item">
-                     <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#">
+                     <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#thismonth">
                         This month</a>
                      </li>
                      <li _ngcontent-mew-c3="" class="nav-item">
-                        <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#">
+                        <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#lastmonth">
                             Last month</a>
                         </li>
                         <li _ngcontent-mew-c3="" class="nav-item">
@@ -89,8 +89,8 @@
         
     </div>
     <div class="main-holder">
-        <div id="content">
-           <div data-renderer="dashboard">
+        <div id="content" class="tab-content">
+           <div data-renderer="dashboard" id="thismonth" class="tab-pane active">
               <div class="mt30 dashboard-info-boxes" data-tiles-container="">
                  <div class="item">
                     <div class="box box02 dashboard-info-box leads" data-variables="">
@@ -127,7 +127,7 @@
                  <div class="item">
                     <div class="box box02 dashboard-info-box ftdamount" data-variables="">
                        <div class="box-content">
-                          <i class="icon-amount"><span>&nbsp;</span></i>
+                          <i class="lni lni-revenue"><span>&nbsp;</span></i>
                           <div class="text"><strong> $ 0.00</strong>Ftd Amount</div>
                        </div>
                     </div>
@@ -159,7 +159,7 @@
                  <div class="item">
                     <div class="box box02 dashboard-info-box deposits" data-variables="">
                        <div class="box-content">
-                          <i class="icon-wallet-money"><span>&nbsp;</span></i>
+                          <i class="lni lni-wallet"><span>&nbsp;</span></i>
                           <div class="text"><strong> $ 0.00</strong>Deposits</div>
                        </div>
                     </div>
@@ -175,7 +175,7 @@
                  <div class="item">
                     <div class="box box02 dashboard-info-box totalnet" data-variables="deposits:0;withdrowals:0;">
                        <div class="box-content">
-                          <i class="icon-wallet"><span>&nbsp;</span></i>
+                          <i class="lni lni-credit-cards"><span>&nbsp;</span></i>
                           <div class="text"><strong> $ 0.00</strong>Net Deposits</div>
                        </div>
                     </div>
@@ -183,7 +183,7 @@
                  <div class="item">
                     <div class="box box02 dashboard-info-box onlinecustomers" data-variables="">
                        <div class="box-content">
-                          <i class="icon-users3 font-sz40"><span>&nbsp;</span></i>
+                          <i class="lni lni-network font-sz40"><span>&nbsp;</span></i>
                           <div class="text"><strong>0</strong>Online Customers</div>
                        </div>
                     </div>
@@ -191,7 +191,7 @@
                  <div class="item">
                     <div class="box box02 dashboard-info-box marketingtarget" data-variables="actual:0;target:0;">
                        <div class="box-content">
-                          <i class="icon-graph2"><span>&nbsp;</span></i>
+                          <i class="lni lni-graph"><span>&nbsp;</span></i>
                           <div class="text"><strong></strong>Marketing Target</div>
                        </div>
                     </div>
@@ -199,7 +199,7 @@
                  <div class="item">
                     <div class="box box02 dashboard-info-box salestarget" data-variables="actual:0;target:0;">
                        <div class="box-content">
-                          <i class="icon-graph3"><span>&nbsp;</span></i>
+                          <i class="lni lni-stats-up"><span>&nbsp;</span></i>
                           <div class="text"><strong></strong>Sales Target</div>
                        </div>
                     </div>
@@ -375,6 +375,291 @@
                  </div>
               </div>
            </div>
+           <div data-renderer="dashboard" id="lastmonth" class="tab-pane fade">
+            <div class="mt30 dashboard-info-boxes" data-tiles-container="">
+               <div class="item">
+                  <div class="box box02 dashboard-info-box leads" data-variables="">
+                     <div class="box-content">
+                        <i class="lni lni-users"><span>&nbsp;</span></i>
+                        <div class="text"><strong>0</strong>Leads</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box realaccounts" data-variables="">
+                     <div class="box-content">
+                        <i class="lni lni-users"><span>&nbsp;</span></i>
+                        <div class="text"><strong>0</strong>Real Accounts</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box ftds" data-variables="">
+                     <div class="box-content">
+                        <i class="lni lni-coins"><span>&nbsp;</span></i>
+                        <div class="text"><strong>0</strong>FTD's</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box conversion" data-variables="clientsCount:0;ftdCount:0;">
+                     <div class="box-content">
+                        <i class="lni lni-certificate-alt-1"><span>&nbsp;</span></i>
+                        <div class="text"><strong>0.00 %</strong>Conversion</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box ftdamount" data-variables="">
+                     <div class="box-content">
+                        <i class="lni lni-revenue"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>Ftd Amount</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box floamount" data-variables="">
+                     <div class="box-content">
+                        <i class="icon-amount2"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>Flo Amount</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box loamount" data-variables="">
+                     <div class="box-content">
+                        <i class="icon-amount3"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>Lo Amount</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box pv" data-variables="netDeposits:0;ftdCount:0;">
+                     <div class="box-content">
+                        <i class="icon-graph"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>PV</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box deposits" data-variables="">
+                     <div class="box-content">
+                        <i class="lni lni-wallet"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>Deposits</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box withdrawal" data-variables="">
+                     <div class="box-content">
+                        <i class="icon-atm"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>Withdrowals</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box totalnet" data-variables="deposits:0;withdrowals:0;">
+                     <div class="box-content">
+                        <i class="lni lni-credit-cards"><span>&nbsp;</span></i>
+                        <div class="text"><strong> $ 0.00</strong>Net Deposits</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box onlinecustomers" data-variables="">
+                     <div class="box-content">
+                        <i class="lni lni-network font-sz40"><span>&nbsp;</span></i>
+                        <div class="text"><strong>0</strong>Online Customers</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box marketingtarget" data-variables="actual:0;target:0;">
+                     <div class="box-content">
+                        <i class="lni lni-graph"><span>&nbsp;</span></i>
+                        <div class="text"><strong></strong>Marketing Target</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box salestarget" data-variables="actual:0;target:0;">
+                     <div class="box-content">
+                        <i class="lni lni-stats-up"><span>&nbsp;</span></i>
+                        <div class="text"><strong></strong>Sales Target</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="box box02 dashboard-info-box retentiontarget" data-variables="actual:0;target:0;">
+                     <div class="box-content">
+                        <i class="icon-graph4"><span>&nbsp;</span></i>
+                        <div class="text"><strong></strong>Retention Target</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard-boxes" aria-dropeffect="move">
+               <div class="col-md-3 graph calendar" draggable="true" role="option" aria-grabbed="false">
+                  <div class="box box02 dashboard-data-box">
+                     
+                  </div>
+               </div>
+               <div class="col-md-3 graph" draggable="true" role="option" aria-grabbed="false">
+                  <div class="box box02 dashboard-data-box" data-graph-container-id="06720689-ADF6-484D-B850-3749C94B2C14">
+                     <div class="box-heading">
+                        <!-- <span class="handle">&nbsp;</span> -->
+                        <label class="valign-label mr10 nowrap">Filter By</label>
+                        <div class="item">
+                           <div class="mr10">
+                              <div class="colsgrid colsgrid3 row">
+                                 <div class="col-md-6">
+                                    <div class="">
+                                       
+                                       <select class="group-key-selector form-control" tabindex="-98">
+                                          <option value="1669">Tag</option>
+                                          <option value="1670">Tag1</option>
+                                          <option value="1671">Campaign ID</option>
+                                          <option value="1673">Country</option>
+                                          
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="">
+                                       
+                                     <select class="group-key-selector form-control" tabindex="-98">                                          <option value="1669">Tag</option>
+                                        <option value="1670">Tag1</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="dropdown fw500" style="margin-left: 5px;">
+                           <a href="javascript:void(0);" class="box-heading-button dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i data-current-chart-type="" class="fa fa-pie-chart"><span>&nbsp;</span></i></a>
+                           <ul class="dropdown-menu">
+                              <li><a class="switch-to-stacked-bar-link" href="javascript:void(0);"><i class="icon-chart-v mr10"><span>&nbsp;</span></i>Stacked bar (Type I)</a></li>
+                              <li><a class="switch-to-stacked-progress-bar-link" href="javascript:void(0);"><i class="icon-chart-v mr10"><span>&nbsp;</span></i>Stacked bar (Type II)</a></li>
+                              <li><a class="switch-to-stacked-column-link" href="javascript:void(0);"><i class="icon-chart-h mr10"><span>&nbsp;</span></i>Stacked column</a></li>
+                              <li><a class="switch-to-circle-link" href="javascript:void(0);"><i class="icon-chart-circle mr10"><span>&nbsp;</span></i>Circle</a></li>
+                           </ul>
+                        </div>
+                        <a href="javascript:void(0);" class="icon-trash delete-graph ml5"><span>
+                         <i class="fa fa-trash" aria-hidden="true"></i>
+                        </span></a>
+                     </div>
+                     <div class="box-content">
+                        <div class="data-box-content">
+                           <canvas data-graph-canvas="" id="chartType02" width="450" height="350"></canvas>
+                           <div class="chart-legends"></div>
+                        </div>
+                        
+                     </div>
+                     <div class="box-footer">
+                        <div class="item d-flex">
+                           <label class="valign-label mr10 nowrap">Represented By</label>
+                           <div class="mr10">
+                              <div class="">
+                                 
+                                 <select class="metric-name-selector form-control" tabindex="-98">
+                                    <option value="1846" selected="selected">Conversion Rate</option>
+                                    <option value="1834">Deposits</option>
+                                    <option value="1987">FloAmount</option>
+                                    <option value="1988">FloCount</option>
+                                    <option value="1833">FTD Count</option>
+                                    <option value="1836">Net Deposites</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3 graph" draggable="true" role="option" aria-grabbed="false">
+                <div class="box box02 dashboard-data-box" data-graph-container-id="06720689-ADF6-484D-B850-3749C94B2C14">
+                   <div class="box-heading">
+                      <!-- <span class="handle">&nbsp;</span> -->
+                      <label class="valign-label mr10 nowrap">Filter By</label>
+                      <div class="item">
+                         <div class="mr10">
+                            <div class="colsgrid colsgrid3 row">
+                               <div class="col-md-6">
+                                  <div class="">
+                                     
+                                     <select class="group-key-selector form-control" tabindex="-98">
+                                        <option value="1669">Tag</option>
+                                        <option value="1670">Tag1</option>
+                                        <option value="1671">Campaign ID</option>
+                                        <option value="1673">Country</option>
+                                        
+                                     </select>
+                                  </div>
+                               </div>
+                               <div class="col-md-6">
+                                  <div class="">
+                                     
+                                   <select class="group-key-selector form-control" tabindex="-98">                                          <option value="1669">Tag</option>
+                                      <option value="1670">Tag1</option>
+                                     </select>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="dropdown fw500" style="margin-left: 5px;">
+                         <a href="javascript:void(0);" class="box-heading-button dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i data-current-chart-type="" class="fa fa-pie-chart"><span>&nbsp;</span></i></a>
+                         <ul class="dropdown-menu">
+                            <li><a class="switch-to-stacked-bar-link" href="javascript:void(0);"><i class="icon-chart-v mr10"><span>&nbsp;</span></i>Stacked bar (Type I)</a></li>
+                            <li><a class="switch-to-stacked-progress-bar-link" href="javascript:void(0);"><i class="icon-chart-v mr10"><span>&nbsp;</span></i>Stacked bar (Type II)</a></li>
+                            <li><a class="switch-to-stacked-column-link" href="javascript:void(0);"><i class="icon-chart-h mr10"><span>&nbsp;</span></i>Stacked column</a></li>
+                            <li><a class="switch-to-circle-link" href="javascript:void(0);"><i class="icon-chart-circle mr10"><span>&nbsp;</span></i>Circle</a></li>
+                         </ul>
+                      </div>
+                      <a href="javascript:void(0);" class="icon-trash delete-graph ml5"><span>
+                       <i class="fa fa-trash" aria-hidden="true"></i>
+                      </span></a>
+                   </div>
+                   <div class="box-content">
+                      <div class="data-box-content">
+                         <canvas data-graph-canvas="" id="chartType02" width="450" height="350"></canvas>
+                         <div class="chart-legends"></div>
+                      </div>
+                      
+                   </div>
+                   <div class="box-footer">
+                      <div class="item d-flex">
+                         <label class="valign-label mr10 nowrap">Represented By</label>
+                         <div class="mr10">
+                            <div class="">
+                               
+                               <select class="metric-name-selector form-control" tabindex="-98">
+                                  <option value="1846" selected="selected">Conversion Rate</option>
+                                  <option value="1834">Deposits</option>
+                                  <option value="1987">FloAmount</option>
+                                  <option value="1988">FloCount</option>
+                                  <option value="1833">FTD Count</option>
+                                  <option value="1836">Net Deposites</option>
+                               </select>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+               <div class="col-md-3 new-graph">
+                  <div class="box box02 dashboard-data-box dashboard-data-add">
+                     <div class="box-heading">
+                        <h2>NEW GRAPH</h2>
+                     </div>
+                     <div class="box-content">
+                        <div class="data-box-content graphsection">
+                           <a data-add-new-graph="" href="javascript:void(0);" class="add">
+                              <i class="fa fa-plus"></i></a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
         </div>
         
      </div>
