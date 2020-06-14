@@ -27,6 +27,7 @@ export class ClientsInfoComponent implements OnInit {
   leadInfo: any[];
   getInfoTasks: any;
   detail: number;
+  tkemail: any;
  
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
               private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService,
@@ -72,6 +73,7 @@ export class ClientsInfoComponent implements OnInit {
   sendData(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
   }
+
   // for opening create task popup
   createtask() {
     const initialState = {
@@ -106,6 +108,12 @@ export class ClientsInfoComponent implements OnInit {
     //   this.getAllTask();
     // });
   }
+  // get all mails
+  gettheMail() {
+    this._generalinfoservice.getMail(this.detail).subscribe(gtmal => {
+      this.tkemail = gtmal;
+    })
+  }
   sendemail(Ide) {
     const initialState = {
       title: 'SEND EMAIL',
@@ -116,6 +124,9 @@ export class ClientsInfoComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.gettheMail();
+    });
   }
   sendsms(Ide) {
     const initialState = {

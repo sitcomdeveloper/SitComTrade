@@ -34,6 +34,7 @@ export class ActcrtaccComponent implements OnInit {
   sentmails: any;
   response: string;
   sntmldta: any;
+  tkemail: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -111,6 +112,12 @@ export class ActcrtaccComponent implements OnInit {
       this.Group = result.reverse();
     });
    }
+   // get all mails
+  gettheMail() {
+    this._generalinfoservice.getMail(this.detailss).subscribe(gtmal => {
+      this.tkemail = gtmal;
+    })
+  }
   //  sendemail
   sendtheemail() {
     const email = {
@@ -118,10 +125,11 @@ export class ActcrtaccComponent implements OnInit {
       Subject: this.actionsForm.value.subject,
       Body: this.actionsForm.value.body,
       Sender: this.actionsForm.value.settings,
-      OwnerId: this.userGenralinfo.OwnerId,
+      OwnerId: this.userGenralinfo.Id,
     }
 this._generalinfoservice.sendmail(email).subscribe(getmail => {
   this.sentmails = getmail;
+  this.gettheMail();
   this.clddata.emit(getmail);
       if (getmail === null) {
         this.response = 'Mail is sent successfully!';

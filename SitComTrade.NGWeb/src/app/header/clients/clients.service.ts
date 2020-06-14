@@ -31,6 +31,10 @@ export class ClientsService {
   dltmultipleClient(dmc: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/DeleteMultipleClients',dmc);
   }
+  // make the client starred
+  clientStarred(mkestarred: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/UpdateClientStarred', mkestarred);
+  }
   importClient(imprtclnt): Observable<any> {
     
     return this.http.post<any>('http://localhost/shanky/angu_api/user_api.php', imprtclnt);

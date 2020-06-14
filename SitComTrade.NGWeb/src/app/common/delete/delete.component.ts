@@ -103,7 +103,9 @@ title: any;
   dltGroups() {
     this.groupsService.deleteGroups(this.selectedgrpwilldltd).subscribe(rmvgrp => {
       this.removegroup = rmvgrp;
+      this.clddata.emit(rmvgrp);
       console.log('removegroup',rmvgrp);
+      this.hideModal();
     })
   }
   hideModal() {

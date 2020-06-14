@@ -380,4 +380,14 @@ $(document).ready(function () {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
+  // make the client starred
+  makeclientStarred(staredId) {
+    const mkestarred = {
+      IsStarred: 1,
+      ClientId: staredId
+    }
+    this.clientService.clientStarred(mkestarred).subscribe(starredres => {
+    console.log('starred',starredres);
+    })
+  }
 }

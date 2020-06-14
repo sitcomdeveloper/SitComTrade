@@ -1469,7 +1469,7 @@
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
                   <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)" onclick="checkboxcheck()"></span>
-                <span><i class="fa fa-star" title="Clear filter" id="toggle-click" ></i></span></div>
+                <span><i class="fa fa-star" title="Clear filter" id="toggle-click" (click)="makeclientStarred(item.Id)"></i></span></div>
             </div>
           </td>
           <td  (click)="userClick(item.Id)">
