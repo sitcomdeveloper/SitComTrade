@@ -70,7 +70,6 @@ export class AddressComponent implements OnInit {
       }
     });
     const obj = {
-      // If (Id === 'this.userAddress.Id') {
       City: this.addressForm.value.city,
       State: this.addressForm.value.state,
       ZipCode: this.addressForm.value.zipcode,
@@ -78,15 +77,9 @@ export class AddressComponent implements OnInit {
       CountryName: this.addressForm.value.countryid,
       OwnerId: this.detail,
       StreetAddress: this.addressForm.value.address,
+      Id: this.userAddress === null || undefined || '' ? '' : this.userAddress.Id
       // Id: this.userAddress.Id,
-      // } else{
-      //   City: this.addressForm.value.city,
-      //   State: this.addressForm.value.state,
-      //   ZipCode: this.addressForm.value.zipcode,
-      //   CountryId: this.addressForm.value.ipcountry,
-      //   CountryName: this.addressForm.value.countryid,
-      //   OwnerId: this.detail,
-      // }
+      
       };
     this.addressservice.insertAddress(obj).subscribe(res => {
       this.spinnerService.show();

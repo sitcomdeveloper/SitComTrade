@@ -14,6 +14,7 @@ import { ImportClientComponent } from '../import-client/import-client.component'
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import * as $ from 'jquery' 
 import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
+import { elementAt } from 'rxjs/operators';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -54,6 +55,9 @@ export class ClientComponent implements OnInit {
   getGroupsData: any;
   assignedselectedrow: any;
   selectedchkbxfrdltclnt = [];
+  isActive = false;
+  show: boolean;
+  colorchanger: any;
   // selectedvalue: any[] =[];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
@@ -111,18 +115,18 @@ $(document).ready(function () {
  $(this).toggleClass('rotate');
 });
      });
-     $(document).ready(function($){
-      $('#toggle-click').on('click',function(){
-        if($(this).attr('data-click-state') == 1) {
-            $(this).attr('data-click-state', 0);
-            $(this).css('color', '#45596a')
-          }
-        else {
-          $(this).attr('data-click-state', 1);
-          $(this).css('color', 'yellow')
-        }
-      });
-    });
+    //  $(document).ready(function($){
+    //   $('#toggle-click').on('click',function(){
+    //     if($(this).attr('data-click-state') == 1) {
+    //         $(this).attr('data-click-state', 0);
+    //         $(this).css('color', '#45596a')
+    //       }
+    //     else {
+    //       $(this).attr('data-click-state', 1);
+    //       $(this).css('color', 'yellow')
+    //     }
+    //   });
+    // });
   }
   userDetails() {
     this.spinnerService.show();
@@ -381,13 +385,25 @@ $(document).ready(function () {
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   // make the client starred
-  makeclientStarred(staredId) {
+  // makeclientStarred(staredId) {
+  //   const mkestarred = {
+  //     IsStarred: 1,
+  //     ClientId: staredId
+  //   }
+  //   this.clientService.clientStarred(mkestarred).subscribe(starredres => {
+  //   console.log('starred',starredres);
+  //   })
+  // }
+  
+  star(val,staredId) {
     const mkestarred = {
-      IsStarred: 1,
-      ClientId: staredId
-    }
-    this.clientService.clientStarred(mkestarred).subscribe(starredres => {
-    console.log('starred',starredres);
-    })
-  }
+          IsStarred: val,
+          ClientId: staredId
+        }
+        this.clientService.clientStarred(mkestarred).subscribe(starredres => {
+          this.colorchanger = starredres;
+        console.log('starred',starredres);
+        })
 }
+}                       
+
