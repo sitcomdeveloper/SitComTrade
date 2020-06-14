@@ -58,6 +58,7 @@ namespace SitComTech.Data.Mapping
         {
             HasKey(a => a.Id);
             Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Ignore(a => a.UserId);
             HasRequired(a => a.ClientTable).WithMany().HasForeignKey(x => x.OwnerId).WillCascadeOnDelete(false);
         }
 
