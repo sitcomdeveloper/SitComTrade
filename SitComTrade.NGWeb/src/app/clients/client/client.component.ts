@@ -12,7 +12,7 @@ import { CommentsComponent } from 'src/app/clients_info/comments/comments.compon
 import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
 import { ImportClientComponent } from '../import-client/import-client.component';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
-import * as $ from 'jquery' 
+import * as $ from 'jquery'
 import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
 import { elementAt } from 'rxjs/operators';
 @Component({
@@ -86,35 +86,35 @@ export class ClientComponent implements OnInit {
     });
     this.userDetails();
     this.getcountryName();
-    this.getAllStatus(); 
+    this.getAllStatus();
     this.getGroups();
-   // code for receiving login details and bind to header at place of name
-   this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-   this.bindLoginData = this.getLoginDetails;
-    
-      $(document).ready(function () {
-    $("#ckbCheckAll").click(function () {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    this.bindLoginData = this.getLoginDetails;
+
+    $(document).ready(function () {
+      $("#ckbCheckAll").click(function () {
         $(".checkBoxClass").prop('checked', $(this).prop('checked'));
         var chlength = $('.checkBoxClass:checked').length;
-      $("#chked").html("<span>"+chlength+ " items checked from</span>");
-    });
-    $("#ckbCheckAll1").click(function () {
+        $("#chked").html("<span>" + chlength + " items checked from</span>");
+      });
+      $("#ckbCheckAll1").click(function () {
         $(".checkBoxClass1").prop('checked', $(this).prop('checked'));
         var chlength = $('.checkBoxClass1:checked').length;
-      $("#chked").html("<span>"+chlength+ " items checked from</span>");
-    });
-    $("#ckbCheckAll2").click(function () {
+        $("#chked").html("<span>" + chlength + " items checked from</span>");
+      });
+      $("#ckbCheckAll2").click(function () {
         $(".checkBoxClass2").prop('checked', $(this).prop('checked'));
         var chlength = $('.checkBoxClass2:checked').length;
-      $("#chked").html("<span>"+chlength+ " items checked from</span>");
+        $("#chked").html("<span>" + chlength + " items checked from</span>");
+      });
     });
-});
 
-$(document).ready(function () {
-  $("#rotate").on('click', function() {
- $(this).toggleClass('rotate');
-});
-     });
+    $(document).ready(function () {
+      $("#rotate").on('click', function () {
+        $(this).toggleClass('rotate');
+      });
+    });
     //  $(document).ready(function($){
     //   $('#toggle-click').on('click',function(){
     //     if($(this).attr('data-click-state') == 1) {
@@ -168,25 +168,24 @@ $(document).ready(function () {
   newUser() {
     this.router.navigateByUrl('/user');
   }
- // selectedname: number[]
+  // selectedname: number[]
   deletbtn(val, userid) {
     this.UserId = userid
     if (val === true) {
       this.deletbtnn = false;
-   this.selectedchkbxfrdltclnt.push(userid);
+      this.selectedchkbxfrdltclnt.push(userid);
     } else {
       this.deletbtnn = true;
-     this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+      this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
     }
   }
   // delete client
-  deleteClient() 
-  {
+  deleteClient() {
     const initialState = {
       title: 'Delete Item',
       userId: this.selectedchkbxfrdltclnt,
       // for div close or hide
-      rmvClient: 'rmvClient' 
+      rmvClient: 'rmvClient'
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
@@ -337,7 +336,7 @@ $(document).ready(function () {
     };
     this.bsModalRef = this.modalService.show(CreateTaskComponent, config);
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    
+
   }
   // import client
   openImprtClient() {
@@ -385,25 +384,16 @@ $(document).ready(function () {
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   // make the client starred
-  // makeclientStarred(staredId) {
-  //   const mkestarred = {
-  //     IsStarred: 1,
-  //     ClientId: staredId
-  //   }
-  //   this.clientService.clientStarred(mkestarred).subscribe(starredres => {
-  //   console.log('starred',starredres);
-  //   })
-  // }
-  
-  star(val,staredId) {
+  star(val, staredId) {
     const mkestarred = {
-          IsStarred: val,
-          ClientId: staredId
-        }
-        this.clientService.clientStarred(mkestarred).subscribe(starredres => {
-          this.colorchanger = starredres;
-        console.log('starred',starredres);
-        })
+      IsStarred: val,
+      ClientId: staredId
+    }
+    this.clientService.clientStarred(mkestarred).subscribe(starredres => {
+      this.colorchanger = starredres;
+      this.userDetails();
+      console.log('starred', starredres);
+    })
+  }
 }
-}                       
 

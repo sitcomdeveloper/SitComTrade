@@ -239,8 +239,21 @@ namespace SitComTech.Domain.Services
                 LastTaskDaysPast = x.UserOwner.clients.LastTaskDaysPast,
                 DaysAgoClientCreated = x.UserOwner.clients.DaysAgoClientCreated,
                 ISendEmail = x.UserOwner.clients.ISendEmail,
-                CitizenshipId = x.UserOwner.clients.CitizenshipId
+                CitizenshipId = x.UserOwner.clients.CitizenshipId,
+                IsStarred = x.UserOwner.clients.IsStarred
             }).ToList();
+        }
+
+        public void UpdateClientStarred(ClientStarredVM entity)
+        {
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Id == entity.ClientId && x.Active == true && x.Deleted == false);
+            if (clientdata != null)
+            {
+                clientdata.UpdatedAt = DateTime.Now;
+                clientdata.IsStarred = entity.IsStarred;
+                _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
+            }
         }
     }
 

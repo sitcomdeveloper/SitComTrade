@@ -98,6 +98,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("UpdateClientStarred")]
+        public void UpdateClientStarred(ClientStarredVM clientVM)
+        {
+            _clientService.UpdateClientStarred(clientVM);
+        }
+
+        [HttpPost]
         [Route("GetAllClientsByOwnerId/{ownerid}")]
         public List<ClientListVM> GetAllClientsByOwnerId(int ownerid)
         {
