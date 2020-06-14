@@ -80,4 +80,9 @@ namespace SitComTech.Model.ViewModel
         public string TypeName { get; set; }
         public long OwnerId { get; set; }
     }
+    public class ClientStarredVM
+    {
+        public bool IsStarred { get; set; }
+        public long ClientId { get; set; }
+    }
 }

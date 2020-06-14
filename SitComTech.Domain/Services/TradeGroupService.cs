@@ -26,7 +26,7 @@ namespace SitComTech.Domain.Services
         {
             if ((long)Id == 0)
                 return null;
-            TradeGroup vTradeGroup = _repository.Queryable().FirstOrDefault(x=>x.Id==(long)Id);
+            TradeGroup vTradeGroup = _repository.Queryable().FirstOrDefault(x=>x.Id==(long)Id && x.Active && !x.Deleted);
             return vTradeGroup;
         }
 
@@ -93,6 +93,35 @@ namespace SitComTech.Domain.Services
             }
             if (entity == null || _tradegroup == null)
                 throw new ArgumentNullException("Tradegroup");
+        }
+        public void DeleteTradeGroup(TradeGroup entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException("Client");
+            entity.Deleted = true;
+            _repository.Update(entity);
+            _unitOfWork.SaveChanges();
+        }
+
+        public bool DeleteMultipleTradeGroup(List<long> groupIds)
+        {
+            try
+            {
+                if (groupIds != null && groupIds.Count > 0)
+                {
+
+                    List<TradeGroup> groups = base.Queryable().Where(x => x.Active && !x.Deleted && groupIds.Contains(x.Id)).ToList();
+                    foreach (var grp in groups)
+                    {
+                        DeleteTradeGroup(grp);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

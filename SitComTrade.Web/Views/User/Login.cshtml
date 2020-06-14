@@ -209,22 +209,28 @@
 @section scripts {
     <script>
         var UserVM = {}
-        UserVM.Login = {
-            UserName: ko.observable('ravi@gmail.com'),
-            Password: ko.observable('admin123')
-        };
+        //UserVM.Login = {
+        //    UserName: ko.observable('ravi@gmail.com'),
+        //    Password: ko.observable('admin123')
+        //};
         //UserVM.SelectedAccounts = ko.observableArray([
-        //    72, 73, 74, 77
+        //    20, 21, 22, 23
         //]);
+        UserVM.ClientS = {
 
-         UserVM.CreatEmail = {
-           
-            To: ko.observable('kk84singh@gmail.com'),
-            Subject: ko.observable('hdfdf'),
-            Body: ko.observable('Lead'),
-            Sender: ko.observable('dgdg'),
-            OwnerId: ko.observable(2),
+          
+            IsStarred: ko.observable(0),
+            ClientId: ko.observable(62),
         };
+
+        // UserVM.CreatEmail = {
+           
+        //    To: ko.observable('kk84singh@gmail.com'),
+        //    Subject: ko.observable('hdfdf'),
+        //    Body: ko.observable('Lead'),
+        //    Sender: ko.observable('dgdg'),
+        //    OwnerId: ko.observable(2),
+        //};
 
         //UserVM.UserInsert = {
 
@@ -358,26 +364,26 @@
 
         $(document).ready(function () {
 
-            $.ajax({
-                type: 'Post',
-                 url: apiURl + "api/Client/CreateEmail",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.CreatEmail),
-                success: function (result) {
-                    alert(result);
-                }
-            });
             //$.ajax({
             //    type: 'Post',
-            //    url: apiURl + "api/Client/DeleteMultipleClients",
+            //     url: apiURl + "api/Client/CreateEmail",
             //    contentType: 'application/json',
             //    processData: false,
-            //    data: ko.toJSON(UserVM.SelectedAccounts),
+            //    data: ko.toJSON(UserVM.CreatEmail),
             //    success: function (result) {
             //        alert(result);
             //    }
             //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/UpdateClientStarred",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.ClientS),
+                success: function (result) {
+                    alert(result);
+                }
+            });
 
             //$.ajax({
             //    type: 'Post',

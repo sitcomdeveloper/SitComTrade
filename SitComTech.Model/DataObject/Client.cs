@@ -41,7 +41,7 @@ namespace SitComTech.Model.DataObject
         public Nullable<long> TypeId { get; set; }
         public Nullable<long> RegistrationTypeId { get; set; }
         public string ItemId { get; set; }
-
+        public Nullable<bool> IsStarred { get; set; }
         public virtual User UserTable { get; set; }
     }
 

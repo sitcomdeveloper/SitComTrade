@@ -242,6 +242,18 @@ namespace SitComTech.Domain.Services
                 CitizenshipId = x.UserOwner.clients.CitizenshipId
             }).ToList();
         }
+
+        public void UpdateClientStarred(ClientStarredVM entity)
+        {
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Id == entity.ClientId && x.Active == true && x.Deleted == false);
+            if (clientdata != null)
+            {
+                clientdata.UpdatedAt = DateTime.Now;
+                clientdata.IsStarred = entity.IsStarred;
+                _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
+            }
+        }
     }
 
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
