@@ -25,6 +25,7 @@ namespace SitComTech.Model.DataObject
         public string Body { get; set; }
         public string CC { get; set; }
         public string AttachementFileName { get; set; }
+        public Nullable<long> UserId { get; set; }
         public virtual Client ClientTable { get; set; }
     }
 }

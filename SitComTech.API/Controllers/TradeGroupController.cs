@@ -71,7 +71,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("DeleteMultipleTradeGroup")]
-        public bool v(List<long> groupIds)
+        public bool DeleteMultipleTradeGroup(List<long> groupIds)
         {
             try
             {

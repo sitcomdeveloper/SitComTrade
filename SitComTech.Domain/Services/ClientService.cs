@@ -426,11 +426,13 @@ namespace SitComTech.Domain.Services
     {
         private IGenericRepository<Email> _repository;
         private IUnitOfWork _unitOfWork;
-        public EmailService(IGenericRepository<Email> repository, IUnitOfWork unitOfWork)
+        private IClientService _clientservice;
+        public EmailService(IGenericRepository<Email> repository, IUnitOfWork unitOfWork, IClientService clientservice)
             : base(repository)
         {
             this._repository = repository;
             this._unitOfWork = unitOfWork;
+            this._clientservice = clientservice;
 
         }
 
@@ -448,27 +450,30 @@ namespace SitComTech.Domain.Services
         {
             try
             {
-                Email entity = new Email
+                if (email.OwnerId != 0)
                 {
-                    Active = true,
-                    Deleted = false,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = 0,
-                    CreatedByName = "",
-                    OwnerId = email.OwnerId,
-                    To = email.To,
-                    CC = email.CC,
-                    Bcc = email.Bcc,
-                    Body = email.Body,
-                    Subject = email.Subject,
-                    SendDate = DateTime.Now,
-                    Sender = email.Sender,
-                    AttachementFileName = email.AttachementFileName,
+                    Email entity = new Email
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = email.OwnerId,
+                        To = email.To,
+                        CC = email.CC,
+                        Bcc = email.Bcc,
+                        Body = email.Body,
+                        Subject = email.Subject,
+                        SendDate = DateTime.Now,
+                        Sender = email.Sender,
+                        AttachementFileName = email.AttachementFileName,
 
-                };
-                _repository.Insert(entity);
-                _unitOfWork.SaveChanges();
-                SendCreateEmail(email);
+                    };
+                    _repository.Insert(entity);
+                    _unitOfWork.SaveChanges();
+                    SendCreateEmail(email);
+                }
             }
             catch (Exception ex)
             {
@@ -495,6 +500,30 @@ namespace SitComTech.Domain.Services
                 throw ex;
             }
         }
+
+        public bool EmailToAllClients(Email email)
+        {
+            try
+            {
+                if (email != null && email.UserId != null)
+                {
+                    var clientlists = _clientservice.Query(x => x.Active == true && x.Deleted == false && x.OwnerId == email.UserId).Select().ToList();
+                    if (clientlists != null && clientlists.Count > 0)
+                    {
+                        foreach (var client in clientlists)
+                        {
+                            email.OwnerId = client.Id;
+                            CreateEmail(email);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }        
     }
     public class ShortMessageService : Service<ShortMessage>, IShortMessageService
     {

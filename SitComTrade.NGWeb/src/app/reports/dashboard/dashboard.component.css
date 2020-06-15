@@ -235,3 +235,134 @@ a.box-heading-button.dropdown-toggle:after {
     text-align: center;
     margin: 0 auto;
 }
+.dashboard-info-box.leads .lni-users {
+    color: #12baee;
+    background: linear-gradient(45deg,#55ebff 0,#60adff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dashboard-info-box.realaccounts .lni-users{
+    color: #124aee;
+    background: linear-gradient(45deg,#124aee 0,#60adff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dashboard-info-box.deposits strong {
+    color: #c63ca8;
+}
+.dashboard-info-box.deposits .lni-wallet {
+    background: #b33297;
+    background: -moz-linear-gradient(left,#b33297 0,#e651c6 100%);
+    background: -webkit-linear-gradient(left,#b33297 0,#e651c6 100%);
+    background: linear-gradient(to right,#b33297 0,#e651c6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dashboard-info-box.ftdamount .lni-revenue {
+    color: #ffab20;
+    background: linear-gradient(45deg,#ffbc2d 0,#ff930c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dashboard-info-box.ftdamount strong {
+    color: #ffab20;
+}
+.tools-panel-right {
+    float: right;
+}
+.tools-panel-left {
+    float: left;
+}
+.main-tabs-name {
+    display: flex;
+    align-items: center;
+    float: left;
+    background: #105289;
+    font: 300 12px/15px Poppins,Arial,sans-serif;
+    border-radius: 2px 2px 0 0;
+    text-transform: none;
+    color: #a1d0f8;
+    height: 47px;
+    padding: 6px 20px;
+    -webkit-box-shadow: inset 0 4px 10px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 4px 10px 0 rgba(0,0,0,.15);
+}
+.tools-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-tabs-switcher {
+    display: flex;
+    font: 14px/21px Poppins,Arial,sans-serif;
+}
+.tools-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-tabs-switcher {
+    display: flex;
+    font: 14px/21px Poppins,Arial,sans-serif;
+}
+
+
+.tools-panel-right .item {
+    margin: 0 0 6px 15px;
+}
+.tools-panel .item {
+    display: inline-block;
+    vertical-align: top;
+    vertical-align: middle;
+    margin: 0 5px 6px;
+}
+.tools-panel, .tools-panel .item, .tools-panel .item .holder1>li>a[data-action=save] {
+    position: relative;
+}
+.tools-panel .item .holder1 {
+    background: #12baee;
+    border-radius: 2px;
+}
+.tools-filter .ico-refresh, .tools-panel .item .holder1, .tools-panel .item .holder1>li {
+    float: left;
+}
+.tools-panel .item .holder1>li>a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+}
+.tools-panel .item .holder1>li>a[data-action=save]:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.holder1
+{
+    width: auto;
+}
+.link-more::after
+{
+    content:none;
+}
+.tools-panel .item .holder1>li>a[class*=link-]:before {
+    width: 1px;
+    height: 25px;
+    background: #159ac9;
+    left: 0;
+    top: 50%;
+    margin: -12px 0 0;
+}
+.container-padd1
+{
+    margin: 0px 26px 0;
+}
+.main-tabs .nav-tabs>li>a>.input-group {
+    margin: -3px 0;
+    width: 207px;
+}

@@ -257,5 +257,28 @@ namespace SitComTech.API.Controllers
         {
             _emailService.CreateEmail(entity);
         }
+
+        [HttpPost]
+        [Route("EmailToAllClients")]
+        public bool EmailToAllClients(Email entity)
+        {
+            
+            try
+            {
+                if (entity != null)
+                {
+                    return _emailService.EmailToAllClients(entity);
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
