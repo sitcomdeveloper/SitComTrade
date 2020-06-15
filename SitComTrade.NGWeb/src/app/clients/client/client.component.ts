@@ -380,13 +380,15 @@ export class ClientComponent implements OnInit {
       detailss: this.UserId
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef = this.modalService.show(EmailAllComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
   // send mai to all popup
   sendmailtoallpopup() {
     const initialState = {
       title: 'SEND EMAIL',
+      sendmailtoall: 'sendmailtoall',
+      detailss: this.UserId
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(EmailAllComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
