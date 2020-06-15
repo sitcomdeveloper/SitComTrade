@@ -1,9 +1,9 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ItemComponent } from '../item/item.component';
-import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
@@ -14,7 +14,7 @@ import { ImportClientComponent } from '../import-client/import-client.component'
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import * as $ from 'jquery'
 import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
-import { elementAt } from 'rxjs/operators';
+import { EmailAllComponent } from '../email-all/email-all.component';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -58,10 +58,10 @@ export class ClientComponent implements OnInit {
   isActive = false;
   show: boolean;
   colorchanger: any;
+  filterdataisstarred: any[];
   // selectedvalue: any[] =[];
   // tslint:disable-next-line: max-line-length
-  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private route: ActivatedRoute,
-    private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
+  constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
     private groupsService: GroupsService) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
@@ -190,7 +190,7 @@ export class ClientComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal450', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    this.bsModalRef.content.clddata.subscribe(data => {
+    this.bsModalRef.content.clddata.subscribe(() => {
       this.userDetails();
     });
   }
@@ -202,7 +202,7 @@ export class ClientComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ItemComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    this.bsModalRef.content.clddata.subscribe(data => {
+    this.bsModalRef.content.clddata.subscribe(() => {
       this.userDetails();
 
     });
@@ -383,6 +383,15 @@ export class ClientComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
+  // send mai to all popup
+  sendmailtoallpopup() {
+    const initialState = {
+      title: 'SEND EMAIL',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(EmailAllComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
   // make the client starred
   star(val, staredId) {
     const mkestarred = {
@@ -394,6 +403,15 @@ export class ClientComponent implements OnInit {
       this.userDetails();
       console.log('starred', starredres);
     })
+  }
+  filterIsStareable() {
+    // this.filterdataisstarred = this.rowData.filter(stareddata => {
+    this.rowData.filter(stareddata => {
+      if (stareddata.IsStarred === true) {
+        return stareddata;
+      }
+    });
+    this.userDetails();
   }
 }
 

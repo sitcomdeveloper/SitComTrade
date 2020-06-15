@@ -160,7 +160,7 @@ import { ImportClientDataComponent } from './clients/import-client-data/import-c
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
      CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
-     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent],
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent],
   exports: [
     PhoneMaskDirective
   ],

@@ -29,6 +29,9 @@ export class ClientsInfoComponent implements OnInit {
   detail: number;
   tkemail: any;
  
+  @HostListener("window:scroll", []) onWindowScroll() {
+    this.scrollFunction();
+  }
   constructor(private router: Router, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute,
               private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private modalService: BsModalService,
               private taskInfoService: TasksInfoService
@@ -148,5 +151,17 @@ export class ClientsInfoComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
+    // When the user scrolls down 20px from the top of the document, show the button
+scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myBtn").style.display = "block";
+  } else {
+      document.getElementById("myBtn").style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+topFunction() {
+  document.documentElement.scrollTop = 0;
+} 
 }
 

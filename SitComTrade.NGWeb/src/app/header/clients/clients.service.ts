@@ -35,6 +35,10 @@ export class ClientsService {
   clientStarred(mkestarred: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/UpdateClientStarred', mkestarred);
   }
+  // sendmailto all
+  mailsenttoALLClients(sentall: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/EmailToAllClients', sentall);
+  }
   importClient(imprtclnt): Observable<any> {
     
     return this.http.post<any>('http://localhost/shanky/angu_api/user_api.php', imprtclnt);

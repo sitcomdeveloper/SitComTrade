@@ -105,7 +105,7 @@
                   <a href="javascript:void(0)" class="link-sms-all" data-toggle="modal" data-target="#sms-all" title="Sms"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
                 <li class="no-events">
                   <a href="javascript:void(0)" class="link-email" title="Emails" (click)="sendemail()" [class.disabled] = deletbtnn><i class="fa fa-envelope"></i>Email to selected</a></li>
-                <li class="no-events"><a href="#" class="link-email-all"  data-toggle="modal" data-target="#email-all"title="Emails"><i class="fa fa-envelope"></i>Email to all</a></li>
+                <li class="no-events"><a href="javascript:void(0)" class="link-email-all"  data-toggle="modal" data-target="#email-all"title="Emails" (click)="sendmailtoallpopup()"><i class="fa fa-envelope"></i>Email to all</a></li>
                 <li><a class="link-account" href="javascript:void(0);"><i class="fa fa-user"></i>Create Account</a></li>
              </ul>
               <!------------------------------->
@@ -217,13 +217,14 @@
         </tr>
       </thead>
       <tbody>
-      <!---- <tr class="filterrow ">
+      <tr class="filterrow ">
           <td class="" style="width: 20px;">
-            <div class=""><span>x</span><i class="fa fa-star" title="Clear filter"></i></div>
+            <div class="">
+              <span>x</span>
+              <i class="fa fa-star" title="Clear filter" (click)="filterIsStareable()"></i>
+            </div>
           </td>
           <td class="">
-
-            <!--------------------------------
             <div class="jsgrid-cell-content">
               <div class="cstm-search input-control empty">
                 <div class="checkbox-dd">
@@ -299,9 +300,6 @@
                   data-comparation-type="3"><i class="clear cstm-search-btn-clear"><span></span></i>
               </div>
             </div>
-
-
-            <!-------------------------
           </td>
           <td class="">
             <div class="jsgrid-cell-content">
@@ -1461,7 +1459,7 @@
           <td>
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
-        </tr>    ----->
+        </tr>    
         <tr class="tablectn" *ngFor="let item of rowData">
 
           
@@ -1871,6 +1869,7 @@
                   </td>
                 </tr>
               </div>
+              </tr>
            
        
 
@@ -4977,7 +4976,7 @@
 
 <!--------------End create email-all model--------------->
 
-<div class="modal" id="email-all">
+<!-- <div class="modal" id="email-all">
   <div class="modal-dialog modal930">
     <div class="modal-content">
       <div class="modal-header" style="height: 4rem;">
@@ -4993,7 +4992,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <!---------------EDITING MODE------------>

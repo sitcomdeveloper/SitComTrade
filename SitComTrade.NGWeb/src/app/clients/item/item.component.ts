@@ -150,12 +150,4 @@ if (val === true) {
       this.Group = result.reverse();
     });
    }
-  //  leadLabel() {
-  //   this.show = true;
-  //   this.hiddden = false;
-  //  }
-  //  accountLabel() {
-  //   this.show = true;
-  //   this.hiddden = true;
-  //  }
 }
