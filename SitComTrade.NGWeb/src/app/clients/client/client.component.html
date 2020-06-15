@@ -1469,7 +1469,11 @@
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
                   <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)" onclick="checkboxcheck()"></span>
-                <span (click)= "show = !show;star(show,item.Id)"><i class="fa fa-star" title="Clear filter" id="toggle-click"  [ngClass]="{'active': colorchanger}"></i></span></div>
+                <span (click)= "show = !show;star(show,item.Id)">
+                  <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': item.IsStarred ? 'yellow':'black' }"></i>
+                </span>
+                <!-- <span (click)= "show = !show;star(show,item.Id)"><i class="fa fa-star" title="Clear filter" id="toggle-click"  [ngClass]="{'active': colorchanger}"></i></span> -->
+              </div>
             </div>
           </td>
           <td  (click)="userClick(item.Id)">
@@ -3074,7 +3078,10 @@
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
                   <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id)" onclick="checkboxcheck()"></span>
-                <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
+                  <span (click)= "show = !show;star(show,actinfo.Id)">
+                    <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': actinfo.IsStarred ? 'yellow':'black' }"></i>
+                  </span>
+                </div>
             </div>
           </td>
 
@@ -3532,7 +3539,9 @@
       <tbody>
         <tr class="filterrow ">
           <td class="" style="width: 20px;">
-            <div class=""><span>x</span><i class="fa fa-star" title="Clear filter"></i></div>
+            <div class=""><span>x</span>
+              <i class="fa fa-star" title="Clear filter"></i>
+            </div>
           </td>
           <td class="">
             <div class="jsgrid-cell-content">
@@ -4468,7 +4477,9 @@
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
                   <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id)" onclick="checkboxcheck()"></span>
-                <!-- <span><i class="fa fa-star" title="Clear filter"></i></span> --></div>
+                  <span (click)= "show = !show;star(show,leadinfo.Id)">
+                    <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': leadinfo.IsStarred ? 'yellow':'black' }"></i>
+                  </span></div>
             </div>
           </td>
 
