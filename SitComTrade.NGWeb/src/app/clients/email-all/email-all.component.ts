@@ -79,7 +79,8 @@ export class EmailAllComponent implements OnInit {
       Subject: this.actionsForm.value.subject,
       Body: this.actionsForm.value.body,
       Sender: this.actionsForm.value.settings,
-      OwnerId: this.userGenralinfo.Id,
+      // OwnerId: this.userGenralinfo.Id,
+      OwnerId: '',
       UserId: this.bindLoginData.UserId,
     }
     this.clientsservice.mailsenttoALLClients(sentall).subscribe(senttoall => {

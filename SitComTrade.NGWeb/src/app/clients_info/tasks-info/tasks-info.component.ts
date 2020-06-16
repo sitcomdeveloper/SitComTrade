@@ -55,7 +55,6 @@ export class TasksInfoComponent implements OnInit {
     });
   }
   edittask(userid) {
-    console.log(userid);
     const initialState = {
       title: 'Edit Task',
       wholeData: userid
