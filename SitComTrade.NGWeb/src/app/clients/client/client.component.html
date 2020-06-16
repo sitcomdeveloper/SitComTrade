@@ -122,7 +122,8 @@
 
 <div class="tab-content" id="content">
   <div id="all" [ngClass]="{ 'active':activeTab==='all'}" class="container-fluid tab-pane active"><br>
-    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <div _ngcontent-jgg-c8="" class="email-grid-header email-header-scrollbar">
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin:0;">
       <!-- <table id="myTable" class="table table-striped table-bordered" cellspacing="0" width="100%"></table> -->
       <thead>
         <tr class="tablewidth">
@@ -217,7 +218,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr class="filterrow ">
+        <tr class="filterrow ">
           <td class="" style="width: 20px;">
             <div class="">
               <span>x</span>
@@ -1459,7 +1460,14 @@
           <td>
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
-        </tr>    
+        </tr> 
+        </tbody>
+    </table>
+  </div>
+    <div _ngcontent-jgg-c8="" class="jsgrid-grid-body">
+      <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table table-striped" id="JColResizer0 ">
+       
+      <tbody>   
         <tr class="tablectn" *ngFor="let item of rowData">
 
           
@@ -1894,9 +1902,10 @@
       </tbody>
     </table>
   </div>
-
+</div>
   <div id="account" [ngClass]="{ 'active':activeTab==='account'}" class="container-fluid tab-pane fade"><br>
-    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <div _ngcontent-jgg-c8="" class="email-grid-header email-header-scrollbar">
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin:0;">
       <thead>
         <tr class="tablewidth">
           <th class="">
@@ -3073,7 +3082,13 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
         </tr>
-
+      </tbody>
+      </table>
+      </div>
+      <div _ngcontent-jgg-c8="" class="jsgrid-grid-body">
+        <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table table-striped" id="JColResizer0 ">
+       
+          <tbody> 
         <tr class="tablectn" *ngFor="let actinfo of accountInfo">
           <td class="">
             <div class="jsgrid-cell-content">
@@ -3463,8 +3478,10 @@
       </tbody>
     </table>
   </div>
+</div>
   <div id="leads" [ngClass]="{ 'active':activeTab==='leads'}"class="container-fluid tab-pane fade" ><br>
-    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <div _ngcontent-jgg-c8="" class="email-grid-header email-header-scrollbar">
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" style="margin:0;">
       <thead>
         <tr class="tablewidth">
           <th class="">
@@ -4473,6 +4490,13 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
           </td>
         </tr>
+        </tbody>
+      </table>
+        </div>
+        <div _ngcontent-jgg-c8="" class="jsgrid-grid-body">
+          <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table table-striped" id="JColResizer0 ">
+       
+            <tbody> 
         <tr class="tablectn" *ngFor="let leadinfo of leadInfo">
           <td class="">
             <div class="jsgrid-cell-content">
@@ -4847,6 +4871,7 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>
 <!-- Pgination -->
 <!-- <div class="col-sm-5 lh-34 b-l">
