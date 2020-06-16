@@ -7,3 +7,4 @@ export * from '../activities/closedorders/closedorders.component';
 export * from '../activities/pendingorders/pendingorders.component';
 export * from '../activities/rejectedtransaction/rejectedtransaction.component';
 export * from '../activities/commonjournal/commonjournal.component';
+export * from '../activities/openedorders/ooinfo/ooinfo.component';

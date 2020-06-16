@@ -13,7 +13,7 @@ import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task
 import { ImportClientComponent } from '../import-client/import-client.component';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import * as $ from 'jquery'
-import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
+// import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
 import { EmailAllComponent } from '../email-all/email-all.component';
 @Component({
   selector: 'app-client',
@@ -59,6 +59,7 @@ export class ClientComponent implements OnInit {
   show: boolean;
   colorchanger: any;
   filterdataisstarred: any[];
+  colorchange: any;
   // selectedvalue: any[] =[];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
@@ -406,14 +407,44 @@ export class ClientComponent implements OnInit {
       console.log('starred', starredres);
     })
   }
-  filterIsStareable() {
-    // this.filterdataisstarred = this.rowData.filter(stareddata => {
-    this.rowData.filter(stareddata => {
+  // All tab data is fltering on the basis of IsStarrable = true. For show those clients whose IsStarrable = true
+  allfilterIsStareable(val) {
+    if(val === true) {
+    this.filterdataisstarred = this.rowData.filter(stareddata => {
       if (stareddata.IsStarred === true) {
         return stareddata;
       }
     });
+    this.rowData = this.filterdataisstarred;
+    // this.colorchange;
+    // this.colorchange = !this.colorchange;
+  } else {
     this.userDetails();
+  }
+  }
+  accountsfilterIsStareable(val) {
+    if(val === true) {
+    this.filterdataisstarred = this.accountInfo.filter(stareddata => {
+      if (stareddata.IsStarred === true) {
+        return stareddata;
+      }
+    });
+    this.accountInfo = this.filterdataisstarred;
+  } else {
+    this.userDetails();
+  }
+  }
+  leadsfilterIsStareable(val) {
+    if(val === true) {
+    this.filterdataisstarred = this.leadInfo.filter(stareddata => {
+      if (stareddata.IsStarred === true) {
+        return stareddata;
+      }
+    });
+    this.leadInfo = this.filterdataisstarred;
+  } else {
+    this.userDetails();
+  }
   }
 }
 

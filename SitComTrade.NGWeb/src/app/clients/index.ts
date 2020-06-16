@@ -6,4 +6,7 @@ export * from '../clients/import-client/import-client.component';
 // export * from '../clients/import-client-data/import-client-data.component';
 export * from '../clients/item/item.component';
 export * from '../clients/sms-all/sms-all.component';
+export * from '../clients/imprtclntdta/imprtclntdta.component';
+export * from '../clients/import-client-data/import-client-data.component';
+export * from '../clients/tradeaccounts/live-detail/live-detail.component';
 

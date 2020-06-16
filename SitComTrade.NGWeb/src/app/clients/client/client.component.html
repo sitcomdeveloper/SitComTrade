@@ -221,7 +221,7 @@
           <td class="" style="width: 20px;">
             <div class="">
               <span>x</span>
-              <i class="fa fa-star" title="Clear filter" (click)="filterIsStareable()"></i>
+              <i class="fa fa-star" title="Clear filter" (click)="show = !show;allfilterIsStareable(show)" [ngClass]="{'bigstarcolor': colorchange}"></i>
             </div>
           </td>
           <td class="">
@@ -1986,7 +1986,9 @@
       <tbody>
         <tr class="filterrow ">
           <td class="" style="width: 20px;">
-            <div class=""><span>x</span><i class="fa fa-star" title="Clear filter"></i></div>
+            <div class=""><span>x</span>
+              <i class="fa fa-star" title="Clear filter" (click)="show = !show;accountsfilterIsStareable(show)" [ngClass]="{'bigstarcolor': colorchange}"></i>
+            </div>
           </td>
           <td class="">
             <div class="jsgrid-cell-content">
@@ -3539,7 +3541,7 @@
         <tr class="filterrow ">
           <td class="" style="width: 20px;">
             <div class=""><span>x</span>
-              <i class="fa fa-star" title="Clear filter"></i>
+              <i class="fa fa-star" title="Clear filter" (click)="show = !show;leadsfilterIsStareable(show)" [ngClass]="{'bigstarcolor': colorchange}"></i>
             </div>
           </td>
           <td class="">

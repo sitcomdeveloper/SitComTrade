@@ -3,6 +3,7 @@ import { TasksInfoService } from 'src/app/clients_info/tasks-info/tasks-info.ser
 import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task/create-task.component';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { EditTaskComponent } from 'src/app/clients_info/tasks-info/edit-task/edit-task.component';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-tasks',
@@ -14,6 +15,7 @@ export class TasksComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   taskslen: any;
+  deletbtnn = true;
 
   constructor(private taskInfoService:TasksInfoService, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
@@ -23,6 +25,14 @@ export class TasksComponent implements OnInit {
      this.bindLoginData = this.getLoginDetails;
 
     this. getAllTask();
+
+    $(document).ready(function () {
+      $("#ckbCheckAll").click(function () {
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+        var chlength = $('.checkBoxClass:checked').length;
+        $("#chked").html("<span>" + chlength + " items checked from</span>");
+      });
+    });
   }
   getAllTask() {
     this.taskInfoService.getTask(this.bindLoginData.UserId).subscribe(res => {
@@ -58,5 +68,14 @@ export class TasksComponent implements OnInit {
       this.getAllTask();
     });
   }
-
+  deletbtn(val, userid) {
+    // this.UserId = userid
+    if (val === true) {
+      this.deletbtnn = false;
+      // this.selectedchkbxfrdltclnt.push(userid);
+    } else {
+      this.deletbtnn = true;
+      // this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+    }
+  }
 }

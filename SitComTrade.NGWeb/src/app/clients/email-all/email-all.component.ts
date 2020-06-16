@@ -24,6 +24,7 @@ export class EmailAllComponent implements OnInit {
   sendemail: any;
   sndeml = false;
   sentmails: any;
+  title: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private clientsservice: ClientsService, private generalinfoservice:GeneralInfoService) { }
 
   ngOnInit() {

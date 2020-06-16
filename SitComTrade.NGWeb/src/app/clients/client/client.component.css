@@ -581,6 +581,6 @@ ul.popcontent li a i {
 .ico-sz3.ico-comments.dim {
     background-position: -300px -420px;
 }
-/* .fa-star.active {
-    color: deeppink;
-} */
+.fa-star.bigstarcolor {
+    color: yellow;
+}

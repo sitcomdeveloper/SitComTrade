@@ -65,12 +65,6 @@
                            <select _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="selectpicker form-control"
                               data-live-search="true" data-live-search-placeholder="All" id="all"
                               title="Please select ">
-                              <!-- <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Others</option>
-                           <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Accounts</option>
-                           <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">All</option>
-                           <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Leads</option>
-                           <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Shared</option>
-                           <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Online</option> -->
                               <optgroup label="Others">
                                  <option value="All">All</option>
                                  <option value="Today">Today</option>
@@ -80,24 +74,28 @@
                               </optgroup>
                            </select>
                            <span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a
-                                 _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="" href="#"><i _ngcontent-ena-c12=""
+                                 _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="" href="javascript:void(0)"><i _ngcontent-ena-c12=""
                                     _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg"
                                     style="color: white;"></i></a></span><span _ngcontent-ena-c12=""
                               _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-ena-c12="" _ngcontent-boj-c6=""
-                                 href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true"
+                                 href="javascript:void(0)" class="disabled-button"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true"
                                     class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
                         </div>
                      </div>
                      <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-label="Third group"
-                        class="btn-group mr-2 serachicon " role="group"><a _ngcontent-ena-c12="" _ngcontent-boj-c6=""
+                        class="btn-group mr-2 serachicon " role="group" [attr.disabled]="deletbtnn ==true ? true : false"><a _ngcontent-ena-c12="" _ngcontent-boj-c6=""
                            class="brdr-right" data-target="#createitem" data-toggle="modal" href="#">
                            <i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true"
                               class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"
-                              (click)="createtask()"></i></a><a _ngcontent-ena-c12="" _ngcontent-boj-c6=""
-                           class="brdr-right" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true"
-                              class="fa fa-pencil bg-primary1 fa-lg" disabled=""></i></a><a _ngcontent-ena-c12=""
-                           _ngcontent-boj-c6="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6=""
-                              aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled=""></i></a></div>
+                              (click)="createtask()"></i></a>
+                              <a _ngcontent-ena-c12="" _ngcontent-boj-c6=""
+                           class="brdr-right" href="javascript:void(0)" [class.disabled] = deletbtnn>
+                           <i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true"
+                              class="fa fa-pencil bg-primary1 fa-lg" [class.disabled] = deletbtnn></i></a>
+                              <a _ngcontent-ena-c12=""
+                           _ngcontent-boj-c6="" href="javascript:void(0)" [class.disabled] = deletbtnn>
+                           <i _ngcontent-ena-c12="" _ngcontent-boj-c6=""
+                              aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" [class.disabled] = deletbtnn></i></a></div>
                     
                   </div>
                </div>
@@ -118,7 +116,7 @@
                            <tr class="email-header-row">
                               <th class="email-header-cell email-align-center" style="min-width: 4px!important;">
                                  <div class="email-cell-content1" style="min-width: 4px!important;">
-                                    <div class="input-checkbox"><span><input type="checkbox"></span></div>
+                                    <div class="input-checkbox"><span><input type="checkbox" id="ckbCheckAll"></span></div>
                                  </div>
                               </th>
                               <th class="email-header-cell email-header-sortable">
@@ -1283,7 +1281,7 @@
                            <tr class="email-row email-selected-row" *ngFor="let trade of getInfoTasks">
                               <td class="email-cell email-align-center" style="min-width: 4px!important;">
                                  <div class="email-cell-content1" style="min-width: 4px!important;">
-                                    <div class="input-checkbox"><span><input type="checkbox"
+                                    <div class="input-checkbox"><span><input type="checkbox" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,trade.Id)" onclick="checkboxcheck()"
                                              data-item-selector="true"></span></div>
                                  </div>
                               </td>
@@ -1350,35 +1348,7 @@
                                        </div>
                                     </div>
                                  </div>
-                              </td>
-                              <!-- <td class="email-cell email-align-left" style="width: 85px;">
-                             <div class="email-cell-content">
-                                <div data-display-for="14_TradingEnvironment">
-                                   <div class="text-ellipsis">Real</div>
-                                </div>
-                             </div>
-                          </td>
-                          <td class="email-cell email-align-left" style="width: 85px;">
-                             <div class="email-cell-content">
-                                <div data-display-for="14_TransactionApproval">
-                                   <div class="text-ellipsis">Approved</div>
-                                </div>
-                             </div>
-                          </td>
-                          <td class="email-cell email-align-left" style="width: 84px;">
-                             <div class="email-cell-content">
-                                <div data-display-for="14_CreatedBy">
-                                   <div class="text-ellipsis" data-original-title="" title="">Empty Value</div>
-                                </div>
-                             </div>
-                          </td>
-                          <td class="email-cell email-align-left" style="width: 84px;">
-                             <div class="email-cell-content">
-                                <div data-display-for="14_DeskId">
-                                   <div class="text-ellipsis">IMC</div>
-                                </div>
-                             </div>
-                          </td> -->
+                              </td>    
                               <td class="email-cell email-control-field email-align-center" style="text-align:center;">
                                  <div _ngcontent-crh-c6="" class="dropleft droptop">
                                   
@@ -1387,8 +1357,8 @@
                                           _ngcontent-crh-c6="" _ngcontent-ktw-c1="" aria-hidden="true"
                                           class="fa fa-pencil greyiconn" disabled=""
                                           (click)="edittask(trade)"></i></a>
-                                          <a _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#"
-                                          target="_blank" title="Open in new tab">
+                                          <a _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="javascript:void(0)"
+                                          >
                                           <i _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-eye greyiconn"></i></a>
                                           <br _ngcontent-crh-c6="">
                                  </div>

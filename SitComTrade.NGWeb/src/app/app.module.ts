@@ -19,11 +19,11 @@ import { HeaderComponent } from './header/header.component';
 import { ClientsComponent } from './header/clients/clients.component';
 // tslint:disable-next-line: max-line-length
 import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ItemComponent,
-  SmsAllComponent} from './clients';
+  SmsAllComponent, ImprtclntdtaComponent, ImportClientDataComponent, LiveDetailComponent} from './clients';
 // tslint:disable-next-line: max-line-length
 import {BenchmarkComponent, DashboardComponent, ExposureComponent, LeaderboardComponent, ReportComponent, TradingjournalsComponent} from './reports';
 // tslint:disable-next-line: max-line-length
-import {MonetarytransactionsComponent, TasksComponent, CasesComponent, DocumentsComponent, OpenedordersComponent, ClosedordersComponent, PendingordersComponent, RejectedtransactionComponent, CommonjournalComponent  } from './activities';
+import {MonetarytransactionsComponent, TasksComponent, CasesComponent, DocumentsComponent, OpenedordersComponent, ClosedordersComponent, PendingordersComponent, RejectedtransactionComponent, CommonjournalComponent, OoinfoComponent } from './activities';
 import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportsComponent } from './header/reports/reports.component';
 import { SettingsComponent } from './header/settings/settings.component';
@@ -38,27 +38,19 @@ import { ClientsInfoComponent } from './clients-info/clients-info.component';
 import {GeneralInfoComponent, CommentsComponent, MarketingInfoComponent, AddressComponent, AdditionalInfoComponent, EmailComponent,
   // tslint:disable-next-line: max-line-length
   SmsComponent, RegHisComponent, TasksInfoComponent, CreateTaskComponent,EditTaskComponent, InfoCasesComponent, InfoDocumentsComponent, TradeAccountsComponent, FinancialTransactionsComponent, ActcrtaccComponent} from './clients_info';
-// import { CreateTaskComponent } from './clients_info/tasks-info/create-task/create-task.component';
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
 import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 import { DeleteComponent } from './common/delete/delete.component';
-// import { EditTaskComponent } from './clients_info/tasks-info/edit-task/edit-task.component';
 import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, InstrumentsComponent,
   TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
   // tslint:disable-next-line: max-line-length
   ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent, CrmnewuserComponent, CrmedituserComponent, AffilatenewuserComponent, TranslationsFilterComponent, ImportedClientsComponent} from './settings';
-// import { TranslationsFilterComponent } from './settings/translations/translations-filter/translations-filter.component';
-// import { ImportedClientsComponent } from './settings/imports/imported-clients/imported-clients.component';
-import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
+// import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
-import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
-// import { CrmnewuserComponent } from './settings/crmusers/crmnewuser/crmnewuser.component';
+// import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
-// import { CrmedituserComponent } from './settings/crmusers/crmedituser/crmedituser.component';
-// import { ActcrtaccComponent } from './clients-info/actcrtacc/actcrtacc.component';
-import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
-import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
-// import { AffilatenewuserComponent } from './settings/affilateusers/affilatenewuser/affilatenewuser.component';
+// import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
+// import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 
 @NgModule({
   declarations: [
