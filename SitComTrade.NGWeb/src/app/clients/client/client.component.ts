@@ -59,7 +59,9 @@ export class ClientComponent implements OnInit {
   show: boolean;
   colorchanger: any;
   filterdataisstarred: any[];
-  colorchange: any;
+  allcolorchange: any;
+  acccolorchange: any;
+  leadcolorchange: any;
   // selectedvalue: any[] =[];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
@@ -416,10 +418,11 @@ export class ClientComponent implements OnInit {
       }
     });
     this.rowData = this.filterdataisstarred;
-    // this.colorchange;
-    // this.colorchange = !this.colorchange;
+    this.UserLength = this.rowData.length;
+    this.allcolorchange = true;
   } else {
     this.userDetails();
+    this.allcolorchange = false;
   }
   }
   accountsfilterIsStareable(val) {
@@ -430,8 +433,11 @@ export class ClientComponent implements OnInit {
       }
     });
     this.accountInfo = this.filterdataisstarred;
+    this.accountLength = this.accountInfo.length;
+    this.acccolorchange = true;
   } else {
     this.userDetails();
+    this.acccolorchange = false;
   }
   }
   leadsfilterIsStareable(val) {
@@ -442,8 +448,11 @@ export class ClientComponent implements OnInit {
       }
     });
     this.leadInfo = this.filterdataisstarred;
+    this.leadLength = this.leadInfo.length;
+    this.leadcolorchange = true;
   } else {
     this.userDetails();
+    this.leadcolorchange = false;
   }
   }
 }
