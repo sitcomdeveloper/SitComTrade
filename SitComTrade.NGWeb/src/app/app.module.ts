@@ -15,7 +15,6 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AuthpipePipe } from './authpipe.pipe';
 import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { SelectDropDownModule } from 'ngx-select-dropdown'
 import { HeaderComponent } from './header/header.component';
 import { ClientsComponent } from './header/clients/clients.component';
 // tslint:disable-next-line: max-line-length
@@ -144,7 +143,7 @@ import { UserdetailsComponent } from './header/userdetails/userdetails.component
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     // TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    PopoverModule.forRoot(), TooltipModule.forRoot(), CollapseModule.forRoot(), CKEditorModule, SelectDropDownModule
+    PopoverModule.forRoot(), TooltipModule.forRoot(), CollapseModule.forRoot(), CKEditorModule
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length

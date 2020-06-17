@@ -79,9 +79,9 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: [''],
       countryid: ['']
     });
-    this.spinnerService.show();
-    setTimeout( () => {
-  }, );
+    // this.spinnerService.show();
+  //   setTimeout( () => {
+  // }, );
     this.getcountryName();
     this.getRegistrationFromType();
     this.getAllStatus();
@@ -213,9 +213,10 @@ export class GeneralInfoComponent implements OnInit {
       Id: this.userGenralinfo.Id,
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
-      this.updatedDtls = res;
-      console.log('updatedDtls', res);
       this.spinnerService.show();
+      this.updatedDtls = res;
+      // console.log('updatedDtls', res);
+      
       this.afterUpdate();
       this.frontGeneralInfo = true;
       this.editGeneralInfo = false;
