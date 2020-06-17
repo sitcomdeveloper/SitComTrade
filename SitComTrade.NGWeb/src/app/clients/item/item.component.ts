@@ -55,12 +55,11 @@ export class ItemComponent implements OnInit {
     }),
       this.getcountryName();
     this.getGroups();
+     // code for receiving login details and bind to header at place of name
+     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+     this.bindLoginData = this.getLoginDetails;
   }
   newClients() {
-    // code for receiving login details and bind to header at place of name
-    // this.getLoginDetails = JSON.parse(localStorage.getItem('project'));
-    // console.log('LoginData', this.getLoginDetails);
-    // this.bindLoginData = this.getLoginDetails;
     if (this.newUserForm.valid) {
       this.Group.forEach(element => {
         if ( element.Id === +this.newUserForm.value.group) {
@@ -83,7 +82,7 @@ export class ItemComponent implements OnInit {
       CountryName: this.newUserForm.value.countryid,
       GroupId: this.newUserForm.value.group,
       ISendEmail: this.sedemailbyuser,
-      OwnerId: 1,
+      OwnerId: this.bindLoginData.UserId,
       Phone: this.newUserForm.value.phone,
       CountryId: this.newUserForm.value.country
     };

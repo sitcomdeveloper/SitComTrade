@@ -21,15 +21,20 @@ export class TradeaccountsComponent implements OnInit {
   Group: any;
   getGroupsData: any;
   selectedchkbxfrdltclnt = [];
+  getLoginDetails: any;
+  bindLoginData: any;
 
   constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
               private modalService: BsModalService, private router: Router, private groupsService: GroupsService) { }
     bsModalRef: BsModalRef;
 
-  TypeName = 'Real';
-  OwnerId  = 1;
+  // TypeName = 'Real';
+  // OwnerId  = 1;
   deletbtnn = true;
   ngOnInit() {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    this.bindLoginData = this.getLoginDetails;
     this.tradeDetails();
 
     $(document).ready(function () {
@@ -45,11 +50,12 @@ export class TradeaccountsComponent implements OnInit {
         $(".hidetrade").css("display", "none");
       });
     });
+    
   }
   tradeDetails() {
     const obj = {
       TypeName : 'Real',
-      OwnerId  : 1
+      OwnerId  : this.bindLoginData.UserId
     };
     this.clientsservice.getTradeUsers(obj).subscribe(res => {
       // this.spinnerService.show();

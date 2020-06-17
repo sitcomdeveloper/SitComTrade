@@ -131,10 +131,11 @@ export class ClientComponent implements OnInit {
     //   });
     // });
   }
+  // this.clientInfo
   userDetails() {
     this.spinnerService.show();
     setTimeout(() => {
-      this.clientService.getUsers(this.clientInfo).subscribe(res => {
+      this.clientService.getUsers(this.bindLoginData.UserId).subscribe(res => {
         if (res !== null && res !== undefined && res !== '') {
           this.rowData = res.reverse();
           this.UserLength = res.length;
