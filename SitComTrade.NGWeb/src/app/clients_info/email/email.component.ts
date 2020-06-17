@@ -30,8 +30,8 @@ export class EmailComponent implements OnInit {
     });
 
      $(document).ready(function () {
-       $("#email").click(function () {
-         $(".showrcrd1").toggle();
+       $("#emailtoggle").click(function () {
+         $(".showrcrdemail").toggle();
        });
      });
      this.gettheMail();
