@@ -164,7 +164,7 @@
                      <div class="col-md-3"><label class="valign-label" for="TimeZoneId"><span data-tooltip-el="">Time Zone Id</span></label></div>
                      <div class="col-md-9">
                      
-                        <ngx-select-dropdown (change)="selectionChanged($event)" [multiple]="true" [(ngModel)]="dataModel" [config]="config" [options]="dropdownOptions" formControlName="timezone">
+                        <ngx-select-dropdown (change)="selectionChanged($event)" formControlName="selectData" [multiple]="true" [config]="config" [options]="dropdownOptions">
                            <!-- <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone" id="my-select"> -->
                               <option value="">Select...</option>
                               <option value="{{gettimezones?.DisplayName}}"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
