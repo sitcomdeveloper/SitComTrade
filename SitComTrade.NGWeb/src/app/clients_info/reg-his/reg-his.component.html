@@ -15,8 +15,8 @@
                        <option value="100">100</option>
                     </select>
                  </div>
-                 <a href="javascript:void(0);" class="ico-add ico-sz3 showrcrdreg popupicon " data-rule="add-link" style="display:none;" data-toggle="modal" data-target="#createtask">
-                  <i class="fa fa-plus"></i>
+                 <a href="javascript:void(0);" class="ico-add ico-sz3 showrcrdreg popupicon " data-rule="add-link" style="display:none;">
+                  <!-- <i class="fa fa-plus"></i> -->
                 </a>
                  <a class="collapsed" data-toggle="collapse" href="#collapseReg" aria-expanded="false"
                  aria-controls="collapseReg" id="reg" style="color:#000;">
@@ -55,21 +55,22 @@
                             <tr data-index="0" data-rule="body">
                                <td style="max-width: 300px;">
                                   <div data-display-for="16_UserId">
-                                     <div class="text-ellipsis" >MASSIMO</div>
+                                     <div class="text-ellipsis" >{{userGenralinfo?.FirstName}}</div>
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
                                   <div data-display-for="16_Type">
-                                     <div class="text-ellipsis">ZIZZA</div>
+                                     <div class="text-ellipsis" tooltip="{{userGenralinfo?.LastName}}">{{userGenralinfo?.LastName}}</div>
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
                                   <div data-display-for="16_Status">
-                                     <div class="text-ellipsis">mailarc@aol.com</div>
+                                     <div class="text-ellipsis" tooltip="{{userGenralinfo?.Email}}"><a
+                                       href="mailto:{{userGenralinfo?.Email}}">{{userGenralinfo?.Email}}</a></div>
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
-                                  <div data-display-for="16_Date">3295385412</div>
+                                  <div data-display-for="16_Date">{{userGenralinfo?.Phone}}</div>
                                </td>
                                <td style="max-width: 200px;">
                                   <div data-display-for="16_Description">
@@ -78,12 +79,12 @@
                                </td>
                                <td style="max-width: 300px;">
                                   <div data-display-for="16_CreatedBy">
-                                     <div class="text-ellipsis">AC431251</div>
+                                     <div class="text-ellipsis" tooltip="{{userGenralinfo?.ItemId}}">{{userGenralinfo?.ItemId}}</div>
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
                                   <div data-display-for="16_ItemId">
-                                     <div class="text-ellipsis"><a href="javascript:void(0);" ><span>italy</span></a></div>
+                                     <div class="text-ellipsis"><span>{{userGenralinfo?.CountryName}}</span></div>
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
@@ -93,7 +94,7 @@
                                 <div data-display-for="16_CreatedDate">12/9/2019 11:34:00 AM</div>
                              </td>
                              <td style="max-width: 300px;">
-                                <div data-display-for="16_CreatedDate">Lead
+                                <div data-display-for="16_CreatedDate">{{userGenralinfo?.TypeName}}
                                 </div>
                              </td>
                             </tr>
