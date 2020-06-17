@@ -3,7 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SettingsService } from '../../settings.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/common/validators/confirm-password.validator';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-crmnewuser',
   templateUrl: './crmnewuser.component.html',
@@ -84,8 +84,10 @@ export class CrmnewuserComponent implements OnInit {
     this.getCultureCodes();
     this.getRoles();
     this.getSenderSettings();
-    // this.getModules();
-    // this.getModulesGroup();
+
+  //   $(function() {
+  //     $('#my-select').searchableOptionList();
+  // });
   }
   hideModal() {
     this.bsmodal.hide();
