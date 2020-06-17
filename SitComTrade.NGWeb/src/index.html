@@ -222,14 +222,6 @@ $('#edit-comment').click(function(){
    </script>
    <!-- for showing pwd by clicking on eye -->
    <script>
-    // function hideshowpwd() {
-    //   var x = document.getElementByClass("eye");
-    //   if (x.type === "password") {
-    //     x.type = "text";
-    //   } else {
-    //     x.type = "password";
-    //   }
-    // }
     $(document).ready(function () {
     $(document).on('click', '.show-password', function() {
 $(this).toggleClass("fa-eye1");
@@ -248,20 +240,6 @@ input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type
 });
 });
   </script>
-  <script>
-  $(document).ready(function($){
-    $('#toggle-click').on('click',function(){
-      if($(this).attr('data-click-state') == 1) {
-          $(this).attr('data-click-state', 0);
-          $(this).css('color', '#45596a')
-        }
-      else {
-        $(this).attr('data-click-state', 1);
-        $(this).css('color', 'yellow')
-      }
-    });
-  });
-</script>
 </body>
 
 </html>
