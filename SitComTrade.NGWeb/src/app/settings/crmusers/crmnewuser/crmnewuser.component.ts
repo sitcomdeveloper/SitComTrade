@@ -83,11 +83,7 @@ export class CrmnewuserComponent implements OnInit {
     this.getTimeZone();
     this.getCultureCodes();
     this.getRoles();
-    this.getSenderSettings();
-
-  //   $(function() {
-  //     $('#my-select').searchableOptionList();
-  // });
+    this.getSenderSettings();  
   }
   hideModal() {
     this.bsmodal.hide();

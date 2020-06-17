@@ -15,6 +15,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AuthpipePipe } from './authpipe.pipe';
 import { ModalModule, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { SelectDropDownModule } from 'ngx-select-dropdown'
 import { HeaderComponent } from './header/header.component';
 import { ClientsComponent } from './header/clients/clients.component';
 // tslint:disable-next-line: max-line-length
@@ -45,12 +46,8 @@ import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, Instr
   TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
   // tslint:disable-next-line: max-line-length
   ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent, CrmnewuserComponent, CrmedituserComponent, AffilatenewuserComponent, TranslationsFilterComponent, ImportedClientsComponent} from './settings';
-// import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { SrchPipe } from './clients/client/srch.pipe';
-// import { OoinfoComponent } from './activities/openedorders/ooinfo/ooinfo.component';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
-// import { ImprtclntdtaComponent } from './clients/imprtclntdta/imprtclntdta.component';
-// import { ImportClientDataComponent } from './clients/import-client-data/import-client-data.component';
 
 @NgModule({
   declarations: [
@@ -147,7 +144,7 @@ import { UserdetailsComponent } from './header/userdetails/userdetails.component
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     // TabModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    PopoverModule.forRoot(), TooltipModule.forRoot(), CollapseModule.forRoot(), CKEditorModule
+    PopoverModule.forRoot(), TooltipModule.forRoot(), CollapseModule.forRoot(), CKEditorModule, SelectDropDownModule
   ],
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length

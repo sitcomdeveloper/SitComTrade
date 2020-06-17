@@ -154,7 +154,6 @@
                         <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks">
                            <option value="">Select...</option>
                            <option value="" value="{{shared?.Id}}" *ngFor="let shared of isshared">{{shared?.Name}}</option>
-                           <!-- <option value="17">DESK MANAGER</option> -->
                         </select>
                         </div>
                     
@@ -165,11 +164,12 @@
                      <div class="col-md-3"><label class="valign-label" for="TimeZoneId"><span data-tooltip-el="">Time Zone Id</span></label></div>
                      <div class="col-md-9">
                      
-                          
-                           <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone" id="my-select">
+                        <ngx-select-dropdown (change)="selectionChanged($event)" [multiple]="true" [(ngModel)]="dataModel" [config]="config" [options]="dropdownOptions" formControlName="timezone">
+                           <!-- <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone" id="my-select"> -->
                               <option value="">Select...</option>
                               <option value="{{gettimezones?.DisplayName}}"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
-                           </select>
+                           <!-- </select> -->
+                        </ngx-select-dropdown>
                      
                      </div>
                   </div>
