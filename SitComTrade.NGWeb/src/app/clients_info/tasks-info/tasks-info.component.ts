@@ -38,7 +38,7 @@ export class TasksInfoComponent implements OnInit {
     this.detail = details;
     this.taskInfoService.getTask(details).subscribe(res => {
       this.getInfoTasks = res.reverse();
-      console.log('taskget', res);
+      // console.log('taskget', res);
     });
   }
   createtask() {

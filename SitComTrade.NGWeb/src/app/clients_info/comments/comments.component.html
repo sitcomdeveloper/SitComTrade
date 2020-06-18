@@ -1,4 +1,4 @@
-<div *ngIf = nocomments>g</div>
+<!-- <div *ngIf = nocomments>g</div> -->
 <div class="modal-header">
   <h4 class="modal-title pull-left"> </h4>
   <button type="button" class="close pull-right" aria-label="Close" *ngIf = closeModal>
@@ -64,9 +64,11 @@
 </div>
   <!------------comment here----->
   <div class="comments-list container">
+     <pre class="comment-body " *ngIf = nocomments>No Comments</pre>
     <div class="comment form-control1" data-comment-id="635171" *ngFor = "let comment of comments">
-       <pre class="comment-body " >{{comment?.CommentDescription}}</pre>
-      
+       <pre class="comment-body " *ngIf = hvecomments>{{comment?.CommentDescription}}</pre>
+       <!-- <pre class="comment-body " *ngIf = nocomments>No Comments</pre> -->
+       <!-- *ngIf = hvecomments -->
        <div class="comment-details mt5"><span class="author no-events">{{bindLoginData?.FullName}}</span>
         <span class="date no-events"><i class="fa fa-calendar">&nbsp;</i>
           <span>{{comment?.CreatedAt}}</span></span>

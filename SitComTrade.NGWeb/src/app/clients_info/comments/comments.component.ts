@@ -27,6 +27,8 @@ export class CommentsComponent implements OnInit {
   detail: number;
   addcommentsby3Dots: string;
   nocomments = true;
+  hvecomments = false;
+  lenofcomments: any;
 
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
@@ -80,8 +82,15 @@ export class CommentsComponent implements OnInit {
     this.commentsService.getComments(this.detail).subscribe(res => {
       // this.spinnerService.show();
       this.comments = res;
-      if(res === '') {
+      this.lenofcomments = res.length;
+      console.log('comm',this.lenofcomments);
+      if(this.lenofcomments === '0') {
+        // console.log('c',res.length);
         this.nocomments = true;
+        this.hvecomments = false;
+      } else {
+        this.hvecomments = true;
+        this.nocomments = false;
       }
       console.log('comments', res);
     });
