@@ -125,7 +125,7 @@ p {
 .no-events {
     pointer-events: none;
 }
-pre.comment-body {
+p.comment-body {
     text-align: center;
     padding-bottom: 19px;
     font-weight: 500;
