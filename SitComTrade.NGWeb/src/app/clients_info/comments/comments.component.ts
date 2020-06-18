@@ -84,12 +84,11 @@ export class CommentsComponent implements OnInit {
       this.comments = res;
       this.lenofcomments = res.length;
       console.log('comm',this.lenofcomments);
-      if(this.lenofcomments === '0') {
-        // console.log('c',res.length);
+      if(this.lenofcomments === 0) {
         this.nocomments = true;
-        this.hvecomments = false;
+        // this.hvecomments = false;
       } else {
-        this.hvecomments = true;
+        // this.hvecomments = true;
         this.nocomments = false;
       }
       console.log('comments', res);

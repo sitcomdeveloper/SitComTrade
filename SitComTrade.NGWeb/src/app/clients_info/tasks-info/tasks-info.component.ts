@@ -17,6 +17,9 @@ export class TasksInfoComponent implements OnInit {
   getLoginDetails: any;
   bindLoginData: any;
   detail: number;
+  taskslength: any;
+  notasks = true;
+  hvetasks = false;
 
   constructor(private taskInfoService: TasksInfoService, private modalService: BsModalService, private route: ActivatedRoute) { }
   bsModalRef: BsModalRef;
@@ -38,7 +41,14 @@ export class TasksInfoComponent implements OnInit {
     this.detail = details;
     this.taskInfoService.getTask(details).subscribe(res => {
       this.getInfoTasks = res.reverse();
-      // console.log('taskget', res);
+      this.taskslength = res.length;
+      if(this.taskslength === 0) {
+        this.notasks = true;
+        // this.hvetasks= false;
+      } else {
+        // this.hvetasks= true;
+        this.notasks = false;
+      }
     });
   }
   createtask() {

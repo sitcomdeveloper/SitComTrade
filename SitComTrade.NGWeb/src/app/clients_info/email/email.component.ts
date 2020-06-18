@@ -15,7 +15,8 @@ export class EmailComponent implements OnInit {
   detail: number;
   userGenralinfo: any;
   tkemail: any;
-
+  maillength: any;
+  nomail = true;
   constructor(private modalService: BsModalService,private _route: ActivatedRoute,private _generalinfoservice:GeneralInfoService) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
@@ -40,6 +41,12 @@ export class EmailComponent implements OnInit {
   gettheMail() {
     this._generalinfoservice.getMail(this.detail).subscribe(gtmal => {
       this.tkemail = gtmal;
+      this.maillength = gtmal.length;
+      if(this.maillength === 0) {
+        this.nomail = true;
+      } else {
+        this.nomail = false;
+      }
     })
   }
   sendemail(Ide) {

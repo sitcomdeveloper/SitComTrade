@@ -64,9 +64,9 @@
 </div>
   <!------------comment here----->
   <div class="comments-list container">
-     <pre class="comment-body " *ngIf = nocomments>No Comments</pre>
+     <pre class="comment-body" *ngIf = nocomments>No Comments</pre>
     <div class="comment form-control1" data-comment-id="635171" *ngFor = "let comment of comments">
-       <pre class="comment-body " *ngIf = hvecomments>{{comment?.CommentDescription}}</pre>
+       <pre class="comment-body ">{{comment?.CommentDescription}}</pre>
        <!-- <pre class="comment-body " *ngIf = nocomments>No Comments</pre> -->
        <!-- *ngIf = hvecomments -->
        <div class="comment-details mt5"><span class="author no-events">{{bindLoginData?.FullName}}</span>
