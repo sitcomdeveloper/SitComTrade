@@ -27,7 +27,6 @@ export class CommentsComponent implements OnInit {
   detail: number;
   addcommentsby3Dots: string;
   nocomments = true;
-  hvecomments = false;
   lenofcomments: any;
 
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
@@ -86,9 +85,7 @@ export class CommentsComponent implements OnInit {
       console.log('comm',this.lenofcomments);
       if(this.lenofcomments === 0) {
         this.nocomments = true;
-        // this.hvecomments = false;
       } else {
-        // this.hvecomments = true;
         this.nocomments = false;
       }
       console.log('comments', res);
