@@ -366,3 +366,20 @@ a.box-heading-button.dropdown-toggle:after {
     margin: -3px 0;
     width: 207px;
 }
+.btn-default.btn-on.active{background-color: #10baee;color: white;    border: 1px solid #609bce;}
+.btn-default.btn-off.active{background-color: #10baee;color: white;    border: 1px solid #609bce;}
+label.btn.btn-default.btn-xs input {
+    opacity: 0;
+}
+.main-tabs-switcher
+{
+    border: 1px solid #609bce;
+    height: 39px;
+}
+.tools-filter-select.md2 div select {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #57bfaf;
+    border-radius: 0;
+    text-align: center;
+}

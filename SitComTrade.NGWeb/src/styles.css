@@ -1481,6 +1481,22 @@ tr.tablectn {
     width: 10px;
     height: 10px;
 }
+.tablist li a .input-group
+{
+    margin: -7px 4px;
+    width: 207px;
+}
+.tablist li a .input-group div input
+{
+    height: 27px;
+    font-size: 12px;
+}
+.main-tabs-name strong {
+    font: 14px/20px Poppins,Arial,sans-serif;
+    text-transform: uppercase;
+    display: block;
+    color: #fff;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
