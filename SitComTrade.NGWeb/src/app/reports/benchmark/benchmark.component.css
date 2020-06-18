@@ -1,107 +1,71 @@
-.sub-header{
-    position: relative;
-    z-index: 10;
-    padding: 35px 0 0;
-    background: url(/assets/images/bg-subheader.png) 100% 0 no-repeat #105996;
-    color: #fff;
-   height: 94px;
-    margin:0px 15px;
-}
-.breadcrumb
-{
-    margin-left: 34px;
-    margin-top:-32px;
-    padding:0px;
+#body, .dashboard-calendar table, .jsgrid-table, .table-type01 table, .table-type03.table-style01 table, .table-type04 table {
+    table-layout: fixed;
+  }
+  .headingwidth
+  {
+    width: 18.9%;
+  }
+  /* .text-ellipsis {
     
+    width:400px;
+  } */
+  .email-cell-content:first-child
+  
+  {
+    width: 300px;
+  }
+  td.email-cell {
+    min-width:75px;
+  }
+  .email-cell-content
+  
+  {
+    width: 77px!important;
+  }
+  .form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+  }
+  .text-ellipsis {
+    width: 66px!important;
+  }
+  .color09 {
+    color: #00943f;
 }
-.tab{
-    border:0px solid;
-    border-radius: 3px;
-    text-align: center;
-    width:135px;
-    height:43px;
-    margin-left: 34px;
-    color: #3d75e1;
-    padding-top:11px;
-
-}
-.text-box{
-    margin: 0 auto;
-    padding: 20px 4px 0px;
-    display: inline;
-    white-space: nowrap;
-}
-.b1
-{
-    background-color: #2b77b7;
+  .email-alt-row {
+    background: #f5f8fc;
+  }
+  tr.email-filter-row {
+    background: #fff;
+  }
+  .jsgrid-header-scrollbar
+  {
+    overflow-y: auto;
+  }
+  
+  tr.total-row td {
+    position: relative;
+    padding-top: 15px;
+  }
+  .jsgrid-header-extra-row th .jsgrid-cell-content {
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     border-radius: 5px 5px 0 0;
     font-weight: 500;
-    display: inline-block;
-    height:44px;
-    padding-top:10px;
 }
-.c1
-{
-    padding-top: 11px;
-    padding-bottom: 11px;
-    position: relative;
-    
-}
-.b2,.b3,.b4
-{
-    background-color: #3d96e0;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px 5px 0 0;
-    font-weight: 500;
-    display: inline-block;
-    height:44px;
-    padding-top:10px;
-}
-.c2,.c3,.c4
-{
-    
+ .jsgrid-header-extra-row .jsgrid-cell-content {
     padding-top: 11px;
     padding-bottom: 11px;
     position: relative;
 }
-
-.b5
-{
-    background-color:#4415a4;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px 5px 0 0;
-    font-weight: 500;
-    display: inline-block;
-    height:44px;
-    padding-top:10px;
+.jsgrid-cell-border-left .jsgrid-cell-content:before, .jsgrid-reports .jsgrid-cell-border-right .jsgrid-cell-content:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #e0e8f3;
+    width: 2px;
 }
-.c5
-{
-    padding-top: 11px;
-    padding-bottom: 11px;
-    position: relative;
-}
-.b6
-{
-    background-color: #094373;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px 5px 0 0;
-    font-weight: 500;  
-    display: inline-block;
-    height:44px;
-    padding-top:10px;
-}
-.c6{
-    padding-top: 11px;
-    padding-bottom: 11px;
-    position: relative;
+.jsgrid-cell-border-left .jsgrid-cell-content:before {
+    left: 0;
 }
