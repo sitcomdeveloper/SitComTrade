@@ -26,6 +26,7 @@ export class CommentsComponent implements OnInit {
   bindLoginData: any;
   detail: number;
   addcommentsby3Dots: string;
+  nocomments = true;
 
   constructor(private commentsService: CommentsService, private fb: FormBuilder,
               // tslint:disable-next-line: variable-name
@@ -79,6 +80,9 @@ export class CommentsComponent implements OnInit {
     this.commentsService.getComments(this.detail).subscribe(res => {
       // this.spinnerService.show();
       this.comments = res;
+      if(res === '') {
+        this.nocomments = true;
+      }
       console.log('comments', res);
     });
   }
