@@ -38,7 +38,6 @@ export class TasksComponent implements OnInit {
     this.taskInfoService.getTask(this.bindLoginData.UserId).subscribe(res => {
       this.getInfoTasks = res.reverse();
       this.taskslen = this.getInfoTasks.length;
-      console.log('taskget', res);
     });
   }
   createtask() {
@@ -55,7 +54,6 @@ export class TasksComponent implements OnInit {
     });
   }
   edittask(userid) {
-    console.log(userid);
     const initialState = {
       title: 'Edit Task',
       wholeData: userid

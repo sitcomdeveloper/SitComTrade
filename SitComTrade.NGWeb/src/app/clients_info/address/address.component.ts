@@ -40,6 +40,7 @@ export class AddressComponent implements OnInit {
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
     this.addressservice.getAddress(details).subscribe(res => {
+      if (res !== null && res !== undefined && res !== '') {
       this.userAddress = res;
       this.addressForm.patchValue({
         ipcountry: this.userAddress.CountryName,
@@ -48,13 +49,13 @@ export class AddressComponent implements OnInit {
         state: this.userAddress.State,
         address: this.userAddress.StreetAddress,
       });
-      console.log('address', res);
+      // console.log('address', res);
+    }
     });
   }
   getcountryName() {
     this.countryService.countryName(this.name).subscribe(result => {
       this.Country = result;
-      console.log('countryname', result);
     });
   }
   // pencil
@@ -85,7 +86,7 @@ export class AddressComponent implements OnInit {
       this.spinnerService.show();
       this.modifyAddress = res;
       this.address();
-      console.log('modifyadd', res);
+      // console.log('modifyadd', res);
       });
     this.normalMode = true;
     this.editMode = false;

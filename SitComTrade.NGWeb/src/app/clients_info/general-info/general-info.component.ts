@@ -213,7 +213,7 @@ export class GeneralInfoComponent implements OnInit {
       Id: this.userGenralinfo.Id,
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
-      this.spinnerService.show();
+      // this.spinnerService.show();
       this.updatedDtls = res;
       // console.log('updatedDtls', res);
       
