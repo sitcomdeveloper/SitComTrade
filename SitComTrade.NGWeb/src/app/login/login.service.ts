@@ -29,7 +29,7 @@ export class LoginService {
     return this.http.post<any>(API_URL + 'User/GetAllCurrencies', obj);
   }
   resetPassword(obj: any): Observable<any> {
-    console.log('fgtpassword', obj);
+    // console.log('fgtpassword', obj);
     return this.http.post<any>(API_URL + 'User/ForgotPassword?username=' + obj, {});
     }
 }
