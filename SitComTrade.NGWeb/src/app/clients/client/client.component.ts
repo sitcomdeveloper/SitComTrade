@@ -118,20 +118,7 @@ export class ClientComponent implements OnInit {
         $(this).toggleClass('rotate');
       });
     });
-    //  $(document).ready(function($){
-    //   $('#toggle-click').on('click',function(){
-    //     if($(this).attr('data-click-state') == 1) {
-    //         $(this).attr('data-click-state', 0);
-    //         $(this).css('color', '#45596a')
-    //       }
-    //     else {
-    //       $(this).attr('data-click-state', 1);
-    //       $(this).css('color', 'yellow')
-    //     }
-    //   });
-    // });
   }
-  // this.clientInfo
   userDetails() {
     this.spinnerService.show();
     setTimeout(() => {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-monetarytransactions',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MonetarytransactionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  userClick() {
+    mnetarytrnsactions: 'mnetarytrnsactions';
+    this.router.navigate(['/info', 189]);
   }
 
 }

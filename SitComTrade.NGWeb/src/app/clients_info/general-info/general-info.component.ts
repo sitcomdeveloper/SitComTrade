@@ -28,6 +28,8 @@ export class GeneralInfoComponent implements OnInit {
   Status: any;
   getLoginDetails: any;
   bindLoginData: any;
+  monetarytransactions = false;
+  mnetarytrnsactions: any;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router,
               // tslint:disable-next-line: max-line-length
@@ -79,9 +81,6 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: [''],
       countryid: ['']
     });
-    // this.spinnerService.show();
-  //   setTimeout( () => {
-  // }, );
     this.getcountryName();
     this.getRegistrationFromType();
     this.getAllStatus();
@@ -131,6 +130,11 @@ export class GeneralInfoComponent implements OnInit {
       });
       // console.log('generalinfo', res);
     });
+    if(this.mnetarytrnsactions === 'mnetarytrnsactions') {
+      this.monetarytransactions = true;
+    } else {
+      this.monetarytransactions = false;
+    }
   }
     // this.useraddinfo = this.userGenralinfo;
     // const date = this.userGenralinfo.CreatedAt.split('T');
