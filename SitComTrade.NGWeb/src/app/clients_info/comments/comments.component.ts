@@ -49,7 +49,7 @@ export class CommentsComponent implements OnInit {
       this.commentsService.getComments(this.moreIdInfo).subscribe(res => {
         
         this.comments = res;
-        console.log('comments', res);
+        // console.log('comments', res);
       });
     } 
     // else if(this.addcommentsby3Dots === 'add') {
@@ -82,13 +82,13 @@ export class CommentsComponent implements OnInit {
       // this.spinnerService.show();
       this.comments = res;
       this.lenofcomments = res.length;
-      console.log('comm',this.lenofcomments);
+      // console.log('comm',this.lenofcomments);
       if(this.lenofcomments === 0) {
         this.nocomments = true;
       } else {
         this.nocomments = false;
       }
-      console.log('comments', res);
+      // console.log('comments', res);
     });
   }
   editComment() {
@@ -108,7 +108,7 @@ export class CommentsComponent implements OnInit {
       // this.spinnerService.show();
       this.insert = res;
       this.userComments();
-      console.log('insertcomment', res);
+      // console.log('insertcomment', res);
       this.commentsForm.reset();
     });
   }

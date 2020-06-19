@@ -63,26 +63,24 @@ let second = d.getSeconds();
 let millisecond = d.getMilliseconds();
 const Tdate = date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond;
 this.taskdate = Tdate;
-console.log(date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond);
+// console.log(date+'-'+Month+'-'+year+'T'+hour+':'+minute+':'+second+'.'+millisecond);
   }
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
     this.taskInfoService.getTask(details).subscribe(res => {
       this.getInfoTasks = res.reverse();
-      console.log('taskget', res);
+      // console.log('taskget', res);
     });
   }
   taskType() {
     this.taskInfoService.getTaskType(this.getTaskTypeData).subscribe(res => {
       this.getTasks = res;
-      console.log('tasktype', res);
     });
   }
   taskStatus() {
     this.taskInfoService.getTaskStatus(this.getTaskStatusData).subscribe(res => {
       this.getStatus = res;
-      console.log('taskstatus', res);
     });
   }
   // insert task
@@ -114,7 +112,7 @@ TaskDate: this.taskdate,
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
     this.clddata.emit(res);
-    console.log('inserttasks', res);
+    // console.log('inserttasks', res);
     this.hideModal();
   });
 }
