@@ -31,7 +31,7 @@ export class TasksInfoComponent implements OnInit {
     this.getAllTask();
 // when click on fa fa-chevron it opens a pane for create component
     $(document).ready(function () {
-      $("#tasks").click(function () {
+      $("#taskss").click(function () {
         $(".showrcrd").toggle();
       });
     });
