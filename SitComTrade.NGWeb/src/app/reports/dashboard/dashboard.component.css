@@ -368,6 +368,7 @@ a.box-heading-button.dropdown-toggle:after {
 }
 .btn-default.btn-on.active{background-color: #10baee;color: white;    border: 1px solid #609bce;}
 .btn-default.btn-off.active{background-color: #10baee;color: white;    border: 1px solid #609bce;}
+.btn-default.btn-off{background-color: #10baee;color: white;    border: 1px solid #609bce;}
 label.btn.btn-default.btn-xs input {
     opacity: 0;
 }
