@@ -21,6 +21,7 @@ namespace SitComTech.Core.Interface
         bool DeleteMultipleClients(List<long> clientids);
         void UpdateClient(Client entity);
         void UpdateClientStarred(ClientStarredVM entity);
+        ClientListVM GetClientInfoDetailById(long clientid);
     }
 
     public interface IMarketingInfoService : IService<MarketingInfo>
