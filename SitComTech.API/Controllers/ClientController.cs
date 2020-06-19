@@ -112,6 +112,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("GetClientInfoDetailById/{id}")]
+        public ClientListVM GetClientInfoDetailById(int id)
+        {
+            return _clientService.GetClientInfoDetailById(id);
+        }
+
+        [HttpPost]
         [Route("GetTradeAccountByType")]
         public List<Client> GetTradeAccountByType(TradeAccountVM tradevm)
         {
