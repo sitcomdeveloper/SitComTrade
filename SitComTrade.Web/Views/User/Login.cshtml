@@ -377,14 +377,23 @@
 
             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Client/EmailToAllClients",
+                 url: apiURl + "api/Client/GetClientInfoDetailById/43",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.CreatEmail),
                 success: function (result) {
                     alert(result);
                 }
             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/EmailToAllClients",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreatEmail),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/UpdateClientStarred",

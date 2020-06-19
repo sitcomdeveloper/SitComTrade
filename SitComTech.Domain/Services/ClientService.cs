@@ -255,6 +255,57 @@ namespace SitComTech.Domain.Services
                 _unitOfWork.SaveChanges();
             }
         }
+        public ClientListVM GetClientInfoDetailById(long clientid)
+        {
+            return _repository.Queryable().Join(_repository.GetRepository<User>().Queryable(), clients => clients.OwnerId, owner => owner.Id,
+                (clients, owner) => new { clients, Owner = owner })
+                .GroupJoin(_marketinginforepository.Queryable(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.OwnerId,
+                (userowner, mrktinfo) => new { UserOwner = userowner, MarketInfo = mrktinfo })
+                .SelectMany(x => x.MarketInfo.DefaultIfEmpty(), (x, y) => new { x.UserOwner, MarketInfo = y })
+            .Where(x => x.UserOwner.clients.Active && !x.UserOwner.clients.Deleted && x.UserOwner.clients.Id == clientid).Select(x =>
+            new ClientListVM
+            {
+                Id = x.UserOwner.clients.Id,
+                ItemId = x.UserOwner.clients.ItemId,
+                FirstName = x.UserOwner.clients.FirstName,
+                LastName = x.UserOwner.clients.LastName,
+                CountryName = x.UserOwner.clients.CountryName,
+                CountryId = x.UserOwner.clients.CountryId,
+                Email = x.UserOwner.clients.Email,
+                TypeName = x.UserOwner.clients.TypeName,
+                TypeId = x.UserOwner.clients.TypeId,
+                Phone = x.UserOwner.clients.Phone,
+                OwnerName = x.UserOwner.Owner.FirstName + " " + x.UserOwner.Owner.LastName,
+                ResponseStatus = x.UserOwner.clients.ResponseStatus,
+                ResponseStatusId = x.UserOwner.clients.ResponseStatusId,
+                CreatedDate = x.UserOwner.clients.CreatedAt,
+                CampaignId = x.MarketInfo.CampaignID,
+                Tag = x.MarketInfo.Tag1,
+                Tag1 = x.MarketInfo.Tag2,
+                FTD = x.UserOwner.clients.FTD,
+                GroupId = x.UserOwner.clients.GroupId,
+                GroupName = x.UserOwner.clients.GroupName,
+                Desk = x.UserOwner.clients.Desk,
+                DeskId = x.UserOwner.clients.DeskId,
+                OwnerId = x.UserOwner.clients.OwnerId,
+                Mobile = x.UserOwner.clients.Mobile,
+                SecondEmail = x.UserOwner.clients.SecondEmail,
+                FTDDate = x.UserOwner.clients.FTDDate,
+                Enabled = x.UserOwner.clients.Enabled,
+                RetentionOwner = x.UserOwner.clients.RetentionOwner,
+                ConvertionOwner = x.UserOwner.clients.ConvertionOwner,
+                AssignedDate = x.UserOwner.clients.AssignedDate,
+                FirstRegistrationDate = x.UserOwner.clients.FirstRegistrationDate,
+                ImportId = x.UserOwner.clients.ImportId,
+                RegistrationType = x.UserOwner.clients.RegistrationType,
+                RegistrationTypeId = x.UserOwner.clients.RegistrationTypeId,
+                LastTaskDaysPast = x.UserOwner.clients.LastTaskDaysPast,
+                DaysAgoClientCreated = x.UserOwner.clients.DaysAgoClientCreated,
+                ISendEmail = x.UserOwner.clients.ISendEmail,
+                CitizenshipId = x.UserOwner.clients.CitizenshipId,
+                IsStarred = x.UserOwner.clients.IsStarred
+            }).FirstOrDefault();
+        }
     }
 
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
