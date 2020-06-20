@@ -13,6 +13,7 @@ namespace SitComTech.Core.Interface
         List<OwnerTask> GetTaskByOwnerId(long ownerid);
         void UpdateOwnerTask(OwnerTask entity);
         void DeleteOwnerTask(OwnerTask entity);
+        bool DeleteMultipleTasks(List<long> taskids);
     }
     public interface ITaskTypeService : IService<TaskType>
     {
