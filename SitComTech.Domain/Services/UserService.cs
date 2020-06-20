@@ -59,7 +59,7 @@ namespace SitComTech.Domain.Services
                         Active = true,
                         Deleted = false,
                         CreatedAt = DateTime.Now,
-                        CreatedBy = 0,
+                        CreatedBy = (long)userdata.OwnerId,
                         CreatedByName = "",
                         FirstName = userdata.FirstName,
                         LastName = userdata.LastName,
@@ -81,8 +81,8 @@ namespace SitComTech.Domain.Services
                         RoleName = userdata.RoleName,
                         DepartmentId = userdata.DepartmentId,
                         DepartmentName = userdata.DepartmentName,
-                        SharedDeskId = userdata.SharedDeskId,
-                        SharedDeskName = userdata.SharedDeskName,
+                        //SharedDeskId = userdata.SharedDeskId,
+                        //SharedDeskName = userdata.SharedDeskName,
                         TimezoneId = userdata.TimezoneId,
                         TimezoneName = userdata.TimezoneName,
                         CultureCode = userdata.CultureCode,
@@ -97,6 +97,26 @@ namespace SitComTech.Domain.Services
                         SharedSenderName = userdata.SharedSenderName
                     };                    
                     _repository.Insert(entity);
+                    entity.ObjectState = Framework.DataContext.ObjectState.Added;
+                    _unitOfWork.SaveChanges();
+                    foreach (var sharedDesk in userdata.userSharedDesks)
+                    {
+                        UserSharedDesk userSharedDesk = new UserSharedDesk
+                        {
+                            UserId = entity.Id,
+                            SharedDeskId=sharedDesk.SharedDeskId,
+                            SharedDeskName = sharedDesk.SharedDeskName,
+                            Active=true,
+                            Deleted=false,
+                            CreatedBy=(long)userdata.OwnerId,
+                            CreatedByName="",
+                            CreatedAt=DateTime.Now,
+                            UpdatedAt=null,
+                            UpdatedBy=0,
+                            UpdatedByName=""
+                        };
+                        _repository.GetRepository<UserSharedDesk>().Insert(userSharedDesk);
+                    }                    
                     _unitOfWork.SaveChanges();
                 }
                 return userdata;
@@ -133,9 +153,7 @@ namespace SitComTech.Domain.Services
                 userdata.RoleId = entity.RoleId;
                 userdata.RoleName = entity.RoleName;
                 userdata.DepartmentId = entity.DepartmentId;
-                userdata.DepartmentName = entity.DepartmentName;
-                userdata.SharedDeskId = entity.SharedDeskId;
-                userdata.SharedDeskName = entity.SharedDeskName;
+                userdata.DepartmentName = entity.DepartmentName;                
                 userdata.TimezoneId = entity.TimezoneId;
                 userdata.TimezoneName = entity.TimezoneName;
                 userdata.CultureCode = entity.CultureCode;

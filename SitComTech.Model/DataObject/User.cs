@@ -52,6 +52,10 @@ namespace SitComTech.Model.DataObject
         public Nullable<long> SharedDeskId { get; set; }
         public string SharedDeskName { get; set; }
         public virtual User UserTable { get; set; }
-
+    }
+    public class UserSharedDeskVM
+    {
+        public Nullable<long> SharedDeskId { get; set; }
+        public string SharedDeskName { get; set; }
     }
 }
