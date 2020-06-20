@@ -25,4 +25,16 @@ namespace SitComTech.Model.Constants
         [Description("Manual")]
         RegistrationType_Manual = 4
     }
+
+    public enum DataOwnerTypeEnum
+    {
+        [Description("Owner")]
+        Owner = 1,
+        [Description("Client")]
+        Client = 2,
+        [Description("AffiliatedUser")]
+        AffiliatedUser = 3,
+        [Description("TradeAccount")]
+        TradeAccount = 4       
+    }
 }
