@@ -160,11 +160,11 @@ namespace SitComTech.Domain.Services
                     foreach (var client in Clients)
                     {
                         DeleteClient(client);
-                    }                    
+                    }
                 }
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -175,7 +175,7 @@ namespace SitComTech.Domain.Services
                 return null;
             Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id && x.Active && !x.Deleted);
             return Client;
-        }      
+        }
 
         public List<Client> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
@@ -497,7 +497,7 @@ namespace SitComTech.Domain.Services
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
-        public void CreateEmail(Email email)
+        public void CreateEmail(Email email, bool isemailsend)
         {
             try
             {
@@ -523,7 +523,8 @@ namespace SitComTech.Domain.Services
                     };
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
-                    SendCreateEmail(email);
+                    if(isemailsend)
+                     SendCreateEmail(email);
                 }
             }
             catch (Exception ex)
@@ -540,10 +541,10 @@ namespace SitComTech.Domain.Services
                 oMailManager.Subject = clientdata.Subject;
                 oMailManager.Body = clientdata.Body;
                 oMailManager.IsBodyHtml = true;
-                if (clientdata !=null && clientdata.To !=string.Empty )
+                if (clientdata != null && clientdata.To != string.Empty)
                 {
                     oMailManager.To = clientdata.To;
-                }               
+                }
                 oMailManager.SendEmail();
             }
             catch (Exception ex)
@@ -564,7 +565,7 @@ namespace SitComTech.Domain.Services
                         foreach (var client in clientlists)
                         {
                             email.OwnerId = client.Id;
-                            CreateEmail(email);
+                            CreateEmail(email,true);
                         }
                     }
                 }
@@ -574,7 +575,44 @@ namespace SitComTech.Domain.Services
             {
                 return false;
             }
-        }        
+        }
+        public bool EmailToSelectedClients(Email email)
+        {
+            try
+            {
+                List<string> toEmails = new List<string>();
+                if (email != null && email.To != string.Empty)
+                {
+                    MailManager oMailManager = new MailManager();
+                    oMailManager.Subject = email.Subject;
+                    toEmails = email.To.Split(',').ToList<string>();
+                    oMailManager.Body = email.Body.ToString();
+                    oMailManager.ToEmails = toEmails;
+                    oMailManager.IsBodyHtml = true;
+                    if (toEmails != null && toEmails.Count > 0)
+                    {
+                        foreach (var vemailaddress in toEmails)
+                        {
+                            var clientlists = _clientservice.Query(x => x.Active == true && x.Deleted == false && x.OwnerId == email.UserId && x.Email == vemailaddress.ToString().Trim()).Select().FirstOrDefault();
+                            if (clientlists != null)
+                            {
+
+                                email.OwnerId = clientlists.Id;
+                                email.To = vemailaddress;
+                                CreateEmail(email,false);
+
+                            }
+                        }
+                        oMailManager.SendEmail(oMailManager);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
     public class ShortMessageService : Service<ShortMessage>, IShortMessageService
     {

@@ -223,7 +223,7 @@
         //    ClientId: ko.observable(62),
         //};
 
-
+        
         UserVM.CreatEmail = {
 
             To: ko.observable('kk84singh@gmail.com'),
@@ -231,8 +231,19 @@
             Body: ko.observable('Lead'),
             Sender: ko.observable('dgdg'),
             OwnerId: ko.observable(2),
-            UserId: ko.observable(2),
+            UserId: ko.observable(4),
         };
+
+        //var em = 'kk84singh@gmail.com,kksinghjss@gmail.com';
+        //UserVM.CreatEmail = {
+
+        //    To: ko.observable(em),
+        //    Subject: ko.observable('hdfdf'),
+        //    Body: ko.observable('Lead'),
+        //    Sender: ko.observable('dgdg'),
+        //    OwnerId: ko.observable(2),
+        //    UserId: ko.observable(2),
+        //};
 
         // UserVM.CreatEmail = {
            
@@ -375,18 +386,9 @@
 
         $(document).ready(function () {
 
-            $.ajax({
-                type: 'Post',
-                 url: apiURl + "api/Client/GetClientInfoDetailById/43",
-                contentType: 'application/json',
-                processData: false,
-                success: function (result) {
-                    alert(result);
-                }
-            });
             //$.ajax({
             //    type: 'Post',
-            //    url: apiURl + "api/Client/EmailToAllClients",
+            //    url: apiURl + "api/Client/EmailToSelectedClients",
             //    contentType: 'application/json',
             //    processData: false,
             //    data: ko.toJSON(UserVM.CreatEmail),
@@ -394,6 +396,25 @@
             //        alert(result);
             //    }
             //});
+            //$.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Client/GetClientInfoDetailById/43",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/EmailToAllClients",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.CreatEmail),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/UpdateClientStarred",
