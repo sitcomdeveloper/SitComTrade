@@ -217,15 +217,15 @@
         //    UserName: ko.observable('ravi@gmail.com'),
         //    Password: ko.observable('admin123')
         //};
-        UserVM.SelectedAccounts = ko.observableArray([
-            421, 424, 425
-        ]);
-        //UserVM.ClientS = {
+        //UserVM.SelectedAccounts = ko.observableArray([
+        //    421, 424, 425
+        //]);
+        UserVM.TaskEnum = {
 
           
-        //    IsStarred: ko.observable(0),
-        //    ClientId: ko.observable(62),
-        //};
+            OwnerId: ko.observable(47),
+            DataOwnerTypeId: ko.observable(2),
+        };
 
         
         UserVM.CreatEmail = {
@@ -389,17 +389,39 @@
 
 
         $(document).ready(function () {
-
-            $.ajax({
+              $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Task/DeleteMultipleTasks",
+                  url: apiURl + "api/Task/GetTaskByOwnerId",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.SelectedAccounts),
+                data: ko.toJSON(UserVM.TaskEnum),
                 success: function (result) {
                     alert(result);
                 }
             });
+
+            // $.ajax({
+            //    type: "get",
+            //     url: 'http://localhost:59122/api/Task/GetDataOwnerTypeEnum',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data.id);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Task/DeleteMultipleTasks",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.SelectedAccounts),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',
