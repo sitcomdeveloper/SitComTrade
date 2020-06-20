@@ -262,7 +262,7 @@ namespace SitComTech.API.Controllers
         [Route("CreateEmail")]
         public void CreateEmail(Email entity)
         {
-            _emailService.CreateEmail(entity);
+            _emailService.CreateEmail(entity,true);
         }
 
         [HttpPost]
@@ -275,6 +275,29 @@ namespace SitComTech.API.Controllers
                 if (entity != null)
                 {
                     return _emailService.EmailToAllClients(entity);
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        [HttpPost]
+        [Route("EmailToSelectedClients")]
+        public bool EmailToSelectedClients(Email entity)
+        {
+
+            try
+            {
+                if (entity != null)
+                {
+                    return _emailService.EmailToSelectedClients(entity);
 
                 }
                 else

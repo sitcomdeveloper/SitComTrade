@@ -38,8 +38,9 @@ namespace SitComTech.Core.Interface
     public interface IEmailService : IService<Email>
     {
         List<Email> GetEmailByOwnerId(long ownerid);
-        void CreateEmail(Email email);
+        void CreateEmail(Email email, bool issendemail);
         bool EmailToAllClients(Email email);
+        bool EmailToSelectedClients(Email email);
     }
     public interface IShortMessageService : IService<ShortMessage>
     {
