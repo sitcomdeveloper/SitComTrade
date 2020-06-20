@@ -22,6 +22,8 @@ namespace SitComTech.Model.DataObject
 
         public string Description { get; set; }
 
+        public long DataOwnerTypeId { get; set; }
+        public string DataOwnerTypeName { get; set; }
         public Nullable<DateTime> TaskDate { get; set; }
         public virtual TaskType TaskTypeTable { get; set; }
         public virtual TaskStatus TaskStatustable { get; set; }

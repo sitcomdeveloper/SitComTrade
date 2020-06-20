@@ -9,6 +9,6 @@ namespace SitComTech.Model.FilterModel
     public class GetTaskParam
     {
         public long OwnerId { get; set; }
-        public long OwnerTypeId { get; set; }
+        public long DataOwnerTypeId { get; set; }
     }
 }

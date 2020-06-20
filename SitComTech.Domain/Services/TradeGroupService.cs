@@ -97,9 +97,8 @@ namespace SitComTech.Domain.Services
         public void DeleteTradeGroup(TradeGroup entity)
         {
             if (entity == null)
-                throw new ArgumentNullException("Client");
-            entity.Deleted = true;
-            _repository.Update(entity);
+                throw new ArgumentNullException("Group");
+            _repository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
 
