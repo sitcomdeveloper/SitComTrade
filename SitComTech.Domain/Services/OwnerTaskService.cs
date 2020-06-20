@@ -92,7 +92,27 @@ namespace SitComTech.Domain.Services
         public List<OwnerTask> GetTaskByOwnerId(long ownerid)
         {
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
-        }       
+        }
+        public bool DeleteMultipleTasks(List<long> taskIds)
+        {
+            try
+            {
+                if (taskIds != null && taskIds.Count > 0)
+                {
+
+                    List<OwnerTask> groups = base.Queryable().Where(x => x.Active && !x.Deleted && taskIds.Contains(x.Id)).ToList();
+                    foreach (var grp in groups)
+                    {
+                        DeleteOwnerTask(grp);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
     public class TaskTypeService : Service<TaskType>,ITaskTypeService
     {
