@@ -1,5 +1,11 @@
-﻿using SitComTech.Core.Interface;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SitComTech.Core.Interface;
+using SitComTech.Core.Utils;
+using SitComTech.Model.Constants;
 using SitComTech.Model.DataObject;
+using SitComTech.Model.FilterModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -38,10 +44,10 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
-        [Route("GetTaskByOwnerId/{ownerid}")]
-        public List<OwnerTask> GetTaskByOwnerId(long ownerid)
+        [Route("GetTaskByOwnerId")]
+        public List<OwnerTask> GetTaskByOwnerId(GetTaskParam taskparam)
         {
-            return _taskService.GetTaskByOwnerId(ownerid);
+            return _taskService.GetTaskByOwnerId(taskparam);
         }
 
         [HttpPost]
@@ -58,5 +64,34 @@ namespace SitComTech.API.Controllers
             _taskService.Update(userVM);
         }
 
+        [HttpPost]
+        [Route("DeleteMultipleTasks")]
+        public bool DeleteMultipleTasks(List<long> taskIds)
+        {
+            try
+            {
+                if (taskIds != null && taskIds.Count > 0)
+                {
+                    return _taskService.DeleteMultipleTasks(taskIds);
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        [HttpGet]
+        [Route("GetDataOwnerTypeEnum")]
+        public JArray GetDataOwnerTypeEnum()
+        {
+            var entities = EnumExtensions.GetList<DataOwnerTypeEnum>(true);
+            return JArray.Parse(JsonConvert.SerializeObject(entities));
+        }
     }
 }

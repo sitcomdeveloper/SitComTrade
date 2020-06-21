@@ -51,6 +51,7 @@
     <Compile Include="DataObject\ShortMessage.cs" />
     <Compile Include="DataObject\TradeGroup.cs" />
     <Compile Include="DataObject\User.cs" />
+    <Compile Include="FilterModel\GetTaskParam.cs" />
     <Compile Include="Masters\AffiliateField.cs" />
     <Compile Include="Masters\CultureCode.cs" />
     <Compile Include="Masters\Department.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataObject\OwnerTask.cs" />
     <Compile Include="ViewModel\ClientVM.cs" />
+    <Compile Include="ViewModel\ListItem.cs" />
     <Compile Include="ViewModel\UserVM.cs" />
   </ItemGroup>
   <ItemGroup>

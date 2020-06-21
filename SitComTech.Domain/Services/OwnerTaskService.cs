@@ -4,6 +4,7 @@ using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
 using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
+using SitComTech.Model.FilterModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,8 @@ namespace SitComTech.Domain.Services
                 entity.CreatedBy = 0;
                 entity.CreatedByName = "";
                 entity.Description = userdata.Description;
+                entity.DataOwnerTypeId = userdata.DataOwnerTypeId;
+                entity.DataOwnerTypeName = userdata.DataOwnerTypeName;
                 _repository.Insert(entity);
                 _unitOfWork.SaveChanges();
                 return entity;
@@ -66,6 +69,8 @@ namespace SitComTech.Domain.Services
                 taskdata.TaskType = entity.TaskType;
                 taskdata.TaskTypeId = entity.TaskTypeId;
                 taskdata.OwnerId = entity.OwnerId;
+                taskdata.DataOwnerTypeId = entity.DataOwnerTypeId;
+                taskdata.DataOwnerTypeName = entity.DataOwnerTypeName;
                 _repository.Update(taskdata);
                 _unitOfWork.SaveChanges();
             }
@@ -89,10 +94,30 @@ namespace SitComTech.Domain.Services
         {
             return _repository.Queryable().ToList();
         }
-        public List<OwnerTask> GetTaskByOwnerId(long ownerid)
+        public List<OwnerTask> GetTaskByOwnerId(GetTaskParam taskparam)
         {
-            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
-        }       
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == taskparam.OwnerId && x.DataOwnerTypeId==taskparam.DataOwnerTypeId).ToList();
+        }
+        public bool DeleteMultipleTasks(List<long> taskIds)
+        {
+            try
+            {
+                if (taskIds != null && taskIds.Count > 0)
+                {
+
+                    List<OwnerTask> groups = base.Queryable().Where(x => x.Active && !x.Deleted && taskIds.Contains(x.Id)).ToList();
+                    foreach (var grp in groups)
+                    {
+                        DeleteOwnerTask(grp);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
     public class TaskTypeService : Service<TaskType>,ITaskTypeService
     {

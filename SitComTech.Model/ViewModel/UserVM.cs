@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SitComTech.Model.DataObject;
+using System;
+using System.Collections.Generic;
 
 namespace SitComTech.Model.ViewModel
 {
@@ -31,8 +33,6 @@ namespace SitComTech.Model.ViewModel
         public string RoleName { get; set; }
         public Nullable<long> DepartmentId { get; set; }
         public string DepartmentName { get; set; }
-        public Nullable<long> SharedDeskId { get; set; }
-        public string SharedDeskName { get; set; }
         public Nullable<long> TimezoneId { get; set; }
         public string TimezoneName { get; set; }
         public string CultureCode { get; set; }
@@ -45,5 +45,6 @@ namespace SitComTech.Model.ViewModel
         public string DefaultSenderName { get; set; }
         public Nullable<long> SharedSenderId { get; set; }
         public string SharedSenderName { get; set; }
+        public List<UserSharedDeskVM> userSharedDesks { get; set; }
     }
 }

@@ -208,22 +208,26 @@
 </div>
 @section scripts {
     <script>
+
+
+
+
         var UserVM = {}
         //UserVM.Login = {
         //    UserName: ko.observable('ravi@gmail.com'),
         //    Password: ko.observable('admin123')
         //};
         //UserVM.SelectedAccounts = ko.observableArray([
-        //    20, 21, 22, 23
+        //    421, 424, 425
         //]);
-        //UserVM.ClientS = {
+        UserVM.TaskEnum = {
 
           
-        //    IsStarred: ko.observable(0),
-        //    ClientId: ko.observable(62),
-        //};
+            OwnerId: ko.observable(47),
+            DataOwnerTypeId: ko.observable(2),
+        };
 
-
+        
         UserVM.CreatEmail = {
 
             To: ko.observable('kk84singh@gmail.com'),
@@ -231,8 +235,19 @@
             Body: ko.observable('Lead'),
             Sender: ko.observable('dgdg'),
             OwnerId: ko.observable(2),
-            UserId: ko.observable(2),
+            UserId: ko.observable(4),
         };
+
+        //var em = 'kk84singh@gmail.com,kksinghjss@gmail.com';
+        //UserVM.CreatEmail = {
+
+        //    To: ko.observable(em),
+        //    Subject: ko.observable('hdfdf'),
+        //    Body: ko.observable('Lead'),
+        //    Sender: ko.observable('dgdg'),
+        //    OwnerId: ko.observable(2),
+        //    UserId: ko.observable(2),
+        //};
 
         // UserVM.CreatEmail = {
            
@@ -374,16 +389,59 @@
 
 
         $(document).ready(function () {
-
-            $.ajax({
+              $.ajax({
                 type: 'Post',
-                 url: apiURl + "api/Client/GetClientInfoDetailById/43",
+                  url: apiURl + "api/Task/GetTaskByOwnerId",
                 contentType: 'application/json',
                 processData: false,
+                data: ko.toJSON(UserVM.TaskEnum),
                 success: function (result) {
                     alert(result);
                 }
             });
+
+            // $.ajax({
+            //    type: "get",
+            //     url: 'http://localhost:59122/api/Task/GetDataOwnerTypeEnum',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data.id);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Task/DeleteMultipleTasks",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.SelectedAccounts),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/EmailToSelectedClients",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreatEmail),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Client/GetClientInfoDetailById/43",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/EmailToAllClients",
