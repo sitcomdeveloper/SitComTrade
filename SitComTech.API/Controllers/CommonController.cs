@@ -219,5 +219,20 @@ namespace SitComTech.API.Controllers
                 throw ex;
             }
         }
+        [HttpPost]
+        [Route("GetAllHistory/{ownerId}")]
+        public List<ChangeLog> GetChangeLogs(int ownerId)
+        {
+            try
+            {
+                var leadstatus = _unitOfWork.Repository<ChangeLog>().Query(x=>x.OwnerId==ownerId).Select().ToList();
+                return leadstatus;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
