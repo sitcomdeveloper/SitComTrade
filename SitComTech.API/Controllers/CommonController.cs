@@ -225,8 +225,8 @@ namespace SitComTech.API.Controllers
         {
             try
             {
-                var leadstatus = _unitOfWork.Repository<ChangeLog>().Query(x=>x.OwnerId==ownerId).Select().ToList();
-                return leadstatus;
+                var changeLogHistory = _unitOfWork.Repository<ChangeLog>().Query(x=>x.OwnerId==ownerId && x.PropertyName != "UpdatedAt").Select().OrderByDescending(x=>x.DateChanged).Take(10).ToList();
+                return changeLogHistory;
 
             }
             catch (Exception ex)
