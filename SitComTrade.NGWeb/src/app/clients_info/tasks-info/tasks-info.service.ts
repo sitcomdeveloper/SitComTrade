@@ -28,4 +28,8 @@ export class TasksInfoService {
   edtTsk(obj: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Task/UpdateOwnerTask', obj);
   }
+  // getdata owner type
+  getdtaownertype(): Observable<any> {
+    return this.http.get<any>(API_URL + 'Task/GetDataOwnerTypeEnum');
+  }
 }

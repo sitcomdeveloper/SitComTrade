@@ -2,9 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { CommentsService } from 'src/app/clients_info/comments/comments.service';
 import { ClientsService } from 'src/app/header/clients/clients.service';
-import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+// import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
+import { ActivitiesService } from 'src/app/activities/activities.service';
 
 
 @Component({
@@ -19,10 +20,7 @@ export class DeleteComponent implements OnInit {
   detail: number;
   dltAllComment: any;
   comments: any;
-  
-  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private spinnerService: Ng4LoadingSpinnerService, private _route: ActivatedRoute, private groupsService: GroupsService) {}
-// delete comment
-id: number;
+  id: number;
 dltCmnt: boolean;
 comment: any;
 deleteComment = false;
@@ -39,6 +37,14 @@ rmvGroup: any;
 removegroup: any;
 selectedgrpwilldltd: number;
 title: any;
+// tasks
+removeTasks = false
+rmvTasks: any;
+  removetasks: any;
+  selectedchkbxwilldltd: number;
+  
+  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService) {}
+
 
   ngOnInit() {
     if (this.comment === 'comment') {
@@ -60,6 +66,11 @@ title: any;
       this.removeGroups = true;
     } else {
       this.removeGroups = false;
+    }
+    if (this.rmvTasks === 'rmvTasks') {
+      this.removeTasks = true;
+    } else {
+      this.removeTasks = false;
     }
     this.userComments();
   }
@@ -93,10 +104,10 @@ title: any;
   }
   dltClient() {
     this.clientService.dltmultipleClient(this.userId).subscribe(res => {
-      this.spinnerService.show();
+      // this.spinnerService.show();
       this.dltclientRes = res;
       this.clddata.emit(res);
-      console.log('dltclientRes', res);
+      // console.log('dltclientRes', res);
       this.hideModal();
     });
   }
@@ -104,7 +115,15 @@ title: any;
     this.groupsService.deleteGroups(this.selectedgrpwilldltd).subscribe(rmvgrp => {
       this.removegroup = rmvgrp;
       this.clddata.emit(rmvgrp);
-      console.log('removegroup',rmvgrp);
+      // console.log('removegroup',rmvgrp);
+      this.hideModal();
+    })
+  }
+  dltTasks() {
+    this.activitiesService.dltTasks(this.selectedchkbxwilldltd).subscribe(rmvTasks => {
+      this.removetasks = rmvTasks;
+      this.clddata.emit(rmvTasks);
+      // console.log('removetasks',rmvTasks);
       this.hideModal();
     })
   }

@@ -28,7 +28,7 @@ export class LiveDetailComponent implements OnInit {
     };
     this.clientsservice.getTradeUsers(obj).subscribe(res => {
       this.fetchTradeDetails = res;
-      console.log('tradeusers', res);
+      // console.log('tradeusers', res);
      });
   }
   // pencil

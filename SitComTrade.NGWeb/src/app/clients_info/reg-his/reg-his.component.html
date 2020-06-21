@@ -74,7 +74,7 @@
                                </td>
                                <td style="max-width: 200px;">
                                   <div data-display-for="16_Description">
-                                     <div class="text-ellipsis" data-field="Description" data-original-value="info"></div>
+                                     <div class="text-ellipsis" data-field="Description" data-original-value="info">{{userGenralinfo?.Tag}}</div>
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
@@ -88,10 +88,10 @@
                                   </div>
                                </td>
                                <td style="max-width: 300px;">
-                                  <div data-display-for="16_CreatedDate">New</div>
+                                  <div data-display-for="16_CreatedDate">{{userGenralinfo?.ResponseStatus}}</div>
                                </td>
                                <td style="max-width: 300px;">
-                                <div data-display-for="16_CreatedDate">12/9/2019 11:34:00 AM</div>
+                                <div data-display-for="16_CreatedDate">{{userGenralinfo?.CreatedDate}}</div>
                              </td>
                              <td style="max-width: 300px;">
                                 <div data-display-for="16_CreatedDate">{{userGenralinfo?.TypeName}}

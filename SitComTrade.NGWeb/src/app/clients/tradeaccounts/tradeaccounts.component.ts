@@ -61,7 +61,7 @@ export class TradeaccountsComponent implements OnInit {
       // this.spinnerService.show();
       this.fetchTradeDetails = res.reverse();
       this.tradeAccountLength = res.length;
-      console.log('tradeusers', res);
+      // console.log('tradeusers', res);
     });
   }
   deletbtn(val, userid) {
@@ -105,6 +105,6 @@ export class TradeaccountsComponent implements OnInit {
 // for sending groups info on groups-info
  getGeneralInfo(setItem: any) {
   this.router.navigate(['/groups-info', setItem]);
-  console.log('GID', setItem);
+  // console.log('GID', setItem);
 }
 }

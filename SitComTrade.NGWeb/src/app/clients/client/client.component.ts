@@ -62,7 +62,7 @@ export class ClientComponent implements OnInit {
   allcolorchange: any;
   acccolorchange: any;
   leadcolorchange: any;
-  // selectedvalue: any[] =[];
+  selectedchkbxfrsntmailtoslcted = [];
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
     private groupsService: GroupsService) { }
@@ -148,8 +148,10 @@ export class ClientComponent implements OnInit {
     this.spinnerService.show();
   }
   userClick(selectedItem: any) {
+    // userinfo: 'userinfo';
     this.router.navigate(['/info', selectedItem]);
   }
+  // userClick(selectedItem: any,value)
   // userClck(selectedItem: any) {
   //   const url = this.router.serializeUrl(
   //     this.router.createUrlTree(['/info', selectedItem])
@@ -160,14 +162,16 @@ export class ClientComponent implements OnInit {
     this.router.navigateByUrl('/user');
   }
   // selectedname: number[]
-  deletbtn(val, userid) {
+  deletbtn(val, userid, usermail) {
     this.UserId = userid
     if (val === true) {
       this.deletbtnn = false;
       this.selectedchkbxfrdltclnt.push(userid);
+      this.selectedchkbxfrsntmailtoslcted.push(usermail);
     } else {
       this.deletbtnn = true;
       this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+      this.selectedchkbxfrsntmailtoslcted.splice(this.selectedchkbxfrsntmailtoslcted.indexOf(usermail), 1)
     }
   }
   // delete client
@@ -368,7 +372,8 @@ export class ClientComponent implements OnInit {
       title: 'SEND EMAIL',
       sendemail: 'sendemail',
       // get Id for showing email on popup
-      detailss: this.UserId
+      detailss: this.selectedchkbxfrdltclnt,
+      listofemails: this.selectedchkbxfrsntmailtoslcted
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(EmailAllComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
@@ -379,7 +384,7 @@ export class ClientComponent implements OnInit {
     const initialState = {
       title: 'SEND EMAIL',
       sendmailtoall: 'sendmailtoall',
-      detailss: this.UserId
+      // detailss: this.UserId
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(EmailAllComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));

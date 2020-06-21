@@ -20,7 +20,7 @@ export class RegHisComponent implements OnInit {
   });
    // receiving data from client page for general-info
    const details = +this.route.snapshot.paramMap.get('selectedItem');
-   this.generalinfoservice.getUsersInfo(details).subscribe(res => {
+   this.generalinfoservice.getregHistory(details).subscribe(res => {
      this.userGenralinfo = res;
 })
   }

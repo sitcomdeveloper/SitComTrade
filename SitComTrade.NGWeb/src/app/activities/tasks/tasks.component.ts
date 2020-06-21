@@ -4,6 +4,8 @@ import { CreateTaskComponent } from 'src/app/clients_info/tasks-info/create-task
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { EditTaskComponent } from 'src/app/clients_info/tasks-info/edit-task/edit-task.component';
 import * as $ from 'jquery'
+import { DeleteComponent } from 'src/app/common/delete/delete.component';
+import { ActivitiesService } from '../activities.service';
 
 @Component({
   selector: 'app-tasks',
@@ -16,15 +18,17 @@ export class TasksComponent implements OnInit {
   bindLoginData: any;
   taskslen: any;
   deletbtnn = true;
-
-  constructor(private taskInfoService:TasksInfoService, private modalService: BsModalService) { }
+  selectedchkbxfrdlttasks = [];
+  UserId: any;
+  constructor(private taskInfoService:TasksInfoService, private modalService: BsModalService, 
+    private activityService: ActivitiesService) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
      // code for receiving login details and bind to header at place of name
      this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
      this.bindLoginData = this.getLoginDetails;
 
-    this. getAllTask();
+    this.getAllTask();
 
     $(document).ready(function () {
       $("#ckbCheckAll").click(function () {
@@ -35,7 +39,11 @@ export class TasksComponent implements OnInit {
     });
   }
   getAllTask() {
-    this.taskInfoService.getTask(this.bindLoginData.UserId).subscribe(res => {
+    const gtalltasks = {
+      OwnerId: 1,
+DataOwnerTypeId: 1,
+    }
+    this.activityService.getTasks(gtalltasks).subscribe(res => {
       this.getInfoTasks = res.reverse();
       this.taskslen = this.getInfoTasks.length;
     });
@@ -46,7 +54,7 @@ export class TasksComponent implements OnInit {
       id: this.bindLoginData.UserId
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({  show: true }, { class: 'modal-lg', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       // after update refresh all the data
@@ -59,7 +67,7 @@ export class TasksComponent implements OnInit {
       wholeData: userid
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(EditTaskComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef = this.modalService.show(EditTaskComponent, Object.assign({  show: true }, { class: 'modal-lg', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       // after update refresh all the data
@@ -67,13 +75,28 @@ export class TasksComponent implements OnInit {
     });
   }
   deletbtn(val, userid) {
-    // this.UserId = userid
+    this.UserId = userid
     if (val === true) {
       this.deletbtnn = false;
-      // this.selectedchkbxfrdltclnt.push(userid);
+      this.selectedchkbxfrdlttasks.push(userid);
     } else {
       this.deletbtnn = true;
-      // this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+      this.selectedchkbxfrdlttasks.splice(this.selectedchkbxfrdlttasks.indexOf(userid), 1)
     }
+  }
+   // delete tasks
+   deleteTasks() {
+    const initialState = {
+      title: 'Delete Tasks',
+      selectedchkbxwilldltd: this.selectedchkbxfrdlttasks,
+      // for div close or hide
+      rmvTasks: 'rmvTasks'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(DeleteComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(() => {
+      this.getAllTask();
+    });
   }
 }

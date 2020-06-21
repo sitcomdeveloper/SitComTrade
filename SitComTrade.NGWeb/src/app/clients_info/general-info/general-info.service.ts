@@ -35,4 +35,8 @@ export class GeneralInfoService {
   getMail(mail: any): Observable<any> {
     return this.http.get<any>(API_URL + 'Client/GetEmailByOwnerId/' + mail);
   }
+  // get registration history
+  getregHistory(reghis: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/GetClientInfoDetailById/' + reghis, {});
+  }
 }

@@ -1474,7 +1474,7 @@
           <td class="chkCol">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id,item.Email)" onclick="checkboxcheck()"></span>
                 <span (click)= "show = !show;star(show,item.Id)">
                   <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': item.IsStarred ? 'gold':'grey' }"></i>
                 </span>
@@ -1483,6 +1483,7 @@
             </div>
           </td>
           <td  (click)="userClick(item.Id)">
+            <!-- <td  (click)="userClick(item.Id,'userinfo')"></td> -->
             <div class="" >
               <div class="text-ellipsis jsgrid-cell-content2" data-original-title="" title="" tooltip="{{item.ItemId}}">
                 <a href="javascript:void(0)">
@@ -3093,7 +3094,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id,actinfo.Email)" onclick="checkboxcheck()"></span>
                   <span (click)= "show = !show;star(show,actinfo.Id)">
                     <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': actinfo.IsStarred ? 'gold':'grey' }"></i>
                   </span>
@@ -4501,7 +4502,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id,leadinfo.Email)" onclick="checkboxcheck()"></span>
                   <span (click)= "show = !show;star(show,leadinfo.Id)">
                     <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': leadinfo.IsStarred ? 'gold':'grey' }"></i>
                   </span></div>

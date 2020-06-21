@@ -23,10 +23,6 @@ export class ClientsService {
     return this.http.post<any>(API_URL + 'Client/AddClient', obj);
   }
   // client.componet.ts
-  // delete client
-  // dltClient(obj): Observable<any> {
-  //   return this.http.post<any>(API_URL + 'Client/DeleteClient/' + obj , {});
-  // }
   // dlt multiple clients
   dltmultipleClient(dmc: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/DeleteMultipleClients',dmc);
@@ -38,6 +34,10 @@ export class ClientsService {
   // sendmailto all
   mailsenttoALLClients(sentall: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/EmailToAllClients', sentall);
+  }
+  // send mail to selected
+  sndmailtoselected(selectsentmail: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/EmailToSelectedClients',selectsentmail);
   }
   importClient(imprtclnt): Observable<any> {
     

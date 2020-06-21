@@ -25,25 +25,17 @@ export class EmailAllComponent implements OnInit {
   sndeml = false;
   sentmails: any;
   title: any;
+  listofemails: string;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private clientsservice: ClientsService, private generalinfoservice:GeneralInfoService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('lndtls',this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
 
       // snd mail to all
       if (this.sendmailtoall === 'sendmailtoall') {
         this.sndmailtoallclients = true;
-        // API of general section use for showing email on actions 'sendemail' popup
-       this.generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
-        this.userGenralinfo = res;
-        this.actionsForm.patchValue({
-         to: this.userGenralinfo.Email,
-        })
-        console.log('generalinfop', res)
-      });
       } else {
         this.sndmailtoallclients = false;
       }
@@ -51,13 +43,13 @@ export class EmailAllComponent implements OnInit {
       if (this.sendemail === 'sendemail') {
         this.sndeml = true;
         // API of general section use for showing email on actions 'sendemail' popup
-       this.generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
-        this.userGenralinfo = res;
-        this.actionsForm.patchValue({
-         to: this.userGenralinfo.Email,
-        })
-        console.log('generalinfop', res)
-      });
+      //  this.clientsservice.sndmailtoselected(selectsentmail).subscribe(res => {
+      //   this.userGenralinfo = res;
+        // this.actionsForm.patchValue({
+        //  to: this.userGenralinfo.Email,
+        // })
+        // console.log('generalinfop', res)
+      // });
       } else {
         this.sndeml = false;
       }
@@ -75,7 +67,7 @@ export class EmailAllComponent implements OnInit {
   // sendmail to all
   sendmailltoall() {
     const sentall = {
-      To: this.actionsForm.value.to,
+      To: '',
       Subject: this.actionsForm.value.subject,
       Body: this.actionsForm.value.body,
       Sender: this.actionsForm.value.settings,
@@ -92,26 +84,30 @@ export class EmailAllComponent implements OnInit {
         this.response = '';
       }
       this.actionsForm.reset();
-      console.log('mailtooall',senttoall);
+      // console.log('mailtooall',senttoall);
     })
   }
   // mail to selected
   sendtheemail() {
     const email = {
-      To: this.actionsForm.value.to,
+      To: this.listofemails,
+      // this.actionsForm.value.to,
+      // this.listofemails
       Subject: this.actionsForm.value.subject,
       Body: this.actionsForm.value.body,
       Sender: this.actionsForm.value.settings,
-      OwnerId: this.userGenralinfo.Id,
+      OwnerId: this.detailss,
+      UserId: this.bindLoginData.UserId,
     }
-this.generalinfoservice.sendmail(email).subscribe(getmail => {
+this.clientsservice.sndmailtoselected(email).subscribe(getmail => {
   this.sentmails = getmail;
   this.clddata.emit(getmail);
-      if (getmail === null) {
+      if (getmail === true) {
         this.response = 'Mail is sent successfully!';
       } else {
         this.response = '';
       }
+      console.log('sentmails',getmail);
       this.actionsForm.reset();
 })
   }

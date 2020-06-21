@@ -106,6 +106,8 @@ Description: this.taskInfoForm.value.description,
 TaskStatus: this.taskInfoForm.value.statusName,
 NotiTimeBefore: this.taskInfoForm.value.notitimebefore,
 TaskDate: this.taskdate,
+DataOwnerTypeId: 2,
+DataOwnerTypeName: 'Client',
 // Date()
 // this.taskInfoForm.value.taskdate
     };
