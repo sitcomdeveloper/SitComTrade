@@ -41,7 +41,7 @@ export class TasksComponent implements OnInit {
   getAllTask() {
     const gtalltasks = {
       OwnerId: this.bindLoginData.UserId,
-DataOwnerTypeId: 1,
+      DataOwnerTypeId: 1,
     }
     this.activityService.getTasks(gtalltasks).subscribe(res => {
       this.getInfoTasks = res.reverse();

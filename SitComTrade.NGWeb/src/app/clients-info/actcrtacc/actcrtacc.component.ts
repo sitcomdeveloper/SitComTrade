@@ -35,6 +35,7 @@ export class ActcrtaccComponent implements OnInit {
   response: string;
   sntmldta: any;
   tkemail: any;
+  gtviewhist: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -78,6 +79,9 @@ export class ActcrtaccComponent implements OnInit {
     }
     if (this.viewhistory === 'viewhistory') {
       this.vwhistory = true;
+      this._generalinfoservice.getviewhistory(this.detailss).subscribe(res => {
+        this.gtviewhist = res;
+      });
     } else {
       this.vwhistory = false;
     }

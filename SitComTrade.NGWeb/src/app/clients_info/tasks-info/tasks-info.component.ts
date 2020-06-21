@@ -39,7 +39,11 @@ export class TasksInfoComponent implements OnInit {
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    this.taskInfoService.getTask(details).subscribe(res => {
+    const obj = {
+      OwnerId: this.detail,
+DataOwnerTypeId: 2,
+    }
+    this.taskInfoService.getTask(obj).subscribe(res => {
       this.getInfoTasks = res.reverse();
       this.taskslength = res.length;
       if(this.taskslength === 0) {

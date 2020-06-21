@@ -22,7 +22,7 @@ export class TasksInfoService {
   }
   // get all task
   getTask(obj: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'Task/GetTaskByOwnerId/' + obj, {});
+    return this.http.post<any>(API_URL + 'Task/GetTaskByOwnerId', obj);
   }
   // edit task
   edtTsk(obj: any): Observable<any> {
