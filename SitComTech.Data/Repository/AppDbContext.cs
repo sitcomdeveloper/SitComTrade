@@ -1,8 +1,11 @@
-﻿using SitComTech.Data.Interface;
-using SitComTech.Framework.DataContext;
+﻿using SitComTech.Framework.DataContext;
+using SitComTech.Model.Masters;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
@@ -18,6 +21,7 @@ namespace SitComTech.Data.Repository
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
         }
+        public virtual DbSet<ChangeLog> ChangeLogs { get; set; }
         private void SyncObjectsStatePreCommit()
         {
             foreach (var dbEntityEntry in ChangeTracker.Entries())
@@ -39,22 +43,64 @@ namespace SitComTech.Data.Repository
             var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
             var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(type => !string.IsNullOrEmpty(type.Namespace))
-                .Where(type=>type.BaseType!=null && type.BaseType.IsGenericType && 
-                type.BaseType.GetGenericTypeDefinition()==typeof(EntityTypeConfiguration<>));
+                .Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
+                type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
             foreach (var type in typesToRegister)
             {
                 dynamic configurationInstance = Activator.CreateInstance(type);
                 modelBuilder.Configurations.Add(configurationInstance);
             }
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);           
         }
         void IDataContext.SyncObjectState<TEntity>(TEntity entity)
         {
             Entry(entity).State = EntityStateHelper.ConvertState(entity.ObjectState);
         }
+        object GetPrimaryKeyValue(DbEntityEntry entry)
+        {
+            var objectStateEntry = ((IObjectContextAdapter)this).ObjectContext.ObjectStateManager.GetObjectStateEntry(entry.Entity);
+            return objectStateEntry.EntityKey.EntityKeyValues[0].Value;
+        }
+        void HistoryLog()
+        {
+            var modifiedEntities = ChangeTracker.Entries()
+           .Where(p => p.State == EntityState.Modified).ToList();
+            var now = DateTime.UtcNow;
+            
+            foreach (var change in modifiedEntities)
+            {
+                var entityName = change.Entity.GetType().Name;
+                var primaryKey = GetPrimaryKeyValue(change);
 
+                foreach (var prop in change.OriginalValues.PropertyNames)
+                {
+                    var originalValue = $"{change.GetDatabaseValues().GetValue<object>(prop)}";
+                    var currentValue = $"{change.CurrentValues[prop]}";
+                    
+                    if (originalValue != currentValue)
+                    {
+                        ChangeLog log = new ChangeLog()
+                        {
+                            EntityName = entityName,
+                            PrimaryKeyValue = primaryKey.ToString(),
+                            PropertyName = prop,
+                            OldValue = originalValue,
+                            NewValue = currentValue,
+                            DateChanged = now,
+                            ObjectState = ObjectState.Added,
+                            OwnerId= Convert.ToInt32(change.CurrentValues["OwnerId"])
+
+                    };
+                        ChangeLogs.Add(log);
+                        
+                    }
+                }
+            }
+            
+        }
         public override int SaveChanges()
         {
+            HistoryLog();
             SyncObjectsStatePreCommit();
             var changes = base.SaveChanges();
             SyncObjectStatePostCommit();

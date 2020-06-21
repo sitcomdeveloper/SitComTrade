@@ -726,6 +726,7 @@ namespace SitComTech.Domain.Services
                 userdata.StreetAddress = entity.StreetAddress;
                 userdata.CountryId = entity.CountryId;
                 userdata.CountryName = entity.CountryName;
+                userdata.ZipCode = entity.ZipCode;
                 userdata.OwnerId = entity.OwnerId;
                 _repository.Update(userdata);
                 _unitOfWork.SaveChanges();
