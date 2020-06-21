@@ -40,7 +40,7 @@ export class TasksComponent implements OnInit {
   }
   getAllTask() {
     const gtalltasks = {
-      OwnerId: 1,
+      OwnerId: this.bindLoginData.UserId,
 DataOwnerTypeId: 1,
     }
     this.activityService.getTasks(gtalltasks).subscribe(res => {

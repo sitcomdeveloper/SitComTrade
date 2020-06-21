@@ -39,4 +39,8 @@ export class GeneralInfoService {
   getregHistory(reghis: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/GetClientInfoDetailById/' + reghis, {});
   }
+  // get view history
+  getviewhistory(): Observable<any> {
+    return this.http.get<any>(API_URL + 'Common/GetAllHistory/');
+  }
 }
