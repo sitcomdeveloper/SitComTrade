@@ -720,6 +720,7 @@ namespace SitComTech.Domain.Services
             {
                 userdata.UpdatedAt = DateTime.Now;
                 userdata.UpdatedBy = entity.Id;
+                userdata.ZipCode = entity.ZipCode;
                 userdata.City = entity.City;
                 userdata.State = entity.State;
                 userdata.StreetAddress = entity.StreetAddress;
