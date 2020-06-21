@@ -53,6 +53,7 @@
     <Compile Include="DataObject\User.cs" />
     <Compile Include="FilterModel\GetTaskParam.cs" />
     <Compile Include="Masters\AffiliateField.cs" />
+    <Compile Include="Masters\ChangeLog.cs" />
     <Compile Include="Masters\CultureCode.cs" />
     <Compile Include="Masters\Department.cs" />
     <Compile Include="Masters\Desk.cs" />
