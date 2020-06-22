@@ -142,10 +142,11 @@ export class ClientsInfoComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal600', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
   }
-  viewhistory() {
+  viewhistory(Ide) {
     const initialState = {
       title: 'VIEW HISTORY',
-      viewhistory: 'viewhistory'
+      viewhistory: 'viewhistory',
+      detailss: Ide
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));

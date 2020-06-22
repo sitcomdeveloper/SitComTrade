@@ -21,10 +21,10 @@ import { ClientsComponent } from './header/clients/clients.component';
 // tslint:disable-next-line: max-line-length
 import {ClientComponent, TradeaccountsComponent, EmailAllComponent, ExportClientComponent, ImportClientComponent, ItemComponent,
   SmsAllComponent, ImprtclntdtaComponent, ImportClientDataComponent, LiveDetailComponent} from './clients';
+  import {MonetarytransactionsComponent, TasksComponent, CasesComponent, DocumentsComponent, OpenedordersComponent, ClosedordersComponent, PendingordersComponent, RejectedtransactionComponent, CommonjournalComponent, OoinfoComponent } from './activities';
 // tslint:disable-next-line: max-line-length
 import {BenchmarkComponent, DashboardComponent, ExposureComponent, LeaderboardComponent, ReportComponent, TradingjournalsComponent} from './reports';
 // tslint:disable-next-line: max-line-length
-import {MonetarytransactionsComponent, TasksComponent, CasesComponent, DocumentsComponent, OpenedordersComponent, ClosedordersComponent, PendingordersComponent, RejectedtransactionComponent, CommonjournalComponent, OoinfoComponent } from './activities';
 import { ActivitiesComponent } from './header/activities/activities.component';
 import { ReportsComponent } from './header/reports/reports.component';
 import { SettingsComponent } from './header/settings/settings.component';

@@ -41,7 +41,6 @@ export class ActcrtaccComponent implements OnInit {
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-    console.log('lndtls',this.getLoginDetails);
     this.bindLoginData = this.getLoginDetails;
     
     if (this.createaccount === 'createaccount') {
@@ -58,7 +57,7 @@ export class ActcrtaccComponent implements OnInit {
        to: this.userGenralinfo.Email,
       //  settings: this.bindLoginData.userName
       })
-      console.log('generalinfop', res)
+      // console.log('generalinfop', res)
     });
     } else {
       this.sndeml = false;
@@ -72,7 +71,7 @@ export class ActcrtaccComponent implements OnInit {
         to: this.userGenralinfo.Phone,
        
        })
-       console.log('generalinfop', res)
+      //  console.log('generalinfop', res)
      });
     } else {
       this.sndsms = false;
@@ -81,6 +80,7 @@ export class ActcrtaccComponent implements OnInit {
       this.vwhistory = true;
       this._generalinfoservice.getviewhistory(this.detailss).subscribe(res => {
         this.gtviewhist = res;
+        console.log('gtviewhist',res);
       });
     } else {
       this.vwhistory = false;

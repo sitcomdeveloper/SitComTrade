@@ -40,7 +40,7 @@ export class AddressComponent implements OnInit {
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
     this.addressservice.getAddress(details).subscribe(res => {
-      if (res !== null && res !== undefined && res !== '') {
+      // if (res !== null && res !== undefined && res !== '') {
       this.userAddress = res;
       this.addressForm.patchValue({
         ipcountry: this.userAddress.CountryName,
@@ -50,7 +50,7 @@ export class AddressComponent implements OnInit {
         address: this.userAddress.StreetAddress,
       });
       // console.log('address', res);
-    }
+    // }
     });
   }
   getcountryName() {
@@ -83,7 +83,7 @@ export class AddressComponent implements OnInit {
       
       };
     this.addressservice.insertAddress(obj).subscribe(res => {
-      this.spinnerService.show();
+      // this.spinnerService.show();
       this.modifyAddress = res;
       this.address();
       // console.log('modifyadd', res);

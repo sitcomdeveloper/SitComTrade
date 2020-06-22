@@ -41,6 +41,6 @@ export class GeneralInfoService {
   }
   // get view history
   getviewhistory(vwhis: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'Common/GetAllHistory/', vwhis);
+    return this.http.post<any>(API_URL + 'Common/GetAllHistory/' + vwhis, {});
   }
 }
