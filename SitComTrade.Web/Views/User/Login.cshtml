@@ -383,22 +383,38 @@
         //    GroupId: ko.observable(0),
         //    ISendEmail: ko.observable(1),
         //    OwnerId: ko.observable('1'),
-        //    Id: ko.observable('85'),
+        //    Id: ko.observable('15'),
         //    Phone: ko.observable('24234224'),
         //};
-
+        UserVM.Group = {
+            Name: ko.observable('fdfd'),
+            InitialDeposit: ko.observable('Ldgdgdead'),
+            StopOut: ko.observable('kk84singh@gmail.com'),
+            MarginCall: ko.observable(0),
+            OrderCount: ko.observable(3),
+            Demo: ko.observable(0),
+            MinDeposit: ko.observable(6),
+            AllowTrade: ko.observable(1),
+            CurrencyId: ko.observable(2),
+            CurrencyName: ko.observable('rt'),
+            Description: ko.observable('test des'),
+            Id: ko.observable('15'),
+            LeverageId: ko.observable('2'),
+            LeverageName: ko.observable(1.5),
+        };
+       
 
         $(document).ready(function () {
-              $.ajax({
-                type: 'Post',
-                  url: apiURl + "api/Task/GetTaskByOwnerId",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.TaskEnum),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //  $.ajax({
+            //    type: 'Post',
+            //      url: apiURl + "api/Task/GetTaskByOwnerId",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.TaskEnum),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             // $.ajax({
             //    type: "get",
@@ -578,16 +594,16 @@
             //});
 
 
-            // $.ajax({
-            //    type: 'Post',
-            //     url: apiURl + "api/TradeGroup/UpdateTradeGroup",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    data: ko.toJSON(UserVM.Register),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+             $.ajax({
+                type: 'Post',
+                 url: apiURl + "api/TradeGroup/UpdateTradeGroup",
+                contentType: 'application/json',
+                processData: false,
+                 data: ko.toJSON(UserVM.Group),
+                success: function (result) {
+                    alert(result);
+                }
+            });
 
             // $.ajax({
             //    type: 'Post',
