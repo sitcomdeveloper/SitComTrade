@@ -41,6 +41,7 @@ namespace SitComTech.Domain.Services
                 entity.NotiTimeBefore = userdata.NotiTimeBefore;
                 entity.CreatedBy = 0;
                 entity.CreatedByName = "";
+                entity.TaskDate = userdata.TaskDate;
                 entity.Description = userdata.Description;
                 entity.DataOwnerTypeId = userdata.DataOwnerTypeId;
                 entity.DataOwnerTypeName = userdata.DataOwnerTypeName;
@@ -71,6 +72,7 @@ namespace SitComTech.Domain.Services
                 taskdata.OwnerId = entity.OwnerId;
                 taskdata.DataOwnerTypeId = entity.DataOwnerTypeId;
                 taskdata.DataOwnerTypeName = entity.DataOwnerTypeName;
+                taskdata.TaskDate = entity.TaskDate;
                 _repository.Update(taskdata);
                 _unitOfWork.SaveChanges();
             }

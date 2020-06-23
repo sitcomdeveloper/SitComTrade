@@ -386,23 +386,39 @@
         //    Id: ko.observable('15'),
         //    Phone: ko.observable('24234224'),
         //};
-        UserVM.Group = {
-            Name: ko.observable('fdfd'),
-            InitialDeposit: ko.observable('Ldgdgdead'),
-            StopOut: ko.observable('kk84singh@gmail.com'),
-            MarginCall: ko.observable(0),
-            OrderCount: ko.observable(3),
-            Demo: ko.observable(0),
-            MinDeposit: ko.observable(6),
-            AllowTrade: ko.observable(1),
-            CurrencyId: ko.observable(2),
-            CurrencyName: ko.observable('rt'),
-            Description: ko.observable('test des'),
-            Id: ko.observable('15'),
-            LeverageId: ko.observable('2'),
-            LeverageName: ko.observable(1.5),
+        //UserVM.Group = {
+        //    Name: ko.observable('fdfd'),
+        //    InitialDeposit: ko.observable('Ldgdgdead'),
+        //    StopOut: ko.observable('kk84singh@gmail.com'),
+        //    MarginCall: ko.observable(0),
+        //    OrderCount: ko.observable(3),
+        //    Demo: ko.observable(0),
+        //    MinDeposit: ko.observable(6),
+        //    AllowTrade: ko.observable(1),
+        //    CurrencyId: ko.observable(2),
+        //    CurrencyName: ko.observable('rt'),
+        //    Description: ko.observable('test des'),
+        //    Id: ko.observable('15'),
+        //    LeverageId: ko.observable('2'),
+        //    LeverageName: ko.observable(1.5),
+        //};
+        UserVM.CreateTask = {
+           
+            TaskTypeId: ko.observable(2),
+            TaskType: ko.observable('Meeting'),
+            TaskStatusId: ko.observable(1),
+            TaskStatus: ko.observable('New'),
+            NotiTrasportId: ko.observable(1),
+            NotiTimeBefore: ko.observable('Popup'),           
+            Description: ko.observable('test des 56 client 192'),
+            OwnerId: ko.observable(192),
+            DataOwnerTypeId: ko.observable(2),
+            DataOwnerTypeName: ko.observable('Client'),
+            TaskDate: ko.observable('2020-05-05')
         };
-       
+
+
+
 
         $(document).ready(function () {
             //  $.ajax({
@@ -438,7 +454,16 @@
             //        alert(result);
             //    }
             //});
-
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Task/InsertTask",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.CreateTask),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/EmailToSelectedClients",
@@ -458,16 +483,16 @@
             //        alert(result);
             //    }
             //});
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Client/EmailToAllClients",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.CreatEmail),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/EmailToAllClients",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreatEmail),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/UpdateClientStarred",
