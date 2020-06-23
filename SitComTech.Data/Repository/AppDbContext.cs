@@ -88,7 +88,7 @@ namespace SitComTech.Data.Repository
                             NewValue = currentValue,
                             DateChanged = now,
                             ObjectState = ObjectState.Added,
-                            OwnerId= Convert.ToInt32(change.CurrentValues["OwnerId"])
+                            OwnerId= change.CurrentValues.PropertyNames.Contains("OwnerId") ?  Convert.ToInt32(change.CurrentValues["OwnerId"]) : 0
 
                     };
                         ChangeLogs.Add(log);

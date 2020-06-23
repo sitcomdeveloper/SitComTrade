@@ -135,6 +135,22 @@ namespace SitComTech.Domain.Services
                 clientdata.ResponseStatus = entity.ResponseStatus;
                 clientdata.ResponseStatusId = entity.ResponseStatusId;
                 clientdata.ItemId = entity.ItemId;
+                clientdata.FTDDate = entity.FTDDate;
+                clientdata.ConvertionOwner = entity.ConvertionOwner;
+                clientdata.DateOfBirth = entity.DateOfBirth;
+                clientdata.DaysAgoClientCreated = entity.DaysAgoClientCreated;
+                clientdata.FirstRegistrationDate = entity.FirstRegistrationDate;
+                clientdata.FTD = entity.FTD;
+                clientdata.Mobile = entity.Mobile;
+                clientdata.RegistrationType = entity.RegistrationType;
+                clientdata.RegistrationTypeId = entity.RegistrationTypeId;
+                clientdata.RetentionOwner = entity.RetentionOwner;
+                clientdata.SecondEmail = entity.SecondEmail;
+                clientdata.LastTaskDaysPast = entity.LastTaskDaysPast;
+                clientdata.Desk = entity.Desk;
+                clientdata.DeskId = entity.DeskId;
+                clientdata.CitizenshipId = entity.CitizenshipId;
+                clientdata.AssignedDate = entity.AssignedDate;
                 _repository.Update(clientdata);
                 _unitOfWork.SaveChanges();
             }

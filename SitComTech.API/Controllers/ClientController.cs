@@ -118,6 +118,13 @@ namespace SitComTech.API.Controllers
             return _clientService.GetClientInfoDetailById(id);
         }
 
+        [HttpGet]
+        [Route("GetClientDetailById/{id}")]
+        public Client GetClientDetailById(long id)
+        {
+            return _clientService.GetClientDetailById(id);
+        }
+
         [HttpPost]
         [Route("GetTradeAccountByType")]
         public List<Client> GetTradeAccountByType(TradeAccountVM tradevm)
@@ -151,14 +158,7 @@ namespace SitComTech.API.Controllers
         public List<ShortMessage> GetShortMessageByOwnerId(long ownerid)
         {
             return _shortMeassageService.GetShortMessageByOwnerId(ownerid);
-        }
-
-        [HttpGet]
-        [Route("GetClientDetailById/{id}")]
-        public Client GetClientDetailById(long id)
-        {
-            return _clientService.GetClientDetailById(id);
-        }
+        }        
 
         [HttpPost]
         [Route("InsertUpdateMarketingInfo")]
