@@ -48,6 +48,7 @@ import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, Instr
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateSenderSttingsComponent } from './settings/sendersettings/create-sender-sttings/create-sender-sttings.component';
+import { AdditionalModuleFieldsComponent } from './settings/additionalfields/additional-module-fields/additional-module-fields.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +135,7 @@ import { CreateSenderSttingsComponent } from './settings/sendersettings/create-s
     ImportClientDataComponent,
     AffilatenewuserComponent,
     CreateSenderSttingsComponent,
+    AdditionalModuleFieldsComponent,
   ],
   imports: [
     BrowserModule,
@@ -148,7 +150,7 @@ import { CreateSenderSttingsComponent } from './settings/sendersettings/create-s
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
      CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
-     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent],
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent, AdditionalModuleFieldsComponent],
   exports: [
     PhoneMaskDirective
   ],
