@@ -8,6 +8,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class CreateSenderSttingsComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
+  title: any;
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
