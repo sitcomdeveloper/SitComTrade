@@ -230,12 +230,12 @@
         
         UserVM.CreatEmail = {
 
-            To: ko.observable('kk84singh@gmail.com'),
+            To: ko.observable(''),
             Subject: ko.observable('hdfdf'),
             Body: ko.observable('Lead'),
             Sender: ko.observable('dgdg'),
             OwnerId: ko.observable(2),
-            UserId: ko.observable(4),
+            UserId: ko.observable(3),
         };
 
         //var em = 'kk84singh@gmail.com,kksinghjss@gmail.com';
@@ -458,16 +458,16 @@
             //        alert(result);
             //    }
             //});
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/Client/EmailToAllClients",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    data: ko.toJSON(UserVM.CreatEmail),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/EmailToAllClients",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.CreatEmail),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/UpdateClientStarred",
@@ -594,16 +594,16 @@
             //});
 
 
-             $.ajax({
-                type: 'Post',
-                 url: apiURl + "api/TradeGroup/UpdateTradeGroup",
-                contentType: 'application/json',
-                processData: false,
-                 data: ko.toJSON(UserVM.Group),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/TradeGroup/UpdateTradeGroup",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //     data: ko.toJSON(UserVM.Group),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             // $.ajax({
             //    type: 'Post',
