@@ -9,9 +9,23 @@ export class CreateTemplateComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   title: any;
+  createtemplate = false;
+  edittemplate = false;
+  newtmplte: any;
+  edittmplte: any;
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
+    if(this.newtmplte === 'newtmplte') {
+      this.createtemplate = true;
+    } else {
+      this.createtemplate = false;
+    }
+    if(this.edittmplte === 'edittmplte') {
+      this.edittemplate = true;
+    } else {
+      this.edittemplate = false;
+    }
   }
   hideModal() {
     this.bsmodal.hide();

@@ -68,7 +68,11 @@ this.taskdate = Tdate;
   getAllTask() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    this.taskInfoService.getTask(details).subscribe(res => {
+    const obj = {
+      OwnerId: this.detail,
+      DataOwnerTypeId: 2,
+    }
+    this.taskInfoService.getTask(obj).subscribe(res => {
       this.getInfoTasks = res.reverse();
       // console.log('taskget', res);
     });

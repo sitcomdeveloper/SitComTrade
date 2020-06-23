@@ -40,7 +40,6 @@ import {GeneralInfoComponent, CommentsComponent, MarketingInfoComponent, Address
   // tslint:disable-next-line: max-line-length
   SmsComponent, RegHisComponent, TasksInfoComponent, CreateTaskComponent,EditTaskComponent, InfoCasesComponent, InfoDocumentsComponent, TradeAccountsComponent, FinancialTransactionsComponent, ActcrtaccComponent} from './clients_info';
 import { CreateTemplateComponent } from './settings/emailtemplates/create-template/create-template.component';
-import { EditTemplateComponent } from './settings/emailtemplates/edit-template/edit-template.component';
 import { DeleteComponent } from './common/delete/delete.component';
 import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, InstrumentsComponent,
   TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
@@ -49,6 +48,7 @@ import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, Instr
 import { SrchPipe } from './clients/client/srch.pipe';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateSenderSttingsComponent } from './settings/sendersettings/create-sender-sttings/create-sender-sttings.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +115,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmailAllComponent,
     CreateTaskComponent,
     CreateTemplateComponent,
-    EditTemplateComponent,
     CreateItemComponent,
     TradeAccountsComponent,
     FinancialTransactionsComponent,
@@ -136,6 +135,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ImprtclntdtaComponent,
     ImportClientDataComponent,
     AffilatenewuserComponent,
+    CreateSenderSttingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -150,7 +150,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
      CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
-     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent],
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent],
   exports: [
     PhoneMaskDirective
   ],

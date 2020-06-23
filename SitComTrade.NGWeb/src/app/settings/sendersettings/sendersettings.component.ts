@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { CreateSenderSttingsComponent } from './create-sender-sttings/create-sender-sttings.component';
 
 @Component({
   selector: 'app-sendersettings',
@@ -9,8 +11,8 @@ import { SettingsService } from '../settings.service';
 export class SendersettingsComponent implements OnInit {
   getSendersData: any;
 
-  constructor(private settingsService: SettingsService ) { }
-
+  constructor(private settingsService: SettingsService,private modalService: BsModalService ) { }
+  bsModalRef: BsModalRef;
   ngOnInit() {
     this.sendersettingsData();
   }
@@ -20,5 +22,16 @@ export class SendersettingsComponent implements OnInit {
       console.log('getSendersData', result);
     })
   }
-
+  // create new settings
+  opencreatesettings() {
+    const initialState = {
+      title: 'Create Settings',
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateSenderSttingsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsModalRef.content.clddata.subscribe(() => {
+    //   this.userDetails();
+    // });
+  }
 }
