@@ -63,6 +63,7 @@ export class ClientComponent implements OnInit {
   acccolorchange: any;
   leadcolorchange: any;
   selectedchkbxfrsntmailtoslcted = [];
+  chkbxwllsntmailtoclnt: any;
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
     private groupsService: GroupsService) { }
@@ -168,6 +169,8 @@ export class ClientComponent implements OnInit {
       this.deletbtnn = false;
       this.selectedchkbxfrdltclnt.push(userid);
       this.selectedchkbxfrsntmailtoslcted.push(usermail);
+      this.chkbxwllsntmailtoclnt = this.selectedchkbxfrsntmailtoslcted.join();
+      console.log('mails', this.chkbxwllsntmailtoclnt);
     } else {
       this.deletbtnn = true;
       this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
@@ -373,7 +376,7 @@ export class ClientComponent implements OnInit {
       sendemail: 'sendemail',
       // get Id for showing email on popup
       detailss: this.selectedchkbxfrdltclnt,
-      listofemails: this.selectedchkbxfrsntmailtoslcted
+      listofemails: this.chkbxwllsntmailtoclnt
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(EmailAllComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));

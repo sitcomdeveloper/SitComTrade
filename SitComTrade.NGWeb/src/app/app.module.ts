@@ -45,7 +45,6 @@ import {EmailtemplatesComponent, SendersettingsComponent, GroupsComponent, Instr
   TranslationsComponent, FiltersComponent, ImportsComponent, CrmusersComponent, AffilateusersComponent, AdditionalfieldsComponent,
   // tslint:disable-next-line: max-line-length
   ModulefieldsComponent, IplistComponent, TradinghoursComponent, WorkflowsComponent, CreateItemComponent, GroupsInfoComponent, CrmnewuserComponent, CrmedituserComponent, AffilatenewuserComponent, TranslationsFilterComponent, ImportedClientsComponent} from './settings';
-import { SrchPipe } from './clients/client/srch.pipe';
 import { UserdetailsComponent } from './header/userdetails/userdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateSenderSttingsComponent } from './settings/sendersettings/create-sender-sttings/create-sender-sttings.component';
@@ -126,7 +125,6 @@ import { CreateSenderSttingsComponent } from './settings/sendersettings/create-s
     TranslationsFilterComponent,
     ImportedClientsComponent,
     LiveDetailComponent,
-    SrchPipe,
     OoinfoComponent,
     CrmnewuserComponent,
     UserdetailsComponent,

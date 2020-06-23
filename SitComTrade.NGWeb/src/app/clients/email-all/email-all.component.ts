@@ -42,6 +42,9 @@ export class EmailAllComponent implements OnInit {
       // snd mail to selected clients
       if (this.sendemail === 'sendemail') {
         this.sndeml = true;
+        //  this.actionsForm.patchValue({
+        //  to: this.userGenralinfo.Email,
+        // })
         // API of general section use for showing email on actions 'sendemail' popup
       //  this.clientsservice.sndmailtoselected(selectsentmail).subscribe(res => {
       //   this.userGenralinfo = res;
