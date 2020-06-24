@@ -81,6 +81,7 @@ export class ClientsInfoComponent implements OnInit {
   createtask() {
     const initialState = {
       title: 'Create Task',
+      infotasks:'infotasks',
       id: this.detail
     };
     // tslint:disable-next-line: max-line-length

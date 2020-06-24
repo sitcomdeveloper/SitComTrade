@@ -329,7 +329,8 @@ export class ClientComponent implements OnInit {
       initialState: {
         title: 'Create Task',
         id: rowId,
-        isstaticvalue: 'most'
+        // isstaticvalue: 'most'
+        infotasks:'infotasks',
       }
     };
     this.bsModalRef = this.modalService.show(CreateTaskComponent, config);
