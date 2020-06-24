@@ -27,6 +27,10 @@ export class CreateTaskComponent implements OnInit {
   title: any;
   id: any;
   taskdate: string;
+  activitypagetasks = false;
+  infopagetasks = false;
+  infotasks: string;
+  activitytasks: string;
   
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute) { }
 
@@ -43,6 +47,18 @@ export class CreateTaskComponent implements OnInit {
       taskName: [''],
       taskdate: ['']
 });
+// info task
+if(this.infotasks === 'infotasks') {
+  this.infopagetasks = true;
+} else {
+  this.infopagetasks = false;
+}
+// activity task
+if(this.activitytasks === 'activitytasks') {
+  this.activitypagetasks = true;
+} else {
+  this.activitypagetasks = false;
+}
  // code for receiving login details and bind to owner name at place of name
  this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
  this.bindLoginData = this.getLoginDetails;
@@ -87,7 +103,7 @@ this.taskdate = Tdate;
       this.getStatus = res;
     });
   }
-  // insert task
+  // insert task oninfo page
   infoTasks() {
     this.getStatus.forEach(element => {
       if (element.Id === +this.taskInfoForm.value.status) {
@@ -118,9 +134,42 @@ DataOwnerTypeName: 'Client',
     this.taskInfoService.insertTask(obj).subscribe(res => {
     this.userTasks = res;
     this.clddata.emit(res);
-    // console.log('inserttasks', res);
     this.hideModal();
   });
+}
+ // insert task on activity page
+ activityTasks() {
+  this.getStatus.forEach(element => {
+    if (element.Id === +this.taskInfoForm.value.status) {
+      this.taskInfoForm.value.statusName = element.Name;
+    }
+  });
+  this.getTasks.forEach(element => {
+    if (element.Id === +this.taskInfoForm.value.type) {
+      this.taskInfoForm.value.taskName = element.Name;
+    }
+  });
+  
+  const obj = {
+    OwnerId: this.id,
+    TaskStatusId: this.taskInfoForm.value.status,
+TaskTypeId: this.taskInfoForm.value.type,
+NotiTrasportId: 1,
+TaskType: this.taskInfoForm.value.taskName,
+Description: this.taskInfoForm.value.description,
+TaskStatus: this.taskInfoForm.value.statusName,
+NotiTimeBefore: this.taskInfoForm.value.notitimebefore,
+TaskDate: this.taskdate,
+DataOwnerTypeId: 1,
+DataOwnerTypeName: 'Owner',
+// Date()
+// this.taskInfoForm.value.taskdate
+  };
+  this.taskInfoService.insertTask(obj).subscribe(res => {
+  this.userTasks = res;
+  this.clddata.emit(res);
+  this.hideModal();
+});
 }
 hideModal() {
   this.bsModalRef.hide();

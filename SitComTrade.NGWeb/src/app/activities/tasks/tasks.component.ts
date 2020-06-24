@@ -51,6 +51,7 @@ export class TasksComponent implements OnInit {
   createtask() {
     const initialState = {
       title: 'Create Task',
+      activitytasks: 'activitytasks',
       id: this.bindLoginData.UserId
     };
     // tslint:disable-next-line: max-line-length

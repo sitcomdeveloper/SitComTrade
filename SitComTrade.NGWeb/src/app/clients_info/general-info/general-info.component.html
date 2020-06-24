@@ -171,7 +171,7 @@
           <th class="tabletxt">Enabled</th>
           <td>
           <div class="valueshhow">
-            <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': userGenralinfo?.enabled ? 'green':'gray' }"></i>
+            <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': userGenralinfo?.Enabled ? 'green':'gray' }"></i>
           </div>
           <div class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;">
               <label class="switch ">
@@ -336,7 +336,7 @@
           </tr>
           <tr>
             <th class="tabletxt">Mobile</th>
-            <td><input type="text" class="form-control" formControlName="mobile"></td>
+            <td><input type="text" class="form-control" formControlName="mobile" appPhoneMask></td>
             <th class="tabletxt">Second Email</th>
             <td><input type="text" class="form-control" formControlName="secondemail"></td>
           </tr>
@@ -411,7 +411,11 @@
                 
                 <span class="slider round" name="Ftd"></span>
               </label> -->
-              <div _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-vpp-c22="" class="switchboxtext">No</label><input _ngcontent-vpp-c22="" class="switch_1" type="checkbox"><label _ngcontent-vpp-c22="" class="switchboxtext">Yes</label></div></div>
+              <div _ngcontent-vpp-c22="" class="checkbox-inline">
+                <div _ngcontent-vpp-c22="" class="switch_box box_1">
+                <label _ngcontent-vpp-c22="" class="switchboxtext">No</label>
+                <input _ngcontent-vpp-c22="" class="switch_1" type="checkbox" formControlName="enabled">
+                <label _ngcontent-vpp-c22="" class="switchboxtext">Yes</label></div></div>
             </td>
             <th class="tabletxt">ClientTime</th>
             <td><input type="text" class="form-control disabledd" formControlName="clienttime" onmousedown="return false" onselectstart="return false"></td>

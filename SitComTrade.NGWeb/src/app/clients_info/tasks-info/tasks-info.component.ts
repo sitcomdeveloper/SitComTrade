@@ -58,6 +58,7 @@ DataOwnerTypeId: 2,
   createtask() {
     const initialState = {
       title: 'Create Task',
+      infotasks:'infotasks',
       id: this.detail,
     };
     // tslint:disable-next-line: max-line-length
