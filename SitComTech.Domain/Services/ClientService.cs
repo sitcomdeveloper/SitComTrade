@@ -560,8 +560,9 @@ namespace SitComTech.Domain.Services
                 if (clientdata != null && clientdata.To != string.Empty)
                 {
                     oMailManager.To = clientdata.To;
+                    oMailManager.SendEmail();
                 }
-                oMailManager.SendEmail();
+                
             }
             catch (Exception ex)
             {
@@ -581,6 +582,7 @@ namespace SitComTech.Domain.Services
                         foreach (var client in clientlists)
                         {
                             email.OwnerId = client.Id;
+                            email.To = client.Email;
                             CreateEmail(email,true);
                         }
                     }
