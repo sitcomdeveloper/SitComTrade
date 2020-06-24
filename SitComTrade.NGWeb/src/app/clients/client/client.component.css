@@ -548,13 +548,14 @@ optgroup {
     width: 100px;background: #fff;height: 31px;
     vertical-align: middle;
     border-radius: 6px;
-    padding-top: 5px;
+    padding-top: 5px;    float: right;    position: relative;
+    right: -43px;
 }
 .pop
 {
-    position: absolute;
-    transform: translate3d(-63px, -1px, 0px)!important;
-    top: 0px;
+    position: absolute!important;
+    transform: translate3d(-63px, -1px)!important;
+    top: -32px!important;
     left: 0px;
     will-change: transform;
     width: 0!important;
