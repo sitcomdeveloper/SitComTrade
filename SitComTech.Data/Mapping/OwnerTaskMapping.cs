@@ -12,7 +12,6 @@ namespace SitComTech.Data.Mapping
             HasKey(a => a.Id);
             Property(a => a.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            HasRequired(a => a.ClientTable).WithMany().HasForeignKey(x => x.OwnerId).WillCascadeOnDelete(false);
             HasRequired(a => a.TaskTypeTable).WithMany().HasForeignKey(x => x.TaskTypeId).WillCascadeOnDelete(false);
             HasRequired(a => a.TaskStatustable).WithMany().HasForeignKey(x => x.TaskStatusId).WillCascadeOnDelete(false);
             HasRequired(a => a.NotiTransportTable).WithMany().HasForeignKey(x => x.NotiTrasportId).WillCascadeOnDelete(false);

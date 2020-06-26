@@ -27,9 +27,7 @@ namespace SitComTech.Model.DataObject
         public Nullable<DateTime> TaskDate { get; set; }
         public virtual TaskType TaskTypeTable { get; set; }
         public virtual TaskStatus TaskStatustable { get; set; }
-        public virtual Client ClientTable { get; set; }
         public virtual NotiTransport NotiTransportTable { get; set; }
-
 
     }
 
