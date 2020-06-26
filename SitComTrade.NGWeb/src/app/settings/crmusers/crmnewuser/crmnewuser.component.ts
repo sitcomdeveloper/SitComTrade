@@ -40,6 +40,10 @@ export class CrmnewuserComponent implements OnInit {
   constructor(private bsmodal: BsModalRef, private settingsService: SettingsService, private fb: FormBuilder) { }
 
   ngOnInit() {
+  //   $(document).ready(function() {
+  //     $('.js-example-basic-single').select2();
+  // });
+
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
