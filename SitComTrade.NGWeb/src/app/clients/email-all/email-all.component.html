@@ -9,16 +9,16 @@
    padding-top: 0!important;">
       <form novalidate="novalidate" [formGroup]="actionsForm">
          <div class="hightlited-area02 hightlited01">
-            <div class="form-group row" style="display:none">
+            <div class="form-group row">
                <div class="col-md-2 control-label"><label class="valign-label" for="settingsId">Settings:</label></div>
                <div class="col-md-10">
                   <select class="form-control" name="settingsId" data-container="body" data-live-search="true" id="a64e4e2c9-de37-c496-ee8b-d7c54b3e13bb" aria-required="true" formControlName="settings">
                      <option value="">Select</option>
-                     <option value="{{this.bindLoginData.userName}}">{{this.bindLoginData.userName}}</option>
+                     <option value="{{sender?.SenderMailId}}" *ngFor="let sender of getSendersData">{{sender?.SenderMailId}}</option>
                   </select>
                </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row"  style="display:none">
                <div class="col-md-2 control-label"><label class="valign-label" for="to">To:</label></div>
                <div class="col-md-10">
                   <input class="form-control" name="to" type="text" id="aa161a8ec-538f-8fea-e9cf-22c794976dc3" aria-required="true" formControlName="to" onmousedown="return false" onselectstart="return false">
@@ -71,16 +71,16 @@
    padding-top: 0!important;">
       <form novalidate="novalidate" [formGroup]="actionsForm">
          <div class="hightlited-area02 hightlited01">
-            <div class="form-group row" style="display:none">
+            <div class="form-group row" >
                <div class="col-md-2 control-label"><label class="valign-label" for="settingsId">Settings:</label></div>
                <div class="col-md-10">
                   <select class="form-control" name="settingsId" data-container="body" data-live-search="true" id="a64e4e2c9-de37-c496-ee8b-d7c54b3e13bb" aria-required="true" formControlName="settings">
                      <option value="">Select</option>
-                     <option value="{{this.bindLoginData.userName}}">{{this.bindLoginData.userName}}</option>
+                     <option value="{{sender?.SenderMailId}}" *ngFor="let sender of getSendersData">{{sender?.SenderMailId}}</option>
                   </select>
                </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row" style="display:none">
                <div class="col-md-2 control-label"><label class="valign-label" for="to">To:</label></div>
                <div class="col-md-10">
                   <input class="form-control" name="to" type="text" id="aa161a8ec-538f-8fea-e9cf-22c794976dc3" aria-required="true" formControlName="to" onmousedown="return false" onselectstart="return false">

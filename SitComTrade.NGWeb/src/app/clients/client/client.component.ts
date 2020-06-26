@@ -170,7 +170,7 @@ export class ClientComponent implements OnInit {
       this.selectedchkbxfrdltclnt.push(userid);
       this.selectedchkbxfrsntmailtoslcted.push(usermail);
       this.chkbxwllsntmailtoclnt = this.selectedchkbxfrsntmailtoslcted.join();
-      console.log('mails', this.chkbxwllsntmailtoclnt);
+      // console.log('mails', this.chkbxwllsntmailtoclnt);
     } else {
       this.deletbtnn = true;
       this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)

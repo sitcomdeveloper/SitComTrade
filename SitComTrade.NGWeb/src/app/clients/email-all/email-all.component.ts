@@ -3,6 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
+import { SettingsService } from 'src/app/settings/settings.service';
 
 @Component({
   selector: 'app-email-all',
@@ -26,7 +27,8 @@ export class EmailAllComponent implements OnInit {
   sentmails: any;
   title: any;
   listofemails: string;
-  constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private clientsservice: ClientsService, private generalinfoservice:GeneralInfoService) { }
+  getSendersData: any;
+  constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private clientsservice: ClientsService, private generalinfoservice:GeneralInfoService, private settingsService: SettingsService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
@@ -63,6 +65,7 @@ export class EmailAllComponent implements OnInit {
       subject: [''],
       body: ['']
     })
+    this.sendersettingsData();
   }
   hideModal() {
     this.bsmodal.hide();
@@ -110,8 +113,14 @@ this.clientsservice.sndmailtoselected(email).subscribe(getmail => {
       } else {
         this.response = '';
       }
-      console.log('sentmails',getmail);
+      // console.log('sentmails',getmail);
       this.actionsForm.reset();
 })
+  }
+  sendersettingsData() {
+    this.settingsService.getAllSenderSettings().subscribe( result => {
+      this.getSendersData = result;
+      // console.log('m',result);
+    })
   }
 }

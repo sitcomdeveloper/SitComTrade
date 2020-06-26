@@ -4,6 +4,7 @@ import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { SettingsService } from 'src/app/settings/settings.service';
 
 @Component({
   selector: 'app-actcrtacc',
@@ -36,7 +37,8 @@ export class ActcrtaccComponent implements OnInit {
   sntmldta: any;
   tkemail: any;
   gtviewhist: any;
-  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder) { }
+  getSendersData: any;
+  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
@@ -106,6 +108,7 @@ export class ActcrtaccComponent implements OnInit {
       body: ['']
     })
     this.getGroups();
+    this.sendersettingsData();
   }
   hideModal() {
     this.bsmodal.hide();
@@ -142,5 +145,11 @@ this._generalinfoservice.sendmail(email).subscribe(getmail => {
       }
       this.actionsForm.reset();
 })
+  }
+  sendersettingsData() {
+    this.settingsService.getAllSenderSettings().subscribe( result => {
+      this.getSendersData = result;
+      // console.log('m',result);
+    })
   }
 }
