@@ -1,81 +1,357 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 sub-header">
-            <div class="row">
-                <div class="col-md-2 col-xs-8 crumb">
-                        <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">IP White List</li>
-                                </ol>
-                              </nav>
-                </div>
-                <div class="col-md-10"></div>
-            </div>
-            <div class="row">
-                    <div class="col-md-5 main-tab">
-                            <ul class="tab">
-                                <li><a routerLink="">IP WHITE LIST</a></li>
-                                
-                                
-                            </ul>
-                        </div>
-                        <div class="col-md-7" style="float:left;padding-left:154px">
-                                <i class="fa fa-refresh" style="font-size:24px;opacity:0.2;padding-right:10px;margin-right:10px;cursor:pointer"></i>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary">Ip White List</button>
-                                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-                                    </button>
-                                    <div class="dropdown-menu">
-                                      <a class="dropdown-item" routerLink="#">Search</a>
-                                      <a class="dropdown-item disabled" routerLink="#">Others</a>
-                                      <a class="dropdown-item" routerLink="#">Ip White List</a>
-                                      
-                                    </div>
-                                  </div>
-                                  <div class="fa">
-                                  <i class="fa fa-plus bg-primary fa-lg" aria-hidden="true"></i>
-                                  <i class="fa fa-pencil bg-primary fa-lg" aria-hidden="true" style="padding-right:10px;margin-right:10px"></i>
-                                  
-                                  
-                                  <i class="fa fa-pencil bg-primary fa-lg" aria-hidden="true"></i>
-                                  <i class="fa fa-trash bg-primary fa-lg" aria-hidden="true"></i>
-
-                                  
-                                  </div>
-
-
-
-
-
-
-                        </div>
-            </div>
-            
-
-
+<div _ngcontent-jyy-c5="" class="container-fluid">
+  <div _ngcontent-jyy-c5="" class="row">
+     <div _ngcontent-jyy-c5="" class="col-md-12 subheader">
+        <div _ngcontent-jyy-c5="" class="container-fluid container-padd">
+           <div _ngcontent-jyy-c5="" class="row">
+              <div _ngcontent-jyy-c5="" class="tools-panel-addon">
+                 <div _ngcontent-jyy-c5="" _ngcontent-ubb-c3="" class="jsgrid-items-counter"><span _ngcontent-jyy-c5="" id="chked"></span><span _ngcontent-jyy-c5="" _ngcontent-ubb-c3="">13 items</span></div>
+                 <div _ngcontent-jyy-c5="" class="breadcrumbs">
+                    <ul _ngcontent-jyy-c5="">
+                       <li _ngcontent-jyy-c5="" itemscope=""><span _ngcontent-jyy-c5="" itemprop="title">Settings</span></li>
+                       <li _ngcontent-jyy-c5="" itemscope=""><span _ngcontent-jyy-c5="" itemprop="title">Groups</span></li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
         </div>
-        
-    </div>
-    <!-- <div class="row">
-      <div class="col-md-12 grid">
-        <ag-grid-angular
-  style="width: 700px; height: 400px;"
-  class="ag-theme-balham"
-  [enableSorting]="true"
-  [enableFilter]="true"
-  [pagination]="true"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
->
-</ag-grid-angular>
-
-      </div>
-    </div> -->
-  <!-- container-fluid -->
-</div> 
-
-
-
-
-
+        <div _ngcontent-jyy-c5="" class="container-fluid container-padd">
+           <div _ngcontent-jyy-c5="" class="row subhedarpadd">
+              <div _ngcontent-jyy-c5="" _ngcontent-mew-c3="" class="col-md-5 main-tab">
+                 <ul _ngcontent-jyy-c5="" _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
+                    <li _ngcontent-jyy-c5="" _ngcontent-mew-c3="" class="nav-item"><a _ngcontent-jyy-c5="" _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#"> IP WHITE LIST</a></li>
+                 </ul>
+              </div>
+              <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend">
+                 <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Toolbar with button groups" class="btn-toolbar searchbtn" role="toolbar">
+                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="First group" class="btn-group mr-2" role="group"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" href="javascript:void(0);" ng-reflect-router-link="" routerlink=""><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="fa fa-refresh"></i></a></div>
+                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
+                       <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="input-group selecticon grpselect">
+                          <select _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
+                             <option _ngcontent-jyy-c5="" _ngcontent-boj-c6="">Groups</option>
+                          </select>
+                          <span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="disabled-button" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
+                       </div>
+                    </div>
+                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" disabled="true"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a><a _ngcontent-jyy-c5="" class="brdr-right disabled" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" href="javascript:void(0)" class="disabled"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg"></i></a></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div _ngcontent-jyy-c5="" class="main-holder">
+     <div _ngcontent-jyy-c5="" id="content">
+       <!-- <div class="ip-header">
+        <div class="input-icons"> 
+          <span>
+          <i class="fa fa-user icon"></i> 
+          <input class="input-field" type="text"> 
+          </span>
+          <span>
+          <i class="fa fa-instagram icon"></i> 
+          <input class="input-field" type="text"> 
+          </span>>
+          
+      </div> 
+       </div> -->
+        <div _ngcontent-jyy-c5="" class="tab-content main-tabs-content">
+           <div _ngcontent-jyy-c5="" class="tab-pane active fade in" id="filter" role="tabpanel"></div>
+           <div _ngcontent-jyy-c5="" class="content-area"></div>
+           <div _ngcontent-jyy-c5="">
+              <div _ngcontent-jyy-c5="" class="email" id="email">
+                 <div _ngcontent-jyy-c5="" class="email-grid-header email-header-scrollbar">
+                    <table _ngcontent-jyy-c5="" class="email-table JColResizer" id="JColResizer0">
+                       <tbody _ngcontent-jyy-c5="">
+                          <tr _ngcontent-jyy-c5="" class="email-header-row">
+                             <th _ngcontent-jyy-c5="" class="email-header-cell email-align-center">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content1">
+                                   <div _ngcontent-jyy-c5="" class="input-checkbox"><span _ngcontent-jyy-c5=""><input _ngcontent-jyy-c5="" id="ckbCheckAll" type="checkbox"></span></div>
+                                </div>
+                             </th>
+                             <th _ngcontent-jyy-c5="" class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" class="text-ellipsis"><span _ngcontent-jyy-c5="">IP Address</span></div>
+                                </div>
+                             </th>
+                             <th _ngcontent-jyy-c5="" class="email-header-cell email-header-sortable">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" class="text-ellipsis"><span _ngcontent-jyy-c5="">Description</span></div>
+                                </div>
+                             </th>
+                             <th _ngcontent-jyy-c5="" class="email-header-cell email-header-sortable">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" class="text-ellipsis"><span _ngcontent-jyy-c5="">Created Date</span></div>
+                                </div>
+                             </th>
+                             <th _ngcontent-mqy-c4="" class="email-header-cell email-control-field email-align-center"><div _ngcontent-mqy-c4="" _ngcontent-bog-c3="" class="nospace"><i _ngcontent-mqy-c4="" _ngcontent-bog-c3="" class="fa fa-sort-asc"></i><br _ngcontent-mqy-c4="" _ngcontent-bog-c3=""><i _ngcontent-mqy-c4="" _ngcontent-bog-c3="" class="fa fa-sort-desc"></i></div></th>
+                          </tr>
+                          <tr _ngcontent-jyy-c5="" class="email-filter-row">
+                             <td _ngcontent-jyy-c5="" class="email-cell email-align-center" style="width: 20px;">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content1"><i _ngcontent-jyy-c5="" class="custom-close" title="Clear filter"><span _ngcontent-jyy-c5="">x</span></i></div>
+                             </td>
+                             <td _ngcontent-jyy-c5="" class="email-cell headingwidth">
+                                <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="cstm-search input-control empty">
+                                      <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="checkbox-dd">
+                                         <i _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid"></i>
+                                         <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop">
+                                            <form _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                               <ul _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                        Contains 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                        Not Contains 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                        Equals 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                        Not Equals 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="checked"><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                        Starts With 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                        End With 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                        Empty 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                        NotEmpty 
+                                                     </label>
+                                                  </li>
+                                               </ul>
+                                            </form>
+                                         </div>
+                                      </div>
+                                      <input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="clear cstm-search-btn-clear"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""></span></i>
+                                   </div>
+                                </div>
+                             </td>
+                             <td _ngcontent-jyy-c5="" class="email-cell headingwidth">
+                                <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="cstm-search input-control empty">
+                                      <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="checkbox-dd">
+                                         <i _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="secondid"></i>
+                                         <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" aria-labelledby="secondtid" class="drop dropdown-menu radiondrop">
+                                            <form _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                               <ul _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                        Contains 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                        Not Contains 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                        Equals 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                        Not Equals 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="checked"><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                        Starts With 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                        End With 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                        Empty 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                        NotEmpty 
+                                                     </label>
+                                                  </li>
+                                               </ul>
+                                            </form>
+                                         </div>
+                                      </div>
+                                      <input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="clear cstm-search-btn-clear"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""></span></i>
+                                   </div>
+                                </div>
+                             </td>
+                             <td _ngcontent-jyy-c5="" class="email-cell headingwidth">
+                                <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="cstm-search input-control empty">
+                                      <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="checkbox-dd">
+                                         <i _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" aria-expanded="false" aria-haspopup="true" class="fa fa-equals comparation-type-3 cstm-search-btn-trigger1" data-toggle="dropdown" id="thirdid"></i>
+                                         <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" aria-labelledby="thirdid" class="drop dropdown-menu radiondrop">
+                                            <form _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                               <ul _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                        Contains 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                        Not Contains 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                        Equals 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                        Not Equals 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="active">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="checked"><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                        Starts With 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                        End With 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                        Empty 
+                                                     </label>
+                                                  </li>
+                                                  <li _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                     <label _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="">
+                                                        <div _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="input-radio fistinpt"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""><input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                        NotEmpty 
+                                                     </label>
+                                                  </li>
+                                               </ul>
+                                            </form>
+                                         </div>
+                                      </div>
+                                      <input _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12="" class="clear cstm-search-btn-clear"><span _ngcontent-jyy-c5="" _ngcontent-eql-c3="" _ngcontent-obi-c12=""></span></i>
+                                   </div>
+                                </div>
+                             </td>
+                             <td _ngcontent-rmr-c4="" class="email-cell email-control-field email-align-center email-cell-content"><span _ngcontent-rmr-c4="" _ngcontent-lrx-c3=""><i _ngcontent-rmr-c4="" _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i></span></td>
+                           </tr>
+                       </tbody>
+                    </table>
+                 </div>
+                 <div _ngcontent-jyy-c5="" class="email-grid-body jsgrid-grid-body">
+                    <table _ngcontent-jyy-c5="" class="email-table table-striped">
+                       <tbody _ngcontent-jyy-c5="">
+                          <!--bindings={
+                             "ng-reflect-ng-for-of": "[object Object],[object Object"
+                             }-->
+                          <tr _ngcontent-jyy-c5="" class="email-row">
+                             <td _ngcontent-jyy-c5="" class="email-cell email-align-center">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content1">
+                                   <div _ngcontent-jyy-c5="" class="input-checkbox"><span _ngcontent-jyy-c5=""><input _ngcontent-jyy-c5="" class="tablecheckbox checkBoxClass" data-item-selector="true" onclick="checkboxcheck()" type="checkbox"></span></div>
+                                </div>
+                             </td>
+                             <td _ngcontent-jyy-c5="" class="email-cell">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" class="text-ellipsis" data-original-title="" title=""><a _ngcontent-jyy-c5="" href="javascript:void(0);"><span _ngcontent-jyy-c5="">Group232</span></a></div>
+                                </div>
+                             </td>
+                             <td _ngcontent-jyy-c5="" class="email-cell">
+                                <div _ngcontent-jyy-c5="" class="email-cell-content">
+                                   <div _ngcontent-jyy-c5="" data-display-for="10_Description">
+                                      <div _ngcontent-jyy-c5="" class="text-ellipsis" data-field="Description" data-original-title="" data-original-value="TradePro Markets Limited USD" title="">23</div>
+                                   </div>
+                                </div>
+                             </td>
+                             <td _ngcontent-jyy-c5="" class="email-cell">
+                              <div _ngcontent-jyy-c5="" class="email-cell-content">
+                                 <div _ngcontent-jyy-c5="" data-display-for="10_Description">
+                                    <div _ngcontent-jyy-c5="" class="text-ellipsis" data-field="Description" data-original-title="" data-original-value="TradePro Markets Limited USD" title="">23</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td _ngcontent-rjx-c4="" class="email-cell email-control-field email-align-center"><div _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="dropleft droptop"><a _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link" title="Open in new tab"><i _ngcontent-rjx-c4="" _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-pencil greyiconnn"></i></a><a _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" title="Open in new tab"><i _ngcontent-rjx-c4="" _ngcontent-ktw-c1="" _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-pencil-alt greyiconnn" disabled=""></i></a></div></td>
+                          </tr>
+                    
+                         
+                        
+                         
+                       </tbody>
+                    </table>
+                 </div>
+                 <div _ngcontent-jyy-c5="" class="email-load-shader" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000; display: none;"></div>
+                 <div _ngcontent-jyy-c5="" class="email-load-panel" style="position: absolute; top: 50%; left: 50%; z-index: 1000; margin-top: -37.5px; margin-left: -112.5px; display: none;">Please, wait...</div>
+              </div>
+              <div _ngcontent-jyy-c5="" class="row padd18 fxdpsn">
+                 <div _ngcontent-jyy-c5="" class="col-md-6">
+                    <div _ngcontent-jyy-c5="" class="copy">
+                       <p _ngcontent-jyy-c5="">© 2020 Trade Fx CRM </p>
+                    </div>
+                 </div>
+                 <div _ngcontent-jyy-c5="" class="col-md-6 end">
+                    <div _ngcontent-jyy-c5="" class="email-pager-perpage" style="display: block;">
+                       <label _ngcontent-jyy-c5="">
+                          Records per page 
+                          <select _ngcontent-jyy-c5="" autocomplete="off" class="count-records-list form-control" tabindex="-98">
+                             <option _ngcontent-jyy-c5="" value="20" ng-reflect-value="20">20</option>
+                             <option _ngcontent-jyy-c5="" value="25" ng-reflect-value="25">25</option>
+                             <option _ngcontent-jyy-c5="" value="50" ng-reflect-value="50">50</option>
+                             <option _ngcontent-jyy-c5="" value="100" ng-reflect-value="100">100</option>
+                             <option _ngcontent-jyy-c5="" value="250" ng-reflect-value="250">250</option>
+                          </select>
+                       </label>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
