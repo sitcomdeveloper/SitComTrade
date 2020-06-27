@@ -25,6 +25,19 @@ export class SendersettingsComponent implements OnInit {
   opencreatesettings() {
     const initialState = {
       title: 'Create Settings',
+      crtemlsttings: 'crtemlsttings'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateSenderSttingsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    // this.bsModalRef.content.clddata.subscribe(() => {
+    //   this.userDetails();
+    // });
+  }
+  openeditsettings() {
+    const initialState = {
+      title: 'Edit Settings',
+      edtemlsettngs: 'edtemlsettngs'
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateSenderSttingsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));

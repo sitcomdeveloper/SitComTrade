@@ -5,8 +5,8 @@
         <span aria-hidden="true">&times;</span>
     </button>
  </div>
- <div>
-    <div _ngcontent-drw-c5="" class=" mt15">
+ <!-- create email settings -->
+    <div _ngcontent-drw-c5="" class=" mt15" *ngIf = createemailsttings>
         <div _ngcontent-drw-c5="" class="form-holder">
            <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="">
               <div _ngcontent-drw-c5="" class="form-group">
@@ -38,8 +38,11 @@
         </div>
         <div _ngcontent-drw-c5="" class="col-md-12 padd0">
            <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
-              <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);">Cancel</a></div>
+              <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div>
            </div>
         </div>
      </div>
- </div>
+     <!-- edit email settings -->
+     <div *ngIf = editemailsettings>
+        edit email
+     </div>

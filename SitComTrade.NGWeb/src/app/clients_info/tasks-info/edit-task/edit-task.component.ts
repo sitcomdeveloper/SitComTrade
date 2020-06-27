@@ -58,6 +58,7 @@ export class EditTaskComponent implements OnInit {
     // this.taskInfoService.getTask(this.id).subscribe(res => {
       // this.getInfoTasks = res;
       this.taskInfoForm.patchValue({
+        owner: this.bindLoginData.FullName,
         type: this.wholeData.TaskType,
         status: this.wholeData.TaskStatus,
         description: this.wholeData.Description,
@@ -75,7 +76,9 @@ NotiTimeBefore: this.wholeData.NotiTimeBefore,
       TaskType : this.taskInfoForm.value.type,
       TaskStatus: this.taskInfoForm.value.status,
       Description: this.taskInfoForm.value.description,
-      TaskDate: this.taskInfoForm.value.taskdate
+      TaskDate: this.taskInfoForm.value.taskdate,
+      DataOwnerTypeId: this.wholeData.DataOwnerTypeId,
+DataOwnerTypeName: this.wholeData.DataOwnerTypeName,
     };
     this.taskInfoService.edtTsk(obj).subscribe(res => {
       this.taskeditRes = res;

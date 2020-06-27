@@ -72,4 +72,8 @@ registeraffilateuser(rgstrafflteuser: any): Observable<any> {
 getUserDetails(gtusrdtls: any): Observable<any> {
   return this.http.post(API_URL + 'User/GetUserById/' + gtusrdtls, {});
 }
+// instruments. Get all instruments
+getInstruments(gtintrumnts: any): Observable<any> {
+  return this.http.post(API_URL + 'Instrument/GetInstrumentDetailById/' + gtintrumnts, {});
+}
 }
