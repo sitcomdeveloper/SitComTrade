@@ -11,5 +11,6 @@ namespace SitComTech.Model.Masters
     {
         public string SenderMailId { get; set; }
         public Nullable<bool> IsShared { get; set; }
+        public string Description { get; set; }
     }
 }

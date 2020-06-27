@@ -45,6 +45,7 @@ namespace SitComTech.API.App_Start
             container.RegisterType<ICommentService, CommentService>();
             container.RegisterType<IAddressService, AddressService>();
             container.RegisterType<ITradeGroupService, TradeGroupService>();
+            container.RegisterType<IInstrumentService, InstrumentService>();
         }
     }
 }
