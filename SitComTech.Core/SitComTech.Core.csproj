@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\IClientService.cs" />
+    <Compile Include="Interface\IInstrumentService.cs" />
     <Compile Include="Interface\IOwnerTaskService.cs" />
     <Compile Include="Interface\ITradeGroupService.cs" />
     <Compile Include="Interface\IUserService.cs" />

@@ -61,7 +61,7 @@ namespace SitComTech.API.Controllers
         [Route("UpdateOwnerTask")]
         public void UpdateOwnerTask(OwnerTask userVM)
         {
-            _taskService.Update(userVM);
+            _taskService.UpdateOwnerTask(userVM);
         }
 
         [HttpPost]

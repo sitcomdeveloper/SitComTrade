@@ -402,25 +402,130 @@
         //    LeverageId: ko.observable('2'),
         //    LeverageName: ko.observable(1.5),
         //};
-        UserVM.CreateTask = {
+        //UserVM.CreateTask = {
            
-            TaskTypeId: ko.observable(2),
-            TaskType: ko.observable('Meeting'),
-            TaskStatusId: ko.observable(1),
-            TaskStatus: ko.observable('New'),
-            NotiTrasportId: ko.observable(1),
-            NotiTimeBefore: ko.observable('Popup'),           
-            Description: ko.observable('test des 4 cowner'),
-            OwnerId: ko.observable(4),
-            DataOwnerTypeId: ko.observable(1),
-            DataOwnerTypeName: ko.observable('Owner'),
-            TaskDate: ko.observable('2020-08-05')
-        };
+        //    TaskTypeId: ko.observable(2),
+        //    TaskType: ko.observable('Meeting'),
+        //    TaskStatusId: ko.observable(1),
+        //    TaskStatus: ko.observable('New'),
+        //    NotiTrasportId: ko.observable(1),
+        //    NotiTimeBefore: ko.observable('Popup'),           
+        //    Description: ko.observable('test des 4 cowner'),
+        //    OwnerId: ko.observable(4),
+        //    DataOwnerTypeId: ko.observable(1),
+        //    DataOwnerTypeName: ko.observable('Owner'),
+        //    TaskDate: ko.observable('2020-08-05')
+        //};
 
 
+        //UserVM.EditTask = {
+        //    Id: ko.observable(12),
+        //    TaskTypeId: ko.observable(2),
+        //    TaskType: ko.observable('Meeting'),
+        //    TaskStatusId: ko.observable(1),
+        //    TaskStatus: ko.observable('New'),
+        //    NotiTrasportId: ko.observable(1),
+        //    NotiTimeBefore: ko.observable('Popup'),
+        //    Description: ko.observable('test des 19 cowner'),
+        //    OwnerId: ko.observable(19),
+        //    DataOwnerTypeId: ko.observable(2),
+        //    DataOwnerTypeName: ko.observable('Client'),
+        //    TaskDate: ko.observable('2020-07-05')
+        //};
 
+
+        //  UserVM.CreateInstrument = {
+
+        //      Name: ko.observable('Meeting'),
+        //      DisplayName: ko.observable('Meeting'),
+        //      GroupId: ko.observable(2),
+        //      GroupName: ko.observable('Meeting'),
+        //      SpreadType: ko.observable('Meeting'),
+        //      SpreadBid: ko.observable(1),            
+        //      IsTradeForbidden: ko.observable(1),           
+        //      ContractSize: ko.observable(4),
+        //      LeverageId: ko.observable('2'),
+        //      LeverageName: ko.observable('yd'),
+        //      ProfitCurrency: ko.observable('fdf'),
+        //      SymbolGroup: ko.observable('g'),              
+        //      GapLevel: ko.observable(45),
+        //      TradingHoursId: ko.observable(32),
+        //      Units: ko.observable(3)
+        //};
+
+
+        //UserVM.EditInstrument = {
+        //    Id: ko.observable(4),
+        //    Name: ko.observable('gh'),
+        //    DisplayName: ko.observable('cv'),
+        //    GroupId: ko.observable(2),
+        //    GroupName: ko.observable('as'),
+        //    SpreadType: ko.observable('er'),
+        //    SpreadBid: ko.observable(1),
+        //    IsTradeForbidden: ko.observable(1),
+        //    ContractSize: ko.observable(4),
+        //    LeverageId: ko.observable('2'),
+        //    LeverageName: ko.observable('fgggg'),
+        //    ProfitCurrency: ko.observable('fdf'),
+        //    SymbolGroup: ko.observable('g'),
+        //    GapLevel: ko.observable(45),
+        //    TradingHoursId: ko.observable(32),
+        //    Units: ko.observable(3)
+        //};
+
+        // UserVM.Selectedidinstrs = ko.observableArray([
+        //    5
+        //]);
 
         $(document).ready(function () {
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Instrument/GetAllInstruments",
+                contentType: 'application/json',
+                processData: false,
+                success: function (result) {
+                    alert(result);
+                }
+            });
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Instrument/GetInstrumentDetailById/4",
+            //    contentType: 'application/json',
+            //    processData: false,               
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Instrument/DeleteMultipleInstrument",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //     data: ko.toJSON(UserVM.Selectedidinstrs),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Instrument/UpdateInstrument",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditInstrument),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Instrument/InsertInstrument",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreateInstrument),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //  $.ajax({
             //    type: 'Post',
             //      url: apiURl + "api/Task/GetTaskByOwnerId",
@@ -454,16 +559,26 @@
             //        alert(result);
             //    }
             //});
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Task/InsertTask",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.CreateTask),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Task/InsertTask",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreateTask),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Task/UpdateOwnerTask",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditTask),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/EmailToSelectedClients",
