@@ -15,5 +15,5 @@ ProfitCurrency: String;
 SymbolGroup: String;
 GapLevel: number;
 TradingHoursId: String;
-Units: number
+Units: number;
 }
