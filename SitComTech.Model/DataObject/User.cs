@@ -1,9 +1,10 @@
 ﻿using SitComTech.Framework.DataContext;
+using SitComTech.Model.Masters;
 using System;
 
 namespace SitComTech.Model.DataObject
 {
-    public class User:BaseEntity
+    public class User : BaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -52,10 +53,24 @@ namespace SitComTech.Model.DataObject
         public Nullable<long> SharedDeskId { get; set; }
         public string SharedDeskName { get; set; }
         public virtual User UserTable { get; set; }
+        public virtual Desk Desk { get; set; }
     }
-    public class UserSharedDeskVM
+    public class UserRole : BaseEntity
     {
-        public Nullable<long> SharedDeskId { get; set; }
-        public string SharedDeskName { get; set; }
+        public Nullable<long> UserId { get; set; }
+        public string UserName { get; set; }
+        public Nullable<long> RoleId { get; set; }
+        public string RoleName { get; set; }
+        public virtual User UserTable { get; set; }
+        public virtual Role Role { get; set; }
+    }
+    public class UserSharedSenderSetting : BaseEntity
+    {
+        public Nullable<long> UserId { get; set; }
+        public string UserName { get; set; }
+        public Nullable<long> SenderMailId { get; set; }
+        public string SenderMail { get; set; }
+        public virtual User UserTable { get; set; }
+        public virtual SenderSetting SenderSetting { get; set; }
     }
 }

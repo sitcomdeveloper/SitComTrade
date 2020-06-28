@@ -56,6 +56,27 @@ namespace SitComTech.Data.Mapping
             HasKey(a => a.Id);
             Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             HasRequired(a => a.UserTable).WithMany().HasForeignKey(x => x.UserId).WillCascadeOnDelete(false);
+            HasRequired(a => a.Desk).WithMany().HasForeignKey(x => x.SharedDeskId).WillCascadeOnDelete(false);
+        }
+    }
+    public class UserRoleMap : EntityTypeConfiguration<UserRole>
+    {
+        public UserRoleMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasRequired(a => a.UserTable).WithMany().HasForeignKey(x => x.UserId).WillCascadeOnDelete(false);
+            HasRequired(a => a.Role).WithMany().HasForeignKey(x => x.RoleId).WillCascadeOnDelete(false);
+        }
+    }
+    public class UserSharedSenderSettingMap : EntityTypeConfiguration<UserSharedSenderSetting>
+    {
+        public UserSharedSenderSettingMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasRequired(a => a.UserTable).WithMany().HasForeignKey(x => x.UserId).WillCascadeOnDelete(false);
+            HasRequired(a => a.SenderSetting).WithMany().HasForeignKey(x => x.SenderMailId).WillCascadeOnDelete(false);
         }
     }
 }

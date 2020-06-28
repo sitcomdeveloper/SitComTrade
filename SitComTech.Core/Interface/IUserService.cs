@@ -22,7 +22,7 @@ namespace SitComTech.Core.Interface
         void UpdateUser(UserDataVM entity);
         void DeleteUser(User entity);
         List<User> GetAllUsersByOwnerId(long ownerid);
-        User GetUserById(long ownerid);
+        UserDataVM GetUserById(long ownerid);
     }
 
 }

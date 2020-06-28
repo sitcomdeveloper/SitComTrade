@@ -1,5 +1,4 @@
 ﻿using SitComTech.Core.Interface;
-using SitComTech.Data.Interface;
 using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
 using SitComTech.Framework.UnitOfWork;
@@ -12,15 +11,15 @@ using System.Threading.Tasks;
 
 namespace SitComTech.Domain.Services
 {
-    public class UserService : Service<User>,IUserService
+    public class UserService : Service<User>, IUserService
     {
         private IGenericRepository<User> _repository;
         private IGenericRepository<Country> _countryrepository;
         private IGenericRepository<Currency> _currencyrepository;
         private IGenericRepository<MarketingInfo> _marketinginforepository;
         private IUnitOfWork _unitOfWork;
-        public UserService(IGenericRepository<User> repository, IGenericRepository<Country> countryrepository, IGenericRepository<Currency> currencyrepository, IGenericRepository<MarketingInfo> marketinginforepository,IUnitOfWork unitOfWork)
-            :base(repository)
+        public UserService(IGenericRepository<User> repository, IGenericRepository<Country> countryrepository, IGenericRepository<Currency> currencyrepository, IGenericRepository<MarketingInfo> marketinginforepository, IUnitOfWork unitOfWork)
+            : base(repository)
         {
             this._repository = repository;
             this._countryrepository = countryrepository;
@@ -35,16 +34,16 @@ namespace SitComTech.Domain.Services
 
         public List<User> GetAllUsersByOwnerId(long ownerid)
         {
-            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId==ownerid).ToList();
+            return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
         }
 
         public User GetById(object Id)
         {
             if ((long)Id == 0)
                 return null;
-            User user = _repository.Queryable().FirstOrDefault(x=>x.Id==(long)Id);
+            User user = _repository.Queryable().FirstOrDefault(x => x.Id == (long)Id);
             return user;
-        }       
+        }
         public UserDataVM InsertUser(UserDataVM userdata)
         {
             try
@@ -53,7 +52,7 @@ namespace SitComTech.Domain.Services
                 if (userexist == null)
                 {
                     if (userdata == null)
-                        throw new ArgumentNullException("User");                    
+                        throw new ArgumentNullException("User");
                     User entity = new User
                     {
                         Active = true,
@@ -77,8 +76,8 @@ namespace SitComTech.Domain.Services
                         AffiliateFieldId = userdata.AffiliateFieldId,
                         AffiliateFieldName = userdata.AffiliateFieldName,
                         DeskName = userdata.DeskName,
-                        RoleId = userdata.RoleId,
-                        RoleName = userdata.RoleName,
+                        //RoleId = userdata.RoleId,
+                        //RoleName = userdata.RoleName,
                         DepartmentId = userdata.DepartmentId,
                         DepartmentName = userdata.DepartmentName,
                         //SharedDeskId = userdata.SharedDeskId,
@@ -93,9 +92,9 @@ namespace SitComTech.Domain.Services
                         StartModuleName = userdata.StartModuleName,
                         DefaultSenderId = userdata.DefaultSenderId,
                         DefaultSenderName = userdata.DefaultSenderName,
-                        SharedSenderId = userdata.SharedSenderId,
-                        SharedSenderName = userdata.SharedSenderName
-                    };                    
+                        //SharedSenderId = userdata.SharedSenderId,
+                        //SharedSenderName = userdata.SharedSenderName
+                    };
                     _repository.Insert(entity);
                     entity.ObjectState = Framework.DataContext.ObjectState.Added;
                     _unitOfWork.SaveChanges();
@@ -104,19 +103,57 @@ namespace SitComTech.Domain.Services
                         UserSharedDesk userSharedDesk = new UserSharedDesk
                         {
                             UserId = entity.Id,
-                            SharedDeskId=sharedDesk.SharedDeskId,
+                            SharedDeskId = sharedDesk.SharedDeskId,
                             SharedDeskName = sharedDesk.SharedDeskName,
-                            Active=true,
-                            Deleted=false,
-                            CreatedBy=(long)userdata.OwnerId,
-                            CreatedByName="",
-                            CreatedAt=DateTime.Now,
-                            UpdatedAt=null,
-                            UpdatedBy=0,
-                            UpdatedByName=""
+                            Active = true,
+                            Deleted = false,
+                            CreatedBy = (long)userdata.OwnerId,
+                            CreatedByName = "",
+                            CreatedAt = DateTime.Now,
+                            UpdatedAt = null,
+                            UpdatedBy = 0,
+                            UpdatedByName = ""
                         };
                         _repository.GetRepository<UserSharedDesk>().Insert(userSharedDesk);
-                    }                    
+                    }
+                    foreach (var role in userdata.userRoles)
+                    {
+                        UserRole userRole = new UserRole
+                        {
+                            UserId = entity.Id,
+                            UserName = entity.UserName,
+                            RoleId = role.RoleId,
+                            RoleName = role.RoleName,
+                            Active = true,
+                            Deleted = false,
+                            CreatedBy = (long)userdata.OwnerId,
+                            CreatedByName = "",
+                            CreatedAt = DateTime.Now,
+                            UpdatedAt = null,
+                            UpdatedBy = 0,
+                            UpdatedByName = ""
+                        };
+                        _repository.GetRepository<UserRole>().Insert(userRole);
+                    }
+                    foreach (var sharedSenderSetting in userdata.userSharedSenderSettings)
+                    {
+                        UserSharedSenderSetting userSharedSenderSetting = new UserSharedSenderSetting
+                        {
+                            UserId = entity.Id,
+                            UserName = entity.UserName,
+                            SenderMailId = sharedSenderSetting.SenderMailId,
+                            SenderMail = sharedSenderSetting.SenderMail,
+                            Active = true,
+                            Deleted = false,
+                            CreatedBy = (long)userdata.OwnerId,
+                            CreatedByName = "",
+                            CreatedAt = DateTime.Now,
+                            UpdatedAt = null,
+                            UpdatedBy = 0,
+                            UpdatedByName = ""
+                        };
+                        _repository.GetRepository<UserSharedSenderSetting>().Insert(userSharedSenderSetting);
+                    }
                     _unitOfWork.SaveChanges();
                 }
                 return userdata;
@@ -129,7 +166,7 @@ namespace SitComTech.Domain.Services
 
         public void UpdateUser(UserDataVM entity)
         {
-            User userdata = _repository.Queryable().FirstOrDefault(x=>x.Email==entity.Email);
+            User userdata = _repository.Queryable().FirstOrDefault(x => x.Email == entity.Email);
             if (userdata != null)
             {
                 userdata.UpdatedAt = DateTime.Now;
@@ -150,10 +187,10 @@ namespace SitComTech.Domain.Services
                 userdata.CampaignCode = entity.CampaignCode;
                 userdata.AffiliateFieldId = entity.AffiliateFieldId;
                 userdata.AffiliateFieldName = entity.AffiliateFieldName;
-                userdata.RoleId = entity.RoleId;
-                userdata.RoleName = entity.RoleName;
+                //userdata.RoleId = entity.RoleId;
+                //userdata.RoleName = entity.RoleName;
                 userdata.DepartmentId = entity.DepartmentId;
-                userdata.DepartmentName = entity.DepartmentName;                
+                userdata.DepartmentName = entity.DepartmentName;
                 userdata.TimezoneId = entity.TimezoneId;
                 userdata.TimezoneName = entity.TimezoneName;
                 userdata.CultureCode = entity.CultureCode;
@@ -164,9 +201,69 @@ namespace SitComTech.Domain.Services
                 userdata.StartModuleName = entity.StartModuleName;
                 userdata.DefaultSenderId = entity.DefaultSenderId;
                 userdata.DefaultSenderName = entity.DefaultSenderName;
-                userdata.SharedSenderId = entity.SharedSenderId;
-                userdata.SharedSenderName = entity.SharedSenderName;
+                //userdata.SharedSenderId = entity.SharedSenderId;
+                //userdata.SharedSenderName = entity.SharedSenderName;
                 _repository.Update(userdata);
+                _repository.GetRepository<UserSharedDesk>().DeleteRange(x => x.UserId == entity.Id);
+
+                foreach (var sharedDesk in entity.userSharedDesks)
+                {
+                    UserSharedDesk userSharedDesk = new UserSharedDesk
+                    {
+                        UserId = entity.Id,
+                        SharedDeskId = sharedDesk.SharedDeskId,
+                        SharedDeskName = sharedDesk.SharedDeskName,
+                        Active = true,
+                        Deleted = false,
+                        CreatedBy = (long)userdata.OwnerId,
+                        CreatedByName = "",
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
+                        UpdatedBy = 0,
+                        UpdatedByName = ""
+                    };
+                    _repository.GetRepository<UserSharedDesk>().Insert(userSharedDesk);
+                }
+                _repository.GetRepository<UserRole>().DeleteRange(x => x.UserId == entity.Id);
+                foreach (var role in entity.userRoles)
+                {
+                    UserRole userRole = new UserRole
+                    {
+                        UserId = entity.Id,
+                        UserName = entity.UserName,
+                        RoleId = role.RoleId,
+                        RoleName = role.RoleName,
+                        Active = true,
+                        Deleted = false,
+                        CreatedBy = (long)userdata.OwnerId,
+                        CreatedByName = "",
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
+                        UpdatedBy = 0,
+                        UpdatedByName = ""
+                    };
+                    _repository.GetRepository<UserRole>().Insert(userRole);
+                }
+                _repository.GetRepository<UserSharedSenderSetting>().DeleteRange(x => x.UserId == entity.Id);
+                foreach (var sharedSenderSetting in entity.userSharedSenderSettings)
+                {
+                    UserSharedSenderSetting userSharedSenderSetting = new UserSharedSenderSetting
+                    {
+                        UserId = entity.Id,
+                        UserName = entity.UserName,
+                        SenderMailId = sharedSenderSetting.SenderMailId,
+                        SenderMail = sharedSenderSetting.SenderMail,
+                        Active = true,
+                        Deleted = false,
+                        CreatedBy = (long)userdata.OwnerId,
+                        CreatedByName = "",
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = null,
+                        UpdatedBy = 0,
+                        UpdatedByName = ""
+                    };
+                    _repository.GetRepository<UserSharedSenderSetting>().Insert(userSharedSenderSetting);
+                }
                 _unitOfWork.SaveChanges();
             }
         }
@@ -207,21 +304,57 @@ namespace SitComTech.Domain.Services
 
         public string GetCountryISDCodeById(int countryid)
         {
-            return _countryrepository.Queryable().FirstOrDefault(x=>x.Id==countryid).ISDCode;
+            return _countryrepository.Queryable().FirstOrDefault(x => x.Id == countryid).ISDCode;
         }
 
         public User GetUserDetailByOwnerId(long ownerid)
         {
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.Id == ownerid).FirstOrDefault();
-        }        
+        }
 
         public User GetUserbyusername(string username)
         {
             return _repository.Queryable().Where(x => x.Email == username && x.Active == true && x.Deleted == false).FirstOrDefault();
         }
-        public User GetUserById(long id)
+        public UserDataVM GetUserById(long id)
         {
-            return _repository.Queryable().Where(x => x.Id == id && x.Active == true && x.Deleted == false).FirstOrDefault();
+            var user = _repository.Queryable().Where(x => x.Id == id && x.Active == true && x.Deleted == false).FirstOrDefault();
+
+            return new UserDataVM
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Phone = user.Phone,
+                Password = user.Password,
+                OwnerId = user.OwnerId,
+                DeskId = user.DeskId,
+                IsDisabled = user.IsDisabled,
+                UserName = user.UserName,
+                IsAffiliateUser = user.IsAffiliateUser,
+                ImageName = user.ImageName,
+                LockoutEnabled = user.LockoutEnabled,
+                CampaignCode = user.CampaignCode,
+                AffiliateFieldId = user.AffiliateFieldId,
+                AffiliateFieldName = user.AffiliateFieldName,
+                DeskName = user.DeskName,
+                DepartmentId = user.DepartmentId,
+                DepartmentName = user.DepartmentName,
+                TimezoneId = user.TimezoneId,
+                TimezoneName = user.TimezoneName,
+                CultureCode = user.CultureCode,
+                CultureCodeId = user.CultureCodeId,
+                UiCultureCode = user.UiCultureCode,
+                UiCultureCodeId = user.UiCultureCodeId,
+                StartModuleId = user.StartModuleId,
+                StartModuleName = user.StartModuleName,
+                DefaultSenderId = user.DefaultSenderId,
+                DefaultSenderName = user.DefaultSenderName,
+                userRoles = _repository.GetRepository<UserRole>().Query(x => x.UserId == user.Id).Select(x => new UserRoleVM { RoleId = x.RoleId, RoleName = x.RoleName }).ToList(),
+                userSharedDesks = _repository.GetRepository<UserSharedDesk>().Query(x => x.UserId == user.Id).Select(x => new UserSharedDeskVM { SharedDeskId = x.SharedDeskId, SharedDeskName = x.SharedDeskName }).ToList(),
+                userSharedSenderSettings = _repository.GetRepository<UserSharedSenderSetting>().Query(x => x.UserId == user.Id).Select(x => new UserSharedSenderSettingVM { SenderMailId = x.SenderMailId, SenderMail = x.SenderMail }).ToList()
+            };
         }
-    }   
+    }
 }

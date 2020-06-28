@@ -115,8 +115,7 @@ namespace SitComTech.Data.Mapping
     public class ChangeLogMap : EntityTypeConfiguration<ChangeLog>
     {
         public ChangeLogMap()
-        {
-            ToTable("ChangeLogs", "SitComUser");
+        {            
             HasKey(a => a.Id);
             Property(a => a.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);

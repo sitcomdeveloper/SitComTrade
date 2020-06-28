@@ -129,7 +129,7 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("GetUserById/{id}")]
-        public User GetUserById(int id)
+        public UserDataVM GetUserById(int id)
         {
             return _userService.GetUserById(id);
         }
