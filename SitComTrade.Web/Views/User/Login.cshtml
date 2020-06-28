@@ -477,16 +477,87 @@
         //    5
         //]);
 
+        //   UserVM.CreateWorkFlow = {
+
+        //      Name: ko.observable('fd'),
+        //      Event: ko.observable('qw'),
+        //      UserId: ko.observable(2),
+        //      UserName: ko.observable('vb'),
+        //      ModuleId: ko.observable(2),
+        //      ModuleName: ko.observable('g'),                          
+        //      IsEnabled: ko.observable(1)           
+              
+        //};
+
+
+        //UserVM.Editworkflow = {
+        //    Id: ko.observable(4),
+        //    Name: ko.observable('jhhhh fg'),
+        //    Event: ko.observable('ssss vbb'),
+        //    UserId: ko.observable(2),
+        //    UserName: ko.observable('vb'),
+        //    ModuleId: ko.observable(2),
+        //    ModuleName: ko.observable('g'),
+        //    IsEnabled: ko.observable(1)         
+        //};
+
         $(document).ready(function () {
-            $.ajax({
+             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Instrument/GetAllInstruments",
+                 url: apiURl + "api/WorkFlow/GetAllWorkFlows",
                 contentType: 'application/json',
                 processData: false,
                 success: function (result) {
                     alert(result);
                 }
             });
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/WorkFlow/GetWorkFlowDetailById/4",
+            //    contentType: 'application/json',
+            //    processData: false,               
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/WorkFlow/DeleteWorkFlowById/5",
+            //    contentType: 'application/json',
+            //    processData: false,                 
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/WorkFlow/UpdateWorkFlow",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.Editworkflow),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/WorkFlow/InsertWorkFlow",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //     data: ko.toJSON(UserVM.CreateWorkFlow),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Instrument/GetAllInstruments",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             // $.ajax({
             //    type: 'Post',
             //     url: apiURl + "api/Instrument/GetInstrumentDetailById/4",
