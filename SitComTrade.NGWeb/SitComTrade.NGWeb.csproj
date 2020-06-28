@@ -127,6 +127,10 @@
     <Content Include="src\app\clients_info\reg-his\reg-his.component.html" />
     <Content Include="src\app\clients_info\sms\sms.component.css" />
     <Content Include="src\app\clients_info\sms\sms.component.html" />
+    <Content Include="src\app\clients_info\tasks-info\create-task\create-task.component.css" />
+    <Content Include="src\app\clients_info\tasks-info\create-task\create-task.component.html" />
+    <Content Include="src\app\clients_info\tasks-info\edit-task\edit-task.component.css" />
+    <Content Include="src\app\clients_info\tasks-info\edit-task\edit-task.component.html" />
     <Content Include="src\app\clients_info\tasks-info\tasks-info.component.css" />
     <Content Include="src\app\clients_info\tasks-info\tasks-info.component.html" />
     <Content Include="src\app\footer\footer.component.css" />
@@ -305,8 +309,14 @@
     <TypeScriptCompile Include="src\app\clients_info\reg-his\reg-his.component.ts" />
     <TypeScriptCompile Include="src\app\clients_info\sms\sms.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients_info\sms\sms.component.ts" />
+    <TypeScriptCompile Include="src\app\clients_info\tasks-info\create-task\create-task.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients_info\tasks-info\create-task\create-task.component.ts" />
+    <TypeScriptCompile Include="src\app\clients_info\tasks-info\edit-task\edit-task.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients_info\tasks-info\edit-task\edit-task.component.ts" />
     <TypeScriptCompile Include="src\app\clients_info\tasks-info\tasks-info.component.spec.ts" />
     <TypeScriptCompile Include="src\app\clients_info\tasks-info\tasks-info.component.ts" />
+    <TypeScriptCompile Include="src\app\clients_info\tasks-info\tasks-info.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\clients_info\tasks-info\tasks-info.service.ts" />
     <TypeScriptCompile Include="src\app\common\directives\phone-mask.directive.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
