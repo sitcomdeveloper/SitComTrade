@@ -24,7 +24,7 @@
              <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
                 <li _ngcontent-mew-c3="" class="nav-item">
                    <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#emailsetting">
-                   All</a>
+                   Instruments</a>
                    </li>
                 
              </ul>
@@ -35,13 +35,21 @@
                <div _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
                   <div _ngcontent-boj-c6="" class="input-group selecticon grpselect">
                      <select _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
-                        <option _ngcontent-boj-c6="">All</option>
+                        <option _ngcontent-boj-c6="">Instruments</option>
                         
                      </select>
-                     <span _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-boj-c6="" class="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-boj-c6="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
+                     <span _ngcontent-boj-c6="" class="serachicon brdr-right">
+                         <a _ngcontent-boj-c6="" class="" href="javascript:void(0);"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span>
+                         <span _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-boj-c6="" href="javascript:void(0);" class="disabled-button"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a>
+                        </span>
                   </div>
                </div>
-               <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group"><a _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a><a _ngcontent-boj-c6="" class="brdr-right" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" disabled=""></i></a><a _ngcontent-boj-c6="" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" disabled=""></i></a></div>
+               <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" [attr.disabled]="deletbtnn ==true ? true : false">
+                   <a _ngcontent-boj-c6="" class="brdr-right" href="javascript:void(0);">
+                       <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a>
+                       <a _ngcontent-boj-c6="" class="brdr-right" href="javascript:void(0);" [class.disabled] = deletbtnn>
+                           <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a>
+                           <a _ngcontent-boj-c6="" href="javascript:void(0);" [class.disabled] = deletbtnn><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg"></i></a></div>
             </div>
          </div>
        </div>
@@ -63,7 +71,7 @@
                           <tr _ngcontent-jgg-c8="" class="email-header-row">
                             <th class="email-header-cell email-align-center" >
                               <div class="email-cell-content1">
-                                 <div class="input-checkbox"><span><input type="checkbox"></span></div>
+                                 <div class="input-checkbox"><span><input type="checkbox" id="ckbCheckAll"></span></div>
                               </div>
                            </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
@@ -73,7 +81,7 @@
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
-                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Display Name</span></div>
+                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Display Name">Display Name</span></div>
                                   </div>
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
@@ -83,14 +91,24 @@
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
-                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Spread Type</span></div>
+                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Spread Type">Spread Type</span></div>
                                   </div>
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                    <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Spread Bid</span></div>
+                                </div>
+                            </th>
+                              <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
-                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Trade Forbidden</span></div>
+                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Trade Forbidden">Trade Forbidden</span></div>
                                   </div>
                               </th>
+                              <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                                <div _ngcontent-jgg-c8="" class="email-cell-content">
+                                    <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Contract Size">Contract Size</span></div>
+                                </div>
+                            </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Leverage</span></div>
@@ -98,12 +116,12 @@
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
-                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Profit Currency</span></div>
+                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Profit Currency">Profit Currency</span></div>
                                   </div>
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                                   <div _ngcontent-jgg-c8="" class="email-cell-content">
-                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Symbol Group</span></div>
+                                      <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Symbol Group">Symbol Group</span></div>
                                   </div>
                               </th>
                               <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
@@ -113,7 +131,7 @@
                             </th>
                             <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                               <div _ngcontent-jgg-c8="" class="email-cell-content">
-                                  <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">TradingHoursId</span></div>
+                                  <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="TradingHoursId">TradingHoursId</span></div>
                               </div>
                           </th>
                           <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
@@ -121,17 +139,11 @@
                                 <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Units</span></div>
                             </div>
                         </th>
-                        <!-- <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
+                        <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                           <div _ngcontent-jgg-c8="" class="email-cell-content">
-                              <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">Hidden</span></div>
+                              <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="" tooltip="Margin Currency">Margin Currency</span></div>
                           </div>
-                      </th> -->
-                      <!-- <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
-                        <div _ngcontent-jgg-c8="" class="email-cell-content">
-                            <div _ngcontent-jgg-c8="" class="text-ellipsis"><span _ngcontent-jgg-c8="">IsDisabled</span></div>
-                        </div>
-                    </th> -->
-                          
+                      </th>
                     <th _ngcontent-jgg-c8="" class="email-header-cell email-header-sortable">
                       <div _ngcontent-jgg-c8="" class="email-cell-content">
                           <div _ngcontent-jgg-c8="" class="text-ellipsis">
@@ -1111,6 +1123,27 @@
                                     </select>
                                 </div>
                             </td>
+                            <td _ngcontent-jgg-c8="" class="email-cell email-align-left headingwidth">
+                                <div _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="jsgrid-cell-content">
+                                    <select _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
+                                        <option _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="selected" data-original-index="1">
+                                            <a _ngcontent-jgg-c8="" _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                                <span _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="text">All</span>
+                                            </a>
+                                        </option>
+                                        <option _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="selected" data-original-index="1">
+                                            <a _ngcontent-jgg-c8="" _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                                <span _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="text">Yes</span>
+                                            </a>
+                                        </option>
+                                        <option _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="selected" data-original-index="1">
+                                            <a _ngcontent-jgg-c8="" _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0">
+                                                <span _ngcontent-jgg-c8="" _ngcontent-eme-c5="" class="text">No</span>
+                                            </a>
+                                        </option>
+                                    </select>
+                                </div>
+                            </td>
                             
                             
                               <td _ngcontent-jgg-c8="" _ngcontent-agf-c19="" class="email-cell email-control-field email-align-center">
@@ -1125,7 +1158,7 @@
               <div _ngcontent-jgg-c8="" class="jsgrid-grid-body">
                   <table _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" class="email-table1 JColResizer" id="JColResizer0">
                       <tbody _ngcontent-jgg-c8="" _ngcontent-bdo-c4="">
-                          <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row">
+                          <tr _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-row" *ngFor = "let instrumentsdta of tkeInstruments">
                             <!-- <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell">
                                 <div class="email-cell-content1">
                                     <div class="input-checkbox"><span><input type="checkbox"></span></div>
@@ -1135,7 +1168,7 @@
                                 <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content" style="width:20px;">
                                     <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
                                         <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail" class="text-ellipsis">
-                                            <div class="input-checkbox"><span><input type="checkbox"></span></div>
+                                            <div class="input-checkbox"><span><input type="checkbox" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,instrumentsdta.Id)" onclick="checkboxcheck()" data-item-selector="true"></span></div>
                                          </div>
                                     </div>
                                 </div>
@@ -1144,7 +1177,7 @@
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Name">
                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail" class="text-ellipsis">
-                                            ACKERMANS
+                                            {{instrumentsdta?.Name}}
                                            </div>
                                       </div>
                                   </div>
@@ -1153,7 +1186,7 @@
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations" class="text-ellipsis">
-                                            ACKERMANS
+                                            {{instrumentsdta?.DisplayName}}
                                             </div>
                                       </div>
                                   </div>
@@ -1162,7 +1195,7 @@
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                            TradePro Markets Limited USD
+                                            {{instrumentsdta?.GroupName}}
                                             </div></div>
                                   </div>
                               </td>
@@ -1170,7 +1203,7 @@
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                            Floating
+                                            {{instrumentsdta?.SpreadType}}
                                             </div></div>
                                   </div>
                               </td>
@@ -1178,67 +1211,70 @@
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
                                           <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                              0
+                                            {{instrumentsdta?.SpreadBid}}
                                             </div></div>
                                   </div>
                               </td>
                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis text-center">
-                                        <i _ngcontent-atl-c9="" aria-hidden="true" class="fa fa-check-circle greyiconn"></i></div></div>
+                                      <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
+                                          <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis text-center">
+                                        <i _ngcontent-ixd-c3="" _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': instrumentsdta.IsTradeForbidden ? 'green':'gray' }"></i>
+                                    </div>  
+                                </div>
                                   
                                 </div>
                               </td>
                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell-content">
                                       <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate "><div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="text-ellipsis">
-                                          10
+                                        {{instrumentsdta?.ContractSize}}
                                       </div></div>
                                   </div>
                               </td>
                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
                                   <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
-                                    EUR
+                                    {{instrumentsdta?.LeverageName}}
                                   </div>
                               </td>
                               <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
                                 <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
-                                  CFD
+                                    {{instrumentsdta?.ProfitCurrency}}
                                 </div>
                             </td>
                           
                             <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
                                 <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
-                                 0
+                                    {{instrumentsdta?.SymbolGroup}}
                                 </div>
                             </td>
                             <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
                                 <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
-                                Forex
+                                    {{instrumentsdta?.GapLevel}}
                                 </div>
                             </td>
                             <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
                                 <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
-                                0
+                                    {{instrumentsdta?.TradingHoursId}}
                                 </div>
                             </td>
                             <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                                <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content text-center">
-                               <i _ngcontent-lag-c4="" _ngcontent-atl-c9="" aria-hidden="true" class="fa fa-check-circle greyiconn"></i>
+                                <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
+                                    {{instrumentsdta?.Units}}
                                 </div>
                             </td>
                             <td _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                                <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content text-center">
-                               <i _ngcontent-lag-c4="" _ngcontent-atl-c9="" aria-hidden="true" class="fa fa-check-circle greyiconn"></i>
+                                <div _ngcontent-jgg-c8="" _ngcontent-bdo-c4="" _ngcontent-fwb-c15="" class="dropleft droptop email-cell-content">
+                                    <!-- {{instrumentsdta?.Margin Currency}} -->
                                 </div>
                             </td>
                               <td _ngcontent-ukx-c12="" class="email-cell email-control-field email-align-center" style="width: 84px;">
                                 <div _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="dropleft droptop">
-                                  <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="javascript:void(0)" data-toggle="modal" data-target="#importclient" >
-                                     <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-file greyiconnn"></i>
+                                  <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="javascript:void(0)">
+                                     <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-link greyiconnn"></i>
                                  </a>
-                                    <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" target="_blank" title="Open in new tab">
-                                        <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-trash greyiconnn"></i>
+                                    <a _ngcontent-ukx-c12="" _ngcontent-crh-c6="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link">
+                                        <i _ngcontent-ukx-c12="" _ngcontent-crh-c6="" aria-hidden="true" class="fa fa-pencil greyiconnn"></i>
                                     </a>
                                    
                                  

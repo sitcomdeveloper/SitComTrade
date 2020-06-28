@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Instruments } from './settingsDTO';
 
 const API_URL = environment.API_URL;
 
@@ -73,7 +74,7 @@ getUserDetails(gtusrdtls: any): Observable<any> {
   return this.http.post(API_URL + 'User/GetUserById/' + gtusrdtls, {});
 }
 // instruments. Get all instruments
-getInstruments(gtintrumnts: any): Observable<any> {
-  return this.http.post(API_URL + 'Instrument/GetInstrumentDetailById/' + gtintrumnts, {});
+getInstruments(gtintrumnts: Instruments): Observable<Instruments> {
+  return this.http.post<Instruments>(API_URL + 'Instrument/GetAllInstruments' , gtintrumnts);
 }
 }
