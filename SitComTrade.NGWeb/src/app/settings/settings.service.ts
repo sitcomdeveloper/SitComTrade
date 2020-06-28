@@ -77,4 +77,8 @@ getUserDetails(gtusrdtls: any): Observable<any> {
 getInstruments(gtintrumnts: Instruments): Observable<Instruments> {
   return this.http.post<Instruments>(API_URL + 'Instrument/GetAllInstruments' , gtintrumnts);
 }
+// dlt instruments
+// dltInstruments(): Observable<> {
+//   return this.http.post<>(API_URL + '')
+// }
 }
