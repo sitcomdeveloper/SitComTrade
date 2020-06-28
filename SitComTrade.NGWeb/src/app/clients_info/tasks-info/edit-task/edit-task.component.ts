@@ -70,15 +70,15 @@ export class EditTaskComponent implements OnInit {
       Id: this.wholeData.Id,
       OwnerId:  this.wholeData.OwnerId,
       TaskStatusId: this.wholeData.TaskStatusId,
-TaskTypeId: this.wholeData.TaskTypeId,
-NotiTrasportId: this.wholeData.NotiTrasportId,
-NotiTimeBefore: this.wholeData.NotiTimeBefore,
+      TaskTypeId: this.wholeData.TaskTypeId,
+      NotiTrasportId: this.wholeData.NotiTrasportId,
+      NotiTimeBefore: this.wholeData.NotiTimeBefore,
       TaskType : this.taskInfoForm.value.type,
       TaskStatus: this.taskInfoForm.value.status,
       Description: this.taskInfoForm.value.description,
-      TaskDate: this.taskInfoForm.value.taskdate,
+      TaskDate: new Date(this.taskInfoForm.value.taskdate),
       DataOwnerTypeId: this.wholeData.DataOwnerTypeId,
-DataOwnerTypeName: this.wholeData.DataOwnerTypeName,
+      DataOwnerTypeName: this.wholeData.DataOwnerTypeName
     };
     this.taskInfoService.edtTsk(obj).subscribe(res => {
       this.taskeditRes = res;
