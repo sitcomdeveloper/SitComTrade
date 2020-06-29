@@ -22,7 +22,7 @@
                    </ul>
                 </div>
                 <div _ngcontent-uvq-c9="" _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend end">
-                    <a _ngcontent-vvl-c5="" _ngcontent-iwb-c9="" class="btn-type03 create-email-template-link" data-target="#crmnewuser" data-toggle="modal" href="javascript:void(0);"><i _ngcontent-vvl-c5="" _ngcontent-iwb-c9="" class="fa fa-user-plus">&nbsp;</i> New User</a>
+                    <a _ngcontent-vvl-c5="" _ngcontent-iwb-c9="" class="btn-type03 create-email-template-link" href="javascript:void(0);" (click)="opencrtworkflow()"><i _ngcontent-vvl-c5="" _ngcontent-iwb-c9="" class="fa fa-user-plus">&nbsp;</i> New User</a>
                 </div>
              </div>
           </div>
@@ -356,150 +356,61 @@
                    </div>
                    <div _ngcontent-uvq-c9="" class="jsgrid-grid-body">
                       <table _ngcontent-uvq-c9="" class="email-table JColResizer" id="JColResizer0">
-                         <!--bindings={
-                            "ng-reflect-ng-for-of": "[object Object],[object Object"
-                            }-->
                          <tbody _ngcontent-uvq-c9="">
-                            <tr _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-row">
+                            <tr _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-row" *ngFor = "let tkeworkflws of allWorkflows">
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
                                   <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
                                      <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
+                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">{{tkeworkflws?.Name}}</div>
                                      </div>
                                   </div>
                                </td>
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
                                   <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
                                      <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">Shared</div>
+                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">{{tkeworkflws?.ModuleName}}</div>
                                      </div>
                                   </div>
                                </td>
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                   <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
                                      <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> English </div>
+                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> {{tkeworkflws?.Event}} </div>
                                      </div>
                                   </div>
                                </td>
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
                                   <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
                                      <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> 0 </div>
+                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> {{tkeworkflws?.CreatedAt}} </div>
                                      </div>
                                   </div>
                                </td>
+                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
+                                 <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
+                                    <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
+                                       <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> {{tkeworkflws?.UserName}} </div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td class="email-cell email-align-center" >
+                                 <div class="email-cell-content">
+                                    <div data-display-for="10_AllowTrade">
+                                       <div class="text-center">
+                                          <i _ngcontent-ixd-c3="" _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': tkeworkflws.IsEnabled ? 'green':'gray' }"></i>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </td>
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
+                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="dropleft droptop ">
+                                     <i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i>
+                                     <i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg greyiconn" (click)="opendltworkflow(tkeworkflws.Id)"></i>
+                                 </div>
                                </td>
                             </tr>
                          </tbody>
-                         <tbody _ngcontent-uvq-c9="">
-                            <tr _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-row">
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">Shared</div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> English </div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> 0 </div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                               </td>
-                            </tr>
-                         </tbody>
-                         <tbody _ngcontent-uvq-c9="">
-                            <tr _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-row">
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">Shared</div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> English </div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> 0 </div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                               </td>
-                            </tr>
-                         </tbody>
-                         <tbody _ngcontent-uvq-c9="">
-                            <tr _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-row">
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Name">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Name" data-original-value="_sendemail">0</div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_Subject">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="text-ellipsis" data-field="Subject" data-original-value="JsTranslations">Shared</div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> English </div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
-                                     <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" data-display-for="8_IsSystemTemplate ">
-                                        <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15=""> 0 </div>
-                                     </div>
-                                  </div>
-                               </td>
-                               <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
-                                  <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="dropleft droptop "><i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i></div>
-                               </td>
-                            </tr>
-                         </tbody>
-                      </table>
+                         </table>
                    </div>
                 </div>
              </div>

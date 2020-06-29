@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Instruments } from './settingsDTO';
+import { Instruments, Workflows } from './settingsDTO';
 
 const API_URL = environment.API_URL;
 
@@ -80,5 +80,12 @@ getInstruments(gtintrumnts: Instruments): Observable<Instruments> {
 // dlt instruments
 dltInstruments(dltmiltipleInstruments: Instruments): Observable<Instruments> {
   return this.http.post<Instruments>(API_URL + 'Instrument/DeleteMultipleInstrument', dltmiltipleInstruments)
+}
+// workflows. Get all workflows
+getWorkflows(gtwrkflws: Workflows): Observable<Workflows> {
+  return this.http.post<Workflows>(API_URL + 'WorkFlow/GetAllWorkFlows', gtwrkflws);
+}
+dlttWorkflows(clrworkflow: Workflows): Observable<Workflows> {
+  return this.http.post<Workflows>(API_URL + 'WorkFlow/DeleteWorkFlowById/' + clrworkflow, {});
 }
 }

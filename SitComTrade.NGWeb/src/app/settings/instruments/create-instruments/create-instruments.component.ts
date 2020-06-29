@@ -14,6 +14,7 @@ export class CreateInstrumentsComponent implements OnInit {
   edtinstrmnts: string;
   createinstruments = false;
   editinsstrumnts = false;
+  title: any;
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {

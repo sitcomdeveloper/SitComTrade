@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ActivitiesService } from 'src/app/activities/activities.service';
 import { SettingsService } from 'src/app/settings/settings.service';
+import { Instruments, Workflows } from 'src/app/settings/settingsDTO';
 
 
 @Component({
@@ -45,6 +46,12 @@ rmvTasks: any;
   selectedchkbxwilldltd: number;
   rmvInstruments: any;
   removeInstruments = false;
+  dltinstrumentsData: Instruments;
+  selectedinstrumentswilldltd: Instruments;
+  removeWorkflows = false;
+  rmvWorkflow: any;
+  wrkflwdlt: Workflows;
+  willdltwrkflw: Workflows;
   constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService, private settingsService: SettingsService) {}
 
 
@@ -78,6 +85,11 @@ rmvTasks: any;
       this.removeInstruments = true;
     } else {
       this.removeInstruments = false;
+    }
+    if (this.rmvWorkflow === 'rmvWorkflow') {
+      this.removeWorkflows = true;
+    } else {
+      this.removeWorkflows = false;
     }
     this.userComments();
   }
@@ -134,9 +146,22 @@ rmvTasks: any;
       this.hideModal();
     })
   }
-  // dltInstruments() {
-  //   this.settingsService.
-  // }
+  dltInstruments() {
+    this.settingsService.dltInstruments(this.selectedinstrumentswilldltd).subscribe(dltinstrumentsres => {
+      this.dltinstrumentsData = dltinstrumentsres;
+      this.clddata.emit(dltinstrumentsres);
+      // console.log('dltinstrumentsData',dltinstrumentsres);
+      this.hideModal();
+    })
+  }
+  dltWorkflow() {
+    this.settingsService.dlttWorkflows(this.willdltwrkflw).subscribe(dltwrkflwRes => {
+      this.wrkflwdlt = dltwrkflwRes;
+      this.clddata.emit(dltwrkflwRes);
+      // console.log('wrkflwdlt', dltwrkflwRes);
+      this.hideModal();
+    })
+  }
   hideModal() {
 this.bsmodal.hide();
   }
