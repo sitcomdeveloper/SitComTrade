@@ -6,6 +6,7 @@ import { ClientsService } from 'src/app/header/clients/clients.service';
 import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ActivitiesService } from 'src/app/activities/activities.service';
+import { SettingsService } from 'src/app/settings/settings.service';
 
 
 @Component({
@@ -42,8 +43,9 @@ removeTasks = false
 rmvTasks: any;
   removetasks: any;
   selectedchkbxwilldltd: number;
-  
-  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService) {}
+  rmvInstruments: any;
+  removeInstruments = false;
+  constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService, private settingsService: SettingsService) {}
 
 
   ngOnInit() {
@@ -71,6 +73,11 @@ rmvTasks: any;
       this.removeTasks = true;
     } else {
       this.removeTasks = false;
+    }
+    if (this.rmvInstruments === 'rmvInstruments') {
+      this.removeInstruments = true;
+    } else {
+      this.removeInstruments = false;
     }
     this.userComments();
   }
@@ -127,6 +134,9 @@ rmvTasks: any;
       this.hideModal();
     })
   }
+  // dltInstruments() {
+  //   this.settingsService.
+  // }
   hideModal() {
 this.bsmodal.hide();
   }
