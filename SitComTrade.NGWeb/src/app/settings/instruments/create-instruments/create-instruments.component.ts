@@ -10,24 +10,24 @@ export class CreateInstrumentsComponent implements OnInit {
   @Input() prtdata: any;
   @Output() clddata: EventEmitter<any> = new EventEmitter();
 
-  crtinstrumnts: string;
-  edtinstrmnts: string;
+  crtinstrumnts: any;
+  edtinstrmnts: any;
   createinstruments = false;
   editinsstrumnts = false;
   title: any;
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
-    if(this.crtinstrumnts === 'crtinstrumnts') {
-      this.createinstruments = true;
-    } else {
-      this.createinstruments = false;
-    }
-    if(this.edtinstrmnts === 'edtinstrmnts') {
-      this.editinsstrumnts = true;
-    } else {
-      this.editinsstrumnts = false;
-    }
+    // if(this.crtinstrumnts === 'crtinstrumnts') {
+    //   this.createinstruments = true;
+    // } else {
+    //   this.createinstruments = false;
+    // }
+    // if(this.edtinstrmnts === 'edtinstrmnts') {
+    //   this.editinsstrumnts = true;
+    // } else {
+    //   this.editinsstrumnts = false;
+    // }
   }
   hideModal() {
     this.bsmodal.hide();
