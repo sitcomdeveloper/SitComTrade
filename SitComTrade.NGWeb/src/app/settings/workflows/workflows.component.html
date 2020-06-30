@@ -355,8 +355,8 @@
                       </table>
                    </div>
                    <div _ngcontent-uvq-c9="" class="jsgrid-grid-body">
-                      <table _ngcontent-uvq-c9="" class="email-table JColResizer" id="JColResizer0">
-                         <tbody _ngcontent-uvq-c9="">
+                      <table _ngcontent-uvq-c9="" class="email-table table-striped" id="JColResizer0">
+                         <tbody _ngcontent-uvq-c9="" >
                             <tr _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-row" *ngFor = "let tkeworkflws of allWorkflows">
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell">
                                   <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell-content">
@@ -404,7 +404,7 @@
                               </td>
                                <td _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="email-cell email-control-field email-align-center">
                                   <div _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" class="dropleft droptop ">
-                                     <i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn"></i>
+                                     <i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" (click)="openedtworkflow(tkeworkflws)"></i>
                                      <i _ngcontent-uvq-c9="" _ngcontent-fwb-c15="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg greyiconn" (click)="opendltworkflow(tkeworkflws.Id)"></i>
                                  </div>
                                </td>

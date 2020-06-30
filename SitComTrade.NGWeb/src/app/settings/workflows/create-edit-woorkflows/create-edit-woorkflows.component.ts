@@ -18,13 +18,28 @@ export class CreateEditWoorkflowsComponent implements OnInit {
   newWorkflow: Workflows;
   bindLoginData: any;
   getLoginDetails: any;
+  editworkflow = false;
+  createworkflow = false;
+  crtwrkflw: string;
+  edtwrkflw: string;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
      // code for receiving login details and bind to header at place of name
      this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
      this.bindLoginData = this.getLoginDetails;
-     
+    //  crt wrkflw
+     if(this.crtwrkflw === 'crtwrkflw') {
+       this.createworkflow = true;
+     } else {
+       this.createworkflow = false;
+     }
+    //  edt wrkflw
+    if(this.edtwrkflw === 'edtwrkflw') {
+      this.editworkflow = true;
+    } else {
+      this.editworkflow = false;
+    }
     this.workflowsForm = this.fb.group({
       workflowname: [''],
       enabled: [''],

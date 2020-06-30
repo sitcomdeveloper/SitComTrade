@@ -29,6 +29,20 @@ export class WorkflowsComponent implements OnInit {
   opencrtworkflow() {
     const initialState = {
       title: 'Create Workflow',
+      crtwrkflw: 'crtwrkflw'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateEditWoorkflowsComponent, Object.assign({  show: true }, { class: 'modal650', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(() => {
+      this.getallWorkflows();
+    });
+  }
+  openedtworkflow(whoolewrkflw) {
+    const initialState = {
+      title: 'Edit Workflow',
+      edtwrkflw: 'edtwrkflw',
+      patchthevalue: whoolewrkflw
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateEditWoorkflowsComponent, Object.assign({  show: true }, { class: 'modal650', initialState }));
