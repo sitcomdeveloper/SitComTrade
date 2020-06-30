@@ -22,9 +22,16 @@ export class CreateEditWoorkflowsComponent implements OnInit {
   createworkflow = false;
   crtwrkflw: string;
   edtwrkflw: string;
+  patchthevalue: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
+    this.workflowsForm = this.fb.group({
+      workflowname: [''],
+      enabled: [''],
+      module: [''],
+      event: [''],
+    })
      // code for receiving login details and bind to header at place of name
      this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
      this.bindLoginData = this.getLoginDetails;
@@ -34,22 +41,20 @@ export class CreateEditWoorkflowsComponent implements OnInit {
      } else {
        this.createworkflow = false;
      }
+     this.patchWorkflow();
     //  edt wrkflw
     if(this.edtwrkflw === 'edtwrkflw') {
       this.editworkflow = true;
     } else {
       this.editworkflow = false;
     }
-    this.workflowsForm = this.fb.group({
-      workflowname: [''],
-      enabled: [''],
-      module: [''],
-      event: [''],
-    })
+    
+    // this.patchWorkflow();
   }  
   // crt workflow
 crttheWorkflow(addwrkflw: Workflows) {
    addwrkflw ={
+    //  Id: '',
     Name: this.workflowsForm.value.workflowname,
     Event: this.workflowsForm.value.event,
     UserId: this.bindLoginData.UserId,
@@ -62,6 +67,31 @@ crttheWorkflow(addwrkflw: Workflows) {
     this.newWorkflow = getcrtdWorkflow;
     this.clddata.emit(getcrtdWorkflow);
     // console.log('newWorkflow',getcrtdWorkflow);
+    this.bsmodal.hide();
+  })
+}
+patchWorkflow() {
+  this.workflowsForm.patchValue({
+    workflowname: this.patchthevalue.Name,
+    event: this.patchthevalue.Event,
+    module: this.patchthevalue.ModuleName,
+    enabled: this.patchthevalue.IsEnabled,
+  })
+}
+updtetheWorkflow(updtWorkflw: Workflows) {
+  updtWorkflw ={
+    // Id: this.patchthevalue.Id,
+    Name: this.workflowsForm.value.workflowname,
+    Event: this.workflowsForm.value.event,
+    UserId: this.patchthevalue.UserId,
+    UserName: this.patchthevalue.FullName,
+    ModuleId: this.patchthevalue.ModuleId,
+    ModuleName: this.workflowsForm.value.module,
+    IsEnabled: this.workflowsForm.value.enabled
+  }
+  this.settingsService.edtWorkflow(updtWorkflw).subscribe(getupdtWorkflw => {
+    this.clddata.emit(getupdtWorkflw);
+    console.log('updatedWorkflow', getupdtWorkflw);
     this.bsmodal.hide();
   })
 }

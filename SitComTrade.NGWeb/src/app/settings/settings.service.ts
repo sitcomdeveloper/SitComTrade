@@ -93,4 +93,8 @@ dlttWorkflows(clrworkflow: Workflows): Observable<Workflows> {
 crtWorkflow(addwrkflw: Workflows): Observable<Workflows> {
   return this.http.post<Workflows>(API_URL + 'WorkFlow/InsertWorkFlow', addwrkflw);
 }
+// edt workflow
+edtWorkflow(updtWorkflw: Workflows): Observable<Workflows> {
+  return this.http.post<Workflows>(API_URL + 'WorkFlow/UpdateWorkFlow', updtWorkflw);
+}
 }
