@@ -89,4 +89,8 @@ getWorkflows(gtwrkflws: Workflows): Observable<Workflows> {
 dlttWorkflows(clrworkflow: Workflows): Observable<Workflows> {
   return this.http.post<Workflows>(API_URL + 'WorkFlow/DeleteWorkFlowById/' + clrworkflow, {});
 }
+// create workflow
+crtWorkflow(addwrkflw: Workflows): Observable<Workflows> {
+  return this.http.post<Workflows>(API_URL + 'WorkFlow/InsertWorkFlow', addwrkflw);
+}
 }
