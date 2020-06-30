@@ -14,24 +14,24 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(req.clone());
     }
 
-    // if (window.sessionStorage.getItem('userToken') != null) {
-    //   const clonedReq = req.clone({
-    //     headers: req.headers.set("Authorization", "Bearer " + window.sessionStorage.getItem('userToken'))
-    //   });
-    //   return next.handle(clonedReq);
-    // }
-    // else {
+    if (window.sessionStorage.getItem('userToken') != null) {
+      const clonedReq = req.clone({
+        headers: req.headers.set("Authorization", "Bearer " + window.sessionStorage.getItem('userToken'))
+      });
+      return next.handle(clonedReq);
+    }
+    else {
       
-    //   catchError((err: HttpErrorResponse) => {
-    //     if (err.status === 401) {
-    //       alert('Your session is expired!!.Please login again to continue');
-    //       this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
-    //       window.sessionStorage.clear;
-    //     }
-    //     return throwError(err);
-    //   })
-    //   this.router.navigateByUrl('login');
-    // }
+      catchError((err: HttpErrorResponse) => {
+        if (err.status === 401) {
+          alert('Your session is expired!!.Please login again to continue');
+          this.router.navigateByUrl('login', { queryParams: { returnUrl: req.url } });
+          window.sessionStorage.clear;
+        }
+        return throwError(err);
+      })
+      this.router.navigateByUrl('login');
+    }
   }
  
 }

@@ -34,7 +34,8 @@ export class SettingsService {
    }
    // crm users.create user.component.ts
    getAllTimeZones(): Observable<any> {
-    return this.http.get(API_URL + 'Common/GetAllTimeZones');
+    // return this.http.get(API_URL + 'Common/GetAllTimeZones');
+    return this.http.get('http://testmode.aptimyst.com/interview/public/sub-category/get');
    }
    // crm users.create user.component.ts
    getAllModules(): Observable<any> {
