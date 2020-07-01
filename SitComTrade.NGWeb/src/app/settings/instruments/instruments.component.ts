@@ -41,18 +41,18 @@ gtallInstruments() {
     // console.log('tkeInstruments', getinstrumnts);
   })
 }
-// createInstruments() {
-//   const initialState = {
-//     title: 'Create Item',
-//     // crtinstrumnts: 'crtinstrumnts'
-//   };
-//   // tslint:disable-next-line: max-line-length
-//   this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
-//   this.bsModalRef.content.closeBtnName = 'Cancel';
-//   // this.bsModalRef.content.clddata.subscribe(() => {
-//   //   this.userDetails();
-//   // });
-// }
+createInstruments() {
+  const initialState = {
+    title: 'Create Item',
+    // crtinstrumnts: 'crtinstrumnts'
+  };
+  // tslint:disable-next-line: max-line-length
+  this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
+  this.bsModalRef.content.closeBtnName = 'Cancel';
+  // this.bsModalRef.content.clddata.subscribe(() => {
+  //   this.userDetails();
+  // });
+}
 // editInstruemnts() {
 //   const initialState = {
 //     title: 'Edit Item',
