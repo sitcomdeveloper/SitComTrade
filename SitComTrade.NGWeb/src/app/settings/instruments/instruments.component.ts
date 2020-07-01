@@ -44,7 +44,7 @@ gtallInstruments() {
 createInstruments() {
   const initialState = {
     title: 'Create Item',
-    // crtinstrumnts: 'crtinstrumnts'
+    crtinstrumnts: 'crtinstrumnts'
   };
   // tslint:disable-next-line: max-line-length
   this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
@@ -53,18 +53,18 @@ createInstruments() {
   //   this.userDetails();
   // });
 }
-// editInstruemnts() {
-//   const initialState = {
-//     title: 'Edit Item',
-//     edtinstrmnts: 'edtinstrmnts'
-//   };
-//   // tslint:disable-next-line: max-line-length
-//   this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
-//   this.bsModalRef.content.closeBtnName = 'Cancel';
-//   // this.bsModalRef.content.clddata.subscribe(() => {
-//   //   this.userDetails();
-//   // });
-// }
+editInstruemnts() {
+  const initialState = {
+    title: 'Edit Item',
+    edtinstrmnts: 'edtinstrmnts'
+  };
+  // tslint:disable-next-line: max-line-length
+  this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
+  this.bsModalRef.content.closeBtnName = 'Cancel';
+  // this.bsModalRef.content.clddata.subscribe(() => {
+  //   this.userDetails();
+  // });
+}
 deletbtn(val, userid) {
   this.UserId = userid
   if (val === true) {
