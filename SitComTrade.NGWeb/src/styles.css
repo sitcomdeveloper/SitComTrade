@@ -850,7 +850,9 @@ i.fa.fa-refresh {
 }
 .jsgrid-grid-body {
     overflow-y: scroll;
-    height: 420px;padding-bottom: 13px;
+    height: 420px;
+    /* padding-bottom: 13px; */
+    padding-bottom: 51px; 
 }
 .editingclient tr td {
     width: 115px!important;
