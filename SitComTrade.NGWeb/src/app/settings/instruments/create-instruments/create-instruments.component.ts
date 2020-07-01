@@ -47,6 +47,7 @@ export class CreateInstrumentsComponent implements OnInit {
       gaplevel: [],
       tradinghoursid: [],
       units: [],
+      margincurrency: []
 
       // name: [],
       // displayname
@@ -65,12 +66,29 @@ export class CreateInstrumentsComponent implements OnInit {
   }
   // crt instruments
   createInstruments(addInstruments: InstrumentsDTO) {
-    // addInstruments ={
-
-    // }
+    addInstruments ={
+      Name: this.InstrumentsForm.value.name,
+          DisplayName: this.InstrumentsForm.value.displayname,
+          GroupId: 1,
+          GroupName: this.InstrumentsForm.value.groupname,
+          SpreadType: this.InstrumentsForm.value.spreadtype,
+          SpreadBid: this.InstrumentsForm.value.spreadbid,            
+          IsTradeForbidden: this.InstrumentsForm.value.tradeforbidden,           
+          ContractSize: this.InstrumentsForm.value.contractsize,
+          LeverageId: 1,
+          LeverageName: this.InstrumentsForm.value.leveragename,
+          ProfitCurrency: this.InstrumentsForm.value.profitcurrency,
+          SymbolGroup: this.InstrumentsForm.value.symbolgroup,              
+          GapLevel: this.InstrumentsForm.value.gaplevel,
+          TradingHoursId: this.InstrumentsForm.value.tradinghoursid,
+          Units: this.InstrumentsForm.value.units,
+          MarginCurrency: this.InstrumentsForm.value.margincurrency
+    }
     this.settingsService.crtInstruments(addInstruments).subscribe(addinstrmnts => {
       this.Instruments = addinstrmnts;
+      this.clddata.emit(addinstrmnts);
       console.log('Instruments', addinstrmnts);
+      this.bsmodal.hide();
     })
   }
   hideModal() {

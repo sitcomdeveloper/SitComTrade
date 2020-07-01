@@ -49,9 +49,9 @@ createInstruments() {
   // tslint:disable-next-line: max-line-length
   this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
   this.bsModalRef.content.closeBtnName = 'Cancel';
-  // this.bsModalRef.content.clddata.subscribe(() => {
-  //   this.userDetails();
-  // });
+  this.bsModalRef.content.clddata.subscribe(() => {
+    this.gtallInstruments();
+  });
 }
 editInstruemnts() {
   const initialState = {
@@ -61,9 +61,9 @@ editInstruemnts() {
   // tslint:disable-next-line: max-line-length
   this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
   this.bsModalRef.content.closeBtnName = 'Cancel';
-  // this.bsModalRef.content.clddata.subscribe(() => {
-  //   this.userDetails();
-  // });
+  this.bsModalRef.content.clddata.subscribe(() => {
+    this.gtallInstruments();
+  });
 }
 deletbtn(val, userid) {
   this.UserId = userid
