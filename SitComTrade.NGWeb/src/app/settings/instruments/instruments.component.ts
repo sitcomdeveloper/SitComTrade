@@ -5,6 +5,7 @@ import * as $ from 'jquery'
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreateInstrumentsComponent } from './create-instruments/create-instruments.component';
 import { DeleteComponent } from 'src/app/common/delete/delete.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-instruments',
@@ -18,7 +19,7 @@ export class InstrumentsComponent implements OnInit {
   UserId: any;
   instrumentslength: any;
   selectedchkbxfrdltinstrmnts = [];
-  constructor(private settingsService: SettingsService, private modalService: BsModalService) { }
+  constructor(private settingsService: SettingsService, private modalService: BsModalService, private router: Router) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
     // code for receiving login details and bind to owner name at place of name
@@ -53,10 +54,11 @@ createInstruments() {
     this.gtallInstruments();
   });
 }
-editInstruemnts() {
+editInstruemnts(slctedinstrumentsdta) {
   const initialState = {
     title: 'Edit Item',
-    edtinstrmnts: 'edtinstrmnts'
+    edtinstrmnts: 'edtinstrmnts',
+    selectedrowdta: slctedinstrumentsdta
   };
   // tslint:disable-next-line: max-line-length
   this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal870', initialState }));
@@ -88,5 +90,8 @@ opendltinstruments() {
   this.bsModalRef.content.clddata.subscribe(data => {
     this.gtallInstruments();
   });
+}
+opengeneralinfo(instrumentsId: any) {
+  this.router.navigate(['/groups-info', instrumentsId]);
 }
 }

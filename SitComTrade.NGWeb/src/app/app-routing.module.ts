@@ -16,6 +16,7 @@ import { ReportsComponent } from './header/reports/reports.component';
 import { ClientsInfoComponent } from './clients-info/clients-info.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { AuthGuard } from './auth.guard';
+// import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -89,7 +90,7 @@ const routes: Routes = [
 {path: 'livetrade/:trdingDtls', component: LiveDetailComponent},
 // /:trdingDtls
 // ,canActivate:[AuthGuard]
-
+{path: 'groups-info/:instrumentsId', component: GroupsInfoComponent}
 ];
 
 @NgModule({

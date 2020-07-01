@@ -46,5 +46,5 @@ SymbolGroup: String;
 GapLevel: number;
 TradingHoursId: String;
 Units: number;
-MarginCurrency: String;
+// MarginCurrency: String;
 }

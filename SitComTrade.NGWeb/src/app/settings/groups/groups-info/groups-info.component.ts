@@ -47,11 +47,12 @@ export class GroupsInfoComponent implements OnInit {
     });
     // for getting data for general-info
     const info = +this.route.snapshot.paramMap.get('setItem');
+    const details = +this.route.snapshot.paramMap.get('instrumentsId');
     this.groupid = info;
     console.log(info);
     this.groupService.getGroupDetails(info).subscribe(res => {
       this.groupDetails = res;
-      console.log('groupDetails', res);
+      // console.log('groupDetails', res);
       this.groupsinfoForm.patchValue({
         names: this.groupDetails.Name,
         initialdeposit: this.groupDetails.InitialDeposit,
