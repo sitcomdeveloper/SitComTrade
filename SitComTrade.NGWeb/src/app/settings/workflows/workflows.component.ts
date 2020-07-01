@@ -32,7 +32,7 @@ export class WorkflowsComponent implements OnInit {
       crtwrkflw: 'crtwrkflw'
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(CreateEditWoorkflowsComponent, Object.assign({  show: true }, { class: 'modal650', initialState }));
+    this.bsModalRef = this.modalService.show(CreateEditWoorkflowsComponent, Object.assign({  show: true }, { class: 'modal870', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(() => {
       this.getallWorkflows();
@@ -45,7 +45,7 @@ export class WorkflowsComponent implements OnInit {
       patchthevalue: whoolewrkflw
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(CreateEditWoorkflowsComponent, Object.assign({  show: true }, { class: 'modal650', initialState }));
+    this.bsModalRef = this.modalService.show(CreateEditWoorkflowsComponent, Object.assign({  show: true }, { class: 'modal870', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(() => {
       this.getallWorkflows();
