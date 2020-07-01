@@ -20,7 +20,7 @@ Units: number;
 }
 
 export interface Workflows {
-  // Id: '';
+  Id: '';
     Name: String;
           Event: String;
           UserId: number;

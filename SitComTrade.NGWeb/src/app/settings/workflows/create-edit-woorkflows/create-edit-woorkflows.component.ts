@@ -41,20 +41,23 @@ export class CreateEditWoorkflowsComponent implements OnInit {
      } else {
        this.createworkflow = false;
      }
-     this.patchWorkflow();
     //  edt wrkflw
     if(this.edtwrkflw === 'edtwrkflw') {
       this.editworkflow = true;
+      this.workflowsForm.patchValue({
+        workflowname: this.patchthevalue.Name,
+        event: this.patchthevalue.Event,
+        module: this.patchthevalue.ModuleName,
+        enabled: this.patchthevalue.IsEnabled,
+      })
     } else {
       this.editworkflow = false;
     }
-    
-    // this.patchWorkflow();
   }  
   // crt workflow
 crttheWorkflow(addwrkflw: Workflows) {
    addwrkflw ={
-    //  Id: '',
+     Id: '',
     Name: this.workflowsForm.value.workflowname,
     Event: this.workflowsForm.value.event,
     UserId: this.bindLoginData.UserId,
@@ -70,21 +73,13 @@ crttheWorkflow(addwrkflw: Workflows) {
     this.bsmodal.hide();
   })
 }
-patchWorkflow() {
-  this.workflowsForm.patchValue({
-    workflowname: this.patchthevalue.Name,
-    event: this.patchthevalue.Event,
-    module: this.patchthevalue.ModuleName,
-    enabled: this.patchthevalue.IsEnabled,
-  })
-}
 updtetheWorkflow(updtWorkflw: Workflows) {
   updtWorkflw ={
-    // Id: this.patchthevalue.Id,
+    Id: this.patchthevalue.Id,
     Name: this.workflowsForm.value.workflowname,
     Event: this.workflowsForm.value.event,
-    UserId: this.patchthevalue.UserId,
-    UserName: this.patchthevalue.FullName,
+    UserId: this.bindLoginData.UserId,
+    UserName: this.bindLoginData.FullName,
     ModuleId: this.patchthevalue.ModuleId,
     ModuleName: this.workflowsForm.value.module,
     IsEnabled: this.workflowsForm.value.enabled

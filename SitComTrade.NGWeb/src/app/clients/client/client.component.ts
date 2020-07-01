@@ -403,7 +403,7 @@ export class ClientComponent implements OnInit {
     this.clientService.clientStarred(mkestarred).subscribe(starredres => {
       this.colorchanger = starredres;
       this.userDetails();
-      console.log('starred', starredres);
+      // console.log('starred', starredres);
     })
   }
   // All tab data is fltering on the basis of IsStarrable = true. For show those clients whose IsStarrable = true
