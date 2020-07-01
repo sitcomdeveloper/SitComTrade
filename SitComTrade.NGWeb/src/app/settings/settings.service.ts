@@ -86,6 +86,10 @@ dltInstruments(dltmiltipleInstruments: Instruments): Observable<Instruments> {
 crtInstruments(addInstruments: InstrumentsDTO): Observable<InstrumentsDTO> {
   return this.http.post<InstrumentsDTO>(API_URL + 'Instrument/InsertInstrument', addInstruments);
 }
+// edt instruements
+edtInstruments(updtInstruments: InstrumentsDTO): Observable<InstrumentsDTO> {
+  return this.http.post<InstrumentsDTO>(API_URL + 'Instrument/UpdateInstrument', updtInstruments);
+}
 // workflows. Get all workflows
 getWorkflows(gtwrkflws: Workflows): Observable<Workflows> {
   return this.http.post<Workflows>(API_URL + 'WorkFlow/GetAllWorkFlows', gtwrkflws);

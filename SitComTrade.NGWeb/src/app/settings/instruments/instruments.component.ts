@@ -47,7 +47,7 @@ createInstruments() {
     crtinstrumnts: 'crtinstrumnts'
   };
   // tslint:disable-next-line: max-line-length
-  this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
+  this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal870', initialState }));
   this.bsModalRef.content.closeBtnName = 'Cancel';
   this.bsModalRef.content.clddata.subscribe(() => {
     this.gtallInstruments();
@@ -59,7 +59,7 @@ editInstruemnts() {
     edtinstrmnts: 'edtinstrmnts'
   };
   // tslint:disable-next-line: max-line-length
-  this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal450', initialState }));
+  this.bsModalRef = this.modalService.show(CreateInstrumentsComponent, Object.assign({  show: true }, { class: 'modal870', initialState }));
   this.bsModalRef.content.closeBtnName = 'Cancel';
   this.bsModalRef.content.clddata.subscribe(() => {
     this.gtallInstruments();

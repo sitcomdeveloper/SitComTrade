@@ -91,6 +91,31 @@ export class CreateInstrumentsComponent implements OnInit {
       this.bsmodal.hide();
     })
   }
+  // updt instruments
+  uptInstruments(updtInstruments) {
+    updtInstruments ={
+      Id: (4),
+Name: ('gh'),
+DisplayName: ('cv'),
+GroupId: (2),
+GroupName: ('as'),
+SpreadType: ('er'),
+SpreadBid: (1),
+IsTradeForbidden: (1),
+ContractSize: (4),
+LeverageId: ('2'),
+LeverageName: ('fgggg'),
+ProfitCurrency: ('fdf'),
+SymbolGroup: ('g'),
+GapLevel: (45),
+TradingHoursId: (32),
+Units: (3)
+    }
+    this.settingsService.edtInstruments(updtInstruments).subscribe(updtdinstrumnts => {
+      this.clddata.emit(updtdinstrumnts);
+      this.bsmodal.hide();
+    })
+  }
   hideModal() {
     this.bsmodal.hide();
   }
