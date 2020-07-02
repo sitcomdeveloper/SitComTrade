@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ActivitiesService } from 'src/app/activities/activities.service';
 import { SettingsService } from 'src/app/settings/settings.service';
-import { Instruments, Workflows } from 'src/app/settings/settingsDTO';
+import { Workflows, InstrumentsDTO } from 'src/app/settings/settingsDTO';
 
 
 @Component({
@@ -46,8 +46,8 @@ rmvTasks: any;
   selectedchkbxwilldltd: number;
   rmvInstruments: any;
   removeInstruments = false;
-  dltinstrumentsData: Instruments;
-  selectedinstrumentswilldltd: Instruments;
+  dltinstrumentsData: InstrumentsDTO;
+  selectedinstrumentswilldltd: InstrumentsDTO;
   removeWorkflows = false;
   rmvWorkflow: any;
   wrkflwdlt: Workflows;

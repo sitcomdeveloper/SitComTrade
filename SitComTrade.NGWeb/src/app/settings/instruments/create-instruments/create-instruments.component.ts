@@ -68,7 +68,7 @@ export class CreateInstrumentsComponent implements OnInit {
     }
   }
   // crt instruments
-  createInstruments(addInstruments: InstrumentsDTO) {
+  createInstruments(addInstruments) {
     addInstruments = {
       Name: this.InstrumentsForm.value.name,
       DisplayName: this.InstrumentsForm.value.displayname,

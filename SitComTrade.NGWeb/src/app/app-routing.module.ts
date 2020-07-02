@@ -85,12 +85,12 @@ const routes: Routes = [
 // clients-info
 {path: 'info/:selectedItem', component: ClientsInfoComponent},
 // for group(general-info)
-{path: 'groups-info/:setItem', component: GroupsInfoComponent},
+{path: 'groups-info/:setItem/:publicid', component: GroupsInfoComponent},
 // tradeaccount
 {path: 'livetrade/:trdingDtls', component: LiveDetailComponent},
 // /:trdingDtls
 // ,canActivate:[AuthGuard]
-{path: 'groups-info/:instrumentsId', component: GroupsInfoComponent}
+{path: 'groups-info/:instrumentsId/:instid', component: GroupsInfoComponent}
 ];
 
 @NgModule({

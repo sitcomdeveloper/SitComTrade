@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../settings.service';
-import { Instruments } from '../settingsDTO';
+import { InstrumentsDTO } from '../settingsDTO';
 import * as $ from 'jquery'
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreateInstrumentsComponent } from './create-instruments/create-instruments.component';
@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./instruments.component.css']
 })
 export class InstrumentsComponent implements OnInit {
-  tkeInstruments: Instruments;
-  gtintrumnts: Instruments;
+  tkeInstruments: InstrumentsDTO;
+  gtintrumnts: InstrumentsDTO;
   deletbtnn = true;
   UserId: any;
   instrumentslength: any;
@@ -38,6 +38,7 @@ export class InstrumentsComponent implements OnInit {
 gtallInstruments() {
   this.settingsService.getInstruments(this.gtintrumnts).subscribe(getinstrumnts => {
     this.tkeInstruments = getinstrumnts;
+    
     this.instrumentslength = this.tkeInstruments.length;
     // console.log('tkeInstruments', getinstrumnts);
   })
@@ -91,7 +92,7 @@ opendltinstruments() {
     this.gtallInstruments();
   });
 }
-opengeneralinfo(instrumentsId: any, value) {
-  this.router.navigate(['/groups-info', instrumentsId]);
+opengeneralinfo(instrumentsId: any) {
+  this.router.navigate(['/groups-info', instrumentsId,2]);
 }
 }

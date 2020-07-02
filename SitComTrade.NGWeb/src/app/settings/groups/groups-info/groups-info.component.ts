@@ -49,7 +49,9 @@ export class GroupsInfoComponent implements OnInit {
       leverageid: ['']
     });
     // for getting data for general-info
-    if(this.value === "groups-info") {
+    const val = +this.route.snapshot.paramMap.get('publicid');
+    if(val === 1) {
+
       this.groupinfo = true;
       this.instrumetinfo = false;
       const info = +this.route.snapshot.paramMap.get('setItem');
