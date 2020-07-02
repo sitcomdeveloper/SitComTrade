@@ -136,6 +136,7 @@ namespace SitComTech.Domain.Services
                 clientdata.ResponseStatusId = entity.ResponseStatusId;
                 clientdata.ItemId = entity.ItemId;
                 clientdata.FTDDate = entity.FTDDate;
+                clientdata.Enabled = entity.Enabled;
                 clientdata.ConvertionOwner = entity.ConvertionOwner;
                 clientdata.DateOfBirth = entity.DateOfBirth;
                 clientdata.DaysAgoClientCreated = entity.DaysAgoClientCreated;
