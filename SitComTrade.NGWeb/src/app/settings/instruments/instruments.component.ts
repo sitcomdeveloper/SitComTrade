@@ -91,7 +91,7 @@ opendltinstruments() {
     this.gtallInstruments();
   });
 }
-opengeneralinfo(instrumentsId: any) {
+opengeneralinfo(instrumentsId: any, value) {
   this.router.navigate(['/groups-info', instrumentsId]);
 }
 }

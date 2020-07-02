@@ -25,33 +25,6 @@ export class CreateInstrumentsComponent implements OnInit {
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
-    
-    // this.detail = details;
-    if (this.crtinstrumnts === 'crtinstrumnts') {
-      this.createinstruments = true;
-    } else {
-      this.createinstruments = false;
-    }
-    if (this.edtinstrmnts === 'edtinstrmnts') {
-      this.editinsstrumnts = true;
-      // this.InstrumentsForm.patchValue({
-      //   name: this.selectedrowdta.Name,
-      //   displayname: this.selectedrowdta.DisplayName,
-      //   groupname: this.selectedrowdta.GroupName,
-      //   spreadtype: this.selectedrowdta.SpreadType,
-      //   spreadbid: this.selectedrowdta.SpreadBid,
-      //   tradeforbidden: this.selectedrowdta.IsTradeForbidden,
-      //   contractsize: this.selectedrowdta.ContractSize,
-      //   leveragename: this.selectedrowdta.LeverageName,
-      //   profitcurrency: this.selectedrowdta.ProfitCurrency,
-      //   symbolgroup: this.selectedrowdta.SymbolGroup,
-      //   gaplevel: this.selectedrowdta.GapLevel,
-      //   // tradinghoursid: this.selectedrowdta.TradingHoursId,
-      //   units: this.selectedrowdta.Units,
-      // })
-    } else {
-      this.editinsstrumnts = false;
-    }
     this.InstrumentsForm = this.fb.group({
       name: [],
       displayname: [],
@@ -67,21 +40,32 @@ export class CreateInstrumentsComponent implements OnInit {
       tradinghoursid: [],
       units: [],
       // margincurrency: []
-
-      // name: [],
-      // displayname
-      // groupname
-      // spreadtype
-      // spreadbid
-      // tradeforbidden
-      // contractsize
-      // leveragename
-      // profitcurrency
-      // symbolgroup
-      // gaplevel
-      // tradinghoursid
-      // units
     })
+    if (this.crtinstrumnts === 'crtinstrumnts') {
+      this.createinstruments = true;
+    } else {
+      this.createinstruments = false;
+    }
+    if (this.edtinstrmnts === 'edtinstrmnts') {
+      this.editinsstrumnts = true;
+      this.InstrumentsForm.patchValue({
+        name: this.selectedrowdta.Name,
+        displayname: this.selectedrowdta.DisplayName,
+        groupname: this.selectedrowdta.GroupName,
+        spreadtype: this.selectedrowdta.SpreadType,
+        spreadbid: this.selectedrowdta.SpreadBid,
+        tradeforbidden: this.selectedrowdta.IsTradeForbidden,
+        contractsize: this.selectedrowdta.ContractSize,
+        leveragename: this.selectedrowdta.LeverageName,
+        profitcurrency: this.selectedrowdta.ProfitCurrency,
+        symbolgroup: this.selectedrowdta.SymbolGroup,
+        gaplevel: this.selectedrowdta.GapLevel,
+        // tradinghoursid: this.selectedrowdta.TradingHoursId,
+        units: this.selectedrowdta.Units,
+      })
+    } else {
+      this.editinsstrumnts = false;
+    }
   }
   // crt instruments
   createInstruments(addInstruments: InstrumentsDTO) {

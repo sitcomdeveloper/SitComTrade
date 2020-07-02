@@ -41,17 +41,17 @@ export class GroupsComponent implements OnInit {
     this.Group = result.reverse();
     this.spinnerService.hide();
     this.GroupLength = this.Group.length;
-    console.log('getGroup', result);
+    // console.log('getGroup', result);
   }, 5000);
   });
 
  }
- getGeneralInfo(setItem: any) {
-  //  this.router.navigate(['/groups-info', setItem]);
-  const url = this.router.serializeUrl(
-    this.router.createUrlTree(['/groups-info', setItem])
-  );
-  window.open(url, '_blank');
+ getGeneralInfo(setItem: any, value) {
+   this.router.navigate(['/groups-info', setItem]);
+  // const url = this.router.serializeUrl(
+  //   this.router.createUrlTree(['/groups-info', setItem])
+  // );
+  // window.open(url, '_blank');
 
  }
  newGroup() {

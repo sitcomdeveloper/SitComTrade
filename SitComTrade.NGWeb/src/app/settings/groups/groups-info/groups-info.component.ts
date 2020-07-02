@@ -25,6 +25,9 @@ export class GroupsInfoComponent implements OnInit {
   submitted: any;
   f: any;
   Leverage: any;
+  value: any;
+  groupinfo = false;
+  instrumetinfo = false;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
               private currencyService: CurrencyService) { }
@@ -46,9 +49,11 @@ export class GroupsInfoComponent implements OnInit {
       leverageid: ['']
     });
     // for getting data for general-info
-    const info = +this.route.snapshot.paramMap.get('setItem');
-    const details = +this.route.snapshot.paramMap.get('instrumentsId');
-    this.groupid = info;
+    if(this.value === "groups-info") {
+      this.groupinfo = true;
+      this.instrumetinfo = false;
+      const info = +this.route.snapshot.paramMap.get('setItem');
+      this.groupid = info;
     console.log(info);
     this.groupService.getGroupDetails(info).subscribe(res => {
       this.groupDetails = res;
@@ -68,6 +73,18 @@ export class GroupsInfoComponent implements OnInit {
 
     });
     });
+    } else {
+      const details = +this.route.snapshot.paramMap.get('instrumentsId');
+        this.instrumetinfo = true;
+        this.groupinfo = false;
+    }
+    // if(this.value === 'instruments-info') {
+    //   const details = +this.route.snapshot.paramMap.get('instrumentsId');
+    //   this.instrumetinfo = true;
+    // }
+    
+    
+    
     this.currency();
     this.getLeverages();
   }
