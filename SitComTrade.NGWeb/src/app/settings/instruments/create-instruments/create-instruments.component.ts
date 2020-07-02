@@ -39,7 +39,7 @@ export class CreateInstrumentsComponent implements OnInit {
       gaplevel: [],
       tradinghoursid: [],
       units: [],
-      // margincurrency: []
+      margincurrency: []
     })
     if (this.crtinstrumnts === 'crtinstrumnts') {
       this.createinstruments = true;
@@ -60,7 +60,7 @@ export class CreateInstrumentsComponent implements OnInit {
         profitcurrency: this.selectedrowdta.ProfitCurrency,
         symbolgroup: this.selectedrowdta.SymbolGroup,
         gaplevel: this.selectedrowdta.GapLevel,
-        // tradinghoursid: this.selectedrowdta.TradingHoursId,
+        tradinghoursid: this.selectedrowdta.TradingHoursId,
         units: this.selectedrowdta.Units,
       })
     } else {
