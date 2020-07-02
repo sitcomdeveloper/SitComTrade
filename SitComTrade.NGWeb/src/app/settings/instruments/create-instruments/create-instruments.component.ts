@@ -65,7 +65,7 @@ export class CreateInstrumentsComponent implements OnInit {
       })
     } else {
       this.editinsstrumnts = false;
-    }
+    } 
   }
   // crt instruments
   createInstruments(addInstruments) {

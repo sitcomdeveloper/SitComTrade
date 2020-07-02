@@ -4,6 +4,8 @@ import { GroupsService } from '../groups.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { CurrencyService } from 'src/app/services/currency.service';
+import { SettingsService } from '../../settings.service';
+import { InstrumentsDTO } from '../../settingsDTO';
 
 @Component({
   selector: 'app-groups-info',
@@ -28,9 +30,11 @@ export class GroupsInfoComponent implements OnInit {
   value: any;
   groupinfo = false;
   instrumetinfo = false;
+  instrumentsdtlsbyid: InstrumentsDTO;
+  instrumentsdetails: InstrumentsDTO;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
-              private currencyService: CurrencyService) { }
+              private currencyService: CurrencyService, private settingsService: SettingsService) { }
 
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
@@ -46,7 +50,37 @@ export class GroupsInfoComponent implements OnInit {
       leverage: [''],
       mindeposit: [''],
       currencyid: [''],
-      leverageid: ['']
+      leverageid: [''],
+
+      displayname: [''],
+      spreadbid: [''],
+      spreadask: [''],
+      spreadtype: [''],
+      maximalvolume: [''],
+      volumestep: [''],
+      minimalvolume: [''],
+      marginhedge: [''],
+      swaplong: [''],
+      swapshort: [''],
+      stoplevel: [''],
+      digits: [''],
+      gaplevel: [''],
+      calculationmode: [''],
+      contractsize: [''],
+      commission: [''],
+      symbolgroup: [''],
+      profitcurrency: [''],
+      margincurrency: [''],
+      swaptype: [''],
+      threedaysswap: [''],
+      groupid: [''],
+      commissioncurrency: [''],
+      tradeforbidden: [''],
+      hidden: [''],
+      units: [''],
+      tradinghoursid: [''],
+      expirationdate: [''],
+      isdisabled: [''],
     });
     // for getting data for general-info
     const val = +this.route.snapshot.paramMap.get('publicid');
@@ -56,7 +90,7 @@ export class GroupsInfoComponent implements OnInit {
       this.instrumetinfo = false;
       const info = +this.route.snapshot.paramMap.get('setItem');
       this.groupid = info;
-    console.log(info);
+    // console.log(info);
     this.groupService.getGroupDetails(info).subscribe(res => {
       this.groupDetails = res;
       // console.log('groupDetails', res);
@@ -77,16 +111,14 @@ export class GroupsInfoComponent implements OnInit {
     });
     } else {
       const details = +this.route.snapshot.paramMap.get('instrumentsId');
+      // this.instrumentsdtlsbyid = details;
         this.instrumetinfo = true;
         this.groupinfo = false;
+        this.settingsService.getintrumentsId(this.instrumentsdtlsbyid).subscribe(getinstrmntsdtls => {
+          this.instrumentsdetails = getinstrmntsdtls;
+          console.log('instrumentsdetails',getinstrmntsdtls);
+        })
     }
-    // if(this.value === 'instruments-info') {
-    //   const details = +this.route.snapshot.paramMap.get('instrumentsId');
-    //   this.instrumetinfo = true;
-    // }
-    
-    
-    
     this.currency();
     this.getLeverages();
   }
@@ -103,13 +135,13 @@ export class GroupsInfoComponent implements OnInit {
   currency() {
     this.currencyService.currencyName(this.currencies).subscribe(res => {
       this.getAllCurrency = res;
-      console.log('currency', res);
+      // console.log('currency', res);
     });
   }
   getGroups() {
     this.groupService.getTradeGroups(this.getGroupsData).subscribe(result => {
       this.Group = result.reverse();
-      console.log('getGroup', result);
+      // console.log('getGroup', result);
     });
    }
   // updateGroupDetails
@@ -147,7 +179,7 @@ export class GroupsInfoComponent implements OnInit {
   this.backend = false;
 
   this.spinnerService.show();
-  console.log('updatedDetails', res);
+  // console.log('updatedDetails', res);
 });
   }
   // after update again call the method for refresh the details on groups-info page.same API call
