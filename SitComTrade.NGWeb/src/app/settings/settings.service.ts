@@ -91,8 +91,8 @@ edtInstruments(updtInstruments: InstrumentsDTO): Observable<InstrumentsDTO> {
   return this.http.post<InstrumentsDTO>(API_URL + 'Instrument/UpdateInstrument', updtInstruments);
 }
 // get instruments by id
-getintrumentsId(getinstrumentsdetails: InstrumentsDTO): Observable<InstrumentsDTO> {
-  return this.http.post<InstrumentsDTO>(API_URL + 'Instrument/GetInstrumentDetailById/' + getinstrumentsdetails, {});
+getintrumentsId(Id: number): Observable<any> {
+  return this.http.post<any>(API_URL + 'Instrument/GetInstrumentDetailById/' + Id, {});
 }
 // workflows. Get all workflows
 getWorkflows(gtwrkflws: Workflows): Observable<Workflows> {

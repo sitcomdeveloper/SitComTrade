@@ -91,7 +91,7 @@ const routes: Routes = [
 {path: 'livetrade/:trdingDtls', component: LiveDetailComponent},
 // /:trdingDtls
 // ,canActivate:[AuthGuard]
-{path: 'groups-info/:instrumentsId/:instid', component: GroupsInfoComponent}
+{path: 'groups-info/:setItem/:instid', component: GroupsInfoComponent}
 ];
 
 @NgModule({

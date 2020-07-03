@@ -92,7 +92,8 @@ opendltinstruments() {
     this.gtallInstruments();
   });
 }
-opengeneralinfo(instrumentsId: any) {
-  this.router.navigate(['/groups-info', instrumentsId,2]);
+opengeneralinfo(setItem: any) {
+  this.router.navigate(['/groups-info', setItem,2]);
 }
 }
+// instrumentsId

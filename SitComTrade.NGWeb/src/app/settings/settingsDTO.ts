@@ -36,6 +36,7 @@ export interface InstrumentsDTO {
   length: number;
   // length: any;
   // DTO
+  Id: number;
   Name: String;
 DisplayName: String;
 GroupId: number;

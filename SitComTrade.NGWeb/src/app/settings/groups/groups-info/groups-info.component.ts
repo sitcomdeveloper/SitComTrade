@@ -30,8 +30,7 @@ export class GroupsInfoComponent implements OnInit {
   value: any;
   groupinfo = false;
   instrumetinfo = false;
-  instrumentsdtlsbyid: InstrumentsDTO;
-  instrumentsdetails: InstrumentsDTO;
+  detailsofinstruments: any;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
               private currencyService: CurrencyService, private settingsService: SettingsService) { }
@@ -85,8 +84,7 @@ export class GroupsInfoComponent implements OnInit {
     // for getting data for general-info
     const val = +this.route.snapshot.paramMap.get('publicid');
     if(val === 1) {
-
-      this.groupinfo = true;
+    this.groupinfo = true;
       this.instrumetinfo = false;
       const info = +this.route.snapshot.paramMap.get('setItem');
       this.groupid = info;
@@ -109,14 +107,15 @@ export class GroupsInfoComponent implements OnInit {
 
     });
     });
-    } else {
-      const details = +this.route.snapshot.paramMap.get('instrumentsId');
-      // this.instrumentsdtlsbyid = details;
+    }  
+    else {
+      const instrumentsdetails = +this.route.snapshot.paramMap.get('setItem');
+      // this.instrumentsdtlsbyid = instrumentsdetails;
         this.instrumetinfo = true;
         this.groupinfo = false;
-        this.settingsService.getintrumentsId(this.instrumentsdtlsbyid).subscribe(getinstrmntsdtls => {
-          this.instrumentsdetails = getinstrmntsdtls;
-          console.log('instrumentsdetails',getinstrmntsdtls);
+        this.settingsService.getintrumentsId(instrumentsdetails).subscribe(getinstrmntsdtls => {
+          this.detailsofinstruments = getinstrmntsdtls;
+          console.log('detailsofinstruments',getinstrmntsdtls);
         })
     }
     this.currency();
