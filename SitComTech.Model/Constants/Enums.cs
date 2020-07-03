@@ -37,4 +37,12 @@ namespace SitComTech.Model.Constants
         [Description("TradeAccount")]
         TradeAccount = 4       
     }
+
+    public enum MailProviderEnum
+    {
+        [Description("DefaultMailProvider")]
+        DefaultMailProvider = 1,
+        [Description("SendGridProvider")]
+        SendGridProvider = 2
+    }
 }

@@ -47,6 +47,7 @@ namespace SitComTech.API.App_Start
             container.RegisterType<ITradeGroupService, TradeGroupService>();
             container.RegisterType<IInstrumentService, InstrumentService>();
             container.RegisterType<IWorkFlowService, WorkFlowService>();
+            container.RegisterType<ISenderSettingService, SenderSettingService>();
             container.RegisterType<IEmailTemplateService, EmailTemplateService>();
         }
     }
