@@ -617,7 +617,7 @@
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="initialdeposit" name="initialdeposit" type="text" ng-reflect-name="initialdeposit">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="displayname" name="initialdeposit" type="text" ng-reflect-name="initialdeposit">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -626,14 +626,14 @@
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="margincall" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="description" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
                                                 <th _ngcontent-xey-c3="" class="tabletxt">SpreadBid</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="ordercount" name="initialdeposit" type="text" ng-reflect-name="initialdeposit">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="spreadbid" name="initialdeposit" type="text" ng-reflect-name="initialdeposit">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -642,7 +642,7 @@
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" > 
-                                                        <select class="form-control disabledd" name="Currency" formControlName="currency" data-container="body" data-live-search="true" onmousedown = 'return false' onselectstart = 'return false' id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+                                                        <select class="form-control disabledd" name="Currency" formControlName="spreadask" data-container="body" data-live-search="true" onmousedown = 'return false' onselectstart = 'return false' id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
                                                             <option value="">Select...</option>
                                                             <option *ngFor="let data of getAllCurrency" value="{{data.Name}}">{{data.Name}}</option>
                                                          </select>
@@ -653,7 +653,7 @@
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit " data-rule="valueEdit">
                                                         <label class="switch "  >
-                                                            <input type="checkbox" formControlName="demo" class="primary " disabled >
+                                                            <input type="checkbox" formControlName="spreadtype" class="primary " disabled >
                                                             <span class="slider round disabledd"  onmousedown = 'return false' onselectstart = 'return false'></span>
                                                           </label>
                                                     </div>
@@ -664,7 +664,7 @@
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="maximalvolume" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
                                                 <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
@@ -672,7 +672,7 @@
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="volumestep" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
@@ -683,14 +683,14 @@
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="description" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="minimalvolume" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
                                                 <th _ngcontent-xey-c3="" class="tabletxt">MarginHedge</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <select class="form-control" name="Leverage" formControlName="leverage" data-container="body" data-live-search="true" id="99916a34-3200-ac21-10fd-d4e015e7c6b4" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" style="    position: relative;">
+                                                        <select class="form-control" name="Leverage" formControlName="marginhedge" data-container="body" data-live-search="true" id="99916a34-3200-ac21-10fd-d4e015e7c6b4" aria-required="true" tabindex="-98" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" style="    position: relative;">
                                                             <option value="">Select...</option>
                                                             <option value="{{leverage?.Id}}" *ngFor="let leverage of Leverage">{{leverage?.Name}}</option>
                                                          </select>
@@ -698,215 +698,215 @@
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">SwapLong</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="swaplong name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">SwapShort</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="swapshort" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">StopLevel</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stoplevel" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">Digits</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="digits" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">GapLevel</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="gaplevel" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">CalculationMode</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="calculationmode" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">ContractSize</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="contractsize" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">Commission</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="commission" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">Leverage</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="leverage" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">SymbolGroup</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="symbolgroup" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">ProfitCurrency</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="profitcurrency" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">MarginCurrency</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="margincurrency" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">SwapType</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="swaptype" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">ThreeDaysSwap</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="threedaysswap" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">GroupId</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="groupid" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">CommissionCurrency</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="commissioncurrency" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">TradeForbidden</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="tradeforbidden" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">Hidden</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="hidden" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">Units</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="units" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">TradingHoursId</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="tradinghoursid" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr _ngcontent-xey-c3="">
-                                                <th _ngcontent-xey-c3="" class="tabletxt">MaximalVolume</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">ExpirationDate</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis ">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
-                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" name="name" type="text" ng-reflect-name="name">
+                                                        <input _ngcontent-xey-c3="" aria-required="true" class="form-control ng-untouched ng-pristine ng-valid" formControlName="expirationdate" name="name" type="text" ng-reflect-name="name">
                                                     </div>
                                                 </td>
-                                                <th _ngcontent-xey-c3="" class="tabletxt">VolumeStep</th>
+                                                <th _ngcontent-xey-c3="" class="tabletxt">IsDisabled</th>
                                                 <td _ngcontent-xey-c3="" class="text-ellipsis">
                                                     <div _ngcontent-xey-c3="" class="valueshhow">  </div>
                                                     <div _ngcontent-xey-c3="" class="value-edit" data-rule="valueEdit" >
                                                         <label class="switch ">
-                                                            <input type="checkbox" formControlName="allowtrade" class="primary">
+                                                            <input type="checkbox" formControlName="isdisabled" class="primary">
                                                             <span class="slider round" ></span>
                                                           </label>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
+
                                         </thead>
                                        
                                     </table>
