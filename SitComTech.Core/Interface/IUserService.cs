@@ -24,5 +24,13 @@ namespace SitComTech.Core.Interface
         List<User> GetAllUsersByOwnerId(long ownerid);
         UserDataVM GetUserById(long ownerid);
     }
-
+    public interface IEmailTemplateService : IService<EmailTemplate>
+    {
+        List<EmailTemplate> GetEmailTemplates();
+        List<EmailTemplate> GetEmailTemplatesByUserId(long UserId);
+        EmailTemplate GetEmailTemplateById(long Id);
+        EmailTemplate InsertEmailTemplate(EmailTemplate emailTemplate);
+        bool UpdateEmailTemplate(EmailTemplate emailTemplate);
+        bool DeleteEmailTemplate(EmailTemplate emailTemplate);
+    }
 }

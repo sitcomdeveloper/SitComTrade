@@ -79,4 +79,12 @@ namespace SitComTech.Data.Mapping
             HasRequired(a => a.SenderSetting).WithMany().HasForeignKey(x => x.SenderMailId).WillCascadeOnDelete(false);
         }
     }
+    public class EmailTemplateMap : EntityTypeConfiguration<EmailTemplate>
+    {
+        public EmailTemplateMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
 }

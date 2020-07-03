@@ -357,4 +357,152 @@ namespace SitComTech.Domain.Services
             };
         }
     }
+    public class EmailTemplateService : Service<EmailTemplate>, IEmailTemplateService
+    {
+        private IGenericRepository<EmailTemplate> _repository;
+        private IUnitOfWork _unitOfWork;
+        public EmailTemplateService(IGenericRepository<EmailTemplate> repository, IUnitOfWork unitOfWork)
+            : base(repository)
+        {
+            this._repository = repository;
+            this._unitOfWork = unitOfWork;
+        }
+        public List<EmailTemplate> GetEmailTemplates()
+        {
+            return _repository.Queryable().Where(x => x.Active == true && x.Deleted == false).ToList();
+        }
+        public EmailTemplate GetEmailTemplateById(long Id)
+        {
+            return _repository.Queryable().Where(x => x.Active == true && x.Deleted == false && x.Id == Id).FirstOrDefault();
+        }
+        public List<EmailTemplate> GetEmailTemplatesByUserId(long UserId)
+        {
+            return _repository.Queryable().Where(x => x.Active == true && x.Deleted == false && x.UserId == UserId).ToList();
+        }
+        public EmailTemplate InsertEmailTemplate(EmailTemplate emailTemplate)
+        {
+            if (emailTemplate == null)
+                throw new Exception("Email Template");
+            var userexist = _repository.Queryable().Where(x => x.Name == emailTemplate.Name).FirstOrDefault();
+            try
+            {
+                if (userexist == null)
+                {
+                    EmailTemplate template = new EmailTemplate
+                    {
+                        Name = emailTemplate.Name,
+                        Subject = emailTemplate.Subject,
+                        IsSysTemplate = emailTemplate.IsSysTemplate,
+                        IsPublic = emailTemplate.IsPublic,
+                        Template = emailTemplate.Template,
+                        UserId = emailTemplate.UserId,
+                        Active = true,
+                        Deleted = false,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        CreatedAt = DateTime.Now,
+                        UpdatedBy = 0,
+                        UpdatedByName = "",
+                        UpdatedAt = null
+                    };
+                    _repository.Insert(template);
+                    int changes = _unitOfWork.SaveChanges();
+                    if (changes > 0)
+                    {
+                        return _repository.Queryable().Where(x=>x.Active==true && x.Deleted==false && x.Name==emailTemplate.Name).FirstOrDefault();
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool UpdateEmailTemplate(EmailTemplate emailTemplate)
+        {
+            if (emailTemplate == null)
+                throw new Exception("Email Template");
+            var userexist = _repository.Queryable().Where(x => x.Id == emailTemplate.Id).FirstOrDefault();
+            try
+            {
+                if (userexist != null)
+                {
+                    EmailTemplate template = new EmailTemplate
+                    {
+                        Id = emailTemplate.Id,
+                        Name = emailTemplate.Name,
+                        Subject = emailTemplate.Subject,
+                        IsSysTemplate = emailTemplate.IsSysTemplate,
+                        IsPublic = emailTemplate.IsPublic,
+                        Template = emailTemplate.Template,
+                        UserId = emailTemplate.UserId,
+                        Active = true,
+                        Deleted = false,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        CreatedAt = DateTime.Now,
+                        UpdatedBy = 0,
+                        UpdatedByName = "",
+                        UpdatedAt = null
+                    };
+                    _repository.Update(template);
+                    int changes = _unitOfWork.SaveChanges();
+                    if (changes > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool DeleteEmailTemplate(EmailTemplate emailTemplate)
+        {
+            if (emailTemplate == null)
+                throw new Exception("Email Template");
+            var userexist = _repository.Queryable().Where(x => x.Name == emailTemplate.Name).FirstOrDefault();
+            try
+            {
+                if (userexist != null)
+                {
+                    _repository.Delete(emailTemplate);
+                    int changes = _unitOfWork.SaveChanges();
+                    if (changes > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
 }

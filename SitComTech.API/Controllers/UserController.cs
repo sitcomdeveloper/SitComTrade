@@ -134,4 +134,52 @@ namespace SitComTech.API.Controllers
             return _userService.GetUserById(id);
         }
     }
+    [RoutePrefix("api/EmailTemplate")]
+    public class EmailTemplateController : ApiController
+    {
+        private readonly IEmailTemplateService _templateService;
+        public EmailTemplateController(IEmailTemplateService templateService)
+        {
+            this._templateService = templateService;
+        }
+        [HttpPost]
+        [Route("GetAllTemplate")]
+        public List<EmailTemplate> GetAllTemplate()
+        {
+
+            return _templateService.GetEmailTemplates();            
+        }
+        [HttpPost]
+        [Route("GetAllTemplateByUserId/{UserId}")]
+        public List<EmailTemplate> GetAllTemplateByUserId(long UserId)
+        {
+
+            return _templateService.GetEmailTemplatesByUserId(UserId);
+        }
+        [HttpPost]
+        [Route("GetEmailTemplateById/{Id}")]
+        public EmailTemplate GetEmailTemplateById(long Id)
+        {
+
+            return _templateService.GetEmailTemplateById(Id);
+        }
+        [HttpPost]
+        [Route("InsertEmailTemplate")]
+        public EmailTemplate InsertEmailTemplate(EmailTemplate emailTemplate)
+        {
+            return _templateService.InsertEmailTemplate(emailTemplate);
+        }
+        [HttpPost]
+        [Route("UpdateEmailTemplate")]
+        public bool UpdateEmailTemplate(EmailTemplate emailTemplate)
+        {
+            return _templateService.UpdateEmailTemplate(emailTemplate);
+        }
+        [HttpPost]
+        [Route("DeleteEmailTemplate")]
+        public bool DeleteEmailTemplate(EmailTemplate emailTemplate)
+        {
+            return _templateService.DeleteEmailTemplate(emailTemplate);
+        }
+    }
 }
