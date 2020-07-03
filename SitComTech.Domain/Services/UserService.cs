@@ -474,16 +474,14 @@ namespace SitComTech.Domain.Services
                 throw ex;
             }
         }
-        public bool DeleteEmailTemplate(EmailTemplate emailTemplate)
-        {
-            if (emailTemplate == null)
-                throw new Exception("Email Template");
-            var userexist = _repository.Queryable().Where(x => x.Name == emailTemplate.Name).FirstOrDefault();
+        public bool DeleteEmailTemplate(long Id)
+        {            
+            var userexist = _repository.Queryable().Where(x => x.Id == Id).FirstOrDefault();
             try
             {
                 if (userexist != null)
                 {
-                    _repository.Delete(emailTemplate);
+                    _repository.Delete(userexist);
                     int changes = _unitOfWork.SaveChanges();
                     if (changes > 0)
                     {

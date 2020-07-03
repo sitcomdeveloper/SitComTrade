@@ -31,6 +31,6 @@ namespace SitComTech.Core.Interface
         EmailTemplate GetEmailTemplateById(long Id);
         EmailTemplate InsertEmailTemplate(EmailTemplate emailTemplate);
         bool UpdateEmailTemplate(EmailTemplate emailTemplate);
-        bool DeleteEmailTemplate(EmailTemplate emailTemplate);
+        bool DeleteEmailTemplate(long Id);
     }
 }

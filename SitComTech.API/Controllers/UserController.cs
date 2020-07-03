@@ -176,10 +176,10 @@ namespace SitComTech.API.Controllers
             return _templateService.UpdateEmailTemplate(emailTemplate);
         }
         [HttpPost]
-        [Route("DeleteEmailTemplate")]
-        public bool DeleteEmailTemplate(EmailTemplate emailTemplate)
+        [Route("DeleteEmailTemplate/{Id}")]
+        public bool DeleteEmailTemplate(long Id)
         {
-            return _templateService.DeleteEmailTemplate(emailTemplate);
+            return _templateService.DeleteEmailTemplate(Id);
         }
     }
 }
