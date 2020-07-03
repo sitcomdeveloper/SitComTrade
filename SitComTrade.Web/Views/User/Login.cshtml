@@ -501,19 +501,62 @@
         //    IsEnabled: ko.observable(1)         
         //};
 
+
+        UserVM.CreateSenderSetting = {
+
+              Name: ko.observable('fd'),
+              Description: ko.observable('qw'),
+              SenderMailId: ko.observable('fdfdf'),
+              IsShared: ko.observable(1),
+              ProviderId: ko.observable(2),
+              ProviderName: ko.observable('g'),                          
+               ServerAddress: ko.observable('fdfd'),
+               PortNo: ko.observable(234),
+               FromAddress: ko.observable('gfdf'),
+               MailPassword: ko.observable('hgdg')   
+
+        };
+
+
+        UserVM.EditSenderSetting = {
+            Id: ko.observable(4),
+            Name: ko.observable('hghg hgh'),
+            Description: ko.observable('hfhfh gg'),
+            SenderMailId: ko.observable('gg gg'),
+            IsShared: ko.observable(1),
+            ProviderId: ko.observable(2),
+            ProviderName: ko.observable('g'),
+            ServerAddress: ko.observable('fdfd'),
+            PortNo: ko.observable(234),
+            FromAddress: ko.observable('ytt'),
+            MailPassword: ko.observable('vccv')   
+        };
+
         $(document).ready(function () {
              $.ajax({
-                type: 'Post',
-                 url: apiURl + "api/WorkFlow/GetAllWorkFlows",
+                type: "get",
+                 url: 'http://localhost:59122/api/SenderSetting/GetMailProviderEnum',
                 contentType: 'application/json',
                 processData: false,
-                success: function (result) {
-                    alert(result);
+                success: function (data) {
+                    alert(data.id);
+                },
+                error: function (data) {
+                    shownotification(10000, 'info', 'Error', 'Something went wrong');
                 }
             });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/SenderSetting/GetAllSenderSettings",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             // $.ajax({
             //    type: 'Post',
-            //     url: apiURl + "api/WorkFlow/GetWorkFlowDetailById/4",
+            //     url: apiURl + "api/SenderSetting/GetSenderSettingDetailById/4",
             //    contentType: 'application/json',
             //    processData: false,               
             //    success: function (result) {
@@ -522,7 +565,7 @@
             //});
             // $.ajax({
             //    type: 'Post',
-            //     url: apiURl + "api/WorkFlow/DeleteWorkFlowById/5",
+            //     url: apiURl + "api/SenderSetting/DeleteSenderSettingById/5",
             //    contentType: 'application/json',
             //    processData: false,                 
             //    success: function (result) {
@@ -531,24 +574,73 @@
             //});
             //$.ajax({
             //    type: 'Post',
-            //    url: apiURl + "api/WorkFlow/UpdateWorkFlow",
+            //    url: apiURl + "api/SenderSetting/UpdateSenderSetting",
             //    contentType: 'application/json',
             //    processData: false,
-            //    data: ko.toJSON(UserVM.Editworkflow),
+            //    data: ko.toJSON(UserVM.EditSenderSetting),
             //    success: function (result) {
             //        alert(result);
             //    }
             //});
             // $.ajax({
             //    type: 'Post',
-            //     url: apiURl + "api/WorkFlow/InsertWorkFlow",
+            //     url: apiURl + "api/SenderSetting/InsertSenderSetting",
             //    contentType: 'application/json',
             //    processData: false,
-            //     data: ko.toJSON(UserVM.CreateWorkFlow),
+            //     data: ko.toJSON(UserVM.CreateSenderSetting),
             //    success: function (result) {
             //        alert(result);
             //    }
             //});
+
+
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/WorkFlow/GetAllWorkFlows",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //// $.ajax({
+            ////    type: 'Post',
+            ////     url: apiURl + "api/WorkFlow/GetWorkFlowDetailById/4",
+            ////    contentType: 'application/json',
+            ////    processData: false,               
+            ////    success: function (result) {
+            ////        alert(result);
+            ////    }
+            ////});
+            //// $.ajax({
+            ////    type: 'Post',
+            ////     url: apiURl + "api/WorkFlow/DeleteWorkFlowById/5",
+            ////    contentType: 'application/json',
+            ////    processData: false,                 
+            ////    success: function (result) {
+            ////        alert(result);
+            ////    }
+            ////});
+            ////$.ajax({
+            ////    type: 'Post',
+            ////    url: apiURl + "api/WorkFlow/UpdateWorkFlow",
+            ////    contentType: 'application/json',
+            ////    processData: false,
+            ////    data: ko.toJSON(UserVM.Editworkflow),
+            ////    success: function (result) {
+            ////        alert(result);
+            ////    }
+            ////});
+            //// $.ajax({
+            ////    type: 'Post',
+            ////     url: apiURl + "api/WorkFlow/InsertWorkFlow",
+            ////    contentType: 'application/json',
+            ////    processData: false,
+            ////     data: ko.toJSON(UserVM.CreateWorkFlow),
+            ////    success: function (result) {
+            ////        alert(result);
+            ////    }
+            ////});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Instrument/GetAllInstruments",
