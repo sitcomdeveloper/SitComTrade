@@ -41,7 +41,7 @@ export class GroupsComponent implements OnInit {
     this.Group = result.reverse();
     this.spinnerService.hide();
     this.GroupLength = this.Group.length;
-    // console.log('getGroup', result);
+    console.log('getGroup', result);
   }, 5000);
   });
 

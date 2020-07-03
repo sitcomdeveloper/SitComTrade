@@ -37,10 +37,13 @@ export class InstrumentsComponent implements OnInit {
   }
 gtallInstruments() {
   this.settingsService.getInstruments(this.gtintrumnts).subscribe(getinstrumnts => {
+    // $.each(getinstrumnts,function(i,j){
+    //   this.tkeInstruments.push(j);
+    // });
     this.tkeInstruments = getinstrumnts;
     
     // this.instrumentslength = this.tkeInstruments.length;
-    // console.log('tkeInstruments', getinstrumnts);
+    // console.log('tkeInstruments', this.tkeInstruments.length);
   })
 }
 createInstruments() {

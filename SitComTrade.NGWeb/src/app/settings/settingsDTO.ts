@@ -10,8 +10,8 @@ export interface Workflows {
 }
 
 export interface InstrumentsDTO {
-  // length: number;
-  // DTO
+
+ 
   Id: '';
   Name: String;
 DisplayName: String;
