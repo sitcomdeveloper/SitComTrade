@@ -75,8 +75,8 @@ getUserDetails(gtusrdtls: any): Observable<any> {
   return this.http.post(API_URL + 'User/GetUserById/' + gtusrdtls, {});
 }
 // instruments. Get all instruments
-getInstruments(gtintrumnts: InstrumentsDTO): Observable<InstrumentsDTO> {
-  return this.http.post<InstrumentsDTO>(API_URL + 'Instrument/GetAllInstruments' , gtintrumnts);
+getInstruments(gtintrumnts: InstrumentsDTO): Observable<InstrumentsDTO[]> {
+  return this.http.post<InstrumentsDTO[]>(API_URL + 'Instrument/GetAllInstruments' , gtintrumnts);
 }
 // dlt instruments
 dltInstruments(dltmiltipleInstruments: InstrumentsDTO): Observable<InstrumentsDTO> {

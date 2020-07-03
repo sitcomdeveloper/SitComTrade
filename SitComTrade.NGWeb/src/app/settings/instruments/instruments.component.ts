@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./instruments.component.css']
 })
 export class InstrumentsComponent implements OnInit {
-  tkeInstruments: InstrumentsDTO;
+  tkeInstruments: InstrumentsDTO[];
   gtintrumnts: InstrumentsDTO;
   deletbtnn = true;
   UserId: any;
@@ -42,8 +42,8 @@ gtallInstruments() {
     // });
     this.tkeInstruments = getinstrumnts;
     
-    // this.instrumentslength = this.tkeInstruments.length;
-    // console.log('tkeInstruments', this.tkeInstruments.length);
+    this.instrumentslength = this.tkeInstruments.length;
+     console.log('tkeInstruments', this.tkeInstruments.length);
   })
 }
 createInstruments() {
