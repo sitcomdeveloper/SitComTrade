@@ -31,6 +31,9 @@ export class GroupsInfoComponent implements OnInit {
   groupinfo = false;
   instrumetinfo = false;
   detailsofinstruments: any;
+  updtInstruments: InstrumentsDTO
+  instrumentsdtlsbyid: number;
+  
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
               private currencyService: CurrencyService, private settingsService: SettingsService) { }
@@ -51,6 +54,7 @@ export class GroupsInfoComponent implements OnInit {
       currencyid: [''],
       leverageid: [''],
 
+      name: [''],
       displayname: [''],
       spreadbid: [''],
       spreadask: [''],
@@ -72,7 +76,7 @@ export class GroupsInfoComponent implements OnInit {
       margincurrency: [''],
       swaptype: [''],
       threedaysswap: [''],
-      groupid: [''],
+      groupname: [''],
       commissioncurrency: [''],
       tradeforbidden: [''],
       hidden: [''],
@@ -80,6 +84,7 @@ export class GroupsInfoComponent implements OnInit {
       tradinghoursid: [''],
       expirationdate: [''],
       isdisabled: [''],
+      leveragename: ['']
     });
     // for getting data for general-info
     const val = +this.route.snapshot.paramMap.get('publicid');
@@ -110,11 +115,26 @@ export class GroupsInfoComponent implements OnInit {
     }  
     else {
       const instrumentsdetails = +this.route.snapshot.paramMap.get('setItem');
-      // this.instrumentsdtlsbyid = instrumentsdetails;
+      this.instrumentsdtlsbyid = instrumentsdetails;
         this.instrumetinfo = true;
         this.groupinfo = false;
         this.settingsService.getintrumentsId(instrumentsdetails).subscribe(getinstrmntsdtls => {
           this.detailsofinstruments = getinstrmntsdtls;
+          this.groupsinfoForm.patchValue({
+            name: this.detailsofinstruments.Name,
+        displayname: this.detailsofinstruments.DisplayName,
+        groupname: this.detailsofinstruments.GroupName,
+        spreadtype: this.detailsofinstruments.SpreadType,
+        spreadbid: this.detailsofinstruments.SpreadBid,
+        tradeforbidden: this.detailsofinstruments.IsTradeForbidden,
+        contractsize: this.detailsofinstruments.ContractSize,
+        leveragename: this.detailsofinstruments.LeverageName,
+        profitcurrency: this.detailsofinstruments.ProfitCurrency,
+        symbolgroup: this.detailsofinstruments.SymbolGroup,
+        gaplevel: this.detailsofinstruments.GapLevel,
+        tradinghoursid: this.detailsofinstruments.TradingHoursId,
+        units: this.detailsofinstruments.Units,
+          })
           console.log('detailsofinstruments',getinstrmntsdtls);
         })
     }
@@ -194,5 +214,34 @@ getLeverages() {
     this.Leverage = rspnse;
   });
 }
+// updt instruments
+uptInstruments() {
+  this.updtInstruments = {
+    Id: this.detailsofinstruments.Id,
+    Name: this.groupsinfoForm.value.name,
+    DisplayName: this.groupsinfoForm.value.displayname,
+    GroupId: 1,
+    GroupName: this.groupsinfoForm.value.groupname,
+    SpreadType: this.groupsinfoForm.value.spreadtype,
+    SpreadBid: this.groupsinfoForm.value.spreadbid,
+    IsTradeForbidden: this.groupsinfoForm.value.tradeforbidden,
+    ContractSize: this.groupsinfoForm.value.contractsize,
+    LeverageId: 1,
+    LeverageName: this.groupsinfoForm.value.leveragename,
+    ProfitCurrency: this.groupsinfoForm.value.profitcurrency,
+    SymbolGroup: this.groupsinfoForm.value.symbolgroup,
+    GapLevel: this.groupsinfoForm.value.gaplevel,
+    TradingHoursId: this.groupsinfoForm.value.tradinghoursid,
+    Units: this.groupsinfoForm.value.units,
+  }
+  this.settingsService.edtInstruments(this.updtInstruments).subscribe(updtdinstrumnts => {
+    this.afterupdateInstruments();
+    this.frontend = true;
+  this.backend = false;
+  })
 }
-
+afterupdateInstruments() {
+  this.settingsService.getintrumentsId(this.instrumentsdtlsbyid).subscribe(getinstrmntsdtls => {
+    this.detailsofinstruments = getinstrmntsdtls;
+});
+}}
