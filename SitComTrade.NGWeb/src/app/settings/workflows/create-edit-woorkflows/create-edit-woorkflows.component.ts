@@ -14,7 +14,8 @@ export class CreateEditWoorkflowsComponent implements OnInit {
   @Output() clddata: EventEmitter<any> = new EventEmitter();
   title: any;
   workflowsForm: FormGroup
-  // addwrkflw: Workflows;
+  addwrkflw: Workflows;
+  updtWorkflw: Workflows
   newWorkflow: Workflows;
   bindLoginData: any;
   getLoginDetails: any;
@@ -55,8 +56,8 @@ export class CreateEditWoorkflowsComponent implements OnInit {
     }
   }  
   // crt workflow
-crttheWorkflow(addwrkflw: Workflows) {
-   addwrkflw ={
+crttheWorkflow() {
+   this.addwrkflw ={
      Id: '',
     Name: this.workflowsForm.value.workflowname,
     Event: this.workflowsForm.value.event,
@@ -66,15 +67,15 @@ crttheWorkflow(addwrkflw: Workflows) {
     ModuleName: this.workflowsForm.value.module,                          
     IsEnabled: this.workflowsForm.value.enabled
   }
-  this.settingsService.crtWorkflow(addwrkflw).subscribe(getcrtdWorkflow => {
+  this.settingsService.crtWorkflow(this.addwrkflw).subscribe(getcrtdWorkflow => {
     this.newWorkflow = getcrtdWorkflow;
     this.clddata.emit(getcrtdWorkflow);
     // console.log('newWorkflow',getcrtdWorkflow);
     this.bsmodal.hide();
   })
 }
-updtetheWorkflow(updtWorkflw: Workflows) {
-  updtWorkflw ={
+updtetheWorkflow() {
+  this.updtWorkflw ={
     Id: this.patchthevalue.Id,
     Name: this.workflowsForm.value.workflowname,
     Event: this.workflowsForm.value.event,
@@ -84,7 +85,7 @@ updtetheWorkflow(updtWorkflw: Workflows) {
     ModuleName: this.workflowsForm.value.module,
     IsEnabled: this.workflowsForm.value.enabled
   }
-  this.settingsService.edtWorkflow(updtWorkflw).subscribe(getupdtWorkflw => {
+  this.settingsService.edtWorkflow(this.updtWorkflw).subscribe(getupdtWorkflw => {
     this.clddata.emit(getupdtWorkflw);
     console.log('updatedWorkflow', getupdtWorkflw);
     this.bsmodal.hide();

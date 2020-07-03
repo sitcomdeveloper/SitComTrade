@@ -22,6 +22,8 @@ export class CreateInstrumentsComponent implements OnInit {
   InstrumentsForm: FormGroup
   Instruments: InstrumentsDTO;
   selectedrowdta: any;
+  addInstruments: InstrumentsDTO;
+  updtInstruments: InstrumentsDTO
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -68,8 +70,9 @@ export class CreateInstrumentsComponent implements OnInit {
     } 
   }
   // crt instruments
-  createInstruments(addInstruments) {
-    addInstruments = {
+  createInstruments() {
+    this.addInstruments = {
+      Id: '',
       Name: this.InstrumentsForm.value.name,
       DisplayName: this.InstrumentsForm.value.displayname,
       GroupId: 1,
@@ -87,7 +90,7 @@ export class CreateInstrumentsComponent implements OnInit {
       Units: this.InstrumentsForm.value.units,
       // MarginCurrency: this.InstrumentsForm.value.margincurrency
     }
-    this.settingsService.crtInstruments(addInstruments).subscribe(addinstrmnts => {
+    this.settingsService.crtInstruments(this.addInstruments).subscribe(addinstrmnts => {
       this.Instruments = addinstrmnts;
       this.clddata.emit(addinstrmnts);
       console.log('Instruments', addinstrmnts);
@@ -95,8 +98,8 @@ export class CreateInstrumentsComponent implements OnInit {
     })
   }
   // updt instruments
-  uptInstruments(updtInstruments) {
-    updtInstruments = {
+  uptInstruments() {
+    this.updtInstruments = {
       Id: this.selectedrowdta.Id,
       Name: this.InstrumentsForm.value.name,
       DisplayName: this.InstrumentsForm.value.displayname,
@@ -114,7 +117,7 @@ export class CreateInstrumentsComponent implements OnInit {
       TradingHoursId: this.InstrumentsForm.value.tradinghoursid,
       Units: this.InstrumentsForm.value.units,
     }
-    this.settingsService.edtInstruments(updtInstruments).subscribe(updtdinstrumnts => {
+    this.settingsService.edtInstruments(this.updtInstruments).subscribe(updtdinstrumnts => {
       this.clddata.emit(updtdinstrumnts);
       this.bsmodal.hide();
     })

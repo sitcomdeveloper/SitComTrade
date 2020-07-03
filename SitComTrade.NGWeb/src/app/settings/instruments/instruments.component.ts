@@ -39,7 +39,7 @@ gtallInstruments() {
   this.settingsService.getInstruments(this.gtintrumnts).subscribe(getinstrumnts => {
     this.tkeInstruments = getinstrumnts;
     
-    this.instrumentslength = this.tkeInstruments.length;
+    // this.instrumentslength = this.tkeInstruments.length;
     // console.log('tkeInstruments', getinstrumnts);
   })
 }
