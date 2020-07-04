@@ -37,7 +37,7 @@ export class InstrumentsComponent implements OnInit {
   }
 gtallInstruments() {
   this.settingsService.getInstruments(this.gtintrumnts).subscribe(getinstrumnts => {
-    this.tkeInstruments = getinstrumnts;
+    this.tkeInstruments = getinstrumnts.reverse();
     this.instrumentslength = this.tkeInstruments.length;
     //  console.log('tkeInstruments', this.tkeInstruments.length);
   })

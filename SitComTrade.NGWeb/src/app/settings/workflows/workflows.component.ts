@@ -13,7 +13,7 @@ import { DeleteComponent } from 'src/app/common/delete/delete.component';
 })
 export class WorkflowsComponent implements OnInit {
   gtwrkflws: Workflows;
-  allWorkflows: Workflows;
+  allWorkflows: Workflows[];
 
   constructor(private modalService: BsModalService, private settingsService: SettingsService) { }
   bsModalRef: BsModalRef;
@@ -22,7 +22,7 @@ export class WorkflowsComponent implements OnInit {
   }
   getallWorkflows() {
     this.settingsService.getWorkflows(this.gtwrkflws).subscribe(workflows => {
-      this.allWorkflows = workflows;
+      this.allWorkflows = workflows.reverse();
       // console.log('allWorkflows',workflows);
     })
   }

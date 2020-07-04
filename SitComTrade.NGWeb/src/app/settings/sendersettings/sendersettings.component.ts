@@ -10,7 +10,7 @@ import { CreateSenderSttingsComponent } from './create-sender-sttings/create-sen
 })
 export class SendersettingsComponent implements OnInit {
   getSendersData: any;
-
+  
   constructor(private settingsService: SettingsService,private modalService: BsModalService ) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
@@ -30,20 +30,21 @@ export class SendersettingsComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateSenderSttingsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(() => {
-    //   this.userDetails();
-    // });
+    this.bsModalRef.content.clddata.subscribe(() => {
+      this.sendersettingsData();
+    });
   }
-  openeditsettings() {
+  openeditsettings(wholesendermaildta) {
     const initialState = {
       title: 'Edit Settings',
-      edtemlsettngs: 'edtemlsettngs'
+      edtemlsettngs: 'edtemlsettngs',
+      slctedsendermaildta: wholesendermaildta
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateSenderSttingsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(() => {
-    //   this.userDetails();
-    // });
+    this.bsModalRef.content.clddata.subscribe(() => {
+      this.sendersettingsData();
+    });
   }
 }

@@ -8,17 +8,17 @@
  <!-- create email settings -->
     <div _ngcontent-drw-c5="" class=" mt15" *ngIf = createemailsttings>
         <div _ngcontent-drw-c5="" class="form-holder">
-           <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="">
+           <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="" [formGroup] = "SenderEmalForm">
               <div _ngcontent-drw-c5="" class="form-group">
                  <div _ngcontent-drw-c5="" class="row">
                     <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el="">Name</span></label></div>
-                    <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="95040634-3c7c-0ef6-2ac1-143b8ad12967" name="Name" type="text"></div>
+                    <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="95040634-3c7c-0ef6-2ac1-143b8ad12967" name="Name" type="text" formControlName="sendermail"></div>
                  </div>
               </div>
-              <div _ngcontent-drw-c5="" class="form-group">
+              <div _ngcontent-drw-c5="" class="form-group"> 
                  <div _ngcontent-drw-c5="" class="row">
                     <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Subject"><span _ngcontent-drw-c5="" data-tooltip-el="">Description</span></label></div>
-                    <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
+                    <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="textarea" formControlName="description"></div>
                  </div>
                  <div _ngcontent-drw-c5=""></div>
               </div>
@@ -26,11 +26,10 @@
                 <div _ngcontent-bsq-c15="" class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Provider</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <select _ngcontent-bsq-c15="" aria-required="true" class="form-control ng-pristine ng-invalid ng-touched" data-container="body" data-live-search="true" formcontrolname="roles" name="DeskId" tabindex="-98" ng-reflect-klass="form-control" ng-reflect-ng-class="[object Object]" ng-reflect-name="roles">
-                          <option _ngcontent-bsq-c15="" value="1" ng-reflect-value="1">Select</option>
-                          <!-- <option _ngcontent-bsq-c15="" value="2" ng-reflect-value="2"></option>
-                          <option _ngcontent-bsq-c15="" value="3" ng-reflect-value="3"></option>   -->
-                       </select>
+                       <select class="form-control" name="Currency" formControlName="providername" data-container="body" data-live-search="true"  id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" >
+                        <option value="">Select...</option>
+                        <option *ngFor="let provider of Provider" value="{{provider.Name}}">{{provider.Name}}</option>
+                     </select>
                     </div>
                  </div>
               </div>
@@ -38,7 +37,7 @@
         </div>
         <div _ngcontent-drw-c5="" class="col-md-12 padd0">
            <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
-              <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div>
+              <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="createsenderEmail()">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div>
            </div>
         </div>
      </div>
@@ -48,11 +47,11 @@
      
         <div _ngcontent-drw-c5="" class=" mt15">
          <div _ngcontent-drw-c5="" class="form-holder">
-            <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="">
+            <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="" [formGroup] = "SenderEmalForm">
                <div _ngcontent-drw-c5="" class="form-group">
                   <div _ngcontent-drw-c5="" class="row">
                      <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el="">Name</span></label></div>
-                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="95040634-3c7c-0ef6-2ac1-143b8ad12967" name="Name" type="text"></div>
+                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" formControlName="sendermail"id="95040634-3c7c-0ef6-2ac1-143b8ad12967" name="Name" type="text"></div>
                   </div>
                </div>
                <div _ngcontent-drw-c5="" class="form-group">
@@ -60,7 +59,7 @@
                      <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Subject"><span _ngcontent-drw-c5="" data-tooltip-el="">Description</span></label></div>
                      <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9">
                         
-                        <textarea class="form-control" name="Description"></textarea>
+                        <textarea class="form-control" name="Description" formControlName="description"></textarea>
                      </div>
                   </div>
                   <div _ngcontent-drw-c5=""></div>
@@ -69,10 +68,9 @@
                  <div _ngcontent-bsq-c15="" class="row">
                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Provider</span></label></div>
                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                        <select _ngcontent-bsq-c15="" aria-required="true" class="form-control ng-pristine ng-invalid ng-touched" data-container="body" data-live-search="true" formcontrolname="roles" name="DeskId" tabindex="-98" ng-reflect-klass="form-control" ng-reflect-ng-class="[object Object]" ng-reflect-name="roles">
-                           <option _ngcontent-bsq-c15="" value="1" ng-reflect-value="1">Select</option>
-                           <!-- <option _ngcontent-bsq-c15="" value="2" ng-reflect-value="2"></option>
-                           <option _ngcontent-bsq-c15="" value="3" ng-reflect-value="3"></option>   -->
+                        <select class="form-control" name="Currency" formControlName="providername" data-container="body" data-live-search="true"  id="8c2d4afd-3b62-6e48-c4d0-06592bc5c526" aria-required="true" tabindex="-98" >
+                           <option value="">Select...</option>
+                           <option *ngFor="let provider of Provider" value="{{provider.Name}}">{{provider.Name}}</option>
                         </select>
                      </div>
                   </div>
@@ -80,28 +78,28 @@
                <div _ngcontent-drw-c5="" class="form-group">
                   <div _ngcontent-drw-c5="" class="row">
                      <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Subject"><span _ngcontent-drw-c5="" data-tooltip-el="">Server</span></label></div>
-                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
+                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" formControlName="server" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
                   </div>
                   <div _ngcontent-drw-c5=""></div>
                </div>
                <div _ngcontent-drw-c5="" class="form-group">
                   <div _ngcontent-drw-c5="" class="row">
                      <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Subject"><span _ngcontent-drw-c5="" data-tooltip-el="">Port</span></label></div>
-                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
+                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control"  formControlName="port" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
                   </div>
                   <div _ngcontent-drw-c5=""></div>
                </div>
                <div _ngcontent-drw-c5="" class="form-group">
                   <div _ngcontent-drw-c5="" class="row">
                      <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Subject"><span _ngcontent-drw-c5="" data-tooltip-el="">From Email</span></label></div>
-                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
+                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" formControlName="fromemail" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
                   </div>
                   <div _ngcontent-drw-c5=""></div>
                </div>
                <div _ngcontent-drw-c5="" class="form-group">
                   <div _ngcontent-drw-c5="" class="row">
                      <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Subject"><span _ngcontent-drw-c5="" data-tooltip-el="">Password</span></label></div>
-                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
+                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9"><input _ngcontent-drw-c5="" aria-required="true" class="form-control" formControlName="password"  id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" name="Subject" type="text"></div>
                   </div>
                   <div _ngcontent-drw-c5=""></div>
                </div>
@@ -116,7 +114,7 @@
                               <div _ngcontent-hfo-c11="" class="checkbox-inline">
                                  <div _ngcontent-hfo-c11="" class="switch_box box_1">
                                     <label _ngcontent-hfo-c11="" class="switchboxtext">No</label>
-                                    <input _ngcontent-hfo-c11="" class="switch_1" type="checkbox">
+                                    <input _ngcontent-hfo-c11="" class="switch_1" type="checkbox" formControlName="ssl">
                                     <label _ngcontent-hfo-c11="" class="switchboxtext">Yes</label></div></div>
                                  </div></div><!--bindings={
                   "ng-reflect-ng-if": "true"
@@ -127,7 +125,7 @@
          </div>
          <div _ngcontent-drw-c5="" class="col-md-12 padd0">
             <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
-               <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div>
+               <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="updateSenderEmail()">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a></div>
             </div>
          </div>
       </div>

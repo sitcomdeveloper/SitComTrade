@@ -10,8 +10,6 @@ export interface Workflows {
 }
 
 export interface InstrumentsDTO {
-
- 
   Id: '';
   Name: String;
 DisplayName: String;
@@ -29,4 +27,18 @@ GapLevel: number;
 TradingHoursId: String;
 Units: number;
 // MarginCurrency: String;
+}
+
+export interface SenderEmailDTO {
+  Id: '',
+  Name: String;
+  Description: String;
+  SenderMailId: String;
+  IsShared: '';
+  ProviderId: '';
+  ProviderName: String;                          
+   ServerAddress: String;
+   PortNo: '';
+   FromAddress: String;
+   MailPassword: String
 }

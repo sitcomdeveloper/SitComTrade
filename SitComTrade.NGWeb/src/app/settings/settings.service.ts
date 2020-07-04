@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Workflows, InstrumentsDTO } from './settingsDTO';
+import { Workflows, InstrumentsDTO, SenderEmailDTO } from './settingsDTO';
 
 const API_URL = environment.API_URL;
 
@@ -56,8 +56,20 @@ export class SettingsService {
     return this.http.get(API_URL + 'Common/GetAllAffiliateFields');
    }
    getAllSenderSettings(): Observable<any> {
-    return this.http.get(API_URL + 'Common/GetAllSenderSettings');
+    return this.http.get<any>(API_URL + 'Common/GetAllSenderSettings');
    }
+  //  dropdown for provider
+  getProvider(): Observable<any> {
+    return this.http.get<any>(API_URL +'SenderSetting/GetMailProviderEnum');
+  }
+  //  crt sender email settings
+  crtsendereml(mkesndremail: SenderEmailDTO): Observable<SenderEmailDTO> {
+    return this.http.post<SenderEmailDTO>(API_URL + 'SenderSetting/InsertSenderSetting', mkesndremail);
+  }
+  // updt sender email
+  updtsenderEmail(edtsendremail: SenderEmailDTO): Observable<SenderEmailDTO> {
+    return this.http.post<SenderEmailDTO>(API_URL + 'SenderSetting/UpdateSenderSetting', edtsendremail);
+  }
   //  crmnewuser.Registr user
   registeruser(rgstrusr: any): Observable<any> {
     return this.http.post(API_URL + 'User/RegisterUser', rgstrusr);
@@ -95,8 +107,8 @@ getintrumentsId(Id: number): Observable<any> {
   return this.http.post<any>(API_URL + 'Instrument/GetInstrumentDetailById/' + Id, {});
 }
 // workflows. Get all workflows
-getWorkflows(gtwrkflws: Workflows): Observable<Workflows> {
-  return this.http.post<Workflows>(API_URL + 'WorkFlow/GetAllWorkFlows', gtwrkflws);
+getWorkflows(gtwrkflws: Workflows): Observable<Workflows[]> {
+  return this.http.post<Workflows[]>(API_URL + 'WorkFlow/GetAllWorkFlows', gtwrkflws);
 }
 dlttWorkflows(clrworkflow: Workflows): Observable<Workflows> {
   return this.http.post<Workflows>(API_URL + 'WorkFlow/DeleteWorkFlowById/' + clrworkflow, {});
