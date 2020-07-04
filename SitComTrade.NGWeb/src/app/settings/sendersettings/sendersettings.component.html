@@ -89,7 +89,8 @@
                               <span _ngcontent-lrx-c3=""><i _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i></span>
                               </td>
                         </tr>
-                        <tr class="jsgrid-nodata-row" *ngFor="let sender of getSendersData">
+                        
+                        <tr  *ngFor="let sender of getSendersData">
                            <!-- <td class="jsgrid-cell" colspan="4" style="width: 490px;text-align:center;">Not found
                            </td> -->
                                                      
@@ -102,6 +103,7 @@
                         
                         
                         </tr>
+                    
                      </tbody>
                   </table>
                </div>
@@ -116,7 +118,7 @@
             <div id="email" class="email">
                <div class="email-grid-header email-header-scrollbar">
                  
-                  <table class="email-table JColResizer" id="JColResizer0">
+                  <table class="email-table table-striped"  id="JColResizer0">
                      <tbody>
                         <tr class="email-header-row">
                           
@@ -149,17 +151,10 @@
                               <span _ngcontent-lrx-c3=""><i _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i></span>
                               </td>
                         </tr>
-                        <tr class="jsgrid-nodata-row" *ngFor="let sender of getSendersData">
+                        <tr class="jsgrid-nodata-row">
                            <td class="jsgrid-cell" colspan="4" style="width: 490px;text-align:center;">Not found
                            </td>
-                                                     
-                              <!-- <td class="jsgrid-cell" colspan="4" >
-                           </td>
-                           <td class="jsgrid-cell"  >
-                           </td> -->
-                        
-                        
-                        </tr>
+                     </tr>
                      </tbody>
                   </table>
                </div>
