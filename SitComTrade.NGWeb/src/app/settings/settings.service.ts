@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Workflows, InstrumentsDTO, SenderEmailDTO } from './settingsDTO';
+import { Workflows, InstrumentsDTO, SenderEmailDTO, EmailTemplatesDTO } from './settingsDTO';
 
 const API_URL = environment.API_URL;
 
@@ -12,10 +12,14 @@ const API_URL = environment.API_URL;
 export class SettingsService {
 
   constructor(private http: HttpClient) { }
-  // sendersettings
-  // getSenderSettings(): Observable<any> {
-  //   return this.http.get('assets/sendersettings.json');
-  // }
+  // get all email templates
+  getTemplates(templates: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'EmailTemplate/GetAllTemplateByUserId/' + templates, {});
+  }
+  // crt email template
+  crtemailTemplate(newtmplte: EmailTemplatesDTO): Observable<EmailTemplatesDTO> {
+    return this.http.post<EmailTemplatesDTO>(API_URL + 'EmailTemplate/InsertEmailTemplate', newtmplte);
+  }
   // crm users.get all crm users
   getAllCrmUsers(users: any): Observable<any> {
     return this.http.post(API_URL + 'User/GetAllUsersByOwnerId/' + users, {});

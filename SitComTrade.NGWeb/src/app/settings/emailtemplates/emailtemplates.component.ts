@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreateTemplateComponent } from './create-template/create-template.component';
-import { EmailtemplatesService } from './emailtemplates.service';
+import { SettingsService } from '../settings.service';
+
 @Component({
   selector: 'app-emailtemplates',
   templateUrl: './emailtemplates.component.html',
@@ -9,14 +10,20 @@ import { EmailtemplatesService } from './emailtemplates.service';
 })
 export class EmailtemplatesComponent implements OnInit {
   emailtemplates: any;
-  constructor(private modalService: BsModalService, private emailTemplatesService: EmailtemplatesService) { }
+  getLoginDetails: any;
+  bindLoginData: any;
+  constructor(private modalService: BsModalService, private settingsService: SettingsService) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    this.bindLoginData = this.getLoginDetails;
+    
     this.getAllTemplates();
   }
   // get all templates
   getAllTemplates() {
-    this.emailTemplatesService.getTemplates().subscribe( res => {
+    this.settingsService.getTemplates(this.bindLoginData.UserId).subscribe( res => {
       this.emailtemplates = res;
       console.log('emailtemplates', res);
     });

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-create-template',
   templateUrl: './create-template.component.html',
@@ -13,9 +14,17 @@ export class CreateTemplateComponent implements OnInit {
   edittemplate = false;
   newtmplte: any;
   edittmplte: any;
-  constructor(private bsmodal: BsModalRef) { }
+  EmailTemplateForm: FormGroup
+  constructor(private bsmodal: BsModalRef, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.EmailTemplateForm = this.fb.group({
+      name: [],
+      subject: [],
+      systemtemplate: [],
+      public: [],
+      template: [],
+    })
     if(this.newtmplte === 'newtmplte') {
       this.createtemplate = true;
     } else {

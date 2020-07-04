@@ -42,3 +42,13 @@ export interface SenderEmailDTO {
    FromAddress: String;
    MailPassword: String
 }
+
+export interface EmailTemplatesDTO {
+  Id: '',
+  Name: String;
+Subject: String;
+IsSysTemplate: boolean;
+IsPublic: boolean;
+Template: '';
+UserId: ''
+}
