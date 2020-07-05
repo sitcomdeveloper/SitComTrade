@@ -52,14 +52,33 @@ namespace SitComTech.Domain.Services
                     SpreadType = entity.SpreadType,
                     SpreadBid = entity.SpreadBid,
                     IsTradeForbidden = entity.IsTradeForbidden,
-                    ContractSize = entity.ContractSize,                    
+                    ContractSize = entity.ContractSize,
                     LeverageId = entity.LeverageId,
                     LeverageName = entity.LeverageName,
                     ProfitCurrency = entity.ProfitCurrency,
                     SymbolGroup = entity.SymbolGroup,
                     GapLevel = entity.GapLevel,
                     TradingHoursId = entity.TradingHoursId,
-                    Units = entity.Units
+                    Units = entity.Units,
+                    MarginCurrency = entity.MarginCurrency,
+                    Description = entity.Description,
+                    SpreadAsk = entity.SpreadAsk,
+                    MaximalVolume = entity.MaximalVolume,
+                    VolumeStep = entity.VolumeStep,
+                    MinimalVolume = entity.MinimalVolume,
+                    MarginHedge = entity.MarginHedge,
+                    SwapLong = entity.SwapLong,
+                    SwapShort = entity.SwapShort,
+                    StopLevel = entity.StopLevel,
+                    Digits = entity.Digits,
+                    CalculationMode = entity.CalculationMode,
+                    Commission = entity.Commission,
+                    SwapType = entity.SwapType,
+                    ThreeDaysSwap = entity.ThreeDaysSwap,
+                    CommissionCurrency = entity.CommissionCurrency,
+                    Hidden = entity.Hidden,
+                    ExpirationDate = entity.ExpirationDate,
+                    IsDisabled = entity.IsDisabled
                 };
                 _repository.Insert(instr);
                 _unitOfWork.SaveChanges();
@@ -91,6 +110,25 @@ namespace SitComTech.Domain.Services
                 _instrument.GapLevel = entity.GapLevel;
                 _instrument.TradingHoursId = entity.TradingHoursId;
                 _instrument.Units = entity.Units;
+                _instrument.MarginCurrency = entity.MarginCurrency;
+                _instrument.Description = entity.Description;
+                _instrument.SpreadAsk = entity.SpreadAsk;
+                _instrument.MaximalVolume = entity.MaximalVolume;
+                _instrument.VolumeStep = entity.VolumeStep;
+                _instrument.MinimalVolume = entity.MinimalVolume;
+                _instrument.MarginHedge = entity.MarginHedge;
+                _instrument.SwapLong = entity.SwapLong;
+                _instrument.SwapShort = entity.SwapShort;
+                _instrument.StopLevel = entity.StopLevel;
+                _instrument.Digits = entity.Digits;
+                _instrument.CalculationMode = entity.CalculationMode;
+                _instrument.Commission = entity.Commission;
+                _instrument.SwapType = entity.SwapType;
+                _instrument.ThreeDaysSwap = entity.ThreeDaysSwap;
+                _instrument.CommissionCurrency = entity.CommissionCurrency;
+                _instrument.Hidden = entity.Hidden;
+                _instrument.ExpirationDate = entity.ExpirationDate;
+                _instrument.IsDisabled = entity.IsDisabled;
                 _repository.Update(_instrument);
                 _unitOfWork.SaveChanges();
             }
