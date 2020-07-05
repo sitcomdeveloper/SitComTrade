@@ -39,5 +39,6 @@ namespace SitComTech.Model.DataObject
         public Nullable<bool> Hidden { get; set; }
         public Nullable<DateTime> ExpirationDate { get; set; }
         public Nullable<bool> IsDisabled { get; set; }
+        public Nullable<long> UserId { get; set; }
     }
 }
