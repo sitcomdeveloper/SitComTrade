@@ -17,8 +17,12 @@ export class SettingsService {
     return this.http.post<any>(API_URL + 'EmailTemplate/GetAllTemplateByUserId/' + templates, {});
   }
   // crt email template
-  crtemailTemplate(newtmplte: EmailTemplatesDTO): Observable<EmailTemplatesDTO> {
-    return this.http.post<EmailTemplatesDTO>(API_URL + 'EmailTemplate/InsertEmailTemplate', newtmplte);
+  crtemailTemplate(newemailtmplte: EmailTemplatesDTO): Observable<EmailTemplatesDTO> {
+    return this.http.post<EmailTemplatesDTO>(API_URL + 'EmailTemplate/InsertEmailTemplate', newemailtmplte);
+  }
+  // updt email tmplte
+  updtemailTemplte(updatetemplate: EmailTemplatesDTO): Observable<EmailTemplatesDTO> {
+    return this.http.post<EmailTemplatesDTO>(API_URL + 'EmailTemplate/UpdateEmailTemplate', updatetemplate);
   }
   // crm users.get all crm users
   getAllCrmUsers(users: any): Observable<any> {

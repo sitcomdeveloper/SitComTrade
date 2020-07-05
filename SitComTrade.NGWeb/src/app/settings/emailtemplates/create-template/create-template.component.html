@@ -50,7 +50,7 @@
     <div class="col-md-12 padd0">
  <div _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
     <div _ngcontent-xfs-c7="" class="text-center">
-       <a _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
+       <a _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="newemailTemplate()">Save</a>
    <a _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a>
 </div>
 </div>
@@ -59,24 +59,24 @@
 
 <div *ngIf = edittemplate>
    <div class="form-holder">
-      <form class="form-horizontal" novalidate="novalidate">
+      <form class="form-horizontal" novalidate="novalidate" [formGroup]="EmailTemplateForm">
          <div class="form-group">
         <div class="row">
           <div class="col-xs-2 col-md-2"><label class="valign-label" for="Name"><span data-tooltip-el="">Name</span></label></div>
-            <div class="col-xs-10 col-md-10"><input class="form-control" name="Name" type="text" id="95040634-3c7c-0ef6-2ac1-143b8ad12967" aria-required="true"></div>
+            <div class="col-xs-10 col-md-10"><input class="form-control" name="Name" type="text" id="95040634-3c7c-0ef6-2ac1-143b8ad12967" aria-required="true" formControlName="name"></div>
          </div>
       </div>
          <div class="form-group">
              <div class="row">
             <div class="col-xs-2 col-md-2"><label class="valign-label" for="Subject"><span data-tooltip-el="">Subject</span></label></div>
-            <div class="col-xs-10 col-md-10"><input class="form-control" name="Subject" type="text" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" aria-required="true"></div>
+            <div class="col-xs-10 col-md-10"><input class="form-control" name="Subject" type="text" id="a424d2c8-54a3-1cfe-120f-8e78ee84cdd1" aria-required="true" formControlName="subject"></div>
          </div>
          <div></div></div>
          <div class="row">
             <div class="col-xs-10 col-xs-offset-2 col-md-10 col-md-offset-2">
                <div class="checkbox required-flag">
                   <label class="" for="b2fe92ae-b635-4e71-c2e6-ee34d35bd683">
-                     <div class="input-checkbox" id="uniform-b2fe92ae-b635-4e71-c2e6-ee34d35bd683"><span class=""><input class="form-control" name="IsSystemTemplate" type="checkbox" id="b2fe92ae-b635-4e71-c2e6-ee34d35bd683" value="true"></span></div>
+                     <div class="input-checkbox" id="uniform-b2fe92ae-b635-4e71-c2e6-ee34d35bd683"><span class=""><input class="form-control" name="IsSystemTemplate" type="checkbox" id="b2fe92ae-b635-4e71-c2e6-ee34d35bd683" value="true" formControlName="systemtemplate"></span></div>
                      System Template
                   </label>
                </div>
@@ -86,7 +86,7 @@
             <div class="col-xs-10 col-xs-offset-2 col-md-10 col-md-offset-2">
                <div class="checkbox required-flag">
                   <label class="" for="9e20448b-615e-181d-2575-6786255f3d3f">
-                     <div class="input-checkbox" id="uniform-9e20448b-615e-181d-2575-6786255f3d3f"><span class=""><input class="form-control" name="IsPublic" type="checkbox" id="9e20448b-615e-181d-2575-6786255f3d3f" value="true"></span></div>
+                     <div class="input-checkbox" id="uniform-9e20448b-615e-181d-2575-6786255f3d3f"><span class=""><input class="form-control" name="IsPublic" type="checkbox" id="9e20448b-615e-181d-2575-6786255f3d3f" value="true" formControlName="public"></span></div>
                      IsPublic
                   </label>
                </div>
@@ -95,7 +95,7 @@
          
         <div class="row">
             <div class="col-md-12">
-               <ckeditor data=""></ckeditor>
+              <ckeditor data="" formControlName="template"></ckeditor>
             </div>
          </div>
       </form>
@@ -103,7 +103,7 @@
       <div class="col-md-12 padd0">
    <div _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
       <div _ngcontent-xfs-c7="" class="text-center">
-         <a _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
+         <a _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="edttemplate()">Save</a>
      <a _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a>
   </div>
   </div>

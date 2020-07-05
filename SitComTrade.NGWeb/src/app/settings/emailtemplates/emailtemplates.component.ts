@@ -36,23 +36,22 @@ export class EmailtemplatesComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateTemplateComponent, Object.assign({ show: true }, { class: 'modal-lg', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.userDetails();
-
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.getAllTemplates();
+    });
   }
-  editPopup() {
+  editPopup(wholeemltemplate) {
     const initialState = {
       title: 'Edit Template',
-      edittmplte: 'edittmplte'
+      edittmplte: 'edittmplte',
+      slctdemltemplte: wholeemltemplate
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(CreateTemplateComponent, Object.assign({ show: true }, { class: 'modal-lg', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.userDetails();
-
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.getAllTemplates();
+    });
   }
 
 }

@@ -279,14 +279,14 @@
                               <div class="email-cell-content">
                                  <div data-display-for="8_IsSystemTemplate">
                                    <div class="text-center">
-                                    <i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': email.SystemTemplate ? 'green':'gray' }"></i>
+                                    <i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': email.IsSysTemplate ? 'green':'gray' }"></i>
                                     </div>
                                    <!-- {{email.SystemTemplate}} -->
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell email-control-field email-align-center" style="width: 100px;">
-                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" (click)="editPopup()"></i>             
+                              <div class="dropleft droptop">  <i  aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg greyiconn" (click)="editPopup(email)"></i>             
 </div>
                            </td>
                         </tr>
