@@ -49,6 +49,7 @@
     <Compile Include="DataObject\Email.cs" />
     <Compile Include="DataObject\EmailTemplate.cs" />
     <Compile Include="DataObject\Instrument.cs" />
+    <Compile Include="DataObject\IPWhiteList.cs" />
     <Compile Include="DataObject\MarketingInfo.cs" />
     <Compile Include="DataObject\ShortMessage.cs" />
     <Compile Include="DataObject\TradeGroup.cs" />

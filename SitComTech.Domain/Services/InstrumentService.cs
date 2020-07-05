@@ -78,7 +78,8 @@ namespace SitComTech.Domain.Services
                     CommissionCurrency = entity.CommissionCurrency,
                     Hidden = entity.Hidden,
                     ExpirationDate = entity.ExpirationDate,
-                    IsDisabled = entity.IsDisabled
+                    IsDisabled = entity.IsDisabled,
+                    UserId = entity.UserId
                 };
                 _repository.Insert(instr);
                 _unitOfWork.SaveChanges();
@@ -129,6 +130,7 @@ namespace SitComTech.Domain.Services
                 _instrument.Hidden = entity.Hidden;
                 _instrument.ExpirationDate = entity.ExpirationDate;
                 _instrument.IsDisabled = entity.IsDisabled;
+                _instrument.UserId = entity.UserId;
                 _repository.Update(_instrument);
                 _unitOfWork.SaveChanges();
             }

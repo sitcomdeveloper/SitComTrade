@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Interface\IClientService.cs" />
     <Compile Include="Interface\IInstrumentService.cs" />
+    <Compile Include="Interface\IIPWhiteListService.cs" />
     <Compile Include="Interface\IOwnerTaskService.cs" />
     <Compile Include="Interface\ISenderSettingService.cs" />
     <Compile Include="Interface\ITradeGroupService.cs" />
