@@ -22,6 +22,7 @@ namespace SitComTech.Core.Interface
         void UpdateClient(Client entity);
         void UpdateClientStarred(ClientStarredVM entity);
         ClientListVM GetClientInfoDetailById(long clientid);
+        void ImportClient(List<ImportClient> client);
     }
 
     public interface IMarketingInfoService : IService<MarketingInfo>

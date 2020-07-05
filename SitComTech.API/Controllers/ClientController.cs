@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Newtonsoft.Json;
+using System.Web;
+using System.Data;
+using System.IO;
 
 namespace SitComTech.API.Controllers
 {    
@@ -309,6 +312,12 @@ namespace SitComTech.API.Controllers
             {
                 return false;
             }
+        }
+        [HttpPost]
+        [Route("UploadClients")]
+        public void UploadClients(List<ImportClient> clients)
+        {
+            _clientService.ImportClient(clients);
         }
     }
 }

@@ -323,6 +323,12 @@ namespace SitComTech.Domain.Services
                 IsStarred = x.UserOwner.clients.IsStarred
             }).FirstOrDefault();
         }
+
+        public void ImportClient(List<ImportClient> client)
+        {
+            _repository.GetRepository<ImportClient>().InsertRange(client);
+            _unitOfWork.SaveChanges();
+        }
     }
 
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
