@@ -24,8 +24,8 @@ export class EmailtemplatesComponent implements OnInit {
   // get all templates
   getAllTemplates() {
     this.settingsService.getTemplates(this.bindLoginData.UserId).subscribe( res => {
-      this.emailtemplates = res;
-      console.log('emailtemplates', res);
+      this.emailtemplates = res.reverse();
+      // console.log('emailtemplates', res);
     });
   }
   newTemplate() {

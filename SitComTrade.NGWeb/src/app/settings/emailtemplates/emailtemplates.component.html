@@ -257,21 +257,21 @@
                   </table>
                </div>
                <div class="email-grid-body" >
-                  <table class="email-table" >
-                     <tbody *ngFor="let email of emailtemplates ">
+                  <table class="email-table" class="email-table table-striped">
+                     <tbody >
                        
-                        <tr class="email-alt-row">
+                        <tr class="email-alt-row" *ngFor="let email of emailtemplates ">
                            <td class="email-cell" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_Name">
-                                    <div class="text-ellipsis" data-field="Name" data-original-value="Withdrawal Confirmation (en)">{{email.Name}}</div>
+                                    <div class="text-ellipsis" data-field="Name" data-original-value="Withdrawal Confirmation (en)" tooltip="{{email.Name}}">{{email.Name}}</div>
                                  </div>
                               </div>
                            </td>
                            <td class="email-cell" style="width: 100px;">
                               <div class="email-cell-content">
                                  <div data-display-for="8_Subject">
-                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WITHDRAWAL CONFIRMATION FROM SWISSFX" data-original-title="" title="">{{email.Subject}}</div>
+                                    <div class="text-ellipsis" data-field="Subject" data-original-value="WITHDRAWAL CONFIRMATION FROM SWISSFX" data-original-title="" title="" tooltip="{{email.Subject}}">{{email.Subject}}</div>
                                  </div>
                               </div>
                            </td>
