@@ -10,7 +10,8 @@ import { CreateSenderSttingsComponent } from './create-sender-sttings/create-sen
 })
 export class SendersettingsComponent implements OnInit {
   getSendersData: any;
-  
+  emltempltes = true;
+  sndrsettings = false;
   constructor(private settingsService: SettingsService,private modalService: BsModalService ) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
@@ -18,7 +19,7 @@ export class SendersettingsComponent implements OnInit {
   }
   sendersettingsData() {
     this.settingsService.getAllSenderSettings().subscribe( result => {
-      this.getSendersData = result;
+      this.getSendersData = result.reverse();
     })
   }
   // create new settings
@@ -46,5 +47,13 @@ export class SendersettingsComponent implements OnInit {
     this.bsModalRef.content.clddata.subscribe(() => {
       this.sendersettingsData();
     });
+  }
+  emltemplates() {
+    this.emltempltes = true;
+    this.sndrsettings = false;
+  }
+  smssettings() {
+    this.emltempltes = false;
+    this.sndrsettings = true;
   }
 }

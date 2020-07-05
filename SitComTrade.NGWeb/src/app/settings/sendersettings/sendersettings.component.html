@@ -22,11 +22,11 @@
           <div _ngcontent-mew-c3="" class="col-md-5 main-tab">
              <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
                 <li _ngcontent-mew-c3="" class="nav-item">
-                   <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#emailsetting">
+                   <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#emailsetting" (click)="emltemplates()">
                     Email Settings</a>
                    </li>
                    <li _ngcontent-mew-c3="" class="nav-item">
-                    <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#smssetting">
+                    <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#smssetting" (click)="smssettings()">
                       Sms Settings</a>
                     </li>
                 
@@ -34,8 +34,12 @@
              <!-- <button (click)="opencreatesettings()">New Setting</button> -->
           </div>
           <div _ngcontent-fwk-c4="" class="col-md-7 end">
-          <a _ngcontent-mty-c11="" class="btn-type03 create-email-template-link" data-target="#createtemplate" data-toggle="modal" href="javascript:void(0);" (click)="opencreatesettings()">
-             <i _ngcontent-mty-c11="" class="fa fa-user-plus">&nbsp;</i> New Setting</a>
+          <a _ngcontent-mty-c11="" class="btn-type03 create-email-template-link"  href="javascript:void(0);" (click)="opencreatesettings()" *ngIf = emltempltes>
+             <i _ngcontent-mty-c11="" class="fa fa-user-plus">&nbsp;</i> New Setting
+            </a>
+            <a _ngcontent-mty-c11="" class="btn-type03 create-email-template-link"  href="javascript:void(0);" *ngIf = sndrsettings>
+               <i _ngcontent-mty-c11="" class="fa fa-user-plus">&nbsp;</i> New Setting
+              </a>
        </div>
       </div>
     </div>
