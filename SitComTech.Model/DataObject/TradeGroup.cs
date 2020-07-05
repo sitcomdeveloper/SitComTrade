@@ -18,6 +18,7 @@ namespace SitComTech.Model.DataObject
         public string CurrencyName { get; set; }
         public Nullable<long> LeverageId { get; set; }
         public string LeverageName { get; set; }
+        public Nullable<long> UserId { get; set; }
     }
 
     public class Leverage : BaseEntity
