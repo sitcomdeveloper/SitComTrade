@@ -137,7 +137,12 @@ getIP(getallIp: any): Observable<any> {
 crtIp(crtnewIp: IpDTO): Observable<IpDTO> {
   return this.http.post<IpDTO>(API_URL + 'IPWhiteList/InsertIPWhiteList', crtnewIp);
 }
+// updt Ip
 updtIp(updateIP: IpDTO): Observable<IpDTO> {
-  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/InsertIPWhiteList', updateIP);
+  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/UpdateIPWhiteList', updateIP);
+}
+// delete IP
+dltmultipleIP(Id: number): Observable<IpDTO> {
+  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/DeleteIPWhiteListById/' + Id, {});
 }
 }

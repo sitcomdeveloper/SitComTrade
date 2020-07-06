@@ -52,6 +52,10 @@ rmvTasks: any;
   rmvWorkflow: any;
   wrkflwdlt: Workflows;
   willdltwrkflw: Workflows;
+  // IP
+  removeIP = false;
+  rmvIP: string;
+
   constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService, private settingsService: SettingsService) {}
 
 
@@ -90,6 +94,11 @@ rmvTasks: any;
       this.removeWorkflows = true;
     } else {
       this.removeWorkflows = false;
+    }
+    if (this.rmvIP === 'rmvIP') {
+      this.removeIP = true;
+    } else {
+      this.removeIP = false;
     }
     this.userComments();
   }
@@ -161,6 +170,15 @@ rmvTasks: any;
       // console.log('wrkflwdlt', dltwrkflwRes);
       this.hideModal();
     })
+  }
+  // delete IP
+  dltIP() {
+    // this.settingsService.dltmultipleIP().subscribe(dltIPres => {
+    //   this.ipdlt = dltIPres;
+    //   this.clddata.emit(dltIPres);
+    //   console.log('ipdlt', dltIPres);
+    //   this.hideModal();
+    // })
   }
   hideModal() {
 this.bsmodal.hide();

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { SettingsService } from '../../settings.service';
-import { Workflows } from '../../settingsDTO';
+import { Workflows, IpDTO } from '../../settingsDTO';
 
 @Component({
   selector: 'app-create-edit-woorkflows',
@@ -24,6 +24,11 @@ export class CreateEditWoorkflowsComponent implements OnInit {
   crtwrkflw: string;
   edtwrkflw: string;
   patchthevalue: any;
+  editIPwhitelistsection = false;
+  editIP: string;
+  selectedipdata: any;
+  updateIP: IpDTO;
+  UpdatedIP: IpDTO;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
@@ -32,6 +37,8 @@ export class CreateEditWoorkflowsComponent implements OnInit {
       enabled: [''],
       module: [''],
       event: [''],
+      ip: [''],
+      description: ['']
     })
      // code for receiving login details and bind to header at place of name
      this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
@@ -53,6 +60,16 @@ export class CreateEditWoorkflowsComponent implements OnInit {
       })
     } else {
       this.editworkflow = false;
+    }
+    // edt IP
+    if(this.editIP === 'editIP') {
+      this.editIPwhitelistsection = true;
+      this.workflowsForm.patchValue({
+        ip: this.selectedipdata.IPAddress,
+        description: this.selectedipdata.Description,
+      })
+    } else {
+      this.editIPwhitelistsection = false
     }
   }  
   // crt workflow
@@ -89,6 +106,21 @@ updtetheWorkflow() {
     this.clddata.emit(getupdtWorkflw);
     console.log('updatedWorkflow', getupdtWorkflw);
     this.bsmodal.hide();
+  })
+}
+// update the IPWHITE LIST
+edtIPWhiteList() {
+  this.updateIP = {
+    Id: this.selectedipdata.Id,
+    IPAddress: this.workflowsForm.value.ip,
+    Description: this.workflowsForm.value.description,
+    UserId: this.selectedipdata.UserId
+  }
+  this.settingsService.updtIp(this.updateIP).subscribe(modifiedIp => {
+    this.UpdatedIP = modifiedIp;
+    this.clddata.emit(modifiedIp);
+    this.bsmodal.hide();
+    //  console.log('UpdatedIP',modifiedIp);
   })
 }
   hideModal() {

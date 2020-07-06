@@ -4,7 +4,7 @@
         <div _ngcontent-jyy-c5="" class="container-fluid container-padd">
            <div _ngcontent-jyy-c5="" class="row">
               <div _ngcontent-jyy-c5="" class="tools-panel-addon">
-                 <div _ngcontent-jyy-c5="" _ngcontent-ubb-c3="" class="jsgrid-items-counter"><span _ngcontent-jyy-c5="" id="chked"></span><span _ngcontent-jyy-c5="" _ngcontent-ubb-c3="">13 items</span></div>
+                 <div _ngcontent-jyy-c5="" _ngcontent-ubb-c3="" class="jsgrid-items-counter"><span _ngcontent-jyy-c5="" id="chked"></span><span _ngcontent-jyy-c5="" _ngcontent-ubb-c3="">{{IPlength}} items</span></div>
                  <div _ngcontent-jyy-c5="" class="breadcrumbs">
                     <ul _ngcontent-jyy-c5="">
                        <li _ngcontent-jyy-c5="" itemscope=""><span _ngcontent-jyy-c5="" itemprop="title">Settings</span></li>
@@ -29,13 +29,18 @@
                           <select _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
                              <option _ngcontent-jyy-c5="" _ngcontent-boj-c6="">IP WHITE LIST</option>
                           </select>
-                          <span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="disabled-button" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
+                          <span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="" href="javascript:void(0)">
+                             <i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span>
+                             <span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="disabled-button" href="javascript:void(0)">
+                                <i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
                        </div>
                     </div>
-                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" disabled="true"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#">
-                       
-                     </a>
-                       <a _ngcontent-jyy-c5="" class="brdr-right disabled" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" href="javascript:void(0)" class="disabled"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg"></i></a></div>
+                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" disabled="true" [attr.disabled]="deletbtnn ==true ? true : false">
+                       <a _ngcontent-jyy-c5="" class="brdr-right disabled" href="javascript:void(0)" [class.disabled] = deletbtnn>
+                          <i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a>
+                          <a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" href="javascript:void(0)" [class.disabled] = deletbtnn><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" (click)="opendltippopup()"></i>
+                        </a>
+                        </div>
                  </div>
               </div>
            </div>
@@ -74,7 +79,10 @@
                           <tr _ngcontent-jyy-c5="" class="email-header-row">
                              <th _ngcontent-jyy-c5="" class="email-header-cell email-align-center">
                                 <div _ngcontent-jyy-c5="" class="email-cell-content1">
-                                   <div _ngcontent-jyy-c5="" class="input-checkbox"><span _ngcontent-jyy-c5=""><input _ngcontent-jyy-c5="" id="ckbCheckAll" type="checkbox"></span></div>
+                                   <div _ngcontent-jyy-c5="" class="input-checkbox">
+                                      <span _ngcontent-jyy-c5="">
+                                      <input _ngcontent-jyy-c5="" id="ckbCheckAll" type="checkbox"></span>
+                                    </div>
                                 </div>
                              </th>
                              <th _ngcontent-jyy-c5="" class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
@@ -301,7 +309,8 @@
                           <tr _ngcontent-jyy-c5="" class="email-row" *ngFor = "let ips of IP">
                              <td _ngcontent-jyy-c5="" class="email-cell email-align-center">
                                 <div _ngcontent-jyy-c5="" class="email-cell-content1">
-                                   <div _ngcontent-jyy-c5="" class="input-checkbox"><span _ngcontent-jyy-c5=""><input _ngcontent-jyy-c5="" class="tablecheckbox checkBoxClass" data-item-selector="true" onclick="checkboxcheck()" type="checkbox"></span></div>
+                                   <div _ngcontent-jyy-c5="" class="input-checkbox"><span _ngcontent-jyy-c5="">
+                                      <input _ngcontent-jyy-c5="" class="tablecheckbox checkBoxClass" data-item-selector="true" onclick="checkboxcheck()" type="checkbox" (change)="deletbtn($event.target.checked,ips.Id)"></span></div>
                                 </div>
                              </td>
                              <td _ngcontent-jyy-c5="" class="email-cell">
@@ -323,7 +332,7 @@
                                  </div>
                               </div>
                            </td>
-                           <td _ngcontent-rjx-c4="" class="email-cell email-control-field email-align-center"><div _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="dropleft droptop"><a _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link" title="Open in new tab"><i _ngcontent-rjx-c4="" _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-pencil greyiconnn"></i></a><a _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" title="Open in new tab"><i _ngcontent-rjx-c4="" _ngcontent-ktw-c1="" _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-pencil-alt greyiconnn" disabled=""></i></a></div></td>
+                           <td _ngcontent-rjx-c4="" class="email-cell email-control-field email-align-center"><div _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="dropleft droptop"><a _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link" title="Open in new tab"><i _ngcontent-rjx-c4="" _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-pencil greyiconnn" (click)="edtIppopup(ips)"></i></a><a _ngcontent-rjx-c4="" _ngcontent-oov-c3="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" ><i _ngcontent-rjx-c4="" _ngcontent-ktw-c1="" _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-pencil-alt greyiconnn" disabled=""></i></a></div></td>
                           </tr>
                     
                          
