@@ -58,7 +58,8 @@ namespace SitComTech.Domain.Services
                     CurrencyId=entity.CurrencyId,
                     CurrencyName=entity.CurrencyName,
                     LeverageId=entity.LeverageId,
-                    LeverageName=entity.LeverageName
+                    LeverageName=entity.LeverageName,
+                    UserId = entity.UserId
                 };
                 _repository.Insert(tradegrp);
                 _unitOfWork.SaveChanges();
@@ -88,6 +89,7 @@ namespace SitComTech.Domain.Services
                 _tradegroup.CurrencyName = entity.CurrencyName;
                 _tradegroup.LeverageId = entity.LeverageId;
                 _tradegroup.LeverageName = entity.LeverageName;
+                _tradegroup.UserId = entity.UserId;
                 _repository.Update(_tradegroup);
                 _unitOfWork.SaveChanges();
             }

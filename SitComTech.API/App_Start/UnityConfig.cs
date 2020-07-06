@@ -49,6 +49,7 @@ namespace SitComTech.API.App_Start
             container.RegisterType<IWorkFlowService, WorkFlowService>();
             container.RegisterType<ISenderSettingService, SenderSettingService>();
             container.RegisterType<IEmailTemplateService, EmailTemplateService>();
+            container.RegisterType<IIPWhiteListService, IPWhiteListService>();
         }
     }
 }

@@ -141,6 +141,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\InstrumentController.cs" />
+    <Compile Include="Controllers\IPWhiteListController.cs" />
     <Compile Include="Controllers\OwnerTaskController.cs" />
     <Compile Include="Controllers\SenderSettingController.cs" />
     <Compile Include="Controllers\TradeGroupController.cs" />

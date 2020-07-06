@@ -79,6 +79,8 @@ namespace SitComTech.Data.Repository
                     
                     if (originalValue != currentValue)
                     {
+                        var ownerid = 0;
+                        ownerid = change.CurrentValues.PropertyNames.Contains("OwnerId") ? Convert.ToInt32(change.CurrentValues["OwnerId"]) : change.CurrentValues.PropertyNames.Contains("UserId") ? Convert.ToInt32(change.CurrentValues["UserId"]) : 0;
                         ChangeLog log = new ChangeLog()
                         {
                             EntityName = entityName,
@@ -88,9 +90,9 @@ namespace SitComTech.Data.Repository
                             NewValue = currentValue,
                             DateChanged = now,
                             ObjectState = ObjectState.Added,
-                            OwnerId= change.CurrentValues.PropertyNames.Contains("OwnerId") ?  Convert.ToInt32(change.CurrentValues["OwnerId"]) : 0
+                            OwnerId= ownerid
 
-                    };
+                        };
                         ChangeLogs.Add(log);
                         
                     }
