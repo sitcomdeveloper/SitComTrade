@@ -63,7 +63,7 @@
 
 }
 .email-grid-header {
-    background: #f5f8fc;
+    
     overflow-x: visible;
     overflow-y: visible;
     -webkit-user-select: none;
@@ -81,7 +81,7 @@ th.email-header-cell.email-header-sortable {
     background: #f5f8fc;
 }
 td.email-cell {
-    width: 29%;
+    width: 29%!important;
 }
 
 .email-pager-perpage label {
@@ -93,7 +93,10 @@ td.email-cell {
     border-color: transparent;
     font-size: 14px;
     padding: 4px 0px 4px 9px;
+}.email-row:hover {
+    background: #f2f2f2;
 }
+
 .jsgrid-pager-perpage .bootstrap-select.form-control {
     width: auto;
     padding: 0;
