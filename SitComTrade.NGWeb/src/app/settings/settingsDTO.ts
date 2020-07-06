@@ -57,5 +57,5 @@ export interface IpDTO {
   Id: '',
         IPAddress: number,
         Description: String,
-        UserId: number
+        UserId: ''
 }
