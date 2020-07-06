@@ -35,11 +35,11 @@ export class GroupsInfoComponent implements OnInit {
   detailsofinstruments: any;
   updtInstruments: InstrumentsDTO
   instrumentsdtlsbyid: number;
-  
+
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
-              private currencyService: CurrencyService, private settingsService: SettingsService, private modalService: BsModalService) { }
-              bsModalRef: BsModalRef;
+    private currencyService: CurrencyService, private settingsService: SettingsService, private modalService: BsModalService) { }
+  bsModalRef: BsModalRef;
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
       names: [''],
@@ -90,55 +90,55 @@ export class GroupsInfoComponent implements OnInit {
     });
     // for getting data for general-info
     const val = +this.route.snapshot.paramMap.get('publicid');
-    if(val === 1) {
-    this.groupinfo = true;
+    if (val === 1) {
+      this.groupinfo = true;
       this.instrumetinfo = false;
       const info = +this.route.snapshot.paramMap.get('setItem');
       this.groupid = info;
-    // console.log(info);
-    this.groupService.getGroupDetails(info).subscribe(res => {
-      this.groupDetails = res;
-      // console.log('groupDetails', res);
-      this.groupsinfoForm.patchValue({
-        names: this.groupDetails.Name,
-        initialdeposit: this.groupDetails.InitialDeposit,
-        margincall: this.groupDetails.MarginCall,
-        ordercount: this.groupDetails.OrderCount,
-        currency: this.groupDetails.CurrencyName,
-        demo: this.groupDetails.Demo,
-        stopout: this.groupDetails.StopOut,
-        allowtrade: this.groupDetails.AllowTrade,
-      description: this.groupDetails.Description,
-      leverage: this.groupDetails.LeverageName,
-      mindeposit: this.groupDetails.MinDeposit
+      // console.log(info);
+      this.groupService.getGroupDetails(info).subscribe(res => {
+        this.groupDetails = res;
+        // console.log('groupDetails', res);
+        this.groupsinfoForm.patchValue({
+          names: this.groupDetails.Name,
+          initialdeposit: this.groupDetails.InitialDeposit,
+          margincall: this.groupDetails.MarginCall,
+          ordercount: this.groupDetails.OrderCount,
+          currency: this.groupDetails.CurrencyName,
+          demo: this.groupDetails.Demo,
+          stopout: this.groupDetails.StopOut,
+          allowtrade: this.groupDetails.AllowTrade,
+          description: this.groupDetails.Description,
+          leverage: this.groupDetails.LeverageName,
+          mindeposit: this.groupDetails.MinDeposit
 
-    });
-    });
-    }  
+        });
+      });
+    }
     else {
       const instrumentsdetails = +this.route.snapshot.paramMap.get('setItem');
       this.instrumentsdtlsbyid = instrumentsdetails;
-        this.instrumetinfo = true;
-        this.groupinfo = false;
-        this.settingsService.getintrumentsId(instrumentsdetails).subscribe(getinstrmntsdtls => {
-          this.detailsofinstruments = getinstrmntsdtls;
-          this.groupsinfoForm.patchValue({
-            name: this.detailsofinstruments.Name,
-        displayname: this.detailsofinstruments.DisplayName,
-        groupname: this.detailsofinstruments.GroupName,
-        spreadtype: this.detailsofinstruments.SpreadType,
-        spreadbid: this.detailsofinstruments.SpreadBid,
-        tradeforbidden: this.detailsofinstruments.IsTradeForbidden,
-        contractsize: this.detailsofinstruments.ContractSize,
-        leveragename: this.detailsofinstruments.LeverageName,
-        profitcurrency: this.detailsofinstruments.ProfitCurrency,
-        symbolgroup: this.detailsofinstruments.SymbolGroup,
-        gaplevel: this.detailsofinstruments.GapLevel,
-        tradinghoursid: this.detailsofinstruments.TradingHoursId,
-        units: this.detailsofinstruments.Units,
-          })
-          console.log('detailsofinstruments',getinstrmntsdtls);
+      this.instrumetinfo = true;
+      this.groupinfo = false;
+      this.settingsService.getintrumentsId(instrumentsdetails).subscribe(getinstrmntsdtls => {
+        this.detailsofinstruments = getinstrmntsdtls;
+        this.groupsinfoForm.patchValue({
+          name: this.detailsofinstruments.Name,
+          displayname: this.detailsofinstruments.DisplayName,
+          groupname: this.detailsofinstruments.GroupName,
+          spreadtype: this.detailsofinstruments.SpreadType,
+          spreadbid: this.detailsofinstruments.SpreadBid,
+          tradeforbidden: this.detailsofinstruments.IsTradeForbidden,
+          contractsize: this.detailsofinstruments.ContractSize,
+          leveragename: this.detailsofinstruments.LeverageName,
+          profitcurrency: this.detailsofinstruments.ProfitCurrency,
+          symbolgroup: this.detailsofinstruments.SymbolGroup,
+          gaplevel: this.detailsofinstruments.GapLevel,
+          tradinghoursid: this.detailsofinstruments.TradingHoursId,
+          units: this.detailsofinstruments.Units,
         })
+        console.log('detailsofinstruments', getinstrmntsdtls);
+      })
     }
     this.currency();
     this.getLeverages();
@@ -164,16 +164,16 @@ export class GroupsInfoComponent implements OnInit {
       this.Group = result.reverse();
       // console.log('getGroup', result);
     });
-   }
+  }
   // updateGroupDetails
   updateGroupDetails() {
     this.getAllCurrency.forEach(element => {
-      if ( element.Id === +this.groupsinfoForm.value.currency) {
+      if (element.Id === +this.groupsinfoForm.value.currency) {
         this.groupsinfoForm.value.currencyid = element.Name;
       }
     });
     this.Leverage.forEach(element => {
-      if ( element.Id === +this.groupsinfoForm.value.leverage) {
+      if (element.Id === +this.groupsinfoForm.value.leverage) {
         this.groupsinfoForm.value.leverageid = element.Name;
       }
     });
@@ -191,70 +191,83 @@ export class GroupsInfoComponent implements OnInit {
       CurrencyId: this.groupsinfoForm.value.currency,
       CurrencyName: this.groupsinfoForm.value.currencyid,
       LeverageId: this.groupsinfoForm.value.leverage,
-      LeverageName: this.groupsinfoForm.value.leverageid
+      LeverageName: this.groupsinfoForm.value.leverageid,
+      UserId: this.groupDetails.UserId
     };
     this.groupService.updateGroup(obj).subscribe(res => {
-  this.updatedDetails = res;
-  this.updateshowonPage();
-  this.frontend = true;
-  this.backend = false;
+      this.updatedDetails = res;
+      this.updateshowonPage();
+      this.frontend = true;
+      this.backend = false;
 
-  this.spinnerService.show();
-  // console.log('updatedDetails', res);
-});
+      this.spinnerService.show();
+      // console.log('updatedDetails', res);
+    });
   }
   // after update again call the method for refresh the details on groups-info page.same API call
   // which take data from groups pg. to groups-info pg.
-updateshowonPage() {
-  this.groupService.getGroupDetails(this.groupid).subscribe(res => {
-    this.groupDetails = res;
-  });
-}
-// get Leverages
-getLeverages() {
-  this.groupService.getAllLverages().subscribe(rspnse => {
-    this.Leverage = rspnse;
-  });
-}
-// updt instruments
-uptInstruments() {
-  this.updtInstruments = {
-    Id: this.detailsofinstruments.Id,
-    Name: this.groupsinfoForm.value.name,
-    DisplayName: this.groupsinfoForm.value.displayname,
-    GroupId: 1,
-    GroupName: this.groupsinfoForm.value.groupname,
-    SpreadType: this.groupsinfoForm.value.spreadtype,
-    SpreadBid: this.groupsinfoForm.value.spreadbid,
-    IsTradeForbidden: this.groupsinfoForm.value.tradeforbidden,
-    ContractSize: this.groupsinfoForm.value.contractsize,
-    LeverageId: 1,
-    LeverageName: this.groupsinfoForm.value.leveragename,
-    ProfitCurrency: this.groupsinfoForm.value.profitcurrency,
-    SymbolGroup: this.groupsinfoForm.value.symbolgroup,
-    GapLevel: this.groupsinfoForm.value.gaplevel,
-    TradingHoursId: this.groupsinfoForm.value.tradinghoursid,
-    Units: this.groupsinfoForm.value.units,
+  updateshowonPage() {
+    this.groupService.getGroupDetails(this.groupid).subscribe(res => {
+      this.groupDetails = res;
+    });
   }
-  this.settingsService.edtInstruments(this.updtInstruments).subscribe(updtdinstrumnts => {
-    this.afterupdateInstruments();
-    this.frontend = true;
-  this.backend = false;
-  })
-}
-afterupdateInstruments() {
-  this.settingsService.getintrumentsId(this.instrumentsdtlsbyid).subscribe(getinstrmntsdtls => {
-    this.detailsofinstruments = getinstrmntsdtls;
-});
-}
-// view history popup
-groupsViewHistorypopup() {
-  const initialState = {
-    title: 'View History',
-    grpviewhistry: 'grpviewhistry'
-  };
-  // tslint:disable-next-line: max-line-length
-  this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({ show: true }, { class: 'modal930', initialState }));
-  this.bsModalRef.content.closeBtnName = 'Cancel';
-}
+  // get Leverages
+  getLeverages() {
+    this.groupService.getAllLverages().subscribe(rspnse => {
+      this.Leverage = rspnse;
+    });
+  }
+  // updt instruments
+  uptInstruments() {
+    this.updtInstruments = {
+      UserId: this.detailsofinstruments.UserId,
+      Id: this.detailsofinstruments.Id,
+      Name: this.groupsinfoForm.value.name,
+      DisplayName: this.groupsinfoForm.value.displayname,
+      GroupId: 1,
+      GroupName: this.groupsinfoForm.value.groupname,
+      SpreadType: this.groupsinfoForm.value.spreadtype,
+      SpreadBid: this.groupsinfoForm.value.spreadbid,
+      IsTradeForbidden: this.groupsinfoForm.value.tradeforbidden,
+      ContractSize: this.groupsinfoForm.value.contractsize,
+      LeverageId: 1,
+      LeverageName: this.groupsinfoForm.value.leveragename,
+      ProfitCurrency: this.groupsinfoForm.value.profitcurrency,
+      SymbolGroup: this.groupsinfoForm.value.symbolgroup,
+      GapLevel: this.groupsinfoForm.value.gaplevel,
+      TradingHoursId: this.groupsinfoForm.value.tradinghoursid,
+      Units: this.groupsinfoForm.value.units,
+
+    }
+    this.settingsService.edtInstruments(this.updtInstruments).subscribe(updtdinstrumnts => {
+      this.afterupdateInstruments();
+      this.frontend = true;
+      this.backend = false;
+    })
+  }
+  afterupdateInstruments() {
+    this.settingsService.getintrumentsId(this.instrumentsdtlsbyid).subscribe(getinstrmntsdtls => {
+      this.detailsofinstruments = getinstrmntsdtls;
+    });
+  }
+  // group view history popup
+  groupsViewHistorypopup() {
+    const initialState = {
+      title: 'View History',
+      grpviewhistry: 'grpviewhistry'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({ show: true }, { class: 'modal1250', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
+  // instruments view history popup
+  instrumentsViewHistorypopup() {
+    const initialState = {
+      title: 'View History',
+      instrmntsviewhistry: 'instrmntsviewhistry'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({ show: true }, { class: 'modal1250', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
 }
