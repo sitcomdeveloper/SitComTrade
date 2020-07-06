@@ -20,10 +20,24 @@ export class CreateItemComponent implements OnInit {
   submitted = false;
   title: any;
   Leverage: any;
+  createGroups = false;
+  viewhistoryGroups = false;
+  newgroup: string;
+  grpviewhistry: string;
     constructor(private bsmodal: BsModalRef, private currencyService: CurrencyService, private groupService: GroupsService,
                 private fb: FormBuilder, private groupsService: GroupsService) { }
 
   ngOnInit() {
+    if(this.newgroup === 'newgroup') {
+      this.createGroups = true;
+    } else {
+      this.createGroups = false;
+    }
+    if(this.grpviewhistry === 'grpviewhistry') {
+      this.viewhistoryGroups = true;
+    } else {
+      this.viewhistoryGroups = false;
+    }
     this.newGroupForm = this.fb.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],

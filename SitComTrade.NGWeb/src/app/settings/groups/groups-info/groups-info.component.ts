@@ -6,6 +6,8 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { CurrencyService } from 'src/app/services/currency.service';
 import { SettingsService } from '../../settings.service';
 import { InstrumentsDTO } from '../../settingsDTO';
+import { CreateItemComponent } from '../create-item/create-item.component';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-groups-info',
@@ -36,8 +38,8 @@ export class GroupsInfoComponent implements OnInit {
   
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
-              private currencyService: CurrencyService, private settingsService: SettingsService) { }
-
+              private currencyService: CurrencyService, private settingsService: SettingsService, private modalService: BsModalService) { }
+              bsModalRef: BsModalRef;
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
       names: [''],
@@ -244,4 +246,15 @@ afterupdateInstruments() {
   this.settingsService.getintrumentsId(this.instrumentsdtlsbyid).subscribe(getinstrmntsdtls => {
     this.detailsofinstruments = getinstrmntsdtls;
 });
-}}
+}
+// view history popup
+groupsViewHistorypopup() {
+  const initialState = {
+    title: 'View History',
+    grpviewhistry: 'grpviewhistry'
+  };
+  // tslint:disable-next-line: max-line-length
+  this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({ show: true }, { class: 'modal930', initialState }));
+  this.bsModalRef.content.closeBtnName = 'Cancel';
+}
+}
