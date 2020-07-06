@@ -27,12 +27,15 @@
                     <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
                        <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="input-group selecticon grpselect">
                           <select _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
-                             <option _ngcontent-jyy-c5="" _ngcontent-boj-c6="">Groups</option>
+                             <option _ngcontent-jyy-c5="" _ngcontent-boj-c6="">IP WHITE LIST</option>
                           </select>
                           <span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="disabled-button" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
                        </div>
                     </div>
-                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" disabled="true"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a><a _ngcontent-jyy-c5="" class="brdr-right disabled" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" href="javascript:void(0)" class="disabled"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg"></i></a></div>
+                    <div _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" disabled="true"><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#">
+                       
+                     </a>
+                       <a _ngcontent-jyy-c5="" class="brdr-right disabled" href="javascript:void(0)"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a><a _ngcontent-jyy-c5="" _ngcontent-boj-c6="" href="javascript:void(0)" class="disabled"><i _ngcontent-jyy-c5="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg"></i></a></div>
                  </div>
               </div>
            </div>
@@ -42,21 +45,23 @@
   <div _ngcontent-jyy-c5="" class="main-holder">
      <div _ngcontent-jyy-c5="" id="content">
        <div class="ip-header">
+          <form [formGroup]="IPForm">
         <div class="input-icons"> 
           <span>
           <!-- <i class="fa fa-globe icon"></i>  -->
-          <input class="input-field" type="text" placeholder="&#xf0ac; Write ip here..." style="font-family:Arial, FontAwesome"> 
+          <input class="input-field" type="text" placeholder="&#xf0ac; Write ip here..." style="font-family:Arial, FontAwesome" formControlName="ip" > 
           </span>
           <span>
           <!-- <i class="fa fa-file icon"></i>  -->
-          <input class="input-field" type="text" placeholder="&#xf016; Write description here.."  style="font-family:Arial, FontAwesome"> 
+          <input class="input-field" type="text" placeholder="&#xf016; Write description here.."  style="font-family:Arial, FontAwesome" formControlName="description" > 
           </span>
           <span>
             <span _ngcontent-peo-c5="" _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
-               <a _ngcontent-peo-c5="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">ADD</a>
+               <a _ngcontent-peo-c5="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="createnewIP()">ADD</a>
                </span>
           </span>
       </div> 
+   </form>
        </div>
         <div _ngcontent-jyy-c5="" class="tab-content main-tabs-content">
            <div _ngcontent-jyy-c5="" class="tab-pane active fade in" id="filter" role="tabpanel"></div>
@@ -293,10 +298,7 @@
                  <div _ngcontent-jyy-c5="" class="email-grid-body jsgrid-grid-body">
                     <table _ngcontent-jyy-c5="" class="email-table table-striped">
                        <tbody _ngcontent-jyy-c5="">
-                          <!--bindings={
-                             "ng-reflect-ng-for-of": "[object Object],[object Object"
-                             }-->
-                          <tr _ngcontent-jyy-c5="" class="email-row">
+                          <tr _ngcontent-jyy-c5="" class="email-row" *ngFor = "let ips of IP">
                              <td _ngcontent-jyy-c5="" class="email-cell email-align-center">
                                 <div _ngcontent-jyy-c5="" class="email-cell-content1">
                                    <div _ngcontent-jyy-c5="" class="input-checkbox"><span _ngcontent-jyy-c5=""><input _ngcontent-jyy-c5="" class="tablecheckbox checkBoxClass" data-item-selector="true" onclick="checkboxcheck()" type="checkbox"></span></div>
@@ -304,20 +306,20 @@
                              </td>
                              <td _ngcontent-jyy-c5="" class="email-cell">
                                 <div _ngcontent-jyy-c5="" class="email-cell-content">
-                                   <div _ngcontent-jyy-c5="" class="text-ellipsis" data-original-title="" title=""><a _ngcontent-jyy-c5="" href="javascript:void(0);"><span _ngcontent-jyy-c5="">Group232</span></a></div>
+                                   <div _ngcontent-jyy-c5="" class="text-ellipsis" data-original-title="" title=""> <span _ngcontent-jyy-c5="">{{ips?.IPAddress}}</span></div>
                                 </div>
                              </td>
                              <td _ngcontent-jyy-c5="" class="email-cell">
                                 <div _ngcontent-jyy-c5="" class="email-cell-content">
                                    <div _ngcontent-jyy-c5="" data-display-for="10_Description">
-                                      <div _ngcontent-jyy-c5="" class="text-ellipsis" data-field="Description" data-original-title="" data-original-value="TradePro Markets Limited USD" title="">23</div>
+                                      <div _ngcontent-jyy-c5="" class="text-ellipsis" data-field="Description" data-original-title="" data-original-value="TradePro Markets Limited USD" title="">{{ips?.Description}}</div>
                                    </div>
                                 </div>
                              </td>
                              <td _ngcontent-jyy-c5="" class="email-cell">
                               <div _ngcontent-jyy-c5="" class="email-cell-content">
                                  <div _ngcontent-jyy-c5="" data-display-for="10_Description">
-                                    <div _ngcontent-jyy-c5="" class="text-ellipsis" data-field="Description" data-original-title="" data-original-value="TradePro Markets Limited USD" title="">23</div>
+                                    <div _ngcontent-jyy-c5="" class="text-ellipsis" data-field="Description" data-original-title="" data-original-value="TradePro Markets Limited USD" title="">{{ips?.CreatedAt}}</div>
                                  </div>
                               </div>
                            </td>
