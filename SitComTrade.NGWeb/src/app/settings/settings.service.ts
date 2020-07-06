@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Workflows, InstrumentsDTO, SenderEmailDTO, EmailTemplatesDTO } from './settingsDTO';
+import { Workflows, InstrumentsDTO, SenderEmailDTO, EmailTemplatesDTO, IpDTO } from './settingsDTO';
 
 const API_URL = environment.API_URL;
 
@@ -128,5 +128,16 @@ crtWorkflow(addwrkflw: Workflows): Observable<Workflows> {
 // edt workflow
 edtWorkflow(updtWorkflw: Workflows): Observable<Workflows> {
   return this.http.post<Workflows>(API_URL + 'WorkFlow/UpdateWorkFlow', updtWorkflw);
+}
+// get all IP
+getIP(getallIp: any): Observable<any> {
+  return this.http.post<any>(API_URL + 'IPWhiteList/GetAllIPWhiteLists', getallIp);
+}
+// crt IP
+crtIp(crtnewIp: IpDTO): Observable<IpDTO> {
+  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/InsertIPWhiteList', crtnewIp);
+}
+updtIp(updateIP: IpDTO): Observable<IpDTO> {
+  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/InsertIPWhiteList', updateIP);
 }
 }

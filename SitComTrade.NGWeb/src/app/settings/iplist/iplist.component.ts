@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../settings.service';
 
 @Component({
   selector: 'app-iplist',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./iplist.component.css']
 })
 export class IplistComponent implements OnInit {
+  getallIp: any;
+  IP: any;
 
-  constructor() { }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit() {
+    this.getallIPs();
   }
-
+getallIPs() {
+  this.settingsService.getIP(this.getallIp).subscribe(fetchIp => {
+    this.IP = fetchIp;
+    console.log('IP',fetchIp);
+  })
+}
 }

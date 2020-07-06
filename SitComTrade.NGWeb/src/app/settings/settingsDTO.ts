@@ -52,3 +52,10 @@ IsPublic: boolean;
 Template: '';
 UserId: ''
 }
+
+export interface IpDTO {
+  Id: '',
+        IPAddress: number,
+        Description: String,
+        UserId: number
+}
