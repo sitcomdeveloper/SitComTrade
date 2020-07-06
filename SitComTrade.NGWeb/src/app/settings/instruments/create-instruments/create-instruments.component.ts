@@ -24,9 +24,15 @@ export class CreateInstrumentsComponent implements OnInit {
   selectedrowdta: any;
   addInstruments: InstrumentsDTO;
   updtInstruments: InstrumentsDTO
+  getLoginDetails: any;
+  bindLoginData: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
+     // code for receiving login details and bind to header at place of name
+     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+     this.bindLoginData = this.getLoginDetails; 
+     
     this.InstrumentsForm = this.fb.group({
       name: [],
       displayname: [],
@@ -72,6 +78,7 @@ export class CreateInstrumentsComponent implements OnInit {
   // crt instruments
   createInstruments() {
     this.addInstruments = {
+      UserId: this.bindLoginData.UserId,
       Id: '',
       Name: this.InstrumentsForm.value.name,
       DisplayName: this.InstrumentsForm.value.displayname,
@@ -100,6 +107,7 @@ export class CreateInstrumentsComponent implements OnInit {
   // updt instruments
   uptInstruments() {
     this.updtInstruments = {
+      UserId: this.selectedrowdta.UserId,
       Id: this.selectedrowdta.Id,
       Name: this.InstrumentsForm.value.name,
       DisplayName: this.InstrumentsForm.value.displayname,

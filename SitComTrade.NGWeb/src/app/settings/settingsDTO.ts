@@ -10,6 +10,7 @@ export interface Workflows {
 }
 
 export interface InstrumentsDTO {
+  UserId:'',
   Id: '';
   Name: String;
 DisplayName: String;

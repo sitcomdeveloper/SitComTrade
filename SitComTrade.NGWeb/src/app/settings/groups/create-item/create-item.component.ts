@@ -3,6 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { CurrencyService } from 'src/app/services/currency.service';
 import { GroupsService } from '../groups.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 
 @Component({
   selector: 'app-create-item',
@@ -24,10 +25,19 @@ export class CreateItemComponent implements OnInit {
   viewhistoryGroups = false;
   newgroup: string;
   grpviewhistry: string;
+  gtviewhist: any;
+  getLoginDetails: any;
+  bindLoginData: any;
+  instrmntsviewhistry: string;
+  viewhistoryInstruments = false;
     constructor(private bsmodal: BsModalRef, private currencyService: CurrencyService, private groupService: GroupsService,
-                private fb: FormBuilder, private groupsService: GroupsService) { }
+                private fb: FormBuilder, private groupsService: GroupsService, private generalinfoservice: GeneralInfoService) { }
 
   ngOnInit() {
+     // code for receiving login details and bind to header at place of name
+     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+     this.bindLoginData = this.getLoginDetails; 
+     
     if(this.newgroup === 'newgroup') {
       this.createGroups = true;
     } else {
@@ -35,8 +45,21 @@ export class CreateItemComponent implements OnInit {
     }
     if(this.grpviewhistry === 'grpviewhistry') {
       this.viewhistoryGroups = true;
+      this.generalinfoservice.getviewhistory(this.bindLoginData.UserId).subscribe(res => {
+        this.gtviewhist = res;
+        // console.log('gtviewhist',res);
+      });
     } else {
       this.viewhistoryGroups = false;
+    }
+    if(this.instrmntsviewhistry === 'instrmntsviewhistry') {
+      this.viewhistoryInstruments = true;
+      this.generalinfoservice.getviewhistory(this.bindLoginData.UserId).subscribe(res => {
+        this.gtviewhist = res;
+        // console.log('gtviewhist',res);
+      });
+    } else {
+      this.viewhistoryInstruments = false;
     }
     this.newGroupForm = this.fb.group({
       name: ['', [Validators.required]],
@@ -96,7 +119,8 @@ export class CreateItemComponent implements OnInit {
       // currency name
       CurrencyName: this.newGroupForm.value.currencyid,
       LeverageId: this.newGroupForm.value.leveragename,
-      LeverageName: this.newGroupForm.value.leverageid
+      LeverageName: this.newGroupForm.value.leverageid,
+      UserId: this.bindLoginData.UserId
 
     };
     this.groupService.addTradeGroups(obj).subscribe(res => {
@@ -124,7 +148,7 @@ export class CreateItemComponent implements OnInit {
 getLeverages() {
   this.groupsService.getAllLverages().subscribe(rspnse => {
     this.Leverage = rspnse;
-    console.log('Leverage', rspnse);
+    // console.log('Leverage', rspnse);
   });
 }
 

@@ -41,7 +41,7 @@ export class GroupsComponent implements OnInit {
     this.Group = result.reverse();
     this.spinnerService.hide();
     this.GroupLength = this.Group.length;
-    console.log('getGroup', result);
+    // console.log('getGroup', result);
   }, 5000);
   });
 
@@ -60,7 +60,7 @@ export class GroupsComponent implements OnInit {
     newgroup: 'newgroup'
   };
   // tslint:disable-next-line: max-line-length
-  this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
+  this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({  show: true }, { class: 'modal930', initialState }));
   this.bsModalRef.content.closeBtnName = 'Cancel';
   this.bsModalRef.content.clddata.subscribe(data => {
     this.getGroups();
