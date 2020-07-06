@@ -57,6 +57,7 @@ export class GroupsComponent implements OnInit {
  newGroup() {
   const initialState = {
     title: 'Create Item',
+    newgroup: 'newgroup'
   };
   // tslint:disable-next-line: max-line-length
   this.bsModalRef = this.modalService.show(CreateItemComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal930', initialState }));
