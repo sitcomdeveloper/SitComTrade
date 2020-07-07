@@ -88,11 +88,11 @@ export class LoginComponent implements OnInit {
   authUser() {
     let model = "UserName=" +this.loginForm.value.email + "&Password=" +this.loginForm.value.password + '&grant_type=password';
     this.spinnerService.show();
+    setTimeout(() => {
     this.loginservice.authuser(model).subscribe( data => {
         if (data) {  
           window.sessionStorage.setItem('userToken', data.access_token);
           window.sessionStorage.setItem('username', JSON.stringify(data));
-          
         this.router.navigateByUrl('clients');
         console.log('testing',data);
         } else {
@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
       err => {
         alert('Error');
       });
-
+    },);
   }
   resetpwd() {
      const obj = this.resetForm.value.email;
