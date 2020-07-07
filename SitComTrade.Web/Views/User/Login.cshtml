@@ -597,8 +597,21 @@
         //    UserId: ko.observable(3)
           
         //};
+         UserVM.Selectedips = ko.observableArray([
+            11,12
+        ]);
 
         $(document).ready(function () {
+              $.ajax({
+                type: 'Post',
+                  url: apiURl + "api/IPWhiteList/DeleteMultipleIPWhiteList",
+                contentType: 'application/json',
+                processData: false,
+                  data: ko.toJSON(UserVM.Selectedips),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             // $.ajax({
             //    type: 'Post',
             //     url: apiURl + "api/IPWhiteList/GetAllIPWhiteLists",
@@ -786,16 +799,16 @@
             //        alert(result);
             //    }
             //});
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Instrument/UpdateInstrument",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.EditInstrument),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Instrument/UpdateInstrument",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditInstrument),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Instrument/InsertInstrument",
