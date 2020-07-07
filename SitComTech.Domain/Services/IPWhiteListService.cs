@@ -81,17 +81,18 @@ namespace SitComTech.Domain.Services
             _repository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
-
-        public bool DeleteIPWhiteListById(long IPWhiteListId)
+        public bool DeleteMultipleIPWhiteList(List<long> groupIds)
         {
             try
             {
-                if (IPWhiteListId != 0)
+                if (groupIds != null && groupIds.Count > 0)
                 {
 
-                    IPWhiteList _IPWhiteList = base.Queryable().Where(x => x.Active && !x.Deleted && x.Id == IPWhiteListId).FirstOrDefault();
-                    if (_IPWhiteList != null)
-                        DeleteIPWhiteList(_IPWhiteList);
+                    List<IPWhiteList> groups = base.Queryable().Where(x => x.Active && !x.Deleted && groupIds.Contains(x.Id)).ToList();
+                    foreach (var grp in groups)
+                    {
+                        DeleteIPWhiteList(grp);
+                    }
                 }
                 return true;
             }
