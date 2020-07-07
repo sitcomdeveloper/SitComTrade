@@ -27,7 +27,26 @@ SymbolGroup: String;
 GapLevel: number;
 TradingHoursId: String;
 Units: number;
-// MarginCurrency: String;
+
+MarginCurrency: String;
+Description: String;
+SpreadAsk: number;
+MaximalVolume: number;
+VolumeStep: number;
+MinimalVolume: number;
+MarginHedge: number;
+SwapLong: number;
+SwapShort: number;
+StopLevel: number;
+Digits: number;
+CalculationMode: String;
+Commission: number;
+SwapType: String;
+ThreeDaysSwap: String;
+CommissionCurrency: String;
+Hidden: boolean;
+ExpirationDate: '';
+IsDisabled: boolean
 }
 
 export interface SenderEmailDTO {

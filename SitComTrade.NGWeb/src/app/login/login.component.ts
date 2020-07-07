@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from './login.service';
-
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   getPassword: any;
   resetForm: FormGroup;
   ResetPWdResponse: any;
-  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private loginservice: LoginService, private spinnerService: Ng4LoadingSpinnerService) {
   }
 
   ngOnInit() {
@@ -87,11 +87,12 @@ export class LoginComponent implements OnInit {
   // }
   authUser() {
     let model = "UserName=" +this.loginForm.value.email + "&Password=" +this.loginForm.value.password + '&grant_type=password';
+    this.spinnerService.show();
     this.loginservice.authuser(model).subscribe( data => {
-        if (data) {
+        if (data) {  
           window.sessionStorage.setItem('userToken', data.access_token);
           window.sessionStorage.setItem('username', JSON.stringify(data));
-        // console.log('setToken', data.access_token)
+          
         this.router.navigateByUrl('clients');
         console.log('testing',data);
         } else {
