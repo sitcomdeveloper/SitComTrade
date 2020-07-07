@@ -14,13 +14,13 @@ export interface InstrumentsDTO {
   Id: '';
   Name: String;
 DisplayName: String;
-GroupId: number;
+GroupId: '';
 GroupName: String
 SpreadType: String;
 SpreadBid: number;
 IsTradeForbidden: boolean;
 ContractSize: number;
-LeverageId: number
+LeverageId: ''
 LeverageName: String;
 ProfitCurrency: String;
 SymbolGroup: String;
