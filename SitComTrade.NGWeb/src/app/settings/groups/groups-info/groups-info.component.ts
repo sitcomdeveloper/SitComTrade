@@ -85,7 +85,7 @@ export class GroupsInfoComponent implements OnInit {
       units: [''],
       tradinghoursid: [''],
       expirationdate: [''],
-      isdisabled: [''],
+      disabled: [''],
       leveragename: ['']
     });
     // for getting data for general-info
@@ -243,13 +243,13 @@ export class GroupsInfoComponent implements OnInit {
       Id: this.detailsofinstruments.Id,
       Name: this.groupsinfoForm.value.name,
       DisplayName: this.groupsinfoForm.value.displayname,
-      GroupId: 1,
+      GroupId: '',
       GroupName: this.groupsinfoForm.value.groupname,
       SpreadType: this.groupsinfoForm.value.spreadtype,
       SpreadBid: this.groupsinfoForm.value.spreadbid,
       IsTradeForbidden: this.groupsinfoForm.value.tradeforbidden,
       ContractSize: this.groupsinfoForm.value.contractsize,
-      LeverageId: 1,
+      LeverageId: '',
       LeverageName: this.groupsinfoForm.value.leveragename,
       ProfitCurrency: this.groupsinfoForm.value.profitcurrency,
       SymbolGroup: this.groupsinfoForm.value.symbolgroup,
