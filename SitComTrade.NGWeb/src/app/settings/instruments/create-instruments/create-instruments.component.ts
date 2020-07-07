@@ -29,25 +29,45 @@ export class CreateInstrumentsComponent implements OnInit {
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
-     // code for receiving login details and bind to header at place of name
-     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
-     this.bindLoginData = this.getLoginDetails; 
-     
+    // code for receiving login details and bind to header at place of name
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    this.bindLoginData = this.getLoginDetails;
+
     this.InstrumentsForm = this.fb.group({
-      name: [],
-      displayname: [],
-      groupname: [],
-      spreadtype: [],
-      spreadbid: [],
-      tradeforbidden: [],
-      contractsize: [],
-      leveragename: [],
-      profitcurrency: [],
-      symbolgroup: [],
-      gaplevel: [],
-      tradinghoursid: [],
-      units: [],
-      margincurrency: []
+      name: [''],
+      displayname: [''],
+      groupname: [''],
+      spreadtype: [''],
+      spreadbid: [''],
+      tradeforbidden: [''],
+      contractsize: [''],
+      leveragename: [''],
+      profitcurrency: [''],
+      symbolgroup: [''],
+      gaplevel: [''],
+      tradinghoursid: [''],
+      units: [''],
+
+      margincurrency: [''],
+      description: [''],
+      spreadask: [''],
+      maximalvolume: [''],
+      volumestep: [''],
+      minimalvolume: [''],
+      marginhedge: [''],
+      swaplong: [''],
+      swapshort: [''],
+      stoplevel: [''],
+      digits: [''],
+      calculationmode: [''],
+      commission: [''],
+      swaptype: [''],
+      threedaysswap: [''],
+      commissioncurrency: [''],
+      hidden: [''],
+      expirationdate: [''],
+      disabled: [''],
+
     })
     if (this.crtinstrumnts === 'crtinstrumnts') {
       this.createinstruments = true;
@@ -70,10 +90,29 @@ export class CreateInstrumentsComponent implements OnInit {
         gaplevel: this.selectedrowdta.GapLevel,
         tradinghoursid: this.selectedrowdta.TradingHoursId,
         units: this.selectedrowdta.Units,
+        margincurrency: this.selectedrowdta.MarginCurrency,
+        description: this.selectedrowdta.Description,
+        spreadask: this.selectedrowdta.SpreadAsk,
+        maximalvolume: this.selectedrowdta.MaximalVolume,
+        volumestep: this.selectedrowdta.VolumeStep,
+        minimalvolume: this.selectedrowdta.MinimalVolume,
+        marginhedge: this.selectedrowdta.MarginHedge,
+        swaplong: this.selectedrowdta.SwapLong,
+        swapshort: this.selectedrowdta.SwapShort,
+        stoplevel: this.selectedrowdta.StopLevel,
+        digits: this.selectedrowdta.Digits,
+        calculationmode: this.selectedrowdta.CalculationMode,
+        commission: this.selectedrowdta.Commission,
+        swaptype: this.selectedrowdta.SwapType,
+        threedaysswap: this.selectedrowdta.ThreeDaysSwap,
+        commissioncurrency: this.selectedrowdta.CommissionCurrency,
+        hidden: this.selectedrowdta.Hidden,
+        expirationdate: this.selectedrowdta.ExpirationDate,
+        disabled: this.selectedrowdta.IsDisabled,
       })
     } else {
       this.editinsstrumnts = false;
-    } 
+    }
   }
   // crt instruments
   createInstruments() {
@@ -95,7 +134,25 @@ export class CreateInstrumentsComponent implements OnInit {
       GapLevel: this.InstrumentsForm.value.gaplevel,
       TradingHoursId: this.InstrumentsForm.value.tradinghoursid,
       Units: this.InstrumentsForm.value.units,
-      // MarginCurrency: this.InstrumentsForm.value.margincurrency
+      MarginCurrency: this.InstrumentsForm.value.margincurrency,
+      Description: this.InstrumentsForm.value.description,
+      SpreadAsk: this.InstrumentsForm.value.spreadask,
+      MaximalVolume: this.InstrumentsForm.value.maximalvolume,
+      VolumeStep: this.InstrumentsForm.value.volumestep,
+      MinimalVolume: this.InstrumentsForm.value.minimalvolume,
+      MarginHedge: this.InstrumentsForm.value.marginhedge,
+      SwapLong: this.InstrumentsForm.value.swaplong,
+      SwapShort: this.InstrumentsForm.value.swapshort,
+      StopLevel: this.InstrumentsForm.value.stoplevel,
+      Digits: this.InstrumentsForm.value.digits,
+      CalculationMode: this.InstrumentsForm.value.calculationmode,
+      Commission: this.InstrumentsForm.value.commission,
+      SwapType: this.InstrumentsForm.value.swaptype,
+      ThreeDaysSwap: this.InstrumentsForm.value.threedaysswap,
+      CommissionCurrency: this.InstrumentsForm.value.commissioncurrency,
+      Hidden: this.InstrumentsForm.value.hidden,
+      ExpirationDate: this.InstrumentsForm.value.expirationdate,
+      IsDisabled: this.InstrumentsForm.value.disabled,
     }
     this.settingsService.crtInstruments(this.addInstruments).subscribe(addinstrmnts => {
       this.Instruments = addinstrmnts;
@@ -124,6 +181,25 @@ export class CreateInstrumentsComponent implements OnInit {
       GapLevel: this.InstrumentsForm.value.gaplevel,
       TradingHoursId: this.InstrumentsForm.value.tradinghoursid,
       Units: this.InstrumentsForm.value.units,
+      MarginCurrency: this.InstrumentsForm.value.margincurrency,
+      Description: this.InstrumentsForm.value.description,
+      SpreadAsk: this.InstrumentsForm.value.spreadask,
+      MaximalVolume: this.InstrumentsForm.value.maximalvolume,
+      VolumeStep: this.InstrumentsForm.value.volumestep,
+      MinimalVolume: this.InstrumentsForm.value.minimalvolume,
+      MarginHedge: this.InstrumentsForm.value.marginhedge,
+      SwapLong: this.InstrumentsForm.value.swaplong,
+      SwapShort: this.InstrumentsForm.value.swapshort,
+      StopLevel: this.InstrumentsForm.value.stoplevel,
+      Digits: this.InstrumentsForm.value.digits,
+      CalculationMode: this.InstrumentsForm.value.calculationmode,
+      Commission: this.InstrumentsForm.value.commission,
+      SwapType: this.InstrumentsForm.value.swaptype,
+      ThreeDaysSwap: this.InstrumentsForm.value.threedaysswap,
+      CommissionCurrency: this.InstrumentsForm.value.commissioncurrency,
+      Hidden: this.InstrumentsForm.value.hidden,
+      ExpirationDate: this.InstrumentsForm.value.expirationdate,
+      IsDisabled: this.InstrumentsForm.value.disabled,
     }
     this.settingsService.edtInstruments(this.updtInstruments).subscribe(updtdinstrumnts => {
       this.clddata.emit(updtdinstrumnts);
