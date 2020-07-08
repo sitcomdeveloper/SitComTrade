@@ -7,29 +7,17 @@
 <div class="form-holder">
 
     <form class="form-horizontal" novalidate="novalidate">
-       <div class="form-group">
+       <div [formGroup]="taskInfoForm" class="form-group">
           <div class="row">
              <div class="col-xs-2 col-md-2 "><label class="valign-label" for="UserId"><span
                       data-tooltip-el="">Owner</span></label></div>
              <div class="col-xs-10 col-md-10">
-                <select class="btn-group bootstrap-select form-control valid createselect">
- 
-                   <option data-original-index="1" class="selected ">
-                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false"
-                         aria-selected="true">
- 
-                         <span class="text">Select....</span>
-                      </a>
-                   </option>
-                   <option data-original-index="1" class="selected ">
-                      <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false"
-                         aria-selected="true">
- 
-                         <span class="text">{{bindLoginData?.FullName}}</span>
-                      </a>
-                   </option>
- 
-                </select>
+                <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" 
+                  data-live-search="true" formControlName="owner">
+                  <option ngcontent-qpo-c3="" value="">Select</option>
+                  <option ngcontent-qpo-c3="" value="{{bindLoginData?.FullName}}">
+                     {{bindLoginData?.FullName}}</option>
+               </select>
              </div>
           </div>
        </div>

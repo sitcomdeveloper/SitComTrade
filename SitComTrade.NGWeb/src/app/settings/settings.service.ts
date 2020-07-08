@@ -143,6 +143,6 @@ updtIp(updateIP: IpDTO): Observable<IpDTO> {
 }
 // delete IP
 dltmultipleIP(Id: number): Observable<IpDTO> {
-  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/DeleteIPWhiteListById/' + Id, {});
+  return this.http.post<IpDTO>(API_URL + 'IPWhiteList/DeleteMultipleIPWhiteList', Id);
 }
 }

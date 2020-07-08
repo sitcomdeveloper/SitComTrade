@@ -23,6 +23,7 @@ export class IplistComponent implements OnInit {
   IPlength: any;
   UserId: any;
   deletbtnn = true;
+  selectedchkbxfrdltIP = [];
   constructor(private settingsService: SettingsService, private fb: FormBuilder, private modalService: BsModalService) { }
   bsModalRef: BsModalRef;
 
@@ -84,17 +85,17 @@ deletbtn(val, userid) {
   this.UserId = userid
   if (val === true) {
     this.deletbtnn = false;
-    // this.selectedchkbxfrdltclnt.push(userid);
+    this.selectedchkbxfrdltIP.push(userid);
   } else {
     this.deletbtnn = true;
-    // this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+    this.selectedchkbxfrdltIP.splice(this.selectedchkbxfrdltIP.indexOf(userid), 1)
   }
 }
 // dlt ip
 opendltippopup() {
   const initialState = {
     title: 'Delete Item',
-    // userId: this.selectedchkbxfrdltclnt,
+    userIdofIP: this.selectedchkbxfrdltIP,
     // for div close or hide
     rmvIP: 'rmvIP'
   };

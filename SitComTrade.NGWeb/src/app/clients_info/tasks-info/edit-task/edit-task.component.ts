@@ -24,6 +24,8 @@ export class EditTaskComponent implements OnInit {
   wholeData: any;
   getLoginDetails: any;
   bindLoginData: any;
+  tskdte: any;
+  reqtskdte: any;
   // tskdte: any;
   // take: any
 
@@ -55,21 +57,17 @@ export class EditTaskComponent implements OnInit {
       this.getStatus = res;
     });
   }
-//  const tskdte = this.wholeData.TaskDate.split('T')
-//   this.take = tskdte[0];
-  // patch value for edit task
    getAllTask() {
+    this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
+    this.bindLoginData = this.getLoginDetails;
+    this.tskdte = this.wholeData.TaskDate.split('T');
+    this.reqtskdte = this.tskdte[0],
       this.taskInfoForm.patchValue({
-        // owner: this.bindLoginData.FullName,
+        owner: this.bindLoginData.FullName,
         type: this.wholeData.TaskType,
         status: this.wholeData.TaskStatus,
         description: this.wholeData.Description,
-        // const tskdte = this.wholeData.TaskDate.split('T'),
-        // const reqtskdte = tskdte[0]
-        taskdate: this.wholeData.TaskDate
-        // this.useraddinfo = this.userGenralinfo;
-    // const date = this.userGenralinfo.CreatedAt.split('T');
-    // const userDate = date[0];
+        taskdate: this.reqtskdte
       });
   }
   saveEditTaskData() {

@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ActivitiesService } from 'src/app/activities/activities.service';
 import { SettingsService } from 'src/app/settings/settings.service';
-import { Workflows, InstrumentsDTO } from 'src/app/settings/settingsDTO';
+import { Workflows, InstrumentsDTO, IpDTO } from 'src/app/settings/settingsDTO';
 
 
 @Component({
@@ -55,6 +55,8 @@ rmvTasks: any;
   // IP
   removeIP = false;
   rmvIP: string;
+  userIdofIP: number;
+  ipdlt: IpDTO;
 
   constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService, private settingsService: SettingsService) {}
 
@@ -173,12 +175,12 @@ rmvTasks: any;
   }
   // delete IP
   dltIP() {
-    // this.settingsService.dltmultipleIP().subscribe(dltIPres => {
-    //   this.ipdlt = dltIPres;
-    //   this.clddata.emit(dltIPres);
-    //   console.log('ipdlt', dltIPres);
-    //   this.hideModal();
-    // })
+    this.settingsService.dltmultipleIP(this.userIdofIP).subscribe(dltIPres => {
+      this.ipdlt = dltIPres;
+      this.clddata.emit(dltIPres);
+      console.log('ipdlt', dltIPres);
+      this.hideModal();
+    })
   }
   hideModal() {
 this.bsmodal.hide();
