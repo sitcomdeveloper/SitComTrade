@@ -13,11 +13,15 @@ select {
     border-radius: 2px;
     -webkit-box-shadow: none;
     box-shadow: none;
-    padding: 0;
+    padding: 0;width: 156px;
 }
 .message{
     color: green;
     text-align: center;
     margin-left: -19px;
     margin-bottom: 5px;
+}
+.email-cell-content {
+    padding: 5px;
+    width: 165px;
 }
