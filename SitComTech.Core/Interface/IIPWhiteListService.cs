@@ -11,6 +11,6 @@ namespace SitComTech.Core.Interface
         IPWhiteList GetIPWhiteListById(object Id);
         void InsertIPWhiteList(IPWhiteList entity);
         void UpdateIPWhiteList(IPWhiteList entity);
-        bool DeleteIPWhiteListById(long iPWhiteListId);
+        bool DeleteMultipleIPWhiteList(List<long> groupids);
     }
 }

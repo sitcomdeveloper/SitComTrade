@@ -49,17 +49,15 @@ namespace SitComTech.API.Controllers
             _IPWhiteListService.UpdateIPWhiteList(groupVM);
         }
 
-
-
         [HttpPost]
-        [Route("DeleteIPWhiteListById/{id}")]
-        public bool DeleteIPWhiteListById(long id)
+        [Route("DeleteMultipleIPWhiteList")]
+        public bool DeleteMultipleIPWhiteList(List<long> groupIds)
         {
             try
             {
-                if (id != 0)
+                if (groupIds != null && groupIds.Count > 0)
                 {
-                    return _IPWhiteListService.DeleteIPWhiteListById(id);
+                    return _IPWhiteListService.DeleteMultipleIPWhiteList(groupIds);
 
                 }
                 else
