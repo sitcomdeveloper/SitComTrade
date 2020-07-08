@@ -88,7 +88,7 @@ export class EditTaskComponent implements OnInit {
     this.taskInfoService.edtTsk(obj).subscribe(res => {
       this.taskeditRes = res;
       this.clddata.emit(res);
-      console.log('taskeditRes', res);
+      // console.log('taskeditRes', res);
       this.hideModal();
     });
   }
