@@ -90,6 +90,7 @@ export class LoginComponent implements OnInit {
     this.spinnerService.show();
     setTimeout(() => {
     this.loginservice.authuser(model).subscribe( data => {
+      this.spinnerService.hide();
         if (data) {  
           window.sessionStorage.setItem('userToken', data.access_token);
           window.sessionStorage.setItem('username', JSON.stringify(data));
