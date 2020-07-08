@@ -857,6 +857,9 @@ i.fa.fa-refresh {
 .editingclient tr td {
     width: 115px!important;
 }
+.email-row:hover {
+    background: #e1ebf9;
+}
 .editingclient
 {
     position: absolute;
