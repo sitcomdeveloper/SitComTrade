@@ -165,7 +165,9 @@
                      <div class="col-md-9">
                      
                         
-                           <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone">
+                           <!-- <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="timezone"> -->
+                              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="timezone"
+                              data-live-search="true">
                               <option value="">Select...</option>
                               <option value="{{gettimezones?.DisplayName}}"  *ngFor="let gettimezones of TimeZones">{{gettimezones?.DisplayName}}</option>
                            </select>
