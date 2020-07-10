@@ -20,3 +20,6 @@
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
 }
+td.jsgrid-cell {
+    padding-right: 114px;
+}
