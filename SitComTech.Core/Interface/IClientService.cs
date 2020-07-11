@@ -62,4 +62,9 @@ namespace SitComTech.Core.Interface
         Address GetAddressByOwnerId(long ownerid);
         void UpdateAddress(Address entity);
     }
+    public interface IImportFileService : IService<ImportFile>
+    {
+        void InsertFileLog(ImportFile importFile);
+        List<ImportFile> GetImportFiles(long UserId);
+    }
 }

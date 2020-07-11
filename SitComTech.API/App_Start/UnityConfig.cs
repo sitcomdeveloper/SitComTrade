@@ -1,4 +1,5 @@
-﻿using SitComTech.Core.Interface;
+﻿using SitComTech.Core.Auth;
+using SitComTech.Core.Interface;
 using SitComTech.Data.Repository;
 using SitComTech.Domain.Services;
 using SitComTech.Framework.Repositories;
@@ -50,6 +51,8 @@ namespace SitComTech.API.App_Start
             container.RegisterType<ISenderSettingService, SenderSettingService>();
             container.RegisterType<IEmailTemplateService, EmailTemplateService>();
             container.RegisterType<IIPWhiteListService, IPWhiteListService>();
+            container.RegisterType<IImportFileService, ImportFileService>();
+            container.RegisterType<ICurrentUser, CurrentUser>();
         }
     }
 }

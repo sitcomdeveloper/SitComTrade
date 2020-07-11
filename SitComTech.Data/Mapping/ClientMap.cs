@@ -95,4 +95,14 @@ namespace SitComTech.Data.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
+    public class ImportFileMap : EntityTypeConfiguration<ImportFile>
+    {
+        public ImportFileMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        }
+    }
 }

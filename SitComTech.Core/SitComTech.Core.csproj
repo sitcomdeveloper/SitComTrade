@@ -43,6 +43,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\CurrentUser.cs" />
+    <Compile Include="Auth\UserIdentity.cs" />
+    <Compile Include="Interface\ICurrentUser.cs" />
     <Compile Include="Interface\IClientService.cs" />
     <Compile Include="Interface\IInstrumentService.cs" />
     <Compile Include="Interface\IIPWhiteListService.cs" />
