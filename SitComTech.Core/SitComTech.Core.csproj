@@ -56,6 +56,7 @@
     <Compile Include="Auth\UserIdentity.cs" />
     <Compile Include="Interface\ICurrentUser.cs" />
     <Compile Include="Interface\IClientService.cs" />
+    <Compile Include="Interface\IExceptionLoggerService.cs" />
     <Compile Include="Interface\IInstrumentService.cs" />
     <Compile Include="Interface\IIPWhiteListService.cs" />
     <Compile Include="Interface\IOwnerTaskService.cs" />
