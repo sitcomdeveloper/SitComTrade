@@ -43,4 +43,8 @@ export class ClientsService {
     
     return this.http.post<any>('http://localhost/shanky/angu_api/user_api.php', imprtclnt);
   }
+  // get all columns header for import client
+  // getcolumnsHeader(colmnsHeader: ColumnsHeaderDTO): Observable<ColumnsHeaderDTO> {
+  //   return this.http.post<ColumnsHeaderDTO>(API_URL + '', colmnsHeader);
+  // }
 }
