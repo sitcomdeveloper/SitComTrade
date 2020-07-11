@@ -323,6 +323,12 @@ namespace SitComTech.Domain.Services
                 IsStarred = x.UserOwner.clients.IsStarred
             }).FirstOrDefault();
         }
+
+        public void ImportClient(List<ImportClient> client)
+        {
+            _repository.GetRepository<ImportClient>().InsertRange(client);
+            _unitOfWork.SaveChanges();
+        }
     }
 
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
@@ -770,6 +776,28 @@ namespace SitComTech.Domain.Services
                 _repository.Insert(addr);
                 _unitOfWork.SaveChanges();
             }
+        }
+    }
+    public class ImportFileService : Service<ImportFile>, IImportFileService
+    {
+        private IGenericRepository<ImportFile> _repository;
+        private IUnitOfWork _unitOfWork;
+        public ImportFileService(IGenericRepository<ImportFile> repository, IUnitOfWork unitOfWork)
+            : base(repository)
+        {
+            this._repository = repository;
+            this._unitOfWork = unitOfWork;
+
+        }
+        public List<ImportFile> GetImportFiles(long UserId)
+        {
+            return _repository.Query(x => x.Active && !x.Deleted && x.CreatedBy == UserId).Select().ToList();
+        }
+
+        public void InsertFileLog(ImportFile importFile)
+        {            
+            _repository.Insert(importFile);
+            _unitOfWork.SaveChanges();
         }
     }
 }

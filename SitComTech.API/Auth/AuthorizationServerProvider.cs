@@ -63,8 +63,9 @@ namespace SitComTech.API.Auth
                     context.SetError("invalid_grant", "The user name or password is incorrect.");
                     return;
                 }
-                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));                
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);                
+                identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
                 var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
                     { "as:client_id", context.ClientId ??string.Empty },

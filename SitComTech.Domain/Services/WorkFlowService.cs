@@ -13,12 +13,14 @@ namespace SitComTech.Domain.Services
     public class WorkFlowService : Service<WorkFlow>, IWorkFlowService
     {
         private IGenericRepository<WorkFlow> _repository;
+        private IExceptionLoggerService _exceptionloggerService;
         private IUnitOfWork _unitOfWork;
-        public WorkFlowService(IGenericRepository<WorkFlow> repository, IUnitOfWork unitOfWork)
+        public WorkFlowService(IGenericRepository<WorkFlow> repository,IExceptionLoggerService exceptionlogger, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
             this._unitOfWork = unitOfWork;
+            this._exceptionloggerService = exceptionlogger;
         }
 
         public WorkFlow GetWorkFlowById(object Id)
@@ -104,6 +106,7 @@ namespace SitComTech.Domain.Services
             }
             catch (Exception ex)
             {
+                _exceptionloggerService.InsertExceptionLogger(ex.StackTrace, "workflow");
                 return false;
             }
         }

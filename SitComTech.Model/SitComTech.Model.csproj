@@ -48,6 +48,7 @@
     <Compile Include="DataObject\Address.cs" />
     <Compile Include="DataObject\Email.cs" />
     <Compile Include="DataObject\EmailTemplate.cs" />
+    <Compile Include="DataObject\ImportFile.cs" />
     <Compile Include="DataObject\Instrument.cs" />
     <Compile Include="DataObject\IPWhiteList.cs" />
     <Compile Include="DataObject\MarketingInfo.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Masters\CultureCode.cs" />
     <Compile Include="Masters\Department.cs" />
     <Compile Include="Masters\Desk.cs" />
+    <Compile Include="Masters\ExceptionLogger.cs" />
     <Compile Include="Masters\ModuleGroup.cs" />
     <Compile Include="Masters\Role.cs" />
     <Compile Include="Masters\SenderSetting.cs" />

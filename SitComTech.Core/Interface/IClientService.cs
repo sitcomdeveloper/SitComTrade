@@ -22,6 +22,7 @@ namespace SitComTech.Core.Interface
         void UpdateClient(Client entity);
         void UpdateClientStarred(ClientStarredVM entity);
         ClientListVM GetClientInfoDetailById(long clientid);
+        void ImportClient(List<ImportClient> client);
     }
 
     public interface IMarketingInfoService : IService<MarketingInfo>
@@ -60,5 +61,10 @@ namespace SitComTech.Core.Interface
     {
         Address GetAddressByOwnerId(long ownerid);
         void UpdateAddress(Address entity);
+    }
+    public interface IImportFileService : IService<ImportFile>
+    {
+        void InsertFileLog(ImportFile importFile);
+        List<ImportFile> GetImportFiles(long UserId);
     }
 }

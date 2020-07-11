@@ -55,4 +55,53 @@ namespace SitComTech.Model.DataObject
         public virtual Client ClientTable { get; set; }
 
     }
+    public class ImportClient:BaseEntityState
+    {        
+        public long Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Mobile { get; set; }
+        public string SecondEmail { get; set; }
+        public string Tag { get; set; }
+        public string Tag1 { get; set; }
+        public string CampaignID { get; set; }
+        public string Country { get; set; }
+        public Nullable<long> OwnerId { get; set; }
+        public Nullable<long> Status { get; set; }
+        public Nullable<DateTime> CreatedDate { get; set; }
+        public string ZipCode { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Address { get; set; }
+        public Nullable<bool> SuppliedDocs { get; set; }
+        public Nullable<bool> AcceptedTermsConditions { get; set; }
+        public string Description { get; set; }
+        public string AffiliateID { get; set; }
+        public string SubAffiliateID { get; set; }
+        public string Source { get; set; }
+        public string IPAddress { get; set; }
+        public string Referrer { get; set; }
+        public string IPCountry { get; set; }
+        public Nullable<DateTime> ModifiedDate { get; set; }
+        public string ConvertionOwner { get; set; }
+        public string RetentionOwner { get; set; }
+        public string Citizenship { get; set; }
+        public Nullable<DateTime> DateOfBirth { get; set; }
+        public Nullable<bool> IsEnabled { get; set; }
+        public Nullable<DateTime> LastLoginDate { get; set; }
+        public Nullable<bool> SubscribedNewsletter { get; set; }
+        public string Desk { get; set; }
+        public string UtmContent { get; set; }
+        public string UtmSource { get; set; }
+        public string UtmCampaign { get; set; }
+        public string UtmCreative { get; set; }
+        public string UtmMedium { get; set; }
+        public string AffTransactionID { get; set; }
+        public string GoogleKeyword { get; set; }
+        public Nullable<DateTime> FirstRegistrationDate { get; set; }
+        public string ImportId { get; set; }
+        public string AffiliateUser { get; set; }
+    }
 }

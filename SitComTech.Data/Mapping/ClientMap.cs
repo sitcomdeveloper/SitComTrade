@@ -86,4 +86,23 @@ namespace SitComTech.Data.Mapping
         }
 
     }
+    public class ImportClientMap:EntityTypeConfiguration<ImportClient>
+    {
+        public ImportClientMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
+    public class ImportFileMap : EntityTypeConfiguration<ImportFile>
+    {
+        public ImportFileMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        }
+    }
 }

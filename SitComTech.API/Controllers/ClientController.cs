@@ -9,6 +9,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Newtonsoft.Json;
+using System.Web;
+using System.Data;
+using System.IO;
+using SitComTech.Core.Auth;
 
 namespace SitComTech.API.Controllers
 {    
@@ -23,8 +27,9 @@ namespace SitComTech.API.Controllers
         private IShortMessageService _shortMeassageService;
         private ICommentService _commentService;
         private IAddressService _addressService;
+        private IImportFileService _importFileService;
         public ClientController(IClientService clientService, IMarketingInfoService marketingInfoService, IAdditionalInfoService additionalInfoeService
-            , IEmailService emailService, IShortMessageService shortMeassageService, ICommentService commentService, IAddressService addressService)
+            , IEmailService emailService, IShortMessageService shortMeassageService, ICommentService commentService, IAddressService addressService,IImportFileService importFileService)
         {
             this._clientService = clientService;
             this._marketingInfoService = marketingInfoService;
@@ -33,6 +38,7 @@ namespace SitComTech.API.Controllers
             this._shortMeassageService = shortMeassageService;
             this._commentService = commentService;
             this._addressService = addressService;
+            this._importFileService = importFileService;
         }
         
         [HttpPost]
@@ -309,6 +315,68 @@ namespace SitComTech.API.Controllers
             {
                 return false;
             }
+        }
+        [HttpPost]
+        [Route("GetColumnHeader")]
+        public List<string> GetColumnHeader()
+        {
+            try
+            {
+                var httpRequest = HttpContext.Current.Request;
+                if (HttpContext.Current.Request.Files.AllKeys.Any())
+                {
+                    //string fileName = "";
+                    var postedFile = httpRequest.Files["client_import_fileuploader"];
+                    string fileName = "ImportedFiles/" + Path.GetFileNameWithoutExtension(postedFile.FileName) + $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss-fff}" + Path.GetExtension(postedFile.FileName);
+                    var filePath = HttpContext.Current.Server.MapPath("~/" + fileName);
+                   
+
+                    DataSet data = ExcelReader.ExcelToDataSet(postedFile.InputStream, Path.GetExtension(postedFile.FileName));
+                    DataTable dt = data.Tables["sheet1"];
+                    List<string> columnNames = dt.Columns.Cast<DataColumn>()
+                                     .Select(x => x.ColumnName)
+                                     .ToArray().ToList();
+                    ImportFile importFile = new ImportFile
+                    {
+                        Title = postedFile.FileName,
+                        FilePath = fileName,
+                        Status = "",
+                        InitiatedDate = DateTime.Now,
+                        FinishDate = DateTime.Now,
+                        Errors = null,
+                        DeletedDate = null,
+                        DeletedBy = null,
+                        Active = false,
+                        Deleted = false,
+                        CreatedBy = UserIdentity.UserId??0,
+                        CreatedByName = UserIdentity.UserName,
+                        CreatedAt = DateTime.Now,
+                        UpdatedBy = null,
+                        UpdatedByName = null,
+                        UpdatedAt = null
+                    };
+                    _importFileService.InsertFileLog(importFile);
+                    postedFile.SaveAs(filePath);
+                    return columnNames;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        [HttpPost]
+        [Route("GetImportHistory/{UserId}")]
+        public List<ImportFile> GetImportHistory(long UserId)
+        {
+            return _importFileService.GetImportFiles(UserId);
+        }
+        [HttpPost]
+        [Route("UploadClients")]
+        public void UploadClients(List<ImportClient> clients)
+        {
+            _clientService.ImportClient(clients);
         }
     }
 }
