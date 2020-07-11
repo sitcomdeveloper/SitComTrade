@@ -50,6 +50,7 @@ namespace SitComTech.API.App_Start
             container.RegisterType<ISenderSettingService, SenderSettingService>();
             container.RegisterType<IEmailTemplateService, EmailTemplateService>();
             container.RegisterType<IIPWhiteListService, IPWhiteListService>();
+            container.RegisterType<IExceptionLoggerService, ExceptionLoggerService>();
         }
     }
 }

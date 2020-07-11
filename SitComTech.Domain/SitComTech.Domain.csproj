@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\ClientService.cs" />
+    <Compile Include="Services\ExceptionLoggerService.cs" />
     <Compile Include="Services\InstrumentService.cs" />
     <Compile Include="Services\IPWhiteListService.cs" />
     <Compile Include="Services\SenderSettingService.cs" />
