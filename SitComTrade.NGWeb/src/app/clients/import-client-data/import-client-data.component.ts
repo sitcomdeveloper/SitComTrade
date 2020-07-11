@@ -9,12 +9,18 @@ import { ImprtclntdtaComponent } from '../imprtclntdta/imprtclntdta.component';
 })
 export class ImportClientDataComponent implements OnInit {
   title: any;
+  firstpopup: string;
+  afterimportclient: any;
+  assignResponse: any;
   
   constructor(private modalService: BsModalService, private bsmodal: BsModalRef) { }
   bsModalRef: BsModalRef;
   closesecondpopup = true;
 
   ngOnInit() {
+    if(this.firstpopup === 'firstpopup') {
+      this.assignResponse = this.afterimportclient;
+    }
   }
   openthirdpopup() {
     const initialState = {

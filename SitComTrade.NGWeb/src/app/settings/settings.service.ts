@@ -145,4 +145,8 @@ updtIp(updateIP: IpDTO): Observable<IpDTO> {
 dltmultipleIP(Id: number): Observable<IpDTO> {
   return this.http.post<IpDTO>(API_URL + 'IPWhiteList/DeleteMultipleIPWhiteList', Id);
 }
+// get import history
+getImportHistory(UserId): Observable<any> {
+  return this.http.post<any>(API_URL + 'Client/GetImportHistory/' + UserId, {} );
+}
 }

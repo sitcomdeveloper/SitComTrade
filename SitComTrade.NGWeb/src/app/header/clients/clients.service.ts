@@ -39,12 +39,8 @@ export class ClientsService {
   sndmailtoselected(selectsentmail: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/EmailToSelectedClients',selectsentmail);
   }
-  importClient(imprtclnt): Observable<any> {
-    
-    return this.http.post<any>('http://localhost/shanky/angu_api/user_api.php', imprtclnt);
+   // get all columns header for import client
+  importClientByExcel(colmnsHeader: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/GetColumnHeader', colmnsHeader);
   }
-  // get all columns header for import client
-  // getcolumnsHeader(colmnsHeader: ColumnsHeaderDTO): Observable<ColumnsHeaderDTO> {
-  //   return this.http.post<ColumnsHeaderDTO>(API_URL + '', colmnsHeader);
-  // }
 }

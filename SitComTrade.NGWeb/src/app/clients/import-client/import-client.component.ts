@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ClientsService } from '../../header/clients/clients.service';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ImportClientDataComponent } from '../import-client-data/import-client-data.component';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-import-client',
@@ -15,53 +16,45 @@ export class ImportClientComponent implements OnInit {
   importclientResponse: any;
   closefirstpopup = true;
   title: any;
-
-
-
+  importExcelForm: FormGroup;
   // tslint:disable-next-line: max-line-length
-  constructor(private router: Router, private clientService: ClientsService, private bsmodal: BsModalRef, private modalService: BsModalService) { }
+  constructor(private router: Router, private clientService: ClientsService, private bsmodal: BsModalRef, private modalService: BsModalService, private fb: FormBuilder) { }
     bsModalRef: BsModalRef;
 
   ngOnInit() {
+    this.importExcelForm = this.fb.group({
+      browsefiles: ['']
+    })
   }
   importclientbyExcel() {
-    const imprtclnt = {
-      Id: '',
-      ItemId: 'TRA00',
-      FirstName: 'Shanky',
-      LastName: 'Pal',
-      CountryId: 1,
-      CountryName: 'Agra',
-      Email: 'shaky8615@gmail.com',
-      TypeId: 1,
-      TypeName: 'abc',
-      Phone: 8650689072,
-      OwnerName: 'shanky',
-      ResponseStatus: 'success',
-      CreatedDate: '21/05/2020',
-      CampaignId: 1,
-      Tag: 'abc',
-      Tag1: 'cde',
-      FTD: 'sha',
-      Group: 'a',
-      Desk: 'com',
-      IsEditable: 'True'
+    const colmnsHeader = {
+      client_import_fileuploader: this.importExcelForm.value.browsefiles
     };
-    this.clientService.importClient(imprtclnt).subscribe(excel => {
+    this.clientService.importClientByExcel(colmnsHeader).subscribe(excel => {
       this.importclientResponse = excel;
       console.log('importclientResponse', excel);
     });
-  }
-  opennextpopup() {
     const initialState = {
       title: 'Import Clients',
+      // static value for indicate that data come from that popup
+      firstpopup: 'firstpopup',
+      afterimportclient: this.importclientResponse,
     };
-    // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(ImportClientDataComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));
+    this.bsModalRef = this.modalService.show(ImportClientDataComponent, Object.assign({ show: true }, { class: 'modal1250', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsmodal.hide();
     this.closefirstpopup = false;
   }
+  // opennextpopup() {
+  //   const initialState = {
+  //     title: 'Import Clients',
+  //   };
+  //   // tslint:disable-next-line: max-line-length
+  //   this.bsModalRef = this.modalService.show(ImportClientDataComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));
+  //   this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsmodal.hide();
+  //   this.closefirstpopup = false;
+  // }
   hideModal() {
     this.bsmodal.hide();
   }

@@ -21,7 +21,7 @@
 
  <div class="import-modal-content">
     <div class="form-holder">
-       <form class="form-horizontal fileupload-processing" id="fileupload">
+       <form class="form-horizontal fileupload-processing" id="fileupload" [formGroup]="importExcelForm">
           <div class="col-xs-10 col-xs-offset-1">
              <div class="form-group">
                 <div class="fileupload-control">
@@ -29,7 +29,7 @@
                      <i class="fa fa-upload" aria-hidden="true">&nbsp;</i>
                        Drag your document here or
                         <a href="#">Browse Files
-                            <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()" id="file-upload" >
+                            <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()" id="file-upload" formControlName="browsefiles">
                             <!-- accept=".xlsx,.xls" -->
                         </a>
                   </div>
@@ -49,7 +49,7 @@
           <div class="col-md-12" style="padding:0!important"> 
             <div class="modal-footer modal-footernew">
                <div class="text-center margin17">
-                  <a href="#importclientdata" class="button submit-button itembutton "  data-toggle="modal" (click)="opennextpopup()">Next</a>
+                  <a href="#importclientdata" class="button submit-button itembutton "  data-toggle="modal" (click)="importclientbyExcel()">Next</a>
                  
                </div>
             </div>
