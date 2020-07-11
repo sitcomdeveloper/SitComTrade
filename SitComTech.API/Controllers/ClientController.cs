@@ -318,46 +318,53 @@ namespace SitComTech.API.Controllers
         }
         [HttpPost]
         [Route("GetColumnHeader")]
-        [Authorize]
         public List<string> GetColumnHeader()
         {
-            var httpRequest = HttpContext.Current.Request;
-            if (HttpContext.Current.Request.Files.AllKeys.Any())
+            try
             {
-                //string fileName = "";
-                var postedFile = httpRequest.Files["client_import_fileuploader"];
-                string fileName = "ImportedFiles/" + Path.GetFileNameWithoutExtension(postedFile.FileName) + $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss-fff}" + Path.GetExtension(postedFile.FileName);
-                var filePath = HttpContext.Current.Server.MapPath("~/"+fileName);
-                postedFile.SaveAs(filePath);                
-
-                DataSet data = ExcelReader.ExcelToDataSet(postedFile.InputStream, Path.GetExtension(postedFile.FileName));
-                DataTable dt = data.Tables["sheet1"];
-                List<string> columnNames = dt.Columns.Cast<DataColumn>()
-                                 .Select(x => x.ColumnName)
-                                 .ToArray().ToList();
-                ImportFile importFile = new ImportFile
+                var httpRequest = HttpContext.Current.Request;
+                if (HttpContext.Current.Request.Files.AllKeys.Any())
                 {
-                    Title = postedFile.FileName,
-                    FilePath = fileName,
-                    Status = "",
-                    InitiatedDate = DateTime.Now,
-                    FinishDate = DateTime.Now,
-                    Errors = null,
-                    DeletedDate = null,
-                    DeletedBy = null,
-                    Active = false,
-                    Deleted = false,
-                    CreatedBy = (long)UserIdentity.UserId,
-                    CreatedByName = UserIdentity.UserName,
-                    CreatedAt=DateTime.Now,
-                    UpdatedBy = null,
-                    UpdatedByName = null,
-                    UpdatedAt = null
-                };
-                _importFileService.InsertFileLog(importFile);
-                return columnNames;
+                    //string fileName = "";
+                    var postedFile = httpRequest.Files["client_import_fileuploader"];
+                    string fileName = "ImportedFiles/" + Path.GetFileNameWithoutExtension(postedFile.FileName) + $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss-fff}" + Path.GetExtension(postedFile.FileName);
+                    var filePath = HttpContext.Current.Server.MapPath("~/" + fileName);
+                   
+
+                    DataSet data = ExcelReader.ExcelToDataSet(postedFile.InputStream, Path.GetExtension(postedFile.FileName));
+                    DataTable dt = data.Tables["sheet1"];
+                    List<string> columnNames = dt.Columns.Cast<DataColumn>()
+                                     .Select(x => x.ColumnName)
+                                     .ToArray().ToList();
+                    ImportFile importFile = new ImportFile
+                    {
+                        Title = postedFile.FileName,
+                        FilePath = fileName,
+                        Status = "",
+                        InitiatedDate = DateTime.Now,
+                        FinishDate = DateTime.Now,
+                        Errors = null,
+                        DeletedDate = null,
+                        DeletedBy = null,
+                        Active = false,
+                        Deleted = false,
+                        CreatedBy = UserIdentity.UserId??0,
+                        CreatedByName = UserIdentity.UserName,
+                        CreatedAt = DateTime.Now,
+                        UpdatedBy = null,
+                        UpdatedByName = null,
+                        UpdatedAt = null
+                    };
+                    _importFileService.InsertFileLog(importFile);
+                    postedFile.SaveAs(filePath);
+                    return columnNames;
+                }
+                return null;
             }
-            return null;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         [HttpPost]
         [Route("GetImportHistory/{UserId}")]
