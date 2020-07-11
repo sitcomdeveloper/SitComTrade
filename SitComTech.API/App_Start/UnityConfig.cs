@@ -53,6 +53,7 @@ namespace SitComTech.API.App_Start
             container.RegisterType<IIPWhiteListService, IPWhiteListService>();
             container.RegisterType<IImportFileService, ImportFileService>();
             container.RegisterType<ICurrentUser, CurrentUser>();
+            container.RegisterType<IExceptionLoggerService, ExceptionLoggerService>();
         }
     }
 }

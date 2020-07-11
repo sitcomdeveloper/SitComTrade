@@ -604,14 +604,23 @@
         $(document).ready(function () {
               $.ajax({
                 type: 'Post',
-                  url: apiURl + "api/IPWhiteList/DeleteMultipleIPWhiteList",
+                  url: apiURl + "api/WorkFlow/DeleteWorkFlowById/37",
                 contentType: 'application/json',
-                processData: false,
-                  data: ko.toJSON(UserVM.Selectedips),
+                processData: false,                 
                 success: function (result) {
                     alert(result);
                 }
             });
+            //  $.ajax({
+            //    type: 'Post',
+            //      url: apiURl + "api/IPWhiteList/DeleteMultipleIPWhiteList",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //      data: ko.toJSON(UserVM.Selectedips),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             // $.ajax({
             //    type: 'Post',
             //     url: apiURl + "api/IPWhiteList/GetAllIPWhiteLists",
