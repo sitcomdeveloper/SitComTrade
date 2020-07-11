@@ -106,7 +106,7 @@ namespace SitComTech.Domain.Services
             }
             catch (Exception ex)
             {
-                _exceptionloggerService.InsertExceptionLogger(ex.Message, "workflow");
+                _exceptionloggerService.InsertExceptionLogger(ex.StackTrace, "workflow");
                 return false;
             }
         }
