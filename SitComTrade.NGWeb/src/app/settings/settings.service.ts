@@ -82,6 +82,10 @@ export class SettingsService {
   registeruser(rgstrusr: any): Observable<any> {
     return this.http.post(API_URL + 'User/RegisterUser', rgstrusr);
   }
+  // patch crm user
+  patchCRMUser(patchuser: any): Observable<any> {
+    return this.http.post(API_URL + 'User/GetUserById/' + patchuser, {});
+  }
   // crmedituser.save details of user after patch
 updateUser(updt: any): Observable<any> {
   return this.http.post(API_URL + 'User/UpdateUserDetail', updt);

@@ -151,7 +151,7 @@
                      <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
                      <div class="col-md-9">
                         
-                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks" id="multiselect">
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks" id="multiselect" multiple>
                            <option value="">Select...</option>
                            <option value="" value="{{shared?.Id}}" type="checkbox" *ngFor="let shared of isshared">{{shared?.Name}}</option>
                         </select>
@@ -288,7 +288,7 @@
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">SharedSenderSettings</span></label></div>
                      <div class="col-md-9">
                        
-                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings">
+                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings" multiple>
                            <option value="">Select...</option>
                            <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>

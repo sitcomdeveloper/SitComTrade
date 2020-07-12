@@ -28,6 +28,7 @@ export class CrmedituserComponent implements OnInit {
   response: string;
   getLoginDetails: any;
   bindLoginData: any;
+  patchthevalue: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
@@ -133,25 +134,30 @@ export class CrmedituserComponent implements OnInit {
   }
   // patch value
   patchCrmUsers() {
-    this.newRegisterForm.patchValue({
-      // image:this.takewholedata.ImageName,
-      firstname:this.takewholedata.FirstName,
-      lastname:this.takewholedata.LastName,
-      username:this.takewholedata.UserName,
-      email:this.takewholedata.Email,
-      phone:this.takewholedata.Phone,
-      disabled:this.takewholedata.IsDisabled,
-      desk:this.takewholedata.DeskName,
-      roles:this.takewholedata.RoleName,
-      department:this.takewholedata.DepartmentName,
-      shareddesks:this.takewholedata.SharedDeskName,
-      timezone:this.takewholedata.TimezoneName,
-      culturecode:this.takewholedata.CultureCode,
-      uiculturecode:this.takewholedata.UiCultureCode,
-      startmodule:this.takewholedata.StartModuleName,
-      defaultsendersetting:this.takewholedata.DefaultSenderName,
-      sharedsendersettings:this.takewholedata.SharedSenderName,
+    this.settingsService.patchCRMUser(this.takewholedata).subscribe(patchedUser => {
+      // this.patchthevalue = patchedUser
+      // console.log('patchthevalue',patchedUser);
+      this.newRegisterForm.patchValue({
+        // image:this.takewholedata.ImageName,
+        firstname: patchedUser.FirstName,
+        lastname:patchedUser.LastName,
+        username:patchedUser.UserName,
+        email:patchedUser.Email,
+        phone:patchedUser.Phone,
+        disabled:patchedUser.IsDisabled,
+        desk:patchedUser.DeskName,
+        roles:patchedUser.RoleName,
+        department:patchedUser.DepartmentName,
+        shareddesks:patchedUser.SharedDeskName,
+        timezone:patchedUser.TimezoneName,
+        culturecode:patchedUser.CultureCode,
+        uiculturecode:patchedUser.UiCultureCode,
+        startmodule:patchedUser.StartModuleName,
+        defaultsendersetting:patchedUser.DefaultSenderName,
+        sharedsendersettings:patchedUser.SenderMailId,
+      })
     })
+   
   }
   // save details of user after patch
   saveeditinfo() {
@@ -162,7 +168,7 @@ export class CrmedituserComponent implements OnInit {
       Phone: this.newRegisterForm.value.phone,
       Password: this.newRegisterForm.value.password,
       OwnerId: this.bindLoginData.UserId,
-      Id: this.takewholedata.Id,
+      Id: this.takewholedata,
       DeskId: '',
       DeskName: this.newRegisterForm.value.desk,
       IsDisabled: this.newRegisterForm.value.disabled,
@@ -173,12 +179,16 @@ export class CrmedituserComponent implements OnInit {
       CampaignCode: 'gh',
       AffiliateFieldId: '',
       AffiliateFieldName: 'gh',
+      userRoles: [{
       RoleId: '',
       RoleName: this.newRegisterForm.value.roles,
+      }],
       DepartmentId: '',
       DepartmentName: this.newRegisterForm.value.department,
+      userSharedDesks: [{
       SharedDeskId: '',
       SharedDeskName: this.newRegisterForm.value.shareddesks,
+      }],
       TimezoneId: '',
       TimezoneName: this.newRegisterForm.value.timezone,
       CultureCode: this.newRegisterForm.value.culturecode,
@@ -189,8 +199,10 @@ export class CrmedituserComponent implements OnInit {
       StartModuleName: 'clients',
       DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
       DefaultSenderId: '',
-      SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
-      SharedSenderId: '',
+      userSharedSenderSettings: [{
+        SenderMailId: this.newRegisterForm.value.sharedsendersettings,
+        SenderMail: '',
+      }]
     };
 this.settingsService.updateUser(updt).subscribe(updateusr => {
   this.savedtls = updateusr;

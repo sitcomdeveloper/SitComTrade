@@ -46,7 +46,7 @@ export class CrmnewuserComponent implements OnInit {
     // form group
     this.newRegisterForm = this.fb.group({
       image: [''],
-      firstname: ['',[Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
       username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]],
@@ -63,7 +63,7 @@ export class CrmnewuserComponent implements OnInit {
       defaultsendersetting: [''],
       sharedsendersettings: [''],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      repeatpassword: ['', [Validators.required]],  
+      repeatpassword: ['', [Validators.required]],
 
       deskid: [''],
       rolesid: [''],
@@ -83,11 +83,11 @@ export class CrmnewuserComponent implements OnInit {
     this.getTimeZone();
     this.getCultureCodes();
     this.getRoles();
-    this.getSenderSettings();  
+    this.getSenderSettings();
     // $(function(){
     //   $("#multiselect").multiselect();
     //  });
-    
+
   }
   hideModal() {
     this.bsmodal.hide();
@@ -95,21 +95,21 @@ export class CrmnewuserComponent implements OnInit {
   getDesks() {
     this.settingsService.getAllDesks().subscribe(desks => {
       if (desks !== null && desks !== undefined && desks !== '') {
-      this.Desks = desks;
-      this.isshared = this.Desks.filter(shareddata => {
-        if (shareddata.IsShared === true) {
-          return shareddata;
-        }
-        // console.log('isshared',this.isshared);
-      });
-      this.notshared = this.Desks.filter(notshareddata => {
-        if (notshareddata.IsShared === false) {
-          return notshareddata;
-        }
-        // console.log('notshareddata',this.notshared);
-      });
-      // console.log('Desks', desks);
-    }
+        this.Desks = desks;
+        this.isshared = this.Desks.filter(shareddata => {
+          if (shareddata.IsShared === true) {
+            return shareddata;
+          }
+          // console.log('isshared',this.isshared);
+        });
+        this.notshared = this.Desks.filter(notshareddata => {
+          if (notshareddata.IsShared === false) {
+            return notshareddata;
+          }
+          // console.log('notshareddata',this.notshared);
+        });
+        // console.log('Desks', desks);
+      }
     });
   }
   getDepartments() {
@@ -137,7 +137,7 @@ export class CrmnewuserComponent implements OnInit {
   getSenderSettings() {
     this.settingsService.getAllSenderSettings().subscribe(sndrsettings => {
       this.SenderSettings = sndrsettings;
-      this.isharedsender = this.SenderSettings.filter( sharedsenderdata => {
+      this.isharedsender = this.SenderSettings.filter(sharedsenderdata => {
         if (sharedsenderdata.IsShared === true) {
           return sharedsenderdata;
         }
@@ -183,106 +183,112 @@ export class CrmnewuserComponent implements OnInit {
   // make the user registered
   svingDtls() {
     if (this.newRegisterForm.valid) {
-    this.notshared.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.desk) {
-        this.newRegisterForm.value.deskid = element.Name;
-      }
-    });
-    this.isshared.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.shareddesks) {
-        this.newRegisterForm.value.shareddesksid = element.Name;
-      }
-    });
-    this.Roles.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.roles) {
-        this.newRegisterForm.value.rolesid = element.Name;
-      }
-    });
-    this.Departments.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.department) {
-        this.newRegisterForm.value.departmentid = element.Name;
-      }
-    });
-    this.TimeZones.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.timezone) {
-        this.newRegisterForm.value.timezoneid = element.Name;
-      }
-    });
-    // this.CultureCode.forEach(element => {
-    //   if ( element.Id === +this.newRegisterForm.value.culturecode) {
-    //     this.newRegisterForm.value.culturecodeid = element.Name;
-    //   }
-    // });
-    // this.CultureCode.forEach(element => {
-    //   if ( element.Id === +this.newRegisterForm.value.uiculturecode) {
-    //     this.newRegisterForm.value.uiculturecodeid = element.Name;
-    //   }
-    // });
-    // this.Modules.forEach(element => {
-    //   if ( element.Id === +this.newRegisterForm.value.startmodule) {
-    //     this.newRegisterForm.value.startmoduleid = element.Name;
-    //   }
-    // });
-    this.notsharedsender.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.defaultsendersetting) {
-        this.newRegisterForm.value.defaultsendersettingid = element.Name;
-      }
-    });
-    this.isharedsender.forEach(element => {
-      if ( element.Id === +this.newRegisterForm.value.sharedsendersettings) {
-        this.newRegisterForm.value.sharedsendersettingsid = element.Name;
-      }
-    });
-    const rgstrusr = {
-      FirstName: this.newRegisterForm.value.firstname,
-LastName: this.newRegisterForm.value.lastname,
-Email: this.newRegisterForm.value.email,
-Phone: this.newRegisterForm.value.phone,
-Password: this.newRegisterForm.value.password,
-OwnerId: this.bindLoginData.UserId,
-DeskId: this.newRegisterForm.value.desk,
-DeskName: this.newRegisterForm.value.deskid,
-IsDisabled: this.newRegisterForm.value.disabled,
-UserName: this.newRegisterForm.value.username,
-IsAffiliateUser: '',
-ImageName: this.newRegisterForm.value.image,
-LockoutEnabled: '',
-CampaignCode: '',
-AffiliateFieldId: '',
-AffiliateFieldName: '',
-RoleId: this.newRegisterForm.value.roles,
-RoleName: this.newRegisterForm.value.rolesid,
-DepartmentId: this.newRegisterForm.value.department,
-DepartmentName: this.newRegisterForm.value.departmentid,
-SharedDeskId: this.newRegisterForm.value.shareddesks,
-SharedDeskName: this.newRegisterForm.value.shareddesksid,
-TimezoneId: '',
-TimezoneName: this.newRegisterForm.value.timezone,
-CultureCode: this.newRegisterForm.value.culturecode,
-CultureCodeId: '',
-UiCultureCode: this.newRegisterForm.value.uiculturecode,
-UiCultureCodeId: '',
-StartModuleId: '',
-StartModuleName: this.newRegisterForm.value.startmodule,
-DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
-DefaultSenderId: '',
-SharedSenderName: this.newRegisterForm.value.sharedsendersettings,
-SharedSenderId: '',
-    };
-    this.settingsService.registeruser(rgstrusr).subscribe(user => {
-      this.RegisteredUser = user;
-      this.clddata.emit(user);
-      if (user === 'null') {
-        this.response = '';
-      } else {
-        this.response = 'User is added successfully!';
-      }
-      this.newRegisterForm.reset();
-      // console.log('RegisteredUser', user);
-    });
-  } else {
-    this.submitted = true;
-  }
+      this.notshared.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.desk) {
+          this.newRegisterForm.value.deskid = element.Name;
+        }
+      });
+      this.isshared.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.shareddesks) {
+          this.newRegisterForm.value.shareddesksid = element.Name;
+        }
+      });
+      this.Roles.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.roles) {
+          this.newRegisterForm.value.rolesid = element.Name;
+        }
+      });
+      this.Departments.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.department) {
+          this.newRegisterForm.value.departmentid = element.Name;
+        }
+      });
+      this.TimeZones.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.timezone) {
+          this.newRegisterForm.value.timezoneid = element.Name;
+        }
+      });
+      // this.CultureCode.forEach(element => {
+      //   if ( element.Id === +this.newRegisterForm.value.culturecode) {
+      //     this.newRegisterForm.value.culturecodeid = element.Name;
+      //   }
+      // });
+      // this.CultureCode.forEach(element => {
+      //   if ( element.Id === +this.newRegisterForm.value.uiculturecode) {
+      //     this.newRegisterForm.value.uiculturecodeid = element.Name;
+      //   }
+      // });
+      // this.Modules.forEach(element => {
+      //   if ( element.Id === +this.newRegisterForm.value.startmodule) {
+      //     this.newRegisterForm.value.startmoduleid = element.Name;
+      //   }
+      // });
+      this.notsharedsender.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.defaultsendersetting) {
+          this.newRegisterForm.value.defaultsendersettingid = element.Name;
+        }
+      });
+      this.isharedsender.forEach(element => {
+        if (element.Id === +this.newRegisterForm.value.sharedsendersettings) {
+          this.newRegisterForm.value.sharedsendersettingsid = element.Name;
+        }
+      });
+      const rgstrusr = {
+        FirstName: this.newRegisterForm.value.firstname,
+        LastName: this.newRegisterForm.value.lastname,
+        Email: this.newRegisterForm.value.email,
+        Phone: this.newRegisterForm.value.phone,
+        Password: this.newRegisterForm.value.password,
+        OwnerId: this.bindLoginData.UserId,
+        DeskId: this.newRegisterForm.value.desk,
+        DeskName: this.newRegisterForm.value.deskid,
+        IsDisabled: this.newRegisterForm.value.disabled,
+        UserName: this.newRegisterForm.value.username,
+        IsAffiliateUser: '',
+        ImageName: this.newRegisterForm.value.image,
+        LockoutEnabled: '',
+        CampaignCode: '',
+        AffiliateFieldId: '',
+        AffiliateFieldName: '',
+        userRoles: [{
+          RoleId: this.newRegisterForm.value.roles,
+          RoleName: this.newRegisterForm.value.rolesid,
+        }],
+        DepartmentId: this.newRegisterForm.value.department,
+        DepartmentName: this.newRegisterForm.value.departmentid,
+        userSharedDesks: [{
+          SharedDeskId: this.newRegisterForm.value.shareddesks,
+          SharedDeskName: this.newRegisterForm.value.shareddesksid,
+        }],
+        TimezoneId: '',
+        TimezoneName: this.newRegisterForm.value.timezone,
+        CultureCode: this.newRegisterForm.value.culturecode,
+        CultureCodeId: '',
+        UiCultureCode: this.newRegisterForm.value.uiculturecode,
+        UiCultureCodeId: '',
+        StartModuleId: '',
+        StartModuleName: this.newRegisterForm.value.startmodule,
+        DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+        DefaultSenderId: '',
+        userSharedSenderSettings: [{
+          SenderMailId: this.newRegisterForm.value.sharedsendersettings,
+          SenderMail: '',
+        }]
+      };
+      this.settingsService.registeruser(rgstrusr).subscribe(user => {
+        this.RegisteredUser = user;
+        this.clddata.emit(user);
+        if (user === 'null') {
+          this.response = '';
+        } else {
+          this.response = 'User is added successfully!';
+        }
+        this.newRegisterForm.reset();
+        console.log('RegisteredUser', user);
+      });
+    } else {
+      this.submitted = true;
+    }
   }
   get f() {
     return this.newRegisterForm.controls;

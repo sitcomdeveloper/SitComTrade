@@ -40,4 +40,8 @@ export class GeneralInfoService {
   getviewhistory(vwhis: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Common/GetAllHistory/' + vwhis, {});
   }
+  // send sms
+  sendsms(sms: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/SendShortMessage', sms);
+  }
 }

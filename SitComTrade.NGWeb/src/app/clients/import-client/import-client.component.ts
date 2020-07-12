@@ -17,6 +17,7 @@ export class ImportClientComponent implements OnInit {
   closefirstpopup = true;
   title: any;
   importExcelForm: FormGroup;
+  technical: any
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private clientService: ClientsService, private bsmodal: BsModalRef, private modalService: BsModalService, private fb: FormBuilder) { }
     bsModalRef: BsModalRef;
@@ -26,14 +27,19 @@ export class ImportClientComponent implements OnInit {
       browsefiles: ['']
     })
   }
-  importclientbyExcel() {
+  importclientbyExcel(event) {
+   // this.technical = event.target.result;
+   const reader = new FileReader();
+   reader.readAsDataURL(event.target.files[0]);
+    this.technical = event.target.files[0];
     const colmnsHeader = {
       client_import_fileuploader: this.importExcelForm.value.browsefiles
     };
-    this.clientService.importClientByExcel(colmnsHeader).subscribe(excel => {
+    this.clientService.importClientByExcel(this.technical.name).subscribe(excel => {
       this.importclientResponse = excel;
       console.log('importclientResponse', excel);
     });
+    // for opening next popup
     const initialState = {
       title: 'Import Clients',
       // static value for indicate that data come from that popup

@@ -116,7 +116,7 @@
   <!-- Send Sms------------------------------------------------------- -->
   <div *ngIf = sndsms>
    <div class="form-holder mt40">
-      <form novalidate="novalidate">
+      <form novalidate="novalidate" [formGroup]="actionsForm">
          <div class="form-horizontal">
             <div class="form-group row">
                <div class="col-md-3"><label class="valign-label" for="SettingId"><span data-tooltip-el="">SettingId</span></label></div>
@@ -131,11 +131,11 @@
             </div>
             <div class="form-group row">
                <div class="col-md-3"><label class="valign-label" for="Phone"><span data-tooltip-el="">Phone</span></label></div>
-               <div class="col-md-9"><input class="form-control" name="Phone" type="text" id="aaa7aef8f-11fe-950f-93de-bb0700b29cd6" aria-required="true" ></div>
+               <div class="col-md-9"><input class="form-control" name="Phone" type="text" id="aaa7aef8f-11fe-950f-93de-bb0700b29cd6" aria-required="true" formControlName="phone"></div>
             </div>
             <div class="form-group row">
                <div class="col-md-3"><label class="valign-label" for="Message"><span data-tooltip-el="">Message</span></label></div>
-               <div class="col-md-9"><textarea name="Message" class="form-control" id="ac904a02b-27eb-45db-fdc5-a88907a694d7" aria-required="true"></textarea></div>
+               <div class="col-md-9"><textarea name="Message" class="form-control" id="ac904a02b-27eb-45db-fdc5-a88907a694d7" aria-required="true" formControlName="message"></textarea></div>
             </div>
          </div>
       </form>

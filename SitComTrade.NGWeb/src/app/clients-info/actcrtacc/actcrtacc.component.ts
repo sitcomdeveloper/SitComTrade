@@ -57,9 +57,7 @@ export class ActcrtaccComponent implements OnInit {
       this.userGenralinfo = res;
       this.actionsForm.patchValue({
        to: this.userGenralinfo.Email,
-      //  settings: this.bindLoginData.userName
       })
-      // console.log('generalinfop', res)
     });
     } else {
       this.sndeml = false;
@@ -70,7 +68,7 @@ export class ActcrtaccComponent implements OnInit {
      this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
        this.userGenralinfo = res;
        this.actionsForm.patchValue({
-        to: this.userGenralinfo.Phone,
+        phone: this.userGenralinfo.Phone,
        
        })
       //  console.log('generalinfop', res)
@@ -105,7 +103,10 @@ export class ActcrtaccComponent implements OnInit {
       settings: [''],
       to: [''],
       subject: [''],
-      body: ['']
+      body: [''],
+      // send sms
+      phone: [''],
+      message: ['']
     })
     this.getGroups();
     this.sendersettingsData();
@@ -152,4 +153,7 @@ this._generalinfoservice.sendmail(email).subscribe(getmail => {
       // console.log('m',result);
     })
   }
+  // sendthesms() {
+
+  // }
 }
