@@ -93,7 +93,7 @@
                      <div class="col-md-9">
                      
                           
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles">
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="" aria-required="true" tabindex="-98" formControlName="roles" multiple>
                               <option value="">Select</option>
                               <option value="" value="{{getroles?.Name}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
@@ -122,7 +122,7 @@
                      <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
                      <div class="col-md-9">
                         
-                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks">
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks" multiple>
                            <option value="">Select...</option>
                            <option value="" value="{{shared?.Name}}" *ngFor="let shared of isshared">{{shared?.Name}}</option>
                            <!-- <option value="17">DESK MANAGER</option> -->
@@ -250,7 +250,7 @@
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">SharedSenderSettings</span></label></div>
                      <div class="col-md-9">
                        
-                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings">
+                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings" multiple>
                            <option value="">Select...</option>
                            <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
