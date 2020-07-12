@@ -8,6 +8,10 @@ using SitComTech.Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Configuration;
+using System.Net;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace SitComTech.Domain.Services
 {
@@ -642,11 +646,12 @@ namespace SitComTech.Domain.Services
     public class ShortMessageService : Service<ShortMessage>, IShortMessageService
     {
         private IGenericRepository<ShortMessage> _repository;
-
-        public ShortMessageService(IGenericRepository<ShortMessage> repository)
+        private IUnitOfWork _unitOfWork;
+        public ShortMessageService(IGenericRepository<ShortMessage> repository, IUnitOfWork unitOfWork)
             : base(repository)
         {
             this._repository = repository;
+            this._unitOfWork = unitOfWork;
         }
 
         public IQueryable<ShortMessage> GetAll()
@@ -657,6 +662,64 @@ namespace SitComTech.Domain.Services
         public List<ShortMessage> GetShortMessageByOwnerId(long ownerid)
         {
             return _repository.Queryable().Where(x => x.Active && !x.Deleted && x.OwnerId == ownerid).ToList();
+        }
+
+        public string SendShortMessage(ShortMessage smsdata)
+        {
+            try
+            {
+                var responseObject = SendSMSToClient(smsdata);
+                if (responseObject.Status == 0)
+                {
+                    ShortMessage entity = new ShortMessage
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = smsdata.OwnerId,
+                        PhoneNumber = smsdata.PhoneNumber,
+                        MessageText = smsdata.MessageText,
+                        SendDate = DateTime.Now,
+                    };
+                    _repository.Insert(entity);
+                    _unitOfWork.SaveChanges();
+                    return "Message Send Successfully !";
+                }
+                else
+                {
+                    return responseObject.ErrorMessage;
+                }                
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
+
+        public RootObject SendSMSToClient(ShortMessage smsdata)
+        {
+            string API_KEY = ConfigurationManager.AppSettings.Get("smsapikey");
+            string API_SECRET = ConfigurationManager.AppSettings.Get("smsapisecretkey");
+            double TO = Convert.ToDouble(smsdata.PhoneNumber);
+            string Message = smsdata.MessageText;
+            string sURL;
+            sURL = ConfigurationManager.AppSettings.Get("smsurl").ToString() + API_KEY + "&api_secret=" + API_SECRET + "&to=" + TO + "&text=" + Message;
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    string smsobject = client.DownloadString(sURL);
+                    return JsonConvert.DeserializeObject<RootObject>(smsobject);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 

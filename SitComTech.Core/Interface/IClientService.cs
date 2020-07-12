@@ -46,6 +46,7 @@ namespace SitComTech.Core.Interface
     public interface IShortMessageService : IService<ShortMessage>
     {
         List<ShortMessage> GetShortMessageByOwnerId(long ownerid);
+        string SendShortMessage(ShortMessage shortmessage);
     }
 
     public interface ICommentService : IService<Comment>
