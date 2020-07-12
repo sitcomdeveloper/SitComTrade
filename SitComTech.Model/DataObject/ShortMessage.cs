@@ -22,4 +22,17 @@ namespace SitComTech.Model.DataObject
 
         public virtual Client ClientTable { get; set; }
     }
+
+    public class Response
+    {
+        public string message_id { get; set; }
+        public int message_count { get; set; }
+        public double price { get; set; }
+    }
+    public class RootObject
+    {
+        public Response Response { get; set; }
+        public string ErrorMessage { get; set; }
+        public int Status { get; set; }
+    }
 }

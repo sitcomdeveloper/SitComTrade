@@ -164,7 +164,14 @@ namespace SitComTech.API.Controllers
         public List<ShortMessage> GetShortMessageByOwnerId(long ownerid)
         {
             return _shortMeassageService.GetShortMessageByOwnerId(ownerid);
-        }        
+        }
+
+        [HttpPost]
+        [Route("SendShortMessage")]
+        public string SendShortMessage(ShortMessage smsdata)
+        {
+            return _shortMeassageService.SendShortMessage(smsdata);
+        }
 
         [HttpPost]
         [Route("InsertUpdateMarketingInfo")]
