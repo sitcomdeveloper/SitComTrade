@@ -38,13 +38,14 @@ export class ActcrtaccComponent implements OnInit {
   tkemail: any;
   gtviewhist: any;
   getSendersData: any;
-  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService,private _generalinfoservice: GeneralInfoService,private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService) { }
+  smsissnt: any;
+  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
-    
+
     if (this.createaccount === 'createaccount') {
       this.crtacct = true;
     } else {
@@ -53,26 +54,25 @@ export class ActcrtaccComponent implements OnInit {
     if (this.sendemail === 'sendemail') {
       this.sndeml = true;
       // API of general section use for showing email on actions 'sendemail' popup
-     this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
-      this.userGenralinfo = res;
-      this.actionsForm.patchValue({
-       to: this.userGenralinfo.Email,
-      })
-    });
+      this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
+        this.userGenralinfo = res;
+        this.actionsForm.patchValue({
+          to: this.userGenralinfo.Email,
+        })
+      });
     } else {
       this.sndeml = false;
     }
     if (this.sendsms === 'sendsms') {
       this.sndsms = true;
-     // API of general section use for showing phone no. on actions 'sendsms' popup
-     this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
-       this.userGenralinfo = res;
-       this.actionsForm.patchValue({
-        phone: this.userGenralinfo.Phone,
-       
-       })
-      //  console.log('generalinfop', res)
-     });
+      // API of general section use for showing phone no. on actions 'sendsms' popup
+      this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
+        this.userGenralinfo = res;
+        this.actionsForm.patchValue({
+          phone: this.userGenralinfo.Phone,
+        })
+        //  console.log('generalinfop', res)
+      });
     } else {
       this.sndsms = false;
     }
@@ -80,7 +80,7 @@ export class ActcrtaccComponent implements OnInit {
       this.vwhistory = true;
       this._generalinfoservice.getviewhistory(this.detailss).subscribe(res => {
         this.gtviewhist = res;
-        console.log('gtviewhist',res);
+        console.log('gtviewhist', res);
       });
     } else {
       this.vwhistory = false;
@@ -93,8 +93,8 @@ export class ActcrtaccComponent implements OnInit {
         this.actionsForm.patchValue({
           to: this.userGenralinfo.Email,
           subject: this.sntmldta.Subject,
-      body: this.sntmldta.Body,
-         })
+          body: this.sntmldta.Body,
+        })
       });
     } else {
       this.emldetails = false;
@@ -106,6 +106,7 @@ export class ActcrtaccComponent implements OnInit {
       body: [''],
       // send sms
       phone: [''],
+      phoneCode: [''],
       message: ['']
     })
     this.getGroups();
@@ -119,8 +120,8 @@ export class ActcrtaccComponent implements OnInit {
     this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
       this.Group = result.reverse();
     });
-   }
-   // get all mails
+  }
+  // get all mails
   gettheMail() {
     this._generalinfoservice.getMail(this.detailss).subscribe(gtmal => {
       this.tkemail = gtmal;
@@ -135,25 +136,40 @@ export class ActcrtaccComponent implements OnInit {
       Sender: this.actionsForm.value.settings,
       OwnerId: this.userGenralinfo.Id,
     }
-this._generalinfoservice.sendmail(email).subscribe(getmail => {
-  this.sentmails = getmail;
-  this.gettheMail();
-  this.clddata.emit(getmail);
+    this._generalinfoservice.sendmail(email).subscribe(getmail => {
+      this.sentmails = getmail;
+      this.gettheMail();
+      this.clddata.emit(getmail);
       if (getmail === null) {
         this.response = 'Mail is sent successfully!';
       } else {
         this.response = '';
       }
       this.actionsForm.reset();
-})
+    })
   }
   sendersettingsData() {
-    this.settingsService.getAllSenderSettings().subscribe( result => {
+    this.settingsService.getAllSenderSettings().subscribe(result => {
       this.getSendersData = result;
       // console.log('m',result);
     })
   }
-  // sendthesms() {
-
-  // }
+  sendthesms() {
+    const sms = {
+      OwnerId: this.userGenralinfo.Id,
+      MessageText: this.actionsForm.value.message,
+      PhoneNumber: this.actionsForm.value.phone,
+    }
+this._generalinfoservice.sendsms(sms).subscribe(sndsmsRes => {
+  this.smsissnt = sndsmsRes;
+  this.clddata.emit(sndsmsRes);
+  if (sndsmsRes === null) {
+    this.response = 'Mail is sent successfully!';
+  } else {
+    this.response = '';
+  }
+  this.actionsForm.reset();
+  console.log('smsissnt',sndsmsRes);
+})
+  }
 }

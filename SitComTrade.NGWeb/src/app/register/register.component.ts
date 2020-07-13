@@ -117,6 +117,7 @@ export class RegisterComponent implements OnInit {
   currencyName(a) {
     this.loginservice.currencyName(a).subscribe(result => {
       this.currrency = result;
+      console.log(result)
     });
   }
   onCurrencyChange(val: any) {
