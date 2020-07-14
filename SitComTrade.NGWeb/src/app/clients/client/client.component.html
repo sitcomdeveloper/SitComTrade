@@ -100,9 +100,9 @@
                 <li><a href="#" title="Import Clients" class="link-import" data-toggle="modal" data-target="#importclient" (click)="openImprtClient()"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
                 <li><a href="#" title="Export Clients" class="link-export" data-toggle="modal" data-target="#exportclient"><i class="fa fa-arrow-down"></i>Export Clients</a>
                 </li>
-                <li class="no-events"><a class="link-sms" href="javascript:void(0);" title="Sms"><i class="fa fa-envelope"></i>Sms to selected</a></li>
+                <li class="no-events"><a class="link-sms" href="javascript:void(0);" title="Sms" (click)="openpopupforsmstoSelected"><i class="fa fa-envelope"></i>Sms to selected</a></li>
                 <li class="no-events">
-                  <a href="javascript:void(0)" class="link-sms-all" data-toggle="modal" data-target="#sms-all" title="Sms"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
+                  <a href="javascript:void(0)" class="link-sms-all" data-toggle="modal" data-target="#sms-all" title="Sms" (click)="openpopupforsmstoall()"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
                 <li class="no-events">
                   <a href="javascript:void(0)" class="link-email" title="Emails" (click)="sendemail()" [class.disabled] = deletbtnn><i class="fa fa-envelope"></i>Email to selected</a></li>
                 <li class="no-events"><a href="javascript:void(0)" class="link-email-all"  data-toggle="modal" data-target="#email-all"title="Emails" (click)="sendmailtoallpopup()"><i class="fa fa-envelope"></i>Email to all</a></li>
@@ -4890,49 +4890,6 @@
     </div>
   </div>
 </div> -->
-<!------------------create new user model------------->
-<!-- <div class="modal" id="regModal">
-  <div class="modal-dialog modal930">
-    <div class="modal-content">
-      <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title popupheader">
-          CREATE ITEM
-        </h1>
-        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
-      </div>
-      <div class="modal-body">
-        <app-item></app-item>
-
-
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-<!--------------End create new user model--------------->
-<!------------------create Import Client model------------->
-<!-- <div class="modal " id="importclient" >
-  <div class="modal-dialog modal750">
-    <div class="modal-content">
-      <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title popupheader">
-          IMPORT CLIENT
-        </h1>
-        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
-      </div>
-      <div class="modal-body nopadd">
-        <app-import-client></app-import-client>
-
-
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
 <!--------------End create Import Client model--------------->
 <!------------------create Export Client model------------->
 <div class="modal" id="exportclient">
@@ -4946,89 +4903,11 @@
       </div>
       <div class="modal-body">
         <app-export-client></app-export-client>
-
-
       </div>
     </div>
   </div>
 </div>
-
-
-
-<!--------------End create Export Client model--------------->
-<!------------------create SMS to all model------------->
-<div class="modal" id="sms-all">
-  <div class="modal-dialog modal930">
-    <div class="modal-content">
-      <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title createitemheader">
-          CREATE ITEM
-        </h1>
-        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
-      </div>
-      <div class="modal-body">
-        <app-sms-all></app-sms-all>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!--------------End create SMS to all model--------------->
-
-<div class="modal" id="sms-all">
-  <div class="modal-dialog modal930">
-    <div class="modal-content">
-      <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title createitemheader">
-          CREATE ITEM
-        </h1>
-        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
-      </div>
-      <div class="modal-body">
-        <app-sms-all></app-sms-all>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!--------------End create SMS to all model--------------->
-
-
-<!--------------End create email-all model--------------->
-
-<!-- <div class="modal" id="email-all">
-  <div class="modal-dialog modal930">
-    <div class="modal-content">
-      <div class="modal-header" style="height: 4rem;">
-        <h1 class="modal-title createitemheader">
-          CREATE ITEM
-        </h1>
-        <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
-      </div>
-      <div class="modal-body">
-        <app-email-all></app-email-all>
-
-
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
 <!---------------EDITING MODE------------>
-
-
-<!---------------------------------------->
-
-
 <ng4-loading-spinner> </ng4-loading-spinner>
 
 <app-footer></app-footer>

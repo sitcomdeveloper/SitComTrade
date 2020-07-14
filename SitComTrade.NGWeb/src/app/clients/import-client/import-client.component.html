@@ -28,12 +28,13 @@
                      <div class="dropzone">
                         <i class="fa fa-upload" aria-hidden="true">&nbsp;</i>
                         Drag your document here or
-                        <!-- <a href="#">Browse Files
+                        <a href="#">Browse Files
                            <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()"
-                              id="file-upload" formControlName="browsefiles" (change)="importclientbyExcel($event)" accept="*">
-                         accept=".xlsx,.xls" 
-                        </a> -->
-                        <div class="col-sm-12 form-group clearfix">
+                              id="file-upload" formControlName="browsefiles" accept="*">
+                              <!-- <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()"
+                              id="file-upload" formControlName="browsefiles" (change)="importclientbyExcel($event)" accept="*"> -->
+                        </a>
+                        <!-- <div class="col-sm-12 form-group clearfix">
                            <div class="file-uploaded col-sm-12 p-lr-0">
                              <label for="upload"
                                class="file-upload-label btn btn-primary col-sm-8 col-sm-offset-2 p-lr-0"
@@ -44,7 +45,7 @@
                           name="myfile"
                                (change)="importclientbyExcel($event)" accept="*" />
                            </div>
-                         </div>
+                         </div> -->
                      </div>
 
                      <div id="files_name"></div>
@@ -63,8 +64,8 @@
             <div class="col-md-12" style="padding:0!important">
                <div class="modal-footer modal-footernew">
                   <div class="text-center margin17">
-                     <!-- <a href="#importclientdata" class="button submit-button itembutton"  data-toggle="modal" (change)="importclientbyExcel($event)" accept="*" >Next</a>
-                  -->
+                     <a href="#importclientdata" class="button submit-button itembutton"  data-toggle="modal" (click)="importclientbyExcel()" accept="*" >Next</a>
+                 
                      <!-- <input type="file" class="file-upload-input" name="myfile"
                          />Next -->
                   </div>
@@ -75,3 +76,4 @@
 
    </div>
 </div>
+<!-- (change)="importclientbyExcel($event)" -->

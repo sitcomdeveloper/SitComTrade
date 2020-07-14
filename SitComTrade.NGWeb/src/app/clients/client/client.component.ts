@@ -15,6 +15,7 @@ import { GroupsService } from 'src/app/settings/groups/groups.service';
 import * as $ from 'jquery'
 // import { ActcrtaccComponent } from 'src/app/clients-info/actcrtacc/actcrtacc.component';
 import { EmailAllComponent } from '../email-all/email-all.component';
+import { SmsAllComponent } from '../sms-all/sms-all.component';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -452,5 +453,28 @@ export class ClientComponent implements OnInit {
     this.leadcolorchange = false;
   }
   }
+  // sms to all
+  openpopupforsmstoall() {
+    const initialState = {
+      title: 'sms: send',
+      sendsmstoall: 'sendsmstoall',
+      // detailss: this.UserId
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(SmsAllComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
+  // sms to selected
+  openpopupforsmstoSelected() {
+    const initialState = {
+      title: 'sms: send',
+      sendsmstoselected: 'sendsmstoselected',
+      // detailss: this.UserId
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(SmsAllComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  }
+
 }
 

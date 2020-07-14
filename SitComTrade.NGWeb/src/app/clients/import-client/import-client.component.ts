@@ -27,15 +27,17 @@ export class ImportClientComponent implements OnInit {
       browsefiles: ['']
     })
   }
-  importclientbyExcel(event) {
+  importclientbyExcel() {
    // this.technical = event.target.result;
-   const reader = new FileReader();
-   reader.readAsDataURL(event.target.files[0]);
-    this.technical = event.target.files[0];
-    const colmnsHeader = {
-      client_import_fileuploader: this.importExcelForm.value.browsefiles
-    };
-    this.clientService.importClientByExcel(this.technical.name).subscribe(excel => {
+  //  const reader = new FileReader();
+  //  reader.readAsDataURL(event.target.files[0]);
+  //   this.technical = event.target.files[0];
+  const formData = new FormData();
+  formData.append('client_import_fileuploader', this.importExcelForm.value.browsefiles)
+    // const colmnsHeader = {
+    //   client_import_fileuploader: this.importExcelForm.value.browsefiles
+    // };
+    this.clientService.importClientByExcel(formData).subscribe(excel => {
       this.importclientResponse = excel;
       console.log('importclientResponse', excel);
     });
@@ -64,4 +66,5 @@ export class ImportClientComponent implements OnInit {
   hideModal() {
     this.bsmodal.hide();
   }
+  // this.clientService.importClientByExcel(this.technical.name).subscribe(excel => {
 }

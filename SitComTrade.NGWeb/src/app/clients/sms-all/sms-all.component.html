@@ -1,1 +1,71 @@
-<p>sms-all works!</p>
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}} </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+ </div>
+<!-- sms to all -->
+<div *ngIf = sndsmstoall>
+    <div class="form-holder mt40">
+       <form novalidate="novalidate" [formGroup]="actionsForm">
+          <div class="form-horizontal">
+             <div class="form-group row">
+                <div class="col-md-3"><label class="valign-label" for="SettingId"><span data-tooltip-el="">SettingId</span></label></div>
+                <div class="col-md-9">
+                   <div class="">
+                     
+                      <select class="form-control" name="SettingId" data-container="body" data-live-search="true" id="abea5caaa-1a55-8e20-fa13-7ef1560dca13" tabindex="-98" aria-required="true">
+                         <option value="">Select...</option>
+                      </select>
+                   </div>
+                </div>
+             </div>
+             <div class="form-group row">
+                <div class="col-md-3"><label class="valign-label" for="Message"><span data-tooltip-el="">Message</span></label></div>
+                <div class="col-md-9"><textarea name="Message" class="form-control" id="ac904a02b-27eb-45db-fdc5-a88907a694d7" aria-required="true" formControlName="message"></textarea></div>
+             </div>
+          </div>
+       </form>
+    </div>
+    <div class="message">{{response}}</div>
+    <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="col-md-12 padd0">
+       <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
+          <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center">
+             <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]"><a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Send</a><a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a></div>
+          </div>
+       </div>
+    </div>
+   </div>
+
+   <!-- sms to selected -->
+   <div *ngIf = sndsmstoSelected>
+    <div class="form-holder mt40">
+       <form novalidate="novalidate" [formGroup]="actionsForm">
+          <div class="form-horizontal">
+             <div class="form-group row">
+                <div class="col-md-3"><label class="valign-label" for="SettingId"><span data-tooltip-el="">SettingId</span></label></div>
+                <div class="col-md-9">
+                   <div class="">
+                     
+                      <select class="form-control" name="SettingId" data-container="body" data-live-search="true" id="abea5caaa-1a55-8e20-fa13-7ef1560dca13" tabindex="-98" aria-required="true">
+                         <option value="">Select...</option>
+                      </select>
+                   </div>
+                </div>
+             </div>
+             <div class="form-group row">
+                <div class="col-md-3"><label class="valign-label" for="Message"><span data-tooltip-el="">Message</span></label></div>
+                <div class="col-md-9"><textarea name="Message" class="form-control" id="ac904a02b-27eb-45db-fdc5-a88907a694d7" aria-required="true" formControlName="message"></textarea></div>
+             </div>
+          </div>
+       </form>
+    </div>
+    <div class="message">{{response}}</div>
+    <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="col-md-12 padd0">
+       <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
+          <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center">
+             <div _ngcontent-rew-c17="" _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]"><a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Send</a><a _ngcontent-rew-c17="" _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a></div>
+          </div>
+       </div>
+    </div>
+   </div>
