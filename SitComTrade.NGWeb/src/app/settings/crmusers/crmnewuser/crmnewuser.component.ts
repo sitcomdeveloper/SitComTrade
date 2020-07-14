@@ -239,7 +239,27 @@ export class CrmnewuserComponent implements OnInit {
         CampaignCode: '',
         AffiliateFieldId: '',
         AffiliateFieldName: '',
-        userRoles: this.multiRoles
+        userRoles: this.multiRoles,
+        DepartmentId: this.newRegisterForm.value.department,
+        DepartmentName: this.newRegisterForm.value.departmentid,
+        userSharedDesks: [{
+          SharedDeskId: this.IdofSHaredDesk.push(this.newRegisterForm.value.shareddesks),
+          SharedDeskName: this.NameofSharedDesk.push(this.newRegisterForm.value.shareddesksid),
+        }],
+        TimezoneId: '',
+        TimezoneName: this.newRegisterForm.value.timezone,
+        CultureCode: this.newRegisterForm.value.culturecode,
+        CultureCodeId: '',
+        UiCultureCode: this.newRegisterForm.value.uiculturecode,
+        UiCultureCodeId: '',
+        StartModuleId: '',
+        StartModuleName: this.newRegisterForm.value.startmodule,
+        DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
+        DefaultSenderId: '',
+        userSharedSenderSettings: [{
+          SenderMailId: this.newRegisterForm.value.sharedsendersettings,
+          SenderMail: '',
+        }]
       }
       
       
