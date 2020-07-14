@@ -5,6 +5,7 @@ import { GeneralInfoService } from 'src/app/clients_info/general-info/general-in
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { SettingsService } from 'src/app/settings/settings.service';
+import { LoginService } from 'src/app/login/login.service';
 
 @Component({
   selector: 'app-actcrtacc',
@@ -39,12 +40,24 @@ export class ActcrtaccComponent implements OnInit {
   gtviewhist: any;
   getSendersData: any;
   smsissnt: any;
-  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService) { }
+  Country: any;
+  constructor(private bsmodal: BsModalRef, private groupsService: GroupsService, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService, private loginservice: LoginService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
+
+    this.actionsForm = this.fb.group({
+      settings: [''],
+      to: [''],
+      subject: [''],
+      body: [''],
+      // send sms
+      phone: [''],
+      phoneCode: [''],
+      message: ['']
+    })
 
     if (this.createaccount === 'createaccount') {
       this.crtacct = true;
@@ -65,9 +78,19 @@ export class ActcrtaccComponent implements OnInit {
     }
     if (this.sendsms === 'sendsms') {
       this.sndsms = true;
+
+      this.loginservice.countryName(0).subscribe(result => {
+        this.Country = result;
+        console.log(result);
+      });
+
       // API of general section use for showing phone no. on actions 'sendsms' popup
       this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
         this.userGenralinfo = res;
+        this.userGenralinfo.CountryId
+        // this.Country.forEach(this.userGenralinfo => {
+
+        // })
         this.actionsForm.patchValue({
           phone: this.userGenralinfo.Phone,
         })
@@ -99,16 +122,7 @@ export class ActcrtaccComponent implements OnInit {
     } else {
       this.emldetails = false;
     }
-    this.actionsForm = this.fb.group({
-      settings: [''],
-      to: [''],
-      subject: [''],
-      body: [''],
-      // send sms
-      phone: [''],
-      phoneCode: [''],
-      message: ['']
-    })
+    
     this.getGroups();
     this.sendersettingsData();
   }
@@ -158,18 +172,18 @@ export class ActcrtaccComponent implements OnInit {
     const sms = {
       OwnerId: this.userGenralinfo.Id,
       MessageText: this.actionsForm.value.message,
-      PhoneNumber: this.actionsForm.value.phone,
+      PhoneNumber: this.actionsForm.value.phoneCode + this.actionsForm.value.phone,
     }
 this._generalinfoservice.sendsms(sms).subscribe(sndsmsRes => {
   this.smsissnt = sndsmsRes;
+  console.log(sndsmsRes);
   this.clddata.emit(sndsmsRes);
-  if (sndsmsRes === null) {
-    this.response = 'Mail is sent successfully!';
+  if (sndsmsRes === 'Message Send Successfully !') {
+    this.response = 'SMS is sent successfully!';
   } else {
-    this.response = '';
+    this.response = 'Unrecognized country prefix';
   }
   this.actionsForm.reset();
-  console.log('smsissnt',sndsmsRes);
 })
   }
 }

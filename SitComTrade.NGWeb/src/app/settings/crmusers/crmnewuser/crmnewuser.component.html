@@ -120,7 +120,7 @@
                      <div class="col-md-9">
                      
                           
-                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.roles.errors,'form-control':true}" tabindex="-98" formControlName="roles" multiple>
+                           <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.roles.errors,'form-control':true}" tabindex="-98" formControlName="roles" multiple (change)="selctmultiRoles($event.target.value)">
                               <option value="">Select</option>
                               <option value="" value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>

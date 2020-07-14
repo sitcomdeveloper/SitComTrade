@@ -100,15 +100,14 @@
                 <li><a href="#" title="Import Clients" class="link-import" data-toggle="modal" data-target="#importclient" (click)="openImprtClient()"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
                 <li><a href="#" title="Export Clients" class="link-export" data-toggle="modal" data-target="#exportclient"><i class="fa fa-arrow-down"></i>Export Clients</a>
                 </li>
-                <li class="no-events"><a class="link-sms" href="javascript:void(0);" title="Sms" (click)="openpopupforsmstoSelected"><i class="fa fa-envelope"></i>Sms to selected</a></li>
+                <li class="no-events"><a class="link-sms" href="javascript:void(0);" title="Sms" (click)="openpopupforsmstoSelected()"><i class="fa fa-envelope"></i>Sms to selected</a></li>
                 <li class="no-events">
-                  <a href="javascript:void(0)" class="link-sms-all" data-toggle="modal" data-target="#sms-all" title="Sms" (click)="openpopupforsmstoall()"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
+                  <a href="javascript:void(0)" class="link-sms-all" title="Sms" (click)="openpopupforsmstoall()"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
                 <li class="no-events">
                   <a href="javascript:void(0)" class="link-email" title="Emails" (click)="sendemail()" [class.disabled] = deletbtnn><i class="fa fa-envelope"></i>Email to selected</a></li>
                 <li class="no-events"><a href="javascript:void(0)" class="link-email-all"  data-toggle="modal" data-target="#email-all"title="Emails" (click)="sendmailtoallpopup()"><i class="fa fa-envelope"></i>Email to all</a></li>
                 <li><a class="link-account" href="javascript:void(0);"><i class="fa fa-user"></i>Create Account</a></li>
              </ul>
-              <!------------------------------->
             </div>
 
           </div>

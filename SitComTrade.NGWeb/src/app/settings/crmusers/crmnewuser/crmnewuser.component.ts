@@ -36,6 +36,11 @@ export class CrmnewuserComponent implements OnInit {
   notsharedsender: any;
   response: string;
   submitted = false;
+  IdofRoles = [];
+  NameofRoles = [];
+  IdofSHaredDesk = [];
+  NameofSharedDesk = [];
+  multiRoles: any;
 
   constructor(private bsmodal: BsModalRef, private settingsService: SettingsService, private fb: FormBuilder) { }
 
@@ -106,9 +111,7 @@ export class CrmnewuserComponent implements OnInit {
           if (notshareddata.IsShared === false) {
             return notshareddata;
           }
-          // console.log('notshareddata',this.notshared);
         });
-        // console.log('Desks', desks);
       }
     });
   }
@@ -208,21 +211,6 @@ export class CrmnewuserComponent implements OnInit {
           this.newRegisterForm.value.timezoneid = element.Name;
         }
       });
-      // this.CultureCode.forEach(element => {
-      //   if ( element.Id === +this.newRegisterForm.value.culturecode) {
-      //     this.newRegisterForm.value.culturecodeid = element.Name;
-      //   }
-      // });
-      // this.CultureCode.forEach(element => {
-      //   if ( element.Id === +this.newRegisterForm.value.uiculturecode) {
-      //     this.newRegisterForm.value.uiculturecodeid = element.Name;
-      //   }
-      // });
-      // this.Modules.forEach(element => {
-      //   if ( element.Id === +this.newRegisterForm.value.startmodule) {
-      //     this.newRegisterForm.value.startmoduleid = element.Name;
-      //   }
-      // });
       this.notsharedsender.forEach(element => {
         if (element.Id === +this.newRegisterForm.value.defaultsendersetting) {
           this.newRegisterForm.value.defaultsendersettingid = element.Name;
@@ -233,7 +221,8 @@ export class CrmnewuserComponent implements OnInit {
           this.newRegisterForm.value.sharedsendersettingsid = element.Name;
         }
       });
-      const rgstrusr = {
+      
+      const rgstrusr = {   
         FirstName: this.newRegisterForm.value.firstname,
         LastName: this.newRegisterForm.value.lastname,
         Email: this.newRegisterForm.value.email,
@@ -250,31 +239,10 @@ export class CrmnewuserComponent implements OnInit {
         CampaignCode: '',
         AffiliateFieldId: '',
         AffiliateFieldName: '',
-        userRoles: [{
-          RoleId: this.newRegisterForm.value.roles,
-          RoleName: this.newRegisterForm.value.rolesid,
-        }],
-        DepartmentId: this.newRegisterForm.value.department,
-        DepartmentName: this.newRegisterForm.value.departmentid,
-        userSharedDesks: [{
-          SharedDeskId: this.newRegisterForm.value.shareddesks,
-          SharedDeskName: this.newRegisterForm.value.shareddesksid,
-        }],
-        TimezoneId: '',
-        TimezoneName: this.newRegisterForm.value.timezone,
-        CultureCode: this.newRegisterForm.value.culturecode,
-        CultureCodeId: '',
-        UiCultureCode: this.newRegisterForm.value.uiculturecode,
-        UiCultureCodeId: '',
-        StartModuleId: '',
-        StartModuleName: this.newRegisterForm.value.startmodule,
-        DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
-        DefaultSenderId: '',
-        userSharedSenderSettings: [{
-          SenderMailId: this.newRegisterForm.value.sharedsendersettings,
-          SenderMail: '',
-        }]
-      };
+        userRoles: this.multiRoles
+      }
+      
+      
       this.settingsService.registeruser(rgstrusr).subscribe(user => {
         this.RegisteredUser = user;
         this.clddata.emit(user);
@@ -298,4 +266,14 @@ export class CrmnewuserComponent implements OnInit {
     const { value: repeatpassword } = formGroup.get('repeatpassword');
     return password === repeatpassword ? null : { passwordNotMatch: true };
   }
+  selctmultiRoles(val: any) {
+    
+      const userRoles = {
+        RoleId: this.newRegisterForm.value.roles,
+        RoleName: this.newRegisterForm.value.rolesid,
+      }
+     this.IdofRoles.push(userRoles);
+     console.log('mltirole',this.IdofRoles);
+    }
+  
 }
