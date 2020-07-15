@@ -165,20 +165,12 @@ $('#edit-comment').click(function(){
       $("#chked").html("<span>"+chlength+ " items checked from</span>");
   } 
   </script>
-  <script type="application/javascript">
-    function file_name_show()
-    {
-      var file = $('#file-upload')[0].files[0].name;
-      var size = $('#file-upload')[0].files[0].size;
-      var size=size/1024
-      $("#files_name").html('<hr><i class="fa fa-file" aria-hidden="true"></i>  '+file+"    size : "+size.toFixed(2)+" KB"+'           <a href="javascript:void(0)"><i class="fa fa-times" aria-hidden="true" onclick="file_name_remove()"></i></a><hr>');
-    }
-    function file_name_remove()
-    {
-      $('#file-upload').val('');
-      $("#files_name").html('');
-    }
-   </script>
+<script type="application/javascript">
+      function file_name_remove() {
+    $('#file-upload').val('');
+    $("#files_name").html('');
+  }
+</script>
    <!-- for showing pwd by clicking on eye -->
    <script>
     $(document).ready(function () {
