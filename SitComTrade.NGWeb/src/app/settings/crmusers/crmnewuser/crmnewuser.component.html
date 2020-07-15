@@ -122,7 +122,7 @@
                           
                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.roles.errors,'form-control':true}" tabindex="-98" formControlName="roles" multiple (change)="selctmultiRoles($event.target.value)">
                               <option value="">Select</option>
-                              <option value="" value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
+                              <option value="" value="{{getroles?.Name}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
                            <div *ngIf="submitted && f.roles.errors" class="invalid-feedback">
                               <div *ngIf="f.roles.errors.required">Roles is required</div>
@@ -151,7 +151,7 @@
                      <div class="col-md-3"><label class="valign-label" for="SharedDesks"><span data-tooltip-el="">SharedDesks</span></label></div>
                      <div class="col-md-9">
                         
-                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks" id="multiselect" multiple>
+                        <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" tabindex="-98" formControlName="shareddesks" id="multiselect" multiple (change)="selectmultisharedDesks($event.target.value)">
                            <option value="">Select...</option>
                            <option value="" value="{{shared?.Id}}" type="checkbox" *ngFor="let shared of isshared">{{shared?.Name}}</option>
                         </select>
@@ -288,7 +288,7 @@
                      <div class="col-md-3"><label class="valign-label text-ellipsis" for="SharedSenderSettings" data-original-title="" title=""><span data-tooltip-el="" tooltip="SharedSenderSettings">SharedSenderSettings</span></label></div>
                      <div class="col-md-9">
                        
-                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings" multiple>
+                        <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings" multiple (change)="selectmultisharedSenderSettings($event.target.value)">
                            <option value="">Select...</option>
                            <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>

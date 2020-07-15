@@ -37,7 +37,8 @@ export class CrmnewuserComponent implements OnInit {
   response: string;
   submitted = false;
   ListofRoles = [];
-  multiRoles: any;
+  ListofSharedDesks = [];
+  Listofsharedsendersettings = [];
 
   constructor(private bsmodal: BsModalRef, private settingsService: SettingsService, private fb: FormBuilder) { }
 
@@ -48,14 +49,14 @@ export class CrmnewuserComponent implements OnInit {
     // form group
     this.newRegisterForm = this.fb.group({
       image: [''],
-      firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-      lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(25)]],
-      username: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'), Validators.email]],
-      phone: ['', [Validators.required]],
+      firstname: [''],
+      lastname: [''],
+      username: [''],
+      email: [''],
+      phone: [''],
       disabled: [''],
-      desk: ['', [Validators.required]],
-      roles: ['', [Validators.required]],
+      desk: [''],
+      roles: [''],
       department: [''],
       shareddesks: [''],
       timezone: [''],
@@ -64,8 +65,8 @@ export class CrmnewuserComponent implements OnInit {
       startmodule: [''],
       defaultsendersetting: [''],
       sharedsendersettings: [''],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      repeatpassword: ['', [Validators.required]],
+      password: [''],
+      repeatpassword: [''],
 
       deskid: [''],
       rolesid: [''],
@@ -239,10 +240,8 @@ export class CrmnewuserComponent implements OnInit {
         userRoles: this.ListofRoles,
         DepartmentId: this.newRegisterForm.value.department,
         DepartmentName: this.newRegisterForm.value.departmentid,
-        userSharedDesks: [{
-          SharedDeskId: this.newRegisterForm.value.shareddesks,
-          SharedDeskName: this.newRegisterForm.value.shareddesksid,
-        }],
+        userSharedDesks: this.ListofSharedDesks,
+         
         TimezoneId: '',
         TimezoneName: this.newRegisterForm.value.timezone,
         CultureCode: this.newRegisterForm.value.culturecode,
@@ -253,10 +252,8 @@ export class CrmnewuserComponent implements OnInit {
         StartModuleName: this.newRegisterForm.value.startmodule,
         DefaultSenderName: this.newRegisterForm.value.defaultsendersetting,
         DefaultSenderId: '',
-        userSharedSenderSettings: [{
-          SenderMailId: this.newRegisterForm.value.sharedsendersettings,
-          SenderMail: '',
-        }]
+        userSharedSenderSettings: this.Listofsharedsendersettings
+         
       }
       
       
@@ -284,13 +281,27 @@ export class CrmnewuserComponent implements OnInit {
     return password === repeatpassword ? null : { passwordNotMatch: true };
   }
   selctmultiRoles(val: any) {
-    
       const userRoles = {
-        RoleId: this.newRegisterForm.value.roles,
-        RoleName: this.newRegisterForm.value.rolesid,
+        RoleId: this.newRegisterForm.value.rolesid,
+        RoleName: this.newRegisterForm.value.roles,
       }
      this.ListofRoles.push(userRoles);
      console.log('mltirole',this.ListofRoles);
     }
-  
+  selectmultisharedDesks(dskval: any) {
+    const userSharedDesks = {
+      SharedDeskId: this.newRegisterForm.value.shareddesks,
+      SharedDeskName: this.newRegisterForm.value.shareddesksid,
+    }
+    this.ListofSharedDesks.push(userSharedDesks);
+    console.log('mltishareddesks',this.ListofSharedDesks);
+  }
+  selectmultisharedSenderSettings(shredsndrsettings: any) {
+    const userSharedSenderSettings = {
+      SenderMailId: this.newRegisterForm.value.sharedsendersettings,
+          SenderMail: '',
+    }
+    this.Listofsharedsendersettings.push(userSharedSenderSettings);
+    console.log('mltisharedsendersettings',this.Listofsharedsendersettings);
+  }
 }
