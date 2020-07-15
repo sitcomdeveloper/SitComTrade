@@ -36,10 +36,7 @@ export class CrmnewuserComponent implements OnInit {
   notsharedsender: any;
   response: string;
   submitted = false;
-  IdofRoles = [];
-  NameofRoles = [];
-  IdofSHaredDesk = [];
-  NameofSharedDesk = [];
+  ListofRoles = [];
   multiRoles: any;
 
   constructor(private bsmodal: BsModalRef, private settingsService: SettingsService, private fb: FormBuilder) { }
@@ -239,12 +236,12 @@ export class CrmnewuserComponent implements OnInit {
         CampaignCode: '',
         AffiliateFieldId: '',
         AffiliateFieldName: '',
-        userRoles: this.multiRoles,
+        userRoles: this.ListofRoles,
         DepartmentId: this.newRegisterForm.value.department,
         DepartmentName: this.newRegisterForm.value.departmentid,
         userSharedDesks: [{
-          SharedDeskId: this.IdofSHaredDesk.push(this.newRegisterForm.value.shareddesks),
-          SharedDeskName: this.NameofSharedDesk.push(this.newRegisterForm.value.shareddesksid),
+          SharedDeskId: this.newRegisterForm.value.shareddesks,
+          SharedDeskName: this.newRegisterForm.value.shareddesksid,
         }],
         TimezoneId: '',
         TimezoneName: this.newRegisterForm.value.timezone,
@@ -292,8 +289,8 @@ export class CrmnewuserComponent implements OnInit {
         RoleId: this.newRegisterForm.value.roles,
         RoleName: this.newRegisterForm.value.rolesid,
       }
-     this.IdofRoles.push(userRoles);
-     console.log('mltirole',this.IdofRoles);
+     this.ListofRoles.push(userRoles);
+     console.log('mltirole',this.ListofRoles);
     }
   
 }

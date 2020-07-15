@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   API_URL: 'http://topseedtech.in/api/'
-  // API_URL: 'http://testmode.aptimyst.com/'
   //  API_URL: 'https://c8fc38b4.ngrok.io/api/'
 };
 /*
