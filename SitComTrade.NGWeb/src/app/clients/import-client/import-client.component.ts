@@ -32,12 +32,10 @@ export class ImportClientComponent implements OnInit {
   //  const reader = new FileReader();
   //  reader.readAsDataURL(event.target.files[0]);
   //   this.technical = event.target.files[0];
-  const formData = new FormData();
-  formData.append('client_import_fileuploader', this.importExcelForm.value.browsefiles)
-    // const colmnsHeader = {
-    //   client_import_fileuploader: this.importExcelForm.value.browsefiles
-    // };
-    this.clientService.importClientByExcel(formData).subscribe(excel => {
+    const colmnsHeader = {
+      client_import_fileuploader: this.importExcelForm.value.browsefiles
+    };
+    this.clientService.importClientByExcel(colmnsHeader).subscribe(excel => {
       this.importclientResponse = excel;
       console.log('importclientResponse', excel);
     });

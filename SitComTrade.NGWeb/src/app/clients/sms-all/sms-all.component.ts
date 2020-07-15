@@ -14,6 +14,8 @@ export class SmsAllComponent implements OnInit {
   sndsmstoall = false
   sndsmstoSelected = false;
   sendsmstoselected: any;
+  title: any;
+  response: String;
   constructor(private fb: FormBuilder, private bsmodal: BsModalRef) { }
 
   ngOnInit() {
