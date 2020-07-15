@@ -29,7 +29,7 @@
                         <i class="fa fa-upload" aria-hidden="true">&nbsp;</i>
                         Drag your document here or
                         <a href="#">Browse Files
-                           <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()"
+                           <input type="file" name="files[]" multiple="multiple" (change)="file_name_show($event)"
                               id="file-upload" formControlName="browsefiles" accept="*">
                               <!-- <input type="file" name="files[]" multiple="multiple" onchange="file_name_show()"
                               id="file-upload" formControlName="browsefiles" (change)="importclientbyExcel($event)" accept="*"> -->

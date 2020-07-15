@@ -257,8 +257,6 @@
     <TypeScriptCompile Include="src\app\auth.guard.spec.ts" />
     <TypeScriptCompile Include="src\app\auth.guard.ts" />
     <TypeScriptCompile Include="src\app\auth.interceptor.ts" />
-    <TypeScriptCompile Include="src\app\auth.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\auth.service.ts" />
     <TypeScriptCompile Include="src\app\authpipe.pipe.spec.ts" />
     <TypeScriptCompile Include="src\app\authpipe.pipe.ts" />
     <TypeScriptCompile Include="src\app\block-copy-paste.directive.spec.ts" />

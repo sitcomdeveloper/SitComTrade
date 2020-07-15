@@ -4,7 +4,7 @@ import { ClientsService } from '../../header/clients/clients.service';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ImportClientDataComponent } from '../import-client-data/import-client-data.component';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-import-client',
   templateUrl: './import-client.component.html',
@@ -18,6 +18,7 @@ export class ImportClientComponent implements OnInit {
   title: any;
   importExcelForm: FormGroup;
   technical: any
+  uploadedFile: File;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private clientService: ClientsService, private bsmodal: BsModalRef, private modalService: BsModalService, private fb: FormBuilder) { }
     bsModalRef: BsModalRef;
@@ -27,15 +28,29 @@ export class ImportClientComponent implements OnInit {
       browsefiles: ['']
     })
   }
+  file_name_show(event) {
+    let fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      this.uploadedFile = fileList[0];
+      let fileSize: number = fileList[0].size;
+    }
+      var file = $('#file-upload')[0].files[0].name;
+      var size = $('#file-upload')[0].files[0].size;
+      var size = size / 1024
+      $("#files_name").html('<hr><i class="fa fa-file" aria-hidden="true"></i>  ' + file + "    size : " + size.toFixed(2) + " KB" + '           <a href="javascript:void(0)"><i class="fa fa-times" aria-hidden="true" onclick="file_name_remove()"></i></a><hr>');
+    }
+
   importclientbyExcel() {
    // this.technical = event.target.result;
   //  const reader = new FileReader();
   //  reader.readAsDataURL(event.target.files[0]);
   //   this.technical = event.target.files[0];
-    const colmnsHeader = {
-      client_import_fileuploader: this.importExcelForm.value.browsefiles
-    };
-    this.clientService.importClientByExcel(colmnsHeader).subscribe(excel => {
+    //const colmnsHeader = {
+    //  client_import_fileuploader: this.importExcelForm.value.browsefiles
+    //};
+    const formData: FormData = new FormData();
+    formData.append("client_import_fileuploader", this.uploadedFile);
+    this.clientService.importClientByExcel(formData).subscribe(excel => {
       this.importclientResponse = excel;
       console.log('importclientResponse', excel);
     });
