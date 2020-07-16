@@ -42,6 +42,7 @@ namespace SitComTech.Model.DataObject
         public Nullable<long> RegistrationTypeId { get; set; }
         public string ItemId { get; set; }
         public Nullable<bool> IsStarred { get; set; }
+        public string CountryISDCode { get; set; }
         public virtual User UserTable { get; set; }
     }
 

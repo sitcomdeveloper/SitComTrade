@@ -73,6 +73,7 @@ namespace SitComTech.Domain.Services
                         ResponseStatusId = 7,
                         ResponseStatus = "Interested",
                         OwnerId = clientdata.OwnerId,
+                        CountryISDCode=clientdata.CountryISDCode,
                     };
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
@@ -156,6 +157,7 @@ namespace SitComTech.Domain.Services
                 clientdata.DeskId = entity.DeskId;
                 clientdata.CitizenshipId = entity.CitizenshipId;
                 clientdata.AssignedDate = entity.AssignedDate;
+                clientdata.CountryISDCode = entity.CountryISDCode;
                 _repository.Update(clientdata);
                 _unitOfWork.SaveChanges();
             }
@@ -647,11 +649,13 @@ namespace SitComTech.Domain.Services
     {
         private IGenericRepository<ShortMessage> _repository;
         private IUnitOfWork _unitOfWork;
-        public ShortMessageService(IGenericRepository<ShortMessage> repository, IUnitOfWork unitOfWork)
+        private IClientService _clientservice;
+        public ShortMessageService(IGenericRepository<ShortMessage> repository, IUnitOfWork unitOfWork, IClientService clientservice)
             : base(repository)
         {
             this._repository = repository;
             this._unitOfWork = unitOfWork;
+            this._clientservice = clientservice;
         }
 
         public IQueryable<ShortMessage> GetAll()
@@ -719,6 +723,68 @@ namespace SitComTech.Domain.Services
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        public List<string> SendMessageToAllClients(ShortMessage sms)
+        {
+            List<string> sheetvalidationmessage = new List<string>();
+            try
+            {                
+                if (sms != null && sms.UserId != null)
+                {
+                    var clientlists = _clientservice.Query(x => x.Active == true && x.Deleted == false && x.OwnerId == sms.UserId).Select().ToList();
+                    if (clientlists != null && clientlists.Count > 0)
+                    {
+                        foreach (var client in clientlists)
+                        {
+                            sms.OwnerId = client.Id;
+                            sms.PhoneNumber = client.CountryISDCode+client.Phone;
+                            string strsmsresult = SendShortMessage(sms);
+                            sheetvalidationmessage.Add(sms.PhoneNumber + "-" + strsmsresult);
+                        }
+                    }
+                }
+                return sheetvalidationmessage;
+            }
+            catch (Exception ex)
+            {
+                sheetvalidationmessage.Add(ex.StackTrace);
+                return sheetvalidationmessage;
+            }
+        }
+        public List<string> SendMessageToSelectedClients(ShortMessage sms)
+        {
+            List<string> sheetvalidationmessage = new List<string>();
+            try
+            {
+                List<string> tosms = new List<string>();
+                if (sms != null && sms.PhoneNumber != string.Empty)
+                {
+                    
+                    tosms = sms.PhoneNumber.Split(',').ToList<string>();                   
+                    if (tosms != null && tosms.Count > 0)
+                    {
+                        foreach (var vphonenumber in tosms)
+                        {
+                            var clientlists = _clientservice.Query(x => x.Active == true && x.Deleted == false && x.OwnerId == sms.UserId && x.Phone == vphonenumber.ToString().Trim()).Select().FirstOrDefault();
+                            if (clientlists != null)
+                            {
+
+                                sms.OwnerId = clientlists.Id;
+                                sms.PhoneNumber = clientlists.CountryISDCode + clientlists.Phone;
+                                string strsmsresult = SendShortMessage(sms);
+                                sheetvalidationmessage.Add(sms.PhoneNumber + "-"+ strsmsresult);
+
+                            }
+                        }                        
+                    }
+                }
+                return sheetvalidationmessage;
+            }
+            catch (Exception ex)
+            {
+                sheetvalidationmessage.Add(ex.StackTrace);
+                return sheetvalidationmessage;
             }
         }
     }

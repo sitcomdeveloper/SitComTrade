@@ -602,25 +602,55 @@
         ]);
 
         UserVM.Sendsms = {
-            OwnerId: ko.observable(186),
-            MessageText: ko.observable('test data to'),
-            PhoneNumber: ko.observable(918076728578)
+            OwnerId: ko.observable(''),
+            MessageText: ko.observable('test ggg to ghg'),
+            PhoneNumber: ko.observable(''),
+            UserId: ko.observable(2)
+        };
 
+         var em = '9873169606,8802344518';
+        UserVM.SendsmsSelected = {
+
+            PhoneNumber: ko.observable(em),
+            MessageText: ko.observable('ghh'),           
+            OwnerId: ko.observable(''),
+            UserId: ko.observable(2),
         };
 
         $(document).ready(function () {
-             $.ajax({
-                type: "get",
-                 url: 'http://localhost:59122/api/Client/GetShortMessageByOwnerId/186',
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Client/SendMessageToSelectedClients",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //     data: ko.toJSON(UserVM.SendsmsSelected),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});           
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/SendMessageToAllClients",
                 contentType: 'application/json',
                 processData: false,
-                success: function (data) {
-                    alert(data);
-                },
-                error: function (data) {
-                    shownotification(10000, 'info', 'Error', 'Something went wrong');
+                data: ko.toJSON(UserVM.Sendsms),
+                success: function (result) {
+                    alert(result);
                 }
             });
+
+            // $.ajax({
+            //    type: "get",
+            //     url: 'http://localhost:59122/api/Client/GetShortMessageByOwnerId/186',
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function (data) {
+            //        shownotification(10000, 'info', 'Error', 'Something went wrong');
+            //    }
+            //});
             //  $.ajax({
             //    type: 'Post',
             //      url: apiURl + "api/Client/SendShortMessage",

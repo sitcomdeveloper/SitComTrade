@@ -25,6 +25,7 @@ namespace SitComTech.Model.ViewModel
         public string Password { get; set; }
 
         public long OwnerId { get; set; }
+        public string CountryISDCode { get; set; }
 
     }
 
