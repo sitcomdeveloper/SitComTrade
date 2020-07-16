@@ -19,6 +19,7 @@ export class ImportClientComponent implements OnInit {
   importExcelForm: FormGroup;
   technical: any
   uploadedFile: File;
+  arraytype = [];
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private clientService: ClientsService, private bsmodal: BsModalRef, private modalService: BsModalService, private fb: FormBuilder) { }
     bsModalRef: BsModalRef;
@@ -52,30 +53,23 @@ export class ImportClientComponent implements OnInit {
     formData.append("client_import_fileuploader", this.uploadedFile);
     this.clientService.importClientByExcel(formData).subscribe(excel => {
       this.importclientResponse = excel;
+      this.arraytype = this.importclientResponse
       console.log('importclientResponse', excel);
-    });
-    // for opening next popup
-    const initialState = {
-      title: 'Import Clients',
-      // static value for indicate that data come from that popup
-      firstpopup: 'firstpopup',
-      afterimportclient: this.importclientResponse,
-    };
-    this.bsModalRef = this.modalService.show(ImportClientDataComponent, Object.assign({ show: true }, { class: 'modal1250', initialState }));
-    this.bsModalRef.content.closeBtnName = 'Cancel';
-    this.bsmodal.hide();
-    this.closefirstpopup = false;
+       // for opening next popup
+      if(this.importclientResponse === this.arraytype) {
+        const initialState = {
+          title: 'Import Clients',
+          // static value for indicate that data come from that popup
+          firstpopup: 'firstpopup',
+          afterimportclient: this.importclientResponse,
+        };
+        this.bsModalRef = this.modalService.show(ImportClientDataComponent, Object.assign({ show: true }, { class: 'modal1250', initialState }));
+        this.bsModalRef.content.closeBtnName = 'Cancel';
+        this.bsmodal.hide();
+        this.closefirstpopup = false;
+      }
+    }); 
   }
-  // opennextpopup() {
-  //   const initialState = {
-  //     title: 'Import Clients',
-  //   };
-  //   // tslint:disable-next-line: max-line-length
-  //   this.bsModalRef = this.modalService.show(ImportClientDataComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal1250', initialState }));
-  //   this.bsModalRef.content.closeBtnName = 'Cancel';
-  //   this.bsmodal.hide();
-  //   this.closefirstpopup = false;
-  // }
   hideModal() {
     this.bsmodal.hide();
   }

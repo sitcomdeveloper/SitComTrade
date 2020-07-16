@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ImprtclntdtaComponent } from '../imprtclntdta/imprtclntdta.component';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-import-client-data',
@@ -12,14 +13,25 @@ export class ImportClientDataComponent implements OnInit {
   firstpopup: string;
   afterimportclient: any;
   assignResponse: any;
-  
-  constructor(private modalService: BsModalService, private bsmodal: BsModalRef) { }
+  HeaderForm: FormGroup;
+  constructor(private modalService: BsModalService, private bsmodal: BsModalRef, private fb: FormBuilder) { }
   bsModalRef: BsModalRef;
   closesecondpopup = true;
 
   ngOnInit() {
+    this.HeaderForm = this.fb.group({
+      firstname: [''],
+      lastname: [''],
+      email: ['']
+    })
     if(this.firstpopup === 'firstpopup') {
       this.assignResponse = this.afterimportclient;
+      console.log('headers',this.assignResponse);
+      this.HeaderForm.setValue({
+        firstname: 'First Name',
+        // lastname: 'Last Name',
+        // email: "Email"
+      })
     }
   }
   openthirdpopup() {

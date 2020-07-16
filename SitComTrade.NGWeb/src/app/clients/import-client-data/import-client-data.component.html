@@ -20,17 +20,16 @@
  <!-------------------Browse  File-------------------------->
 
  
- <form class="form-horizontal">
+ <form class="form-horizontal" [formGroup]="HeaderForm">
    <div class="form-group row">
       <div class="col-md-4">
          <div class="row" data-mapping-node="" data-field-id="1663" data-index="0">
             <div class="col-md-4"><label class="valign-label" for="FirstName"><span data-tooltip-el="">First Name</span></label></div>
             <div class="col-md-8">
                <div class="">  
-                  <select class="form-control" name="FirstName" data-container="body" data-live-search="true" id="a461c9773-d298-4858-d919-6a62bbdd2dce" tabindex="-98">
-                     <option value="">Select...</option>
-                     <option value="0">FirstName</option>
-                     <option value="1"></option>
+                  <select class="form-control" name="FirstName" data-container="body" data-live-search="true" id="Mobility" tabindex="-98" formControlName="firstname">
+                     <option value="First Name">Select...</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -42,10 +41,9 @@
             <div class="col-md-8">
                <div class="">
                   
-                  <select class="form-control" name="LastName" data-container="body" data-live-search="true" id="abf6ecf46-0bfa-ceaa-8aa2-cb406998ec36" tabindex="-98">
-                     <option value="">Select...</option>
-                     <option value="0">LastName</option>
-                     <option value="1"></option>
+                  <select class="form-control" name="LastName" data-container="body" data-live-search="true" id="abf6ecf46-0bfa-ceaa-8aa2-cb406998ec36" tabindex="-98" formControlName="lastname">
+                     <option value="Last Name">Select...</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -57,9 +55,9 @@
             <div class="col-md-8">
                <div class="">
                  
-                  <select class="form-control" name="Email" data-container="body" data-live-search="true" id="a1e0ecc94-c265-40b0-e97c-b88ceb4e7a36" tabindex="-98">
-                     <option value="">Select...</option>
-                     <option value="0"></option>
+                  <select class="form-control" name="Email" data-container="body" data-live-search="true" id="a1e0ecc94-c265-40b0-e97c-b88ceb4e7a36" tabindex="-98" formControlName="email">
+                     <option value="Email">Select...</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -75,7 +73,7 @@
                   
                   <select class="form-control" name="Phone" data-container="body" data-live-search="true" id="ad03b680b-9e0a-d7ba-17d3-4cb696e136fe" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -89,7 +87,7 @@
                  
                   <select class="form-control" name="Mobile" data-container="body" data-live-search="true" id="ad8566b9a-f31d-fd80-7fe8-eb71eba08c8d" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -103,7 +101,7 @@
                 
                   <select class="form-control" name="SecondEmail" data-container="body" data-live-search="true" id="aba282cec-ab22-b7d7-bdff-dc2f57ea6e7c" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -119,7 +117,7 @@
                 
                   <select class="form-control" name="Tag1" data-container="body" data-live-search="true" id="a976a1e31-aaae-a3bf-090e-01840717351a" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -133,7 +131,7 @@
                   
                   <select class="form-control" name="Tag2" data-container="body" data-live-search="true" id="af72a06dd-2bc4-77ea-f618-a04a2b2dd223" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -147,7 +145,7 @@
                   
                   <select class="form-control" name="CampaignId" data-container="body" data-live-search="true" id="a036feacf-17c4-c847-871b-78411febdb88" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -163,7 +161,7 @@
                 
                   <select class="form-control" name="Country" data-container="body" data-live-search="true" id="af461142d-6243-9791-5ded-907fe9516e30" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -177,7 +175,7 @@
                  
                   <select class="form-control" name="OwnerId" data-container="body" data-live-search="true" id="a268303b4-80f7-4605-086e-e2aed9692844" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -191,7 +189,7 @@
                 
                   <select class="form-control" name="StatusId" data-container="body" data-live-search="true" id="a2ab5806d-b92b-44f4-d52f-f1020111b943" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -207,7 +205,7 @@
                   
                   <select class="form-control" name="CreatedDate" data-container="body" data-live-search="true" id="a68cb3e2f-6045-158e-37db-227e21e71eb4" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -221,7 +219,7 @@
                   
                   <select class="form-control" name="ZipCode" data-container="body" data-live-search="true" id="a36aec469-ddae-3583-4a57-c0d90816422f" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -235,8 +233,7 @@
                  
                   <select class="form-control" name="City" data-container="body" data-live-search="true" id="aafa1424a-4a4b-01fb-4fca-7b88047ecb14" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -252,8 +249,7 @@
                  
                   <select class="form-control" name="State" data-container="body" data-live-search="true" id="a87a2d834-b678-8455-08f0-80e81eff7d09" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -267,8 +263,7 @@
                  
                   <select class="form-control" name="Address" data-container="body" data-live-search="true" id="acddb70de-5a12-0698-2537-541edb35db76" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">p</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -282,8 +277,7 @@
                  
                   <select class="form-control" name="SuppliedDocs" data-container="body" data-live-search="true" id="a8da89e76-5990-a35c-a5eb-5888df3a0d65" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -299,8 +293,7 @@
                  
                   <select class="form-control" name="AcceptTerms" data-container="body" data-live-search="true" id="a4e55461a-4324-ca6f-1e96-45bb5cb27230" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">l</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -314,8 +307,7 @@
                   
                   <select class="form-control" name="Description" data-container="body" data-live-search="true" id="aab9f5cbb-59e3-1ca3-49a8-e9d3bf295eb9" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">ml</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -329,8 +321,7 @@
                  
                   <select class="form-control" name="AffiliateId" data-container="body" data-live-search="true" id="a04c7a293-b564-cd73-3b3a-f19c5d1fab68" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -346,8 +337,7 @@
                  
                   <select class="form-control" name="SubAffiliateId" data-container="body" data-live-search="true" id="a916235fa-0833-b818-d858-269c6f54d6bf" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">l</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -361,8 +351,7 @@
                   
                   <select class="form-control" name="Source" data-container="body" data-live-search="true" id="acc838296-ae5a-06c9-a0ad-a28a541e1629" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -376,8 +365,7 @@
                  
                   <select class="form-control" name="IpAddress" data-container="body" data-live-search="true" id="a300374c1-a2b9-3f44-40ea-42c2611af50f" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -393,8 +381,7 @@
                   
                   <select class="form-control" name="Referrer" data-container="body" data-live-search="true" id="ac15ec75a-5db3-b409-42cc-09ef062101a3" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">l</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -408,8 +395,7 @@
               
                   <select class="form-control" name="IpCountry" data-container="body" data-live-search="true" id="ac67fb6fb-df6d-0590-809b-881f307ca444" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">nquiry.jsp?StaticPage=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -423,8 +409,7 @@
                  
                   <select class="form-control" name="ModifiedDate" data-container="body" data-live-search="true" id="ab51deafd-aeff-8a64-79e4-7c7862af7179" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">aticEnquiry.jsp?StaticPage=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -440,8 +425,7 @@
                   
                   <select class="form-control" name="ConvertionOwnerId" data-container="body" data-live-search="true" id="a432864ba-5fe2-c7ba-24fc-3c7296c0b9cc" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">c</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -455,8 +439,7 @@
                   
                   <select class="form-control" name="RetentionOwnerId" data-container="body" data-live-search="true" id="a5fd747b8-468d-e5b8-6922-01bf43535616" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -470,8 +453,7 @@
                  
                   <select class="form-control" name="Citizenship" data-container="body" data-live-search="true" id="a3ebd9119-1514-1d7a-b1f7-87c45d59b22a" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">ml</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -487,8 +469,7 @@
                   
                   <select class="form-control" name="DateOfBirth" data-container="body" data-live-search="true" id="abfa8156c-e048-e2e9-379d-7d7994146610" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">ge=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -502,8 +483,7 @@
                 
                   <select class="form-control" name="IsEnabled" data-container="body" data-live-search="true" id="a6d88b6c3-35e2-4f94-559c-4e0dd02e18d1" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">icEnquiry.jsp?StaticPage=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -517,8 +497,7 @@
                   
                   <select class="form-control" name="LastLoginDate" data-container="body" data-live-search="true" id="a6944dbd6-4e15-124c-23ae-b9a187ed87ec" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -534,8 +513,7 @@
                   
                   <select class="form-control" name="SubscribedNewsletter" data-container="body" data-live-search="true" id="a8b64c688-77bc-6953-e537-2e30d92a96bf" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">dex.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -549,8 +527,7 @@
                  
                   <select class="form-control" name="DeskId" data-container="body" data-live-search="true" id="a69bd9423-0bb0-a5e8-0f6d-13868286c5f6" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">taticEnquiry.jsp?StaticPage=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -564,8 +541,7 @@
                   
                   <select class="form-control" name="UtmContent" data-container="body" data-live-search="true" id="ad10bb391-bbf9-f36b-8158-030227570522" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">l</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -581,8 +557,7 @@
                   
                   <select class="form-control" name="UtmSource" data-container="body" data-live-search="true" id="a80264464-5638-8837-1d96-48455e7fcb00" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">ex.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -596,8 +571,7 @@
                   
                   <select class="form-control" name="UtmCampaign" data-container="body" data-live-search="true" id="a541f3ff7-2e86-74e6-f789-311923713f7b" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">ex.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -611,8 +585,7 @@
                   
                   <select class="form-control" name="UtmCreative" data-container="body" data-live-search="true" id="ac8684a45-52aa-23f4-77df-f46b7ab0984b" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">dex.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -628,8 +601,7 @@
                   
                   <select class="form-control" name="UtmMedium" data-container="body" data-live-search="true" id="a598d92b5-1a09-3aa0-3053-07e83f4a7d55" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">.jsp?StaticPage=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -643,8 +615,7 @@
                   
                   <select class="form-control" name="AffTransactionId" data-container="body" data-live-search="true" id="a61da7369-5e05-becf-e5d4-ff4f786e61f0" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -658,8 +629,7 @@
                   
                   <select class="form-control" name="UtmTerm" data-container="body" data-live-search="true" id="a76976ddc-37c1-47c6-7f9a-d5d7b7dc1478" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1"></option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -675,8 +645,7 @@
                  
                   <select class="form-control" name="FirstRegistrationDate" data-container="body" data-live-search="true" id="a2de7904d-bcb3-ea8a-7783-64b20f017a58" tabindex="-98">
                      <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">iry.jsp?StaticPage=index.html</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -689,9 +658,8 @@
                <div class="">
                   
                   <select class="form-control" name="AffiliateUserId" data-container="body" data-live-search="true" id="ab2c0208b-4884-2b62-3e64-026088438d20" tabindex="-98">
-                     <option value="">Select...</option>
-                     <option value="0">1</option>
-                     <option value="1">Enquiry.jsp?StaticPage=index.html</option>
+                      <option value="">Select...</option>
+                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
                   </select>
                </div>
             </div>
