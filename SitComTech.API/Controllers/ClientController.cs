@@ -174,6 +174,52 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("SendMessageToAllClients")]
+        public List<string> SendMessageToAllClients(ShortMessage entity)
+        {
+
+            try
+            {
+                if (entity != null)
+                {
+                    return _shortMeassageService.SendMessageToAllClients(entity);
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [HttpPost]
+        [Route("SendMessageToSelectedClients")]
+        public List<string> SendMessageToSelectedClients(ShortMessage entity)
+        {
+
+            try
+            {
+                if (entity != null)
+                {
+                    return _shortMeassageService.SendMessageToSelectedClients(entity);
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [HttpPost]
         [Route("InsertUpdateMarketingInfo")]
         public MarketingInfo InsertUpdateMarketingInfo(MarketingInfo marketingVM)
         {

@@ -19,7 +19,7 @@ namespace SitComTech.Model.DataObject
         public bool? IsSend { get; set; }
 
         public string ErrorMessage { get; set; }
-
+        public Nullable<long> UserId { get; set; }
         public virtual Client ClientTable { get; set; }
     }
 
