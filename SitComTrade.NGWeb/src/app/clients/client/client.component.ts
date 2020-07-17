@@ -65,6 +65,8 @@ export class ClientComponent implements OnInit {
   leadcolorchange: any;
   selectedchkbxfrsntmailtoslcted = [];
   chkbxwllsntmailtoclnt: any;
+  selectedchkbxfrsndsmstoslcted = [];
+  chkbxwillsntsmstoclient: any;
   // tslint:disable-next-line: max-line-length
   constructor(private clientService: ClientsService, private modalService: BsModalService, private router: Router, private spinnerService: Ng4LoadingSpinnerService, private fb: FormBuilder, private _generalinfoservice: GeneralInfoService, private countryService: CountryService,
     private groupsService: GroupsService) { }
@@ -164,18 +166,21 @@ export class ClientComponent implements OnInit {
     this.router.navigateByUrl('/user');
   }
   // selectedname: number[]
-  deletbtn(val, userid, usermail) {
+  deletbtn(val, userid, usermail, userphone) {
     this.UserId = userid
     if (val === true) {
       this.deletbtnn = false;
       this.selectedchkbxfrdltclnt.push(userid);
       this.selectedchkbxfrsntmailtoslcted.push(usermail);
       this.chkbxwllsntmailtoclnt = this.selectedchkbxfrsntmailtoslcted.join();
+      this.selectedchkbxfrsndsmstoslcted.push(userphone);
+      this.chkbxwillsntsmstoclient = this.selectedchkbxfrsndsmstoslcted.join();
       // console.log('mails', this.chkbxwllsntmailtoclnt);
     } else {
       this.deletbtnn = true;
       this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
       this.selectedchkbxfrsntmailtoslcted.splice(this.selectedchkbxfrsntmailtoslcted.indexOf(usermail), 1)
+      this.selectedchkbxfrsndsmstoslcted.splice(this.selectedchkbxfrsndsmstoslcted.indexOf(userphone), 1);
     }
   }
   // delete client
@@ -469,7 +474,8 @@ export class ClientComponent implements OnInit {
     const initialState = {
       title: 'sms: send',
       sendsmstoselected: 'sendsmstoselected',
-      // detailss: this.UserId
+      detailss: this.selectedchkbxfrdltclnt,
+      listofphone: this.chkbxwillsntsmstoclient
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(SmsAllComponent, Object.assign({  show: true }, { class: 'modal750', initialState }));

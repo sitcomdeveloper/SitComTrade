@@ -98,28 +98,17 @@
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="col-xs-6 col-md-6" *ngIf = show>
-                                       <div class="row">
-                                          <div class="col-xs-3 col-md-3"><label class="valign-label" for="Phone"><span
-                                                   data-tooltip-el="">Phone</span></label></div>
-                                          <div class="col-xs-9 col-md-9"><input class="form-control itemformcontrol"
-                                                name="Phone" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}" type="text" aria-required="true"
-                                                appPhoneMask>
-                                                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                                                   <div *ngIf="f.phone.errors.required">Phone is required</div>
-                                                 </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="row form-group" *ngIf = show>
+                                    
                                     <div class="col-xs-6 col-md-6">
                                        <div class="row">
-                                          <div class="col-xs-3 col-md-3"><label class="valign-label" for="Country"><span
-                                                   data-tooltip-el="">Country</span></label></div>
+                                          <div class="col-xs-3 col-md-3">
+                                             <label class="valign-label" for="Country"><span
+                                                   data-tooltip-el="">Country</span>
+                                                </label>
+                                             </div>
                                           <div class="col-xs-9 col-md-9">
                                              <div _ngcontent-qpo-c3="" class="input-group">
-                                                <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+                                                <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" (change)="getPhoneCode($event.target.value)"
                                                    formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors,'form-control':true }" data-live-search="true" id="lunc"
                                                    title="Please select a lunch ..." >
                                                    <option ngcontent-qpo-c3="" value="">Choose your Country</option>
@@ -134,6 +123,29 @@
 
                                              </div>
 
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row form-group" *ngIf = show>
+                                    <div class="col-xs-6 col-md-6" *ngIf = show>
+                                       <div class="row">
+                                          <div class="col-xs-3 col-md-3"><label class="valign-label" for="Phone"><span
+                                                   data-tooltip-el="">Phone</span>
+                                                </label>
+                                             </div>
+                                          <div class="col-xs-9 col-md-9">
+                                             <div class="input-group-text" style="padding:0">
+                                                <input formControlName="phoneCode"
+                                                       style="width: 100%; background: transparent; border: none; margin: auto; height: 100%; border-radius: 3px 0px 0px 3px; text-align: center;"
+                                                       disabled />
+                                              </div>
+                                             <input class="form-control itemformcontrol"
+                                                name="Phone" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}" type="text" aria-required="true"
+                                                >
+                                                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                                   <div *ngIf="f.phone.errors.required">Phone is required</div>
+                                                 </div>
                                           </div>
                                        </div>
                                     </div>

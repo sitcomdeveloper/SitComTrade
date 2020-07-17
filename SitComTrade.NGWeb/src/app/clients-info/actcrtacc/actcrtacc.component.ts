@@ -41,6 +41,7 @@ export class ActcrtaccComponent implements OnInit {
   getSendersData: any;
   smsissnt: any;
   Country: any;
+  countryPhoneCode: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService, private loginservice: LoginService) { }
 
   ngOnInit() {
@@ -172,7 +173,7 @@ export class ActcrtaccComponent implements OnInit {
     const sms = {
       OwnerId: this.userGenralinfo.Id,
       MessageText: this.actionsForm.value.message,
-      PhoneNumber: this.actionsForm.value.phoneCode + this.actionsForm.value.phone,
+      PhoneNumber: this.actionsForm.value.phone,
     }
 this._generalinfoservice.sendsms(sms).subscribe(sndsmsRes => {
   this.smsissnt = sndsmsRes;

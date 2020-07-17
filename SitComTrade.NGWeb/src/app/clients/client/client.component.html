@@ -100,7 +100,7 @@
                 <li><a href="#" title="Import Clients" class="link-import" data-toggle="modal" data-target="#importclient" (click)="openImprtClient()"><i class="fa fa-arrow-up"></i>Import Clients</a></li>
                 <li><a href="#" title="Export Clients" class="link-export" data-toggle="modal" data-target="#exportclient"><i class="fa fa-arrow-down"></i>Export Clients</a>
                 </li>
-                <li class="no-events"><a class="link-sms" href="javascript:void(0);" title="Sms" (click)="openpopupforsmstoSelected()"><i class="fa fa-envelope"></i>Sms to selected</a></li>
+                <li class="no-events"><a class="link-sms" href="javascript:void(0);" title="Sms" [class.disabled] = deletbtnn (click)="openpopupforsmstoSelected()"><i class="fa fa-envelope"></i>Sms to selected</a></li>
                 <li class="no-events">
                   <a href="javascript:void(0)" class="link-sms-all" title="Sms" (click)="openpopupforsmstoall()"><i class="fa fa-sticky-note-o"></i>Sms to all</a></li>
                 <li class="no-events">
@@ -1473,7 +1473,7 @@
           <td class="chkCol">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id,item.Email)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id,item.Email,item.Phone)" onclick="checkboxcheck()"></span>
                 <span (click)= "show = !show;star(show,item.Id)">
                   <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': item.IsStarred ? 'gold':'grey' }"></i>
                 </span>
@@ -3093,7 +3093,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id,actinfo.Email)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass1" (change)="deletbtn($event.target.checked,actinfo.Id,actinfo.Email,actinfo.Phone)" onclick="checkboxcheck()"></span>
                   <span (click)= "show = !show;star(show,actinfo.Id)">
                     <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': actinfo.IsStarred ? 'gold':'grey' }"></i>
                   </span>
@@ -4501,7 +4501,7 @@
           <td class="">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id,leadinfo.Email)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass2"  (change)="deletbtn($event.target.checked,leadinfo.Id,leadinfo.Email,leadinfo.Phone)" onclick="checkboxcheck()"></span>
                   <span (click)= "show = !show;star(show,leadinfo.Id)">
                     <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': leadinfo.IsStarred ? 'gold':'grey' }"></i>
                   </span></div>

@@ -32,6 +32,7 @@ export class ItemComponent implements OnInit {
   bindLoginData: any;
   hiddden = true;
   show = true;
+  countryPhoneCode: any;
 
   constructor(private clientService: ClientsService, private bsmodal: BsModalRef,
               private countryService: CountryService, private fb: FormBuilder, private loginservice: LoginService,
@@ -51,7 +52,8 @@ export class ItemComponent implements OnInit {
       // promocode: [''],
       groupid: [''],
       ownerid: [''],
-      sendemail: ['']
+      sendemail: [''],
+      phoneCode: ['']
     }),
       this.getcountryName();
     this.getGroups();
@@ -83,7 +85,7 @@ export class ItemComponent implements OnInit {
       GroupId: this.newUserForm.value.group,
       ISendEmail: this.sedemailbyuser,
       OwnerId: this.bindLoginData.UserId,
-      Phone: this.newUserForm.value.phone,
+      Phone: this.newUserForm.value.phoneCode + this.newUserForm.value.phone,
       CountryId: this.newUserForm.value.country
     };
       this.clientService.addnewClients(obj).subscribe(res => {
@@ -149,4 +151,15 @@ if (val === true) {
       this.Group = result.reverse();
     });
    }
+   getPhoneCode(val: any) {
+    this.Country.forEach(element => {
+      const y = +val;
+      if (element.Id === y) {
+        this.countryPhoneCode = element.ISDCode;
+      }
+    });
+    this.newUserForm.controls.phoneCode.setValue(
+      '(+' + this.countryPhoneCode + ')'
+    );
+  }
 }

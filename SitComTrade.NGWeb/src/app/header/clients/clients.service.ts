@@ -43,4 +43,12 @@ export class ClientsService {
   importClientByExcel(colmnsHeader: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/GetColumnHeader', colmnsHeader);
   }
+  // send sms to all
+  sendsmstoall(sndsmsall: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/SendMessageToAllClients', sndsmsall);
+  }
+  // send sms to selected
+  sendsmstoselctd(sndsmstoSelected: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'SendMessageToSelectedClients',sndsmstoSelected);
+  }
 }

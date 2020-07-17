@@ -332,7 +332,11 @@
             <th class="tabletxt">Email</th>
             <td><input type="text" class="form-control" formControlName="email"></td>
             <th class="tabletxt">Phone</th>
-            <td><input type="text" class="form-control" formControlName="phone"></td>
+            <td> 
+              <!-- <input formControlName="phoneCode"
+              style="width: 100%; background: transparent; border: none; margin: auto; height: 100%; border-radius: 3px 0px 0px 3px; text-align: center;"
+              disabled /> -->
+              <input type="text" class="form-control" formControlName="phone"></td>
           </tr>
           <tr>
             <th class="tabletxt">Mobile</th>
@@ -375,7 +379,7 @@
             <td>
               <!-- <input type="text" formControlName="citizenship"> -->
               <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-          data-live-search="true" formControlName="citizenship">
+          data-live-search="true" formControlName="citizenship" >
           <option ngcontent-qpo-c3="">Select</option>
           <option ngcontent-qpo-c3="" value="{{country.Name}}" *ngFor="let country of Country">
              {{country.Name}}</option>

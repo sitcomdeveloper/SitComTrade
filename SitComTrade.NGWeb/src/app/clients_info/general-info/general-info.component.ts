@@ -33,6 +33,7 @@ export class GeneralInfoComponent implements OnInit {
   userinformation = true;
   userinfo: any;
   value: any;
+  countryPhoneCode: any;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router,
               // tslint:disable-next-line: max-line-length
@@ -87,7 +88,8 @@ export class GeneralInfoComponent implements OnInit {
       registrationtypeid: [''],
       lasttaskdayspast: [''],
       daysagoclientcreated: [''],
-      countryid: ['']
+      countryid: [''],
+      phoneCode: ['']
     });
     this.getcountryName();
     this.getRegistrationFromType();
@@ -247,4 +249,15 @@ export class GeneralInfoComponent implements OnInit {
       this.Status = response;
     });
   }
+  // getPhoneCode(val: any) {
+  //   this.Country.forEach(element => {
+  //     const y = +val;
+  //     if (element.Id === y) {
+  //       this.countryPhoneCode = element.ISDCode;
+  //     }
+  //   });
+  //   this.userInfoForm.controls.phoneCode.setValue(
+  //     '(+' + this.countryPhoneCode + ')'
+  //   );
+  // }
 }
