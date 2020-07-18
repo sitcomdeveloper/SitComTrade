@@ -263,7 +263,8 @@ namespace SitComTech.Domain.Services
                 DaysAgoClientCreated = x.UserOwner.clients.DaysAgoClientCreated,
                 ISendEmail = x.UserOwner.clients.ISendEmail,
                 CitizenshipId = x.UserOwner.clients.CitizenshipId,
-                IsStarred = x.UserOwner.clients.IsStarred
+                IsStarred = x.UserOwner.clients.IsStarred,
+                CountryISDCode = x.UserOwner.clients.CountryISDCode
             }).ToList();
         }
 
@@ -326,7 +327,8 @@ namespace SitComTech.Domain.Services
                 DaysAgoClientCreated = x.UserOwner.clients.DaysAgoClientCreated,
                 ISendEmail = x.UserOwner.clients.ISendEmail,
                 CitizenshipId = x.UserOwner.clients.CitizenshipId,
-                IsStarred = x.UserOwner.clients.IsStarred
+                IsStarred = x.UserOwner.clients.IsStarred,
+                CountryISDCode = x.UserOwner.clients.CountryISDCode
             }).FirstOrDefault();
         }
 
@@ -738,7 +740,9 @@ namespace SitComTech.Domain.Services
                         foreach (var client in clientlists)
                         {
                             sms.OwnerId = client.Id;
-                            sms.PhoneNumber = client.CountryISDCode+client.Phone;
+                            string strphonenumber = client.Phone.Trim();
+                            strphonenumber=strphonenumber.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");                               
+                            sms.PhoneNumber = client.CountryISDCode+ strphonenumber;
                             string strsmsresult = SendShortMessage(sms);
                             sheetvalidationmessage.Add(sms.PhoneNumber + "-" + strsmsresult);
                         }
@@ -771,7 +775,9 @@ namespace SitComTech.Domain.Services
                             {
 
                                 sms.OwnerId = clientlists.Id;
-                                sms.PhoneNumber = clientlists.CountryISDCode + clientlists.Phone;
+                                string strphonenumber = clientlists.Phone.Trim();
+                                strphonenumber = strphonenumber.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");                                
+                                sms.PhoneNumber = clientlists.CountryISDCode + strphonenumber;
                                 string strsmsresult = SendShortMessage(sms);
                                 sheetvalidationmessage.Add(sms.PhoneNumber + "-"+ strsmsresult);
 

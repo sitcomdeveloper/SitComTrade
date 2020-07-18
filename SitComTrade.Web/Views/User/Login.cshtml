@@ -608,36 +608,36 @@
             UserId: ko.observable(2)
         };
 
-         var em = '9873169606,8802344518';
+        var em = '(546) (987)-12333';
         UserVM.SendsmsSelected = {
 
             PhoneNumber: ko.observable(em),
             MessageText: ko.observable('ghh'),           
             OwnerId: ko.observable(''),
-            UserId: ko.observable(2),
+            UserId: ko.observable(4),
         };
 
         $(document).ready(function () {
-            // $.ajax({
-            //    type: 'Post',
-            //     url: apiURl + "api/Client/SendMessageToSelectedClients",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //     data: ko.toJSON(UserVM.SendsmsSelected),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});           
-            $.ajax({
+             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Client/SendMessageToAllClients",
+                 url: apiURl + "api/Client/SendMessageToSelectedClients",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.Sendsms),
+                 data: ko.toJSON(UserVM.SendsmsSelected),
                 success: function (result) {
                     alert(result);
                 }
-            });
+            });           
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/SendMessageToAllClients",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.Sendsms),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             // $.ajax({
             //    type: "get",
