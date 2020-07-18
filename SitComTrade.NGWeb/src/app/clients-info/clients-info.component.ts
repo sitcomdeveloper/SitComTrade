@@ -28,6 +28,7 @@ export class ClientsInfoComponent implements OnInit {
   getInfoTasks: any;
   detail: number;
   tkemail: any;
+  leadAccountSection = true;
  
   @HostListener("window:scroll", []) onWindowScroll() {
     this.scrollFunction();
@@ -55,6 +56,7 @@ export class ClientsInfoComponent implements OnInit {
       // console.log('generalinfo', res);
       if ( this.userGenralinfo.TypeName === 'Real') {
         this.realAccountSection = true;
+        this.leadAccountSection = false;
       } else {
         this.realAccountSection = false;
       }
