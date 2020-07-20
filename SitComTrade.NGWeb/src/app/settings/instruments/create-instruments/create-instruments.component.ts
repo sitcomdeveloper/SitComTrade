@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { SettingsService } from '../../settings.service';
 import { InstrumentsDTO } from '../../settingsDTO';
 import { ActivatedRoute } from '@angular/router';
+import { GroupsService } from '../../groups/groups.service';
+import { LoginService } from 'src/app/login/login.service';
 
 @Component({
   selector: 'app-create-instruments',
@@ -32,7 +34,15 @@ export class CreateInstrumentsComponent implements OnInit {
   swaptypeenum: any;
   tradinghrsenum: any;
   unitsenum: any;
-  constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute) { }
+  threedaysswapenum: any;
+  margincurrencyEnum: any;
+  Group: any;
+  getGroupsData: any;
+  margincurrencydropdown: any;
+  profitcurrrency: any;
+  commissioncurrencydropdown: any;
+
+  constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute, private groupsService: GroupsService, private loginservice: LoginService) { }
 
   ngOnInit() {
     // code for receiving login details and bind to header at place of name
@@ -125,50 +135,85 @@ export class CreateInstrumentsComponent implements OnInit {
     this.swaptypes();
     this.tradinghours();
     this.units();
+    this.threedaysswap();
+    this.margincurrency();
+    this.getGroups();
+    this.currencyName();
   }
   // spreadtype
   spreadtype() {
     this.settingsService.getSpreadType().subscribe(sprdtypeRes => {
       this.spreadtypeenum = sprdtypeRes;
-      console.log('spreadtypeenum',sprdtypeRes);
+      // console.log('spreadtypeenum', sprdtypeRes);
     })
   }
   // calculation mode
   calcultionmode() {
     this.settingsService.getCalculationmode().subscribe(calculationmdeRes => {
       this.calcultionmodeenum = calculationmdeRes;
-      console.log('calcultionmodeenum',calculationmdeRes);
+      // console.log('calcultionmodeenum', calculationmdeRes);
     })
   }
   // symbol group
   symbolgroup() {
     this.settingsService.getSymbolgroups().subscribe(symblgrpRes => {
       this.symblgroupenum = symblgrpRes;
-      console.log('symblgroupenum',symblgrpRes);
+      // console.log('symblgroupenum', symblgrpRes);
     })
   }
   // swap types
   swaptypes() {
     this.settingsService.getSwapTypes().subscribe(swaptypeRes => {
       this.swaptypeenum = swaptypeRes;
-      console.log('swaptypeenum',swaptypeRes);
+      // console.log('swaptypeenum', swaptypeRes);
     })
   }
   // trading hrs
   tradinghours() {
     this.settingsService.getTradinghrs().subscribe(tradinghrsRes => {
       this.tradinghrsenum = tradinghrsRes;
-      console.log('tradinghrsenum',tradinghrsRes);
+      // console.log('tradinghrsenum', tradinghrsRes);
     })
   }
-// get units
-units() {
-  this.settingsService.getUnits().subscribe(unitsRes => {
-    this.unitsenum = unitsRes;
-    console.log('unitsenum',unitsRes);
-  })
-}
-// three days swap
+  // get units
+  units() {
+    this.settingsService.getUnits().subscribe(unitsRes => {
+      this.unitsenum = unitsRes;
+      // console.log('unitsenum', unitsRes);
+    })
+  }
+  // three days swap
+  threedaysswap() {
+    this.settingsService.getthreedaysSwap().subscribe(threedaysswapRes => {
+      this.threedaysswapenum = threedaysswapRes;
+      // console.log('threedaysswapenum', threedaysswapRes);
+    }
+    )
+  }
+  margincurrency() {
+    this.settingsService.getMarginCurrencyforinstrmnts().subscribe(margincurrencyRes => {
+      this.margincurrencyEnum = margincurrencyRes;
+      // console.log('margincurrencyEnum', margincurrencyRes);
+    })
+  }
+  // get all groups
+  getGroups() {
+    this.groupsService.getTradeGroups(this.getGroupsData).subscribe(result => {
+      this.Group = result;
+    });
+  }
+  //  get currency
+  currencyName() {
+    const obj = {}
+    this.loginservice.currencyName(obj).subscribe(result => {
+      this.profitcurrrency = result;
+      this.commissioncurrencydropdown = this.profitcurrrency.filter(commissioncrrncy => {
+        if (commissioncrrncy.TypeNameMarginCurrency === null) {
+          return commissioncrrncy;
+        }
+      })
+    })
+  }
   // crt instruments
   createInstruments() {
     this.addInstruments = {
@@ -178,18 +223,18 @@ units() {
       DisplayName: this.InstrumentsForm.value.displayname,
       GroupId: '',
       GroupName: this.InstrumentsForm.value.groupname,
-      SpreadType: this.InstrumentsForm.value.spreadtype,
+      SpreadTypeName: this.InstrumentsForm.value.spreadtype,
       SpreadBid: this.InstrumentsForm.value.spreadbid,
       IsTradeForbidden: this.InstrumentsForm.value.tradeforbidden,
       ContractSize: this.InstrumentsForm.value.contractsize,
       LeverageId: '',
       LeverageName: this.InstrumentsForm.value.leveragename,
-      ProfitCurrency: this.InstrumentsForm.value.profitcurrency,
-      SymbolGroup: this.InstrumentsForm.value.symbolgroup,
+      ProfitCurrencyName: this.InstrumentsForm.value.profitcurrency,
+      SymbolGroupName: this.InstrumentsForm.value.symbolgroup,
       GapLevel: this.InstrumentsForm.value.gaplevel,
-      TradingHoursId: this.InstrumentsForm.value.tradinghoursid,
-      Units: this.InstrumentsForm.value.units,
-      MarginCurrency: this.InstrumentsForm.value.margincurrency,
+      TradingHoursId: '',
+      UnitName: this.InstrumentsForm.value.units,
+      MarginCurrencyName: this.InstrumentsForm.value.margincurrency,
       Description: this.InstrumentsForm.value.description,
       SpreadAsk: this.InstrumentsForm.value.spreadask,
       MaximalVolume: this.InstrumentsForm.value.maximalvolume,
@@ -200,14 +245,25 @@ units() {
       SwapShort: this.InstrumentsForm.value.swapshort,
       StopLevel: this.InstrumentsForm.value.stoplevel,
       Digits: this.InstrumentsForm.value.digits,
-      CalculationMode: this.InstrumentsForm.value.calculationmode,
+      CalculationModeName: this.InstrumentsForm.value.calculationmode,
       Commission: this.InstrumentsForm.value.commission,
-      SwapType: this.InstrumentsForm.value.swaptype,
-      ThreeDaysSwap: this.InstrumentsForm.value.threedaysswap,
-      CommissionCurrency: this.InstrumentsForm.value.commissioncurrency,
+      SwapTypeName: this.InstrumentsForm.value.swaptype,
+      ThreeDaysSwapName: this.InstrumentsForm.value.threedaysswap,
+      CommissionCurrencyName: this.InstrumentsForm.value.commissioncurrency,
       Hidden: this.InstrumentsForm.value.hidden,
       ExpirationDate: this.InstrumentsForm.value.expirationdate,
       IsDisabled: this.InstrumentsForm.value.disabled,
+
+      SpreadTypeId: '',
+      ProfitCurrencyId: '',
+      SymbolGroupId: '',
+      TradingHoursName: this.InstrumentsForm.value.tradinghoursid,
+      UnitId: '',
+      MarginCurrencyId: '',
+      CalculationModeId: '',
+      SwapTypeId: '',
+      ThreeDaysSwapId: '',
+      CommissionCurrencyId: '',
     }
     this.settingsService.crtInstruments(this.addInstruments).subscribe(addinstrmnts => {
       this.Instruments = addinstrmnts;
@@ -225,18 +281,18 @@ units() {
       DisplayName: this.InstrumentsForm.value.displayname,
       GroupId: '',
       GroupName: this.InstrumentsForm.value.groupname,
-      SpreadType: this.InstrumentsForm.value.spreadtype,
+      SpreadTypeName: this.InstrumentsForm.value.spreadtype,
       SpreadBid: this.InstrumentsForm.value.spreadbid,
       IsTradeForbidden: this.InstrumentsForm.value.tradeforbidden,
       ContractSize: this.InstrumentsForm.value.contractsize,
       LeverageId: '',
       LeverageName: this.InstrumentsForm.value.leveragename,
-      ProfitCurrency: this.InstrumentsForm.value.profitcurrency,
-      SymbolGroup: this.InstrumentsForm.value.symbolgroup,
+      ProfitCurrencyName: this.InstrumentsForm.value.profitcurrency,
+      SymbolGroupName: this.InstrumentsForm.value.symbolgroup,
       GapLevel: this.InstrumentsForm.value.gaplevel,
-      TradingHoursId: this.InstrumentsForm.value.tradinghoursid,
-      Units: this.InstrumentsForm.value.units,
-      MarginCurrency: this.InstrumentsForm.value.margincurrency,
+      TradingHoursId: '',
+      UnitName: this.InstrumentsForm.value.units,
+      MarginCurrencyName: this.InstrumentsForm.value.margincurrency,
       Description: this.InstrumentsForm.value.description,
       SpreadAsk: this.InstrumentsForm.value.spreadask,
       MaximalVolume: this.InstrumentsForm.value.maximalvolume,
@@ -247,14 +303,25 @@ units() {
       SwapShort: this.InstrumentsForm.value.swapshort,
       StopLevel: this.InstrumentsForm.value.stoplevel,
       Digits: this.InstrumentsForm.value.digits,
-      CalculationMode: this.InstrumentsForm.value.calculationmode,
+      CalculationModeName: this.InstrumentsForm.value.calculationmode,
       Commission: this.InstrumentsForm.value.commission,
-      SwapType: this.InstrumentsForm.value.swaptype,
-      ThreeDaysSwap: this.InstrumentsForm.value.threedaysswap,
-      CommissionCurrency: this.InstrumentsForm.value.commissioncurrency,
+      SwapTypeName: this.InstrumentsForm.value.swaptype,
+      ThreeDaysSwapName: this.InstrumentsForm.value.threedaysswap,
+      CommissionCurrencyName: this.InstrumentsForm.value.commissioncurrency,
       Hidden: this.InstrumentsForm.value.hidden,
       ExpirationDate: this.InstrumentsForm.value.expirationdate,
       IsDisabled: this.InstrumentsForm.value.disabled,
+
+      SpreadTypeId: '',
+      ProfitCurrencyId: '',
+      SymbolGroupId: '',
+      TradingHoursName: this.InstrumentsForm.value.tradinghoursid,
+      UnitId: '',
+      MarginCurrencyId: '',
+      CalculationModeId: '',
+      SwapTypeId: '',
+      ThreeDaysSwapId: '',
+      CommissionCurrencyId: '',
     }
     this.settingsService.edtInstruments(this.updtInstruments).subscribe(updtdinstrumnts => {
       this.clddata.emit(updtdinstrumnts);
@@ -265,3 +332,4 @@ units() {
     this.bsmodal.hide();
   }
 }
+

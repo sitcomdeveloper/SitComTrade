@@ -22,7 +22,10 @@
             <div class="row">
         <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el=""  style="line-break: anywhere;width:100%;">Margin<br>Currency</span></label></div>
         <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9">
-           <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="margincurrency">
+           <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="margincurrency">
+            <option value="">Select</option>
+            <option value="" *ngFor="let margincurency of margincurrencyEnum">{{margincurency.Name}}</option>
+         </select>
         </div>
     </div>
          </div>
@@ -43,7 +46,10 @@
                   <div class="row">
               <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">GroupName</span></label></div>
               <div _ngcontent-bsq-c15="" class="col-md-9">
-               <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="groupname">
+               <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="groupname">
+                <option value="">Select</option>
+                <option value="" *ngFor="let group of Group">{{group.Name}}</option>
+             </select>
               </div>
           </div>
           </div>
@@ -59,7 +65,6 @@
                         <option value="">Select</option>
                         <option value="" *ngFor="let spreadtype of spreadtypeenum">{{spreadtype.Name}}</option>
                      </select>
-                      <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadtype"> -->
                    </div>
                </div>
                </div>
@@ -80,7 +85,7 @@
                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trade<br>Forbidden</span></label></div>  
                  <div class="col-xs-9 col-md-9">
                     <div class="checkbox-inline">
-                       <div class="input-checkbox" ><span><input class="form-control1" formControlName="tradeforbidden" name="IsDemo" type="checkbox" id="621f4774-e7a3-3276-c63f-59067ef17421" value="true" ></span>
+                       <div class="input-checkbox" ><span><input class="form-control1" formControlName="tradeforbidden" name="IsDemo" type="checkbox"  value="true" ></span>
                          
                       </div>
                        &nbsp;
@@ -112,7 +117,10 @@
                    <div class="row">
                <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ProfitCurrency">Profit<br>Currency</span></label></div>
                <div _ngcontent-bsq-c15="" class="col-md-9">
-                <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="profitcurrency">
+                <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="profitcurrency">
+                    <option value="">Select</option>
+                    <option value="" *ngFor="let currencyname of profitcurrrency">{{currencyname.Name}}</option>
+                 </select>
                </div>
            </div>
            </div>
@@ -124,7 +132,6 @@
                        <div class="row">
                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="SymbolGroup">Symbol<br>Group</span></label></div>
                    <div _ngcontent-bsq-c15="" class="col-md-9">
-                      <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="symbolgroup"> -->
                       <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="symbolgroup">
                         <option value="">Select</option>
                         <option value="" *ngFor="let symblgroup of symblgroupenum">{{symblgroup.Name}}</option>
@@ -148,7 +155,6 @@
                        <div class="row">
                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trading<br>HoursId</span></label></div>
                    <div _ngcontent-bsq-c15="" class="col-md-9">
-                      <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="tradinghoursid"> -->
                       <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="tradinghoursid">
                         <option value="">Select</option>
                         <option value="" *ngFor="let tradinghours of tradinghrsenum">{{tradinghours.Name}}</option>
@@ -160,7 +166,6 @@
                    <div class="row">
                <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Units</span></label></div>
                <div _ngcontent-bsq-c15="" class="col-md-9">
-                <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="units"> -->
                 <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="units">
                     <option value="">Select</option>
                     <option value="" *ngFor="let unitstyp of unitsenum">{{unitstyp.Name}}</option>
@@ -176,7 +181,6 @@
                         <div class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Description</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="description"> -->
                        <textarea class="form-control" name="Description" formControlName="description"></textarea>
                     </div>
                 </div>
@@ -277,7 +281,6 @@
                         <div class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Calculation<br>Mode</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="calculationmode"> -->
                        <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="calculationmode">
                         <option value="">Select</option>
                         <option value="" *ngFor="let calcultionmde of calcultionmodeenum">{{calcultionmde.Name}}</option>
@@ -301,7 +304,6 @@
                         <div class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapType</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swaptype"> -->
                        <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="swaptype">
                         <option value="">Select</option>
                         <option value="" *ngFor="let swaptype of swaptypeenum">{{swaptype.Name}}</option>
@@ -313,7 +315,10 @@
                     <div class="row">
                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ThreDaysSwap">ThreDays<br>Swap</span></label></div>
                 <div _ngcontent-bsq-c15="" class="col-md-9">
-                 <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="threedaysswap">
+                 <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="threedaysswap">
+                    <option value="">Select</option>
+                    <option value="" *ngFor="let threedaysswap of threedaysswapenum">{{threedaysswap.Name}}</option>
+                 </select>
                 </div>
             </div>
             </div>
@@ -325,7 +330,10 @@
                         <div class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Commission<br>Currency</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="commissioncurrency">
+                       <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="commissioncurrency">
+                        <option value="">Select</option>
+                        <option value="" *ngFor="let commissioncurrencyname of commissioncurrencydropdown">{{commissioncurrencyname.Name}}</option>
+                     </select>
                     </div>
                 </div>
                 </div>
@@ -334,7 +342,7 @@
                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Hidden</span></label></div>
                 <div class="col-xs-9 col-md-9">
                     <div class="checkbox-inline">
-                       <div class="input-checkbox" ><span><input class="form-control1" formControlName="hidden" name="IsDemo" type="checkbox" id="621f4774-e7a3-3276-c63f-59067ef17421" value="true" ></span>
+                       <div class="input-checkbox" ><span><input class="form-control1" formControlName="hidden" name="IsDemo" type="checkbox"  value="true" ></span>
                          
                       </div>
                        &nbsp;
@@ -359,7 +367,7 @@
                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">IsDisabled</span></label></div>
                 <div class="col-xs-9 col-md-9">
                     <div class="checkbox-inline">
-                       <div class="input-checkbox" ><span><input class="form-control1" formControlName="disabled" name="IsDemo" type="checkbox" id="621f4774-e7a3-3276-c63f-59067ef17421" value="true" ></span>
+                       <div class="input-checkbox" ><span><input class="form-control1" formControlName="disabled" name="IsDemo" type="checkbox"  value="true" ></span>
                          
                       </div>
                        &nbsp;
@@ -381,346 +389,378 @@
 <div *ngIf = editinsstrumnts>
     <div _ngcontent-drw-c5="" class=" mt15" >
         <div _ngcontent-drw-c5="" class="form-holder">
-           <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="" [formGroup] = "InstrumentsForm">
-              <div _ngcontent-drw-c5="" class="form-group">
-                 <div _ngcontent-drw-c5="" class="row">
-                    <div _ngcontent-drw-c5="" class=" col-md-6">
-                        <div class="row">
-                    <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el=""  style="line-break: anywhere;width:100%;">Name</span></label></div>
-                    <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9">
-                       <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="name">
-                    </div>
-                </div>
-            </div>
-            <div _ngcontent-drw-c5="" class=" col-md-6">
-              <div class="row">
-          <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el=""  style="line-break: anywhere;width:100%;">Margin<br>Currency</span></label></div>
-          <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9">
-             <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="margincurrency">
-          </div>
-      </div>
+            <form _ngcontent-drw-c5="" class="form-horizontal ng-untouched ng-pristine ng-valid" novalidate="" [formGroup] = "InstrumentsForm">
+               <div _ngcontent-drw-c5="" class="form-group">
+                  <div _ngcontent-drw-c5="" class="row">
+                     <div _ngcontent-drw-c5="" class=" col-md-6">
+                         <div class="row">
+                     <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el=""  style="line-break: anywhere;width:100%;">Name</span></label></div>
+                     <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9">
+                        <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="name">
+                     </div>
+                 </div>
+             </div>
+             <div _ngcontent-drw-c5="" class=" col-md-6">
+               <div class="row">
+           <div _ngcontent-drw-c5="" class="col-xs-2 col-md-3"><label _ngcontent-drw-c5="" class="valign-label" for="Name"><span _ngcontent-drw-c5="" data-tooltip-el=""  style="line-break: anywhere;width:100%;">Margin<br>Currency</span></label></div>
+           <div _ngcontent-drw-c5="" class="col-xs-10 col-md-9">
+              <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="margincurrency">
+               <option value="">Select</option>
+               <option value="" *ngFor="let margincurency of margincurrencyEnum">{{margincurency.Name}}</option>
+            </select>
            </div>
-                </div>
-                 <div _ngcontent-drw-c5=""></div>
+       </div>
+            </div>
+                 </div>
+                  <div _ngcontent-drw-c5=""></div>
+               </div>
+               <div class="form-group">
+                 <div _ngcontent-bsq-c15="" class="row">
+                     <div _ngcontent-bsq-c15="" class="col-md-6">
+                         <div class="row">
+                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Display<br>Name</span></label></div>
+                     <div _ngcontent-bsq-c15="" class="col-md-9">
+                        <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="displayname">
+                     </div>
+                 </div>
+                 </div>
+                 <div _ngcontent-bsq-c15="" class="col-md-6">
+                     <div class="row">
+                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">GroupName</span></label></div>
+                 <div _ngcontent-bsq-c15="" class="col-md-9">
+                  <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="groupname">
+                   <option value="">Select</option>
+                   <option value="" *ngFor="let group of Group">{{group.Name}}</option>
+                </select>
+                 </div>
+             </div>
+             </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div _ngcontent-bsq-c15="" class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-6">
+                          <div class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadType</span></label></div>
+                      <div _ngcontent-bsq-c15="" class="col-md-9">
+                       <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="spreadtype">
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let spreadtype of spreadtypeenum">{{spreadtype.Name}}</option>
+                        </select>
+                      </div>
+                  </div>
+                  </div>
+                  <div _ngcontent-bsq-c15="" class="col-md-6">
+                      <div class="row">
+                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadBid</span></label></div>
+                  <div _ngcontent-bsq-c15="" class="col-md-9">
+                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadbid">
+                  </div>
               </div>
-              <div class="form-group">
-                <div _ngcontent-bsq-c15="" class="row">
-                    <div _ngcontent-bsq-c15="" class="col-md-6">
-                        <div class="row">
-                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Display<br>Name</span></label></div>
-                    <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="displayname">
+              </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                  <div _ngcontent-bsq-c15="" class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-6">
+                          <div class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trade<br>Forbidden</span></label></div>  
+                    <div class="col-xs-9 col-md-9">
+                       <div class="checkbox-inline">
+                          <div class="input-checkbox" ><span><input class="form-control1" formControlName="tradeforbidden" name="IsDemo" type="checkbox"  value="true" ></span>
+                            
+                         </div>
+                          &nbsp;
+                       </div>
+                   </div>
+                  </div>
+                  </div>
+                  <div _ngcontent-bsq-c15="" class="col-md-6">
+                      <div class="row">
+                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ContractSize">Contract<br>Size</span></label></div>
+                  <div _ngcontent-bsq-c15="" class="col-md-9">
+                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="contractsize">
+                  </div>
+              </div>
+              </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                  <div _ngcontent-bsq-c15="" class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-6">
+                          <div class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="LeverageName">Leverage<br>Name</span></label></div>
+                      <div _ngcontent-bsq-c15="" class="col-md-9">
+                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="leveragename">
+                      </div>
+                  </div>
+                  </div>
+                  <div _ngcontent-bsq-c15="" class="col-md-6">
+                      <div class="row">
+                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ProfitCurrency">Profit<br>Currency</span></label></div>
+                  <div _ngcontent-bsq-c15="" class="col-md-9">
+                   <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="profitcurrency">
+                       <option value="">Select</option>
+                       <option value="" *ngFor="let currencyname of profitcurrrency">{{currencyname.Name}}</option>
+                    </select>
+                  </div>
+              </div>
+              </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                  <div _ngcontent-bsq-c15="" class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-6">
+                          <div class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="SymbolGroup">Symbol<br>Group</span></label></div>
+                      <div _ngcontent-bsq-c15="" class="col-md-9">
+                         <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="symbolgroup">
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let symblgroup of symblgroupenum">{{symblgroup.Name}}</option>
+                        </select>
+                      </div>
+                  </div>
+                  </div>
+                  <div _ngcontent-bsq-c15="" class="col-md-6">
+                      <div class="row">
+                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">GapLevel</span></label></div>
+                  <div _ngcontent-bsq-c15="" class="col-md-9">
+                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="gaplevel">
+                  </div>
+              </div>
+              </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                  <div _ngcontent-bsq-c15="" class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-6">
+                          <div class="row">
+                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trading<br>HoursId</span></label></div>
+                      <div _ngcontent-bsq-c15="" class="col-md-9">
+                         <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="tradinghoursid">
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let tradinghours of tradinghrsenum">{{tradinghours.Name}}</option>
+                        </select>
+                      </div>
+                  </div>
+                  </div>
+                  <div _ngcontent-bsq-c15="" class="col-md-6">
+                      <div class="row">
+                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Units</span></label></div>
+                  <div _ngcontent-bsq-c15="" class="col-md-9">
+                   <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="units">
+                       <option value="">Select</option>
+                       <option value="" *ngFor="let unitstyp of unitsenum">{{unitstyp.Name}}</option>
+                    </select>
+                  </div>
+              </div>
+              </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Description</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <textarea class="form-control" name="Description" formControlName="description"></textarea>
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadAsk</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadask">
+                   </div>
+               </div>
+               </div>
                     </div>
-                </div>
-                </div>
-                <div _ngcontent-bsq-c15="" class="col-md-6">
-                    <div class="row">
-                <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">GroupName</span></label></div>
-                <div _ngcontent-bsq-c15="" class="col-md-9">
-                 <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="groupname">
-                </div>
-            </div>
-            </div>
                  </div>
-              </div>
-              <div class="form-group">
-                 <div _ngcontent-bsq-c15="" class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-6">
-                         <div class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadType</span></label></div>
-                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                        <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadtype">
-                     </div>
-                 </div>
-                 </div>
-                 <div _ngcontent-bsq-c15="" class="col-md-6">
-                     <div class="row">
-                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadBid</span></label></div>
-                 <div _ngcontent-bsq-c15="" class="col-md-9">
-                  <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadbid">
-                 </div>
-             </div>
-             </div>
-                  </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="MaximalVolume">Maximal<br>Volume</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="maximalvolume">
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">VolumeStep</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="volumestep">
+                   </div>
                </div>
-               <div class="form-group">
-                 <div _ngcontent-bsq-c15="" class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-6">
-                         <div class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trade<br>Forbidden</span></label></div>  
+               </div>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="MinimalVolume">Minimal<br>Volume</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="minimalvolume">
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="MarginHedge">Margin<br>Hedge</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="marginhedge">
+                   </div>
+               </div>
+               </div>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapLong</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swaplong">
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapShort</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swapshort">
+                   </div>
+               </div>
+               </div>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">StopLevel</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="stoplevel">
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Digits</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="digits">
+                   </div>
+               </div>
+               </div>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Calculation<br>Mode</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="calculationmode">
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let calcultionmde of calcultionmodeenum">{{calcultionmde.Name}}</option>
+                        </select>
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Commission</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="commission">
+                   </div>
+               </div>
+               </div>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapType</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="swaptype">
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let swaptype of swaptypeenum">{{swaptype.Name}}</option>
+                        </select>
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ThreDaysSwap">ThreDays<br>Swap</span></label></div>
+                   <div _ngcontent-bsq-c15="" class="col-md-9">
+                    <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="threedaysswap">
+                       <option value="">Select</option>
+                       <option value="" *ngFor="let threedaysswap of threedaysswapenum">{{threedaysswap.Name}}</option>
+                    </select>
+                   </div>
+               </div>
+               </div>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Commission<br>Currency</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="commissioncurrency">
+                           <option value="">Select</option>
+                           <option value="" *ngFor="let commissioncurrencyname of commissioncurrencydropdown">{{commissioncurrencyname.Name}}</option>
+                        </select>
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Hidden</span></label></div>
                    <div class="col-xs-9 col-md-9">
-                      <div class="checkbox-inline">
-                         <div class="input-checkbox" ><span><input class="form-control1" formControlName="tradeforbidden" name="IsDemo" type="checkbox" id="621f4774-e7a3-3276-c63f-59067ef17421" value="true" ></span>
-                           
-                        </div>
-                         &nbsp;
-                      </div>
-                  </div>
-                 </div>
-                 </div>
-                 <div _ngcontent-bsq-c15="" class="col-md-6">
-                     <div class="row">
-                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ContractSize">Contract<br>Size</span></label></div>
-                 <div _ngcontent-bsq-c15="" class="col-md-9">
-                  <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="contractsize">
-                 </div>
-             </div>
-             </div>
-                  </div>
+                       <div class="checkbox-inline">
+                          <div class="input-checkbox" ><span><input class="form-control1" formControlName="hidden" name="IsDemo" type="checkbox"  value="true" ></span>
+                            
+                         </div>
+                          &nbsp;
+                       </div>
+                   </div>
                </div>
-               <div class="form-group">
-                 <div _ngcontent-bsq-c15="" class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-6">
-                         <div class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="LeverageName">Leverage<br>Name</span></label></div>
-                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                        <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="leveragename">
-                     </div>
-                 </div>
-                 </div>
-                 <div _ngcontent-bsq-c15="" class="col-md-6">
-                     <div class="row">
-                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ProfitCurrency">Profit<br>Currency</span></label></div>
-                 <div _ngcontent-bsq-c15="" class="col-md-9">
-                  <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="profitcurrency">
-                 </div>
-             </div>
-             </div>
-                  </div>
                </div>
-               <div class="form-group">
-                 <div _ngcontent-bsq-c15="" class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-6">
-                         <div class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="SymbolGroup">Symbol<br>Group</span></label></div>
-                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                        <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="symbolgroup">
-                     </div>
+                    </div>
                  </div>
-                 </div>
-                 <div _ngcontent-bsq-c15="" class="col-md-6">
-                     <div class="row">
-                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">GapLevel</span></label></div>
-                 <div _ngcontent-bsq-c15="" class="col-md-9">
-                  <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="gaplevel">
-                 </div>
-             </div>
-             </div>
-                  </div>
+                 <div class="form-group">
+                   <div _ngcontent-bsq-c15="" class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-6">
+                           <div class="row">
+                       <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ExpirationDate">Expiration<br>Date</span></label></div>
+                       <div _ngcontent-bsq-c15="" class="col-md-9">
+                          <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="expirationdate">
+                       </div>
+                   </div>
+                   </div>
+                   <div _ngcontent-bsq-c15="" class="col-md-6">
+                       <div class="row">
+                   <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">IsDisabled</span></label></div>
+                   <div class="col-xs-9 col-md-9">
+                       <div class="checkbox-inline">
+                          <div class="input-checkbox" ><span><input class="form-control1" formControlName="disabled" name="IsDemo" type="checkbox"  value="true" ></span>
+                            
+                         </div>
+                          &nbsp;
+                       </div>
+                   </div>
                </div>
-               <div class="form-group">
-                 <div _ngcontent-bsq-c15="" class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-6">
-                         <div class="row">
-                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trading<br>HoursId</span></label></div>
-                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                        <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="tradinghoursid">
-                     </div>
-                 </div>
-                 </div>
-                 <div _ngcontent-bsq-c15="" class="col-md-6">
-                     <div class="row">
-                 <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Units</span></label></div>
-                 <div _ngcontent-bsq-c15="" class="col-md-9">
-                  <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="units">
-                 </div>
-             </div>
-             </div>
-                  </div>
                </div>
-               <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Description</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="description"> -->
-                         <textarea class="form-control" name="Description" formControlName="description"></textarea>
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadAsk</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadask">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="MaximalVolume">Maximal<br>Volume</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="maximalvolume">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">VolumeStep</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="volumestep">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="MinimalVolume">Minimal<br>Volume</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="minimalvolume">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="MarginHedge">Margin<br>Hedge</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="marginhedge">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapLong</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swaplong">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapShort</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swapshort">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">StopLevel</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="stoplevel">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Digits</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="digits">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Calculation<br>Mode</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="calculationmode">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Commission</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="commission">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapType</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swaptype">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ThreDaysSwap">ThreDays<br>Swap</span></label></div>
-                  <div _ngcontent-bsq-c15="" class="col-md-9">
-                   <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="threedaysswap">
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Commission<br>Currency</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="commissioncurrency">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Hidden</span></label></div>
-                  <div class="col-xs-9 col-md-9">
-                      <div class="checkbox-inline">
-                         <div class="input-checkbox" ><span><input class="form-control1" formControlName="hidden" name="IsDemo" type="checkbox" id="621f4774-e7a3-3276-c63f-59067ef17421" value="true" ></span>
-                           
-                        </div>
-                         &nbsp;
-                      </div>
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-                <div class="form-group">
-                  <div _ngcontent-bsq-c15="" class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-6">
-                          <div class="row">
-                      <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="ExpirationDate">Expiration<br>Date</span></label></div>
-                      <div _ngcontent-bsq-c15="" class="col-md-9">
-                         <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="expirationdate">
-                      </div>
-                  </div>
-                  </div>
-                  <div _ngcontent-bsq-c15="" class="col-md-6">
-                      <div class="row">
-                  <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">IsDisabled</span></label></div>
-                  <div class="col-xs-9 col-md-9">
-                      <div class="checkbox-inline">
-                         <div class="input-checkbox" ><span><input class="form-control1" formControlName="disabled" name="IsDemo" type="checkbox" id="621f4774-e7a3-3276-c63f-59067ef17421" value="true" ></span>
-                           
-                        </div>
-                         &nbsp;
-                      </div>
-                  </div>
-              </div>
-              </div>
-                   </div>
-                </div>
-           </form>
-        </div>
+                    </div>
+                 </div>
+            </form>
+         </div>
         <div _ngcontent-drw-c5="" class="col-md-12 padd0">
            <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center">
               <div _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="text-center"><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="uptInstruments()">Save</a><a _ngcontent-drw-c5="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)="hideModal()">Cancel</a></div>

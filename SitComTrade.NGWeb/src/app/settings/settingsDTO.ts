@@ -16,19 +16,19 @@ export interface InstrumentsDTO {
 DisplayName: String;
 GroupId: '';
 GroupName: String
-SpreadType: String;
+SpreadTypeName: String;
 SpreadBid: number;
 IsTradeForbidden: boolean;
 ContractSize: number;
 LeverageId: ''
 LeverageName: String;
-ProfitCurrency: String;
-SymbolGroup: String;
+ProfitCurrencyName: String;
+SymbolGroupName: String;
 GapLevel: number;
-TradingHoursId: String;
-Units: number;
+TradingHoursId: '';
+UnitName: number;
 
-MarginCurrency: String;
+MarginCurrencyName: String;
 Description: String;
 SpreadAsk: number;
 MaximalVolume: number;
@@ -39,14 +39,25 @@ SwapLong: number;
 SwapShort: number;
 StopLevel: number;
 Digits: number;
-CalculationMode: String;
+CalculationModeName: String;
 Commission: number;
-SwapType: String;
-ThreeDaysSwap: String;
-CommissionCurrency: String;
+SwapTypeName: String;
+ThreeDaysSwapName: String;
+CommissionCurrencyName: String;
 Hidden: boolean;
 ExpirationDate: '';
 IsDisabled: boolean
+
+SpreadTypeId: '',
+ProfitCurrencyId: '',
+    SymbolGroupId: '',
+    TradingHoursName: String,
+    UnitId: '',
+    MarginCurrencyId: '',
+    CalculationModeId: '',
+    SwapTypeId: '',
+    ThreeDaysSwapId: '',
+    CommissionCurrencyId: '',
 }
 
 export interface SenderEmailDTO {
