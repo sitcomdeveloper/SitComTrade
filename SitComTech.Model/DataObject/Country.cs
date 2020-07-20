@@ -14,6 +14,7 @@ namespace SitComTech.Model.DataObject
     public class Currency : BaseEntity
     {
         public string Name { get; set; }
+        public string TypeNameMarginCurrency { get; set; }
 
     }
 }
