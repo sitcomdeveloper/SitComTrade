@@ -55,7 +55,11 @@
                        <div class="row">
                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SpreadType</span></label></div>
                    <div _ngcontent-bsq-c15="" class="col-md-9">
-                      <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadtype">
+                    <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="spreadtype">
+                        <option value="">Select</option>
+                        <option value="" *ngFor="let spreadtype of spreadtypeenum">{{spreadtype.Name}}</option>
+                     </select>
+                      <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="spreadtype"> -->
                    </div>
                </div>
                </div>
@@ -120,7 +124,11 @@
                        <div class="row">
                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="" tooltip="SymbolGroup">Symbol<br>Group</span></label></div>
                    <div _ngcontent-bsq-c15="" class="col-md-9">
-                      <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="symbolgroup">
+                      <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="symbolgroup"> -->
+                      <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="symbolgroup">
+                        <option value="">Select</option>
+                        <option value="" *ngFor="let symblgroup of symblgroupenum">{{symblgroup.Name}}</option>
+                     </select>
                    </div>
                </div>
                </div>
@@ -140,7 +148,11 @@
                        <div class="row">
                    <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Trading<br>HoursId</span></label></div>
                    <div _ngcontent-bsq-c15="" class="col-md-9">
-                      <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="tradinghoursid">
+                      <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="tradinghoursid"> -->
+                      <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="tradinghoursid">
+                        <option value="">Select</option>
+                        <option value="" *ngFor="let tradinghours of tradinghrsenum">{{tradinghours.Name}}</option>
+                     </select>
                    </div>
                </div>
                </div>
@@ -148,7 +160,11 @@
                    <div class="row">
                <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Units</span></label></div>
                <div _ngcontent-bsq-c15="" class="col-md-9">
-                <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="units">
+                <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="units"> -->
+                <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="units">
+                    <option value="">Select</option>
+                    <option value="" *ngFor="let unitstyp of unitsenum">{{unitstyp.Name}}</option>
+                 </select>
                </div>
            </div>
            </div>
@@ -261,7 +277,11 @@
                         <div class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">Calculation<br>Mode</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="calculationmode">
+                       <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="calculationmode"> -->
+                       <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="calculationmode">
+                        <option value="">Select</option>
+                        <option value="" *ngFor="let calcultionmde of calcultionmodeenum">{{calcultionmde.Name}}</option>
+                     </select>
                     </div>
                 </div>
                 </div>
@@ -281,7 +301,11 @@
                         <div class="row">
                     <div _ngcontent-bsq-c15="" class="col-md-3"><label _ngcontent-bsq-c15="" class="valign-label" for="Roles"><span _ngcontent-bsq-c15="" data-tooltip-el="">SwapType</span></label></div>
                     <div _ngcontent-bsq-c15="" class="col-md-9">
-                       <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swaptype">
+                       <!-- <input _ngcontent-drw-c5="" aria-required="true" class="form-control"  name="Name" type="text" formControlName="swaptype"> -->
+                       <select class="form-control" name="SettingId" data-container="body" data-live-search="true"  tabindex="-98" aria-required="true" formControlName="swaptype">
+                        <option value="">Select</option>
+                        <option value="" *ngFor="let swaptype of swaptypeenum">{{swaptype.Name}}</option>
+                     </select>
                     </div>
                 </div>
                 </div>

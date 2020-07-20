@@ -26,6 +26,12 @@ export class CreateInstrumentsComponent implements OnInit {
   updtInstruments: InstrumentsDTO
   getLoginDetails: any;
   bindLoginData: any;
+  spreadtypeenum: any;
+  calcultionmodeenum: any;
+  symblgroupenum: any;
+  swaptypeenum: any;
+  tradinghrsenum: any;
+  unitsenum: any;
   constructor(private bsmodal: BsModalRef, private fb: FormBuilder, private settingsService: SettingsService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -113,7 +119,56 @@ export class CreateInstrumentsComponent implements OnInit {
     } else {
       this.editinsstrumnts = false;
     }
+    this.spreadtype();
+    this.calcultionmode();
+    this.symbolgroup();
+    this.swaptypes();
+    this.tradinghours();
+    this.units();
   }
+  // spreadtype
+  spreadtype() {
+    this.settingsService.getSpreadType().subscribe(sprdtypeRes => {
+      this.spreadtypeenum = sprdtypeRes;
+      console.log('spreadtypeenum',sprdtypeRes);
+    })
+  }
+  // calculation mode
+  calcultionmode() {
+    this.settingsService.getCalculationmode().subscribe(calculationmdeRes => {
+      this.calcultionmodeenum = calculationmdeRes;
+      console.log('calcultionmodeenum',calculationmdeRes);
+    })
+  }
+  // symbol group
+  symbolgroup() {
+    this.settingsService.getSymbolgroups().subscribe(symblgrpRes => {
+      this.symblgroupenum = symblgrpRes;
+      console.log('symblgroupenum',symblgrpRes);
+    })
+  }
+  // swap types
+  swaptypes() {
+    this.settingsService.getSwapTypes().subscribe(swaptypeRes => {
+      this.swaptypeenum = swaptypeRes;
+      console.log('swaptypeenum',swaptypeRes);
+    })
+  }
+  // trading hrs
+  tradinghours() {
+    this.settingsService.getTradinghrs().subscribe(tradinghrsRes => {
+      this.tradinghrsenum = tradinghrsRes;
+      console.log('tradinghrsenum',tradinghrsRes);
+    })
+  }
+// get units
+units() {
+  this.settingsService.getUnits().subscribe(unitsRes => {
+    this.unitsenum = unitsRes;
+    console.log('unitsenum',unitsRes);
+  })
+}
+// three days swap
   // crt instruments
   createInstruments() {
     this.addInstruments = {

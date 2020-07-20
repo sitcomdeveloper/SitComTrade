@@ -70,7 +70,7 @@ sendsmstotheSelected() {
   const sndsmstoSelected = {
     PhoneNumber: this.listofphone,
     MessageText: this.actionsForm.value.message,           
-    OwnerId: this.detailss,
+    OwnerId: '',
     UserId: this.bindLoginData.UserId,
   }
   this.clientsService.sendsmstoselctd(sndsmstoSelected).subscribe(sendsmsselected => {
@@ -80,4 +80,5 @@ sendsmstotheSelected() {
      this.actionsForm.reset();
   })
 }
+// this.detailss
 }

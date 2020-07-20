@@ -102,6 +102,38 @@ getUserDetails(gtusrdtls: any): Observable<any> {
 getInstruments(gtintrumnts: InstrumentsDTO): Observable<InstrumentsDTO[]> {
   return this.http.post<InstrumentsDTO[]>(API_URL + 'Instrument/GetAllInstruments' , gtintrumnts);
 }
+// spread type
+getSpreadType(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllSpreadTypes');
+}
+// calculation mode
+getCalculationmode(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllCalculationModes');
+}
+// symbol groups
+getSymbolgroups(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllSymbolGroups');
+}
+// swap types
+getSwapTypes(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllSwapTypes');
+}
+// tradng hrs
+getTradinghrs(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllTradingHours');
+}
+// get all units
+getUnits(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllUnits');
+}
+// 3 days swap
+getthreedaysSwap(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllDaySwaps/3dayswap');
+}
+// margin currency
+getMarginCurrencyforinstrmnts(): Observable<any> {
+  return this.http.get<any>(API_URL + 'Instrument/GetAllCurrencies/MarginCurrency');
+}
 // dlt instruments
 dltInstruments(dltmiltipleInstruments: InstrumentsDTO): Observable<InstrumentsDTO> {
   return this.http.post<InstrumentsDTO>(API_URL + 'Instrument/DeleteMultipleInstrument', dltmiltipleInstruments)
