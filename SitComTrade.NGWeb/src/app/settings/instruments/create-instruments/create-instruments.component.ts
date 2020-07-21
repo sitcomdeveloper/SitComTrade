@@ -83,7 +83,15 @@ export class CreateInstrumentsComponent implements OnInit {
       hidden: [''],
       expirationdate: [''],
       disabled: [''],
-
+      groupid: [''],
+      spreadtypeid: [''],
+      symbolgroupid: [''],
+      tradinghours: [''],
+      unitsid: [''],
+      calculationmodeid: [''],
+      swaptypeid: [''],
+      threedaysswapid: [''],
+      margincurrencyid: ['']
     })
     if (this.crtinstrumnts === 'crtinstrumnts') {
       this.createinstruments = true;
@@ -96,17 +104,18 @@ export class CreateInstrumentsComponent implements OnInit {
         name: this.selectedrowdta.Name,
         displayname: this.selectedrowdta.DisplayName,
         groupname: this.selectedrowdta.GroupName,
-        spreadtype: this.selectedrowdta.SpreadType,
+        groupid: this.selectedrowdta.GroupId,
+        spreadtype: this.selectedrowdta.SpreadTypeName,
         spreadbid: this.selectedrowdta.SpreadBid,
         tradeforbidden: this.selectedrowdta.IsTradeForbidden,
         contractsize: this.selectedrowdta.ContractSize,
         leveragename: this.selectedrowdta.LeverageName,
-        profitcurrency: this.selectedrowdta.ProfitCurrency,
-        symbolgroup: this.selectedrowdta.SymbolGroup,
+        profitcurrency: this.selectedrowdta.ProfitCurrencyName,
+        symbolgroup: this.selectedrowdta.SymbolGroupName,
         gaplevel: this.selectedrowdta.GapLevel,
-        tradinghoursid: this.selectedrowdta.TradingHoursId,
-        units: this.selectedrowdta.Units,
-        margincurrency: this.selectedrowdta.MarginCurrency,
+        tradinghoursid: this.selectedrowdta.TradingHoursName,
+        units: this.selectedrowdta.UnitName,
+        margincurrency: this.selectedrowdta.MarginCurrencyName,
         description: this.selectedrowdta.Description,
         spreadask: this.selectedrowdta.SpreadAsk,
         maximalvolume: this.selectedrowdta.MaximalVolume,
@@ -117,11 +126,11 @@ export class CreateInstrumentsComponent implements OnInit {
         swapshort: this.selectedrowdta.SwapShort,
         stoplevel: this.selectedrowdta.StopLevel,
         digits: this.selectedrowdta.Digits,
-        calculationmode: this.selectedrowdta.CalculationMode,
+        calculationmode: this.selectedrowdta.CalculationModeName,
         commission: this.selectedrowdta.Commission,
-        swaptype: this.selectedrowdta.SwapType,
-        threedaysswap: this.selectedrowdta.ThreeDaysSwap,
-        commissioncurrency: this.selectedrowdta.CommissionCurrency,
+        swaptype: this.selectedrowdta.SwapTypeName,
+        threedaysswap: this.selectedrowdta.ThreeDaysSwapName,
+        commissioncurrency: this.selectedrowdta.CommissionCurrencyName,
         hidden: this.selectedrowdta.Hidden,
         expirationdate: this.selectedrowdta.ExpirationDate,
         disabled: this.selectedrowdta.IsDisabled,
@@ -216,6 +225,51 @@ export class CreateInstrumentsComponent implements OnInit {
   }
   // crt instruments
   createInstruments() {
+    // this.Group.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.groupname) {
+    //     this.InstrumentsForm.value.groupid = element.Name;
+    //   }
+    // });
+    // this.spreadtypeenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.spreadtype) {
+    //     this.InstrumentsForm.value.spreadtypeid = element.Name;
+    //   }
+    // });
+    // this.symblgroupenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.symbolgroup) {
+    //     this.InstrumentsForm.value.symbolgroupid = element.Name;
+    //   }
+    // });
+    // this.tradinghrsenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.tradinghoursid) {
+    //     this.InstrumentsForm.value.tradinghours = element.Name;
+    //   }
+    // });
+    // this.unitsenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.units) {
+    //     this.InstrumentsForm.value.unitsid = element.Name;
+    //   }
+    // });
+    // this.calcultionmodeenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.calculationmode) {
+    //     this.InstrumentsForm.value.calculationmodeid = element.Name;
+    //   }
+    // });
+    // this.swaptypeenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.swaptype) {
+    //     this.InstrumentsForm.value.swaptypeid = element.Name;
+    //   }
+    // });
+    // this.threedaysswapenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.threedaysswap) {
+    //     this.InstrumentsForm.value.threedaysswapid = element.Name;
+    //   }
+    // });
+    // this.margincurrencyEnum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.margincurrency) {
+    //     this.InstrumentsForm.value.margincurrencyid = element.Name;
+    //   }
+    // });
     this.addInstruments = {
       UserId: this.bindLoginData.UserId,
       Id: '',
@@ -274,6 +328,51 @@ export class CreateInstrumentsComponent implements OnInit {
   }
   // updt instruments
   uptInstruments() {
+    // this.Group.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.groupname) {
+    //     this.InstrumentsForm.value.groupid = element.Name;
+    //   }
+    // });
+    // this.spreadtypeenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.spreadtype) {
+    //     this.InstrumentsForm.value.spreadtypeid = element.Name;
+    //   }
+    // });
+    // this.symblgroupenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.symbolgroup) {
+    //     this.InstrumentsForm.value.symbolgroupid = element.Name;
+    //   }
+    // });
+    // this.tradinghrsenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.tradinghoursid) {
+    //     this.InstrumentsForm.value.tradinghours = element.Name;
+    //   }
+    // });
+    // this.unitsenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.units) {
+    //     this.InstrumentsForm.value.unitsid = element.Name;
+    //   }
+    // });
+    // this.calcultionmodeenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.calculationmode) {
+    //     this.InstrumentsForm.value.calculationmodeid = element.Name;
+    //   }
+    // });
+    // this.swaptypeenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.swaptype) {
+    //     this.InstrumentsForm.value.swaptypeid = element.Name;
+    //   }
+    // });
+    // this.threedaysswapenum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.threedaysswap) {
+    //     this.InstrumentsForm.value.threedaysswapid = element.Name;
+    //   }
+    // });
+    // this.margincurrencyEnum.forEach(element => {
+    //   if ( element.Id === +this.InstrumentsForm.value.margincurrency) {
+    //     this.InstrumentsForm.value.margincurrencyid = element.Name;
+    //   }
+    // });
     this.updtInstruments = {
       UserId: this.selectedrowdta.UserId,
       Id: this.selectedrowdta.Id,

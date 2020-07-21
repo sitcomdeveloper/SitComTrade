@@ -8,6 +8,7 @@ import { SettingsService } from '../../settings.service';
 import { InstrumentsDTO } from '../../settingsDTO';
 import { CreateItemComponent } from '../create-item/create-item.component';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { LoginService } from 'src/app/login/login.service';
 
 @Component({
   selector: 'app-groups-info',
@@ -35,10 +36,20 @@ export class GroupsInfoComponent implements OnInit {
   detailsofinstruments: any;
   updtInstruments: InstrumentsDTO
   instrumentsdtlsbyid: number;
+  spreadtypeenum: any;
+  calcultionmodeenum: any;
+  symblgroupenum: any;
+  swaptypeenum: any;
+  tradinghrsenum: any;
+  unitsenum: any;
+  threedaysswapenum: any;
+  margincurrencyEnum: any;
+  profitcurrrency: any;
+  commissioncurrencydropdown: any;
 
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private groupService: GroupsService, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService,
-    private currencyService: CurrencyService, private settingsService: SettingsService, private modalService: BsModalService) { }
+    private currencyService: CurrencyService, private settingsService: SettingsService, private modalService: BsModalService, private loginservice: LoginService) { }
   bsModalRef: BsModalRef;
   ngOnInit() {
     this.groupsinfoForm = this.fb.group({
@@ -126,17 +137,17 @@ export class GroupsInfoComponent implements OnInit {
           name: this.detailsofinstruments.Name,
           displayname: this.detailsofinstruments.DisplayName,
           groupname: this.detailsofinstruments.GroupName,
-          spreadtype: this.detailsofinstruments.SpreadType,
+          spreadtype: this.detailsofinstruments.SpreadTypeName,
           spreadbid: this.detailsofinstruments.SpreadBid,
           tradeforbidden: this.detailsofinstruments.IsTradeForbidden,
           contractsize: this.detailsofinstruments.ContractSize,
           leveragename: this.detailsofinstruments.LeverageName,
-          profitcurrency: this.detailsofinstruments.ProfitCurrency,
-          symbolgroup: this.detailsofinstruments.SymbolGroup,
+          profitcurrency: this.detailsofinstruments.ProfitCurrencyName,
+          symbolgroup: this.detailsofinstruments.SymbolGroupName,
           gaplevel: this.detailsofinstruments.GapLevel,
-          tradinghoursid: this.detailsofinstruments.TradingHoursId,
-          units: this.detailsofinstruments.Units,
-          margincurrency: this.detailsofinstruments.MarginCurrency,
+          tradinghoursid: this.detailsofinstruments.TradingHoursName,
+          units: this.detailsofinstruments.UnitName,
+          margincurrency: this.detailsofinstruments.MarginCurrencyName,
         description: this.detailsofinstruments.Description,
         spreadask: this.detailsofinstruments.SpreadAsk,
         maximalvolume: this.detailsofinstruments.MaximalVolume,
@@ -147,11 +158,11 @@ export class GroupsInfoComponent implements OnInit {
         swapshort: this.detailsofinstruments.SwapShort,
         stoplevel: this.detailsofinstruments.StopLevel,
         digits: this.detailsofinstruments.Digits,
-        calculationmode: this.detailsofinstruments.CalculationMode,
+        calculationmode: this.detailsofinstruments.CalculationModeName,
         commission: this.detailsofinstruments.Commission,
-        swaptype: this.detailsofinstruments.SwapType,
-        threedaysswap: this.detailsofinstruments.ThreeDaysSwap,
-        commissioncurrency: this.detailsofinstruments.CommissionCurrency,
+        swaptype: this.detailsofinstruments.SwapTypeName,
+        threedaysswap: this.detailsofinstruments.ThreeDaysSwapName,
+        commissioncurrency: this.detailsofinstruments.CommissionCurrencyName,
         hidden: this.detailsofinstruments.Hidden,
         expirationdate: this.detailsofinstruments.ExpirationDate,
         disabled: this.detailsofinstruments.IsDisabled,
@@ -159,8 +170,19 @@ export class GroupsInfoComponent implements OnInit {
         console.log('detailsofinstruments', getinstrmntsdtls);
       })
     }
-    this.currency();
+    // this.currency();
     this.getLeverages();
+    // instruments
+    this.spreadtype();
+    this.calcultionmode();
+    this.symbolgroup();
+    this.swaptypes();
+    this.tradinghours();
+    this.units();
+    this.threedaysswap();
+    this.margincurrency();
+    this.getGroups();
+    this.currencyName();
   }
   // hide front div and show back div(by click on pencil)
   hideshow() {
@@ -172,12 +194,12 @@ export class GroupsInfoComponent implements OnInit {
     this.frontend = true;
     this.backend = false;
   }
-  currency() {
-    this.currencyService.currencyName(this.currencies).subscribe(res => {
-      this.getAllCurrency = res;
-      // console.log('currency', res);
-    });
-  }
+  // currency() {
+  //   this.currencyService.currencyName(this.currencies).subscribe(res => {
+  //     this.getAllCurrency = res;
+  //     // console.log('currency', res);
+  //   });
+  // }
   getGroups() {
     this.groupService.getTradeGroups(this.getGroupsData).subscribe(result => {
       this.Group = result.reverse();
@@ -235,6 +257,74 @@ export class GroupsInfoComponent implements OnInit {
     this.groupService.getAllLverages().subscribe(rspnse => {
       this.Leverage = rspnse;
     });
+  }
+  // instruments enum
+  spreadtype() {
+    this.settingsService.getSpreadType().subscribe(sprdtypeRes => {
+      this.spreadtypeenum = sprdtypeRes;
+      // console.log('spreadtypeenum', sprdtypeRes);
+    })
+  }
+  // calculation mode
+  calcultionmode() {
+    this.settingsService.getCalculationmode().subscribe(calculationmdeRes => {
+      this.calcultionmodeenum = calculationmdeRes;
+      // console.log('calcultionmodeenum', calculationmdeRes);
+    })
+  }
+  // symbol group
+  symbolgroup() {
+    this.settingsService.getSymbolgroups().subscribe(symblgrpRes => {
+      this.symblgroupenum = symblgrpRes;
+      // console.log('symblgroupenum', symblgrpRes);
+    })
+  }
+  // swap types
+  swaptypes() {
+    this.settingsService.getSwapTypes().subscribe(swaptypeRes => {
+      this.swaptypeenum = swaptypeRes;
+      // console.log('swaptypeenum', swaptypeRes);
+    })
+  }
+  // trading hrs
+  tradinghours() {
+    this.settingsService.getTradinghrs().subscribe(tradinghrsRes => {
+      this.tradinghrsenum = tradinghrsRes;
+      // console.log('tradinghrsenum', tradinghrsRes);
+    })
+  }
+  // get units
+  units() {
+    this.settingsService.getUnits().subscribe(unitsRes => {
+      this.unitsenum = unitsRes;
+      // console.log('unitsenum', unitsRes);
+    })
+  }
+  // three days swap
+  threedaysswap() {
+    this.settingsService.getthreedaysSwap().subscribe(threedaysswapRes => {
+      this.threedaysswapenum = threedaysswapRes;
+      // console.log('threedaysswapenum', threedaysswapRes);
+    }
+    )
+  }
+  margincurrency() {
+    this.settingsService.getMarginCurrencyforinstrmnts().subscribe(margincurrencyRes => {
+      this.margincurrencyEnum = margincurrencyRes;
+      // console.log('margincurrencyEnum', margincurrencyRes);
+    })
+  }
+  //  get currency
+  currencyName() {
+    const obj = {}
+    this.loginservice.currencyName(obj).subscribe(result => {
+      this.profitcurrrency = result;
+      this.commissioncurrencydropdown = this.profitcurrrency.filter(commissioncrrncy => {
+        if (commissioncrrncy.TypeNameMarginCurrency === null) {
+          return commissioncrrncy;
+        }
+      })
+    })
   }
   // updt instruments
   uptInstruments() {
