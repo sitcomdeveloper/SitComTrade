@@ -29,8 +29,8 @@ export class ImportClientDataComponent implements OnInit {
       console.log('headers',this.assignResponse);
       this.HeaderForm.setValue({
         firstname: 'First Name',
-        // lastname: 'Last Name',
-        // email: "Email"
+        lastname: 'Last Name',
+        email: "Email"
       })
     }
   }
