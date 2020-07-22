@@ -142,7 +142,7 @@
                                               </div>
                                              <input class="form-control itemformcontrol"
                                                 name="Phone" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors,'form-control':true}" type="text" aria-required="true"
-                                                >
+                                                appPhoneMask>
                                                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                                                    <div *ngIf="f.phone.errors.required">Phone is required</div>
                                                  </div>
