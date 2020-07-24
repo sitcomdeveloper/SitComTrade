@@ -28,8 +28,8 @@
             <div class="col-md-8">
                <div class="">  
                   <select class="form-control" name="FirstName" data-container="body" data-live-search="true" id="Mobility" tabindex="-98" formControlName="firstname">
-                     <option value="First Name">Select...</option>
-                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
+                     <option value="">Select...</option>
+                     <option value="First Name" *ngFor="let headers of assignResponse" ng-selected="First Name">{{headers}}</option>
                   </select>
                </div>
             </div>
@@ -42,8 +42,8 @@
                <div class="">
                   
                   <select class="form-control" name="LastName" data-container="body" data-live-search="true" id="abf6ecf46-0bfa-ceaa-8aa2-cb406998ec36" tabindex="-98" formControlName="lastname">
-                     <option value="Last Name">Select...</option>
-                     <option value="" *ngFor="let headers of assignResponse">{{headers}}</option>
+                     <option value="">Select...</option>
+                     <option value="Last Name" *ngFor="let headers of assignResponse" ng-selected="Last Name">{{headers}}</option>
                   </select>
                </div>
             </div>

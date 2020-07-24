@@ -27,6 +27,21 @@ export class ImportClientDataComponent implements OnInit {
     if(this.firstpopup === 'firstpopup') {
       this.assignResponse = this.afterimportclient;
       console.log('headers',this.assignResponse);
+
+// Loop through all the items in drop down list
+// for (var i = 0; i< this.assignResponse.length; i++)
+// { 
+// if (this.assignResponse[i] === "First Name")
+// {
+// // Item is found. Set its property and exit
+// this.assignResponse[i].selected = true;
+// break;
+// }
+// }
+// return;
+
+// setSelectedIndex(document.getElementById("ddl_example5"),"BB");
+
       this.HeaderForm.setValue({
         firstname: 'First Name',
         lastname: 'Last Name',
