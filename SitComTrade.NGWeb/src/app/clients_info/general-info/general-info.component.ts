@@ -89,7 +89,7 @@ export class GeneralInfoComponent implements OnInit {
       lasttaskdayspast: [''],
       daysagoclientcreated: [''],
       countryid: [''],
-      phoneCode: ['']
+      phoneCode: [''],
     });
     this.getcountryName();
     this.getRegistrationFromType();
@@ -104,6 +104,7 @@ export class GeneralInfoComponent implements OnInit {
         firstName: this.userGenralinfo.FirstName,
         lastName: this.userGenralinfo.LastName,
       email: this.userGenralinfo.Email,
+      phoneCode: this.userGenralinfo.CountryISDCode,
       phone: this.userGenralinfo.Phone,
       mobile: this.userGenralinfo.Mobile,
       secondemail: this.userGenralinfo.SecondEmail,
@@ -249,15 +250,15 @@ export class GeneralInfoComponent implements OnInit {
       this.Status = response;
     });
   }
-  // getPhoneCode(val: any) {
-  //   this.Country.forEach(element => {
-  //     const y = +val;
-  //     if (element.Id === y) {
-  //       this.countryPhoneCode = element.ISDCode;
-  //     }
-  //   });
-  //   this.userInfoForm.controls.phoneCode.setValue(
-  //     '(+' + this.countryPhoneCode + ')'
-  //   );
-  // }
+  getPhoneCode(val: any) {
+    this.Country.forEach(element => {
+      const y = +val;
+      if (element.Id === y) {
+        this.countryPhoneCode = element.ISDCode;
+      }
+    });
+    this.userInfoForm.controls.phoneCode.setValue(
+      '(+' + this.countryPhoneCode + ')'
+    );
+  }
 }

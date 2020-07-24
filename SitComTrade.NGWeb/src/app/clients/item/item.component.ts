@@ -85,7 +85,8 @@ export class ItemComponent implements OnInit {
       GroupId: this.newUserForm.value.group,
       ISendEmail: this.sedemailbyuser,
       OwnerId: this.bindLoginData.UserId,
-      Phone: this.newUserForm.value.phoneCode + this.newUserForm.value.phone,
+      CountryISDCode: this.newUserForm.value.phoneCode,
+      Phone:  this.newUserForm.value.phone,
       CountryId: this.newUserForm.value.country
     };
       this.clientService.addnewClients(obj).subscribe(res => {

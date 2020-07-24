@@ -49,6 +49,22 @@
       </thead>
       <tbody>
         <tr>
+          <th class="tabletxt">Citizenship</th>
+          <td>
+          
+            <div class="valueshhow">
+              {{userGenralinfo?.CountryName}}
+
+            </div>
+          </td>
+          <th class="tabletxt">Date of Birth</th>
+          <td>
+           <div class="valueshhow">          
+              {{userGenralinfo?.DateOfBirth}}
+          </div>
+          </td>
+        </tr>
+        <tr>
           <th class="tabletxt">Email</th>
           <td>
            <div class="valueshhow">
@@ -58,7 +74,7 @@
           <th class="tabletxt">Phone</th>
           <td>
             <div class="valueshhow">
-          {{userGenralinfo?.Phone}}
+              {{userGenralinfo?.CountryISDCode}} {{userGenralinfo?.Phone}}
           </div>
           </td>
         </tr>
@@ -130,22 +146,7 @@
           </div>
           </td>
         </tr>
-        <tr>
-          <th class="tabletxt">Citizenship</th>
-          <td>
-          
-            <div class="valueshhow">
-              {{userGenralinfo?.CountryName}}
-
-            </div>
-          </td>
-          <th class="tabletxt">Date of Birth</th>
-          <td>
-           <div class="valueshhow">          
-              {{userGenralinfo?.DateOfBirth}}
-          </div>
-          </td>
-        </tr>
+     
         <tr>
           <th class="tabletxt">FTD</th>
           <td>
@@ -329,13 +330,26 @@
         </thead>
         <tbody>
           <tr>
+            <th class="tabletxt">Citizenship</th>
+            <td>
+              <!-- <input type="text" formControlName="citizenship"> -->
+              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+          data-live-search="true" formControlName="citizenship" (change)="getPhoneCode($event.target.value)">
+          <option ngcontent-qpo-c3="">Select</option>
+          <option ngcontent-qpo-c3="" value="{{country.Name}}" *ngFor="let country of Country">
+             {{country.Name}}</option>
+            </select>
+            </td>
+            <th class="tabletxt">Date of Birth</th>
+            <td><input type="date" class="form-control datetimepicker valid" formControlName="dob"></td>
+          </tr>
+          <tr>
             <th class="tabletxt">Email</th>
             <td><input type="text" class="form-control" formControlName="email"></td>
             <th class="tabletxt">Phone</th>
             <td> 
-              <!-- <input formControlName="phoneCode"
-              style="width: 100%; background: transparent; border: none; margin: auto; height: 100%; border-radius: 3px 0px 0px 3px; text-align: center;"
-              disabled /> -->
+              <input formControlName="phoneCode"
+              disabled />
               <input type="text" class="form-control" formControlName="phone"></td>
           </tr>
           <tr>
@@ -374,20 +388,7 @@
             <th class="tabletxt">Retention Owner</th>
             <td><input type="text"  class="form-control" formControlName="retentionowner"></td>
           </tr>
-          <tr>
-            <th class="tabletxt">Citizenship</th>
-            <td>
-              <!-- <input type="text" formControlName="citizenship"> -->
-              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
-          data-live-search="true" formControlName="citizenship" >
-          <option ngcontent-qpo-c3="">Select</option>
-          <option ngcontent-qpo-c3="" value="{{country.Name}}" *ngFor="let country of Country">
-             {{country.Name}}</option>
-            </select>
-            </td>
-            <th class="tabletxt">Date of Birth</th>
-            <td><input type="date" class="form-control datetimepicker valid" formControlName="dob"></td>
-          </tr>
+
           <tr>
             <th class="tabletxt">FTD</th>
             <td>
@@ -483,7 +484,6 @@
             </th>
             <td><input type="text" class="form-control disabledd" formControlName="daysagoclientcreated" onmousedown="return false" onselectstart="return false"></td>
           </tr>
-
         </tbody>
       </table>
     </div>
