@@ -193,6 +193,7 @@ export class GeneralInfoComponent implements OnInit {
       FirstName: this.userInfoForm.value.firstName,
       LastName: this.userInfoForm.value.lastName,
       Email: this.userInfoForm.value.email,
+      CountryISDCode: this.userInfoForm.value.phoneCode,
       Phone: this.userInfoForm.value.phone,
       Mobile: this.userInfoForm.value.mobile,
       SecondEmail: this.userInfoForm.value.secondemail,
@@ -201,8 +202,8 @@ export class GeneralInfoComponent implements OnInit {
       ResponseStatus: this.userInfoForm.value.status,
       CurrencyId: '',
       CurrencyName: '',
-      CountryId: this.userInfoForm.value.countryid,
-      CountryName: this.userInfoForm.value.citizenship,
+      CountryId: this.userInfoForm.value.citizenship,
+      CountryName: this.userInfoForm.value.countryid,
       DateOfBirth: this.userInfoForm.value.dob,
       FTD: this.userInfoForm.value.ftd,
       FTDDate: '',
@@ -258,7 +259,7 @@ export class GeneralInfoComponent implements OnInit {
       }
     });
     this.userInfoForm.controls.phoneCode.setValue(
-      '(+' + this.countryPhoneCode + ')'
+      '+' + this.countryPhoneCode
     );
   }
 }

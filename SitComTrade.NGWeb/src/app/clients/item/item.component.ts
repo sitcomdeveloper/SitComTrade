@@ -160,7 +160,7 @@ if (val === true) {
       }
     });
     this.newUserForm.controls.phoneCode.setValue(
-      '(+' + this.countryPhoneCode + ')'
+      '+' + this.countryPhoneCode
     );
   }
 }

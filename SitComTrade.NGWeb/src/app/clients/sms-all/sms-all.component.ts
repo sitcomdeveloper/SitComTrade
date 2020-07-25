@@ -76,7 +76,7 @@ sendsmstotheSelected() {
   this.clientsService.sendsmstoselctd(sndsmstoSelected).subscribe(sendsmsselected => {
     this.SMStoselected = sendsmsselected;
     this.clddata.emit(sendsmsselected);
-     console.log('',sendsmsselected);
+     console.log('SMStoslcted',sendsmsselected);
      this.actionsForm.reset();
   })
 }
