@@ -49,6 +49,6 @@ export class ClientsService {
   }
   // send sms to selected
   sendsmstoselctd(sndsmstoSelected: any): Observable<any> {
-    return this.http.post<any>(API_URL + 'SendMessageToSelectedClients',sndsmstoSelected);
+    return this.http.post<any>(API_URL + 'Client/SendMessageToSelectedClients',sndsmstoSelected);
   }
 }

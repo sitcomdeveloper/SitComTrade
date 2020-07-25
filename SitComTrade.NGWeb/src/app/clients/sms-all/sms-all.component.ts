@@ -61,6 +61,11 @@ UserId: this.bindLoginData.UserId
 this.clientsService.sendsmstoall(sndsmsall).subscribe(sendsmsall => {
   this.SMStoall = sendsmsall;
   this.clddata.emit(sendsmsall);
+  if (sendsmsall === '') {
+    this.response = '';
+  } else {
+    this.response = 'SMS is sent successfully!';
+  }
   console.log('SMStoall',sendsmsall);
   this.actionsForm.reset();
 })
@@ -76,6 +81,11 @@ sendsmstotheSelected() {
   this.clientsService.sendsmstoselctd(sndsmstoSelected).subscribe(sendsmsselected => {
     this.SMStoselected = sendsmsselected;
     this.clddata.emit(sendsmsselected);
+    if (sendsmsselected === '') {
+      this.response = '';
+    } else {
+      this.response = 'SMS is sent successfully!';
+    }
      console.log('SMStoslcted',sendsmsselected);
      this.actionsForm.reset();
   })
