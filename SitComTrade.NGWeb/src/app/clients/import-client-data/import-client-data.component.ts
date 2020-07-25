@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ImprtclntdtaComponent } from '../imprtclntdta/imprtclntdta.component';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-import-client-data',
   templateUrl: './import-client-data.component.html',
@@ -29,24 +29,25 @@ export class ImportClientDataComponent implements OnInit {
       console.log('headers',this.assignResponse);
 
 // Loop through all the items in drop down list
-// for (var i = 0; i< this.assignResponse.length; i++)
-// { 
-// if (this.assignResponse[i] === "First Name")
-// {
-// // Item is found. Set its property and exit
-// this.assignResponse[i].selected = true;
-// break;
-// }
-// }
-// return;
+for (var i = 0; i< this.assignResponse.length; i++)
+{ 
+if (this.assignResponse[i] === "First Name")
+{
+// Item is found. Set its property and exit
+this.assignResponse[i].selected = true;
+break;
+}
+document.getElementsByClassName("valign-label"),"this.assignResponse[i]";
+}
+return;
+// document.getElementsByClassName('valign-label').innerHTML = 'Hi, I am Arun Banik';
 
-// setSelectedIndex(document.getElementById("ddl_example5"),"BB");
 
-      this.HeaderForm.setValue({
-        firstname: 'First Name',
-        lastname: 'Last Name',
-        email: "Email"
-      })
+      // this.HeaderForm.setValue({
+      //   firstname: 'First Name',
+      //   lastname: 'Last Name',
+      //   email: "Email"
+      // })
     }
   }
   openthirdpopup() {
