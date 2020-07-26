@@ -1,63 +1,628 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 sub-header">
-            <div class="row">
-                <div class="col-md-2 col-xs-8 crumb">
-                        <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a routerLink="#">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Trading Hours</li>
-                                </ol>
-                              </nav>
-                </div>
-                <div class="col-md-10"></div>
-            </div>
-            <div class="row">
-                    <div class="col-md-5 main-tab">
-                            <ul class="tab">
-                                <li><a routerLink="">TRADING HOURS</a></li>
-                                <li><a routerLink="">HOLIDAYS</a></li>
-                                
-                                
-                            </ul>
-                        </div>
-                        <div class="col-md-7" style="float:left;padding-left:154px">
-                                
-                                
-                                  
-
-
-
-
-
-
-                        </div>
-            </div>
-            
-
-
-        </div>
-        
-    </div>
-    <!-- <div class="row">
-      <div class="col-md-12 grid">
-        <ag-grid-angular
-  style="width: 700px; height: 400px;"
-  class="ag-theme-balham"
-  [enableSorting]="true"
-  [enableFilter]="true"
-  [pagination]="true"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
->
-</ag-grid-angular>
-
-      </div>
+  <div class="row">
+    <div class="col-md-12 subheader">
+      <!-- <div class="container-fluid container-padd">
+       <div class="row">
+          <div class="tools-panel-addon">
+            <div _ngcontent-ubb-c3="" class="jsgrid-items-counter">
+               <span id="chked"></span>
+               <span _ngcontent-ubb-c3="">{{GroupLength}} items</span></div>
+             <div class="breadcrumbs">
+                <ul>
+                   <li itemscope="">
+                      <span itemprop="title">Settings</span>
+                   </li>
+                   <li itemscope="">
+                      <span itemprop="title">Groups</span>
+                   </li>
+                </ul>
+             </div>
+         </div>
+       </div>
     </div> -->
-  <!-- container-fluid -->
+       <div class="container-fluid container-padd">
+        <div class="row subhedarpadd">
+          <div _ngcontent-mew-c3="" class="col-md-5 main-tab">
+             <ul _ngcontent-mew-c3="" class="nav nav-pills tablist" role="tablist">
+              <li _ngcontent-mew-c3="" class="nav-item">
+                <a _ngcontent-mew-c3="" class="nav-link active" data-toggle="pill" href="#tradinghrs" >
+                    Trading Hours</a>
+                   </li>
+                   <li _ngcontent-mew-c3="" class="nav-item">
+                    <a _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#holiday" >
+                      Holidays</a>
+                    </li>
+             </ul>
+          </div>
+          <div _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend">
+            <!-- <div _ngcontent-boj-c6="" aria-label="Toolbar with button groups" class="btn-toolbar searchbtn" role="toolbar">
+               <div _ngcontent-boj-c6="" aria-label="First group" class="btn-group mr-2" role="group"><a _ngcontent-boj-c6="" routerlink="" ng-reflect-router-link="" href="javascript:void(0);" (click)="getGroups()"><i _ngcontent-boj-c6="" class="fa fa-refresh"></i></a></div>
+               <div _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
+                  <div _ngcontent-boj-c6="" class="input-group selecticon grpselect">
+                     <select _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
+                        <option _ngcontent-boj-c6="">Groups</option>
+                        
+                     </select>
+                     <span _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-boj-c6="" class="" href="javascript:void(0)"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span>
+                     <span _ngcontent-boj-c6="" class="serachicon">
+                        <a _ngcontent-boj-c6="" href="javascript:void(0)" class="disabled-button"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a>
+                      </span>
+                  </div>
+               </div>
+               <div _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" [attr.disabled]="deletbtnn ==true ? true : false">
+                  <a _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" (click)="newGroup()" data-toggle="modal" href="#"><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a>
+                  <a href="javascript:void(0)" class="brdr-right" [class.disabled] = deletbtnn>
+                     <i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" ></i></a>
+                  <a _ngcontent-boj-c6="" href="javascript:void(0)" [class.disabled] = deletbtnn><i _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" (click)="opendltgrppopup()"></i></a>
+               </div> 
+            </div> -->
+         </div>
+       </div>
+       
+    </div>
+
+   </div>
+      
+  </div>
+  <div class="main-holder">
+   <div id="content">
+      <div class="tab-content main-tabs-content">
+         <div role="tabpanel" class="tab-pane active " id="tradinghrs">
+           <div>
+            <div class="edit-groups" data-target="trading-hours-view-editor" style="display: block;">
+              <div class="colsgrid">
+                <div class="col-xxl-3 col-xs-4 col-md-4 section-holder" data-item-id="1">
+                  <div class="box box02 data-edit-group">
+                     <form>
+                        <!-- <div class="box-heading">
+                           <div class="inner">
+                              <div class="box-control pull-right">
+                                 <a class="ico-edit ico-sz3 edit-data-switcher">Edit</a>
+                                 <div class="edit-data-options"><a href="javascript:void(0);" class="btn-type01 btn02 edit-apply"><i class="ico-sz3 ico-yes blue">&nbsp;</i>Apply</a><a></a><a class="btn-type01 edit-cancel" href="javascript:void(0);">Cancel</a><a class="ico-trash2 dim ico-sz3" href="javascript:void(0);">Delete</a></div>
+                              </div>
+                              <div class="clearfix-out">
+                                 <h2><span contenteditable="false" class="container-name-holder" container-name-default-value="Forex">Forex</span></h2>
+                              </div>
+                           </div>
+                        </div> -->
+                        <div class="box-content no-events">
+                           <div class="items form-inline">
+                              <div class="item row-holder" data-target="row-holder" data-day-position="0">
+                                 <div class="itemcell">
+                                    <div class="form-group" data-item-day-index="0"><label>Mon</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol on"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="ad84e7b26-597e-10bb-4738-9881f6e25c32" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell">
+                                    <div class="subitem" row-identifier="81020042-80fd-59ba-c477-4147b4a7199e">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="afb6f99c7-25ac-7213-6153-a3569b238cfd" data-tab-index="1" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="ad03d3895-d48a-6600-141d-8d867d0938db" data-tab-index="2" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a2e7aa821-22cb-c89e-3b24-7775bc1cfbd8" data-tab-index="3" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a1b71be0c-6d3f-658b-5676-5b93d0b17367" data-tab-index="4" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item row-holder" data-target="row-holder" data-day-position="1">
+                                 <div class="itemcell">
+                                    <div class="form-group" data-item-day-index="1"><label>Tue</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol on"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="aba936bcb-22d4-f46c-10b2-14b783de3901" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell">
+                                    <div class="subitem" row-identifier="01665916-65f3-e02b-6c1b-3ea5d26669d5">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="aaf8b6fbd-a5d6-d83b-bc05-1ff46a024f2d" data-tab-index="5" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="ae84f6098-72b5-4751-9cd1-8691d7d2114d" data-tab-index="6" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a5d2ea8de-ecba-07f5-6756-082be9590888" data-tab-index="7" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a56f62d08-8997-c188-b54b-7586d52532c9" data-tab-index="8" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item row-holder" data-target="row-holder" data-day-position="2">
+                                 <div class="itemcell">
+                                    <div class="form-group" data-item-day-index="2"><label>Wed</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol on"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="ae3d4948d-7f06-c714-0e7f-6df6429b06d9" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell">
+                                    <div class="subitem" row-identifier="433d7d62-4375-0274-71fe-7769e67e0966">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a3f761e08-c12c-2b15-bd47-a471a4367356" data-tab-index="9" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="ae0b52d7a-942e-b10d-5cdf-de717cb71358" data-tab-index="10" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="aa396ad9a-7151-895f-6a4a-ad1911da302c" data-tab-index="11" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a807c5de3-15fb-4837-9601-cb52179219a9" data-tab-index="12" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item row-holder" data-target="row-holder" data-day-position="3">
+                                 <div class="itemcell">
+                                    <div class="form-group" data-item-day-index="3"><label>Thu</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol on"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="a54d9fea1-e3eb-52fc-499e-6dde56deba81" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell">
+                                    <div class="subitem" row-identifier="cba19441-23a6-bc0e-ad87-e554b80b7d93">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a46e3ea9e-dd00-d474-38c9-f0496670c376" data-tab-index="13" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a8d1a6674-7961-b127-fb10-2ff2cd3bd707" data-tab-index="14" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a69787c58-9ee1-5379-0ba4-441bdc1086ab" data-tab-index="15" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a8a5b1877-9843-0f59-bfc3-1caeddb0460d" data-tab-index="16" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item row-holder" data-target="row-holder" data-day-position="4">
+                                 <div class="itemcell">
+                                    <div class="form-group" data-item-day-index="4"><label>Fri</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol on"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="a68e29bc2-e758-575f-96c8-7dc983e95487" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell">
+                                    <div class="subitem" row-identifier="3c0840b0-d5c4-98a5-5cc6-5b6081b6af78">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a017734d2-4e85-d1a9-2cec-3a91bb0bb8be" data-tab-index="17" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a8dd91d25-706b-16ee-a560-81119e92d600" data-tab-index="18" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="aaf50c467-00c7-c1b3-00b1-2badb23ba4a0" data-tab-index="19" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a133c5eec-656f-74bb-3ef2-4ee204d48f91" data-tab-index="20" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item row-holder" data-target="row-holder" data-day-position="5">
+                                 <div class="itemcell">
+                                    <div class="form-group disabled" data-item-day-index="5"><label>Sat</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="ad196e9f2-7bda-3cd6-383d-2032f0bd8045" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell dim no-events">
+                                    <div class="subitem" row-identifier="838cba11-0772-542b-0eb6-ccb3d0a94280">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a78c7a2cc-67e9-eb2f-ea55-2533d9057400" data-tab-index="21" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a891c5343-02e7-a67d-ea47-a69ab3d4f73a" data-tab-index="22" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a4aa2685a-5025-3932-2c9e-ce524797fc79" data-tab-index="23" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="ab901e1b9-f6da-8032-d30b-008027b307cf" data-tab-index="24" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item row-holder" data-target="row-holder" data-day-position="6">
+                                 <div class="itemcell">
+                                    <div class="form-group disabled" data-item-day-index="6"><label>Sun</label></div>
+                                    <div class="form-group"><label class="toggle-switcher"><span class="switchcontrol"><span class="off"><span style="width: 0px;">Off</span></span><span class="on"><span style="width: 0px;">On</span></span><input class="form-control default-checkbox" name="DaySwitcher" type="checkbox" id="aa3b02cf2-6d55-febb-5cff-51fbaa1382bc" value="true"></span></label></div>
+                                 </div>
+                                 <div class="itemcell dim no-events">
+                                    <div class="subitem" row-identifier="6f329627-56b4-0e2f-f9df-4cf20423083c">
+                                       <div class="itemcell">
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="acfae81bd-4b8c-0a17-20d6-10dd473ca686" data-tab-index="25" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="a8c37df90-2abf-d451-4570-7191c4e57eeb" data-tab-index="26" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep2">-</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="acc4f16e2-9928-2b25-66ba-ec8e355d8ed2" data-tab-index="27" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                          <div class="form-group sep1">:</div>
+                                          <div class="spinner1 vspinner1" data-trigge="spinner1"><input class="form-control input-sm" name="args.interval" type="text" id="afe72bdc8-7b2d-55d2-0be6-9637c86385f7" data-tab-index="28" maxlength="2"><a href="javascript:void(0);" class="spin-up" data-spin="up" tabindex="-1">+</a><a href="javascript:void(0);" class="spin-down" data-spin="down" tabindex="-1">-</a></div>
+                                       </div>
+                                       <div class="itemcell edit-control"><a href="javascript:void(0);" class="link-control link-add-control"><i class="ico-sz3 ico-add2">&nbsp;</i></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+              </div>
+            </div>
+           </div>
+         </div>
+         <div role="tabpanel" class="tab-pane fade " id="holiday">
+         <div>
+            <div id="email" class="email">
+               <div class="email-grid-header email-header-scrollbar">
+                 
+                  <table class="email-table JColResizer" id="JColResizer0">
+                     <tbody>
+                        <tr class="email-header-row">
+                           
+                           <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc">
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>Status</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-header-sortable" >
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>Description</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-header-sortable">
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>Date</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-align-center email-header-sortable">
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>Settings: Instruments</span></div>
+                              </div>
+                           </th>
+                           <th class="email-header-cell email-align-left email-header-sortable">
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis"><span>FromTo</span></div>
+                              </div>
+                           </th>
+                           
+                        </tr>
+                        <tr class="email-filter-row">
+                           
+                           <td class="email-cell headingwidth" >
+                              <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="email-cell-content">
+                                 <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="cstm-search input-control empty">
+                                    <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="checkbox-dd">
+                                       <i _ngcontent-obi-c12="" _ngcontent-eql-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="firstid"></i>
+                                       <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" aria-labelledby="firstid" class="drop dropdown-menu radiondrop">
+                                          <form _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                             <ul _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                      Contains 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                      Not Contains 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                      Equals 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                      Not Equals 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="checked"><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                      Starts With 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                      End With 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                      Empty 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                      NotEmpty 
+                                                   </label>
+                                                </li>
+                                             </ul>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <input _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""></span></i>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell headingwidth" >
+                              <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="email-cell-content">
+                                 <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="cstm-search input-control empty">
+                                    <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="checkbox-dd">
+                                       <i _ngcontent-obi-c12="" _ngcontent-eql-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-chevron-down comparation-type-3 cstm-search-btn-trigger" data-toggle="dropdown" id="secondid"></i>
+                                       <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" aria-labelledby="secondtid" class="drop dropdown-menu radiondrop">
+                                          <form _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                             <ul _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                      Contains 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                      Not Contains 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                      Equals 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                      Not Equals 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="checked"><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                      Starts With 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                      End With 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                      Empty 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                      NotEmpty 
+                                                   </label>
+                                                </li>
+                                             </ul>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <input _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""></span></i>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell headingwidth" >
+                              <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="email-cell-content">
+                                 <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="cstm-search input-control empty">
+                                    <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="checkbox-dd">
+                                       <i _ngcontent-obi-c12="" _ngcontent-eql-c3="" aria-expanded="false" aria-haspopup="true" class="fa fa-equals comparation-type-3 cstm-search-btn-trigger1" data-toggle="dropdown" id="thirdid"></i>
+                                       <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" aria-labelledby="thirdid" class="drop dropdown-menu radiondrop">
+                                          <form _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="ng-untouched ng-pristine ng-valid" novalidate="">
+                                             <ul _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="5"></span></div>
+                                                      Contains 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="6"></span></div>
+                                                      Not Contains 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="1"></span></div>
+                                                      Equals 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="2"></span></div>
+                                                      Not Equals 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="active">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="checked"><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="3"></span></div>
+                                                      Starts With 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="4"></span></div>
+                                                      End With 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="11"></span></div>
+                                                      Empty 
+                                                   </label>
+                                                </li>
+                                                <li _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                   <label _ngcontent-obi-c12="" _ngcontent-eql-c3="">
+                                                      <div _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="input-radio fistinpt"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""><input _ngcontent-obi-c12="" _ngcontent-eql-c3="" data-ignore-validation="true" name="filterparam" type="radio" value="12"></span></div>
+                                                      NotEmpty 
+                                                   </label>
+                                                </li>
+                                             </ul>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <input _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="form-control emailinpt" data-comparation-type="3" name="ItemId_condition" type="text"><i _ngcontent-obi-c12="" _ngcontent-eql-c3="" class="clear cstm-search-btn-clear"><span _ngcontent-obi-c12="" _ngcontent-eql-c3=""></span></i>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center headingwidth" >
+                              <div _ngcontent-eme-c5="" class="email-cell-content">
+                                 <select _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
+                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">All</span></a></option>
+                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">Yes</span></a></option>
+                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">No</span></a></option>
+                                 </select>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-left headingwidth" >
+                              <div _ngcontent-eme-c5="" class="email-cell-content">
+                                 <select _ngcontent-eme-c5="" class="btn-group bootstrap-select form-control emailinpt">
+                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">All</span></a></option>
+                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">Yes</span></a></option>
+                                    <option _ngcontent-eme-c5="" class="selected " data-original-index="1"><a _ngcontent-eme-c5="" aria-disabled="false" aria-selected="true" class="" data-tokens="null" role="option" tabindex="0"><span _ngcontent-eme-c5="" class="text">No</span></a></option>
+                                 </select>
+                              </div>
+                           </td>
+                          
+                           <td class="email-cell email-control-field email-align-center email-cell-content" >
+                              
+                              <span _ngcontent-lrx-c3=""><i _ngcontent-lrx-c3="" _ngcontent-pje-c3="" _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search greyiconn"></i></span>
+                              </td>
+                        </tr>
+                        
+                     </tbody>
+                  </table>
+               </div>
+               <div class="email-grid-body jsgrid-grid-body" >
+                  <table class="email-table table-striped" >
+                     <tbody>
+                        <!-- <tr class="email-row" *ngFor="let group of Group">
+                           <td class="email-cell email-align-center">
+                              <div class="email-cell-content1">
+                                 <div class="input-checkbox"><span>
+                                    
+                                    <input type="checkbox" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,group.Id)" onclick="checkboxcheck()" data-item-selector="true"></span>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell"  (click)="getGeneralInfo(group.Id)">
+                              <div class="email-cell-content">
+                                 <div class="text-ellipsis" data-original-title="" title=""><a href="javascript:void(0);"><span>{{group.Name}}</span></a></div>
+                              </div>
+                           </td>
+                           <td class="email-cell" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="10_Description">
+                                    <div class="text-ellipsis" data-field="Description" data-original-value="TradePro Markets Limited USD" data-original-title="" title="">{{group.Description}}</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="10_InitialDeposit">
+                                    <div class="text-ellipsis" data-field="InitialDeposit" data-original-value="0">{{group.InitialDeposit}}</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="10_IsDemo">
+                                    <div class="text-center"><i _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': group.Demo ? 'green':'gray' }"></i></div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-left" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="10_Currency">
+                                    <div class="text-ellipsis">{{group.CurrencyName}}</div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-align-center" >
+                              <div class="email-cell-content">
+                                 <div data-display-for="10_AllowTrade">
+                                    <div class="text-center">
+                                       <i _ngcontent-ixd-c3="" _ngcontent-nih-c3="" aria-hidden="true" class="fa fa-check-circle" [ngStyle]="{'color': group.AllowTrade ? 'green':'gray' }"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td class="email-cell email-control-field email-align-center" >
+                              <div _ngcontent-oov-c3="" class="dropleft droptop">
+                                 <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh reverse" data-jsgrid-rule="link"  title="Open in new tab" (click)="getGeneralInfo(group.Id)">
+                                    <i _ngcontent-oov-c3="" aria-hidden="true" class="fa fa-link greyiconnn"></i></a>
+                                    <a _ngcontent-oov-c3="" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" href="#" title="Open in new tab">
+                                       <i _ngcontent-oov-c3="" _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil-alt greyiconnn" disabled=""></i></a>
+                                      </div>
+                           </td>
+                        </tr> -->
+                        
+                        
+                        
+                     </tbody>
+                  </table>
+               </div>
+              
+               <div class="email-load-shader" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1000; display: none;"></div>
+               <div class="email-load-panel" style="position: absolute; top: 50%; left: 50%; z-index: 1000; margin-top: -37.5px; margin-left: -112.5px; display: none;">Please, wait...</div>
+            </div>
+            <div class="row padd18 fxdpsn">
+               <div class="col-md-6">
+               <div class="copy">
+                  <p>© 2020 Trade Fx CRM </p>
+               </div>
+            </div>
+               <div class="col-md-6 end">
+                  <div class="email-pager-perpage" style="display: block;">
+                     <label>
+                        Records per page
+                           
+                           <select autocomplete="off" class="count-records-list form-control" tabindex="-98">
+                              <option value="20">20</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                              <option value="250">250</option>
+                           </select>
+                        
+                     </label>
+                  </div>
+                  </div>
+               </div>
+         </div>
+      </div>
+   </div>
+  </div>
+</div>
 </div> 
 
+<ng4-loading-spinner> </ng4-loading-spinner>
+
+<!------------------create item model------------->
+<!-- <div class="modal" id="createitem">
+<div class="modal-dialog modal930">
+<div class="modal-content">
+ <div class="modal-header" style="height: 4rem;">
+   <h1 class="modal-title popupheader">
+     
+     <span>
+      CREATE ITEM
+     </span>
+   </h1>
+   <button type="button" class="close" data-dismiss="modal" #myModalClose style="outline:none">×</button>
+ </div>
+ <div class="modal-body modal-bodypadd">
+   <app-create-item></app-create-item>
 
 
+ </div>
+</div>
+</div>
+</div>
+-->
+
+
+<!--------------End create item model--------------->
 
 
