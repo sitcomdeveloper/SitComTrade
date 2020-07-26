@@ -615,38 +615,129 @@
         //    UserId: ko.observable(3)
           
         //};
-         UserVM.Selectedips = ko.observableArray([
-            11,12
-        ]);
+        // UserVM.Selectedips = ko.observableArray([
+        //    11,12
+        //]);
 
-        UserVM.Sendsms = {
-            OwnerId: ko.observable(''),
-            MessageText: ko.observable('test ggg to ghg'),
-            PhoneNumber: ko.observable(''),
-            UserId: ko.observable(2)
+        //UserVM.Sendsms = {
+        //    OwnerId: ko.observable(''),
+        //    MessageText: ko.observable('test ggg to ghg'),
+        //    PhoneNumber: ko.observable(''),
+        //    UserId: ko.observable(2)
+        //};
+
+        //var em = '(546) (987)-12333';
+        //UserVM.SendsmsSelected = {
+
+        //    PhoneNumber: ko.observable(em),
+        //    MessageText: ko.observable('ghh'),           
+        //    OwnerId: ko.observable(''),
+        //    UserId: ko.observable(4),
+        //};
+
+        UserVM.CreateTradeAccount = {
+            ClientId: ko.observable(43),
+            GroupId: ko.observable(7),
+            ISendEmail: ko.observable(0)
         };
 
-        var em = '(546) (987)-12333';
-        UserVM.SendsmsSelected = {
-
-            PhoneNumber: ko.observable(em),
-            MessageText: ko.observable('ghh'),           
-            OwnerId: ko.observable(''),
-            UserId: ko.observable(4),
+        UserVM.EditTradeAccount = {
+            Id: ko.observable(3),
+            TPAccountNumber: ko.observable(26464),
+            FTD: ko.observable(2),
+            FTDDate: ko.observable(2),
+            FtdAmount: ko.observable(2),
+            LastTradeDate: ko.observable('2020-04-04'),
+            LastDepositDate: ko.observable('2020-04-04'),
+            GroupId: ko.observable(2),
+            GroupName: ko.observable(2),
+            ISendEmail: ko.observable(2),
+            CurrencyId: ko.observable(2),
+            CurrencyName: ko.observable(2),
+            InitialDeposit: ko.observable(2),
+            StopOut: ko.observable(2),
+            MarginCall: ko.observable(2),
+            OrderCount: ko.observable(2),
+            MinDeposit: ko.observable(2),
+            CloseProfit: ko.observable(2),
+            CloseLoss: ko.observable(2),
+            TotalDeposit: ko.observable(2),
+            TotalWithdrawal: ko.observable(2),
+            NetDeposit: ko.observable(2),
+            OpenProfit: ko.observable(2),
+            OpenLoss: ko.observable(2),
+            Commission: ko.observable(2),
+            Equity: ko.observable(2),
+            Balance: ko.observable(2),
+            MarginLevel: ko.observable(2),
+            FreeMargin: ko.observable(2),
+            Credit: ko.observable(2),
+            Volume: ko.observable(2),
+            AllowTrade: ko.observable(2),
+            DepositCount: ko.observable(2),
+            UserId: ko.observable(2),
+            ClientId: ko.observable(2),
+            AccountId: ko.observable(2),        
         };
 
         $(document).ready(function () {
-
-             $.ajax({
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeAccount/DeleteTradeAccountById/1",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            $.ajax({
                 type: 'Post',
-                url: apiURl + "api/Instrument/UpdateInstrument",
+                url: apiURl + "api/TradeAccount/GetAllTradeAccounts",
                 contentType: 'application/json',
                 processData: false,
-                data: ko.toJSON(UserVM.EditInstrument),
                 success: function (result) {
                     alert(result);
                 }
             });
+            //   $.ajax({
+            //    type: 'Post',
+            //       url: apiURl + "api/TradeAccount/GetTradeAccountDetailById/3",
+            //    contentType: 'application/json',
+            //    processData: false,               
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeAccount/UpdateTradeAccount",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditTradeAccount),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeAccount/CreateTradeAccount",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreateTradeAccount),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+            // $.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Instrument/UpdateInstrument",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditInstrument),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Instrument/InsertInstrument",
