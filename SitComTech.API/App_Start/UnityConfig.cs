@@ -54,6 +54,7 @@ namespace SitComTech.API.App_Start
             container.RegisterType<IImportFileService, ImportFileService>();
             container.RegisterType<ICurrentUser, CurrentUser>();
             container.RegisterType<IExceptionLoggerService, ExceptionLoggerService>();
+            container.RegisterType<ITradeAccountService, TradeAccountService>();
         }
     }
 }
