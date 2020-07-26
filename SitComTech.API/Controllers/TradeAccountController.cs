@@ -31,14 +31,14 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("GetTradeAccountDetailById/{id}")]
-        public TradeAccount GetTradeAccountDetailById(long id)
+        public TradeAccountInfoVM GetTradeAccountDetailById(long id)
         {
             return _TradeAccountService.GetTradeAccountById(id);
         }
 
         [HttpPost]
         [Route("GetAllTradeAccounts")]
-        public List<TradeAccount> GetAllTradeAccounts()
+        public List<TradeAccountInfoVM> GetAllTradeAccounts()
         {
             return _TradeAccountService.GetTradeAccountList();
         }

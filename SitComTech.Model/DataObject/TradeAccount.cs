@@ -56,6 +56,15 @@ namespace SitComTech.Model.DataObject
     public class TradeAccountInfoVM
     {
         public long Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Mobile { get; set; }
+        public string SecondEmail { get; set; }
+        public string Password { get; set; }
+        public Nullable<long> LeverageId { get; set; }
+        public string LeverageName { get; set; }
         public long UserId { get; set; }
         public long ClientId { get; set; }
         public string AccountId { get; set; }

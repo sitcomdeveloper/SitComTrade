@@ -53,6 +53,7 @@
     <Compile Include="DataObject\IPWhiteList.cs" />
     <Compile Include="DataObject\MarketingInfo.cs" />
     <Compile Include="DataObject\ShortMessage.cs" />
+    <Compile Include="DataObject\TradeAccount.cs" />
     <Compile Include="DataObject\TradeGroup.cs" />
     <Compile Include="DataObject\User.cs" />
     <Compile Include="DataObject\WorkFlow.cs" />

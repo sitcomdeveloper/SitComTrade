@@ -8,8 +8,8 @@ namespace SitComTech.Core.Interface
     
     public interface ITradeAccountService : IService<TradeAccount>
     {
-        List<TradeAccount> GetTradeAccountList();
-        TradeAccount GetTradeAccountById(object Id);
+        List<TradeAccountInfoVM> GetTradeAccountList();
+        TradeAccountInfoVM GetTradeAccountById(long Id);
         void CreateTradeAccount(CreateTradeAccountVM entity);
         void UpdateTradeAccount(TradeAccount entity);
         bool DeleteTradeAccountById(long TradeAccountId);

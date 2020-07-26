@@ -75,13 +75,7 @@ namespace SitComTech.Model.ViewModel
         public Nullable<long> RegistrationTypeId { get; set; }
         public Nullable<bool> IsStarred { get; set; }
         public string CountryISDCode { get; set; }
-    }
-
-    public class TradeAccountVM
-    {
-        public string TypeName { get; set; }
-        public long OwnerId { get; set; }
-    }
+    }   
     public class ClientStarredVM
     {
         public bool IsStarred { get; set; }
