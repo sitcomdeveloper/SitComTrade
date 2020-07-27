@@ -93,6 +93,10 @@ export class TradeaccountsComponent implements OnInit {
   moveToInfoPage(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
   }
+  // move to trade info
+  movetoTradeaccountInfo() {
+    this.router.navigate(['/trade-info']);
+  }
   // live trade frame
   liveTrade(trdingDtls: any) {
     this.router.navigate(['/livetrade', trdingDtls]);

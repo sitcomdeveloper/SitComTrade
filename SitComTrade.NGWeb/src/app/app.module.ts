@@ -51,6 +51,7 @@ import { CreateSenderSttingsComponent } from './settings/sendersettings/create-s
 import { AdditionalModuleFieldsComponent } from './settings/additionalfields/additional-module-fields/additional-module-fields.component';
 import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-woorkflows/create-edit-woorkflows.component';
+import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeaccount-info.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +141,7 @@ import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-
     AdditionalModuleFieldsComponent,
     CreateInstrumentsComponent,
     CreateEditWoorkflowsComponent,
+    TradeaccountInfoComponent,
   ],
   imports: [
     BrowserModule,

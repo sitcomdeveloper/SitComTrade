@@ -17,6 +17,7 @@ import { ClientsInfoComponent } from './clients-info/clients-info.component';
 import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-detail.component';
 import { AuthGuard } from './auth.guard';
 import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
+import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeaccount-info.component';
 // import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 
 const routes: Routes = [
@@ -85,6 +86,7 @@ const routes: Routes = [
 // {path: 'terms', component: TermsComponent},
 // clients-info
 {path: 'info/:selectedItem', component: ClientsInfoComponent},
+{path: 'trade-info', component: TradeaccountInfoComponent},
 // for group(general-info)
 {path: 'groups-info/:setItem/:publicid', component: GroupsInfoComponent},
 // tradeaccount
