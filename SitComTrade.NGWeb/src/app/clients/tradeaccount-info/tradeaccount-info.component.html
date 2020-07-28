@@ -7,9 +7,6 @@
              <p _ngcontent-fux-c2="">ID: 203<span _ngcontent-fux-c2="" class="type">Lead</span></p>
              <h2 _ngcontent-fux-c2="">setr hjy</h2>
           </div>
-          <!--bindings={
-             "ng-reflect-ng-if": "false"
-             }-->
        </div>
        <a _ngcontent-fux-c2="" class="history-back-link page-prev" href=""><i _ngcontent-fux-c2="" class="fa fa-chevron-left"></i></a>
     </div>
@@ -19,19 +16,8 @@
              <ul _ngcontent-fux-c2="" id="navPanel" style="    padding: 14px;
                 padding-left: 0;">
                 <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="common" href="javascript:void(0);">Closed Orders</a></li>
-                <!--bindings={
-                   "ng-reflect-ng-if": "false"
-                   }-->
                 <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="common" href="#emails">OpenedAndPendingOrders</a></li>
-                <!--bindings={
-                   "ng-reflect-ng-if": "false"
-                   }--><!--bindings={
-                   "ng-reflect-ng-if": "false"
-                   }-->
                 <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="common" href="#sent-sms">Financial Transactions</a></li>
-                <!--bindings={
-                   "ng-reflect-ng-if": "false"
-                   }-->
                 </ul>
           </div>
           <div _ngcontent-fux-c2="" class="account-switcher">
@@ -41,7 +27,6 @@
                    <a _ngcontent-fux-c2="" aria-expanded="true" class="link-control dropdown-toggle dropdown-toggle1" data-toggle="dropdown" href="#" role="button"><i _ngcontent-fux-c2="" class="fa fa-equals" style="font-size: 33px;top:8px;left: 13px;">=</i></a>
                    <div _ngcontent-fux-c2="" class="dropdown-menu pull-right">
                       <p _ngcontent-fux-c2="">Jump to clients:</p>
-                      <!--bindings={}-->
                    </div>
                 </li>
                 <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="link-next disabled" href=""><i _ngcontent-fux-c2="" class="fa fa-chevron-right"></i></a></li>
@@ -57,11 +42,7 @@
        <div _ngcontent-ght-c2="" class="col-xs-9 col-md-8">
           <div _ngcontent-ght-c2="" id="accordion" role="tablist">
              <div _ngcontent-ght-c2="">
-                
-                   <!--bindings={
-                      "ng-reflect-ng-if": "true"
-                      }-->
-                   <div _ngcontent-ght-c4="" class="card-bodynew mb20">
+                   <div _ngcontent-ght-c4="" class="card-bodynew mb20" *ngIf = frontmode>
                       <div _ngcontent-ght-c4="" class="card1 mb20 ">
                          <div _ngcontent-ght-c4="" class="card-header1 container" id="headingOne" role="tab">
                             <h5 _ngcontent-ght-c4="" class="mb-0">
@@ -69,7 +50,7 @@
                                   <h2 _ngcontent-ght-c4="">General Info </h2>
                                </a>
                                <div _ngcontent-ght-c4="" class="box-control pull-right">
-                                  <div _ngcontent-ght-c4="" class="pencil" id="edit"><i _ngcontent-ght-c4="" aria-hidden="true" class="fa fa-pencil "></i></div>
+                                  <div _ngcontent-ght-c4="" class="pencil" id="edit"><i _ngcontent-ght-c4="" aria-hidden="true" class="fa fa-pencil" (click)="openeditingmode()"></i></div>
                                </div>
                             </h5>
                          </div>
@@ -85,11 +66,11 @@
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">First Name</th>
                                         <td _ngcontent-ght-c4="" class="text-ellipsis ">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> setr </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.FirstName}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Last Name</th>
                                         <td _ngcontent-ght-c4="" class="text-ellipsis">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> hjy </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.LastName}} </div>
                                         </td>
                                      </tr>
                                   </thead>
@@ -97,170 +78,170 @@
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">TP Account</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> India </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.TPAccountNumber}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Group</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.GroupName}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Leverage</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> set.jh@gmail.com </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.LeverageName}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Margin Call</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> 8445682998 </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.MarginCall}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Stop Out</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">  {{this.realTradeUsers?.StopOut}}</div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Order Count</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.OrderCount}}  </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Min Deposit</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> TRA0203 </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.MinDeposit}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Account ID</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> Rohan Gupta </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.AccountId}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Allow Trade</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> Interested </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">
+                                             <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                             [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i>
+                                               </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Registration Date</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> 2020-07-25T00:16:36.747 </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.FirstRegistrationDate}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Close Profit And Loss</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.CloseLoss}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Total Deposits</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> 2020-07-25T00:36:47.8 </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.TotalDeposit}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Total Withdrawals</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.TotalWithdrawal}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Net Deposit</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.NetDeposit}}  </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Open Profit And Loss</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"><i _ngcontent-ght-c4="" aria-hidden="true" class="fa fa-check-circle" style="font-size: 17px; color: gray;" ng-reflect-ng-style="[object Object]"></i></div>
-                                           <div _ngcontent-ght-c4="" class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;"><label _ngcontent-ght-c4="" class="switch "><input _ngcontent-ght-c4="" class="primary" type="checkbox"><span _ngcontent-ght-c4="" class="slider round" name="Ftd"></span></label></div>
-                                        </td>
+                                          <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.OpenProfit}} </div>
+                                       </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Commision</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Commission}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Equity</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"><i _ngcontent-ght-c4="" aria-hidden="true" class="fa fa-check-circle" style="font-size: 17px; color: green;" ng-reflect-ng-style="[object Object]"></i></div>
-                                           <div _ngcontent-ght-c4="" class="value-edit list-group-item no-border" data-rule="valueEdit" style="display:none;"><label _ngcontent-ght-c4="" class="switch "><input _ngcontent-ght-c4="" class="primary" type="checkbox"><span _ngcontent-ght-c4="" class="slider round" name="Enabled"></span></label></div>
-                                        </td>
+                                          <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Equity}} </div>
+                                       </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Balance</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="value-edit" data-rule="valueEdit" style="display:none;"><input _ngcontent-ght-c4="" aria-required="true" class="form-control" name="FirstName" type="text"></div>
-                                        </td>
+                                          <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Balance}} </div>
+                                       </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Margin Level</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.MarginLevel}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Free Margin</th>
                                        
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.FreeMargin}}</td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Credit</th>
-                                        <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="value-edit" data-rule="valueEdit" style="display:none;"><input _ngcontent-ght-c4="" aria-required="true" class="form-control" name="FirstName" type="text"></div>
-                                        </td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.Credit}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Volume</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.Volume}}</td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Last Login Date</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.AssignedDate}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Last Trade Date</th>
                                         <td _ngcontent-ght-c4="" class="text-ellipsis ">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.LastTradeDate}}  </div>
                                         </td>
                                         <td _ngcontent-ght-c4=""></td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">IsOnline</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                          [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i></td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Demo</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                          [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i></td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Owner</th>
-                                        <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="value-edit" data-rule="valueEdit" style="display:none;"><input _ngcontent-ght-c4="" aria-required="true" class="form-control" name="FirstName" type="text"></div>
-                                        </td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.RetentionOwner}}
                                         <th _ngcontent-ght-c4="" class="tabletxt">Disabled</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                          [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i></td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">LastDepositDate</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.LastDepositDate}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Convertion Owner</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.ConvertionOwner}}</td>
                                       
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">FtdDate</th>
-                                        <td _ngcontent-ght-c4=""></td>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.FTDDate}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">FtdAmount</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow"> Direct </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.FtdAmount}} </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Email</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Email}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Phone </th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.Phone}}  </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Currency</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.CurrencyName}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">DepositCount </th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.DepositCount}}  </div>
                                         </td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Desk</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Desk}} </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Tag </th>
                                         <td _ngcontent-ght-c4="">
@@ -270,11 +251,7 @@
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Status</th>
                                         <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
-                                        </td>
-                                        <th _ngcontent-ght-c4="" class="tabletxt"> </th>
-                                        <td _ngcontent-ght-c4="">
-                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> </div>
                                         </td>
                                      </tr>
                                   </tbody>
@@ -283,12 +260,8 @@
                          </div>
                       </div>
                    </div>
-                  
-                   <!--bindings={
-                      "ng-reflect-ng-if": "false"
-                      }-->
                 <!-----------editing------------>
-                <div _ngcontent-fnu-c10="" class="card-bodynew mb20">
+                <div _ngcontent-fnu-c10="" class="card-bodynew mb20" *ngIf = backmode>
                   <div _ngcontent-fnu-c10="" class="card1 mb20 ">
                      <div _ngcontent-fnu-c10="" class="card-header1 container" id="headingOne" role="tab">
                         <h5 _ngcontent-fnu-c10="" class="mb-0">
@@ -296,7 +269,7 @@
                               <h2 _ngcontent-fnu-c10="">General Info </h2>
                            </a>
                            <div _ngcontent-fnu-c10="" class="box-control pull-right">
-                              <div _ngcontent-fnu-c10="" class="edit-data-options"><a _ngcontent-fnu-c10="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);"><i _ngcontent-fnu-c10="" class="fa fa-check dark">&nbsp;</i>Apply</a><a _ngcontent-fnu-c10="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg">Cancel</a></div>
+                              <div _ngcontent-fnu-c10="" class="edit-data-options"><a _ngcontent-fnu-c10="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);"><i _ngcontent-fnu-c10="" class="fa fa-check dark">&nbsp;</i>Apply</a><a _ngcontent-fnu-c10="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="closeeditingmode()">Cancel</a></div>
                            </div>
                         </h5>
                      </div>
@@ -304,7 +277,7 @@
                         <div _ngcontent-fnu-c10="" class="card-body11"></div>
                      </div>
                   </div>
-                  <form _ngcontent-fnu-c10="" novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid">
+                  <form _ngcontent-fnu-c10="" novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid" [formGroup]="tradeaccountInfoForm">
                      <div _ngcontent-fnu-c10="" class="container-fluid">
                         <div _ngcontent-fnu-c10="" class="row">
                            <table _ngcontent-fnu-c10="" class="table">
@@ -312,166 +285,175 @@
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">First Name</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="itemid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="firstname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Last Name</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="itemid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">                                    </td>
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lastname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">                                    </td>
                                  </tr>
                               </thead>
                               <tbody _ngcontent-fnu-c10="">
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">TP Account</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="itemid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
-                                       <!-- <select _ngcontent-fnu-c10="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-untouched ng-pristine ng-valid" data-live-search="true" formcontrolname="citizenship" ng-reflect-name="citizenship">
-                                          <option _ngcontent-fnu-c10="" ngcontent-qpo-c3="">Select</option>
-                                          <!--bindings={}-->
-                                       <!-- </select>  -->
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="tpaccount" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Group</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="itemid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
+                                       <input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="groupname"  type="text" ng-reflect-name="itemid">
 
                                     </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Leverage</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <select _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" data-container="body" data-live-search="true" formcontrolname="status" id="aecf73213-ba89-9750-cbde-42984704b916" name="Department" tabindex="-98" ng-reflect-name="status">
+                                       <select _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" data-container="body" data-live-search="true" formControlName="leveragename" id="aecf73213-ba89-9750-cbde-42984704b916" name="Department" tabindex="-98" ng-reflect-name="status">
                                           <option _ngcontent-fnu-c10="">Select...</option>
-                                          <!--bindings={}-->
+
                                        </select>
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Margin Call</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" disabled="" formcontrolname="phoneCode" ng-reflect-name="phoneCode" ng-reflect-is-disabled="" class="ng-untouched ng-pristine ng-valid"><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="phone" type="text" ng-reflect-name="phone"></td>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="margincall" type="text" ng-reflect-name="phone"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Stop Out</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" appphonemask="" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="mobile" type="text" ng-reflect-name="mobile"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" appphonemask="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" type="text" ng-reflect-name="mobile"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Order Count</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="secondemail" type="text" ng-reflect-name="secondemail"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="ordercount" type="text" ng-reflect-name="secondemail"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Min Deposit</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="itemid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid"></td>
+                                       <input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="mindeposit" type="text" ng-reflect-name="itemid"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Account ID</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="itemid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">                  
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="accountid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">                  
 
                                     </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Allow Trade</th>
-                                    <td _ngcontent-llw-c2="" _ngcontent-fnu-c10=""><div _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">No</label><input _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" disabled="" formcontrolname="ftd" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">Yes</label></div></div></td>
+                                    <td _ngcontent-llw-c2="" _ngcontent-fnu-c10=""><div _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switchboxtext" >No</label><input _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid"  formControlName="allowtrade" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switchboxtext" >Yes</label></div></div></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Registration Date</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="createddate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="createddate"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="registrationdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="createddate"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Close Profit And Loss</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="closeprofitandloss" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Total Deposits</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="modifieddate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="modifieddate"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="totaldeposits" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="modifieddate"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Total Withdrawals</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="totalwithdrawals" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Net Deposit</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="netdeposits" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Open Profit And Loss</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="openprofitandloss" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Commision</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="commission" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Equity</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="equity" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Balance</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="balance" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Margin Level</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="marginlevel" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Free Margin</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="freemargin" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Credit</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="credit" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Volume</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="volume" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Last Login Date</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lastlogindate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Last Trade Date</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lasttradedate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                   </tr>
+                                   <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">IsOnline</th>
+                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="">
+                                       <div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" disabled="" formControlName="isonline" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">Yes</label></div></div>
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Demo</th>
+                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="">
+                                       <div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" disabled="" formControlName="demo" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">Yes</label></div></div>
                                     </td>
                                    </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Owner</th>
-                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2=""><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" disabled="" formcontrolname="ftd" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">Yes</label></div></div></td>
-                                    <th _ngcontent-fnu-c10="" class="tabletxt">Disabled</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="lastcommentdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="owner" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Disabled</th>
+                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="">
+                                       <div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" >No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" formControlName="disabled" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext">Yes</label></div></div>
                                     </td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">LastDepositDate</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="hastasks" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="hastasks"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lastdepositdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="hastasks"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Convertion Owner</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="taskcreateddate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="taskcreateddate"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="convertionowner" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="taskcreateddate"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">FtdDate</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="taskdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="taskdate"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="ftddate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="taskdate"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">FtdAmount</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="assigneddate" type="text" ng-reflect-name="assigneddate"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="ftdamount" type="text" ng-reflect-name="assigneddate"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Email</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="hasnotcompletedtasks" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="hasnotcompletedtasks"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="email" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="hasnotcompletedtasks"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Phone</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="totaldeposits" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="totaldeposits"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="phone" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="totaldeposits"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Currency</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="ftdamount" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="ftdamount"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="currency" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="ftdamount"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">	DepositCount</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="totalwithdrawals" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="totalwithdrawals"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="depositcount" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="totalwithdrawals"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Desk</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="netdeposits" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="netdeposits"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="desk" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="netdeposits"></td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Tag</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="type" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="type"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="tag" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="type"></td>
                                  </tr>
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Status</th>
-                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formcontrolname="firstregistrationdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstregistrationdate"></td>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="status" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstregistrationdate"></td>
                                    
                                  </tr>
                                 
