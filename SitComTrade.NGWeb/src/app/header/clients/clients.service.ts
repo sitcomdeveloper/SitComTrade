@@ -18,6 +18,10 @@ export class ClientsService {
   getTradeUsers(obj): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/GetTradeAccountByType', obj);
   }
+  // get all trade accounts
+  getallTradeAccounts(alltrdeaccnts: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'TradeAccount/GetAllTradeAccounts', alltrdeaccnts);
+  }
   // trade account details by id
   getTradeAccountdetailsbyId(Id: any): Observable<any> {
     return this.http.post<any>(API_URL + "TradeAccount/GetTradeAccountDetailById/" + Id, {});

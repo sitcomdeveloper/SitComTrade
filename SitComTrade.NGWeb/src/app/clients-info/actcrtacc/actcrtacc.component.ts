@@ -203,6 +203,7 @@ ISendEmail: this.actionsForm.value.issendemail
     }
 this._generalinfoservice.crttradeacc(convertingtrdeAcc).subscribe(crtrealacc => {
   this.liveacc = crtrealacc;
+  this.clddata.emit(crtrealacc);
   console.log('liveacc',crtrealacc);
 })
   }

@@ -86,7 +86,7 @@ const routes: Routes = [
 // {path: 'terms', component: TermsComponent},
 // clients-info
 {path: 'info/:selectedItem', component: ClientsInfoComponent},
-{path: 'trade-info', component: TradeaccountInfoComponent},
+{path: 'trade-info/:selectedinfo', component: TradeaccountInfoComponent},
 // for group(general-info)
 {path: 'groups-info/:setItem/:publicid', component: GroupsInfoComponent},
 // tradeaccount
