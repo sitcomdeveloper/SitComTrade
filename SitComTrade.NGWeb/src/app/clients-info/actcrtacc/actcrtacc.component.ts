@@ -42,6 +42,7 @@ export class ActcrtaccComponent implements OnInit {
   smsissnt: any;
   Country: any;
   countryPhoneCode: any;
+  liveacc: any;
   constructor(private bsmodal: BsModalRef, private groupsService: GroupsService, private _generalinfoservice: GeneralInfoService, private _route: ActivatedRoute, private fb: FormBuilder, private settingsService: SettingsService, private loginservice: LoginService) { }
 
   ngOnInit() {
@@ -57,11 +58,17 @@ export class ActcrtaccComponent implements OnInit {
       // send sms
       phone: [''],
       phoneCode: [''],
-      message: ['']
+      message: [''],
+      // crt real accont
+      groupname: [''],
+      issendemail:['']
     })
 
     if (this.createaccount === 'createaccount') {
       this.crtacct = true;
+      this._generalinfoservice.getUsersInfo(this.detailss).subscribe(res => {
+        this.userGenralinfo = res;
+      })
     } else {
       this.crtacct = false;
     }
@@ -185,6 +192,18 @@ this._generalinfoservice.sendsms(sms).subscribe(sndsmsRes => {
     this.response = 'Unrecognized country prefix';
   }
   this.actionsForm.reset();
+})
+  }
+  // conver lead account to real account
+  crtRealAccount() {
+    const convertingtrdeAcc ={
+      ClientId: this.userGenralinfo.Id,
+GroupId: this.actionsForm.value.groupname,
+ISendEmail: this.actionsForm.value.issendemail
+    }
+this._generalinfoservice.crttradeacc(convertingtrdeAcc).subscribe(crtrealacc => {
+  this.liveacc = crtrealacc;
+  console.log('liveacc',crtrealacc);
 })
   }
 }

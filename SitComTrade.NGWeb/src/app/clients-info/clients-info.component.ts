@@ -102,17 +102,18 @@ export class ClientsInfoComponent implements OnInit {
     });
   }
   // open crt acc popup
-  crtacc() {
+  crtacc(Ide) {
     const initialState = {
       title: 'Create Account',
-      createaccount: 'createaccount'
+      createaccount: 'createaccount',
+      detailss: Ide
     };
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
-    // this.bsModalRef.content.clddata.subscribe(data => {
-    //   this.getAllTask();
-    // });
+    this.bsModalRef.content.clddata.subscribe(data => {
+      this.userDetails();
+    });
   }
   // get all mails
   gettheMail() {
