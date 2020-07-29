@@ -281,6 +281,44 @@
           </div>
           </td>
         </tr>
+        <tr *ngIf = realAccountSection>
+          <th class="tabletxt">ConvertionDesk</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.LastTaskDaysPast}}
+          </div> 
+          </td>
+          <th class="tabletxt">Password
+          </th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.DaysAgoClientCreated}}
+          </div>
+          </td>
+        </tr>
+        <tr *ngIf = realAccountSection>
+          <th class="tabletxt">FirstOwner</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.LastTaskDaysPast}}
+          </div> 
+          </td>
+          <th class="tabletxt">PreviousOwner
+          </th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.DaysAgoClientCreated}}
+          </div>
+          </td>
+        </tr>
+        <tr *ngIf = realAccountSection>
+          <th class="tabletxt">LastCallDate</th>
+          <td>
+           <div class="valueshhow">
+          {{userGenralinfo?.LastTaskDaysPast}}
+          </div> 
+          </td>
+        </tr>
       </tbody>
     </table>
   </form>
@@ -484,6 +522,24 @@
             <th class="tabletxt">DaysAgoClientCreated
             </th>
             <td><input type="text" class="form-control disabledd" formControlName="daysagoclientcreated" onmousedown="return false" onselectstart="return false"></td>
+          </tr>
+          <tr>
+            <th class="tabletxt">ConvertionDesk</th>
+            <td><input type="text" class="form-control disabledd" formControlName="convertiondesk" onmousedown="return false" onselectstart="return false"></td>
+            <th class="tabletxt">Password
+            </th>
+            <td><input type="text" class="form-control" formControlName="password"></td>
+          </tr>
+          <tr>
+            <th class="tabletxt">FirstOwner</th>
+            <td><input type="text" class="form-control disabledd" formControlName="firstowner" onmousedown="return false" onselectstart="return false"></td>
+            <th class="tabletxt">PreviousOwner
+            </th>
+            <td><input type="text" class="form-control disabledd" formControlName="previousowner" onmousedown="return false" onselectstart="return false"></td>
+          </tr>
+          <tr>
+            <th class="tabletxt">LastCallDate</th>
+            <td><input type="text" class="form-control disabledd" formControlName="lastcalldate" onmousedown="return false" onselectstart="return false"></td>
           </tr>
         </tbody>
       </table>
