@@ -26,6 +26,10 @@ export class ClientsService {
   getTradeAccountdetailsbyId(Id: any): Observable<any> {
     return this.http.post<any>(API_URL + "TradeAccount/GetTradeAccountDetailById/" + Id, {});
   }
+  // update trade account 
+  updtTradeAccount(modifyTradeAccount: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'TradeAccount/UpdateTradeAccount', modifyTradeAccount);
+  }
   // item.componet.ts
   addnewClients(obj): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/AddClient', obj);

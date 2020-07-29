@@ -120,7 +120,7 @@
                                         <td _ngcontent-ght-c4="">
                                            <div _ngcontent-ght-c4="" class="valueshhow">
                                              <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                                             [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i>
+                                             [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i>
                                                </div>
                                         </td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Registration Date</th>
@@ -191,17 +191,17 @@
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">IsOnline</th>
                                         <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                                          [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i></td>
+                                          [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i></td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Demo</th>
                                         <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                                          [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i></td>
+                                          [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i></td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Owner</th>
                                         <td _ngcontent-ght-c4="">{{this.realTradeUsers?.RetentionOwner}}
                                         <th _ngcontent-ght-c4="" class="tabletxt">Disabled</th>
                                         <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
-                                          [ngStyle]="{'color': this.realTradeUsers.AllowTrade ? 'green':'grey' }"></i></td>
+                                          [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i></td>
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">LastDepositDate</th>
@@ -269,7 +269,7 @@
                               <h2 _ngcontent-fnu-c10="">General Info </h2>
                            </a>
                            <div _ngcontent-fnu-c10="" class="box-control pull-right">
-                              <div _ngcontent-fnu-c10="" class="edit-data-options"><a _ngcontent-fnu-c10="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);"><i _ngcontent-fnu-c10="" class="fa fa-check dark">&nbsp;</i>Apply</a><a _ngcontent-fnu-c10="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="closeeditingmode()">Cancel</a></div>
+                              <div _ngcontent-fnu-c10="" class="edit-data-options"><a _ngcontent-fnu-c10="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="saveupdteDetails()"><i _ngcontent-fnu-c10="" class="fa fa-check dark">&nbsp;</i>Apply</a><a _ngcontent-fnu-c10="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="closeeditingmode()">Cancel</a></div>
                            </div>
                         </h5>
                      </div>
@@ -300,7 +300,7 @@
                                     </td>
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Group</th>
                                     <td _ngcontent-fnu-c10="">
-                                       <input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="groupname"  type="text" ng-reflect-name="itemid">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" onmousedown="return false" onselectstart="return false" formControlName="groupname"  type="text" ng-reflect-name="itemid">
 
                                     </td>
                                  </tr>

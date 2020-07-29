@@ -14,6 +14,7 @@ export class TradeaccountInfoComponent implements OnInit {
   frontmode = true;
   backmode = false;
   tradeaccountInfoForm: FormGroup
+  updtaeddetails: any;
   constructor(private clientsService: ClientsService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -52,6 +53,7 @@ export class TradeaccountInfoComponent implements OnInit {
       convertionowner: [''],
       ftddate: [''],
       ftdamount: [''],
+      email: [''],
       phone: [''],
       currency: [''],
       depositcount: [''],
@@ -66,7 +68,7 @@ export class TradeaccountInfoComponent implements OnInit {
       this.realTradeUsers = trdeusersDetails;
       console.log('realTradeUsers', trdeusersDetails);
       this.tradeaccountInfoForm.patchValue({
-        firstName: this.realTradeUsers.FirstName,
+        firstname: this.realTradeUsers.FirstName,
         lastname: this.realTradeUsers.LastName,
         tpaccount: this.realTradeUsers.TPAccountNumber,
         groupname: this.realTradeUsers.GroupName,
@@ -109,15 +111,64 @@ export class TradeaccountInfoComponent implements OnInit {
         // status: this.realTradeUsers.,
       })
     })
-    
+
   }
+  // pencil
   openeditingmode() {
     this.backmode = true;
     this.frontmode = false;
   }
+  // cancel button
   closeeditingmode() {
     this.frontmode = true;
     this.backmode = false;
+  }
+  // apply button
+  saveupdteDetails() {
+    this.frontmode = true;
+    this.backmode = false;
+    const modifyTradeAccount = {
+      // Id: this.realTradeUsers.Id,
+      // TPAccountNumber: this.realTradeUsers.TPAccountNumber,
+      // FTD: this.tradeaccountInfoForm.value.,
+      // FTDDate: this.tradeaccountInfoForm.value.,
+      // FtdAmount: this.tradeaccountInfoForm.value.,
+      // LastTradeDate: this.tradeaccountInfoForm.value.,
+      // LastDepositDate: this.tradeaccountInfoForm.value.,
+      // GroupId: this.tradeaccountInfoForm.value.,
+      // GroupName: this.realTradeUsers.GroupName,
+      // ISendEmail: this.tradeaccountInfoForm.value.,
+      // CurrencyId: this.tradeaccountInfoForm.value.,
+      // CurrencyName: this.tradeaccountInfoForm.value.,
+      // InitialDeposit: this.tradeaccountInfoForm.value.,
+      // StopOut: this.tradeaccountInfoForm.value.stopout,
+      // MarginCall: this.tradeaccountInfoForm.value.margincall,
+      // OrderCount: this.tradeaccountInfoForm.value.ordercount,
+      // MinDeposit: this.tradeaccountInfoForm.value.mindeposit,
+      // CloseProfit: this.realTradeUsers.CloseProfit,
+      // CloseLoss: this.realTradeUsers.CloseLoss,
+      // TotalDeposit: this.realTradeUsers.TotalDeposit,
+      // TotalWithdrawal: this.realTradeUsers.TotalWithdrawal,
+      // NetDeposit: this.realTradeUsers.NetDeposit,
+      // OpenProfit: this.realTradeUsers.OpenProfit,
+      // OpenLoss: this.realTradeUsers.OpenLoss,
+      // Commission: this.tradeaccountInfoForm.value.,
+      // Equity: this.tradeaccountInfoForm.value.,
+      // Balance: this.tradeaccountInfoForm.value.,
+      // MarginLevel: this.tradeaccountInfoForm.value.,
+      // FreeMargin: this.tradeaccountInfoForm.value.,
+      // Credit: this.tradeaccountInfoForm.value.,
+      // Volume: this.tradeaccountInfoForm.value.,
+      // AllowTrade: this.tradeaccountInfoForm.value.allowtrade,
+      // DepositCount: this.tradeaccountInfoForm.value.,
+      // UserId: this.tradeaccountInfoForm.value.,
+      // ClientId: this.tradeaccountInfoForm.value.,
+      // AccountId: this.realTradeUsers.AccountId,
+    }
+    this.clientsService.updtTradeAccount(modifyTradeAccount).subscribe(updtedtradeAccount => {
+      this.updtaeddetails = updtedtradeAccount;
+      console.log('updtaeddetails', updtedtradeAccount);
+    })
   }
 }
 
