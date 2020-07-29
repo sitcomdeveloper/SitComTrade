@@ -125,8 +125,6 @@ export class TradeaccountInfoComponent implements OnInit {
   }
   // apply button
   saveupdteDetails() {
-    this.frontmode = true;
-    this.backmode = false;
     const modifyTradeAccount = {
       Id: this.realTradeUsers.Id,
       TPAccountNumber: this.realTradeUsers.TPAccountNumber,
@@ -167,11 +165,18 @@ export class TradeaccountInfoComponent implements OnInit {
     }
     this.clientsService.updtTradeAccount(modifyTradeAccount).subscribe(updtedtradeAccount => {
       this.updtaeddetails = updtedtradeAccount;
-      console.log('updtaeddetails', updtedtradeAccount);
+      // console.log('updtaeddetails', updtedtradeAccount);
+      this.afterupdate();
+      this.frontmode = true;
+      this.backmode = false;
     })
   }
+  afterupdate() {
+    this.clientsService.getTradeAccountdetailsbyId(this.assigntradeaccountdetails).subscribe(trdeusersDetails => {
+      this.realTradeUsers = trdeusersDetails;
+  })
 }
-
+}
 // firstname
 //       lastname
 //       tpaccount
