@@ -183,7 +183,7 @@
                                         <th _ngcontent-ght-c4="" class="tabletxt">Last Login Date</th>
                                         <td _ngcontent-ght-c4="">{{this.realTradeUsers?.AssignedDate}}</td>
                                         <th _ngcontent-ght-c4="" class="tabletxt">Last Trade Date</th>
-                                        <td _ngcontent-ght-c4="" class="text-ellipsis ">
+                                        <td _ngcontent-ght-c4="" class="text-ellipsis1 ">
                                            <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.LastTradeDate}}  </div>
                                         </td>
                                         <td _ngcontent-ght-c4=""></td>
@@ -250,6 +250,10 @@
                                      </tr>
                                      <tr _ngcontent-ght-c4="">
                                         <th _ngcontent-ght-c4="" class="tabletxt">Status</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt"></th>
                                         <td _ngcontent-ght-c4="">
                                            <div _ngcontent-ght-c4="" class="valueshhow"> </div>
                                         </td>
@@ -454,6 +458,9 @@
                                  <tr _ngcontent-fnu-c10="">
                                     <th _ngcontent-fnu-c10="" class="tabletxt">Status</th>
                                     <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="status" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstregistrationdate"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt"></th>
+                                    <td _ngcontent-fnu-c10="">
+                                      </td>
                                    
                                  </tr>
                                 
@@ -580,7 +587,7 @@
                 "ng-reflect-ng-if": "false"
                 }-->
              <div _ngcontent-ght-c2="">
-                <app-email _ngcontent-ght-c2="" _nghost-ght-c11="">
+               
                    <div _ngcontent-ght-c11="" class="card-bodynew mb20">
                       <div _ngcontent-ght-c11="" class="card1 mb20" id="tasks" style="padding: 15px;
                          padding-left: 0;">
@@ -600,7 +607,7 @@
                                   </div>
                                   <a _ngcontent-ght-c11="" class="ico-add ico-sz3 showrcrdemail popupicon " data-rule="add-link" href="javascript:void(0);" style="display:none;"><i _ngcontent-ght-c11="" class="fa fa-plus"></i></a><a _ngcontent-ght-c11="" aria-controls="collapseEight" aria-expanded="false" class="collapsed" data-toggle="collapse" href="#collapseEight" id="emailtoggle" style="color:#000;"><i _ngcontent-ght-c11="" class="fa fa-chevron-down collpsicon"></i></a>
                                </div>
-                               <h2 _ngcontent-ght-c11="">Email</h2>
+                               <h2 _ngcontent-ght-c11="">OpenedAndPendingOrders</h2>
                                <div _ngcontent-ght-c11="" class="records-control showrcrdemail" style="display: none;">Showing Records <a _ngcontent-ght-c11="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-ght-c11="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-ght-c11="" style="width: 30px;">1 - 1</span> of <span _ngcontent-ght-c11="" style="width: 20px;">1</span></div>
                             </div>
                          </div>
@@ -612,24 +619,114 @@
                                         <table _ngcontent-ght-c11="" class="table-style01 dataTable">
                                            <thead _ngcontent-ght-c11="">
                                               <tr _ngcontent-ght-c11="" data-rule="titles">
-                                                 <th _ngcontent-ght-c11="">Subject<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
-                                                 <th _ngcontent-ght-c11="">Date	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
-                                                 <th _ngcontent-ght-c11="">To	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
-                                                 <th _ngcontent-ght-c11="">Sender	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
-                                                 <th _ngcontent-ght-c11="">Status<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
-                                                 <th _ngcontent-ght-c11="">Error	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""><br _ngcontent-ght-c11="" class="visible-xs visible-sm visible-md"></span></span></span></th>
-                                              </tr>
+                                                 <th _ngcontent-ght-c11="">Order ID<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">	TP Account	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Instrument ID	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">OrderType	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Volume<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Open Date<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                
+                                                 <th _ngcontent-ght-c11="">Open Price<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Swap<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Take Profit<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Stop Loss<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Margin<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Commission<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Current Price<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Profit<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">TotalProfit<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">EntityType<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                
+                                               
+                                               
+                                                </tr>
                                            </thead>
                                            <tfoot _ngcontent-ght-c11=""></tfoot>
-                                           <tbody _ngcontent-ght-c11="">
-                                              <!--bindings={
-                                                 "ng-reflect-ng-if": "true"
-                                                 }-->
-                                              <tr _ngcontent-ght-c11="" class="nofield">No Email</tr>
-                                              <!--bindings={
-                                                 "ng-reflect-ng-for-of": ""
-                                                 }-->
-                                           </tbody>
+                                           <tbody>
+                                             <tr data-index="0" data-rule="body">
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OrderNumber">
+                                                      <div data-display-for="_OrderNumber">
+                                                         <div class="text-ellipsis"><a href="javascript:void(0);"><span>67191</span></a></div>
+                                                      </div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_AccountId">
+                                                      <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=9&amp;itemId=102921"><span>102921</span></a></div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_InstrumentId">
+                                                      <div class="text-ellipsis">XAUUSD</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OrderType">
+                                                      <div class="text-ellipsis">Sell</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Volume">
+                                                      <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OpenDate">12/27/2019 12:42:21 PM</div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OpenPrice">
+                                                      <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1510.99">1510.99</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Swap">
+                                                      <div class="text-ellipsis color06" data-field="Swap" data-original-value="-2.19629541">-2.20</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_TakeProfit">
+                                                      <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_StopLoss">
+                                                      <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Margin">
+                                                      <div class="text-ellipsis" data-field="Margin" data-original-value="54.2613973">54.26</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Commission">
+                                                      <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_CurrentPrice">
+                                                      <div class="text-ellipsis" data-field="CurrentPrice" data-original-value="1961.57">1961.57</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Profit">
+                                                      <div class="text-ellipsis color06" data-field="Profit" data-original-value="-382.65817409">-382.66</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_TotalProfit">
+                                                      <div class="text-ellipsis color06" data-field="TotalProfit" data-original-value="-384.8544695" data-isformatted="true">- € 384.85</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_EntityType">
+                                                      <div class="text-ellipsis">Open Order</div>
+                                                   </div>
+                                                </td>
+                                                <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-edit" title="Edit">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no3" title="Close">&nbsp;</a></td>
+                                             </tr>
+                                          </tbody>
                                         </table>
                                      </div>
                                   </div>
@@ -638,25 +735,110 @@
                          </div>
                       </div>
                    </div>
-                </app-email>
+              
              </div>
              <!--bindings={
                 "ng-reflect-ng-if": "false"
                 }--><!--bindings={
                 "ng-reflect-ng-if": "false"
                 }-->
-             <div _ngcontent-ght-c2="" class="card mb20" style="padding: 15px;
-                padding-left: 0;">
-                <div _ngcontent-ght-c2="" class="card-header1 container " id="headingNine" role="tab">
-                   <a _ngcontent-ght-c2="" aria-controls="collapseNine" aria-expanded="false" class="collapsed" data-toggle="collapse" href="#collapseNine" style="color:#000;">
-                      <h5 _ngcontent-ght-c2="" class="mb-0"> Sms </h5>
-                      <i _ngcontent-ght-c2="" class="fa fa-chevron-down collpsicon"></i>
-                   </a>
-                </div>
-                <div _ngcontent-ght-c2="" aria-labelledby="headingNine" class="collapse" id="collapseNine" role="tabpanel">
-                   <div _ngcontent-ght-c2="" class="card-body"></div>
-                </div>
-             </div>
+                <div _ngcontent-ght-c2="">
+                
+                  <div _ngcontent-ght-c9="" class="card-bodynew mb20">
+                     <div _ngcontent-ght-c9="" class="card1 mb20" id="tasks" style="padding: 15px;
+                        padding-left: 0;">
+                        <div _ngcontent-ght-c9="" class="card-header1 container" id="headingSeven1" role="tab">
+                           <div _ngcontent-ght-c9="" class="box-heading" style="width:100%;">
+                              <div _ngcontent-ght-c9="" class="box-control pull-right">
+                                 <div _ngcontent-ght-c9="" class="records-control-switcher showrcrd" data-rule="count-record-selector" style="display: none;">
+                                    <label _ngcontent-ght-c9="">Records per page</label>
+                                    <select _ngcontent-ght-c9="" class="form-control" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c" name="RecordsPerPageSelector">
+                                       <option _ngcontent-ght-c9="" value="5" ng-reflect-value="5">5</option>
+                                       <option _ngcontent-ght-c9="" value="10" ng-reflect-value="10">10</option>
+                                       <option _ngcontent-ght-c9="" value="15" ng-reflect-value="15">15</option>
+                                       <option _ngcontent-ght-c9="" value="20" ng-reflect-value="20">20</option>
+                                       <option _ngcontent-ght-c9="" value="50" ng-reflect-value="50">50</option>
+                                       <option _ngcontent-ght-c9="" value="100" ng-reflect-value="100">100</option>
+                                    </select>
+                                 </div>
+                                 <a _ngcontent-ght-c9="" class="ico-add ico-sz3 showrcrd popupicon " data-rule="add-link" href="javascript:void(0);" style="display:none;"><i _ngcontent-ght-c9="" class="fa fa-plus"></i></a><a _ngcontent-ght-c9="" aria-controls="collapseSeven1" aria-expanded="false" class="collapsed" data-toggle="collapse" href="#collapseSeven1" id="taskss" style="color:#000;"><i _ngcontent-ght-c9="" class="fa fa-chevron-down collpsicon"></i></a>
+                              </div>
+                              <h2 _ngcontent-ght-c9="">Closed Orders</h2>
+                              <div _ngcontent-ght-c9="" class="records-control showrcrd" style="display: none;">Showing Records <a _ngcontent-ght-c9="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-ght-c9="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-ght-c9="" style="width: 30px;">1 - 1</span> of <span _ngcontent-ght-c9="" style="width: 20px;">1</span></div>
+                           </div>
+                        </div>
+                        <div _ngcontent-ght-c9="" aria-labelledby="headingSeven1" class="collapse" id="collapseSeven1" role="tabpanel">
+                           <div _ngcontent-ght-c9="" class="card-body">
+                              <div _ngcontent-ght-c9="" class="box-content">
+                                 <div _ngcontent-ght-c9="" class="table-type02 margin-bottom-0">
+                                    <div _ngcontent-ght-c9="" class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+                                       <table _ngcontent-ght-c9="" class="table-style01 dataTable">
+                                          <thead _ngcontent-ght-c9="">
+                                             <tr _ngcontent-ght-c9="" data-rule="titles">
+                                                <th _ngcontent-ght-c9="">Item ID<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Amount<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Date<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Trading Environment<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Transaction Type<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Currency<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""><br _ngcontent-ght-c9="" class="visible-xs visible-sm visible-md"></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Transaction Approval	<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">FTD<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""><br _ngcontent-ght-c9="" class="visible-xs visible-sm visible-md"></span></span></span></th>
+                                               
+                                               </tr>
+                                          </thead>
+                                          <tfoot _ngcontent-ght-c9=""></tfoot>
+                                         <tbody><tr data-index="0" data-rule="body">
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_ItemId">
+                                                <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=14&amp;itemId=41156"><span>41156</span></a></div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_Equity">
+                                                <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_Date">11/22/2019 12:32:34 PM</div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_TradingEnvironment">
+                                                <div class="text-ellipsis">Real</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_TransactionType">
+                                                <div class="text-ellipsis">Deposit</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_Currency">
+                                                <div class="text-ellipsis">EUR</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_TransactionApproval">
+                                                <div class="text-ellipsis">Approved</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_FirstDeposit">
+                                                <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                             </div>
+                                          </td>
+                                          <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-delete">&nbsp;</a></td>
+                                       </tr>
+                                       </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+              
+            </div>
              <!--bindings={
                 "ng-reflect-ng-if": "false"
                 }--><!--bindings={
@@ -689,4 +871,5 @@
     </div>
  </div>
 <!-------------------------------------------------->
+<div _ngcontent-jpx-c9="" style="margin-bottom: 52px;"></div>
 <app-footer></app-footer>
