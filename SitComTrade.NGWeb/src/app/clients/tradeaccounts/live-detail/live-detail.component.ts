@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ClientsService } from 'src/app/header/clients/clients.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-live-detail',
@@ -13,7 +14,9 @@ export class LiveDetailComponent implements OnInit {
   editMode = false;
   normalMode = true;
   groupDetails: any;
-  fetchTradeDetails: any;
+  realTradeUsers: any;
+  Leverage: any;
+  tradeaccountInfoForm: FormGroup
 
   constructor(private route: ActivatedRoute, private groupService: GroupsService, private clientsservice: ClientsService) { }
 
@@ -21,15 +24,13 @@ export class LiveDetailComponent implements OnInit {
     // for getting data on frame
     const tradedetails = +this.route.snapshot.paramMap.get('trdingDtls');
     this.tradedetail = tradedetails;
-    const obj = {
-      tradedetails,
-      TypeName : 'Real',
-      OwnerId  : 1
-    };
-    this.clientsservice.getTradeUsers(obj).subscribe(res => {
-      this.fetchTradeDetails = res;
-      // console.log('tradeusers', res);
+    this.clientsservice.getTradeAccountdetailsbyId(tradedetails).subscribe(trdeusersDetails => {
+      this.realTradeUsers = trdeusersDetails;
+      console.log('realTradeUsers', trdeusersDetails);
+      // this.tradeaccountInfoForm.patchValue({
+      //   firstname: this.realTradeUsers.FirstName,
      });
+     this.getLeverages();
   }
   // pencil
   showhide() {
@@ -46,16 +47,11 @@ export class LiveDetailComponent implements OnInit {
     this.normalMode = true;
     this.editMode = false;
   }
-  // tradeDetails() {
-  //   const obj = {
-  //     TypeName : 'Real',
-  //     OwnerId  : 1
-  //   };
-  //   this.clientsservice.getTradeUsers(obj).subscribe(res => {
-  //    this.fetchTradeDetails = res.reverse();
-  //    this.tradeAccountLength = res.length;
-  //    console.log('tradeusers', res);
-  //   });
-  // }
-
+  // get all leverages
+  getLeverages() {
+    this.groupService.getAllLverages().subscribe(rspnse => {
+      this.Leverage = rspnse;
+    });
+  }
 }
+

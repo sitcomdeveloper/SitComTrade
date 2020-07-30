@@ -3,11 +3,11 @@
         <div class="main-holder">
            <div class="account-panel">
               <div class="account-main-details">
-                 <p><span class="color11" data-for="AccountId">ID: AC426869</span><span class="type" data-for="Type">Real</span></p>
-                 <h2><span>102921</span> - <span data-for="FirstName">Linus</span>&nbsp;<span data-for="LastName">Test</span></h2>
+                 <p><span class="color11" data-for="AccountId">ID: {{this.realTradeUsers?.AccountId}}</span><span class="type" data-for="Type">{{this.realTradeUsers?.TypeName}}</span></p>
+                 <h2><span>{{this.realTradeUsers?.TPAccountNumber}}</span> - <span data-for="FirstName">{{this.realTradeUsers?.FirstName}}</span>&nbsp;<span data-for="LastName">{{this.realTradeUsers?.LastName}}</span></h2>
                  <dl>
                     <dt>Currency:&nbsp;</dt>
-                    <dd data-for="Currency">EUR</dd>
+                    <dd data-for="Currency">{{this.realTradeUsers?.CurrencyName}}</dd>
                  </dl>
                  <span class="status online" data-for="IsOnline" style="display:none;">online</span>
               </div>
@@ -46,7 +46,7 @@
                           <div class="form-group w120" data-editor-container="">
                              <div class="value" data-rule="value">
                                 <div data-display-for="9__accountStatus">
-                                   <div class="text-ellipsis">Active</div>
+                                   <div class="text-ellipsis">status</div>
                                 </div>
                              </div>
                            
@@ -57,7 +57,7 @@
                           <div class="form-group w120" data-editor-container="">
                              <div class="value" data-rule="value">
                                 <div data-display-for="9_Leverage">
-                                   <div class="text-ellipsis">1:200</div>
+                                   <div class="text-ellipsis">{{this.realTradeUsers?.LeverageName}}</div>
                                 </div>
                              </div>
                              
@@ -68,7 +68,7 @@
                           <div class="form-group w120" data-editor-container="">
                              <div class="value" data-rule="value">
                                 <div data-display-for="9_GroupId">
-                                   <div class="text-ellipsis"><a href="" valuesource="IsDemo" attrname="data-is-demo"><span>TradePro Markets Limited EUR</span></a></div>
+                                   <div class="text-ellipsis"><a href="" valuesource="IsDemo" attrname="data-is-demo"><span>{{this.realTradeUsers?.GroupName}}</span></a></div>
                                 </div>
                              </div>
                              
@@ -79,7 +79,7 @@
                           <div class="form-group w120" data-editor-container="">
                              <div class="value" data-rule="value">
                                 <div data-display-for="9_StopOut">
-                                   <div class="text-ellipsis" data-field="StopOut" data-original-value="20">20</div>
+                                   <div class="text-ellipsis" data-field="StopOut" data-original-value="20">{{this.realTradeUsers?.StopOut}}</div>
                                 </div>
                              </div>
                           </div>
@@ -89,7 +89,7 @@
                           <div class="form-group w120" data-editor-container="">
                              <div class="value" data-rule="value">
                                 <div data-display-for="9_MarginCall">
-                                   <div class="text-ellipsis" data-field="MarginCall" data-original-value="30">30</div>
+                                   <div class="text-ellipsis" data-field="MarginCall" data-original-value="30">{{this.realTradeUsers?.MarginCall}}</div>
                                 </div>
                              </div>
                           </div>
@@ -99,7 +99,7 @@
                           <div class="form-group w120" data-editor-container="">
                              <div class="value" data-rule="value">
                                 <div data-display-for="9_MinDeposit">
-                                   <div class="text-ellipsis" data-field="MinDeposit" data-original-value="1" data-isformatted="true"> € 1</div>
+                                   <div class="text-ellipsis" data-field="MinDeposit" data-original-value="1" data-isformatted="true"> {{this.realTradeUsers?.MinDeposit}}</div>
                                 </div>
                              </div>
                           </div>
@@ -134,15 +134,17 @@
              <div class="collapse1 " id="0cf55b77-ba5e-5a80-b1e6-8d0ac839232f" data-name="tradingArea" aria-expanded="true">
                 <div class="main-holder">
                    <div class="account-trading-details chold02">
-                      <form action="#" class="form-inline" validation-errors-mode="inTooltip" novalidate="novalidate">
+                      <form action="#" class="form-inline" validation-errors-mode="inTooltip" novalidate="novalidate" [formGroup]="tradeaccountInfoForm">
                          <div class="form-group">
                             <label class="valign-label" for="_accountStatus"><span data-tooltip-el="">Status</span></label>
                             <div class="form-group w120" data-editor-container="">
                                <div class="value-edit" data-rule="value">
                                   <div data-display-for="9__accountStatus">
-                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formcontrolname="citizenship" ng-reflect-name="citizenship">
+                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formcontrolname="status" ng-reflect-name="citizenship">
                                        <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
-                                       
+                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Active">Active</option>
+                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Read Only">Read Only</option>
+                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Disabled">Disabled</option>
                                      </select>
                                   </div>
                                </div>
@@ -154,8 +156,9 @@
                             <div class="form-group w120" data-editor-container="">
                                <div class="value-edit" data-rule="value">
                                   <div data-display-for="9_Leverage">
-                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formcontrolname="citizenship" ng-reflect-name="citizenship">
+                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formcontrolname="leveragename" ng-reflect-name="citizenship">
                                        <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
+                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="" *ngFor="let leverage of Leverage">{{leverage?.Name}}</option>
                                       </select>
                                   </div>
                                </div>
@@ -167,8 +170,8 @@
                             <div class="form-group w120" data-editor-container="">
                                <div class="value-edit" data-rule="value">
                                   <div data-display-for="9_GroupId">
-                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formcontrolname="citizenship" ng-reflect-name="citizenship"><option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
-                                       </select>                                  </div>
+                                    <input _ngcontent-fds-c4="" class="form-control disabledd ng-pristine ng-valid ng-touched" formcontrolname="groupname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstName">                  
+                                               </div>
                                </div>
                                
                             </div>
@@ -178,7 +181,8 @@
                             <div class="form-group w120" data-editor-container="">
                                <div class="value-edit" data-rule="value">
                                   <div data-display-for="9_StopOut">
-                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="firstName" type="text" ng-reflect-name="firstName">                                  </div>
+                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="stopout" type="text" ng-reflect-name="firstName">                           
+                                        </div>
                                </div>
                             </div>
                          </div>
@@ -187,7 +191,7 @@
                             <div class="form-group w120" data-editor-container="">
                                <div class="value-edit" data-rule="value">
                                   <div data-display-for="9_MarginCall">
-                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="firstName" type="text" ng-reflect-name="firstName">                                  </div>
+                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="margincall" type="text" ng-reflect-name="firstName">                                  </div>
                                </div>
                             </div>
                          </div>
@@ -196,7 +200,7 @@
                             <div class="form-group w120" data-editor-container="">
                                <div class="value-edit" data-rule="value">
                                   <div data-display-for="9_MinDeposit">
-                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="firstName" type="text" ng-reflect-name="firstName">                                  </div>
+                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="mindeposit" type="text" ng-reflect-name="firstName">                                  </div>
                                </div>
                             </div>
                          </div>
