@@ -147,3 +147,68 @@
 .value-edit div input {
     width: 97px!important;
 }
+.ico-sz3.ico-arrowup {
+    background-position: -40px -440px;
+}
+.button, [class*=btn-type], [class*=ico-] {
+    display: inline-block;
+    vertical-align: middle;
+}
+[class*=ico-] {
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+}
+
+.btn-type05 {
+    border: 1px solid #dde3ed;
+    border: 1px solid rgba(193,204,222,.5);
+    color: #45596a;
+    min-width: 125px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 4px 10px;
+}
+
+.ico-sz3.ico-import2.darker {
+    background-position: -260px -600px;
+}
+.ico-sz3.ico-export2.darker {
+    background-position: -280px -600px;
+}
+.ico-sz3.ico-export2.darker {
+    background-position: -280px -600px;
+}
+.m10
+{
+    margin-left: 10px;
+}
+.page-client .account-details {
+    display: table;
+    width: 100%;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+.chold02 {
+    padding-top: 5px;
+}
+ .account-details dl {
+    display: table-cell;
+    vertical-align: top;
+    font-weight: 500;
+    
+}
+.account-details dt {
+    color: #8da5ba;
+    font-weight: 500;    font-size: 14px;
+}
