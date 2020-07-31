@@ -212,3 +212,104 @@
     color: #8da5ba;
     font-weight: 500;    font-size: 14px;
 }
+.ico-sz3.ico-edit {
+    background-position: 0 -440px;
+}
+.client-personal-details>[class*=col-]:first-child {
+    border-width: 1px 0;
+}
+.client-personal-details>[class*=col-]:first-child {
+    border-width: 1px 0;
+}
+.heading02 {
+    background: #f9fbfd;
+    padding: 9px 0;
+}
+.box-heading, .heading01, .heading02 {
+    color: #000;
+}
+.client-details .table-type01 {
+    margin: 0 0 -1px;
+}
+.table-type01 {
+    margin: 0 0 35px;
+    line-height: 19px;
+    position: relative;
+}
+.flexboxset2>[class*=col-]>.row {
+    height: 100%;
+}
+a.btn-type02 {
+    padding: 5px 15px;
+    border: 1px solid #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1.4166666;
+    color: #8da5ba;
+    min-width: 75px;
+    margin-right: 6px;
+    background:0,0;
+}
+p {
+    text-align: center;
+    font-weight: bold;
+    color: grey;
+    font-size: 16px;
+}
+.comments .comment:first-child {
+    border-width: 0;
+}
+.comments-list .comment {
+    padding: 20px 45px 15px 10px;
+}
+.comments .comment {
+    border: 1px solid #d5e1ea;
+    border-width: 1px 0 0;
+    padding: 20px 0 15px;
+    position: relative;
+}
+.comment
+{
+    position:relative;
+}
+.comment-controls>a>i
+{
+    color:rgb(138, 132, 132);
+    width: 20px;
+    height: 20px;
+    font-size:13px;
+}
+.comment-controls {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    text-align: right;
+}
+.borderbtm {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 17px;
+}.box-control>.dropdown-menu {
+    margin: 10px 0 0;
+}
+.dropdown-menu2>li:first-child>a {
+    border-radius: 15px 15px 0 0;
+}
+
+.dropdown-menu2>li>a {
+    color: #8da5ba;
+    padding: 5px 30px!important;
+    text-align: right!important;
+    line-height: 1.53845;
+}
+.dropdown-menu2 {
+    border-color: #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-top: 10px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+}
+.pull-right>.dropdown-menu {
+    /* right: 0; */
+    left: 0;
+}

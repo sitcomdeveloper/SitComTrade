@@ -12,10 +12,10 @@
                  <span class="status online" data-for="IsOnline" style="display:none;">online</span>
               </div>
               <div class="content-tabs">
-                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="main-tabs" class="active"><a href="#tab-client-trading" aria-controls="tab-client-trading" role="tab" data-toggle="tab" aria-expanded="true">Trading</a></li>
-                    <li role="main-tabs" class=""><a href="#tab-client-details" aria-controls="tab-client-details" role="tab" data-toggle="tab" aria-expanded="false">Personal Details</a></li>
-                 </ul>
+               <ul class="nav nav-tabs" role="tablist">
+                  <li role="main-tabs" class="active"><a href="#tab-client-trading" aria-controls="tab-client-trading" role="tab" data-toggle="tab" aria-expanded="true">Trading</a></li>
+                  <li role="main-tabs" class=""><a href="#tab-client-details" aria-controls="tab-client-details" role="tab" data-toggle="tab" aria-expanded="false">Personal Details</a></li>
+               </ul>
               </div>
            </div>
         </div>
@@ -111,7 +111,7 @@
            </div>
         </div>
      </div>
-  </div>
+ 
   <div class="collapse-area opened">
    <div class="heading02">
       <div class="main-holder">
@@ -196,7 +196,199 @@
    </div>
 </div>
 </div>
-
+<div role="tabpanel" class="tab-pane fade  " id="tab-client-details">
+   <div class="clearfix client-personal-details flexboxset2 row">
+      <div class="col-xs-7 col-md-7 client-details">
+         <div class="row" data-rule="accountDetailsContainer">
+            <div data-rule="box">
+               <div class="heading02">
+                  <div class="main-holder">
+                     <h3>General info</h3>
+                  </div>
+               </div>
+               <div class="table-type01">
+                  <form novalidate="novalidate">
+                     <table>
+                        <tbody>
+                           <tr>
+                              <td><label class="valign-label" for="Commision"><span data-tooltip-el="">Commision</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_Commision">
+                                       <div class="text-ellipsis" data-field="Commision" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="DepositCount"><span data-tooltip-el="">DepositCount</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_DepositCount">
+                                       <div class="text-ellipsis" data-field="DepositCount" data-original-value="1">1</div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label" for="FtdAmount"><span data-tooltip-el="">FtdAmount</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_FtdAmount">
+                                       <div class="text-ellipsis" data-field="FtdAmount" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="FtdDate"><span data-tooltip-el="">FtdDate</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_FtdDate">11/22/2019 12:32:34 PM</div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label" for="LastLoginDate"><span data-tooltip-el="">Last Login Date</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_LastLoginDate">4/19/2020 4:21:16 PM</div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="LastTradeDate"><span data-tooltip-el="">Last Trade Date</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_LastTradeDate">12/27/2019 12:42:21 PM</div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label text-ellipsis" for="LastDepositDate"><span data-tooltip-el="">LastDepositDate</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_LastDepositDate">11/22/2019 12:32:34 PM</div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="MarginLevel"><span data-tooltip-el="">Margin Level</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_MarginLevel">
+                                       <div class="text-ellipsis" data-field="MarginLevel" data-original-value="1136.07566784">1136.08</div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label" for="NetDeposit"><span data-tooltip-el="">Net Deposit</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_NetDeposit">
+                                       <div class="text-ellipsis" data-field="NetDeposit" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="OrderCount"><span data-tooltip-el="">Order Count</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_OrderCount">
+                                       <div class="text-ellipsis" data-field="OrderCount" data-original-value="1000">1000</div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label" for="OwnerId"><span data-tooltip-el="">Owner</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_OwnerId">
+                                       <div class="text-ellipsis">Anton Novak</div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="RegistrationDate"><span data-tooltip-el="">Registration Date</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_RegistrationDate">11/21/2019 5:35:09 PM</div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label" for="TotalDeposits"><span data-tooltip-el="">Total Deposits</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_TotalDeposits">
+                                       <div class="text-ellipsis" data-field="TotalDeposits" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="TotalWithdrawals"><span data-tooltip-el="">Total Withdrawals</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_TotalWithdrawals">
+                                       <div class="text-ellipsis" data-field="TotalWithdrawals" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="valign-label" for="Volume"><span data-tooltip-el="">Volume</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="9_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="32620.9274294" data-isformatted="true"> € 32'620.93</div>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td><label class="valign-label" for="OwnerId"><span data-tooltip-el="">Owner</span></label></td>
+                              <td data-editor-container="">
+                                 <div class="value" data-rule="value">
+                                    <div data-display-for="27_OwnerId">
+                                       <div class="text-ellipsis">Anton Novak</div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <div style="display:none;"></div>
+                        </tbody>
+                     </table>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-xs-5 col-md-5 client-comments">
+         <div class="row" data-rule="commentsContainer">
+            <div class="heading02">
+               <div class="main-holder">
+                  <div class="buttons pull-right">
+                     <a href="javascript:void(0);" class="btn-type02 dim no-events"><i class="ico-sz3 ico-delete">&nbsp;</i>Delete all</a><a href="#addNewComment" class="btn-type02" data-toggle="collapse" aria-controls="addNewComment"><i class="ico-sz4 ico-add">&nbsp;</i>Add</a><a href="#" class="btn-type02 dropdown-toggle" data-toggle="dropdown" aria-expanded="true">All <i class="ico-sz4 ico-arrowdown">&nbsp;</i></a>
+                     <ul class="dropdown-menu dropdown-menu2">
+                        <li><a href="javascript:void(0);" name="filterOption">All</a></li>
+                        <li><a href="javascript:void(0);" name="filterOption">Last 5</a></li>
+                        <li><a href="javascript:void(0);" name="filterOption">Mine</a></li>
+                     </ul>
+                  </div>
+                  <h3>Comments</h3>
+               </div>
+            </div>
+            <div class="comments">
+               <div class="comments">
+                  <div class="scroll-area">
+                     <div class="collapse" id="addNewComment">
+                        <form novalidate="novalidate">
+                           <div class="comment">
+                              <div class="form-group"><textarea name="CommentText" class="form-control textarea-h01" id="ab9af21d6-7fa7-ed53-f5ac-8a61b4ab24df" aria-required="true"></textarea><span class="error"></span></div>
+                              <div class="text-right"><a href="#" class="btn-type02 submit-button">Submit</a><a href="#addNewComment" class="btn-type02" data-toggle="collapse" aria-controls="addNewComment">Cancel</a></div>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="comments-list">
+                        <div class="no-section-items no-events">No Comments</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
 <!---------------------------------------------->
 <!-------------------- editing - tab-content------------------------->
 <div class="tab-content" *ngIf = editMode>
