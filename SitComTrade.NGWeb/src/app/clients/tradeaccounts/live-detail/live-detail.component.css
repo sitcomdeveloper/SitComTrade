@@ -114,7 +114,7 @@
     font-size: 13px;
     line-height: 20px;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0;    font-weight: bold;
 }
  label {
     margin-right: 10px;
@@ -312,4 +312,56 @@ p {
 .pull-right>.dropdown-menu {
     /* right: 0; */
     left: 0;
+}
+body {
+    background: #fff!important;
+    min-width: 900px;
+}
+.flexboxset2>[class*=col-] {
+    display: flex;
+    flex-direction: column;
+    float: none;
+}
+.comments .scroll-area {
+    height: 337px;
+}
+.comments .scroll-area {
+    height: 295px;
+    min-height: 100%;
+    overflow: auto;
+    padding: 0 15px;width: 100%;
+}
+.client-details .table-type01 table td:nth-child(odd) {
+    padding-left: 15px;
+}
+.table-type01 td:nth-child(odd) label {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: 0;
+    color: #8da5ba;
+    line-height: 1.461538;
+    white-space: nowrap;
+    width: auto;
+}
+.table-type01 .uneditable-value, .table-type01 .value {
+    border: 1px solid transparent;
+    padding: 6px 15px;
+}
+.no-section-items {
+    font-size: 15px;
+    opacity: .5;
+    font-weight: 700;
+}
+
+.no-section-items, .section-loader {
+    margin-top: 20px;
+    text-align: center;
+}
+.ico-sz4.ico-add {
+    background-position: 8px -691px;
+    width: 20px;
+    height: 15px;
+}
+.ico-sz3.ico-delete {
+    background-position: -180px -440px;
 }
