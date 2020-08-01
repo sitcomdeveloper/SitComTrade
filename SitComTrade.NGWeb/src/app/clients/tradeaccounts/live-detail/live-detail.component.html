@@ -203,159 +203,1493 @@
    <div class="collapse-area opened" id="3397da3f-d194-1080-cb4a-f51c4aa1cdec">
       <div class="content-tabs content-tabs2">
          <div class="pull-right">
-            <div class="collapse-control pull-right"><a href="#d386fb53-c793-cc4c-fb53-c50547642961" class="ico-arrowup ico-sz3" data-toggle="collapse" aria-controls="d386fb53-c793-cc4c-fb53-c50547642961" aria-expanded="true">Open/Close</a></div>
+            <div class="collapse-control pull-right"><a href="#ordercollapse" class="ico-arrowup ico-sz3" data-toggle="collapse" aria-controls="ordercollapse" aria-expanded="true">Open/Close</a></div>
             <div class="pull-right"><a href="javascript:void(0);" class="button btn-md"><i class="ico-sz3 ico-pgplus white">&nbsp;</i> Open Order</a></div>
          </div>
          <ul class="nav nav-tabs" role="tablist">
-            <li role="main-tabs" data-tab-index="0" data-rule="tab" class="active"><a href="javascript:void(0);"><i class="ico-sz3 ico-pgtick dark">&nbsp;</i>OpenedAndPendingOrders</a></li>
-            <li role="main-tabs" data-tab-index="1" data-rule="tab" class=""><a href="javascript:void(0);"><i class="ico-sz3 ico-pgcross dark">&nbsp;</i>Closed Orders</a></li>
-            <li role="main-tabs" data-tab-index="2" data-rule="tab" class=""><a href="javascript:void(0);"><i class="ico-sz3 ico-money dark">&nbsp;</i>Financial Transactions</a></li>
+            <li role="main-tabs" data-tab-index="0" data-rule="tab" class="active"><a href="#tab-client-trading1" aria-controls="tab-client-trading" role="tab" data-toggle="tab" aria-expanded="true"><i class="ico-sz3 ico-pgtick dark">&nbsp;</i>OpenedAndPendingOrders</a></li>
+            <li role="main-tabs" data-tab-index="1" data-rule="tab" class=""><a href="#tab-client-trading2" aria-controls="tab-client-trading" role="tab" data-toggle="tab" aria-expanded="true"><i class="ico-sz3 ico-pgcross dark">&nbsp;</i>Closed Orders</a></li>
+            <li role="main-tabs" data-tab-index="2" data-rule="tab" class=""><a href="#tab-client-trading3" aria-controls="tab-client-trading" role="tab" data-toggle="tab" aria-expanded="true"><i class="ico-sz3 ico-money dark">&nbsp;</i>Financial Transactions</a></li>
          </ul>
       </div>
-      <div class="tradacc-infotbl collapse in" id="d386fb53-c793-cc4c-fb53-c50547642961" aria-expanded="true" style="">
-         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="tab-trading-account-openpos">
-               <div class="table-type05 table-style02 table-fixed-header">
-                  <div class="scrollhold" data-rule="scroll-area" style="min-height: 120px; max-height: 272px;">
-                     <table class="">
-                        <thead>
-                           <tr data-rule="titles">
-                              <th>Order ID<span class="fixel"><span><span>Order<br class="visible-xs visible-sm visible-md"> ID</span></span></span></th>
-                              <th>TP Account<span class="fixel"><span><span>TP<br class="visible-xs visible-sm visible-md"> Account</span></span></span></th>
-                              <th>Instrument ID<span class="fixel"><span><span>Instrument<br class="visible-xs visible-sm visible-md"> ID</span></span></span></th>
-                              <th>OrderType<span class="fixel"><span><span>OrderType</span></span></span></th>
-                              <th>Volume<span class="fixel"><span><span>Volume</span></span></span></th>
-                              <th>Open Date<span class="fixel"><span><span>Open<br class="visible-xs visible-sm visible-md"> Date</span></span></span></th>
-                              <th>Open Price<span class="fixel"><span><span>Open<br class="visible-xs visible-sm visible-md"> Price</span></span></span></th>
-                              <th>Swap<span class="fixel"><span><span>Swap</span></span></span></th>
-                              <th>Take Profit<span class="fixel"><span><span>Take<br class="visible-xs visible-sm visible-md"> Profit</span></span></span></th>
-                              <th>Stop Loss<span class="fixel"><span><span>Stop<br class="visible-xs visible-sm visible-md"> Loss</span></span></span></th>
-                              <th>Margin<span class="fixel"><span><span>Margin</span></span></span></th>
-                              <th>Commission<span class="fixel"><span><span>Commission</span></span></span></th>
-                              <th>Current Price<span class="fixel"><span><span>Current<br class="visible-xs visible-sm visible-md"> Price</span></span></span></th>
-                              <th>Profit<span class="fixel"><span><span>Profit</span></span></span></th>
-                              <th>TotalProfit<span class="fixel"><span><span>TotalProfit</span></span></span></th>
-                              <th>EntityType<span class="fixel"><span><span>EntityType</span></span></span></th>
-                              <th></th>
-                           </tr>
-                        </thead>
-                        <tfoot>
-                           <tr data-rule="statistics">
-                              <td><span class="fixel"><span><span>Total: 1</span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td><span class="fixel"><span><span></span></span></span></td>
-                              <td></td>
-                           </tr>
-                        </tfoot>
-                        <tbody>
-                           <tr data-index="0" data-rule="body">
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_OrderNumber">
-                                    <div data-display-for="_OrderNumber">
-                                       <div class="text-ellipsis"><a href="javascript:void(0);"><span>67191</span></a></div>
+      <!-- <div class="tradacc-infotbl collapse in" id="ordercollapse" aria-expanded="true" style=""> -->
+         <div class="collapse in" data-name="ordercollapse" id="ordercollapse" aria-expanded="true">
+            <div class="tab-content">
+               <div role="tabpanel" class="tab-pane active" id="tab-client-trading1">
+                  <div class="table-type05 table-style02 table-fixed-header">
+                     <div class="scrollhold" data-rule="scroll-area" style="min-height: 120px; max-height: 272px;">
+                        <table class="">
+                           <thead>
+                              <tr data-rule="titles">
+                                 <th>Order ID<span class="fixel"><span><span>Order<br class="visible-xs visible-sm visible-md"> ID</span></span></span></th>
+                                 <th>TP Account<span class="fixel"><span><span>TP<br class="visible-xs visible-sm visible-md"> Account</span></span></span></th>
+                                 <th>Instrument ID<span class="fixel"><span><span>Instrument<br class="visible-xs visible-sm visible-md"> ID</span></span></span></th>
+                                 <th>OrderType<span class="fixel"><span><span>OrderType</span></span></span></th>
+                                 <th>Volume<span class="fixel"><span><span>Volume</span></span></span></th>
+                                 <th>Open Date<span class="fixel"><span><span>Open<br class="visible-xs visible-sm visible-md"> Date</span></span></span></th>
+                                 <th>Open Price<span class="fixel"><span><span>Open<br class="visible-xs visible-sm visible-md"> Price</span></span></span></th>
+                                 <th>Swap<span class="fixel"><span><span>Swap</span></span></span></th>
+                                 <th>Take Profit<span class="fixel"><span><span>Take<br class="visible-xs visible-sm visible-md"> Profit</span></span></span></th>
+                                 <th>Stop Loss<span class="fixel"><span><span>Stop<br class="visible-xs visible-sm visible-md"> Loss</span></span></span></th>
+                                 <th>Margin<span class="fixel"><span><span>Margin</span></span></span></th>
+                                 <th>Commission<span class="fixel"><span><span>Commission</span></span></span></th>
+                                 <th>Current Price<span class="fixel"><span><span>Current<br class="visible-xs visible-sm visible-md"> Price</span></span></span></th>
+                                 <th>Profit<span class="fixel"><span><span>Profit</span></span></span></th>
+                                 <th>TotalProfit<span class="fixel"><span><span>TotalProfit</span></span></span></th>
+                                 <th>EntityType<span class="fixel"><span><span>EntityType</span></span></span></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tfoot>
+                              <tr data-rule="statistics">
+                                 <td><span class="fixel"><span><span>Total: 1</span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td></td>
+                              </tr>
+                           </tfoot>
+                           <tbody>
+                              <tr data-index="0" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_OrderNumber">
+                                       <div data-display-for="_OrderNumber">
+                                          <div class="text-ellipsis"><a href="javascript:void(0);"><span>67191</span></a></div>
+                                       </div>
                                     </div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_AccountId">
-                                    <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=9&amp;itemId=102921"><span>102921</span></a></div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_InstrumentId">
-                                    <div class="text-ellipsis">XAUUSD</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_OrderType">
-                                    <div class="text-ellipsis">Sell</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_Volume">
-                                    <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_OpenDate">12/27/2019 12:42:21 PM</div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_OpenPrice">
-                                    <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1510.99">1510.99</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_Swap">
-                                    <div class="text-ellipsis color06" data-field="Swap" data-original-value="-2.23375459">-2.23</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_TakeProfit">
-                                    <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_StopLoss">
-                                    <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_Margin">
-                                    <div class="text-ellipsis" data-field="Margin" data-original-value="54.2613973">54.26</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_Commission">
-                                    <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_CurrentPrice">
-                                    <div class="text-ellipsis" data-field="CurrentPrice" data-original-value="1974.34">1974.34</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_Profit">
-                                    <div class="text-ellipsis color06" data-field="Profit" data-original-value="-393.36287693">-393.36</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_TotalProfit">
-                                    <div class="text-ellipsis color06" data-field="TotalProfit" data-original-value="-395.59663152" data-isformatted="true">- € 395.60</div>
-                                 </div>
-                              </td>
-                              <td style="max-width: 300px;">
-                                 <div data-display-for="57_EntityType">
-                                    <div class="text-ellipsis">Open Order</div>
-                                 </div>
-                              </td>
-                              <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-edit" title="Edit">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no3" title="Close">&nbsp;</a></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                     <div style="display: none;">
-                        <div class="message-on-shader" style="display: none;"></div>
-                        <div class="jsgrid-load-shader shader"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_AccountId">
+                                       <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=9&amp;itemId=102921"><span>102921</span></a></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_InstrumentId">
+                                       <div class="text-ellipsis">XAUUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_OrderType">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_OpenDate">12/27/2019 12:42:21 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1510.99">1510.99</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_Swap">
+                                       <div class="text-ellipsis color06" data-field="Swap" data-original-value="-2.23375459">-2.23</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_Margin">
+                                       <div class="text-ellipsis" data-field="Margin" data-original-value="54.2613973">54.26</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_CurrentPrice">
+                                       <div class="text-ellipsis" data-field="CurrentPrice" data-original-value="1974.34">1974.34</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_Profit">
+                                       <div class="text-ellipsis color06" data-field="Profit" data-original-value="-393.36287693">-393.36</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_TotalProfit">
+                                       <div class="text-ellipsis color06" data-field="TotalProfit" data-original-value="-395.59663152" data-isformatted="true">- € 395.60</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="57_EntityType">
+                                       <div class="text-ellipsis">Open Order</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-edit" title="Edit">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no3" title="Close">&nbsp;</a></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <div style="display: none;">
+                           <div class="message-on-shader" style="display: none;"></div>
+                           <div class="jsgrid-load-shader shader"></div>
+                        </div>
+                        <div class="jsgrid-load-panel absolute-loader-center" style="display: none;">Please, wait...</div>
+                        <div class="no-section-items no-events"></div>
                      </div>
-                     <div class="jsgrid-load-panel absolute-loader-center" style="display: none;">Please, wait...</div>
-                     <div class="no-section-items no-events"></div>
                   </div>
                </div>
+               <div role="tabpanel" class="tab-pane fade" id="tab-client-trading2">
+                  <div class="table-type05 table-style02 table-fixed-header">
+                     <div class="scrollhold" data-rule="scroll-area" style="min-height: 120px; max-height: 272px;">
+                        <table class="">
+                           <thead>
+                              <tr data-rule="titles">
+                                 <th>Order ID<span class="fixel"><span><span>Order<br class="visible-xs visible-sm visible-md"> ID</span></span></span></th>
+                                 <th>Instrument ID<span class="fixel"><span><span>Instrument<br class="visible-xs visible-sm visible-md"> ID</span></span></span></th>
+                                 <th>Buy<span class="fixel"><span><span>Buy</span></span></span></th>
+                                 <th>Volume<span class="fixel"><span><span>Volume</span></span></span></th>
+                                 <th>Open Price<span class="fixel"><span><span>Open<br class="visible-xs visible-sm visible-md"> Price</span></span></span></th>
+                                 <th>Close Price<span class="fixel"><span><span>Close<br class="visible-xs visible-sm visible-md"> Price</span></span></span></th>
+                                 <th>Open Date<span class="fixel"><span><span>Open<br class="visible-xs visible-sm visible-md"> Date</span></span></span></th>
+                                 <th>Close Date<span class="fixel"><span><span>Close<br class="visible-xs visible-sm visible-md"> Date</span></span></span></th>
+                                 <th>Stop Loss<span class="fixel"><span><span>Stop<br class="visible-xs visible-sm visible-md"> Loss</span></span></span></th>
+                                 <th>Take Profit<span class="fixel"><span><span>Take<br class="visible-xs visible-sm visible-md"> Profit</span></span></span></th>
+                                 <th>Swap<span class="fixel"><span><span>Swap</span></span></span></th>
+                                 <th>Commission<span class="fixel"><span><span>Commission</span></span></span></th>
+                                 <th>Credit Spent<span class="fixel"><span><span>Credit<br class="visible-xs visible-sm visible-md"> Spent</span></span></span></th>
+                                 <th>Balance<span class="fixel"><span><span>Balance</span></span></span></th>
+                                 <th>TotalProfit<span class="fixel"><span><span>TotalProfit</span></span></span></th>
+                                 <th>Close Reason<span class="fixel"><span><span>Close<br class="visible-xs visible-sm visible-md"> Reason</span></span></span></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tfoot>
+                              <tr data-rule="statistics">
+                                 <td><span class="fixel"><span><span>Total: 17</span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td><span class="fixel"><span><span></span></span></span></td>
+                                 <td></td>
+                              </tr>
+                           </tfoot>
+                           <tbody>
+                              <tr data-index="0" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">BTCEUR</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="6460.37">6460.37</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">12/12/2019 12:03:43 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/12/2019 2:40:56 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1008.69662955" data-isformatted="true"> € 1'008.70</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="1" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">WHEAT</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="1">1.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="524.86">524.86</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">12/4/2019 12:30:51 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/4/2019 12:30:56 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1016.93275" data-isformatted="true"> € 1'016.93</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="2" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">NGAS</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="2.312">2.312</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">12/4/2019 12:28:57 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/4/2019 12:30:42 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1001.31275" data-isformatted="true"> € 1'001.31</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="3" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">DOW</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="27613.95">27613.95</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">12/4/2019 12:28:15 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/4/2019 12:29:11 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="991.80662955" data-isformatted="true"> € 991.81</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="4" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">CL</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="58.58">58.58</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/27/2019 1:25:08 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/4/2019 12:29:09 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="991.94657556" data-isformatted="true"> € 991.95</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="5" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">AUDUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="0.67616">0.67616</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 5:13:52 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/4/2019 12:29:07 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0.6751">0.6751</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="-0.26490936">-0.26</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1006.3032347" data-isformatted="true"> € 1'006.30</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="6" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">EURGBP</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="0.85225">0.85225</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 5:12:40 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/3/2019 3:00:59 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0.8513">0.8513</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="-0.02438765">-0.02</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1012.53611026" data-isformatted="true"> € 1'012.54</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Take Profit</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="7" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">GBPUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1.29088">1.29088</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 5:04:58 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">12/2/2019 6:22:07 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="-0.17964928">-0.18</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1011.44450847" data-isformatted="true"> € 1'011.44</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="8" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">EURUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1.10054">1.10054</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 12:12:29 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/29/2019 12:12:42 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0.22716121" data-isformatted="true"> € 0.23</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1009.5123778" data-isformatted="true"> € 1'009.51</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="9" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">EURUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1.10054">1.10054</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 12:12:29 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/29/2019 12:12:40 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0.22716121" data-isformatted="true"> € 0.23</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1009.80314011" data-isformatted="true"> € 1'009.80</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="10" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">EURUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1.10054">1.10054</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 12:12:29 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/29/2019 12:12:37 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0.22716121" data-isformatted="true"> € 0.23</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1010.08481704" data-isformatted="true"> € 1'010.08</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="11" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">EURUSD</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1.10054">1.10054</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/29/2019 12:12:28 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/29/2019 12:12:34 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0.22716121" data-isformatted="true"> € 0.23</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1010.36649396" data-isformatted="true"> € 1'010.37</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="12" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">USDTRY</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="5.7591">5.75910</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/27/2019 1:23:45 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/29/2019 12:12:26 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0.07987955">0.08</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1010.65725627" data-isformatted="true"> € 1'010.66</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="13" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">USDSEK</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="9.5952">9.59520</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/27/2019 1:23:52 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/29/2019 12:12:23 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="-0.25840636">-0.26</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1009.39733814" data-isformatted="true"> € 1'009.40</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="14" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">USDCHF</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.08">0.08</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="0.99933">0.99933</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/27/2019 4:42:08 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/27/2019 6:30:25 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0.99973">0.99973</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1004.94410716" data-isformatted="true"> € 1'004.94</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">TP after gap</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="15" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">USDJPY</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Buy</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.05">0.05</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="109.271">109.271</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/27/2019 4:41:55 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/27/2019 5:55:52 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="109.311">109.311</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1001.95972287" data-isformatted="true"> € 1'001.96</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Take Profit</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                              <tr data-index="16" data-rule="body">
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OrderNumber">
+                                       <div data-display-for="_OrderNumber"></div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_InstrumentId">
+                                       <div class="text-ellipsis">USDZAR</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_IsBuy">
+                                       <div class="text-ellipsis">Sell</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Volume">
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenPrice">
+                                       <div class="text-ellipsis" data-field="OpenPrice" data-original-value="14.7323">14.73230</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_ClosePrice"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_OpenDate">11/27/2019 1:23:37 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseDate">11/27/2019 4:41:20 PM</div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_StopLoss">
+                                       <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TakeProfit">
+                                       <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Swap">
+                                       <div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Commission">
+                                       <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_SpentCredit">
+                                       <div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_Equity">
+                                       <div class="text-ellipsis" data-field="Equity" data-original-value="1000.29639681" data-isformatted="true"> € 1'000.30</div>
+                                    </div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_TotalProfit"></div>
+                                 </td>
+                                 <td style="max-width: 300px;">
+                                    <div data-display-for="13_CloseReason">
+                                       <div class="text-ellipsis">Closed manually</div>
+                                    </div>
+                                 </td>
+                                 <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <div style="display: none;">
+                           <div class="message-on-shader" style="display: none;"></div>
+                           <div class="jsgrid-load-shader shader"></div>
+                        </div>
+                        <div class="jsgrid-load-panel absolute-loader-center" style="display: none;">Please, wait...</div>
+                        <div class="no-section-items no-events"></div>
+                     </div>
+                  </div>
+                  </div>
             </div>
-         </div>
       </div>
    </div>
 </div>

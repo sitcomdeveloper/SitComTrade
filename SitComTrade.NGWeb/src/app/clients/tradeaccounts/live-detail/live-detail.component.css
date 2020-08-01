@@ -365,3 +365,36 @@ body {
 .ico-sz3.ico-delete {
     background-position: -180px -440px;
 }
+.tradacc-infotbl .table-type05 tr td:first-child, .tradacc-infotbl .table-type05 tr th:first-child {
+    padding-left: 5px;
+}
+.fixel {
+    margin-left: -5px;padding: 0 5px;
+}
+.table-type05.table-fixed-header thead .fixel {
+    top: 0;
+    margin-left: -15px;
+}
+
+.table-type05.table-fixed-header .fixel {
+    color: #8da5ba;
+}
+.table-type05.table-fixed-header .fixel {
+    display: block;
+    position: absolute;
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.table-type05.table-fixed-header tfoot td, .table-type05.table-fixed-header thead th {
+   
+    line-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+   
+    border: none;
+}
+
+.table-type05 table th {
+    background: #f9fbfd;
+}
