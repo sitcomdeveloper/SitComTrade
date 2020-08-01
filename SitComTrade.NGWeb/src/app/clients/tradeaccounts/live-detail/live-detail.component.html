@@ -117,7 +117,11 @@
       <div class="main-holder">
          <div class="pull-right">
             <div class="collapse-control pull-right"><a href="#collapseTradingAccountInformation" class="ico-arrowup ico-sz3" data-toggle="collapse" aria-controls="collapseTradingAccountInformation" aria-expanded="true">Open/Close</a></div>
-            <div class="buttons pull-right"><a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="1"><i class="ico-sz3 ico-import2 darker">&nbsp;</i>Deposit</a><a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="2"><i class="ico-sz3 ico-export2 darker">&nbsp;</i>Withdraw</a><a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="3"><i class="ico-sz3 ico-funds darker">&nbsp;</i>Credit in</a><a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="4"><i class="ico-sz3 ico-funds darker">&nbsp;</i>Credit Out</a></div>
+            <div class="buttons pull-right"><a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="1" (click)="opendepositpopup()"><i class="ico-sz3 ico-import2 darker">&nbsp;</i>Deposit</a>
+               <a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="2" (click)="openwithdrawpopup()"><i class="ico-sz3 ico-export2 darker">&nbsp;</i>Withdraw</a>
+               <a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="3" (click)="opencreditinpopup()"><i class="ico-sz3 ico-funds darker">&nbsp;</i>Credit in</a>
+               <a href="javascript:void(0);" class="btn-type05 ml10" data-rule="create-transaction" data-type="4" (click)="opencreditoutpopup()"><i class="ico-sz3 ico-funds darker">&nbsp;</i>Credit Out</a>
+            </div>
          </div>
          <h3>Live financial information</h3>
       </div>
@@ -215,7 +219,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_Commision">
-                                       <div class="text-ellipsis" data-field="Commision" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                       <div class="text-ellipsis" data-field="Commision" data-original-value="0" data-isformatted="true"> {{this.realTradeUsers?.Commission}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -223,7 +227,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_DepositCount">
-                                       <div class="text-ellipsis" data-field="DepositCount" data-original-value="1">1</div>
+                                       <div class="text-ellipsis" data-field="DepositCount" data-original-value="1">{{this.realTradeUsers?.DepositCount}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -233,14 +237,14 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_FtdAmount">
-                                       <div class="text-ellipsis" data-field="FtdAmount" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                       <div class="text-ellipsis" data-field="FtdAmount" data-original-value="1000" data-isformatted="true"> {{this.realTradeUsers?.FtdAmount}}</div>
                                     </div>
                                  </div>
                               </td>
                               <td><label class="valign-label" for="FtdDate"><span data-tooltip-el="">FtdDate</span></label></td>
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
-                                    <div data-display-for="9_FtdDate">11/22/2019 12:32:34 PM</div>
+                                    <div data-display-for="9_FtdDate">{{this.realTradeUsers?.FTDDate}}</div>
                                  </div>
                               </td>
                            </tr>
@@ -248,13 +252,13 @@
                               <td><label class="valign-label" for="LastLoginDate"><span data-tooltip-el="">Last Login Date</span></label></td>
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
-                                    <div data-display-for="9_LastLoginDate">4/19/2020 4:21:16 PM</div>
+                                    <div data-display-for="9_LastLoginDate"></div>
                                  </div>
                               </td>
                               <td><label class="valign-label" for="LastTradeDate"><span data-tooltip-el="">Last Trade Date</span></label></td>
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
-                                    <div data-display-for="9_LastTradeDate">12/27/2019 12:42:21 PM</div>
+                                    <div data-display-for="9_LastTradeDate">{{this.realTradeUsers?.LastTradeDate}}</div>
                                  </div>
                               </td>
                            </tr>
@@ -262,14 +266,14 @@
                               <td><label class="valign-label text-ellipsis" for="LastDepositDate"><span data-tooltip-el="">LastDepositDate</span></label></td>
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
-                                    <div data-display-for="9_LastDepositDate">11/22/2019 12:32:34 PM</div>
+                                    <div data-display-for="9_LastDepositDate">{{this.realTradeUsers?.LastDepositDate}}</div>
                                  </div>
                               </td>
                               <td><label class="valign-label" for="MarginLevel"><span data-tooltip-el="">Margin Level</span></label></td>
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_MarginLevel">
-                                       <div class="text-ellipsis" data-field="MarginLevel" data-original-value="1136.07566784">1136.08</div>
+                                       <div class="text-ellipsis" data-field="MarginLevel" data-original-value="1136.07566784">{{this.realTradeUsers?.MarginLevel}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -279,7 +283,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_NetDeposit">
-                                       <div class="text-ellipsis" data-field="NetDeposit" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                       <div class="text-ellipsis" data-field="NetDeposit" data-original-value="1000" data-isformatted="true"> {{this.realTradeUsers?.NetDeposit}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -287,7 +291,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_OrderCount">
-                                       <div class="text-ellipsis" data-field="OrderCount" data-original-value="1000">1000</div>
+                                       <div class="text-ellipsis" data-field="OrderCount" data-original-value="1000">{{this.realTradeUsers?.OrderCount}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -297,14 +301,14 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_OwnerId">
-                                       <div class="text-ellipsis">Anton Novak</div>
+                                       <div class="text-ellipsis"></div>
                                     </div>
                                  </div>
                               </td>
                               <td><label class="valign-label" for="RegistrationDate"><span data-tooltip-el="">Registration Date</span></label></td>
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
-                                    <div data-display-for="9_RegistrationDate">11/21/2019 5:35:09 PM</div>
+                                    <div data-display-for="9_RegistrationDate">{{this.realTradeUsers?.FirstRegistrationDate}}</div>
                                  </div>
                               </td>
                            </tr>
@@ -313,7 +317,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_TotalDeposits">
-                                       <div class="text-ellipsis" data-field="TotalDeposits" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                       <div class="text-ellipsis" data-field="TotalDeposits" data-original-value="1000" data-isformatted="true">{{this.realTradeUsers?.TotalDeposit}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -321,7 +325,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_TotalWithdrawals">
-                                       <div class="text-ellipsis" data-field="TotalWithdrawals" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                       <div class="text-ellipsis" data-field="TotalWithdrawals" data-original-value="0" data-isformatted="true">{{this.realTradeUsers?.TotalWithdrawal}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -331,7 +335,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="9_Volume">
-                                       <div class="text-ellipsis" data-field="Volume" data-original-value="32620.9274294" data-isformatted="true"> € 32'620.93</div>
+                                       <div class="text-ellipsis" data-field="Volume" data-original-value="32620.9274294" data-isformatted="true"> € {{this.realTradeUsers?.Volume}}</div>
                                     </div>
                                  </div>
                               </td>
@@ -339,7 +343,7 @@
                               <td data-editor-container="">
                                  <div class="value" data-rule="value">
                                     <div data-display-for="27_OwnerId">
-                                       <div class="text-ellipsis">Anton Novak</div>
+                                       <div class="text-ellipsis"></div>
                                     </div>
                                  </div>
                               </td>

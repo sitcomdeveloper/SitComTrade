@@ -52,6 +52,7 @@ import { AdditionalModuleFieldsComponent } from './settings/additionalfields/add
 import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-woorkflows/create-edit-woorkflows.component';
 import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeaccount-info.component';
+import { LivepopupsComponent } from './clients/tradeaccounts/live-detail/livepopups/livepopups.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeacco
     CreateInstrumentsComponent,
     CreateEditWoorkflowsComponent,
     TradeaccountInfoComponent,
+    LivepopupsComponent,
   ],
   imports: [
     BrowserModule,
@@ -156,7 +158,7 @@ import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeacco
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
      CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
-     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent, AdditionalModuleFieldsComponent, CreateInstrumentsComponent, CreateEditWoorkflowsComponent, SmsAllComponent],
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent, AdditionalModuleFieldsComponent, CreateInstrumentsComponent, CreateEditWoorkflowsComponent, SmsAllComponent, LivepopupsComponent],
   exports: [
     PhoneMaskDirective
   ],

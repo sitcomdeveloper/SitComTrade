@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { LivepopupsComponent } from './livepopups/livepopups.component';
 
 @Component({
   selector: 'app-live-detail',
@@ -18,9 +20,11 @@ export class LiveDetailComponent implements OnInit {
   Leverage: any;
   tradeaccountInfoForm: FormGroup
   updtaeddetails: any;
-
-  constructor(private route: ActivatedRoute, private groupService: GroupsService, private clientsservice: ClientsService, private fb: FormBuilder) { }
-
+  
+  
+  
+  constructor(private route: ActivatedRoute, private groupService: GroupsService, private clientsservice: ClientsService, private fb: FormBuilder, private modalService: BsModalService) { }
+  bsModalRef: BsModalRef;
   ngOnInit() {
     this.tradeaccountInfoForm = this.fb.group({
       status: [''],
@@ -116,5 +120,58 @@ export class LiveDetailComponent implements OnInit {
       this.Leverage = rspnse;
     });
   }
+  // popups
+  opendepositpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      deposit: 'deposit'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
+   openwithdrawpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      withdraw: 'withdraw'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
+   opencreditinpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      creditin: 'creditin'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
+   opencreditoutpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      creditout: 'creditout'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
 }
 
