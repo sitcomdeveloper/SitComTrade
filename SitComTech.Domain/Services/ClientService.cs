@@ -402,7 +402,7 @@ namespace SitComTech.Domain.Services
                     CreatedAt = DateTime.Now,
                     CreatedBy = 0,
                     CreatedByName = "",
-                    OwnerId = (long)client.OwnerId,
+                    OwnerId = (long)entity.Id,
                     CountryId = country?.Id ?? 0,
                     CountryName = country?.Name ?? "",
                     ZipCode = client.ZipCode,
