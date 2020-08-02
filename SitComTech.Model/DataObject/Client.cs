@@ -103,6 +103,6 @@ namespace SitComTech.Model.DataObject
         public string GoogleKeyword { get; set; }
         public Nullable<DateTime> FirstRegistrationDate { get; set; }
         public string ImportId { get; set; }
-        public string AffiliateUser { get; set; }
+        public long? AffiliateUser { get; set; }
     }
 }

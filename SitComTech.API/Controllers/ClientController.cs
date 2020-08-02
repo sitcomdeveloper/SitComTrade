@@ -1,21 +1,22 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SitComTech.Core.Auth;
 using SitComTech.Core.Interface;
 using SitComTech.Core.Utils;
+using SitComTech.Model.Constants;
 using SitComTech.Model.DataObject;
 using SitComTech.Model.ViewModel;
-using SitComTech.Model.Constants;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using Newtonsoft.Json;
-using System.Web;
 using System.Data;
 using System.IO;
-using SitComTech.Core.Auth;
+using System.Linq;
+using System.Reflection;
+using System.Web;
+using System.Web.Http;
 
 namespace SitComTech.API.Controllers
-{    
+{
     [RoutePrefix("api/Client")]
     public class ClientController : ApiController
     {
@@ -29,7 +30,7 @@ namespace SitComTech.API.Controllers
         private IAddressService _addressService;
         private IImportFileService _importFileService;
         public ClientController(IClientService clientService, IMarketingInfoService marketingInfoService, IAdditionalInfoService additionalInfoeService
-            , IEmailService emailService, IShortMessageService shortMeassageService, ICommentService commentService, IAddressService addressService,IImportFileService importFileService)
+            , IEmailService emailService, IShortMessageService shortMeassageService, ICommentService commentService, IAddressService addressService, IImportFileService importFileService)
         {
             this._clientService = clientService;
             this._marketingInfoService = marketingInfoService;
@@ -40,7 +41,7 @@ namespace SitComTech.API.Controllers
             this._addressService = addressService;
             this._importFileService = importFileService;
         }
-        
+
         [HttpPost]
         [Route("AddClient")]
         public Client AddClient(ClientDataVM clientVM)
@@ -79,11 +80,11 @@ namespace SitComTech.API.Controllers
         public bool DeleteMultipleClients(List<long> clientIds)
         {
             try
-            {                
-                if (clientIds != null && clientIds.Count>0)
+            {
+                if (clientIds != null && clientIds.Count > 0)
                 {
                     return _clientService.DeleteMultipleClients(clientIds);
-                     
+
                 }
                 else
                 {
@@ -250,7 +251,7 @@ namespace SitComTech.API.Controllers
         [Route("InsertComment")]
         public void InsertComment(Comment entity)
         {
-             _commentService.InsertComment(entity);
+            _commentService.InsertComment(entity);
         }
 
         [HttpPost]
@@ -283,7 +284,7 @@ namespace SitComTech.API.Controllers
             try
             {
                 List<Comment> commentdata = _commentService.GetAll().ToList();
-                foreach(var item in commentdata)
+                foreach (var item in commentdata)
                 {
                     _commentService.DeleteComment(item);
                 }
@@ -321,14 +322,14 @@ namespace SitComTech.API.Controllers
         [Route("CreateEmail")]
         public void CreateEmail(Email entity)
         {
-            _emailService.CreateEmail(entity,true);
+            _emailService.CreateEmail(entity, true);
         }
 
         [HttpPost]
         [Route("EmailToAllClients")]
         public bool EmailToAllClients(Email entity)
         {
-            
+
             try
             {
                 if (entity != null)
@@ -371,7 +372,7 @@ namespace SitComTech.API.Controllers
         }
         [HttpPost]
         [Route("GetColumnHeader")]
-        public List<string> GetColumnHeader()
+        public HeaderNameVM GetColumnHeader()
         {
             try
             {
@@ -380,10 +381,9 @@ namespace SitComTech.API.Controllers
                 {
                     //string fileName = "";
                     var postedFile = httpRequest.Files["client_import_fileuploader"];
-                    string fileName = "ImportedFiles/" + Path.GetFileNameWithoutExtension(postedFile.FileName) + $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss-fff}" + Path.GetExtension(postedFile.FileName);
-                    var filePath = HttpContext.Current.Server.MapPath("~/" + fileName);
-                   
-
+                    string fileName = Path.GetFileNameWithoutExtension(postedFile.FileName) + $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss-fff}" + Path.GetExtension(postedFile.FileName);
+                    var filePath = HttpContext.Current.Server.MapPath("~/ImportedFiles/" + fileName);
+                    postedFile.SaveAs(filePath);
                     DataSet data = ExcelReader.ExcelToDataSet(postedFile.InputStream, Path.GetExtension(postedFile.FileName));
                     DataTable dt = data.Tables["sheet1"];
                     List<string> columnNames = dt.Columns.Cast<DataColumn>()
@@ -401,7 +401,7 @@ namespace SitComTech.API.Controllers
                         DeletedBy = null,
                         Active = false,
                         Deleted = false,
-                        CreatedBy = UserIdentity.UserId??0,
+                        CreatedBy = UserIdentity.UserId ?? 0,
                         CreatedByName = UserIdentity.UserName,
                         CreatedAt = DateTime.Now,
                         UpdatedBy = null,
@@ -409,8 +409,13 @@ namespace SitComTech.API.Controllers
                         UpdatedAt = null
                     };
                     _importFileService.InsertFileLog(importFile);
-                    postedFile.SaveAs(filePath);
-                    return columnNames;
+
+                    HeaderNameVM headerName = new HeaderNameVM
+                    {
+                        HeaderNames = columnNames,
+                        FileName = fileName.Substring(0, fileName.IndexOf('.'))
+                    };
+                    return headerName;
                 }
                 return null;
             }
@@ -418,6 +423,66 @@ namespace SitComTech.API.Controllers
             {
                 throw ex;
             }
+        }
+        
+        [HttpPost]
+        [Route("ImportClient/{fileName}")]
+        public string ImportClient(string fileName)
+        {
+            var filePath = HttpContext.Current.Server.MapPath("~/ImportedFiles/" + fileName + ".xlsx");
+            DataSet data = ExcelReader.ExcelToDataSet(filePath);            
+            List<ImportClient> importClients = new List<ImportClient>();
+            importClients = (from DataRow dr in data.Tables[0].Rows
+                             select new ImportClient()
+                             {
+                                 FirstName = dr["First Name"].ToString(),
+                                 LastName = dr["Last Name"].ToString(),
+                                 Email = dr["Email"].ToString(),
+                                 Phone = dr["Phone"].ToString(),
+                                 Mobile = dr["Mobile"].ToString(),
+                                 SecondEmail = dr["Second Email"].ToString(),
+                                 Tag = dr["Tag"].ToString(),
+                                 Tag1 = dr["Tag1"].ToString(),
+                                 CampaignID = dr["Campaign ID"].ToString(),
+                                 Country = dr["Country"].ToString(),
+                                 OwnerId = long.TryParse(dr["Owner"].ToString(), out var ownerid) ? ownerid : (long?)null,
+                                 Status = long.TryParse(dr["Status"].ToString(), out var status) ? status : (long?)null,
+                                 CreatedDate = Convert.ToDateTime(dr["Created Date"]),
+                                 ZipCode = dr["Zip Code"].ToString(),
+                                 City = dr["City"].ToString(),
+                                 State = dr["State"].ToString(),
+                                 Address = dr["Address"].ToString(),
+                                 SuppliedDocs = dr["Supplied Docs"].ToString().ToUpper() == "TRUE" ? true : false,
+                                 AcceptedTermsConditions = dr["Accepted Terms & Conditions"].ToString().ToUpper() == "TRUE" ? true : false,
+                                 Description = dr["Description"].ToString(),
+                                 AffiliateID = dr["Affiliate ID"].ToString(),
+                                 SubAffiliateID = dr["Sub Affiliate ID"].ToString(),
+                                 Source = dr["Source"].ToString(),
+                                 IPAddress = dr["IP Address"].ToString(),
+                                 Referrer = dr["Referrer"].ToString(),
+                                 IPCountry = dr["IP Country"].ToString(),
+                                 ModifiedDate = Convert.ToDateTime(dr["Modified Date"]),
+                                 ConvertionOwner = dr["Convertion Owner"].ToString(),
+                                 RetentionOwner = dr["Retention Owner"].ToString(),
+                                 Citizenship = dr["Citizenship"].ToString(),
+                                 DateOfBirth = Convert.ToDateTime(dr["Date Of Birth"].ToString()),
+                                 IsEnabled = dr["Enabled"].ToString().ToUpper() == "TRUE" ? true : false,
+                                 LastLoginDate = Convert.ToDateTime(dr["Last Login Date"]),
+                                 SubscribedNewsletter = dr["Subscribed Newsletter"].ToString().ToUpper() == "TRUE" ? true : false,
+                                 Desk = dr["Desk"].ToString(),
+                                 UtmContent = dr["Utm Content"].ToString(),
+                                 UtmSource = dr["Utm Source"].ToString(),
+                                 UtmCampaign = dr["Utm Campaign"].ToString(),
+                                 UtmCreative = dr["Utm Creative"].ToString(),
+                                 UtmMedium = dr["Utm Medium"].ToString(),
+                                 AffTransactionID = dr["Aff Transaction ID"].ToString(),
+                                 GoogleKeyword = dr["Google Keyword"].ToString(),
+                                 FirstRegistrationDate = Convert.ToDateTime(dr["FirstRegistrationDate"]),
+                                 ImportId = dr["ImportId"].ToString(),
+                                 AffiliateUser = long.TryParse(dr["AffiliateUser"].ToString(), out var affiliateUser) ? affiliateUser : (long?)null,
+                             }).ToList();
+            _clientService.ImportClient(importClients);
+            return fileName;
         }
         [HttpPost]
         [Route("GetImportHistory/{UserId}")]
@@ -430,6 +495,30 @@ namespace SitComTech.API.Controllers
         public void UploadClients(List<ImportClient> clients)
         {
             _clientService.ImportClient(clients);
+        }
+        [HttpPost]
+        [Route("PostFile")]
+        public string PostFile()
+        {
+            string result = null;
+            var httpRequest = HttpContext.Current.Request;
+            if (httpRequest.Files.Count > 0)
+            {
+                var docfiles = new List<string>();
+                foreach (string file in httpRequest.Files)
+                {
+                    var postedFile = httpRequest.Files[file];
+                    var filePath = HttpContext.Current.Server.MapPath("~/ImportedFiles/" + postedFile.FileName);
+                    postedFile.SaveAs(filePath);
+                    docfiles.Add(filePath);
+                }
+                result = "File Uploaded";
+            }
+            else
+            {
+                result = "File not found";
+            }
+            return result;
         }
     }
 }
