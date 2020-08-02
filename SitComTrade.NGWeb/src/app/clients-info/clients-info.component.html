@@ -158,8 +158,8 @@
         <div class="sidenav" style="display: block;">
           <h2>Actions</h2>
           <ul style="display: block;">
-            <li *ngIf="leadAccountSection"><a href="javascript:void(0);" (click)="crtacc()"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
-            <li *ngIf="realAccountSection"><a href="javascript:void(0);" (click)="crtacc()"><i class="fa fa-user-o">&nbsp;</i>Create TP Account</a></li>
+            <li *ngIf="leadAccountSection"><a href="javascript:void(0);" (click)="crtacc(userGenralinfo.Id)"><i class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
+            <li *ngIf="realAccountSection"><a href="javascript:void(0);" (click)="crtacc(userGenralinfo.Id)"><i class="fa fa-user-o">&nbsp;</i>Create TP Account</a></li>
           </ul>
           <ul style="display: block;">
             <li><a href="javascript:void(0);" (click)="createtask()"><i class="fa fa-refresh" style="font-size: 21px;">&nbsp;</i>Add task</a></li>

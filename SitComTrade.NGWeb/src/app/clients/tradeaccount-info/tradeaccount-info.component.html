@@ -1,0 +1,877 @@
+<app-header></app-header>
+<!-------subheader--------->
+<div _ngcontent-fux-c2="" class="subheader">
+    <div _ngcontent-fux-c2="" class="account-panel">
+       <div _ngcontent-fux-c2="" class="main-holder">
+          <div _ngcontent-fux-c2="" class="account-main-details">
+             <p _ngcontent-fux-c2="">ID: {{this.realTradeUsers?.TPAccountNumber}}
+                <!-- <span _ngcontent-fux-c2="" class="type">Lead</span> -->
+            </p>
+             <h2 _ngcontent-fux-c2="">{{this.realTradeUsers?.FirstName}} {{this.realTradeUsers?.LastName}}</h2>
+          </div>
+       </div>
+       <a _ngcontent-fux-c2="" class="history-back-link page-prev" href=""><i _ngcontent-fux-c2="" class="fa fa-chevron-left"></i></a>
+    </div>
+    <div _ngcontent-fux-c2="" class="account-nav-panel">
+       <div _ngcontent-fux-c2="" class="main-holder">
+          <div _ngcontent-fux-c2="" class="account-nav">
+             <ul _ngcontent-fux-c2="" id="navPanel" style="    padding: 14px;
+                padding-left: 0;">
+                <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="common" href="javascript:void(0);">Closed Orders</a></li>
+                <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="common" href="#emails">OpenedAndPendingOrders</a></li>
+                <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="common" href="#sent-sms">Financial Transactions</a></li>
+                </ul>
+          </div>
+          <div _ngcontent-fux-c2="" class="account-switcher">
+             <ul _ngcontent-fux-c2="">
+                <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class=" no-events link-prev" routerlink="" ng-reflect-router-link="" href="/"><i _ngcontent-fux-c2="" class="fa fa-chevron-left"></i></a></li>
+                <li _ngcontent-fux-c2="">
+                   <a _ngcontent-fux-c2="" aria-expanded="true" class="link-control dropdown-toggle dropdown-toggle1" data-toggle="dropdown" href="#" role="button"><i _ngcontent-fux-c2="" class="fa fa-equals" style="font-size: 33px;top:8px;left: 13px;">=</i></a>
+                   <div _ngcontent-fux-c2="" class="dropdown-menu pull-right">
+                      <p _ngcontent-fux-c2="">Jump to clients:</p>
+                   </div>
+                </li>
+                <li _ngcontent-fux-c2=""><a _ngcontent-fux-c2="" class="link-next disabled" href=""><i _ngcontent-fux-c2="" class="fa fa-chevron-right"></i></a></li>
+             </ul>
+          </div>
+       </div>
+    </div>
+ </div>
+<!------------------------>
+<!-------------------------general info------------->
+<div _ngcontent-ght-c2="" class="container-fluid">
+    <div _ngcontent-ght-c2="" class="row">
+       <div _ngcontent-ght-c2="" class="col-xs-9 col-md-8">
+          <div _ngcontent-ght-c2="" id="accordion" role="tablist">
+             <div _ngcontent-ght-c2="">
+                   <div _ngcontent-ght-c4="" class="card-bodynew mb20" *ngIf = frontmode>
+                      <div _ngcontent-ght-c4="" class="card1 mb20 ">
+                         <div _ngcontent-ght-c4="" class="card-header1 container" id="headingOne" role="tab">
+                            <h5 _ngcontent-ght-c4="" class="mb-0">
+                               <a _ngcontent-ght-c4="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="">
+                                  <h2 _ngcontent-ght-c4="">General Info </h2>
+                               </a>
+                               <div _ngcontent-ght-c4="" class="box-control pull-right">
+                                  <div _ngcontent-ght-c4="" class="pencil" id="edit"><i _ngcontent-ght-c4="" aria-hidden="true" class="fa fa-pencil" (click)="openeditingmode()"></i></div>
+                               </div>
+                            </h5>
+                         </div>
+                         <div _ngcontent-ght-c4="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel">
+                            <div _ngcontent-ght-c4="" class="card-body11"></div>
+                         </div>
+                      </div>
+                      <div _ngcontent-ght-c4="" class="container-fluid">
+                         <div _ngcontent-ght-c4="" class="row">
+                            <form _ngcontent-ght-c4="" class="width100 ng-untouched ng-pristine ng-valid" novalidate="" ng-reflect-form="[object Object]">
+                               <table _ngcontent-ght-c4="" class="table" id="generalinfo">
+                                  <thead _ngcontent-ght-c4="">
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">First Name</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.FirstName}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Last Name</th>
+                                        <td _ngcontent-ght-c4="" >
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.LastName}} </div>
+                                        </td>
+                                     </tr>
+                                  </thead>
+                                  <tbody _ngcontent-ght-c4="">
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">TP Account</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.TPAccountNumber}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Group</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.GroupName}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Leverage</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.LeverageName}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Margin Call</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.MarginCall}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Stop Out</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">  {{this.realTradeUsers?.StopOut}}</div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Order Count</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.OrderCount}}  </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Min Deposit</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.MinDeposit}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Account ID</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.AccountId}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Allow Trade</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">
+                                             <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                             [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i>
+                                               </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Registration Date</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.FirstRegistrationDate}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Close Profit And Loss</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.CloseLoss}}</td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Total Deposits</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.TotalDeposit}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Total Withdrawals</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.TotalWithdrawal}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Net Deposit</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.NetDeposit}}  </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Open Profit And Loss</th>
+                                        <td _ngcontent-ght-c4="">
+                                          <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.OpenProfit}} </div>
+                                       </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Commision</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Commission}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Equity</th>
+                                        <td _ngcontent-ght-c4="">
+                                          <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Equity}} </div>
+                                       </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Balance</th>
+                                        <td _ngcontent-ght-c4="">
+                                          <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Balance}} </div>
+                                       </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Margin Level</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.MarginLevel}}</td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Free Margin</th>
+                                       
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.FreeMargin}}</td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Credit</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.Credit}}</td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Volume</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.Volume}}</td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Last Login Date</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.AssignedDate}}</td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Last Trade Date</th>
+                                        <td _ngcontent-ght-c4="" class="text-ellipsis1 ">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.LastTradeDate}}  </div>
+                                        </td>
+                                        <td _ngcontent-ght-c4=""></td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">IsOnline</th>
+                                        <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                          [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i></td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Demo</th>
+                                        <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                          [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i></td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Owner</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.RetentionOwner}}
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Disabled</th>
+                                        <td _ngcontent-ght-c4=""> <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                                          [ngStyle]="{'color': this.realTradeUsers?.AllowTrade ? 'green':'grey' }"></i></td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">LastDepositDate</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.LastDepositDate}}</td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Convertion Owner</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.ConvertionOwner}}</td>
+                                      
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">FtdDate</th>
+                                        <td _ngcontent-ght-c4="">{{this.realTradeUsers?.FTDDate}}</td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">FtdAmount</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.FtdAmount}} </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Email</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Email}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Phone </th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.Phone}}  </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Currency</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.CurrencyName}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">DepositCount </th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">{{this.realTradeUsers?.DepositCount}}  </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Desk</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> {{this.realTradeUsers?.Desk}} </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Tag </th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow">  </div>
+                                        </td>
+                                     </tr>
+                                     <tr _ngcontent-ght-c4="">
+                                        <th _ngcontent-ght-c4="" class="tabletxt">Status</th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> </div>
+                                        </td>
+                                        <th _ngcontent-ght-c4="" class="tabletxt"></th>
+                                        <td _ngcontent-ght-c4="">
+                                           <div _ngcontent-ght-c4="" class="valueshhow"> </div>
+                                        </td>
+                                     </tr>
+                                  </tbody>
+                               </table>
+                            </form>
+                         </div>
+                      </div>
+                   </div>
+                <!-----------editing------------>
+                <div _ngcontent-fnu-c10="" class="card-bodynew mb20" *ngIf = backmode>
+                  <div _ngcontent-fnu-c10="" class="card1 mb20 ">
+                     <div _ngcontent-fnu-c10="" class="card-header1 container" id="headingOne" role="tab">
+                        <h5 _ngcontent-fnu-c10="" class="mb-0">
+                           <a _ngcontent-fnu-c10="" aria-controls="collapseOne" aria-expanded="true" class="box-heading" data-toggle="">
+                              <h2 _ngcontent-fnu-c10="">General Info </h2>
+                           </a>
+                           <div _ngcontent-fnu-c10="" class="box-control pull-right">
+                              <div _ngcontent-fnu-c10="" class="edit-data-options"><a _ngcontent-fnu-c10="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="saveupdteDetails()"><i _ngcontent-fnu-c10="" class="fa fa-check dark">&nbsp;</i>Apply</a><a _ngcontent-fnu-c10="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="closeeditingmode()">Cancel</a></div>
+                           </div>
+                        </h5>
+                     </div>
+                     <div _ngcontent-fnu-c10="" aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel">
+                        <div _ngcontent-fnu-c10="" class="card-body11"></div>
+                     </div>
+                  </div>
+                  <form _ngcontent-fnu-c10="" novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid" [formGroup]="tradeaccountInfoForm">
+                     <div _ngcontent-fnu-c10="" class="container-fluid">
+                        <div _ngcontent-fnu-c10="" class="row">
+                           <table _ngcontent-fnu-c10="" class="table">
+                              <thead _ngcontent-fnu-c10="">
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">First Name</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="firstname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Last Name</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lastname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">                                    </td>
+                                 </tr>
+                              </thead>
+                              <tbody _ngcontent-fnu-c10="">
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">TP Account</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="tpaccount" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Group</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" onmousedown="return false" onselectstart="return false" formControlName="groupname"  type="text" ng-reflect-name="itemid">
+
+                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Leverage</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <select _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" data-container="body" data-live-search="true" formControlName="leveragename" id="aecf73213-ba89-9750-cbde-42984704b916" name="Department" tabindex="-98" ng-reflect-name="status">
+                                          <option _ngcontent-fnu-c10="">Select...</option>
+
+                                       </select>
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Margin Call</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="margincall" type="text" ng-reflect-name="phone"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Stop Out</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" appphonemask="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="stopout" type="text" ng-reflect-name="mobile"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Order Count</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="ordercount" type="text" ng-reflect-name="secondemail"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Min Deposit</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="mindeposit" type="text" ng-reflect-name="itemid"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Account ID</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="accountid" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="itemid">                  
+
+                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Allow Trade</th>
+                                    <td _ngcontent-llw-c2="" _ngcontent-fnu-c10=""><div _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switchboxtext" >No</label><input _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid"  formControlName="allowtrade" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-llw-c2="" _ngcontent-fnu-c10="" _ngcontent-vpp-c22="" class="switchboxtext" >Yes</label></div></div></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Registration Date</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="registrationdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="createddate"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Close Profit And Loss</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="closeprofitandloss" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Total Deposits</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="totaldeposits" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="modifieddate"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Total Withdrawals</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="totalwithdrawals" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Net Deposit</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="netdeposits" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Open Profit And Loss</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="openprofitandloss" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Commision</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="commission" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Equity</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="equity" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Balance</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="balance" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Margin Level</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="marginlevel" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Free Margin</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="freemargin" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Credit</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="credit" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Volume</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="volume" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Last Login Date</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lastlogindate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Last Trade Date</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lasttradedate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                   </tr>
+                                   <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">IsOnline</th>
+                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="">
+                                       <div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" disabled="" formControlName="isonline" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">Yes</label></div></div>
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Demo</th>
+                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="">
+                                       <div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" disabled="" formControlName="demo" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" disabledd="">Yes</label></div></div>
+                                    </td>
+                                   </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Owner</th>
+                                    <td _ngcontent-fnu-c10="">
+                                       <input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="owner" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="lastcommentdate">
+                                    </td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Disabled</th>
+                                    <td _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="">
+                                       <div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="checkbox-inline"><div _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_box box_1"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext" >No</label><input _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switch_1 ng-untouched ng-pristine ng-valid" formControlName="disabled" ng-reflect-is-disabled="" ng-reflect-name="ftd" type="checkbox"><label _ngcontent-hug-c2="" _ngcontent-fnu-c10="" _ngcontent-llw-c2="" _ngcontent-vpp-c22="" class="switchboxtext">Yes</label></div></div>
+                                    </td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">LastDepositDate</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="lastdepositdate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="hastasks"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Convertion Owner</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="convertionowner" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="taskcreateddate"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">FtdDate</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="ftddate" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="taskdate"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">FtdAmount</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control ng-untouched ng-pristine ng-valid" formControlName="ftdamount" type="text" ng-reflect-name="assigneddate"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Email</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="email" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="hasnotcompletedtasks"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Phone</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="phone" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="totaldeposits"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Currency</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="currency" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="ftdamount"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">	DepositCount</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="depositcount" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="totalwithdrawals"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Desk</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="desk" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="netdeposits"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Tag</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="tag" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="type"></td>
+                                 </tr>
+                                 <tr _ngcontent-fnu-c10="">
+                                    <th _ngcontent-fnu-c10="" class="tabletxt">Status</th>
+                                    <td _ngcontent-fnu-c10=""><input _ngcontent-fnu-c10="" class="form-control disabledd ng-untouched ng-pristine ng-valid" formControlName="status" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstregistrationdate"></td>
+                                    <th _ngcontent-fnu-c10="" class="tabletxt"></th>
+                                    <td _ngcontent-fnu-c10="">
+                                      </td>
+                                   
+                                 </tr>
+                                
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+                <!---------------------------------->
+                            </div>
+             <div _ngcontent-ght-c2="" class="card-bodynew mb20">
+               
+                   <div _ngcontent-ght-c5="" class="modal-header">
+                      <h4 _ngcontent-ght-c5="" class="modal-title pull-left"></h4>
+                      <!--bindings={
+                         "ng-reflect-ng-if": "false"
+                         }-->
+                   </div>
+                   <div _ngcontent-ght-c5="" class="card mb20">
+                      <div _ngcontent-ght-c5="" class="card-header1 container" id="headingTwo" role="tab">
+                         <h5 _ngcontent-ght-c5="" class="mb-0 mbt">
+                            <a _ngcontent-ght-c5="" aria-controls="collapseTwo" aria-expanded="true" class="box-heading" data-toggle="">
+                               <h2 _ngcontent-ght-c5=""> Comments </h2>
+                            </a>
+                            <div _ngcontent-ght-c5="" class="box-control pull-right">
+                               <a _ngcontent-ght-c5="" class="btn-type02 dim " href="javascript:void(0);"><i _ngcontent-ght-c5="" aria-hidden="true" class="fa fa-trash"></i> Delete all </a><a _ngcontent-ght-c5="" aria-controls="addNewComment" aria-expanded="false" class="btn-type02 collapsed" data-toggle="collapse" href="#addNewComment"><i _ngcontent-ght-c5="" aria-hidden="true" class="fa fa-plus"></i> Add </a><a _ngcontent-ght-c5="" aria-expanded="true" class="btn-type02 dropdown-toggle" data-toggle="dropdown" href="#"> All </a>
+                               <ul _ngcontent-ght-c5="" class="dropdown-menu dropdown-menu2">
+                                  <li _ngcontent-ght-c5=""><a _ngcontent-ght-c5="" href="javascript:void(0);" name="filterOption">All</a></li>
+                                  <li _ngcontent-ght-c5=""><a _ngcontent-ght-c5="" href="javascript:void(0);" name="filterOption">Last 5</a></li>
+                                  <li _ngcontent-ght-c5=""><a _ngcontent-ght-c5="" href="javascript:void(0);" name="filterOption">Mine</a></li>
+                               </ul>
+                            </div>
+                         </h5>
+                      </div>
+                      <div _ngcontent-ght-c5="" aria-labelledby="headingTwo" class="collapse show" id="collapseTwo" role="tabpanel">
+                         <div _ngcontent-ght-c5="" class="card-body"></div>
+                      </div>
+                   </div>
+                   <div _ngcontent-ght-c5="" aria-expanded="true" class="collapse addNewComment12 container" id="addNewComment">
+                      <form _ngcontent-ght-c5="" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                         <div _ngcontent-ght-c5="" class="comment">
+                            <div _ngcontent-ght-c5="" class="form-group">
+                      <form _ngcontent-ght-c5="" novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-valid"><textarea _ngcontent-ght-c5="" aria-required="true" class="form-control textarea-h01 ng-untouched ng-pristine ng-valid" formcontrolname="commentarea" name="CommentText" ng-reflect-name="commentarea"></textarea></form></div><div _ngcontent-ght-c5="" class="text-right borderbtm"><a _ngcontent-ght-c5="" aria-controls="addNewComment" aria-expanded="false" class="btn-type02 submit-button collapsed" data-toggle="collapse" href="#addNewComment" id="close-btn">Submit</a><a _ngcontent-ght-c5="" aria-controls="addNewComment" aria-expanded="true" class="btn-type02" data-toggle="collapse" href="#addNewComment"> Cancel </a></div></div></form>
+                   </div>
+                   <div _ngcontent-ght-c5="" class="comments-list container">
+                      <!--bindings={
+                         "ng-reflect-ng-if": "true"
+                         }-->
+                      <p _ngcontent-ght-c5="" class="comment-body ">No Comments</p>
+                      <!--bindings={
+                         "ng-reflect-ng-for-of": ""
+                         }-->
+                   </div>
+               
+             </div>
+           
+             <div _ngcontent-ght-c2="">
+                
+                   <div _ngcontent-ght-c9="" class="card-bodynew mb20">
+                      <div _ngcontent-ght-c9="" class="card1 mb20" id="tasks" style="padding: 15px;
+                         padding-left: 0;">
+                         <div _ngcontent-ght-c9="" class="card-header1 container" id="headingSeven" role="tab">
+                            <div _ngcontent-ght-c9="" class="box-heading" style="width:100%;">
+                               <div _ngcontent-ght-c9="" class="box-control pull-right">
+                                  <div _ngcontent-ght-c9="" class="records-control-switcher showrcrd" data-rule="count-record-selector" style="display: none;">
+                                     <label _ngcontent-ght-c9="">Records per page</label>
+                                     <select _ngcontent-ght-c9="" class="form-control" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c" name="RecordsPerPageSelector">
+                                        <option _ngcontent-ght-c9="" value="5" ng-reflect-value="5">5</option>
+                                        <option _ngcontent-ght-c9="" value="10" ng-reflect-value="10">10</option>
+                                        <option _ngcontent-ght-c9="" value="15" ng-reflect-value="15">15</option>
+                                        <option _ngcontent-ght-c9="" value="20" ng-reflect-value="20">20</option>
+                                        <option _ngcontent-ght-c9="" value="50" ng-reflect-value="50">50</option>
+                                        <option _ngcontent-ght-c9="" value="100" ng-reflect-value="100">100</option>
+                                     </select>
+                                  </div>
+                                  <a _ngcontent-ght-c9="" class="ico-add ico-sz3 showrcrd popupicon " data-rule="add-link" href="javascript:void(0);" style="display:none;"><i _ngcontent-ght-c9="" class="fa fa-plus"></i></a><a _ngcontent-ght-c9="" aria-controls="collapseSeven" aria-expanded="false" class="collapsed" data-toggle="collapse" href="#collapseSeven" id="taskss" style="color:#000;"><i _ngcontent-ght-c9="" class="fa fa-chevron-down collpsicon"></i></a>
+                               </div>
+                               <h2 _ngcontent-ght-c9="">Closed Orders</h2>
+                               <div _ngcontent-ght-c9="" class="records-control showrcrd" style="display: none;">Showing Records <a _ngcontent-ght-c9="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-ght-c9="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-ght-c9="" style="width: 30px;">1 - 1</span> of <span _ngcontent-ght-c9="" style="width: 20px;">1</span></div>
+                            </div>
+                         </div>
+                         <div _ngcontent-ght-c9="" aria-labelledby="headingSeven" class="collapse" id="collapseSeven" role="tabpanel">
+                            <div _ngcontent-ght-c9="" class="card-body">
+                               <div _ngcontent-ght-c9="" class="box-content">
+                                  <div _ngcontent-ght-c9="" class="table-type02 margin-bottom-0">
+                                     <div _ngcontent-ght-c9="" class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+                                        <table _ngcontent-ght-c9="" class="table-style01 dataTable">
+                                           <thead _ngcontent-ght-c9="">
+                                              <tr _ngcontent-ght-c9="" data-rule="titles">
+                                                 <th _ngcontent-ght-c9="">Order ID<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Instrument ID<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Buy<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Volume<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Open Price<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Close Price<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""><br _ngcontent-ght-c9="" class="visible-xs visible-sm visible-md"></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Open Date<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Close Date<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""><br _ngcontent-ght-c9="" class="visible-xs visible-sm visible-md"></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Stop Loss</th>
+                                                 <th _ngcontent-ght-c9="">Take Profit</th>
+                                                 <th _ngcontent-ght-c9="">Swap<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Commission<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Credit Spent<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Balance<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">TotalProfit<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9="">Close Reason<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c9=""><span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                            
+                                                </tr>
+                                           </thead>
+                                           <tfoot _ngcontent-ght-c9=""></tfoot>
+                                          <tbody><tr data-index="0" data-rule="body"><td style="max-width: 300px;"><div data-display-for="13_OrderNumber"><div data-display-for="_OrderNumber"></div></div></td><td style="max-width: 300px;"><div data-display-for="13_InstrumentId"><div class="text-ellipsis">BTCEUR</div></div></td><td style="max-width: 300px;"><div data-display-for="13_IsBuy"><div class="text-ellipsis">Buy</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Volume"><div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenPrice"><div class="text-ellipsis" data-field="OpenPrice" data-original-value="6460.37">6460.37</div></div></td><td style="max-width: 300px;"><div data-display-for="13_ClosePrice"></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenDate">12/12/2019 12:03:43 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_CloseDate">12/12/2019 2:40:56 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_StopLoss"><div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TakeProfit"><div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Swap"><div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Commission"><div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_SpentCredit"><div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Equity"><div class="text-ellipsis" data-field="Equity" data-original-value="1008.69662955" data-isformatted="true"> € 1'008.70</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TotalProfit"></div></td><td style="max-width: 300px;"><div data-display-for="13_CloseReason"><div class="text-ellipsis">Closed manually</div></div></td><td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td></tr><tr data-index="1" data-rule="body"><td style="max-width: 300px;"><div data-display-for="13_OrderNumber"><div data-display-for="_OrderNumber"></div></div></td><td style="max-width: 300px;"><div data-display-for="13_InstrumentId"><div class="text-ellipsis">WHEAT</div></div></td><td style="max-width: 300px;"><div data-display-for="13_IsBuy"><div class="text-ellipsis">Buy</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Volume"><div class="text-ellipsis" data-field="Volume" data-original-value="1">1.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenPrice"><div class="text-ellipsis" data-field="OpenPrice" data-original-value="524.86">524.86</div></div></td><td style="max-width: 300px;"><div data-display-for="13_ClosePrice"></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenDate">12/4/2019 12:30:51 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_CloseDate">12/4/2019 12:30:56 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_StopLoss"><div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TakeProfit"><div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Swap"><div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Commission"><div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_SpentCredit"><div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Equity"><div class="text-ellipsis" data-field="Equity" data-original-value="1016.93275" data-isformatted="true"> € 1'016.93</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TotalProfit"></div></td><td style="max-width: 300px;"><div data-display-for="13_CloseReason"><div class="text-ellipsis">Closed manually</div></div></td><td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td></tr><tr data-index="2" data-rule="body"><td style="max-width: 300px;"><div data-display-for="13_OrderNumber"><div data-display-for="_OrderNumber"></div></div></td><td style="max-width: 300px;"><div data-display-for="13_InstrumentId"><div class="text-ellipsis">NGAS</div></div></td><td style="max-width: 300px;"><div data-display-for="13_IsBuy"><div class="text-ellipsis">Buy</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Volume"><div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenPrice"><div class="text-ellipsis" data-field="OpenPrice" data-original-value="2.312">2.312</div></div></td><td style="max-width: 300px;"><div data-display-for="13_ClosePrice"></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenDate">12/4/2019 12:28:57 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_CloseDate">12/4/2019 12:30:42 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_StopLoss"><div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TakeProfit"><div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Swap"><div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Commission"><div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_SpentCredit"><div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Equity"><div class="text-ellipsis" data-field="Equity" data-original-value="1001.31275" data-isformatted="true"> € 1'001.31</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TotalProfit"></div></td><td style="max-width: 300px;"><div data-display-for="13_CloseReason"><div class="text-ellipsis">Closed manually</div></div></td><td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td></tr><tr data-index="3" data-rule="body"><td style="max-width: 300px;"><div data-display-for="13_OrderNumber"><div data-display-for="_OrderNumber"></div></div></td><td style="max-width: 300px;"><div data-display-for="13_InstrumentId"><div class="text-ellipsis">DOW</div></div></td><td style="max-width: 300px;"><div data-display-for="13_IsBuy"><div class="text-ellipsis">Sell</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Volume"><div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenPrice"><div class="text-ellipsis" data-field="OpenPrice" data-original-value="27613.95">27613.95</div></div></td><td style="max-width: 300px;"><div data-display-for="13_ClosePrice"></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenDate">12/4/2019 12:28:15 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_CloseDate">12/4/2019 12:29:11 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_StopLoss"><div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TakeProfit"><div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Swap"><div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Commission"><div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_SpentCredit"><div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Equity"><div class="text-ellipsis" data-field="Equity" data-original-value="991.80662955" data-isformatted="true"> € 991.81</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TotalProfit"></div></td><td style="max-width: 300px;"><div data-display-for="13_CloseReason"><div class="text-ellipsis">Closed manually</div></div></td><td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td></tr><tr data-index="4" data-rule="body"><td style="max-width: 300px;"><div data-display-for="13_OrderNumber"><div data-display-for="_OrderNumber"></div></div></td><td style="max-width: 300px;"><div data-display-for="13_InstrumentId"><div class="text-ellipsis">CL</div></div></td><td style="max-width: 300px;"><div data-display-for="13_IsBuy"><div class="text-ellipsis">Buy</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Volume"><div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenPrice"><div class="text-ellipsis" data-field="OpenPrice" data-original-value="58.58">58.58</div></div></td><td style="max-width: 300px;"><div data-display-for="13_ClosePrice"></div></td><td style="max-width: 300px;"><div data-display-for="13_OpenDate">11/27/2019 1:25:08 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_CloseDate">12/4/2019 12:29:09 PM</div></td><td style="max-width: 300px;"><div data-display-for="13_StopLoss"><div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TakeProfit"><div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Swap"><div class="text-ellipsis" data-field="Swap" data-original-value="0">0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Commission"><div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_SpentCredit"><div class="text-ellipsis" data-field="SpentCredit" data-original-value="0" data-isformatted="true"> € 0.00</div></div></td><td style="max-width: 300px;"><div data-display-for="13_Equity"><div class="text-ellipsis" data-field="Equity" data-original-value="991.94657556" data-isformatted="true"> € 991.95</div></div></td><td style="max-width: 300px;"><div data-display-for="13_TotalProfit"></div></td><td style="max-width: 300px;"><div data-display-for="13_CloseReason"><div class="text-ellipsis">Closed manually</div></div></td><td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-reopen dh" title="Reopen">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td></tr></tbody>
+                                        </table>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+               
+             </div>
+             <!--bindings={
+                "ng-reflect-ng-if": "false"
+                }-->
+             <div _ngcontent-ght-c2="">
+               
+                   <div _ngcontent-ght-c11="" class="card-bodynew mb20">
+                      <div _ngcontent-ght-c11="" class="card1 mb20" id="tasks" style="padding: 15px;
+                         padding-left: 0;">
+                         <div _ngcontent-ght-c11="" class="card-header1 container" id="headingEight" role="tab">
+                            <div _ngcontent-ght-c11="" class="box-heading" style="width:100%;">
+                               <div _ngcontent-ght-c11="" class="box-control pull-right">
+                                  <div _ngcontent-ght-c11="" class="records-control-switcher showrcrdemail" data-rule="count-record-selector" style="display: none;">
+                                     <label _ngcontent-ght-c11="">Records per page</label>
+                                     <select _ngcontent-ght-c11="" class="form-control" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c" name="RecordsPerPageSelector">
+                                        <option _ngcontent-ght-c11="" value="5" ng-reflect-value="5">5</option>
+                                        <option _ngcontent-ght-c11="" value="10" ng-reflect-value="10">10</option>
+                                        <option _ngcontent-ght-c11="" value="15" ng-reflect-value="15">15</option>
+                                        <option _ngcontent-ght-c11="" value="20" ng-reflect-value="20">20</option>
+                                        <option _ngcontent-ght-c11="" value="50" ng-reflect-value="50">50</option>
+                                        <option _ngcontent-ght-c11="" value="100" ng-reflect-value="100">100</option>
+                                     </select>
+                                  </div>
+                                  <a _ngcontent-ght-c11="" class="ico-add ico-sz3 showrcrdemail popupicon " data-rule="add-link" href="javascript:void(0);" style="display:none;"><i _ngcontent-ght-c11="" class="fa fa-plus"></i></a><a _ngcontent-ght-c11="" aria-controls="collapseEight" aria-expanded="false" class="collapsed" data-toggle="collapse" href="#collapseEight" id="emailtoggle" style="color:#000;"><i _ngcontent-ght-c11="" class="fa fa-chevron-down collpsicon"></i></a>
+                               </div>
+                               <h2 _ngcontent-ght-c11="">OpenedAndPendingOrders</h2>
+                               <div _ngcontent-ght-c11="" class="records-control showrcrdemail" style="display: none;">Showing Records <a _ngcontent-ght-c11="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-ght-c11="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-ght-c11="" style="width: 30px;">1 - 1</span> of <span _ngcontent-ght-c11="" style="width: 20px;">1</span></div>
+                            </div>
+                         </div>
+                         <div _ngcontent-ght-c11="" aria-labelledby="headingEight" class="collapse" id="collapseEight" role="tabpanel">
+                            <div _ngcontent-ght-c11="" class="card-body">
+                               <div _ngcontent-ght-c11="" class="box-content">
+                                  <div _ngcontent-ght-c11="" class="table-type02 margin-bottom-0">
+                                     <div _ngcontent-ght-c11="" class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+                                        <table _ngcontent-ght-c11="" class="table-style01 dataTable">
+                                           <thead _ngcontent-ght-c11="">
+                                              <tr _ngcontent-ght-c11="" data-rule="titles">
+                                                 <th _ngcontent-ght-c11="">Order ID<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">	TP Account	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Instrument ID	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">OrderType	<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Volume<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Open Date<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                
+                                                 <th _ngcontent-ght-c11="">Open Price<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Swap<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Take Profit<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Stop Loss<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Margin<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Commission<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Current Price<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">Profit<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">TotalProfit<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                 <th _ngcontent-ght-c11="">EntityType<span _ngcontent-ght-c11="" class="fixel"><span _ngcontent-ght-c11=""><span _ngcontent-ght-c11=""></span></span></span></th>
+                                                
+                                               
+                                               
+                                                </tr>
+                                           </thead>
+                                           <tfoot _ngcontent-ght-c11=""></tfoot>
+                                           <tbody>
+                                             <tr data-index="0" data-rule="body">
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OrderNumber">
+                                                      <div data-display-for="_OrderNumber">
+                                                         <div class="text-ellipsis"><a href="javascript:void(0);"><span>67191</span></a></div>
+                                                      </div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_AccountId">
+                                                      <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=9&amp;itemId=102921"><span>102921</span></a></div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_InstrumentId">
+                                                      <div class="text-ellipsis">XAUUSD</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OrderType">
+                                                      <div class="text-ellipsis">Sell</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Volume">
+                                                      <div class="text-ellipsis" data-field="Volume" data-original-value="0.01">0.01</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OpenDate">12/27/2019 12:42:21 PM</div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_OpenPrice">
+                                                      <div class="text-ellipsis" data-field="OpenPrice" data-original-value="1510.99">1510.99</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Swap">
+                                                      <div class="text-ellipsis color06" data-field="Swap" data-original-value="-2.19629541">-2.20</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_TakeProfit">
+                                                      <div class="text-ellipsis" data-field="TakeProfit" data-original-value="0">0</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_StopLoss">
+                                                      <div class="text-ellipsis" data-field="StopLoss" data-original-value="0">0</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Margin">
+                                                      <div class="text-ellipsis" data-field="Margin" data-original-value="54.2613973">54.26</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Commission">
+                                                      <div class="text-ellipsis" data-field="Commission" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_CurrentPrice">
+                                                      <div class="text-ellipsis" data-field="CurrentPrice" data-original-value="1961.57">1961.57</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_Profit">
+                                                      <div class="text-ellipsis color06" data-field="Profit" data-original-value="-382.65817409">-382.66</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_TotalProfit">
+                                                      <div class="text-ellipsis color06" data-field="TotalProfit" data-original-value="-384.8544695" data-isformatted="true">- € 384.85</div>
+                                                   </div>
+                                                </td>
+                                                <td style="max-width: 300px;">
+                                                   <div data-display-for="57_EntityType">
+                                                      <div class="text-ellipsis">Open Order</div>
+                                                   </div>
+                                                </td>
+                                                <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-edit" title="Edit">&nbsp;</a><a href="javascript:void(0);" class="ico-sz3 ico-no3" title="Close">&nbsp;</a></td>
+                                             </tr>
+                                          </tbody>
+                                        </table>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+              
+             </div>
+             <!--bindings={
+                "ng-reflect-ng-if": "false"
+                }--><!--bindings={
+                "ng-reflect-ng-if": "false"
+                }-->
+                <div _ngcontent-ght-c2="">
+                
+                  <div _ngcontent-ght-c9="" class="card-bodynew mb20">
+                     <div _ngcontent-ght-c9="" class="card1 mb20" id="tasks" style="padding: 15px;
+                        padding-left: 0;">
+                        <div _ngcontent-ght-c9="" class="card-header1 container" id="headingSeven1" role="tab">
+                           <div _ngcontent-ght-c9="" class="box-heading" style="width:100%;">
+                              <div _ngcontent-ght-c9="" class="box-control pull-right">
+                                 <div _ngcontent-ght-c9="" class="records-control-switcher showrcrd" data-rule="count-record-selector" style="display: none;">
+                                    <label _ngcontent-ght-c9="">Records per page</label>
+                                    <select _ngcontent-ght-c9="" class="form-control" data-container="body" id="84a83566-f255-f870-c053-05a61106d08c" name="RecordsPerPageSelector">
+                                       <option _ngcontent-ght-c9="" value="5" ng-reflect-value="5">5</option>
+                                       <option _ngcontent-ght-c9="" value="10" ng-reflect-value="10">10</option>
+                                       <option _ngcontent-ght-c9="" value="15" ng-reflect-value="15">15</option>
+                                       <option _ngcontent-ght-c9="" value="20" ng-reflect-value="20">20</option>
+                                       <option _ngcontent-ght-c9="" value="50" ng-reflect-value="50">50</option>
+                                       <option _ngcontent-ght-c9="" value="100" ng-reflect-value="100">100</option>
+                                    </select>
+                                 </div>
+                                 <a _ngcontent-ght-c9="" class="ico-add ico-sz3 showrcrd popupicon " data-rule="add-link" href="javascript:void(0);" style="display:none;"><i _ngcontent-ght-c9="" class="fa fa-plus"></i></a><a _ngcontent-ght-c9="" aria-controls="collapseSeven1" aria-expanded="false" class="collapsed" data-toggle="collapse" href="#collapseSeven1" id="taskss" style="color:#000;"><i _ngcontent-ght-c9="" class="fa fa-chevron-down collpsicon"></i></a>
+                              </div>
+                              <h2 _ngcontent-ght-c9="">Closed Orders</h2>
+                              <div _ngcontent-ght-c9="" class="records-control showrcrd" style="display: none;">Showing Records <a _ngcontent-ght-c9="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-ght-c9="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-ght-c9="" style="width: 30px;">1 - 1</span> of <span _ngcontent-ght-c9="" style="width: 20px;">1</span></div>
+                           </div>
+                        </div>
+                        <div _ngcontent-ght-c9="" aria-labelledby="headingSeven1" class="collapse" id="collapseSeven1" role="tabpanel">
+                           <div _ngcontent-ght-c9="" class="card-body">
+                              <div _ngcontent-ght-c9="" class="box-content">
+                                 <div _ngcontent-ght-c9="" class="table-type02 margin-bottom-0">
+                                    <div _ngcontent-ght-c9="" class="scroll-area" data-rule="scroll-area" style="min-height: 120px; max-height: 500px;">
+                                       <table _ngcontent-ght-c9="" class="table-style01 dataTable">
+                                          <thead _ngcontent-ght-c9="">
+                                             <tr _ngcontent-ght-c9="" data-rule="titles">
+                                                <th _ngcontent-ght-c9="">Item ID<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Amount<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Date<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Trading Environment<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Transaction Type<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Currency<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""><br _ngcontent-ght-c9="" class="visible-xs visible-sm visible-md"></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">Transaction Approval	<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""></span></span></span></th>
+                                                <th _ngcontent-ght-c9="">FTD<span _ngcontent-ght-c9="" class="fixel"><span _ngcontent-ght-c9=""><span _ngcontent-ght-c9=""><br _ngcontent-ght-c9="" class="visible-xs visible-sm visible-md"></span></span></span></th>
+                                               
+                                               </tr>
+                                          </thead>
+                                          <tfoot _ngcontent-ght-c9=""></tfoot>
+                                         <tbody><tr data-index="0" data-rule="body">
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_ItemId">
+                                                <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=14&amp;itemId=41156"><span>41156</span></a></div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_Equity">
+                                                <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_Date">11/22/2019 12:32:34 PM</div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_TradingEnvironment">
+                                                <div class="text-ellipsis">Real</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_TransactionType">
+                                                <div class="text-ellipsis">Deposit</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_Currency">
+                                                <div class="text-ellipsis">EUR</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_TransactionApproval">
+                                                <div class="text-ellipsis">Approved</div>
+                                             </div>
+                                          </td>
+                                          <td style="max-width: 300px;">
+                                             <div data-display-for="14_FirstDeposit">
+                                                <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                             </div>
+                                          </td>
+                                          <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-delete">&nbsp;</a></td>
+                                       </tr>
+                                       </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+              
+            </div>
+             <!--bindings={
+                "ng-reflect-ng-if": "false"
+                }--><!--bindings={
+                "ng-reflect-ng-if": "false"
+                }-->
+          </div>
+       </div>
+       <div _ngcontent-ght-c2="" class="col-xs-3 col-md-4">
+          <div _ngcontent-ght-c2="" id="sidebar">
+             <div _ngcontent-ght-c2="" class="sidenav" style="display: block;">
+                <h2 _ngcontent-ght-c2="">Actions</h2>
+                <ul _ngcontent-ght-c2="" style="display: block;">
+                   <!--bindings={
+                      "ng-reflect-ng-if": "true"
+                      }-->
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
+                   <!--bindings={
+                      "ng-reflect-ng-if": "false"
+                      }-->
+                </ul>
+                <ul _ngcontent-ght-c2="" style="display: block;">
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-refresh" style="font-size: 21px;">&nbsp;</i>Add task</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-envelope">&nbsp;</i>Send email</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-history">&nbsp;</i>View history</a></li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+<!-------------------------------------------------->
+<div _ngcontent-jpx-c9="" style="margin-bottom: 52px;"></div>
+<app-footer></app-footer>

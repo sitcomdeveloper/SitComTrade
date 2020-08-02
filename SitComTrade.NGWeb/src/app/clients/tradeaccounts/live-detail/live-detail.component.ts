@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GroupsService } from 'src/app/settings/groups/groups.service';
 import { ClientsService } from 'src/app/header/clients/clients.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { LivepopupsComponent } from './livepopups/livepopups.component';
 
 @Component({
   selector: 'app-live-detail',
@@ -13,49 +16,162 @@ export class LiveDetailComponent implements OnInit {
   editMode = false;
   normalMode = true;
   groupDetails: any;
-  fetchTradeDetails: any;
-
-  constructor(private route: ActivatedRoute, private groupService: GroupsService, private clientsservice: ClientsService) { }
-
+  realTradeUsers: any;
+  Leverage: any;
+  tradeaccountInfoForm: FormGroup
+  updtaeddetails: any;
+  
+  
+  
+  constructor(private route: ActivatedRoute, private groupService: GroupsService, private clientsservice: ClientsService, private fb: FormBuilder, private modalService: BsModalService) { }
+  bsModalRef: BsModalRef;
   ngOnInit() {
+    this.tradeaccountInfoForm = this.fb.group({
+      status: [''],
+      leveragename: [''],
+      groupname: [''],
+      stopout: [''],
+      margincall: [''],
+      mindeposit: [''],
+    })
     // for getting data on frame
     const tradedetails = +this.route.snapshot.paramMap.get('trdingDtls');
     this.tradedetail = tradedetails;
-    const obj = {
-      tradedetails,
-      TypeName : 'Real',
-      OwnerId  : 1
-    };
-    this.clientsservice.getTradeUsers(obj).subscribe(res => {
-      this.fetchTradeDetails = res;
-      // console.log('tradeusers', res);
+    this.clientsservice.getTradeAccountdetailsbyId(tradedetails).subscribe(trdeusersDetails => {
+      this.realTradeUsers = trdeusersDetails;
+      // console.log('realTradeUsers', trdeusersDetails);
+      this.tradeaccountInfoForm.patchValue({
+        groupname: this.realTradeUsers.GroupName,
+        leveragename: this.realTradeUsers.LeverageName,
+        margincall: this.realTradeUsers.MarginCall,
+        stopout: this.realTradeUsers.StopOut,
+        mindeposit: this.realTradeUsers.MinDeposit,
+       // status: this.realTradeUsers.,
+      })
      });
+     this.getLeverages();
   }
   // pencil
-  showhide() {
+  showhide() {  
     this.normalMode = false;
     this.editMode = true;
   }
   // Apply
   closeshowhide() {
+    const modifyTradeAccount = {
+      Id: this.realTradeUsers.Id,
+      TPAccountNumber: this.realTradeUsers.TPAccountNumber,
+      FTD: this.realTradeUsers.FTD,
+      FTDDate: this.realTradeUsers.FTDDate,
+      FtdAmount: this.realTradeUsers.FtdAmount,
+      LastTradeDate: this.realTradeUsers.LastTradeDate,
+      LastDepositDate: this.realTradeUsers.LastDepositDate,
+      GroupId: this.realTradeUsers.GroupId,
+      GroupName: this.realTradeUsers.GroupName,
+      ISendEmail: this.realTradeUsers.ISendEmail,
+      CurrencyId: this.realTradeUsers.CurrencyId,
+      CurrencyName: this.realTradeUsers.CurrencyName,
+      InitialDeposit: this.realTradeUsers.InitialDeposit,
+      StopOut: this.tradeaccountInfoForm.value.stopout,
+      MarginCall: this.tradeaccountInfoForm.value.margincall,
+      OrderCount: this.realTradeUsers.OrderCount,
+      MinDeposit: this.tradeaccountInfoForm.value.mindeposit,
+      CloseProfit: this.realTradeUsers.CloseProfit,
+      CloseLoss: this.realTradeUsers.CloseLoss,
+      TotalDeposit: this.realTradeUsers.TotalDeposit,
+      TotalWithdrawal: this.realTradeUsers.TotalWithdrawal,
+      NetDeposit: this.realTradeUsers.NetDeposit,
+      OpenProfit: this.realTradeUsers.OpenProfit,
+      OpenLoss: this.realTradeUsers.OpenLoss,
+      Commission: this.realTradeUsers.Commission,
+      Equity: this.realTradeUsers.Equity,
+      Balance: this.realTradeUsers.Balance,
+      MarginLevel: this.realTradeUsers.MarginLevel,
+      FreeMargin: this.realTradeUsers.FreeMargin,
+      Credit: this.realTradeUsers.Credit,
+      Volume: this.realTradeUsers.Volume,
+      AllowTrade: this.realTradeUsers.AllowTrade,
+      DepositCount: this.realTradeUsers.DepositCount,
+      UserId: this.realTradeUsers.UserId,
+      ClientId: this.realTradeUsers.ClientId,
+      AccountId: this.realTradeUsers.AccountId,
+    }
+    this.clientsservice.updtTradeAccount(modifyTradeAccount).subscribe(updtedtradeAccount => {
+      this.updtaeddetails = updtedtradeAccount;
+      // console.log('updtaeddetails', updtedtradeAccount);
+      this.afterupdate();
+    })
     this.normalMode = true;
     this.editMode = false;
   }
+  afterupdate() {
+    this.clientsservice.getTradeAccountdetailsbyId( this.tradedetail).subscribe(trdeusersDetails => {
+      this.realTradeUsers = trdeusersDetails;
+  })
+}
   // cancel
   cancel() {
     this.normalMode = true;
     this.editMode = false;
   }
-  // tradeDetails() {
-  //   const obj = {
-  //     TypeName : 'Real',
-  //     OwnerId  : 1
-  //   };
-  //   this.clientsservice.getTradeUsers(obj).subscribe(res => {
-  //    this.fetchTradeDetails = res.reverse();
-  //    this.tradeAccountLength = res.length;
-  //    console.log('tradeusers', res);
+  // get all leverages
+  getLeverages() {
+    this.groupService.getAllLverages().subscribe(rspnse => {
+      this.Leverage = rspnse;
+    });
+  }
+  // popups
+  opendepositpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      deposit: 'deposit'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
   //   });
-  // }
-
+   }
+   openwithdrawpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      withdraw: 'withdraw'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
+   opencreditinpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      creditin: 'creditin'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
+   opencreditoutpopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      // for div close or hide
+      creditout: 'creditout'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+   }
 }
+

@@ -50,6 +50,7 @@
     <Compile Include="Services\InstrumentService.cs" />
     <Compile Include="Services\IPWhiteListService.cs" />
     <Compile Include="Services\SenderSettingService.cs" />
+    <Compile Include="Services\TradeAccountService.cs" />
     <Compile Include="Services\TradeGroupService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,308 @@
+.main-holder {
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.account-panel .main-holder>div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 80px;
+}
+
+.account-panel .account-main-details {
+    background: #115a96;
+    min-width: 435px;
+    padding: 10px 30px;
+    color: #88bdec;
+    -webkit-box-shadow: 10px 0 20px 0 rgba(0,0,0,.075);
+    -moz-box-shadow: 10px 0 20px 0 rgba(0,0,0,.075);
+    box-shadow: 10px 0 20px 0 rgba(0,0,0,.075);
+}
+.account-panel .account-main-details p {
+    margin: 0;
+}
+.account-panel .account-main-details h2 {
+    font: 30px/38px Poppins;
+    margin: 0;
+    color: #fff;
+}
+.account-panel .main-holder>div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 80px;
+}
+
+.account-panel .account-details {
+    display: table;
+    padding: 15px 0;
+}
+.main-holder:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.account-nav-panel {
+    background: #1566aa;
+}
+.main-holder {
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.account-switcher {
+    position: relative;
+    left: 15px;
+    float: right;
+}
+.account-switcher>ul {
+    position: relative;
+    float: left;
+}
+
+.account-nav-panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.account-switcher>ul>li:first-child {
+    border-width: 0;
+}
+.account-switcher>ul>li {
+    float: left;
+    border: 1px solid #155d99;
+    border-width: 0 0 0 1px;
+}
+.account-switcher>ul>li>a {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+  
+}
+.no-events {
+    pointer-events: none;
+}
+.account-nav ul li a {
+    position: relative;
+    margin: 0 25px 0 0;
+    color: #8ec8f7;background: #1566aa;
+}
+.disabled {
+    opacity: .5;
+}
+.account-nav ul li {
+    display: inline-block;
+    padding: 0 20px 0 0;
+}
+.account-nav ul li a {
+    position: relative;
+    margin: 0 25px 0 0;
+    color: #8ec8f7;
+}
+.subheader {
+    height: auto!important;padding: 0;
+}
+.page-prev {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    color: #fff;
+    overflow: hidden;
+    background: #0c4c82;
+}
+.subheader a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+}
+.scroll-area {
+    overflow: auto;
+    position: relative;
+}
+a.ico-sz3.ico-reopen.dark:hover, a.ico-sz3.ico-reopen.dh:hover {
+    background-position: -320px -500px;
+}
+
+a.ico-sz3.ico-reopen:hover {
+    background-position: -320px -460px;
+}
+.ico-sz3.ico-reopen {
+    background-position: -320px -440px;
+}
+[class*=ico-] {
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    background: url(/assets/images/sprite.png) -9999px no-repeat;
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+}
+.table-style01 td [class*=ico-]+.custom-close, .table-style01 td [class*=ico-]+[class*=ico-] {
+    margin: 0 0 0 15px;
+}
+
+a.ico-sz3.ico-no2 {
+    background-position: -217px -460px;
+}
+h5.mb-0 {
+    padding-top: 22px;
+}
+.table tr {
+    border-top: 1px solid #dee2e6;
+}
+.table td, .table th {
+    vertical-align: middle;
+    border: none!important;
+}
+.btn-type01 {
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: #8da5ba;
+    font-size: 16px;
+    background: 0!important;
+}
+.comments-list .comment.editing .edit-options, .comments-list .comment:hover .comment-controls {
+    display: block;
+}
+.comment:hover .comment-controls {
+    display: block;
+}
+.comments-list .comment.editing .comment-body.form-control {
+    border-color: #dde7f9;
+    height: auto;
+}
+.editable pre
+{
+    border-color: #dde7f9;
+    height: auto;
+    width: 100%;
+    z-index: 9999;
+    border: 1px solid #000;
+}
+.comments pre.comment-body {
+    background: 0 0;
+    padding: 0;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    font: 13px/1.53845 Poppins,Arial,sans-serif;
+    color: #45596a;
+}
+.comment-details {
+    font-size: 12px;
+    color: #b1c3dd;    
+}
+.comment-details span{
+       padding: 0 15px 0 0;
+    display:inline-block;
+}
+.mt5 {
+    margin-top: 5px;
+}
+.comments .comment-details .edited>*, .comments .comment-details>* {
+    padding: 0 15px 0 0;
+    display: inline-block;
+}
+
+.no-events {
+    pointer-events: none;
+}
+p.comment-body {
+    text-align: center;
+    padding-bottom: 19px;
+    font-weight: 500;
+    color: grey;
+    font-size: 16px;
+}
+a.btn-type02 {
+    padding: 5px 15px;
+    border: 1px solid #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1.4166666;
+    color: #8da5ba;
+    min-width: 75px;
+    margin-right: 6px;
+    background:0,0;
+}
+
+.comments .comment:first-child {
+    border-width: 0;
+}
+.comments-list .comment {
+    padding: 20px 45px 15px 10px;
+}
+.comments .comment {
+    border: 1px solid #d5e1ea;
+    border-width: 1px 0 0;
+    padding: 20px 0 15px;
+    position: relative;
+}
+.comment
+{
+    position:relative;
+}
+.comment-controls>a>i
+{
+    color:rgb(138, 132, 132);
+    width: 20px;
+    height: 20px;
+    font-size:13px;
+}
+.comment-controls {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    text-align: right;
+}
+.borderbtm {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 17px;
+}.box-control>.dropdown-menu {
+    margin: 10px 0 0;
+}
+.dropdown-menu2>li:first-child>a {
+    border-radius: 15px 15px 0 0;
+}
+
+.dropdown-menu2>li>a {
+    color: #8da5ba;
+    padding: 5px 30px!important;
+    text-align: right!important;
+    line-height: 1.53845;
+}
+.dropdown-menu2 {
+    border-color: #e0e5ee;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-top: 10px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.15);
+}
+.pull-right>.dropdown-menu {
+    /* right: 0; */
+    left: 0;
+}
+.ico-sz3.ico-edit {
+    background-position: 0 -440px;
+}
+.ico-sz3.ico-no3 {
+    background-position: -300px -440px;
+}
+.ico-sz2.ico-status-ok {
+    background-position: -180px -325px;
+}
+.ico-sz3.ico-delete {
+    background-position: -180px -440px;
+}
+.ico-sz3 {
+    width: 20px!important;
+    height: 20px!important;
+}

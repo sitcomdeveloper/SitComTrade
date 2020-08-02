@@ -84,22 +84,22 @@
            
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-toggle="tooltip" title="TP Account"><span>TP Account</span></div>
+                    <div class="text-ellipsis"  title="TP Account"><span tooltip="TP Account">TP Account</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-toggle="tooltip" title="Account ID"><span>Account ID</span></div>
+                    <div class="text-ellipsis"  title="Account ID"><span tooltip="Account ID">Account ID</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="First Name"><span>First Name</span></div>
+                    <div class="text-ellipsis" data-original-title=""  title="First Name"><span tooltip="First Name">First Name</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="Last Name"><span>Last Name</span></div>
+                    <div class="text-ellipsis" data-original-title=""  title="Last Name"><span tooltip="Last Name">Last Name</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
@@ -115,32 +115,32 @@
             
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-toggle="tooltip" title="Leverage"><span>Leverage</span></div>
+                    <div class="text-ellipsis"  title="Leverage"><span tooltip="Leverage">Leverage</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-toggle="tooltip" title="Stop Out"><span>Stop Out</span></div>
+                    <div class="text-ellipsis"  title="Stop Out"><span tooltip="Stop Out">Stop Out</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-toggle="tooltip" title="Min Deposit"><span>Min Deposit</span></div>
+                    <div class="text-ellipsis"  title="Min Deposit"><span tooltip="Min Deposit">Min Deposit</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-toggle="tooltip" title="Allow Trade"><span>Allow Trade</span></div>
+                    <div class="text-ellipsis"  title="Allow Trade"><span tooltip="Allow Trade">Allow Trade</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="Registration Date"><span>Registration Date</span></div>
+                    <div class="text-ellipsis" data-original-title=""  title="Registration Date"><span tooltip="Registration Date">Registration Date</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
                 <div class="email-cell-content">
-                    <div class="text-ellipsis" data-original-title="" data-toggle="tooltip" title="Close Profit and Loss"><span>Close Profit and Loss</span></div>
+                    <div class="text-ellipsis" data-original-title=""  title="Close Profit and Loss"><span tooltip="Close Profit and Loss">Close Profit and Loss</span></div>
                 </div>
             </th>
             <th class="email-header-cell email-header-sortable email-header-sort email-header-sort-asc" >
@@ -309,119 +309,128 @@
          
           <td class="email-cell" >
               <div class="email-cell-content">
-                  <div class="text-ellipsis" data-original-title="" title="">
-                    <a href="">
+                  <div class="text-ellipsis" data-original-title="" title="" (click)="movetoTradeaccountInfo(item.Id)">
+                    <a href="javascript:void(0);">{{item?.TPAccountNumber}}
                       <span></span></a></div>
               </div>
           </td>
           <td class="email-cell" >
               <div class="email-cell-content">
                   <div data-display-for="27_FirstName">
-                      <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title="" title="" tooltip="AC456" (click)="moveToInfoPage(item.Id)"><a href="javascript:void(0);">AC456</a></div>
+                      <div class="text-ellipsis" data-field="FirstName" data-original-value="MASSIMO" data-original-title="" title="" tooltip="AC456" (click)="moveToInfoPage(item.Id)">
+                          <a href="javascript:void(0);">{{item?.AccountId}}</a>
+                        </div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell" >
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_LastName">
-                      <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA" tooltip="{{item.FirstName}}">{{item.FirstName}}</div>
+                      <div class="text-ellipsis" data-field="LastName" data-original-value="ZIZZA" tooltip="{{item.FirstName}}">{{item?.FirstName}}</div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left" >
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_Country">
-                      <div class="text-ellipsis" tooltip="{{item.LastName}}">{{item.LastName}}</div>
+                      <div class="text-ellipsis" tooltip="{{item?.LastName}}">{{item?.LastName}}</div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell" >
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_Email">
-                      <div class="text-ellipsis" data-original-title="" title="" tooltip="{{item.Email}}"><a href="mailto:{{item.Email}}"><span>{{item.Email}}</span></a></div>
+                      <div class="text-ellipsis" data-original-title="" title="" tooltip="{{item.Email}}"><a href="mailto:{{item?.Email}}"><span>{{item?.Email}}</span></a></div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left">
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_Type">
-                      <a href="javascript:void(0);"><div class="text-ellipsis" tooltip="{{item.GroupName}}" (click)="getGeneralInfo(group.GroupId)" >{{item.GroupName}}</div></a>
+                      <a href="javascript:void(0);"><div class="text-ellipsis" tooltip="{{item.GroupName}}" (click)="getGeneralInfo(group.GroupId)" >{{item?.GroupName}}</div></a>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell" >
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_Phone">
-                      <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title="" title=""></div>
+                      <div class="text-ellipsis" data-field="Phone" data-original-value="3295385412" data-original-title="" title="">{{item?.LeverageName}}</div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left" >
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_OwnerId">
-                      <div class="text-ellipsis" data-original-title="" title=""></div>
+                      <div class="text-ellipsis" data-original-title="" title="">{{item?.StopOut}}</div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell jsgrid-align-left" >
               <div class="jsgrid-email-cell-content">
                   <div data-display-for="27_StatusId">
-                      <div class="text-ellipsis" data-original-title="" title=""></div>
+                      <div class="text-ellipsis" data-original-title="" title="">{{item?.MinDeposit}}</div>
                   </div>
               </div>
           </td>
           <td class="jsgrid-cell" style="width:115px;">
               <div class="jsgrid-email-cell-content">
-                  <div data-display-for="27_CreatedDate"></div>
-              </div>
-          </td>
-          <td class="jsgrid-cell" >
-              <div class="jsgrid-email-cell-content">
-                  <div data-display-for="27_CampaignId">
-                      <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff"></div>
+                  <div data-display-for="27_CreatedDate">
+                    <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                    [ngStyle]="{'color': item.AllowTrade ? 'green':'grey' }"></i>
                   </div>
               </div>
           </td>
+ 
           
-          <td class="" >
-              <div class="">
-                  <div data-display-for="27_HasDeposit">
-                      <div><i class="ico-sz2 ico-status"></i></div>
-                  </div>
-              </div>
-          </td>
+          <td class="jsgrid-cell" >
+            <div class="jsgrid-email-cell-content">
+                <div data-display-for="27_CampaignId">
+                    <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{item?.FirstRegistrationDate}}</div>
+                </div>
+            </div>
+        </td>
+        <td class="jsgrid-cell" >
+            <div class="jsgrid-email-cell-content">
+                <div data-display-for="27_CampaignId">
+                    <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{item?.CloseLoss}}</div>
+                </div>
+            </div>
+        </td>     
         
           <td class="" >
               <div class="">
                   <div data-display-for="27_DeskId">
-                      <div class="text-ellipsis"></div>
+                      <div class="text-ellipsis">
+                        <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true"
+                        [ngStyle]="{'color': item.AllowTrade ? 'green':'grey' }"></i>
+                      </div>
                   </div>
               </div>
           </td>
-          <td class="" >
-            <div class="">
-                <div data-display-for="27_DeskId">
-                    <div class="text-ellipsis"></div>
+          <td class="jsgrid-cell" >
+            <div class="jsgrid-email-cell-content">
+                <div data-display-for="27_CampaignId">
+                    <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{item?.Balance}}</div>
                 </div>
             </div>
-        </td>
-        <td class="" >
-          <div class="">
-              <div data-display-for="27_DeskId">
-                  <div class="text-ellipsis"></div>
-              </div>
-          </div>
-      </td>
-      <td class="" >
-        <div class="">
-            <div data-display-for="27_DeskId">
-                <div class="text-ellipsis"></div>
+        </td>     
+        <td class="jsgrid-cell" >
+            <div class="jsgrid-email-cell-content">
+                <div data-display-for="27_CampaignId">
+                    <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{item?.Equity}}</div>
+                </div>
             </div>
-        </div>
-    </td>
+        </td>     
+        <td class="jsgrid-cell" >
+            <div class="jsgrid-email-cell-content">
+                <div data-display-for="27_CampaignId">
+                    <div class="text-ellipsis" data-field="CampaignId" data-original-value="silver.aff">{{item?.Volume}}</div>
+                </div>
+            </div>
+        </td>     
           <td class="jsgrid-cell jsgrid-control-field jsgrid-align-center" >
               <div class="dropleft droptop hidetrade">
-                <a href="#" class="ico-sz3 ico-link dh" target="_blank" data-jsgrid-rule="link" title="Open in new tab"><i class="fa fa-link greyicon" aria-hidden="true"></i>
+                <a href="#" class="ico-sz3 ico-link dh" data-jsgrid-rule="link" (click)="movetoTradeaccountInfo(item.Id)"><i class="fa fa-link greyicon" aria-hidden="true"></i>
                 </a>
                 <!-- <a href="#" class="ico-sz3 ico-link dh"  id="tradepencil">
                     <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" ></i>

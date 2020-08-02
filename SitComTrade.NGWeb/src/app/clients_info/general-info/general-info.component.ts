@@ -34,17 +34,13 @@ export class GeneralInfoComponent implements OnInit {
   userinfo: any;
   value: any;
   countryPhoneCode: any;
+  realAccountSection = false;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router,
               // tslint:disable-next-line: max-line-length
               private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
 
   ngOnInit() {
-    // if(this.value === 'userinfo') {
-    //   this.userinformation = true;
-    // } else {
-    //   this.userinformation = false;
-    // }
     // code for receiving login details and bind owner name at place of  name
     this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
     this.bindLoginData = this.getLoginDetails;
@@ -90,6 +86,12 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: [''],
       countryid: [''],
       phoneCode: [''],
+
+      convertiondesk: [''],
+      password: [''],
+      firstowner: [''],
+      previousowner: [''],
+      lastcalldate: [''],
     });
     this.getcountryName();
     this.getRegistrationFromType();
@@ -100,6 +102,12 @@ export class GeneralInfoComponent implements OnInit {
     this.detail = details;
     this._generalinfoservice.getUsersInfo(details).subscribe(res => {
       this.userGenralinfo = res;
+      if ( this.userGenralinfo.TypeName === 'Real') {
+        this.realAccountSection = true;
+        // this.leadAccountSection = false;
+      } else {
+        this.realAccountSection = false;
+      }
       this.userInfoForm.patchValue({
         firstName: this.userGenralinfo.FirstName,
         lastName: this.userGenralinfo.LastName,
@@ -138,14 +146,11 @@ export class GeneralInfoComponent implements OnInit {
       registrationtype: this.userGenralinfo.RegistrationType,
       // lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
       daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
+
+      password: this.userGenralinfo.Password
       });
       // console.log('generalinfo', res);
     });
-    // if(this.mnetarytrnsactions === 'mnetarytrnsactions') {
-    //   this.monetarytransactions = true;
-    // } else {
-    //   this.monetarytransactions = false;
-    // }
   }
     // this.useraddinfo = this.userGenralinfo;
     // const date = this.userGenralinfo.CreatedAt.split('T');

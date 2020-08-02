@@ -6,7 +6,7 @@
  </div>
  <div *ngIf = crtacct>
  <div class="form-holder mt40">
-     <form novalidate="novalidate">
+     <form novalidate="novalidate" [formGroup]="actionsForm">
         
                 <div class="row crtclintvsl">
                    <div class="col-md-3 col-md-3" >
@@ -16,9 +16,9 @@
                    <div class="col-md-9 col-md-9">
                       <div _ngcontent-qpo-c3="" class="input-group">
                          <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol "
-                              data-live-search="true" id="lunch"
-                            title="Please select a lunch ..." data-show-subtext="true"
-                            data-live-search="true">
+                              data-live-search="true"
+                             data-show-subtext="true"
+                            data-live-search="true" formControlName="groupname">
                             <option ngcontent-qpo-c3="" value="">Select..</option>
                             <option ngcontent-qpo-c3="" value="{{group?.Id}}" *ngFor = "let group of Group">{{group?.Name}}</option>
  
@@ -40,7 +40,7 @@
                         <!------------------------->
                         <div class="switch_box box_1">
                            <label class="switchboxtext">No</label>
-                           <input type="checkbox" class="switch_1">
+                           <input type="checkbox" class="switch_1" formControlName="issendemail">
                            <label class="switchboxtext">Yes</label>
                         </div>
                         <!----------------------------->
@@ -50,9 +50,9 @@
           
             <br>
         
-        
+            <div class="message">{{response}}</div>
         <div _ngcontent-npk-c14="" class="col-md-12 padd0"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="modal-footer item-modal-footer center"><div _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="text-center"><div _ngcontent-npk-c14="" class="form-group ng-untouched ng-pristine ng-invalid" ng-reflect-form="[object Object]">
-           <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);">Save</a>
+           <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button submit-button itembutton" data-dismiss="modal" href="javascript:void(0);" (click)="crtRealAccount()">Save</a>
           <a _ngcontent-npk-c14="" _ngcontent-xfs-c7="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);" (click)=" hideModal()">Cancel</a>
          </div>
       </div>

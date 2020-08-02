@@ -61,6 +61,7 @@
     <Compile Include="Interface\IIPWhiteListService.cs" />
     <Compile Include="Interface\IOwnerTaskService.cs" />
     <Compile Include="Interface\ISenderSettingService.cs" />
+    <Compile Include="Interface\ITradeAccountService.cs" />
     <Compile Include="Interface\ITradeGroupService.cs" />
     <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Interface\IWorkFlowService.cs" />

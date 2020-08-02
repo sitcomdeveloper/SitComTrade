@@ -44,4 +44,8 @@ export class GeneralInfoService {
   sendsms(sms: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/SendShortMessage', sms);
   }
+  // convert lead to real. create trade(real) account
+  crttradeacc(convertingtrdeAcc: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'TradeAccount/CreateTradeAccount', convertingtrdeAcc);
+  }
 }

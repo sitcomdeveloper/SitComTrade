@@ -25,8 +25,8 @@ export class TradeaccountsComponent implements OnInit {
   bindLoginData: any;
 
   constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
-              private modalService: BsModalService, private router: Router, private groupsService: GroupsService) { }
-    bsModalRef: BsModalRef;
+    private modalService: BsModalService, private router: Router, private groupsService: GroupsService) { }
+  bsModalRef: BsModalRef;
 
   // TypeName = 'Real';
   // OwnerId  = 1;
@@ -39,26 +39,34 @@ export class TradeaccountsComponent implements OnInit {
 
     $(document).ready(function () {
       $("#ckbCheckAll").click(function () {
-          $(".checkBoxClass").prop('checked', $(this).prop('checked'));
-          var chlength = $('.checkBoxClass:checked').length;
-        $("#chked").html("<span>"+chlength+ " items checked from</span>");
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+        var chlength = $('.checkBoxClass:checked').length;
+        $("#chked").html("<span>" + chlength + " items checked from</span>");
       });
     });
     $(document).ready(function () {
-      $("#tradepencil").click(function(){
+      $("#tradepencil").click(function () {
         $(".showtrade").css("display", "block");
         $(".hidetrade").css("display", "none");
       });
     });
-    
+
   }
+  // tradeDetails() {
+  //   const obj = {
+  //     TypeName : 'Real',
+  //     OwnerId  : this.bindLoginData.UserId
+  //   };
+  //   this.clientsservice.getTradeUsers(obj).subscribe(res => {
+  //     // this.spinnerService.show();
+  //     this.fetchTradeDetails = res.reverse();
+  //     this.tradeAccountLength = res.length;
+  //     // console.log('tradeusers', res);
+  //   });
+  // }
   tradeDetails() {
-    const obj = {
-      TypeName : 'Real',
-      OwnerId  : this.bindLoginData.UserId
-    };
-    this.clientsservice.getTradeUsers(obj).subscribe(res => {
-      // this.spinnerService.show();
+    const alltrdeaccnts = {}
+    this.clientsservice.getallTradeAccounts(alltrdeaccnts).subscribe(res => {
       this.fetchTradeDetails = res.reverse();
       this.tradeAccountLength = res.length;
       // console.log('tradeusers', res);
@@ -68,10 +76,10 @@ export class TradeaccountsComponent implements OnInit {
     this.UserId = userid
     if (val === true) {
       this.deletbtnn = false;
-   this.selectedchkbxfrdltclnt.push(userid);
+      this.selectedchkbxfrdltclnt.push(userid);
     } else {
       this.deletbtnn = true;
-     this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
+      this.selectedchkbxfrdltclnt.splice(this.selectedchkbxfrdltclnt.indexOf(userid), 1)
     }
   }
   deleteClient(userid) {
@@ -93,6 +101,10 @@ export class TradeaccountsComponent implements OnInit {
   moveToInfoPage(selectedItem: any) {
     this.router.navigate(['/info', selectedItem]);
   }
+  // move to trade info
+  movetoTradeaccountInfo(selectedinfo: any) {
+    this.router.navigate(['/trade-info', selectedinfo]);
+  }
   // live trade frame
   liveTrade(trdingDtls: any) {
     this.router.navigate(['/livetrade', trdingDtls]);
@@ -102,9 +114,9 @@ export class TradeaccountsComponent implements OnInit {
   //   window.open(url, '_blank', trdingDtls);
   //   this.router.navigate(['/livetrade', trdingDtls]);
   //   }
-// for sending groups info on groups-info
- getGeneralInfo(setItem: any) {
-  this.router.navigate(['/groups-info', setItem]);
-  // console.log('GID', setItem);
-}
+  // for sending groups info on groups-info
+  getGeneralInfo(setItem: any) {
+    this.router.navigate(['/groups-info', setItem,1]);
+    // console.log('GID', setItem);
+  }
 }

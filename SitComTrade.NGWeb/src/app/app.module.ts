@@ -51,6 +51,8 @@ import { CreateSenderSttingsComponent } from './settings/sendersettings/create-s
 import { AdditionalModuleFieldsComponent } from './settings/additionalfields/additional-module-fields/additional-module-fields.component';
 import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-woorkflows/create-edit-woorkflows.component';
+import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeaccount-info.component';
+import { LivepopupsComponent } from './clients/tradeaccounts/live-detail/livepopups/livepopups.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +142,8 @@ import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-
     AdditionalModuleFieldsComponent,
     CreateInstrumentsComponent,
     CreateEditWoorkflowsComponent,
+    TradeaccountInfoComponent,
+    LivepopupsComponent,
   ],
   imports: [
     BrowserModule,
@@ -154,7 +158,7 @@ import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-
   entryComponents: [ItemComponent, DeleteComponent, EditTaskComponent, CreateTaskComponent, CreateItemComponent,
      // tslint:disable-next-line: max-line-length
      CreateTemplateComponent, TranslationsFilterComponent, CommentsComponent, CrmnewuserComponent, UserdetailsComponent, CrmedituserComponent,
-     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent, AdditionalModuleFieldsComponent, CreateInstrumentsComponent, CreateEditWoorkflowsComponent, SmsAllComponent],
+     ActcrtaccComponent, ImportClientComponent, ImportClientDataComponent, ImprtclntdtaComponent, AffilatenewuserComponent, EmailAllComponent, CreateSenderSttingsComponent, AdditionalModuleFieldsComponent, CreateInstrumentsComponent, CreateEditWoorkflowsComponent, SmsAllComponent, LivepopupsComponent],
   exports: [
     PhoneMaskDirective
   ],
