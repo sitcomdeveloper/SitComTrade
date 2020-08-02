@@ -395,6 +395,23 @@ namespace SitComTech.Domain.Services
                 };
                 _repository.GetRepository<MarketingInfo>().Insert(marketingInfo);
                 _unitOfWork.SaveChanges();
+                Address addr = new Address
+                {
+                    Active = true,
+                    Deleted = false,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = 0,
+                    CreatedByName = "",
+                    OwnerId = (long)client.OwnerId,
+                    CountryId = country?.Id ?? 0,
+                    CountryName = country?.Name ?? "",
+                    ZipCode = client.ZipCode,
+                    City = client.City,
+                    State = client.State,
+                    StreetAddress = client.Address,
+                };
+                _repository.GetRepository<Address>().Insert(addr);
+                _unitOfWork.SaveChanges();
             }
         }
     }
