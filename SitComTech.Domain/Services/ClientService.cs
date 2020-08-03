@@ -338,80 +338,85 @@ namespace SitComTech.Domain.Services
             _unitOfWork.SaveChanges();
             foreach (var client in clients)
             {
-                Country country = _repository.GetRepository<Country>().Queryable().Where(x => x.Name.ToUpper() == client.Country.ToUpper()).FirstOrDefault();
-                Client entity = new Client
+                var emails = new List<string> { client.Email, client.SecondEmail };
+                var isExist = _repository.Query(x => emails.Contains(x.Email)).Select().Any();
+                if (!isExist)
                 {
-                    Active = true,
-                    Deleted = false,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = 0,
-                    CreatedByName = "",
-                    FirstName = client.FirstName,
-                    LastName = client.LastName,                   
-                    Email = client.Email,                    
-                    CountryId = country?.Id??0,
-                    CountryName = country?.Name??"",
-                    Enabled = true,
-                    TypeName = "Lead",
-                    FirstRegistrationDate = client.FirstRegistrationDate,
-                    RegistrationType = "Direct",
-                    ISendEmail = false,
-                    Phone = client.Phone,
-                    ResponseStatusId = 13,
-                    ResponseStatus = "New",
-                    OwnerId = (long)client.OwnerId,
-                    CountryISDCode = country?.ISDCode??"",
-                };
-                _repository.Insert(entity);
-                entity.ObjectState = Framework.DataContext.ObjectState.Added;
-                _unitOfWork.SaveChanges();
-                AffiliateUser affiliateUser = _repository.GetRepository<AffiliateUser>().Queryable().Where(x => x.Id == (long)client.AffiliateUser).FirstOrDefault();
-                MarketingInfo marketingInfo = new MarketingInfo
-                {
-                    Active = true,
-                    Deleted = false,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = 0,
-                    CreatedByName = "",
-                    OwnerId = (long)entity.Id,
-                    AffiliateID = client.AffiliateID,
-                    AffiliateUser = affiliateUser.Name,
-                    AffiliateUserId = affiliateUser.Id,
-                    AffTransactionID = client.AffTransactionID,
-                    CampaignID = client.CampaignID,
-                    IPAddress = client.IPAddress,
-                    IPCountry = client.IPCountry,
-                    Referrer = client.Referrer,
-                    Source = client.Source,
-                    SubAffiliateID = client.SubAffiliateID,
-                    Tag1 = client.Tag,
-                    Tag2 = client.Tag1,
-                    UtmCampaign = client.UtmCampaign,
-                    UtmContent = client.UtmContent,
-                    UtmCreative = client.UtmCreative,
-                    UtmMedium = client.UtmMedium,
-                    UtmSource = client.UtmSource,
-                    GoogleKeyword = client.GoogleKeyword,
-                };
-                _repository.GetRepository<MarketingInfo>().Insert(marketingInfo);
-                _unitOfWork.SaveChanges();
-                Address addr = new Address
-                {
-                    Active = true,
-                    Deleted = false,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = 0,
-                    CreatedByName = "",
-                    OwnerId = (long)entity.Id,
-                    CountryId = country?.Id ?? 0,
-                    CountryName = country?.Name ?? "",
-                    ZipCode = client.ZipCode,
-                    City = client.City,
-                    State = client.State,
-                    StreetAddress = client.Address,
-                };
-                _repository.GetRepository<Address>().Insert(addr);
-                _unitOfWork.SaveChanges();
+                    Country country = _repository.GetRepository<Country>().Queryable().Where(x => x.Name.ToUpper() == client.Country.ToUpper()).FirstOrDefault();
+                    Client entity = new Client
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        FirstName = client.FirstName,
+                        LastName = client.LastName,
+                        Email = client.Email,
+                        CountryId = country?.Id ?? 0,
+                        CountryName = country?.Name ?? "",
+                        Enabled = true,
+                        TypeName = "Lead",
+                        FirstRegistrationDate = client.FirstRegistrationDate,
+                        RegistrationType = "Direct",
+                        ISendEmail = false,
+                        Phone = client.Phone,
+                        ResponseStatusId = 13,
+                        ResponseStatus = "New",
+                        OwnerId = (long)client.OwnerId,
+                        CountryISDCode = country?.ISDCode ?? "",
+                    };
+                    _repository.Insert(entity);
+                    entity.ObjectState = Framework.DataContext.ObjectState.Added;
+                    _unitOfWork.SaveChanges();
+                    AffiliateUser affiliateUser = _repository.GetRepository<AffiliateUser>().Queryable().Where(x => x.Id == (long)client.AffiliateUser).FirstOrDefault();
+                    MarketingInfo marketingInfo = new MarketingInfo
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = (long)entity.Id,
+                        AffiliateID = client.AffiliateID,
+                        AffiliateUser = affiliateUser.Name,
+                        AffiliateUserId = affiliateUser.Id,
+                        AffTransactionID = client.AffTransactionID,
+                        CampaignID = client.CampaignID,
+                        IPAddress = client.IPAddress,
+                        IPCountry = client.IPCountry,
+                        Referrer = client.Referrer,
+                        Source = client.Source,
+                        SubAffiliateID = client.SubAffiliateID,
+                        Tag1 = client.Tag,
+                        Tag2 = client.Tag1,
+                        UtmCampaign = client.UtmCampaign,
+                        UtmContent = client.UtmContent,
+                        UtmCreative = client.UtmCreative,
+                        UtmMedium = client.UtmMedium,
+                        UtmSource = client.UtmSource,
+                        GoogleKeyword = client.GoogleKeyword,
+                    };
+                    _repository.GetRepository<MarketingInfo>().Insert(marketingInfo);
+                    _unitOfWork.SaveChanges();
+                    Address addr = new Address
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = (long)entity.Id,
+                        CountryId = country?.Id ?? 0,
+                        CountryName = country?.Name ?? "",
+                        ZipCode = client.ZipCode,
+                        City = client.City,
+                        State = client.State,
+                        StreetAddress = client.Address,
+                    };
+                    _repository.GetRepository<Address>().Insert(addr);
+                    _unitOfWork.SaveChanges();
+                }
             }
         }
     }
