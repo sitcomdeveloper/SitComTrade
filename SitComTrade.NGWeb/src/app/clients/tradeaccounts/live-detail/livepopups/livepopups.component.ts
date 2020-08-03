@@ -16,6 +16,7 @@ export class LivepopupsComponent implements OnInit {
   withdraw: string;
   creditin: string;
   creditout: string;
+  title: any;
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
