@@ -112,8 +112,15 @@ export class ClientsInfoComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ActcrtaccComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal-750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
-      this.userDetails();
+      this.afterupdate();
     });
+  }
+  // aftercreate account
+  // ge all details by id
+  afterupdate() {
+    this._generalinfoservice.getUsersInfo(this.detail).subscribe(res => {
+      this.userGenralinfo = res;
+    })
   }
   // get all mails
   gettheMail() {
