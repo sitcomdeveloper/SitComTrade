@@ -43,6 +43,11 @@ namespace SitComTech.Model.DataObject
         public string ItemId { get; set; }
         public Nullable<bool> IsStarred { get; set; }
         public string CountryISDCode { get; set; }
+        public Nullable<DateTime> LastLoginDate { get; set; }
+        public bool? IsOnline { get; set; }
+        public string FirstOwner { get; set; }
+        public string PreviousOwner { get; set; }
+        public Nullable<DateTime> LastCallDate { get; set; }
         public virtual User UserTable { get; set; }
     }
 
@@ -103,6 +108,6 @@ namespace SitComTech.Model.DataObject
         public string GoogleKeyword { get; set; }
         public Nullable<DateTime> FirstRegistrationDate { get; set; }
         public string ImportId { get; set; }
-        public string AffiliateUser { get; set; }
+        public long? AffiliateUser { get; set; }
     }
 }

@@ -636,8 +636,8 @@
         //};
 
         UserVM.CreateTradeAccount = {
-            ClientId: ko.observable(43),
-            GroupId: ko.observable(7),
+            ClientId: ko.observable(189),
+            GroupId: ko.observable(29),
             ISendEmail: ko.observable(0)
         };
 
@@ -690,15 +690,15 @@
             //        alert(result);
             //    }
             //});
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/TradeAccount/GetAllTradeAccounts",
-                contentType: 'application/json',
-                processData: false,
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeAccount/GetAllTradeAccounts",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             //   $.ajax({
             //    type: 'Post',
             //       url: apiURl + "api/TradeAccount/GetTradeAccountDetailById/3",
@@ -718,16 +718,16 @@
             //        alert(result);
             //    }
             //});
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/TradeAccount/CreateTradeAccount",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    data: ko.toJSON(UserVM.CreateTradeAccount),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/TradeAccount/CreateTradeAccount",
+                contentType: 'application/json',
+                processData: false,
+                data: ko.toJSON(UserVM.CreateTradeAccount),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             // $.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Instrument/UpdateInstrument",

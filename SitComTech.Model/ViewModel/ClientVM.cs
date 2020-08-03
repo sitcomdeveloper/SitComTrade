@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SitComTech.Model.ViewModel
 {
@@ -75,10 +76,18 @@ namespace SitComTech.Model.ViewModel
         public Nullable<long> RegistrationTypeId { get; set; }
         public Nullable<bool> IsStarred { get; set; }
         public string CountryISDCode { get; set; }
+        public string FirstOwner { get; set; }
+        public Nullable<DateTime> LastCallDate { get; set; }
+        public string PreviousOwner { get; set; }
     }   
     public class ClientStarredVM
     {
         public bool IsStarred { get; set; }
         public long ClientId { get; set; }
+    }
+    public class HeaderNameVM
+    {
+        public List<string> HeaderNames { get; set; }
+        public string FileName { get; set; }
     }
 }

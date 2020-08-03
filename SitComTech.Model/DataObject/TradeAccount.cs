@@ -6,6 +6,7 @@ namespace SitComTech.Model.DataObject
     public class TradeAccount : BaseEntity
     {
         public long UserId { get; set; }
+        public string UserName { get; set; }
         public long ClientId { get; set; }
         public string AccountId { get; set; }
         public string TPAccountNumber { get; set; }
@@ -40,6 +41,10 @@ namespace SitComTech.Model.DataObject
         public Nullable<Decimal> Volume { get; set; }
         public Nullable<bool> AllowTrade { get; set; }
         public Nullable<long> DepositCount { get; set; }
+        public string Tag { get; set; }
+        public Nullable<long> StatusId { get; set; }
+        public string StatusName { get; set; }
+        public Nullable<bool> IsDisabled { get; set; }
         public virtual User UserTable { get; set; }
     }
     public class TradeAccountVM
@@ -74,6 +79,13 @@ namespace SitComTech.Model.DataObject
         public Nullable<Decimal> FtdAmount { get; set; }
         public Nullable<DateTime> LastTradeDate { get; set; }
         public Nullable<DateTime> LastDepositDate { get; set; }
+        public Nullable<DateTime> LastLoginDate { get; set; }
+        public string Tag { get; set; }
+        public Nullable<long> StatusId { get; set; }
+        public string StatusName { get; set; }
+        public Nullable<bool> IsDisabled { get; set; }
+        public string OwnerName { get; set; }
+        public Nullable<bool> Demo { get; set; }
         public string GroupName { get; set; }
         public Nullable<long> GroupId { get; set; }
         public Nullable<bool> ISendEmail { get; set; }
@@ -111,6 +123,6 @@ namespace SitComTech.Model.DataObject
         public Nullable<long> DeskId { get; set; }
         public string RegistrationType { get; set; }
         public Nullable<long> RegistrationTypeId { get; set; }
-
+        public bool? IsOnline { get; set; }
     }
 }
