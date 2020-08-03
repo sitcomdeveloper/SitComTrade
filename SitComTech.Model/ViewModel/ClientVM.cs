@@ -76,6 +76,9 @@ namespace SitComTech.Model.ViewModel
         public Nullable<long> RegistrationTypeId { get; set; }
         public Nullable<bool> IsStarred { get; set; }
         public string CountryISDCode { get; set; }
+        public string FirstOwner { get; set; }
+        public Nullable<DateTime> LastCallDate { get; set; }
+        public string PreviousOwner { get; set; }
     }   
     public class ClientStarredVM
     {

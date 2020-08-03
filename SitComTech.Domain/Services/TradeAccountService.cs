@@ -46,6 +46,7 @@ namespace SitComTech.Domain.Services
                 AccountId = x.UserOwner.clients.AccountId,
                 LastDepositDate = x.UserOwner.clients.LastDepositDate,
                 LastTradeDate = x.UserOwner.clients.LastTradeDate,
+                LastLoginDate = x.UserOwner.Owner.LastLoginDate,
                 TotalDeposit = x.UserOwner.clients.TotalDeposit,
                 TotalWithdrawal = x.UserOwner.clients.TotalWithdrawal,
                 NetDeposit = x.UserOwner.clients.NetDeposit,
@@ -87,7 +88,13 @@ namespace SitComTech.Domain.Services
                 Password = x.UserOwner.Owner.Password,
                 Phone = x.UserOwner.Owner.Phone,
                 LeverageId = x.MarketInfo.LeverageId,
-                LeverageName = x.MarketInfo.LeverageName
+                LeverageName = x.MarketInfo.LeverageName,
+                Demo = x.MarketInfo.Demo,
+                OwnerName = x.UserOwner.clients.UserName,
+                StatusId = x.UserOwner.clients.StatusId,
+                StatusName = x.UserOwner.clients.StatusName,
+                Tag = x.UserOwner.clients.Tag,
+                IsOnline = x.UserOwner.Owner.IsOnline
             }).FirstOrDefault();
         }
 
@@ -111,6 +118,7 @@ namespace SitComTech.Domain.Services
                 AccountId = x.UserOwner.clients.AccountId,
                 LastDepositDate = x.UserOwner.clients.LastDepositDate,
                 LastTradeDate = x.UserOwner.clients.LastTradeDate,
+                LastLoginDate = x.UserOwner.Owner.LastLoginDate,
                 TotalDeposit = x.UserOwner.clients.TotalDeposit,
                 TotalWithdrawal = x.UserOwner.clients.TotalWithdrawal,
                 NetDeposit = x.UserOwner.clients.NetDeposit,
@@ -152,17 +160,27 @@ namespace SitComTech.Domain.Services
                 Password = x.UserOwner.Owner.Password,
                 Phone = x.UserOwner.Owner.Phone,
                 LeverageId = x.MarketInfo.LeverageId,
-                LeverageName = x.MarketInfo.LeverageName
+                LeverageName = x.MarketInfo.LeverageName,
+                Demo = x.MarketInfo.Demo,
+                OwnerName = x.UserOwner.clients.UserName,
+                StatusId = x.UserOwner.clients.StatusId,
+                StatusName = x.UserOwner.clients.StatusName,
+                Tag = x.UserOwner.clients.Tag,
+                IsOnline = x.UserOwner.Owner.IsOnline
             }).ToList();
         }
         public void CreateTradeAccount(CreateTradeAccountVM entity)
         {
             try
             {
+                string strtag = string.Empty;
                 var vtradegroup = _unitOfWork.Repository<TradeGroup>().Query(x => x.Active == true && x.Deleted == false && x.Id == entity.GroupId).Select().FirstOrDefault();
                 var vclient = _unitOfWork.Repository<Client>().Query(x => x.Active == true && x.Deleted == false && x.Id == entity.ClientId).Select().FirstOrDefault();
                 if (vtradegroup != null && vclient != null)
                 {
+                    var vmarketinginfo = _unitOfWork.Repository<MarketingInfo>().Query(x => x.Active == true && x.Deleted == false && x.OwnerId == entity.ClientId).Select().FirstOrDefault();
+                    if (vmarketinginfo != null)
+                        strtag = vmarketinginfo.Tag1;
                     TradeAccount TradeAccount = new TradeAccount
                     {
                         Active = true,
@@ -203,10 +221,17 @@ namespace SitComTech.Domain.Services
                         AllowTrade = vtradegroup.AllowTrade,
                         DepositCount = 1,
                         UserId = UserIdentity.UserId ?? 0,
+                        UserName = UserIdentity.UserName,
                         ClientId = entity.ClientId,
                         AccountId = vclient.ItemId,
+                        Tag = strtag,
+                        IsDisabled = false,
+                        StatusId = 0,
+                        StatusName = "",
                     };
+                    vclient.TypeName = "Real";
                     _repository.Insert(TradeAccount);
+                    _repository.GetRepository<Client>().Update(vclient);
                     _unitOfWork.SaveChanges();
                     if (entity.ISendEmail == true)
                     {
@@ -287,6 +312,11 @@ namespace SitComTech.Domain.Services
                     _tradeaccount.AllowTrade = entity.AllowTrade;
                     _tradeaccount.DepositCount = entity.DepositCount;
                     _tradeaccount.UserId = entity.UserId;
+                    _tradeaccount.UserName = entity.UserName;
+                    _tradeaccount.Tag = entity.Tag;
+                    _tradeaccount.StatusId = entity.StatusId;
+                    _tradeaccount.StatusName = entity.StatusName;
+                    _tradeaccount.IsDisabled = entity.IsDisabled;
                     _tradeaccount.ClientId = entity.ClientId;
                     _tradeaccount.AccountId = entity.AccountId;
                     _repository.Update(_tradeaccount);
