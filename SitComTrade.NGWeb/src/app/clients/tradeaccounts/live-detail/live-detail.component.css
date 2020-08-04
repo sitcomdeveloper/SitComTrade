@@ -398,3 +398,12 @@ body {
 .table-type05 table th {
     background: #f9fbfd;
 }
+.table-type05.table-fixed-header {
+    padding-top: 39px;
+    padding-bottom: 39px;
+    position: relative;
+    background: #f9fbfd;
+}
+.table-type05.table-style02.table-fixed-header table {
+    width: 100%;
+}
