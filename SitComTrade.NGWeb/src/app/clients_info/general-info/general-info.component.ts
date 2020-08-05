@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { CountryService } from 'src/app/services/country.service';
+import { SettingsService } from 'src/app/settings/settings.service';
 
 
 @Component({
@@ -35,10 +36,11 @@ export class GeneralInfoComponent implements OnInit {
   value: any;
   countryPhoneCode: any;
   realAccountSection = false;
+  Desks: any;
   // tslint:disable-next-line: max-line-length
   constructor(private _generalinfoservice: GeneralInfoService, private _router: Router,
               // tslint:disable-next-line: max-line-length
-              private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService) { }
+              private _route: ActivatedRoute, private fb: FormBuilder, private spinnerService: Ng4LoadingSpinnerService, private countryService: CountryService, private settingsService: SettingsService) { }
 
   ngOnInit() {
     // code for receiving login details and bind owner name at place of  name
@@ -96,7 +98,7 @@ export class GeneralInfoComponent implements OnInit {
     this.getcountryName();
     this.getRegistrationFromType();
     this.getAllStatus();
-
+    this.getDesks();
     // receiving data from client page for general-info
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
@@ -147,7 +149,11 @@ export class GeneralInfoComponent implements OnInit {
       // lasttaskdayspast: this.userGenralinfo.LastTaskDaysPast,
       daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
 
-      password: this.userGenralinfo.Password
+      password: this.userGenralinfo.Password,
+      // convertiondesk: this.userGenralinfo.,
+      firstowner: this.userGenralinfo.FirstOwner,
+      previousowner: this.userGenralinfo.PreviousOwner,
+      lastcalldate: this.userGenralinfo.LastCallDate,
       });
       // console.log('generalinfo', res);
     });
@@ -232,6 +238,10 @@ export class GeneralInfoComponent implements OnInit {
       TypeId: '', 
       ItemId: this.userGenralinfo.ItemId,
       Id: this.userGenralinfo.Id,
+      FirstOwner: this.userGenralinfo.FirstOwner,
+      PreviousOwner: this.userGenralinfo.PreviousOwner,
+      LastCallDate: this.userGenralinfo.LastCallDate,
+      // ConvertionDesk: this.userGenralinfo.ConvertionDesk
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       // this.spinnerService.show();
@@ -266,5 +276,13 @@ export class GeneralInfoComponent implements OnInit {
     this.userInfoForm.controls.phoneCode.setValue(
       '+' + this.countryPhoneCode
     );
+  }
+  // get desks
+  getDesks() {
+    this.settingsService.getAllDesks().subscribe(desks => {
+      if (desks !== null && desks !== undefined && desks !== '') {
+        this.Desks = desks; 
+      }
+    });
   }
 }

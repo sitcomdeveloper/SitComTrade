@@ -468,7 +468,15 @@
             <th class="tabletxt">Last Login Date</th>
             <td><input type="text" class="form-control disabledd" formControlName="lastlogindate" onmousedown="return false" onselectstart="return false"></td>
             <th class="tabletxt">Desk</th>
-            <td><input type="text" class="form-control disabledd" formControlName="desk" onmousedown="return false" onselectstart="return false"></td>
+            <td>
+              <!-- <input type="text" class="form-control disabledd" formControlName="desk" onmousedown="return false" onselectstart="return false"> -->
+              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+              data-live-search="true" formControlName="desk" onmousedown="return false" onselectstart="return false">
+              <option ngcontent-qpo-c3="">Select</option>
+              <option ngcontent-qpo-c3="" value="{{deskk.Name}}" *ngFor="let deskk of Desks">
+                 {{deskk.Name}}</option>
+                </select>
+            </td>
           </tr>
           <tr>
             <th class="tabletxt">HasTasks</th>
@@ -514,7 +522,8 @@
               <option ngcontent-qpo-c3="">Select</option>
               <option ngcontent-qpo-c3="" value="{{type.Name}}" *ngFor="let type of registrationType">
                  {{type.Name}}</option>
-                </select></td>
+                </select>
+              </td>
           </tr>
           <tr>
             <th class="tabletxt">LastTaskDaysPast</th>
@@ -525,7 +534,15 @@
           </tr>
           <tr>
             <th class="tabletxt">ConvertionDesk</th>
-            <td><input type="text" class="form-control disabledd" formControlName="convertiondesk" onmousedown="return false" onselectstart="return false"></td>
+            <td>
+              <!-- <input type="text" class="form-control disabledd" formControlName="convertiondesk" onmousedown="return false" onselectstart="return false"> -->
+              <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol"
+              data-live-search="true" formControlName="convertiondesk" onmousedown="return false" onselectstart="return false">
+              <option ngcontent-qpo-c3="">Select</option>
+              <option ngcontent-qpo-c3="" value="{{deskk.Name}}" *ngFor="let deskk of Desks">
+                 {{deskk.Name}}</option>
+                </select>
+            </td>
             <th class="tabletxt">Password
             </th>
             <td><input type="text" class="form-control" formControlName="password"></td>
