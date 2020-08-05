@@ -22,3 +22,14 @@ select
 {
     display: none;
 }
+.bootstrap-select>.btn.dropdown-toggle {
+    font-size: 13px;
+    background: #fff;
+    border-color: #dde7f9;
+    text-shadow: none;
+    height: 100%;
+    opacity: 1;
+    border-radius: 2px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}

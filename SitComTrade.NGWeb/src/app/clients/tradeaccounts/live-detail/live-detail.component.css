@@ -223,7 +223,7 @@
 }
 .heading02 {
     background: #f9fbfd;
-    padding: 9px 0;
+    padding: 9px 0;    margin-bottom: 13px;
 }
 .box-heading, .heading01, .heading02 {
     color: #000;
@@ -406,4 +406,75 @@ body {
 }
 .table-type05.table-style02.table-fixed-header table {
     width: 100%;
+}
+.content-tabs2 .nav-tabs li a:focus .ico-sz3.ico-pgtick, .content-tabs2 .nav-tabs li a:hover .ico-sz3.ico-pgtick, .content-tabs2 .nav-tabs li.active a .ico-sz3.ico-pgtick {
+    background-position: -600px -600px;
+}
+
+.content-tabs .nav-tabs>li>a [class*=ico] {
+    margin: -1px 5px;
+}
+
+.ico-sz3.ico-pgcross.dark {
+    background-position: -580px -480px;
+}
+.content-tabs .nav-tabs>li>a {
+    text-align: center;
+    margin: 0;
+    color: #8da5ba;
+    padding: 13px 20px;
+    min-width: 170px;
+    line-height: 1.35714;
+    line-height: 19px;
+    border-radius: 2px 2px 0 0;
+    border: 0;
+    -webkit-box-shadow: 0 -2px 5px 0 rgba(0,0,0,.1);
+    box-shadow: 0 -2px 5px 0 rgba(0,0,0,.1);
+}
+.content-tabs2 .nav-tabs li a:focus .ico-sz3.ico-money, .content-tabs2 .nav-tabs li a:hover .ico-sz3.ico-money, .content-tabs2 .nav-tabs li.active a .ico-sz3.ico-money {
+    background-position: -620px -600px;
+}
+.content-tabs2 .nav-tabs li a:focus .ico-sz3.ico-money, .content-tabs2 .nav-tabs li a:hover .ico-sz3.ico-money, .content-tabs2 .nav-tabs li.active a .ico-sz3.ico-money {
+    background-position: -620px -600px;
+}
+.content-tabs .pull-right {
+    margin-left: 25px;
+}
+.content-tabs .button.btn-md {
+    min-width: 175px;
+}
+.button.btn-md {
+    font-size: 13px;
+    line-height: 1.38461;
+    padding: 10px;
+    font-weight: 500;
+}
+.ico-sz3.ico-pgplus.white {
+    background-position: -560px -520px;
+}
+.button {
+    position: relative;
+    padding: 11px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.46666;
+    text-align: center;
+    background: #12baee;
+    color: #fff;
+    border-radius: 3px;
+    min-width: 125px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+.ico-sz3.ico-money.dark {
+    background-position: -620px -480px;
+}
+.form-control, .form-control:focus, .nav-tabs {
+    border-color: #dde7f9;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
 }

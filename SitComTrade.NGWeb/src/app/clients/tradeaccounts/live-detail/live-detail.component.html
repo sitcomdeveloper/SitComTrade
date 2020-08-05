@@ -110,6 +110,104 @@
               </div>
            </div>
         </div>
+        <!-------------------- editing - tab-content------------------------->
+<div class="tab-content" *ngIf = editMode>
+   <div role="tabpanel" class="tab-pane active " id="tab-client-trading">
+     <div>
+         <div class="collapse-area opened data-edit-client" data-rule="box">
+            <div class="heading02">
+               <div class="main-holder">
+                  <div class="pull-right">
+                     <div class="collapse-control pull-right"><a href="" class="ico-arrowup ico-sz3" data-toggle="collapse" aria-controls="0cf55b77-ba5e-5a80-b1e6-8d0ac839232f" aria-expanded="true"></a></div>
+                     <a _ngcontent-pka-c12="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="closeshowhide()"><i _ngcontent-pka-c12="" class="fa fa-check dark">&nbsp;</i>Apply</a>
+                     <a _ngcontent-pka-c12="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="cancel()">Cancel</a>                   </div>
+                  <h3>Trading</h3>
+               </div>
+            </div>
+            <div class="collapse1 " id="0cf55b77-ba5e-5a80-b1e6-8d0ac839232f" data-name="tradingArea" aria-expanded="true">
+               <div class="main-holder">
+                  <div class="account-trading-details chold02">
+                     <form action="#" class="form-inline" validation-errors-mode="inTooltip" novalidate="novalidate" [formGroup]="tradeaccountInfoForm">
+                        <div class="form-group">
+                           <label class="valign-label" for="_accountStatus"><span data-tooltip-el="">Status</span></label>
+                           <div class="form-group w120" data-editor-container="">
+                              <div class="value-edit" data-rule="value">
+                                 <div data-display-for="9__accountStatus">
+                                   <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formControlName="status" ng-reflect-name="citizenship">
+                                      <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
+                                      <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Active">Active</option>
+                                      <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Read Only">Read Only</option>
+                                      <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Disabled">Disabled</option>
+                                    </select>
+                                 </div>
+                              </div>
+                            
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="valign-label" for="Leverage"><span data-tooltip-el="">Leverage</span></label>
+                           <div class="form-group w120" data-editor-container="">
+                              <div class="value-edit" data-rule="value">
+                                 <div data-display-for="9_Leverage">
+                                   <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formControlName="leveragename" ng-reflect-name="citizenship">
+                                      <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
+                                      <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="" *ngFor="let leverage of Leverage">{{leverage?.Name}}</option>
+                                     </select>
+                                 </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="valign-label" for="GroupId"><span data-tooltip-el="">Group</span></label>
+                           <div class="form-group w120" data-editor-container="">
+                              <div class="value-edit" data-rule="value">
+                                 <div data-display-for="9_GroupId">
+                                   <input _ngcontent-fds-c4="" class="form-control disabledd ng-pristine ng-valid ng-touched" formControlName="groupname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstName">                  
+                                              </div>
+                              </div>
+                              
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="valign-label" for="StopOut"><span data-tooltip-el="">Stop Out</span></label>
+                           <div class="form-group w120" data-editor-container="">
+                              <div class="value-edit" data-rule="value">
+                                 <div data-display-for="9_StopOut">
+                                   <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formControlName="stopout" type="text" ng-reflect-name="firstName">                           
+                                       </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="valign-label" for="MarginCall"><span data-tooltip-el="">Margin Call</span></label>
+                           <div class="form-group w120" data-editor-container="">
+                              <div class="value-edit" data-rule="value">
+                                 <div data-display-for="9_MarginCall">
+                                   <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formControlName="margincall" type="text" ng-reflect-name="firstName">                                  </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="valign-label" for="MinDeposit"><span data-tooltip-el="">Min Deposit</span></label>
+                           <div class="form-group w120" data-editor-container="">
+                              <div class="value-edit" data-rule="value">
+                                 <div data-display-for="9_MinDeposit">
+                                   <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formControlName="mindeposit" type="text" ng-reflect-name="firstName">                                  </div>
+                              </div>
+                           </div>
+                        </div>
+                       
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+ </div>
+ 
+ <!---------------------------------------------->
      </div>
  
   <div class="collapse-area opened">
@@ -201,7 +299,7 @@
 </div>
 <div data-rule="grids-container">
    <div class="collapse-area opened" id="3397da3f-d194-1080-cb4a-f51c4aa1cdec">
-      <div class="content-tabs content-tabs2">
+      <div class="content-tabs content-tabs2 heading02">
          <div class="pull-right">
             <div class="collapse-control pull-right"><a href="#ordercollapse" class="ico-arrowup ico-sz3" data-toggle="collapse" aria-controls="ordercollapse" aria-expanded="true">Open/Close</a></div>
             <div class="pull-right"><a href="javascript:void(0);" class="button btn-md"><i class="ico-sz3 ico-pgplus white">&nbsp;</i> Open Order</a></div>
@@ -1971,101 +2069,3 @@
 </div>
 </div>
 <!---------------------------------------------->
-<!-------------------- editing - tab-content------------------------->
-<div class="tab-content" *ngIf = editMode>
-    <div role="tabpanel" class="tab-pane active " id="tab-client-trading">
-      <div>
-          <div class="collapse-area opened data-edit-client" data-rule="box">
-             <div class="heading02">
-                <div class="main-holder">
-                   <div class="pull-right">
-                      <div class="collapse-control pull-right"><a href="" class="ico-arrowup ico-sz3" data-toggle="collapse" aria-controls="0cf55b77-ba5e-5a80-b1e6-8d0ac839232f" aria-expanded="true"></a></div>
-                      <a _ngcontent-pka-c12="" class="btn-type01 btn02 submit-button" data-action="apply" data-rule="button" href="javascript:void(0);" (click)="closeshowhide()"><i _ngcontent-pka-c12="" class="fa fa-check dark">&nbsp;</i>Apply</a>
-                      <a _ngcontent-pka-c12="" class="btn-type01 " data-action="cancel" data-rule="button" id="gfg" (click)="cancel()">Cancel</a>                   </div>
-                   <h3>Trading</h3>
-                </div>
-             </div>
-             <div class="collapse1 " id="0cf55b77-ba5e-5a80-b1e6-8d0ac839232f" data-name="tradingArea" aria-expanded="true">
-                <div class="main-holder">
-                   <div class="account-trading-details chold02">
-                      <form action="#" class="form-inline" validation-errors-mode="inTooltip" novalidate="novalidate" [formGroup]="tradeaccountInfoForm">
-                         <div class="form-group">
-                            <label class="valign-label" for="_accountStatus"><span data-tooltip-el="">Status</span></label>
-                            <div class="form-group w120" data-editor-container="">
-                               <div class="value-edit" data-rule="value">
-                                  <div data-display-for="9__accountStatus">
-                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formControlName="status" ng-reflect-name="citizenship">
-                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
-                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Active">Active</option>
-                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Read Only">Read Only</option>
-                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="Disabled">Disabled</option>
-                                     </select>
-                                  </div>
-                               </div>
-                             
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="valign-label" for="Leverage"><span data-tooltip-el="">Leverage</span></label>
-                            <div class="form-group w120" data-editor-container="">
-                               <div class="value-edit" data-rule="value">
-                                  <div data-display-for="9_Leverage">
-                                    <select _ngcontent-pqa-c8="" _ngcontent-qpo-c3="" class="form-control itemformcontrol ng-pristine ng-valid ng-touched" data-live-search="true" formControlName="leveragename" ng-reflect-name="citizenship">
-                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="">Select</option>
-                                       <option _ngcontent-pqa-c8="" ngcontent-qpo-c3="" value="" *ngFor="let leverage of Leverage">{{leverage?.Name}}</option>
-                                      </select>
-                                  </div>
-                               </div>
-                               
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="valign-label" for="GroupId"><span data-tooltip-el="">Group</span></label>
-                            <div class="form-group w120" data-editor-container="">
-                               <div class="value-edit" data-rule="value">
-                                  <div data-display-for="9_GroupId">
-                                    <input _ngcontent-fds-c4="" class="form-control disabledd ng-pristine ng-valid ng-touched" formControlName="groupname" onmousedown="return false" onselectstart="return false" type="text" ng-reflect-name="firstName">                  
-                                               </div>
-                               </div>
-                               
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="valign-label" for="StopOut"><span data-tooltip-el="">Stop Out</span></label>
-                            <div class="form-group w120" data-editor-container="">
-                               <div class="value-edit" data-rule="value">
-                                  <div data-display-for="9_StopOut">
-                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formControlName="stopout" type="text" ng-reflect-name="firstName">                           
-                                        </div>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="valign-label" for="MarginCall"><span data-tooltip-el="">Margin Call</span></label>
-                            <div class="form-group w120" data-editor-container="">
-                               <div class="value-edit" data-rule="value">
-                                  <div data-display-for="9_MarginCall">
-                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formControlName="margincall" type="text" ng-reflect-name="firstName">                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="form-group">
-                            <label class="valign-label" for="MinDeposit"><span data-tooltip-el="">Min Deposit</span></label>
-                            <div class="form-group w120" data-editor-container="">
-                               <div class="value-edit" data-rule="value">
-                                  <div data-display-for="9_MinDeposit">
-                                    <input _ngcontent-fds-c4="" class="form-control ng-pristine ng-valid ng-touched" formControlName="mindeposit" type="text" ng-reflect-name="firstName">                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                        
-                      </form>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
-  </div>
-  
-  <!---------------------------------------------->
