@@ -23,7 +23,9 @@ export class TradeaccountsComponent implements OnInit {
   selectedchkbxfrdltclnt = [];
   getLoginDetails: any;
   bindLoginData: any;
-
+  // IsEditable = false;
+  Editable: any;
+  assignedselectedrow: any;
   constructor(private clientsservice: ClientsService, private spinnerService: Ng4LoadingSpinnerService,
     private modalService: BsModalService, private router: Router, private groupsService: GroupsService) { }
   bsModalRef: BsModalRef;
@@ -118,5 +120,18 @@ export class TradeaccountsComponent implements OnInit {
   getGeneralInfo(setItem: any) {
     this.router.navigate(['/groups-info', setItem,1]);
     // console.log('GID', setItem);
+  }
+  openbackmode(selectedId) {
+    this.fetchTradeDetails.forEach(selectedrow => {
+      if (selectedrow.Id === +selectedId) {
+        selectedrow.IsEditable = true;
+        this.Editable = selectedrow.IsEditable;
+        this.assignedselectedrow = selectedrow;
+        // this.clientForm.patchValue({
+        //   status: selectedrow.ResponseStatus,
+        //   group: selectedrow.GroupName,
+        // });
+      }
+    });
   }
 }
