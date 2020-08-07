@@ -6,7 +6,95 @@
  </div>
 <!-- deposit -->
 <div *ngIf = dpst>
-deposit
+    <div class="modal-body">
+        <form method="POST" novalidate="novalidate">
+           <div class="items form-horizontal">
+              <div class="row form-group">
+                 <div class="col-md-11">
+                    <div class="row">
+                       <div class="col-md-3"><label class="valign-label" for="Equity"><span data-tooltip-el="">Amount</span></label></div>
+                       <div class="col-md-9"><input class="form-control" name="Equity" type="text" id="a749838e1-2dec-4350-2e35-b212dfaa76d6" aria-required="true"></div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row form-group">
+                 <div class="col-md-11">
+                    <div class="row">
+                       <div class="col-md-3"><label class="valign-label" for="TransactionType"><span data-tooltip-el="">Transaction Type</span></label></div>
+                       <div class="col-md-9">
+                          <div class="">
+                            
+                             <select class="form-control dim no-events" name="TransactionType" data-container="body" data-live-search="true" id="a973fe0bb-4ac1-e8ae-df75-b109c12a6dbf" aria-required="true" tabindex="-98">
+                                <option value="">Select...</option>
+                                <option value="1">Deposit</option>
+                                <option value="2">Withdrawal</option>
+                                <option value="3">Credit In</option>
+                                <option value="4">Credit Out</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row form-group">
+                 <div class="col-md-11">
+                    <div class="row">
+                       <div class="col-md-3"><label class="valign-label" for="TransactionApproval"><span data-tooltip-el="">Transaction Approval</span></label></div>
+                       <div class="col-md-9">
+                          <div class="">
+                             
+                             <select class="form-control" name="TransactionApproval" data-container="body" data-live-search="true" id="a32e44f7f-33d8-5d53-e1a1-51e1f9ba5a6d" aria-required="true" tabindex="-98">
+                                <option value="">Select...</option>
+                                <option value="1">Approved</option>
+                                <option value="2">Pending</option>
+                                <option value="3">Failed</option>
+                                <option value="4">Declined</option>
+                                <option value="5">InProgress</option>
+                                <option value="6">Paid</option>
+                                <option value="7">ChargeBack</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row form-group">
+                 <div class="col-md-11">
+                    <div class="row">
+                       <div class="col-md-3"><label class="valign-label" for="Comment"><span data-tooltip-el="">Comment</span></label></div>
+                       <div class="col-md-9"><textarea name="Comment" class="form-control" id="a8fadd442-20a4-eeef-6799-63c67690ff5f"></textarea></div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row form-group">
+                 <div class="col-md-11">
+                    <div class="row">
+                       <div class="col-md-3"></div>
+                       <div class="col-md-9"><input class="form-control not-resetable" name="TradeAccountId" type="hidden" id="ab81e1aae-5734-4d6d-0a2d-6700897bf747" value="102921"></div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row form-group">
+                 <div class="col-md-11">
+                    <div class="row">
+                       <div class="col-md-3"></div>
+                       <div class="col-md-9"><input class="form-control not-resetable" name="ManualAuto" type="hidden" id="a9661832b-e0f2-c6ee-e654-fb090f2c01e5" value="1"></div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                <div _ngcontent-qun-c10="" class="col-md-12">
+                    <div _ngcontent-qun-c10="" class="modal-footer item-modal-footer">
+                       <div _ngcontent-qun-c10="" class="text-center">
+                          <div _ngcontent-qun-c10="" class="form-group ng-invalid ng-dirty ng-touched" ng-reflect-form="[object Object]"><a _ngcontent-qun-c10="" class="button submit-button itembutton" href="javascript:void(0);">Save</a><a _ngcontent-qun-c10="" class="button button2 itembutton1" data-dismiss="modal" href="javascript:void(0);">Cancel</a></div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           
+        </form>
+     </div>
 </div>
 <!-- withdraw -->
 <div *ngIf = wihdrw>
