@@ -173,5 +173,19 @@ export class LiveDetailComponent implements OnInit {
   //     this.userDetails();
   //   });
    }
+  //  open order
+  openorderpopup() {
+    const initialState = {
+      title: '',
+      // for div close or hide
+      openordr: 'openordr'
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(LivepopupsComponent, Object.assign({ show: true }, { class: 'modal450', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+  //   this.bsModalRef.content.clddata.subscribe(() => {
+  //     this.userDetails();
+  //   });
+  }
 }
 

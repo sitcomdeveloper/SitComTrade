@@ -17,6 +17,8 @@ export class LivepopupsComponent implements OnInit {
   creditin: string;
   creditout: string;
   title: any;
+  openorder = false;
+  openordr: string;
   constructor(private bsmodal: BsModalRef) { }
 
   ngOnInit() {
@@ -39,6 +41,11 @@ export class LivepopupsComponent implements OnInit {
       this.crdtot = true;
     } else {
       this.crdtot = false;
+    }
+    if(this.openordr === 'openordr') {
+      this.openorder = true;
+    } else {
+      this.openorder = false;
     }
   }
   hideModal() {

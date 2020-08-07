@@ -3,6 +3,7 @@ import { ModalDirective, BsModalRef, BsModalService, ModalOptions } from 'ngx-bo
 import { ImprtclntdtaComponent } from '../imprtclntdta/imprtclntdta.component';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import * as $ from 'jquery'
+import { ClientsService } from 'src/app/header/clients/clients.service';
 @Component({
   selector: 'app-import-client-data',
   templateUrl: './import-client-data.component.html',
@@ -14,7 +15,9 @@ export class ImportClientDataComponent implements OnInit {
   afterimportclient: any;
   assignResponse: any;
   HeaderForm: FormGroup;
-  constructor(private modalService: BsModalService, private bsmodal: BsModalRef, private fb: FormBuilder) { }
+  excelfile: any;
+  filename: any;
+  constructor(private modalService: BsModalService, private bsmodal: BsModalRef, private fb: FormBuilder, private clientsService: ClientsService) { }
   bsModalRef: BsModalRef;
   closesecondpopup = true;
 
@@ -47,9 +50,15 @@ export class ImportClientDataComponent implements OnInit {
   openthirdpopup() {
     const initialState = {
       title: 'Import Client',
+       filename: this.assignResponse.FileName
     };
     this.closesecondpopup = false;
     this.bsmodal.hide();
+    
+    this.clientsService.sendExcelBack(this.filename).subscribe(sndexcl => {
+      this.excelfile = sndexcl;
+      console.log('excelfile',sndexcl);
+    })
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ImprtclntdtaComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';

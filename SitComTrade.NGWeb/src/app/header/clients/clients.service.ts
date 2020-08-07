@@ -55,6 +55,10 @@ export class ClientsService {
   importClientByExcel(colmnsHeader: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/GetColumnHeader', colmnsHeader);
   }
+  // return back file
+  sendExcelBack(filename: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'Client/ImportClient/' + filename, {});
+  }
   // send sms to all
   sendsmstoall(sndsmsall: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Client/SendMessageToAllClients', sndsmsall);
