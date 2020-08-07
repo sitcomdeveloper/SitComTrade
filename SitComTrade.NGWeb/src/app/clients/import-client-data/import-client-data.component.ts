@@ -29,25 +29,19 @@ export class ImportClientDataComponent implements OnInit {
       console.log('headers',this.assignResponse);
 
 // Loop through all the items in drop down list
-for (var i = 0; i< this.assignResponse.length; i++)
-{ 
-if (this.assignResponse[i] === "First Name")
-{
-// Item is found. Set its property and exit
-this.assignResponse[i].selected = true;
-break;
-}
-document.getElementsByClassName("valign-label"),"this.assignResponse[i]";
-}
-return;
+// for (var i = 0; i< this.assignResponse.length; i++)
+// { 
+// if (this.assignResponse[i] === "First Name")
+// {
+// // Item is found. Set its property and exit
+// this.assignResponse[i].selected = true;
+// break;
+// }
+// document.getElementsByClassName("valign-label"),"this.assignResponse[i]";
+// }
+// return;
 // document.getElementsByClassName('valign-label').innerHTML = 'Hi, I am Arun Banik';
 
-
-      // this.HeaderForm.setValue({
-      //   firstname: 'First Name',
-      //   lastname: 'Last Name',
-      //   email: "Email"
-      // })
     }
   }
   openthirdpopup() {
