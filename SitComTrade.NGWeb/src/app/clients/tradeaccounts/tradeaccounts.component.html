@@ -297,7 +297,7 @@
             <i _ngcontent-rqa-c2="" aria-hidden="true" class="fa fa-search tablesearch"></i>
            </td>
         </tr> -->
-        <tr class="tablectn" *ngFor="let item of fetchTradeDetails,let group of Group">
+        <tr class="tablectn" *ngFor="let item of fetchTradeDetails,let group of Group" >
           <td class="email-cell" >
               <div class="email-cell-content">
                   <div class="input-checkbox"><span>
@@ -436,7 +436,7 @@
                     <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" ></i>
                 </a> -->
                 <span  id="tradepencil">
-                    <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" ></i>
+                    <i _ngcontent-ktw-c1="" aria-hidden="true" class="fa fa-pencil greyicon" (click)="openbackmode(item.Id)"></i>
                 </span>
                   <br>
                 <a href="javascript:void(0);"  class="ico-sz3 ico-link dh"  data-jsgrid-rule="link" title="Open in new tab"  (click)="liveTrade(item.Id)">&nbsp;&nbsp;<i class="fa fa-window-maximize greyicon" aria-hidden="true"></i>
@@ -453,7 +453,7 @@
           </td>
       </tr>
    <!----------editing-------------->
-   <tr class="jsgrid-edit-row" >
+   <tr class="jsgrid-edit-row" *ngIf = IsEditable>
     <td class="jsgrid-cell jsgrid-align-center" style="width: 15px;">
        <form>
           <div class="jsgrid-cell-content"></div>
@@ -619,7 +619,7 @@
   </div>
   </div>
   <!------------------create Import Client model------------->
-<div class="modal " id="livedetail" >
+<!-- <div class="modal " id="livedetail" >
     <div class="modal-dialog modal-lg1">
       <div class="modal-content">
         <div class="modal-header" style="height: 4rem;">
@@ -635,7 +635,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
   
   
