@@ -73,7 +73,9 @@ namespace SitComTech.Domain.Services
                         ResponseStatusId = 7,
                         ResponseStatus = "Interested",
                         OwnerId = clientdata.OwnerId,
-                        CountryISDCode=clientdata.CountryISDCode,
+                        CountryISDCode = clientdata.CountryISDCode,
+                        ConvertionDeskId = clientdata.ConvertionDeskId,
+                        ConvertionDeskName = clientdata.ConvertionDeskName,
                     };
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
@@ -158,6 +160,8 @@ namespace SitComTech.Domain.Services
                 clientdata.CitizenshipId = entity.CitizenshipId;
                 clientdata.AssignedDate = entity.AssignedDate;
                 clientdata.CountryISDCode = entity.CountryISDCode;
+                clientdata.ConvertionDeskId = entity.ConvertionDeskId;
+                clientdata.ConvertionDeskName = entity.ConvertionDeskName;
                 _repository.Update(clientdata);
                 _unitOfWork.SaveChanges();
             }
@@ -200,9 +204,76 @@ namespace SitComTech.Domain.Services
             return Client;
         }
 
-        public List<Client> GetTradeAccountByType(TradeAccountVM tradeVM)
+        public List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
-            return _repository.Queryable().Where(x => (x.TypeName == tradeVM.TypeName) && x.OwnerId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
+            var Clientexist = _repository.Queryable().Join(_repository.GetRepository<TradeAccount>().Queryable(), clients => clients.Id, tradeacc => tradeacc.ClientId,
+            (clients, tradeacc) => 
+            new TradeAccountInfoVM
+            {
+                Id = tradeacc.Id,
+                UserId = tradeacc.UserId,
+                ClientId = tradeacc.ClientId,
+                TPAccountNumber = tradeacc.TPAccountNumber,
+                FtdAmount = tradeacc.FtdAmount,
+                CurrencyId = tradeacc.CurrencyId,
+                CurrencyName = tradeacc.CurrencyName,
+                AccountId = tradeacc.AccountId,
+                LastDepositDate = tradeacc.LastDepositDate,
+                LastTradeDate = tradeacc.LastTradeDate,
+                LastLoginDate = clients.LastLoginDate,
+                TotalDeposit = tradeacc.TotalDeposit,
+                TotalWithdrawal = tradeacc.TotalWithdrawal,
+                NetDeposit = tradeacc.NetDeposit,
+                OpenProfit = tradeacc.OpenProfit,
+                AllowTrade = tradeacc.AllowTrade,
+                InitialDeposit = tradeacc.InitialDeposit,
+                StopOut = tradeacc.StopOut,
+                MarginCall = tradeacc.MarginCall,
+                Balance = tradeacc.Balance,
+                MinDeposit = tradeacc.MinDeposit,
+                OrderCount = tradeacc.OrderCount,
+                CloseLoss = tradeacc.CloseLoss,
+                FTD = tradeacc.FTD,
+                GroupId = tradeacc.GroupId,
+                GroupName = tradeacc.GroupName,
+                FTDDate = tradeacc.FTDDate,
+                RetentionOwner = clients.RetentionOwner,
+                ConvertionOwner = clients.ConvertionOwner,
+                AssignedDate = clients.AssignedDate,
+                FirstRegistrationDate = clients.FirstRegistrationDate,
+                ImportId = clients.ImportId,
+                RegistrationType = clients.RegistrationType,
+                RegistrationTypeId = clients.RegistrationTypeId,
+                ISendEmail = tradeacc.ISendEmail,
+                OpenLoss = tradeacc.OpenLoss,
+                Commission = tradeacc.Commission,
+                Equity = tradeacc.Equity,
+                MarginLevel = tradeacc.MarginLevel,
+                FreeMargin = tradeacc.FreeMargin,
+                Credit = tradeacc.Credit,
+                Volume = tradeacc.Volume,
+                DepositCount = tradeacc.DepositCount,
+                Desk = clients.Desk,
+                DeskId = clients.DeskId,
+                FirstName = clients.FirstName,
+                LastName = clients.LastName,
+                Email = clients.Email,
+                SecondEmail = clients.SecondEmail,
+                Password = clients.Password,
+                Phone = clients.Phone,
+                LeverageId = tradeacc.LeverageId,
+                LeverageName = tradeacc.LeverageName,
+                OwnerName = tradeacc.UserName,
+                StatusId = tradeacc.StatusId,
+                StatusName = tradeacc.StatusName,
+                Tag = tradeacc.Tag,
+                IsOnline = clients.IsOnline,
+                Active= clients.Active,
+                Deleted=clients.Deleted,
+                TypeName = clients.TypeName
+            }).ToList();
+            Clientexist = Clientexist.Where(x => (x.TypeName == tradeVM.TypeName) && x.UserId == tradeVM.OwnerId && x.Active == true && x.Deleted == false).ToList();
+            return Clientexist;
         }
 
         public List<Client> GetAllUsersByOwnerId(long ownerid)
@@ -268,7 +339,9 @@ namespace SitComTech.Domain.Services
                 ISendEmail = x.UserOwner.clients.ISendEmail,
                 CitizenshipId = x.UserOwner.clients.CitizenshipId,
                 IsStarred = x.UserOwner.clients.IsStarred,
-                CountryISDCode = x.UserOwner.clients.CountryISDCode
+                CountryISDCode = x.UserOwner.clients.CountryISDCode,
+                ConvertionDeskId = x.UserOwner.clients.ConvertionDeskId,
+                ConvertionDeskName = x.UserOwner.clients.ConvertionDeskName
             }).ToList();
         }
 
@@ -336,7 +409,9 @@ namespace SitComTech.Domain.Services
                 ISendEmail = x.UserOwner.clients.ISendEmail,
                 CitizenshipId = x.UserOwner.clients.CitizenshipId,
                 IsStarred = x.UserOwner.clients.IsStarred,
-                CountryISDCode = x.UserOwner.clients.CountryISDCode
+                CountryISDCode = x.UserOwner.clients.CountryISDCode,
+                ConvertionDeskId = x.UserOwner.clients.ConvertionDeskId,
+                ConvertionDeskName = x.UserOwner.clients.ConvertionDeskName
             }).FirstOrDefault();
         }
 
@@ -644,8 +719,8 @@ namespace SitComTech.Domain.Services
                     };
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
-                    if(isemailsend)
-                     SendCreateEmail(email);
+                    if (isemailsend)
+                        SendCreateEmail(email);
                 }
             }
             catch (Exception ex)
@@ -667,7 +742,7 @@ namespace SitComTech.Domain.Services
                     oMailManager.To = clientdata.To;
                     oMailManager.SendEmail();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -688,7 +763,7 @@ namespace SitComTech.Domain.Services
                         {
                             email.OwnerId = client.Id;
                             email.To = client.Email;
-                            CreateEmail(email,true);
+                            CreateEmail(email, true);
                         }
                     }
                 }
@@ -722,7 +797,7 @@ namespace SitComTech.Domain.Services
 
                                 email.OwnerId = clientlists.Id;
                                 email.To = vemailaddress;
-                                CreateEmail(email,false);
+                                CreateEmail(email, false);
 
                             }
                         }
@@ -786,13 +861,13 @@ namespace SitComTech.Domain.Services
                 else
                 {
                     return responseObject.ErrorMessage;
-                }                
-                
+                }
+
             }
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
         }
 
         public RootObject SendSMSToClient(ShortMessage smsdata)
@@ -821,7 +896,7 @@ namespace SitComTech.Domain.Services
         {
             List<string> sheetvalidationmessage = new List<string>();
             try
-            {                
+            {
                 if (sms != null && sms.UserId != null)
                 {
                     var clientlists = _clientservice.Query(x => x.Active == true && x.Deleted == false && x.OwnerId == sms.UserId).Select().ToList();
@@ -831,8 +906,8 @@ namespace SitComTech.Domain.Services
                         {
                             sms.OwnerId = client.Id;
                             string strphonenumber = client.Phone.Trim();
-                            strphonenumber=strphonenumber.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");                               
-                            sms.PhoneNumber = client.CountryISDCode+ strphonenumber;
+                            strphonenumber = strphonenumber.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+                            sms.PhoneNumber = client.CountryISDCode + strphonenumber;
                             string strsmsresult = SendShortMessage(sms);
                             sheetvalidationmessage.Add(sms.PhoneNumber + "-" + strsmsresult);
                         }
@@ -854,8 +929,8 @@ namespace SitComTech.Domain.Services
                 List<string> tosms = new List<string>();
                 if (sms != null && sms.PhoneNumber != string.Empty)
                 {
-                    
-                    tosms = sms.PhoneNumber.Split(',').ToList<string>();                   
+
+                    tosms = sms.PhoneNumber.Split(',').ToList<string>();
                     if (tosms != null && tosms.Count > 0)
                     {
                         foreach (var vphonenumber in tosms)
@@ -866,13 +941,13 @@ namespace SitComTech.Domain.Services
 
                                 sms.OwnerId = clientlists.Id;
                                 string strphonenumber = clientlists.Phone.Trim();
-                                strphonenumber = strphonenumber.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");                                
+                                strphonenumber = strphonenumber.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
                                 sms.PhoneNumber = clientlists.CountryISDCode + strphonenumber;
                                 string strsmsresult = SendShortMessage(sms);
-                                sheetvalidationmessage.Add(sms.PhoneNumber + "-"+ strsmsresult);
+                                sheetvalidationmessage.Add(sms.PhoneNumber + "-" + strsmsresult);
 
                             }
-                        }                        
+                        }
                     }
                 }
                 return sheetvalidationmessage;
@@ -1020,7 +1095,7 @@ namespace SitComTech.Domain.Services
         }
 
         public void InsertFileLog(ImportFile importFile)
-        {            
+        {
             _repository.Insert(importFile);
             _unitOfWork.SaveChanges();
         }

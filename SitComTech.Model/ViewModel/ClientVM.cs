@@ -27,6 +27,8 @@ namespace SitComTech.Model.ViewModel
 
         public long OwnerId { get; set; }
         public string CountryISDCode { get; set; }
+        public Nullable<long> ConvertionDeskId { get; set; }
+        public string ConvertionDeskName { get; set; }
 
     }
 
@@ -79,6 +81,8 @@ namespace SitComTech.Model.ViewModel
         public string FirstOwner { get; set; }
         public Nullable<DateTime> LastCallDate { get; set; }
         public string PreviousOwner { get; set; }
+        public Nullable<long> ConvertionDeskId { get; set; }
+        public string ConvertionDeskName { get; set; }
     }   
     public class ClientStarredVM
     {

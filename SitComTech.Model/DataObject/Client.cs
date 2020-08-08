@@ -48,6 +48,8 @@ namespace SitComTech.Model.DataObject
         public string FirstOwner { get; set; }
         public string PreviousOwner { get; set; }
         public Nullable<DateTime> LastCallDate { get; set; }
+        public Nullable<long> ConvertionDeskId { get; set; }
+        public string ConvertionDeskName { get; set; }
         public virtual User UserTable { get; set; }
     }
 

@@ -134,9 +134,16 @@ namespace SitComTech.API.Controllers
 
         [HttpPost]
         [Route("GetTradeAccountByType")]
-        public List<Client> GetTradeAccountByType(TradeAccountVM tradevm)
+        public List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradevm)
         {
-            return _clientService.GetTradeAccountByType(tradevm);
+            try
+            {
+                return _clientService.GetTradeAccountByType(tradevm);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpGet]
