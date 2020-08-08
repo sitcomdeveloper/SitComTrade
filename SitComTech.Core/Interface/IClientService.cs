@@ -15,7 +15,7 @@ namespace SitComTech.Core.Interface
 
         Client GetClientDetailById(long id);
 
-        List<Client> GetTradeAccountByType(TradeAccountVM tradeVM);
+        List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradeVM);
         Client GetById(object Id);
         void DeleteClient(Client entity);
         bool DeleteMultipleClients(List<long> clientids);
