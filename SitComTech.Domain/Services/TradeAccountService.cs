@@ -87,8 +87,8 @@ namespace SitComTech.Domain.Services
                 SecondEmail = x.UserOwner.Owner.SecondEmail,
                 Password = x.UserOwner.Owner.Password,
                 Phone = x.UserOwner.Owner.Phone,
-                LeverageId = x.MarketInfo.LeverageId,
-                LeverageName = x.MarketInfo.LeverageName,
+                LeverageId = x.UserOwner.clients.LeverageId,
+                LeverageName = x.UserOwner.clients.LeverageName,
                 Demo = x.MarketInfo.Demo,
                 OwnerName = x.UserOwner.clients.UserName,
                 StatusId = x.UserOwner.clients.StatusId,
@@ -159,8 +159,8 @@ namespace SitComTech.Domain.Services
                 SecondEmail = x.UserOwner.Owner.SecondEmail,
                 Password = x.UserOwner.Owner.Password,
                 Phone = x.UserOwner.Owner.Phone,
-                LeverageId = x.MarketInfo.LeverageId,
-                LeverageName = x.MarketInfo.LeverageName,
+                LeverageId = x.UserOwner.clients.LeverageId,
+                LeverageName = x.UserOwner.clients.LeverageName,
                 Demo = x.MarketInfo.Demo,
                 OwnerName = x.UserOwner.clients.UserName,
                 StatusId = x.UserOwner.clients.StatusId,
@@ -228,6 +228,8 @@ namespace SitComTech.Domain.Services
                         IsDisabled = false,
                         StatusId = 0,
                         StatusName = "",
+                        LeverageId= vtradegroup.LeverageId,
+                        LeverageName = vtradegroup.LeverageName,
                     };
                     vclient.TypeName = "Real";
                     _repository.Insert(TradeAccount);
@@ -319,6 +321,8 @@ namespace SitComTech.Domain.Services
                     _tradeaccount.IsDisabled = entity.IsDisabled;
                     _tradeaccount.ClientId = entity.ClientId;
                     _tradeaccount.AccountId = entity.AccountId;
+                    _tradeaccount.LeverageId = entity.LeverageId;
+                    _tradeaccount.LeverageName = entity.LeverageName;
                     _repository.Update(_tradeaccount);
                     _unitOfWork.SaveChanges();
                 }

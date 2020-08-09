@@ -45,6 +45,8 @@ namespace SitComTech.Model.DataObject
         public Nullable<long> StatusId { get; set; }
         public string StatusName { get; set; }
         public Nullable<bool> IsDisabled { get; set; }
+        public Nullable<long> LeverageId { get; set; }
+        public string LeverageName { get; set; }
         public virtual User UserTable { get; set; }
     }
     public class TradeAccountVM
@@ -124,5 +126,7 @@ namespace SitComTech.Model.DataObject
         public string RegistrationType { get; set; }
         public Nullable<long> RegistrationTypeId { get; set; }
         public bool? IsOnline { get; set; }
+        public Nullable<bool> Active { get; set; }
+        public Nullable<bool> Deleted { get; set; }
     }
 }

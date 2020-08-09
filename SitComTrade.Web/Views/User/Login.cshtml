@@ -680,7 +680,22 @@
             AccountId: ko.observable(2),        
         };
 
+        UserVM.TradeAccountVM = {
+            OwnerId: ko.observable(4),
+            TypeName: ko.observable('Real')
+           
+        };
         $(document).ready(function () {
+             $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/GetTradeAccountByType",
+                contentType: 'application/json',
+                processData: false,
+                 data: ko.toJSON(UserVM.TradeAccountVM),
+                success: function (result) {
+                    alert(result);
+                }
+            });
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/TradeAccount/DeleteTradeAccountById/1",
@@ -718,16 +733,16 @@
             //        alert(result);
             //    }
             //});
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/TradeAccount/CreateTradeAccount",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.CreateTradeAccount),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeAccount/CreateTradeAccount",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.CreateTradeAccount),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             // $.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Instrument/UpdateInstrument",
@@ -1313,16 +1328,7 @@
             //        alert(result);
             //    }
             //});
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/Client/GetTradeAccountByType",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    data: ko.toJSON(UserVM.Login),
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+           
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/GetAllClientsByOwnerId/1",
