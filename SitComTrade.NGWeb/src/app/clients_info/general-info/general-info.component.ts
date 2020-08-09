@@ -150,7 +150,7 @@ export class GeneralInfoComponent implements OnInit {
       daysagoclientcreated: this.userGenralinfo.DaysAgoClientCreated,
 
       password: this.userGenralinfo.Password,
-      // convertiondesk: this.userGenralinfo.,
+      convertiondesk: this.userGenralinfo.ConvertionDeskName,
       firstowner: this.userGenralinfo.FirstOwner,
       previousowner: this.userGenralinfo.PreviousOwner,
       lastcalldate: this.userGenralinfo.LastCallDate,
@@ -241,7 +241,8 @@ export class GeneralInfoComponent implements OnInit {
       FirstOwner: this.userGenralinfo.FirstOwner,
       PreviousOwner: this.userGenralinfo.PreviousOwner,
       LastCallDate: this.userGenralinfo.LastCallDate,
-      // ConvertionDesk: this.userGenralinfo.ConvertionDesk
+      ConvertionDeskName: this.userGenralinfo.ConvertionDeskName,
+      ConvertionDeskId: this.userGenralinfo.ConvertionDeskId
     };
     this._generalinfoservice.updateClient(obj).subscribe(res => {
       // this.spinnerService.show();
