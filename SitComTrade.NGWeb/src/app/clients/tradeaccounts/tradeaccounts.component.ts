@@ -54,26 +54,26 @@ export class TradeaccountsComponent implements OnInit {
     });
 
   }
-  // tradeDetails() {
-  //   const obj = {
-  //     TypeName : 'Real',
-  //     OwnerId  : this.bindLoginData.UserId
-  //   };
-  //   this.clientsservice.getTradeUsers(obj).subscribe(res => {
-  //     // this.spinnerService.show();
-  //     this.fetchTradeDetails = res.reverse();
-  //     this.tradeAccountLength = res.length;
-  //     // console.log('tradeusers', res);
-  //   });
-  // }
   tradeDetails() {
-    const alltrdeaccnts = {}
-    this.clientsservice.getallTradeAccounts(alltrdeaccnts).subscribe(res => {
+    const obj = {
+      TypeName : 'Real',
+      OwnerId  : this.bindLoginData.UserId
+    };
+    this.clientsservice.getTradeUsers(obj).subscribe(res => {
+      // this.spinnerService.show();
       this.fetchTradeDetails = res.reverse();
       this.tradeAccountLength = res.length;
       // console.log('tradeusers', res);
     });
   }
+  // tradeDetails() {
+  //   const alltrdeaccnts = {}
+  //   this.clientsservice.getallTradeAccounts(alltrdeaccnts).subscribe(res => {
+  //     this.fetchTradeDetails = res.reverse();
+  //     this.tradeAccountLength = res.length;
+  //     // console.log('tradeusers', res);
+  //   });
+  // }
   deletbtn(val, userid) {
     this.UserId = userid
     if (val === true) {

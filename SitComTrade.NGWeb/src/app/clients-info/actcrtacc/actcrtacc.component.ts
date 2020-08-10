@@ -207,6 +207,7 @@ this._generalinfoservice.crttradeacc(convertingtrdeAcc).subscribe(crtrealacc => 
   if(crtrealacc === null) {
     this.response = 'Account is created successfully!'
   }
+  window.location.reload();
   this.actionsForm.reset();
   console.log('liveacc',crtrealacc);
 })

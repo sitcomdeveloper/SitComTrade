@@ -16,7 +16,7 @@ export class ImportClientDataComponent implements OnInit {
   assignResponse: any;
   HeaderForm: FormGroup;
   excelfile: any;
-  filename: any;
+
   constructor(private modalService: BsModalService, private bsmodal: BsModalRef, private fb: FormBuilder, private clientsService: ClientsService) { }
   bsModalRef: BsModalRef;
   closesecondpopup = true;
@@ -48,17 +48,21 @@ export class ImportClientDataComponent implements OnInit {
     }
   }
   openthirdpopup() {
-    const initialState = {
-      title: 'Import Client',
-       filename: this.assignResponse.FileName
-    };
-    this.closesecondpopup = false;
-    this.bsmodal.hide();
-    
-    this.clientsService.sendExcelBack(this.filename).subscribe(sndexcl => {
+    const formData: FormData = new FormData();
+    formData.append("filename", this.assignResponse.FileName);
+    // console.log(formy.get("firstname"))
+    // filename: this.assignResponse.FileName 
+    this.clientsService.sendExcelBack(formData).subscribe(sndexcl => {
       this.excelfile = sndexcl;
       console.log('excelfile',sndexcl);
     })
+    const initialState = {
+      title: 'Import Client',
+    };
+    this.closesecondpopup = false;
+    this.bsmodal.hide();
+    //  filename: this.assignResponse.FileName 
+    
     // tslint:disable-next-line: max-line-length
     this.bsModalRef = this.modalService.show(ImprtclntdtaComponent, Object.assign({ backdrop: 'static', show: true }, { class: 'modal750', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
