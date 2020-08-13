@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { ItemComponent } from '../item/item.component';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
