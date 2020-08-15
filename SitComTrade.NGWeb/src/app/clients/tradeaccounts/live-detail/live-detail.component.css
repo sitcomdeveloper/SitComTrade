@@ -1,3 +1,8 @@
+body {
+    background: #fff!important;
+    /* min-width: 900px; */
+    z-index: 999999;
+}
 .subheader1 .main-holder {
     padding-left: 15px;
     padding-right: 15px;
@@ -251,10 +256,10 @@ a.btn-type02 {
     background:0,0;
 }
 p {
-    text-align: center;
+    /* text-align: center;
     font-weight: bold;
     color: grey;
-    font-size: 16px;
+    font-size: 16px; */
 }
 .comments .comment:first-child {
     border-width: 0;
@@ -332,7 +337,7 @@ body {
     padding: 0 15px;width: 100%;
 }
 .client-details .table-type01 table td:nth-child(odd) {
-    padding-left: 15px;
+    padding-left:29px;
 }
 .table-type01 td:nth-child(odd) label {
     padding-top: 7px;
@@ -408,7 +413,7 @@ body {
     width: 100%;
 }
 .content-tabs2 .nav-tabs li a:focus .ico-sz3.ico-pgtick, .content-tabs2 .nav-tabs li a:hover .ico-sz3.ico-pgtick, .content-tabs2 .nav-tabs li.active a .ico-sz3.ico-pgtick {
-    background-position: -600px -600px;
+    background-position: -596px -597px;
 }
 
 .content-tabs .nav-tabs>li>a [class*=ico] {
@@ -416,7 +421,7 @@ body {
 }
 
 .ico-sz3.ico-pgcross.dark {
-    background-position: -580px -480px;
+    background-position: -578px -477px;
 }
 .content-tabs .nav-tabs>li>a {
     text-align: center;
@@ -446,11 +451,18 @@ body {
 .button.btn-md {
     font-size: 13px;
     line-height: 1.38461;
-    padding: 10px;
+    padding: 6px;
     font-weight: 500;
 }
 .ico-sz3.ico-pgplus.white {
-    background-position: -560px -520px;
+    background-position: -560px -517px;
+}
+.ico-sz3.ico-no3 {
+    background-position: -300px -440px;
+}
+
+.table-type05 table td>*, .table-type05 table th>* {
+    vertical-align: top;
 }
 .button {
     position: relative;
@@ -469,12 +481,24 @@ body {
     -webkit-transition: all .5s ease;
 }
 .ico-sz3.ico-money.dark {
-    background-position: -620px -480px;
+    background-position: -616px -477px;
 }
 .form-control, .form-control:focus, .nav-tabs {
     border-color: #dde7f9;
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #ddd;
+    border-bottom:none!important;
+}
+.box {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.table-type01 table td, .table-type01 table th {
+    position: relative;
+    padding: 3px 15px;
+    vertical-align: top;
+    border: 1px solid #dde7f9;
+    border-width: 1px 0;
 }
