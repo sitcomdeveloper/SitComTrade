@@ -548,7 +548,6 @@ namespace SitComTech.Domain.Services
                 clientdata.UpdatedByName = entity.FirstName;
                 clientdata.FirstName = entity.FirstName;
                 clientdata.LastName = entity.LastName;
-                clientdata.Password = entity.Password;
                 clientdata.Email = entity.Email;                
                 clientdata.CountryId = entity.CountryId;
                 clientdata.CountryName = entity.CountryName;               
@@ -588,7 +587,80 @@ namespace SitComTech.Domain.Services
                 }
             }           
         }
+        public void UpdatePasswordOfClient(ClientPasswordVM entity)
+        {
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Email == entity.Email && x.Password== entity.OldPassword && x.Active == true && x.Deleted == false);
+            if (clientdata != null)
+            {
+                clientdata.UpdatedAt = DateTime.Now;
+                clientdata.Password = entity.NewPassword;
+                _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
+            }
+        }
 
+        public ClientQuery InsertClientQuery(ClientQuery clientdata)
+        {
+            try
+            {
+                ClientQuery _ClientQuery = new ClientQuery
+                {
+                    Active = true,
+                    Deleted = false,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = 0,
+                    CreatedByName = "",
+                    OwnerId = clientdata.OwnerId,
+                    CountryId = clientdata.CountryId.GetValueOrDefault(),
+                    CountryName = clientdata.CountryName,
+                    FirstName = clientdata.FirstName,
+                    LastName = clientdata.LastName,
+                    Email = clientdata.Email,
+                    Phone = clientdata.Phone,
+                    Subject = clientdata.Subject,
+                    Message = clientdata.Message,
+                };
+                _repository.GetRepository<ClientQuery>().Insert(_ClientQuery);
+                _unitOfWork.SaveChanges();
+                SendEmilToClientQuery(clientdata);
+                return _ClientQuery;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void SendEmilToClientQuery(ClientQuery clientdata)
+        {
+            try
+            {
+
+                string content = "<html><body><p>Dear <b>" + clientdata.FirstName + " " + clientdata.LastName + ",</b></p>";
+                content += "<p>We let you know that  with the following details has been created for you in the system :</p>";
+
+                content += "<p>First Name: " + clientdata.FirstName + "</p>";
+                content += "<p>Last Name: " + clientdata.LastName + "</p>";
+                content += "<p>Country Name: " + clientdata.CountryName + "</p>";
+                content += "<p>Phone: " + clientdata.Phone + "</p>";
+                content += "<p>Subject: " + clientdata.Subject + "</p>";
+                content += "<p>Message: " + clientdata.Message + "</p>";
+                content += "<p>Happy Trading !</p>";
+                content += "<p>SitCom Team</p></body></html>";
+                MailManager oMailManager = new MailManager
+                {
+                    To = clientdata.Email,
+                    Subject = "Created Successfully - SitCom!",
+                    IsBodyHtml = true,
+                    Body = content
+                };
+                oMailManager.SendEmail();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService

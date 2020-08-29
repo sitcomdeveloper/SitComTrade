@@ -111,11 +111,18 @@ namespace SitComTech.Model.ViewModel
         public string Email { get; set; }      
         public string Phone { get; set; }        
         public long OwnerId { get; set; }
-        public string Mobile { get; set; }
-        public string SecondEmail { get; set; }
-        public string Password { get; set; }
+        public string Mobile { get; set; }       
         public string State { get; set; }
         public string City { get; set; }
         public string PinCode { get; set; }
+    }
+
+    public class ClientPasswordVM
+    {
+        public long Id { get; set; }       
+        public string Email { get; set; }
+        public string OldPassword { get; set; }       
+        public string NewPassword { get; set; }
+        public string ConfirmPassword { get; set; }
     }
 }

@@ -116,4 +116,17 @@ namespace SitComTech.Model.DataObject
         public string ImportId { get; set; }
         public long? AffiliateUser { get; set; }
     }
+    public class ClientQuery : BaseEntity
+    {
+        public long OwnerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }       
+        public Nullable<long> CountryId { get; set; }
+        public string CountryName { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; }
+
+    }
 }

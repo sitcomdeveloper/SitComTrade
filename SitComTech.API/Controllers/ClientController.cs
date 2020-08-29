@@ -140,6 +140,29 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("UpdateClientWithAddress")]
+        public void UpdateClientWithAddress(ClientAddressVM clientVM)
+        {
+            _clientService.UpdateClientWithAddress(clientVM);
+        }
+        [HttpPost]
+        [Route("UpdatePasswordOfClient")]
+        public void UpdatePasswordOfClient(ClientPasswordVM clientVM)
+        {
+            _clientService.UpdatePasswordOfClient(clientVM);
+        }
+
+        [HttpPost]
+        [Route("InsertClientQuery")]
+        public ClientQuery InsertClientQuery(ClientQuery clientVM)
+        {
+            if (clientVM != null)
+                return _clientService.InsertClientQuery(clientVM);
+            else
+                return null;
+        }
+
+        [HttpPost]
         [Route("GetTradeAccountByType")]
         public List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradevm)
         {
