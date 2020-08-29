@@ -234,5 +234,26 @@ namespace SitComTech.API.Controllers
                 throw ex;
             }
         }
+
+        /// <summary>
+        ///  Get All RealAccountType
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAllRealAccountTypes")]
+        public List<RealAccountType> GetAllRealAccountTypes()
+        {
+            try
+            {
+                var RealAccountTypes = _unitOfWork.Repository<RealAccountType>().Query(x => x.Active == true && x.Deleted == false).Select().ToList();
+                return RealAccountTypes;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

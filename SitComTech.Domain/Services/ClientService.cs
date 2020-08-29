@@ -76,6 +76,10 @@ namespace SitComTech.Domain.Services
                         CountryISDCode = clientdata.CountryISDCode,
                         ConvertionDeskId = clientdata.ConvertionDeskId,
                         ConvertionDeskName = clientdata.ConvertionDeskName,
+                        RealAccountTypeId = clientdata.RealAccountTypeId,
+                        RealAccountTypeName = clientdata.RealAccountTypeName,
+                        TradeAccountType = clientdata.TradeAccountType,
+                        PreferredLanguage = clientdata.PreferredLanguage,
                     };
                     _repository.Insert(entity);
                     _unitOfWork.SaveChanges();
@@ -162,6 +166,10 @@ namespace SitComTech.Domain.Services
                 clientdata.CountryISDCode = entity.CountryISDCode;
                 clientdata.ConvertionDeskId = entity.ConvertionDeskId;
                 clientdata.ConvertionDeskName = entity.ConvertionDeskName;
+                clientdata.RealAccountTypeId = entity.RealAccountTypeId;
+                clientdata.RealAccountTypeName = entity.RealAccountTypeName;
+                clientdata.TradeAccountType = entity.TradeAccountType;
+                clientdata.PreferredLanguage = entity.PreferredLanguage;
                 _repository.Update(clientdata);
                 _unitOfWork.SaveChanges();
             }
@@ -341,7 +349,11 @@ namespace SitComTech.Domain.Services
                 IsStarred = x.UserOwner.clients.IsStarred,
                 CountryISDCode = x.UserOwner.clients.CountryISDCode,
                 ConvertionDeskId = x.UserOwner.clients.ConvertionDeskId,
-                ConvertionDeskName = x.UserOwner.clients.ConvertionDeskName
+                ConvertionDeskName = x.UserOwner.clients.ConvertionDeskName,
+                RealAccountTypeId = x.UserOwner.clients.RealAccountTypeId,
+                RealAccountTypeName = x.UserOwner.clients.RealAccountTypeName,
+                TradeAccountType = x.UserOwner.clients.TradeAccountType,
+                PreferredLanguage = x.UserOwner.clients.PreferredLanguage
             }).ToList();
         }
 
@@ -411,7 +423,11 @@ namespace SitComTech.Domain.Services
                 IsStarred = x.UserOwner.clients.IsStarred,
                 CountryISDCode = x.UserOwner.clients.CountryISDCode,
                 ConvertionDeskId = x.UserOwner.clients.ConvertionDeskId,
-                ConvertionDeskName = x.UserOwner.clients.ConvertionDeskName
+                ConvertionDeskName = x.UserOwner.clients.ConvertionDeskName,
+                RealAccountTypeId = x.UserOwner.clients.RealAccountTypeId,
+                RealAccountTypeName = x.UserOwner.clients.RealAccountTypeName,
+                TradeAccountType = x.UserOwner.clients.TradeAccountType,
+                PreferredLanguage = x.UserOwner.clients.PreferredLanguage
             }).FirstOrDefault();
         }
 
@@ -500,6 +516,149 @@ namespace SitComTech.Domain.Services
                     _repository.GetRepository<Address>().Insert(addr);
                     _unitOfWork.SaveChanges();
                 }
+            }
+        }
+
+        public ClientAddressVM GetTradeAccountDetailWithAddressById(string emailaddress)
+        {
+            return _repository.Queryable().Join(_repository.GetRepository<Address>().Queryable(), clients => clients.Id, addr => addr.OwnerId,
+                (clients, addr) => new { clients, Addrs = addr }) 
+            .Where(x => x.clients.Active && !x.clients.Deleted && x.clients.Email == emailaddress).Select(x =>
+            new ClientAddressVM
+            {
+                Id = x.clients.Id,
+                OwnerId = x.clients.OwnerId,
+                CountryId = x.clients.CountryId,
+                CountryName = x.clients.CountryName,               
+                FirstName = x.clients.FirstName,
+                LastName = x.clients.LastName,
+                Email = x.clients.Email,
+                PinCode = x.Addrs.ZipCode,
+                State = x.Addrs.State,
+                City = x.Addrs.City,               
+            }).FirstOrDefault();
+        }
+        public void UpdateClientWithAddress(ClientAddressVM entity)
+        {
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Email == entity.Email);
+            if (clientdata != null)
+            {
+                clientdata.UpdatedAt = DateTime.Now;
+                clientdata.UpdatedBy = entity.Id;
+                clientdata.UpdatedByName = entity.FirstName;
+                clientdata.FirstName = entity.FirstName;
+                clientdata.LastName = entity.LastName;
+                clientdata.Email = entity.Email;                
+                clientdata.CountryId = entity.CountryId;
+                clientdata.CountryName = entity.CountryName;               
+                clientdata.Phone = entity.Phone;
+                clientdata.OwnerId = entity.OwnerId;               
+                _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
+                Address userdata = _repository.GetRepository<Address>().Queryable().FirstOrDefault(x => x.OwnerId == clientdata.Id);
+                if (userdata != null)
+                {
+                    userdata.UpdatedAt = DateTime.Now;
+                    userdata.UpdatedBy = entity.Id;
+                    userdata.ZipCode = entity.PinCode;
+                    userdata.City = entity.City;
+                    userdata.State = entity.State;
+                    _repository.GetRepository<Address>().Update(userdata);
+                    _unitOfWork.SaveChanges();
+                }
+                else
+                {
+                    Address addr = new Address
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = entity.OwnerId,
+                        CountryId = clientdata.CountryId.GetValueOrDefault(),
+                        CountryName = clientdata.CountryName,
+                        ZipCode = entity.PinCode,
+                        City = entity.City,
+                        State = entity.State,
+                    };
+                    _repository.GetRepository<Address>().Insert(addr);
+                    _unitOfWork.SaveChanges();
+                }
+            }           
+        }
+        public void UpdatePasswordOfClient(ClientPasswordVM entity)
+        {
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Email == entity.Email && x.Password== entity.OldPassword && x.Active == true && x.Deleted == false);
+            if (clientdata != null)
+            {
+                clientdata.UpdatedAt = DateTime.Now;
+                clientdata.Password = entity.NewPassword;
+                _repository.Update(clientdata);
+                _unitOfWork.SaveChanges();
+            }
+        }
+
+        public ClientQuery InsertClientQuery(ClientQuery clientdata)
+        {
+            try
+            {
+                ClientQuery _ClientQuery = new ClientQuery
+                {
+                    Active = true,
+                    Deleted = false,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = 0,
+                    CreatedByName = "",
+                    OwnerId = clientdata.OwnerId,
+                    CountryId = clientdata.CountryId.GetValueOrDefault(),
+                    CountryName = clientdata.CountryName,
+                    FirstName = clientdata.FirstName,
+                    LastName = clientdata.LastName,
+                    Email = clientdata.Email,
+                    Phone = clientdata.Phone,
+                    Subject = clientdata.Subject,
+                    Message = clientdata.Message,
+                };
+                _repository.GetRepository<ClientQuery>().Insert(_ClientQuery);
+                _unitOfWork.SaveChanges();
+                SendEmilToClientQuery(clientdata);
+                return _ClientQuery;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void SendEmilToClientQuery(ClientQuery clientdata)
+        {
+            try
+            {
+
+                string content = "<html><body><p>Dear <b>" + clientdata.FirstName + " " + clientdata.LastName + ",</b></p>";
+                content += "<p>We let you know that  with the following details has been created for you in the system :</p>";
+
+                content += "<p>First Name: " + clientdata.FirstName + "</p>";
+                content += "<p>Last Name: " + clientdata.LastName + "</p>";
+                content += "<p>Country Name: " + clientdata.CountryName + "</p>";
+                content += "<p>Phone: " + clientdata.Phone + "</p>";
+                content += "<p>Subject: " + clientdata.Subject + "</p>";
+                content += "<p>Message: " + clientdata.Message + "</p>";
+                content += "<p>Happy Trading !</p>";
+                content += "<p>SitCom Team</p></body></html>";
+                MailManager oMailManager = new MailManager
+                {
+                    To = clientdata.Email,
+                    Subject = "Created Successfully - SitCom!",
+                    IsBodyHtml = true,
+                    Body = content
+                };
+                oMailManager.SendEmail();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

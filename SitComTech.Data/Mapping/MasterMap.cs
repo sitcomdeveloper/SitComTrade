@@ -134,5 +134,17 @@ namespace SitComTech.Data.Mapping
 
         }
 
-    }    
+    }
+
+    public class RealAccountTypeMap : EntityTypeConfiguration<RealAccountType>
+    {
+        public RealAccountTypeMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        }
+
+    }
 }

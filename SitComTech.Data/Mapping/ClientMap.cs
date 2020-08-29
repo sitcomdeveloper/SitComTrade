@@ -106,4 +106,15 @@ namespace SitComTech.Data.Mapping
 
         }
     }
+
+    public class ClientQueryMap : EntityTypeConfiguration<ClientQuery>
+    {
+        public ClientQueryMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+        }
+    }
 }

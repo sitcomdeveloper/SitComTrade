@@ -65,6 +65,7 @@
     <Compile Include="Masters\Desk.cs" />
     <Compile Include="Masters\ExceptionLogger.cs" />
     <Compile Include="Masters\ModuleGroup.cs" />
+    <Compile Include="Masters\RealAccountType.cs" />
     <Compile Include="Masters\Role.cs" />
     <Compile Include="Masters\SenderSetting.cs" />
     <Compile Include="Masters\ServerTimeZone.cs" />
