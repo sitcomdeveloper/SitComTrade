@@ -5,7 +5,6 @@ namespace SitComTech.Model.ViewModel
 {
     public class ClientDataVM
     {
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -29,7 +28,11 @@ namespace SitComTech.Model.ViewModel
         public string CountryISDCode { get; set; }
         public Nullable<long> ConvertionDeskId { get; set; }
         public string ConvertionDeskName { get; set; }
-
+        public Nullable<long> RealAccountTypeId { get; set; }
+        public string RealAccountTypeName { get; set; }
+        public string TradeAccountType { get; set; }
+        public string PreferredLanguage { get; set; }
+        public string PromoCode { get; set; }
     }
 
     public class ClientListVM
@@ -83,6 +86,10 @@ namespace SitComTech.Model.ViewModel
         public string PreviousOwner { get; set; }
         public Nullable<long> ConvertionDeskId { get; set; }
         public string ConvertionDeskName { get; set; }
+        public Nullable<long> RealAccountTypeId { get; set; }
+        public string RealAccountTypeName { get; set; }
+        public string TradeAccountType { get; set; }
+        public string PreferredLanguage { get; set; }
     }   
     public class ClientStarredVM
     {
@@ -93,5 +100,22 @@ namespace SitComTech.Model.ViewModel
     {
         public List<string> HeaderNames { get; set; }
         public string FileName { get; set; }
+    }
+    public class ClientAddressVM
+    {
+        public long Id { get; set; }        
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Nullable<long> CountryId { get; set; }
+        public string CountryName { get; set; }
+        public string Email { get; set; }      
+        public string Phone { get; set; }        
+        public long OwnerId { get; set; }
+        public string Mobile { get; set; }
+        public string SecondEmail { get; set; }
+        public string Password { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string PinCode { get; set; }
     }
 }

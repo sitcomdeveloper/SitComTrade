@@ -50,6 +50,10 @@ namespace SitComTech.Model.DataObject
         public Nullable<DateTime> LastCallDate { get; set; }
         public Nullable<long> ConvertionDeskId { get; set; }
         public string ConvertionDeskName { get; set; }
+        public Nullable<long> RealAccountTypeId { get; set; }
+        public string RealAccountTypeName { get; set; }
+        public string TradeAccountType { get; set; }
+        public string PreferredLanguage { get; set; }
         public virtual User UserTable { get; set; }
     }
 

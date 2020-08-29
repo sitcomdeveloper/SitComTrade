@@ -23,6 +23,7 @@ namespace SitComTech.Core.Interface
         void UpdateClientStarred(ClientStarredVM entity);
         ClientListVM GetClientInfoDetailById(long clientid);
         void ImportClient(List<ImportClient> client);
+        ClientAddressVM GetTradeAccountDetailWithAddressById(string email);
     }
 
     public interface IMarketingInfoService : IService<MarketingInfo>

@@ -133,6 +133,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("GetTradeAccountDetailWithAddressById/{email}")]
+        public ClientAddressVM GetTradeAccountDetailWithAddressById(string email)
+        {
+            return _clientService.GetTradeAccountDetailWithAddressById(email);
+        }
+
+        [HttpPost]
         [Route("GetTradeAccountByType")]
         public List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradevm)
         {
@@ -527,5 +534,6 @@ namespace SitComTech.API.Controllers
             }
             return result;
         }
+
     }
 }
