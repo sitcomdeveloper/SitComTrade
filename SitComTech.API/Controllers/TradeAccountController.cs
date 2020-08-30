@@ -73,5 +73,12 @@ namespace SitComTech.API.Controllers
                 return false;
             }
         }
+
+        [HttpPost]
+        [Route("AddDeposit")]
+        public void AddDeposit(FinancialTransactionVM groupVM)
+        {
+            _TradeAccountService.AddDeposit(groupVM);
+        }
     }
 }

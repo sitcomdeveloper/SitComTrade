@@ -12,4 +12,12 @@ namespace SitComTech.Data.Mapping
             Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
+    public class FinancialTransactionMap : EntityTypeConfiguration<FinancialTransaction>
+    {
+        public FinancialTransactionMap()
+        {
+            HasKey(r => r.Id);
+            Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
 }

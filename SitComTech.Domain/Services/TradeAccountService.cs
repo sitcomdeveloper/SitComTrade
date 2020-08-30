@@ -365,5 +365,36 @@ namespace SitComTech.Domain.Services
                 return false;
             }
         }
+
+        public void AddDeposit(FinancialTransactionVM entity)
+        {
+            try
+            {
+                if (entity.TPAccountNumber != "")
+                {
+
+                    TradeAccount _TradeAccount = base.Queryable().Where(x => x.Active && !x.Deleted && x.TPAccountNumber == entity.TPAccountNumber).FirstOrDefault();
+                    if (_TradeAccount != null)
+                    {
+                        FinancialTransaction ftransaction = new FinancialTransaction
+                        {
+                            Active = true,
+                            Deleted = false,
+                            CreatedAt = DateTime.Now,
+                            CreatedBy = 0,
+                            CreatedByName = "",
+                            TPAccountNumber = entity.TPAccountNumber,
+                            DepositAmount=entity.DepositAmount,
+                        };
+                        _repository.GetRepository<FinancialTransaction>().Insert(ftransaction);
+                        _unitOfWork.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
     }
 }

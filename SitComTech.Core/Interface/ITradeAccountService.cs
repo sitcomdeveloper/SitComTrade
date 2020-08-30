@@ -13,5 +13,6 @@ namespace SitComTech.Core.Interface
         void CreateTradeAccount(CreateTradeAccountVM entity);
         void UpdateTradeAccount(TradeAccount entity);
         bool DeleteTradeAccountById(long TradeAccountId);
+        void AddDeposit(FinancialTransactionVM entity);
     }
 }

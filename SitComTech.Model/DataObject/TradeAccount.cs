@@ -129,4 +129,22 @@ namespace SitComTech.Model.DataObject
         public Nullable<bool> Active { get; set; }
         public Nullable<bool> Deleted { get; set; }
     }
+    public class FinancialTransaction : BaseEntity
+    {
+        public Nullable<long> OwnerId { get; set; }
+        public Nullable<long> ClientId { get; set; }
+        public string AccountId { get; set; }
+        public string TPAccountNumber { get; set; }
+        public Nullable<DateTime> TransactionDate { get; set; }
+        public Nullable<long> CurrencyId { get; set; }
+        public string CurrencyName { get; set; }
+        public Nullable<Decimal> DepositAmount { get; set; }
+        public Nullable<Decimal> WithdrawAmount { get; set; }
+        public Nullable<Decimal> BalanceAmount { get; set; }
+    }
+    public class FinancialTransactionVM
+    {
+        public string TPAccountNumber { get; set; }
+        public Nullable<Decimal> DepositAmount { get; set; }
+    }
 }
