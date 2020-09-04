@@ -661,6 +661,19 @@ namespace SitComTech.Domain.Services
                 throw ex;
             }
         }
+
+        public Client AuthClient(ClientAuthVM clientAuthVM)
+        {
+            Client clientdata = base.Queryable().FirstOrDefault(x => x.Email == clientAuthVM.ClientId && x.Password == clientAuthVM.Password && x.Active == true && x.Deleted == false);            
+            return clientdata;
+        }
+        public TradeAccount AuthClientByTpAccount(ClientAuthVM clientAuthVM)
+        {
+            TradeAccount tradeAccount = _repository.Queryable().Join(_repository.GetRepository<TradeAccount>().Queryable(), clients => clients.Id, tpaccount => tpaccount.ClientId,
+                (clients, TpAccount) => new { clients, TpAccount })
+            .Where(x => x.clients.Active && !x.clients.Deleted && x.TpAccount.TPAccountNumber==clientAuthVM.ClientId && x.clients.Password == clientAuthVM.Password).Select(x => x.TpAccount).FirstOrDefault();
+            return tradeAccount;
+        }
     }
 
     public class MarketingInfoService : Service<MarketingInfo>, IMarketingInfoService
@@ -1258,5 +1271,6 @@ namespace SitComTech.Domain.Services
             _repository.Insert(importFile);
             _unitOfWork.SaveChanges();
         }
+        
     }
 }

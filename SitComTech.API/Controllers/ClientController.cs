@@ -557,6 +557,17 @@ namespace SitComTech.API.Controllers
             }
             return result;
         }
-
+        [HttpPost]
+        [Route("AuthClient")]
+        public Client AuthClient(ClientAuthVM clientAuthVM)
+        {
+            return _clientService.AuthClient(clientAuthVM);            
+        }
+        [HttpPost]
+        [Route("AuthClientByTpAccount")]
+        public TradeAccount AuthClientByTpAccount(ClientAuthVM clientAuthVM)
+        {
+            return _clientService.AuthClientByTpAccount(clientAuthVM);
+        }
     }
 }
