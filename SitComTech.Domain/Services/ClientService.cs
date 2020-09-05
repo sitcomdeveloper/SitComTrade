@@ -211,6 +211,16 @@ namespace SitComTech.Domain.Services
             Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id && x.Active && !x.Deleted);
             return Client;
         }
+        public Client GetClientDetailByEmail(string email)
+        {
+            if (!String.IsNullOrEmpty(email))
+            {
+                Client Client = _repository.Queryable().FirstOrDefault(x => x.Email == email.Trim() && x.Active && !x.Deleted);
+                return Client;
+            }
+            else
+                return null;
+        }
 
         public List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
