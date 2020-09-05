@@ -133,7 +133,7 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
-        [Route("GetTradeAccountDetailWithAddressById/{email}")]
+        [Route("GetTradeAccountDetailWithAddressById")]
         public ClientAddressVM GetTradeAccountDetailWithAddressById(string email)
         {
             return _clientService.GetTradeAccountDetailWithAddressById(email);
