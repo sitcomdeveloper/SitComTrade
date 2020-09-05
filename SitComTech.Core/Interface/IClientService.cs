@@ -29,6 +29,7 @@ namespace SitComTech.Core.Interface
         ClientQuery InsertClientQuery(ClientQuery userDataVM);
         ClientTradeVM AuthClient(ClientAuthVM clientAuthVM);
         TradeAccount AuthClientByTpAccount(ClientAuthVM clientAuthVM);
+        Client GetClientDetailByEmail(string email);
     }
 
     public interface IMarketingInfoService : IService<MarketingInfo>

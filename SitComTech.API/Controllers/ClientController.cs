@@ -176,6 +176,39 @@ namespace SitComTech.API.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("TPAccountForgotPassword")]
+        public string TPAccountForgotPassword(string email)
+        {
+            try
+            {
+                Client _client = _clientService.GetClientDetailByEmail(email);
+                if (_client == null)
+                {
+                    return "Invalid Client";
+                }
+                string content = "<html><body><p>Dear <b></b></p>";
+                content += "<p>Below is your  credentials of SitCom  :</p>";
+                content += "<p>Login ID: " + email + "</p>";
+                content += "<p>Password: " + _client.Password + "</p>";
+                content += "<p>Happy Trading !</p>";
+                content += "<p>SitCom Team</p></body></html>";
+                MailManager oMailManager = new MailManager
+                {
+                    To = _client.Email,
+                    Subject = "Forgot Password - SitCom!",
+                    IsBodyHtml = true,
+                    Body = content
+                };
+                oMailManager.SendEmail();
+                return "Success";
+            }
+            catch (Exception)
+            {
+                return "Failure";
+            }
+        }
+
         [HttpGet]
         [Route("GetMarketingInfoByOwnerId/{ownerid}")]
         public MarketingInfo GetMarketingInfoByOwnerId(long ownerid)
