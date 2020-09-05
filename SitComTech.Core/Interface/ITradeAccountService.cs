@@ -21,5 +21,6 @@ namespace SitComTech.Core.Interface
         FinancialTransaction GetFinancialTransactionById(long Id);
         void UpdateFinancialTransaction(FinancialTransaction entity);
         bool DeleteMultipleFinancialTransaction(List<long> groupids);
+        bool UploadClientDocuments(ClientDocument clientDocument);
     }
 }

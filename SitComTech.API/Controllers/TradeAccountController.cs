@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SitComTech.Core.Auth;
 using SitComTech.Core.Interface;
 using SitComTech.Core.Utils;
 using SitComTech.Framework.UnitOfWork;
@@ -8,18 +9,20 @@ using SitComTech.Model.DataObject;
 using SitComTech.Model.Masters;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 
 namespace SitComTech.API.Controllers
 {
-    [RoutePrefix("api/TradeAccount")]  
+    [RoutePrefix("api/TradeAccount")]
 
     public class TradeAccountController : ApiController
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        private ITradeAccountService _TradeAccountService;        
+        private ITradeAccountService _TradeAccountService;
         public TradeAccountController(ITradeAccountService TradeAccountService, IUnitOfWork unitOfWork)
         {
             this._TradeAccountService = TradeAccountService;
@@ -158,6 +161,43 @@ namespace SitComTech.API.Controllers
                 return false;
             }
         }
-
+        [HttpPost]
+        [Route("UploadDocuments")]
+        public bool UploadDocuments()
+        {
+            try
+            {
+                var httpRequest = HttpContext.Current.Request;
+                if (HttpContext.Current.Request.Files.AllKeys.Any())
+                {
+                    //string fileName = "";
+                    var postedFile = httpRequest.Files["uploadedFile"];
+                    long ClientId = Convert.ToInt64(httpRequest.Form["ClientId"]);
+                    string fileName = Path.GetFileNameWithoutExtension(postedFile.FileName) + $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss-fff}" + Path.GetExtension(postedFile.FileName);
+                    var filePath = HttpContext.Current.Server.MapPath("~/ImportedFiles/" + fileName);
+                    postedFile.SaveAs(filePath);
+                    ClientDocument clientDocument = new ClientDocument
+                    {
+                        DocName = postedFile.FileName,
+                        DocPath = fileName,
+                        ClientId = ClientId,
+                        Active = false,
+                        Deleted = false,
+                        CreatedBy = UserIdentity.UserId ?? 0,
+                        CreatedByName = UserIdentity.UserName,
+                        CreatedAt = DateTime.Now,
+                        UpdatedBy = null,
+                        UpdatedByName = null,
+                        UpdatedAt = null
+                    };
+                    return _TradeAccountService.UploadClientDocuments(clientDocument); ;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

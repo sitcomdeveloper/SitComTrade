@@ -521,5 +521,14 @@ namespace SitComTech.Domain.Services
         {
             return _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Active && !x.Deleted).ToList();
         }
+        public bool UploadClientDocuments(ClientDocument clientDocument)
+        {
+             _repository.GetRepository<ClientDocument>().Insert(clientDocument);
+            int i = _unitOfWork.SaveChanges();
+            if (i > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }
