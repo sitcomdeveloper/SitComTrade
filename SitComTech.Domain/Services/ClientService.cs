@@ -521,21 +521,21 @@ namespace SitComTech.Domain.Services
 
         public ClientAddressVM GetTradeAccountDetailWithAddressById(string emailaddress)
         {
-            return _repository.Queryable().Join(_repository.GetRepository<Address>().Queryable(), clients => clients.Id, addr => addr.OwnerId,
-                (clients, addr) => new { clients, Addrs = addr }) 
-            .Where(x => x.clients.Active && !x.clients.Deleted && x.clients.Email == emailaddress).Select(x =>
+            return _repository.Queryable().GroupJoin(_repository.GetRepository<Address>().Queryable(), clients => clients.Id, addr => addr.OwnerId,
+                (clients, addres) => new { CL= clients, Addrs = addres }) 
+            .Where(x => x.CL.Active && !x.CL.Deleted && x.CL.Email == emailaddress).Select(x =>
             new ClientAddressVM
             {
-                Id = x.clients.Id,
-                OwnerId = x.clients.OwnerId,
-                CountryId = x.clients.CountryId,
-                CountryName = x.clients.CountryName,               
-                FirstName = x.clients.FirstName,
-                LastName = x.clients.LastName,
-                Email = x.clients.Email,
-                PinCode = x.Addrs.ZipCode,
-                State = x.Addrs.State,
-                City = x.Addrs.City,               
+                Id = x.CL.Id,
+                OwnerId = x.CL.OwnerId,
+                CountryId = x.CL.CountryId,
+                CountryName = x.CL.CountryName,               
+                FirstName = x.CL.FirstName,
+                LastName = x.CL.LastName,
+                Email = x.CL.Email,
+                PinCode = x.Addrs.Select(y=>y.ZipCode).FirstOrDefault(),
+                State = x.Addrs.Select(y => y.State).FirstOrDefault(),
+                City = x.Addrs.Select(y => y.City).FirstOrDefault(),               
             }).FirstOrDefault();
         }
         public void UpdateClientWithAddress(ClientAddressVM entity)
