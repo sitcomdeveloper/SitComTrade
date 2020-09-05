@@ -6,6 +6,7 @@ using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
 using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
+using SitComTech.Model.Masters;
 using SitComTech.Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -395,6 +396,11 @@ namespace SitComTech.Domain.Services
             {
                 throw ex;
             }            
+        }
+
+        public List<DocumentType> GetDocumentTypes()
+        {
+            return _repository.GetRepository<DocumentType>().Query().Select().ToList();
         }
     }
 }

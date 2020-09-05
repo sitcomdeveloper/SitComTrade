@@ -1,6 +1,7 @@
 ﻿using SitComTech.Core.Interface;
 using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
+using SitComTech.Model.Masters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace SitComTech.API.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        private ITradeAccountService _TradeAccountService;
+        private ITradeAccountService _TradeAccountService;        
         public TradeAccountController(ITradeAccountService TradeAccountService, IUnitOfWork unitOfWork)
         {
             this._TradeAccountService = TradeAccountService;
@@ -79,6 +80,13 @@ namespace SitComTech.API.Controllers
         public void AddDeposit(FinancialTransactionVM groupVM)
         {
             _TradeAccountService.AddDeposit(groupVM);
+        }
+
+        [HttpPost]
+        [Route("GetDocumentType")]
+        public List<DocumentType> GetDocumentTypes()
+        {
+            return _TradeAccountService.GetDocumentTypes();
         }
     }
 }

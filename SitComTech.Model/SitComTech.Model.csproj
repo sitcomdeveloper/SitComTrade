@@ -63,6 +63,7 @@
     <Compile Include="Masters\CultureCode.cs" />
     <Compile Include="Masters\Department.cs" />
     <Compile Include="Masters\Desk.cs" />
+    <Compile Include="Masters\DocumentType.cs" />
     <Compile Include="Masters\ExceptionLogger.cs" />
     <Compile Include="Masters\ModuleGroup.cs" />
     <Compile Include="Masters\RealAccountType.cs" />

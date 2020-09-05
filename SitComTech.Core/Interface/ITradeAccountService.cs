@@ -1,6 +1,7 @@
 ﻿using SitComTech.Data.Interface;
 using SitComTech.Framework.Services;
 using SitComTech.Model.DataObject;
+using SitComTech.Model.Masters;
 using System.Collections.Generic;
 
 namespace SitComTech.Core.Interface
@@ -14,5 +15,6 @@ namespace SitComTech.Core.Interface
         void UpdateTradeAccount(TradeAccount entity);
         bool DeleteTradeAccountById(long TradeAccountId);
         void AddDeposit(FinancialTransactionVM entity);
+        List<DocumentType> GetDocumentTypes();
     }
 }
