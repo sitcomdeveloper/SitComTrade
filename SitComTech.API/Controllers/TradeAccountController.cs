@@ -1,5 +1,9 @@
-﻿using SitComTech.Core.Interface;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SitComTech.Core.Interface;
+using SitComTech.Core.Utils;
 using SitComTech.Framework.UnitOfWork;
+using SitComTech.Model.Constants;
 using SitComTech.Model.DataObject;
 using System;
 using System.Collections.Generic;
@@ -80,5 +84,72 @@ namespace SitComTech.API.Controllers
         {
             _TradeAccountService.AddDeposit(groupVM);
         }
+
+        [HttpGet]
+        [Route("GetTransactionTypeEnum")]
+        public JArray GetTransactionTypeEnum()
+        {
+            var entities = EnumExtensions.GetList<TransactionTypeEnum>(true);
+            return JArray.Parse(JsonConvert.SerializeObject(entities));
+        }
+
+        [HttpGet]
+        [Route("GetTransactionApprovalEnum")]
+        public JArray GetTransactionApprovalEnum()
+        {
+            var entities = EnumExtensions.GetList<TransactionApprovalEnum>(true);
+            return JArray.Parse(JsonConvert.SerializeObject(entities));
+        }
+
+        [HttpPost]
+        [Route("AddFinancialTransaction")]
+        public void AddFinancialTransaction(FinancialTransaction groupVM)
+        {
+            _TradeAccountService.AddFinancialTransaction(groupVM);
+        }
+
+        [HttpPost]
+        [Route("GetFinancialTransactionById/{id}")]
+        public FinancialTransaction GetFinancialTransactionById(long id)
+        {
+            return _TradeAccountService.GetFinancialTransactionById(id);
+        }
+
+        [HttpPost]
+        [Route("GetAllFinancialTransactionLists")]
+        public List<FinancialTransaction> GetFinancialTransactionList()
+        {
+            return _TradeAccountService.GetFinancialTransactionList();
+        }
+
+        [HttpPost]
+        [Route("UpdateFinancialTransaction")]
+        public void UpdateFinancialTransaction(FinancialTransaction groupVM)
+        {
+            _TradeAccountService.UpdateFinancialTransaction(groupVM);
+        }
+
+        [HttpPost]
+        [Route("DeleteMultipleFinancialTransaction")]
+        public bool DeleteMultipleFinancialTransaction(List<long> groupIds)
+        {
+            try
+            {
+                if (groupIds != null && groupIds.Count > 0)
+                {
+                    return _TradeAccountService.DeleteMultipleFinancialTransaction(groupIds);
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

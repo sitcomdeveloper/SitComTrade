@@ -14,5 +14,10 @@ namespace SitComTech.Core.Interface
         void UpdateTradeAccount(TradeAccount entity);
         bool DeleteTradeAccountById(long TradeAccountId);
         void AddDeposit(FinancialTransactionVM entity);
+        void AddFinancialTransaction(FinancialTransaction entity);
+        List<FinancialTransaction> GetFinancialTransactionList();
+        FinancialTransaction GetFinancialTransactionById(long Id);
+        void UpdateFinancialTransaction(FinancialTransaction entity);
+        bool DeleteMultipleFinancialTransaction(List<long> groupids);
     }
 }
