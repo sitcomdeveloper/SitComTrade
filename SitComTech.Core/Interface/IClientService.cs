@@ -27,7 +27,7 @@ namespace SitComTech.Core.Interface
         void UpdateClientWithAddress(ClientAddressVM entity);
         void UpdatePasswordOfClient(ClientPasswordVM entity);
         ClientQuery InsertClientQuery(ClientQuery userDataVM);
-        Client AuthClient(ClientAuthVM clientAuthVM);
+        ClientTradeVM AuthClient(ClientAuthVM clientAuthVM);
         TradeAccount AuthClientByTpAccount(ClientAuthVM clientAuthVM);
     }
 

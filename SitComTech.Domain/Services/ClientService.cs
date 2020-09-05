@@ -662,10 +662,10 @@ namespace SitComTech.Domain.Services
             }
         }
 
-        public Client AuthClient(ClientAuthVM clientAuthVM)
+        public ClientTradeVM AuthClient(ClientAuthVM clientAuthVM)
         {
-            Client clientdata = base.Queryable().FirstOrDefault(x => x.Email == clientAuthVM.ClientId && x.Password == clientAuthVM.Password && x.Active == true && x.Deleted == false);            
-            return clientdata;
+            var clientTradedata = base.Queryable().Join(_repository.GetRepository<TradeAccount>().Queryable(),client=>client.Id,trade=>trade.ClientId, (Clients,Trades)=>new ClientTradeVM{ Client= Clients, TradeAccount=Trades}).Where(x => x.Client.Email == clientAuthVM.ClientId && x.Client.Password == clientAuthVM.Password && x.Client.Active == true && x.Client.Deleted == false).FirstOrDefault();
+            return clientTradedata;
         }
         public TradeAccount AuthClientByTpAccount(ClientAuthVM clientAuthVM)
         {

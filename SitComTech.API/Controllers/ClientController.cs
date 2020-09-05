@@ -559,7 +559,7 @@ namespace SitComTech.API.Controllers
         }
         [HttpPost]
         [Route("AuthClient")]
-        public Client AuthClient(ClientAuthVM clientAuthVM)
+        public ClientTradeVM AuthClient(ClientAuthVM clientAuthVM)
         {
             return _clientService.AuthClient(clientAuthVM);            
         }
