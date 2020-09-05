@@ -686,6 +686,20 @@
            
         };
         $(document).ready(function () {
+
+              $.ajax({
+                type: "get",
+                  url: 'http://localhost:59122/api/TradeAccount/GetTransactionApprovalEnum',
+                contentType: 'application/json',
+                processData: false,
+                  success: function (data) {
+                      alert(data.Name);
+                },
+                error: function (data) {
+                    shownotification(10000, 'info', 'Error', 'Something went wrong');
+                }
+            });
+
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/GetTradeAccountByType",
@@ -697,15 +711,15 @@
             //    }
             //});
 
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=KaranSingh@gmail.com",
-                contentType: 'application/json',
-                processData: false,
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=KaranSingh@gmail.com",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',

@@ -45,4 +45,34 @@ namespace SitComTech.Model.Constants
         [Description("SendGridProvider")]
         SendGridProvider = 2
     }
+
+    public enum TransactionTypeEnum
+    {
+        [Description("Deposit")]
+        Deposit = 1,
+        [Description("Withdrawal")]
+        Withdrawal = 2,
+        [Description("Credit In")]
+        CreditIn = 3,
+        [Description("Credit Out")]
+        CreditOut = 4
+    }
+
+    public enum TransactionApprovalEnum
+    {
+        [Description("Approved")]
+        Approved = 1,
+        [Description("Pending")]
+        Pending = 2,
+        [Description("Failed")]
+        Failed = 3,
+        [Description("Declined")]
+        Declined = 4,
+        [Description("InProgress")]
+        InProgress = 5,
+        [Description("Paid")]
+        Paid = 6,
+        [Description("ChargeBack")]
+        ChargeBack = 7
+    }
 }
