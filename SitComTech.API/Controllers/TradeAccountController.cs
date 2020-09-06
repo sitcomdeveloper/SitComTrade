@@ -199,5 +199,12 @@ namespace SitComTech.API.Controllers
                 throw ex;
             }
         }
+
+        [HttpPost]
+        [Route("WithdrawalAmount")]
+        public bool WithdrawalAmount(WithdrawalTransaction groupVM)
+        {
+           return _TradeAccountService.WithdrawalAmount(groupVM);
+        }
     }
 }

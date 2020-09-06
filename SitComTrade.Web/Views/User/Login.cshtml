@@ -737,16 +737,38 @@
             6, 7
         ]);
 
+
+        UserVM.withdraw = {            
+            TPAccountNumber: ko.observable('TRA0203'),
+            CurrencyId: ko.observable(2),
+            CurrencyName: ko.observable('USD'),
+            WithdrawAmount: ko.observable(498),
+            BankName: ko.observable('dhdh jddf'),
+            IBAN: ko.observable('JHss')
+        };
+
+
         $(document).ready(function () {
+
              $.ajax({
                 type: 'Post',
-                 url: apiURl + "api/Client/TPAccountForgotPassword?email=kk84singh@gmail.com",
+                 url: apiURl + "api/TradeAccount/WithdrawalAmount",
                 contentType: 'application/json',
                 processData: false,
+                 data: ko.toJSON(UserVM.withdraw),
                 success: function (result) {
                     alert(result);
                 }
             });
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/Client/TPAccountForgotPassword?email=kk84singh@gmail.com",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',
