@@ -530,5 +530,61 @@ namespace SitComTech.Domain.Services
             else
                 return false;
         }
+
+        public bool WithdrawalAmount(WithdrawalTransaction entity)
+        {
+            try
+            {
+                if (entity.TPAccountNumber != "")
+                {
+
+                    TradeAccount _TradeAccount = base.Queryable().Where(x => x.Active && !x.Deleted && x.TPAccountNumber == entity.TPAccountNumber).FirstOrDefault();
+                    if (_TradeAccount != null)
+                    {
+                        FinancialTransaction ftransaction = new FinancialTransaction();
+                        ftransaction.Active = true;
+                        ftransaction.Deleted = false;
+                        ftransaction.CreatedAt = DateTime.Now;
+                        ftransaction.CreatedBy = 0;
+                        ftransaction.CreatedByName = "";
+                        ftransaction.TPAccountNumber = entity.TPAccountNumber;
+                        ftransaction.WithdrawAmount = entity.WithdrawAmount;
+                        ftransaction.TransactionTypeName = "Withdrawal";
+                        ftransaction.TransactionTypeId = 2;
+                        //Savig all WithdrawalTransaction
+                        ftransaction.WithdrawalTransactions = new List<WithdrawalTransaction>();
+                        //Primary Adder Always Added
+                        ftransaction.WithdrawalTransactions.Add(new WithdrawalTransaction()
+                        {
+                            TPAccountNumber = entity.TPAccountNumber,
+                            Active = true,
+                            Deleted = false,
+                            CreatedAt = DateTime.Now,
+                            CreatedBy = 0,
+                            CreatedByName = "",
+                            TransactionDate = DateTime.Now,
+                            CurrencyId = entity.CurrencyId,
+                            CurrencyName = entity.CurrencyName,
+                            BankName = entity.BankName,
+                            IBAN = entity.IBAN,
+                            ObjectState = Framework.DataContext.ObjectState.Added
+                        });
+                        _repository.GetRepository<FinancialTransaction>().Insert(ftransaction);
+                        int i = _unitOfWork.SaveChanges();
+                        if (i > 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+                else
+                    return false;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
