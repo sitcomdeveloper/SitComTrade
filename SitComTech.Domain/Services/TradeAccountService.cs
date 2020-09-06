@@ -386,6 +386,14 @@ namespace SitComTech.Domain.Services
                             CreatedByName = "",
                             TPAccountNumber = entity.TPAccountNumber,
                             DepositAmount=entity.DepositAmount,
+                            TransactionDate = DateTime.Now,
+                            CurrencyId = 3,
+                            CurrencyName = "EUR",
+                            TradingEnvironment = "Real",
+                            TransactionTypeId = 1,
+                            TransactionTypeName = "Deposit",
+                            TransactionApprovalId = 1,
+                            TransactionApprovalName = "Approved",
                         };
                         _repository.GetRepository<FinancialTransaction>().Insert(ftransaction);
                         _unitOfWork.SaveChanges();
@@ -551,6 +559,15 @@ namespace SitComTech.Domain.Services
                         ftransaction.WithdrawAmount = entity.WithdrawAmount;
                         ftransaction.TransactionTypeName = "Withdrawal";
                         ftransaction.TransactionTypeId = 2;
+                        ftransaction.CurrencyId = 3;
+                        ftransaction.CurrencyName = "EUR";
+                        ftransaction.TradingEnvironment = "Real";
+                        ftransaction.TransactionApprovalId = 1;
+                        ftransaction.TransactionApprovalName = "Approved";
+                        ftransaction.TransactionDate = DateTime.Now;                         
+
+
+
                         //Savig all WithdrawalTransaction
                         ftransaction.WithdrawalTransactions = new List<WithdrawalTransaction>();
                         //Primary Adder Always Added

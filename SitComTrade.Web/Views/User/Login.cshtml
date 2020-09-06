@@ -711,26 +711,34 @@
 
 
         UserVM.EditFinancial = {
-            Id: ko.observable(4),
-            OwnerId: ko.observable(1),
-            ClientId: ko.observable(1),
-            AccountId: ko.observable(2),
-            TPAccountNumber: ko.observable('ty6777733443'),
-            CurrencyId: ko.observable(2),
-            CurrencyName: ko.observable('USD'),
-            DepositAmount: ko.observable(10999),
-            WithdrawAmount: ko.observable(498),
-            BalanceAmount: ko.observable(5654),
-            ItemId: ko.observable('yrd'),
-            TradingEnvironment: ko.observable('Real'),
-            TransactionTypeId: ko.observable(1),
-            TransactionTypeName: ko.observable('Deposit'),
-            TransactionApprovalId: ko.observable(2),
-            TransactionApprovalName: ko.observable('Paid'),
-            FTD: ko.observable(1),
-            Desk: ko.observable('Meeting'),
-            Comment: ko.observable('dhdh jddf'),
-            ManualAuto: ko.observable('JHss')
+            Id: ko.observable(1),
+           
+            FirstName: ko.observable('ty6777733443'),
+            CountryId: ko.observable(2),
+            CountryName: ko.observable('USD'),
+           
+            Email: ko.observable('ImranK@gmail.com'),
+            Phone: ko.observable('Real'),
+           
+            OwnerId: ko.observable(2),
+            Mobile: ko.observable('Paid'),
+            State: ko.observable(1),
+            City: ko.observable('Meeting'),
+            PinCode: ko.observable('dhdh jddf'),
+            LastName: ko.observable('JHss')
+
+
+       
+
+
+
+
+
+
+
+
+
+
         };
 
         UserVM.Selectedips = ko.observableArray([
@@ -750,16 +758,27 @@
 
         $(document).ready(function () {
 
-             $.ajax({
-                type: 'Post',
-                 url: apiURl + "api/TradeAccount/WithdrawalAmount",
-                contentType: 'application/json',
-                processData: false,
-                 data: ko.toJSON(UserVM.withdraw),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/UpdateClientWithAddress",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditFinancial),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
+
+            // $.ajax({
+            //    type: 'Post',
+            //     url: apiURl + "api/TradeAccount/WithdrawalAmount",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //     data: ko.toJSON(UserVM.withdraw),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
             // $.ajax({
             //    type: 'Post',
             //     url: apiURl + "api/Client/TPAccountForgotPassword?email=kk84singh@gmail.com",
@@ -846,15 +865,15 @@
             //    }
             //});
 
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=KaranSingh@gmail.com",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=ImranK@gmail.com",
+                contentType: 'application/json',
+                processData: false,
+                success: function (result) {
+                    alert(result);
+                }
+            });
 
             //$.ajax({
             //    type: 'Post',
