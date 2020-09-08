@@ -1,5 +1,6 @@
 ﻿using SitComTech.Framework.DataContext;
 using System;
+using System.Collections.Generic;
 
 namespace SitComTech.Model.DataObject
 {    
@@ -141,10 +142,33 @@ namespace SitComTech.Model.DataObject
         public Nullable<Decimal> DepositAmount { get; set; }
         public Nullable<Decimal> WithdrawAmount { get; set; }
         public Nullable<Decimal> BalanceAmount { get; set; }
+        public string ItemId { get; set; }
+        public string TradingEnvironment { get; set; }
+        public string TransactionTypeName { get; set; }
+        public Nullable<long> TransactionTypeId { get; set; }
+        public string TransactionApprovalName { get; set; }
+        public Nullable<long> TransactionApprovalId { get; set; }
+        public Nullable<bool> FTD { get; set; }
+        public string Comment { get; set; }
+        public string Desk { get; set; }
+        public string ManualAuto { get; set; }
+        public virtual List<WithdrawalTransaction> WithdrawalTransactions { get; set; }
     }
     public class FinancialTransactionVM
     {
         public string TPAccountNumber { get; set; }
         public Nullable<Decimal> DepositAmount { get; set; }
+    }
+    public class WithdrawalTransaction : BaseEntity
+    {
+        public long FinancialTransactionId { get; set; }
+        public string TPAccountNumber { get; set; }
+        public Nullable<DateTime> TransactionDate { get; set; }
+        public Nullable<long> CurrencyId { get; set; }
+        public string CurrencyName { get; set; }
+        public Nullable<Decimal> WithdrawAmount { get; set; }
+        public string BankName { get; set; }
+        public string IBAN { get; set; }      
+        public virtual FinancialTransaction FinancialTransactionTable { get; set; }
     }
 }

@@ -147,4 +147,13 @@ namespace SitComTech.Data.Mapping
         }
 
     }
+    public class DocumentTypeMap : EntityTypeConfiguration<DocumentType>
+    {
+        public DocumentTypeMap()
+        {
+            HasKey(a => a.Id);
+            Property(a => a.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
 }

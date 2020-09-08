@@ -211,6 +211,16 @@ namespace SitComTech.Domain.Services
             Client Client = _repository.Queryable().FirstOrDefault(x => x.Id == Id && x.Active && !x.Deleted);
             return Client;
         }
+        public Client GetClientDetailByEmail(string email)
+        {
+            if (!String.IsNullOrEmpty(email))
+            {
+                Client Client = _repository.Queryable().FirstOrDefault(x => x.Email == email.Trim() && x.Active && !x.Deleted);
+                return Client;
+            }
+            else
+                return null;
+        }
 
         public List<TradeAccountInfoVM> GetTradeAccountByType(TradeAccountVM tradeVM)
         {
@@ -521,21 +531,21 @@ namespace SitComTech.Domain.Services
 
         public ClientAddressVM GetTradeAccountDetailWithAddressById(string emailaddress)
         {
-            return _repository.Queryable().Join(_repository.GetRepository<Address>().Queryable(), clients => clients.Id, addr => addr.OwnerId,
-                (clients, addr) => new { clients, Addrs = addr }) 
-            .Where(x => x.clients.Active && !x.clients.Deleted && x.clients.Email == emailaddress).Select(x =>
+            return _repository.Queryable().GroupJoin(_repository.GetRepository<Address>().Queryable(), clients => clients.Id, addr => addr.OwnerId,
+                (clients, addres) => new { CL= clients, Addrs = addres }) 
+            .Where(x => x.CL.Active && !x.CL.Deleted && x.CL.Email == emailaddress).Select(x =>
             new ClientAddressVM
             {
-                Id = x.clients.Id,
-                OwnerId = x.clients.OwnerId,
-                CountryId = x.clients.CountryId,
-                CountryName = x.clients.CountryName,               
-                FirstName = x.clients.FirstName,
-                LastName = x.clients.LastName,
-                Email = x.clients.Email,
-                PinCode = x.Addrs.ZipCode,
-                State = x.Addrs.State,
-                City = x.Addrs.City,               
+                Id = x.CL.Id,
+                OwnerId = x.CL.OwnerId,
+                CountryId = x.CL.CountryId,
+                CountryName = x.CL.CountryName,               
+                FirstName = x.CL.FirstName,
+                LastName = x.CL.LastName,
+                Email = x.CL.Email,
+                PinCode = x.Addrs.Select(y=>y.ZipCode).FirstOrDefault(),
+                State = x.Addrs.Select(y => y.State).FirstOrDefault(),
+                City = x.Addrs.Select(y => y.City).FirstOrDefault(),               
             }).FirstOrDefault();
         }
         public void UpdateClientWithAddress(ClientAddressVM entity)
@@ -660,6 +670,19 @@ namespace SitComTech.Domain.Services
             {
                 throw ex;
             }
+        }
+
+        public ClientTradeVM AuthClient(ClientAuthVM clientAuthVM)
+        {
+            var clientTradedata = base.Queryable().Join(_repository.GetRepository<TradeAccount>().Queryable(),client=>client.Id,trade=>trade.ClientId, (Clients,Trades)=>new ClientTradeVM{ Client= Clients, TradeAccount=Trades}).Where(x => x.Client.Email == clientAuthVM.ClientId && x.Client.Password == clientAuthVM.Password && x.Client.Active == true && x.Client.Deleted == false).FirstOrDefault();
+            return clientTradedata;
+        }
+        public TradeAccount AuthClientByTpAccount(ClientAuthVM clientAuthVM)
+        {
+            TradeAccount tradeAccount = _repository.Queryable().Join(_repository.GetRepository<TradeAccount>().Queryable(), clients => clients.Id, tpaccount => tpaccount.ClientId,
+                (clients, TpAccount) => new { clients, TpAccount })
+            .Where(x => x.clients.Active && !x.clients.Deleted && x.TpAccount.TPAccountNumber==clientAuthVM.ClientId && x.clients.Password == clientAuthVM.Password).Select(x => x.TpAccount).FirstOrDefault();
+            return tradeAccount;
         }
     }
 
@@ -1258,5 +1281,6 @@ namespace SitComTech.Domain.Services
             _repository.Insert(importFile);
             _unitOfWork.SaveChanges();
         }
+        
     }
 }

@@ -20,4 +20,21 @@ namespace SitComTech.Data.Mapping
             Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
+    public class ClientDocumentMap : EntityTypeConfiguration<ClientDocument>
+    {
+        public ClientDocumentMap()
+        {
+            HasKey(r => r.Id);
+            Property(r=>r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+        }
+    }
+    public class WithdrawalTransactionMap : EntityTypeConfiguration<WithdrawalTransaction>
+    {
+        public WithdrawalTransactionMap()
+        {
+            HasKey(r => r.Id);
+            Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasRequired(a => a.FinancialTransactionTable).WithMany(a => a.WithdrawalTransactions).HasForeignKey(x => x.FinancialTransactionId).WillCascadeOnDelete(false);
+        }
+    }
 }

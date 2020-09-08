@@ -44,6 +44,7 @@
     <Compile Include="Constants\Enums.cs" />
     <Compile Include="DataObject\AdditionalInfo.cs" />
     <Compile Include="DataObject\Client.cs" />
+    <Compile Include="DataObject\ClientDocument.cs" />
     <Compile Include="DataObject\Country.cs" />
     <Compile Include="DataObject\Address.cs" />
     <Compile Include="DataObject\Email.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Masters\CultureCode.cs" />
     <Compile Include="Masters\Department.cs" />
     <Compile Include="Masters\Desk.cs" />
+    <Compile Include="Masters\DocumentType.cs" />
     <Compile Include="Masters\ExceptionLogger.cs" />
     <Compile Include="Masters\ModuleGroup.cs" />
     <Compile Include="Masters\RealAccountType.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SitComTech.Model.DataObject;
+using System;
 using System.Collections.Generic;
 
 namespace SitComTech.Model.ViewModel
@@ -124,5 +125,15 @@ namespace SitComTech.Model.ViewModel
         public string OldPassword { get; set; }       
         public string NewPassword { get; set; }
         public string ConfirmPassword { get; set; }
+    }
+    public class ClientAuthVM
+    {
+        public string ClientId { get; set; }
+        public string Password { get; set; }
+    }
+    public class ClientTradeVM
+    {
+        public Client Client { get; set; }
+        public TradeAccount TradeAccount { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using SitComTech.Framework.Repositories;
 using SitComTech.Framework.Services;
 using SitComTech.Framework.UnitOfWork;
 using SitComTech.Model.DataObject;
+using SitComTech.Model.Masters;
 using SitComTech.Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -385,6 +386,14 @@ namespace SitComTech.Domain.Services
                             CreatedByName = "",
                             TPAccountNumber = entity.TPAccountNumber,
                             DepositAmount=entity.DepositAmount,
+                            TransactionDate = DateTime.Now,
+                            CurrencyId = 3,
+                            CurrencyName = "EUR",
+                            TradingEnvironment = "Real",
+                            TransactionTypeId = 1,
+                            TransactionTypeName = "Deposit",
+                            TransactionApprovalId = 1,
+                            TransactionApprovalName = "Approved",
                         };
                         _repository.GetRepository<FinancialTransaction>().Insert(ftransaction);
                         _unitOfWork.SaveChanges();
@@ -395,6 +404,204 @@ namespace SitComTech.Domain.Services
             {
                 throw ex;
             }            
+        }
+
+        public List<DocumentType> GetDocumentTypes()
+        {
+            return _repository.GetRepository<DocumentType>().Query().Select().ToList();
+        }
+
+        public void AddFinancialTransaction(FinancialTransaction entity)
+        {
+            try
+            {
+                if (entity.TPAccountNumber != "")
+                {
+                    FinancialTransaction ftransaction = new FinancialTransaction
+                    {
+                        Active = true,
+                        Deleted = false,
+                        CreatedAt = DateTime.Now,
+                        CreatedBy = 0,
+                        CreatedByName = "",
+                        OwnerId = entity.OwnerId,
+                        ClientId = entity.ClientId,
+                        AccountId = entity.AccountId,
+                        TPAccountNumber = entity.TPAccountNumber,
+                        TransactionDate = DateTime.Now,
+                        CurrencyId = entity.CurrencyId,
+                        CurrencyName = entity.CurrencyName,
+                        DepositAmount = entity.DepositAmount,
+                        WithdrawAmount = entity.WithdrawAmount,
+                        BalanceAmount = entity.BalanceAmount,
+                        ItemId = entity.ItemId,
+                        TradingEnvironment = entity.TradingEnvironment,
+                        TransactionTypeId = entity.TransactionTypeId,
+                        TransactionTypeName = entity.TransactionTypeName,
+                        TransactionApprovalId = entity.TransactionApprovalId,
+                        TransactionApprovalName = entity.TransactionApprovalName,
+                        FTD = entity.FTD,
+                        Desk = entity.Desk,
+                        Comment = entity.Comment,
+                        ManualAuto = entity.ManualAuto,
+                    };
+                    _repository.GetRepository<FinancialTransaction>().Insert(ftransaction);
+                    _unitOfWork.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateFinancialTransaction(FinancialTransaction entity)
+        {
+            FinancialTransaction _financialt = _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Id == entity.Id).FirstOrDefault();
+            if (_financialt != null)
+            {
+                _financialt.OwnerId = entity.OwnerId;
+                _financialt.ClientId = entity.ClientId;
+                _financialt.AccountId = entity.AccountId;
+                _financialt.TPAccountNumber = entity.TPAccountNumber;
+                _financialt.TransactionDate = DateTime.Now;
+                _financialt.CurrencyId = entity.CurrencyId;
+                _financialt.CurrencyName = entity.CurrencyName;
+                _financialt.DepositAmount = entity.DepositAmount;
+                _financialt.WithdrawAmount = entity.WithdrawAmount;
+                _financialt.BalanceAmount = entity.BalanceAmount;
+                _financialt.ItemId = entity.ItemId;
+                _financialt.TradingEnvironment = entity.TradingEnvironment;
+                _financialt.TransactionTypeId = entity.TransactionTypeId;
+                _financialt.TransactionTypeName = entity.TransactionTypeName;
+                _financialt.TransactionApprovalId = entity.TransactionApprovalId;
+                _financialt.TransactionApprovalName = entity.TransactionApprovalName;
+                _financialt.FTD = entity.FTD;
+                _financialt.Desk = entity.Desk;
+                _financialt.Comment = entity.Comment;
+                _financialt.ManualAuto = entity.ManualAuto;
+                _financialt.UpdatedAt = DateTime.Now;
+                _repository.GetRepository<FinancialTransaction>().Update(_financialt);
+                _unitOfWork.SaveChanges();
+            }
+            if (entity == null || _financialt == null)
+                throw new ArgumentNullException("financial transaction");
+        }
+        public void DeleteFinancialTransaction(FinancialTransaction entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException("FinancialTransaction");
+            _repository.GetRepository<FinancialTransaction>().Delete(entity);
+            _unitOfWork.SaveChanges();
+        }
+
+        public bool DeleteMultipleFinancialTransaction(List<long> groupIds)
+        {
+            try
+            {
+                if (groupIds != null && groupIds.Count > 0)
+                {
+
+                    List<FinancialTransaction> groups = _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Active && !x.Deleted && groupIds.Contains(x.Id)).ToList();
+                    foreach (var grp in groups)
+                    {
+                        DeleteFinancialTransaction(grp);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public FinancialTransaction GetFinancialTransactionById(long Id)
+        {
+            if ((long)Id == 0)
+                return null;
+            FinancialTransaction vinstr = _repository.GetRepository<FinancialTransaction>().Queryable().Where(x =>x.Id ==(long)Id && x.Active && !x.Deleted).FirstOrDefault();
+            return vinstr;
+        }
+
+        public List<FinancialTransaction> GetFinancialTransactionList()
+        {
+            return _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Active && !x.Deleted).ToList();
+        }
+        public bool UploadClientDocuments(ClientDocument clientDocument)
+        {
+             _repository.GetRepository<ClientDocument>().Insert(clientDocument);
+            int i = _unitOfWork.SaveChanges();
+            if (i > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool WithdrawalAmount(WithdrawalTransaction entity)
+        {
+            try
+            {
+                if (entity.TPAccountNumber != "")
+                {
+
+                    TradeAccount _TradeAccount = base.Queryable().Where(x => x.Active && !x.Deleted && x.TPAccountNumber == entity.TPAccountNumber).FirstOrDefault();
+                    if (_TradeAccount != null)
+                    {
+                        FinancialTransaction ftransaction = new FinancialTransaction();
+                        ftransaction.Active = true;
+                        ftransaction.Deleted = false;
+                        ftransaction.CreatedAt = DateTime.Now;
+                        ftransaction.CreatedBy = 0;
+                        ftransaction.CreatedByName = "";
+                        ftransaction.TPAccountNumber = entity.TPAccountNumber;
+                        ftransaction.WithdrawAmount = entity.WithdrawAmount;
+                        ftransaction.TransactionTypeName = "Withdrawal";
+                        ftransaction.TransactionTypeId = 2;
+                        ftransaction.CurrencyId = 3;
+                        ftransaction.CurrencyName = "EUR";
+                        ftransaction.TradingEnvironment = "Real";
+                        ftransaction.TransactionApprovalId = 1;
+                        ftransaction.TransactionApprovalName = "Approved";
+                        ftransaction.TransactionDate = DateTime.Now;                         
+
+
+
+                        //Savig all WithdrawalTransaction
+                        ftransaction.WithdrawalTransactions = new List<WithdrawalTransaction>();
+                        //Primary Adder Always Added
+                        ftransaction.WithdrawalTransactions.Add(new WithdrawalTransaction()
+                        {
+                            TPAccountNumber = entity.TPAccountNumber,
+                            Active = true,
+                            Deleted = false,
+                            CreatedAt = DateTime.Now,
+                            CreatedBy = 0,
+                            CreatedByName = "",
+                            TransactionDate = DateTime.Now,
+                            CurrencyId = entity.CurrencyId,
+                            CurrencyName = entity.CurrencyName,
+                            BankName = entity.BankName,
+                            IBAN = entity.IBAN,
+                            ObjectState = Framework.DataContext.ObjectState.Added
+                        });
+                        _repository.GetRepository<FinancialTransaction>().Insert(ftransaction);
+                        int i = _unitOfWork.SaveChanges();
+                        if (i > 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+                else
+                    return false;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
