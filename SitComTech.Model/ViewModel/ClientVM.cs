@@ -116,6 +116,7 @@ namespace SitComTech.Model.ViewModel
         public string State { get; set; }
         public string City { get; set; }
         public string PinCode { get; set; }
+        public string CountryISDCode { get; set; }
     }
 
     public class ClientPasswordVM
