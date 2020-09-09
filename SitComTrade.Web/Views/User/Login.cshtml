@@ -747,16 +747,16 @@
 
         $(document).ready(function () {
 
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Client/UpdateClientWithAddress",
-                contentType: 'application/json',
-                processData: false,
-                data: ko.toJSON(UserVM.EditFinancial),
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/UpdateClientWithAddress",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    data: ko.toJSON(UserVM.EditFinancial),
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             // $.ajax({
             //    type: 'Post',
@@ -854,15 +854,15 @@
             //    }
             //});
 
-            //$.ajax({
-            //    type: 'Post',
-            //    url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=ImranK@gmail.com",
-            //    contentType: 'application/json',
-            //    processData: false,
-            //    success: function (result) {
-            //        alert(result);
-            //    }
-            //});
+            $.ajax({
+                type: 'Post',
+                url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=realacc.1@gmail.com",
+                contentType: 'application/json',
+                processData: false,
+                success: function (result) {
+                    alert(result);
+                }
+            });
 
             //$.ajax({
             //    type: 'Post',
