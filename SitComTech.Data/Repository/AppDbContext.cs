@@ -63,40 +63,47 @@ namespace SitComTech.Data.Repository
         }
         void HistoryLog()
         {
-            var modifiedEntities = ChangeTracker.Entries()
-           .Where(p => p.State == EntityState.Modified).ToList();
-            var now = DateTime.UtcNow;
-            
-            foreach (var change in modifiedEntities)
+            try
             {
-                var entityName = change.Entity.GetType().Name;
-                var primaryKey = GetPrimaryKeyValue(change);
+                var modifiedEntities = ChangeTracker.Entries()
+               .Where(p => p.State == EntityState.Modified).ToList();
+                var now = DateTime.UtcNow;
 
-                foreach (var prop in change.OriginalValues.PropertyNames)
+                foreach (var change in modifiedEntities)
                 {
-                    var originalValue = $"{change.GetDatabaseValues().GetValue<object>(prop)}";
-                    var currentValue = $"{change.CurrentValues[prop]}";
-                    
-                    if (originalValue != currentValue)
-                    {
-                        var ownerid = 0;
-                        ownerid = change.CurrentValues.PropertyNames.Contains("OwnerId") ? Convert.ToInt32(change.CurrentValues["OwnerId"]) : change.CurrentValues.PropertyNames.Contains("UserId") ? Convert.ToInt32(change.CurrentValues["UserId"]) : 0;
-                        ChangeLog log = new ChangeLog()
-                        {
-                            EntityName = entityName,
-                            PrimaryKeyValue = primaryKey.ToString(),
-                            PropertyName = prop,
-                            OldValue = originalValue,
-                            NewValue = currentValue,
-                            DateChanged = now,
-                            ObjectState = ObjectState.Added,
-                            OwnerId= ownerid
+                    var entityName = change.Entity.GetType().Name;
+                    var primaryKey = GetPrimaryKeyValue(change);
 
-                        };
-                        ChangeLogs.Add(log);
-                        
+                    foreach (var prop in change.OriginalValues.PropertyNames)
+                    {
+                        var originalValue = $"{change.GetDatabaseValues().GetValue<object>(prop)}";
+                        var currentValue = $"{change.CurrentValues[prop]}";
+
+                        if (originalValue != currentValue)
+                        {
+                            var ownerid = 0;
+                            ownerid = change.CurrentValues.PropertyNames.Contains("OwnerId") ? Convert.ToInt32(change.CurrentValues["OwnerId"]) : change.CurrentValues.PropertyNames.Contains("UserId") ? Convert.ToInt32(change.CurrentValues["UserId"]) : 0;
+                            ChangeLog log = new ChangeLog()
+                            {
+                                EntityName = entityName,
+                                PrimaryKeyValue = primaryKey.ToString(),
+                                PropertyName = prop,
+                                OldValue = originalValue,
+                                NewValue = currentValue,
+                                DateChanged = now,
+                                ObjectState = ObjectState.Added,
+                                OwnerId = ownerid
+
+                            };
+                            ChangeLogs.Add(log);
+
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+
             }
             
         }
