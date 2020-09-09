@@ -48,4 +48,25 @@ export class GeneralInfoService {
   crttradeacc(convertingtrdeAcc: any): Observable<any> {
     return this.http.post<any>(API_URL + 'TradeAccount/CreateTradeAccount', convertingtrdeAcc);
   }
+  // financial transactions API
+  // get transaction type
+  gettransactiontype(): Observable<any> {
+    return this.http.get<any>(API_URL + 'TradeAccount/GetTransactionTypeEnum');
+  }
+// get transaction approval
+gettransactionapproval(): Observable<any> {
+  return this.http.get<any>(API_URL + 'TradeAccount/GetTransactionTypeEnum');
+}
+// insert financial transaction
+insrtfinancialTrnsion(insrtfincilTransParamtr: any):  Observable<any> {
+  return this.http.post<any>(API_URL + 'TradeAccount/AddFinancialTransaction', insrtfincilTransParamtr);
+}
+// update financial transaction
+updtfinancialTrnsion(updtfincilTransParamtr: any):  Observable<any> {
+  return this.http.post<any>(API_URL + 'TradeAccount/UpdateFinancialTransaction', updtfincilTransParamtr);
+}
+// financil transaction by id
+getfinanciltransbyId(finTransId: any): Observable<any> {
+  return this.http.post<any>(API_URL + 'TradeAccount/GetFinancialTransactionById/' + finTransId, {});
+}
 }

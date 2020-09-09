@@ -24,7 +24,7 @@
          <div _ngcontent-dym-c1="" class="records-control showrcrd2" style="display: none;">Showing Records <a _ngcontent-dym-c1="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-dym-c1="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-dym-c1="" style="width: 30px;">1 - 1</span> of <span _ngcontent-dym-c1="" style="width: 20px;">1</span></div>
       </div>
    </div>
-   <div _ngcontent-dym-c1="" aria-labelledby="headingnine" class="collapse" id="collapsenine" role="tabpanel" style="">
+   <div _ngcontent-dym-c1="" aria-labelledby="headingnine" class="collapse" id="collapsenine" role="tabpanel">
       <div _ngcontent-dym-c1="" class="card-body">
          
             <div _ngcontent-dym-c8="" class="box-content">
@@ -50,43 +50,46 @@
                            <tr data-index="0" data-rule="body">
                             <td >
                                <div data-display-for="9_ItemId">
-                                  <div class="text-ellipsis"><a href=""><span>41156</span></a></div>
+                                  <div class="text-ellipsis"><a href=""><span>{{tketransctionbyId?.ItemId}}</span></a></div>
                                </div>
                             </td>
                             <td >
                                <div data-display-for="9_GroupId">
-                                  <div class="text-ellipsis"><a href="" valuesource="IsDemo" attrname="data-is-demo"><span>102921</span></a></div>
+                                  <div class="text-ellipsis"><a href="" valuesource="IsDemo" attrname="data-is-demo"><span>{{tketransctionbyId?.TPAccountNumber}}</span></a></div>
                                </div>
                             </td>
                             <td>
                                <div data-display-for="9_AllowTrade">
-                                  <div><a href=""><span>€ 1'000.00</span></a></div>
+                                  <div><a href=""><span>{{tketransctionbyId?.BalanceAmount}}</span></a></div>
                                </div>
                             </td>
                             <td>
-                               <div data-display-for="9_RegistrationDate">11/21/2019 5:35:09 PM</div>
+                               <div data-display-for="9_RegistrationDate">{{tketransctionbyId?.TransactionDate}}</div>
                             </td>
                             <td >
                                <div data-display-for="9_Equity">
-                                  <div class="text-ellipsis" data-field="Equity" data-original-value="805.90418439" data-isformatted="true"> Real
+                                  <div class="text-ellipsis" data-field="Equity" data-original-value="805.90418439" data-isformatted="true">{{tketransctionbyId?.TradingEnvironment}}
                                 </div>
                                </div>
                             </td>
                             <td>
                                <div data-display-for="9_Balance">
-                                  <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true"> Deposit</div>
+                                  <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true"> {{tketransctionbyId?.TransactionTypeName}}</div>
                                </div>
                             </td>
                             <td>
                                <div data-display-for="9_Credit">
-                                  <div class="text-ellipsis" data-field="Credit" data-original-value="0" data-isformatted="true">EUR</div>
+                                  <div class="text-ellipsis" data-field="Credit" data-original-value="0" data-isformatted="true">{{tketransctionbyId?.CurrencyName}}</div>
                                </div>
                             </td>
                             <td>
-                               <div data-display-for="9_LastLoginDate">Approved</div>
+                               <div data-display-for="9_LastLoginDate">{{tketransctionbyId?.TransactionApprovalName}}</div>
                             </td>
                             <td>
-                               <div data-display-for="9_LastTradeDate"><i _ngcontent-pce-c9="" _ngcontent-mfm-c17="" aria-hidden="true" class="fa fa-check-circle greenbtn"></i></div>
+                               <div data-display-for="9_LastTradeDate">
+                                  <!-- <i _ngcontent-pce-c9="" _ngcontent-mfm-c17="" aria-hidden="true" class="fa fa-check-circle greenbtn"></i> -->
+                                  <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': tketransctionbyId?.FTD ? 'green':'gray' }"></i>   
+                                 </div>
                             </td>
                             <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete"><i _ngcontent-pce-c9="" _ngcontent-mfm-c17="" aria-hidden="true" class="fa fa-check-delete "></i></a></td>
                          </tr>
