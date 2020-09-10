@@ -1473,7 +1473,8 @@
           <td class="chkCol">
             <div class="jsgrid-cell-content">
               <div class="input-checkbox"><span>
-                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id,item.Email,item.Phone)" onclick="checkboxcheck()"></span>
+                  <input type="checkbox" data-item-selector="true" class="tablecheckbox checkBoxClass" (change)="deletbtn($event.target.checked,item.Id,item.Email,item.Phone)" onclick="checkboxcheck()">
+                </span>
                 <span (click)= "show = !show;star(show,item.Id)">
                   <i class="fa fa-star" title="Clear filter" id="toggle-click" [ngStyle]="{'color': item.IsStarred ? 'gold':'grey' }"></i>
                 </span>

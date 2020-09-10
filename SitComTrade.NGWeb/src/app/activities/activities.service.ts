@@ -23,4 +23,8 @@ export class ActivitiesService {
   getMonetaryTransactions(getmonetrytransactios: any): Observable<any> {
     return this.http.post<any>(API_URL + 'TradeAccount/GetAllFinancialTransactionLists', getmonetrytransactios);
   }
+  // delete monetry transactions
+  dltmonetarytransactions(Idsofmonetarytransactions: any): Observable<any> {
+    return this.http.post(API_URL + 'TradeAccount/DeleteMultipleFinancialTransaction', Idsofmonetarytransactions);
+  }
 }

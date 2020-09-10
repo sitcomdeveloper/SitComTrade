@@ -57,6 +57,11 @@ rmvTasks: any;
   rmvIP: string;
   userIdofIP: number;
   ipdlt: IpDTO;
+  rmvmonetrytransactions: string;
+  // monetary transactions
+  removemonetaryTransactionss = false;
+  deleteemnetrytrans: any;
+  collectionofId: number;
 
   constructor(private commentsService: CommentsService, private bsmodal: BsModalRef, private clientService: ClientsService, private _route: ActivatedRoute, private groupsService: GroupsService, private activitiesService: ActivitiesService, private settingsService: SettingsService) {}
 
@@ -101,6 +106,11 @@ rmvTasks: any;
       this.removeIP = true;
     } else {
       this.removeIP = false;
+    }
+    if (this.rmvmonetrytransactions === 'rmvmonetrytransactions') {
+      this.removemonetaryTransactionss = true;
+    } else {
+      this.removemonetaryTransactionss = false;
     }
     this.userComments();
   }
@@ -179,6 +189,15 @@ rmvTasks: any;
       this.ipdlt = dltIPres;
       this.clddata.emit(dltIPres);
       console.log('ipdlt', dltIPres);
+      this.hideModal();
+    })
+  }
+  // delete montry transactions
+  clrmonetrytransactions() {
+    this.activitiesService.dltmonetarytransactions(this.collectionofId).subscribe(clrmnetryTrans => {
+      this.deleteemnetrytrans = clrmnetryTrans;
+      this.clddata.emit(clrmnetryTrans);
+      console.log('deleteemnetrytrans',clrmnetryTrans);
       this.hideModal();
     })
   }
