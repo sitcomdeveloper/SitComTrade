@@ -924,7 +924,7 @@
                 <div class="email-grid-body" style="height: 407px;">
                    <table class="email-table" style="width: 1306px;">
                       <tbody>
-                         <tr class="email-row email-selected-row">
+                         <tr class="email-row email-selected-row" *ngFor = "let monetraytransactions of MonetryTransactions">
                             <td class="email-cell email-align-center" style="width: 17px;">
                                <div class="email-cell-content">
                                   <div class="input-checkbox"><span><input type="checkbox" data-item-selector="true"></span></div>
@@ -932,86 +932,86 @@
                             </td>
                             <td class="email-cell" style="width: 85px;">
                                <div class="email-cell-content">
-                                  <div class="text-ellipsis"><a href=""><span>41156</span></a></div>
+                                  <div class="text-ellipsis"><a href=""><span>{{monetraytransactions?.ItemId}}</span></a></div>
                                </div>
                             </td>
                             <td class="email-cell" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_AccountId">
-                                     <div class="text-ellipsis"><a href=""><span>102921</span></a></div>
+                                     <div class="text-ellipsis"><a href=""><span>{{monetraytransactions?.TPAccountNumber}}</span></a></div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_Equity">
-                                     <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                     <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true">{{monetraytransactions?.BalanceAmount}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_Currency">
-                                     <div class="text-ellipsis">EUR</div>
+                                     <div class="text-ellipsis">{{monetraytransactions?.CurrencyName}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_UsdAmount">
-                                     <div class="text-ellipsis" data-field="UsdAmount" data-original-value="1105.93" data-isformatted="true">$ 1'105.93</div>
+                                     <div class="text-ellipsis" data-field="UsdAmount" data-original-value="1105.93" data-isformatted="true"></div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell" style="width: 136px;">
                                <div class="email-cell-content">
-                                  <div data-display-for="14_Date">11/22/2019 12:32:34 PM</div>
+                                  <div data-display-for="14_Date">{{monetraytransactions?.TransactionDate}}</div>
                                </div>
                             </td>
                             <td class="email-cell" style="width: 136px;">
                                <div class="email-cell-content">
-                                  <div data-display-for="14_ModifiedDate"></div>
+                                  <div data-display-for="14_ModifiedDate">{{monetraytransactions?.TransactionDate}}</div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_TransactionType">
-                                     <div class="text-ellipsis">Deposit</div>
+                                     <div class="text-ellipsis">{{monetraytransactions?.TransactionTypeName}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_ManualAuto">
-                                     <div class="text-ellipsis">Manual</div>
+                                     <div class="text-ellipsis">{{monetraytransactions?.ManualAuto}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_TradingEnvironment">
-                                     <div class="text-ellipsis">Real</div>
+                                     <div class="text-ellipsis">{{monetraytransactions?.TradingEnvironment}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 85px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_TransactionApproval">
-                                     <div class="text-ellipsis">Approved</div>
+                                     <div class="text-ellipsis">{{monetraytransactions?.TransactionApprovalName}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 84px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_CreatedBy">
-                                     <div class="text-ellipsis" data-original-title="" title="">Empty Value</div>
+                                     <div class="text-ellipsis" data-original-title="" title="">{{monetraytransactions?.CreatedByName}}</div>
                                   </div>
                                </div>
                             </td>
                             <td class="email-cell email-align-left" style="width: 84px;">
                                <div class="email-cell-content">
                                   <div data-display-for="14_DeskId">
-                                     <div class="text-ellipsis">IMC</div>
+                                     <div class="text-ellipsis">{{monetraytransactions?.Desk}}</div>
                                   </div>
                                </div>
                             </td>

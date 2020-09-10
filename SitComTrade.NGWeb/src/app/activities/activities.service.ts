@@ -19,4 +19,8 @@ export class ActivitiesService {
   getTasks(gtalltasks: any): Observable<any> {
     return this.http.post<any>(API_URL + 'Task/GetTaskByOwnerId', gtalltasks);
   }
+  // get all monetary transactions(financila transactions)
+  getMonetaryTransactions(getmonetrytransactios: any): Observable<any> {
+    return this.http.post<any>(API_URL + 'TradeAccount/GetAllFinancialTransactionLists', getmonetrytransactios);
+  }
 }

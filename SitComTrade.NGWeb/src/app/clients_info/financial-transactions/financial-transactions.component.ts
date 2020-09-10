@@ -21,7 +21,7 @@ export class FinancialTransactionsComponent implements OnInit {
     // get trans by id
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    this.generalinfoService.getfinanciltransbyId(4).subscribe(gettransactioRes => {
+    this.generalinfoService.getfinanciltransbyId(details).subscribe(gettransactioRes => {
       this.tketransctionbyId = gettransactioRes;
       console.log('tketransctionbyId', gettransactioRes);
     })

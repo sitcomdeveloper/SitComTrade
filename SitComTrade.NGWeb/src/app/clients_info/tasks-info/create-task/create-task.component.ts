@@ -55,7 +55,9 @@ export class CreateTaskComponent implements OnInit {
       // crt financial transaction
       tpaccount: [''],
       amount: [''],
+      transactiontypeid: [''],
       transactiontype: [''],
+      transactionapprovalid: [''],
       transactionapproval: [''],
       comment: [''],
 });
@@ -211,8 +213,18 @@ transactionApproval() {
 }
  // insrt financial transaction
  addfinacilaTransaction() {
+  this.typeoffinaclTransaction.forEach(element => {
+    if (element.Id === +this.taskInfoForm.value.transactiontype) {
+      this.taskInfoForm.value.transactiontypeid = element.Name;
+    }
+  });
+  this.approvaloffinaclTransaction.forEach(element => {
+    if (element.Id === +this.taskInfoForm.value.transactionapproval) {
+      this.taskInfoForm.value.transactionapprovalid = element.Name;
+    }
+  });
   const insrtfincilTransParamtr = {
-    // OwnerId: ,
+    // OwnerId: this.id,
     // ClientId: ,
     // AccountId: ,
     // TPAccountNumber: ,
@@ -223,14 +235,14 @@ transactionApproval() {
     // BalanceAmount: ,
     // ItemId: ,
     // TradingEnvironment: ,
-    // TransactionTypeId: ,
-    // TransactionTypeName: ,
-    // TransactionApprovalId: ,
-    // TransactionApprovalName: ,
-    // FTD: ,
-    // Desk: ,
-    // Comment: ,
-    // ManualAuto: 
+    // TransactionTypeId: this.taskInfoForm.value.transactiontype,
+    // TransactionTypeName: this.taskInfoForm.value.transactiontypeid,
+    // TransactionApprovalId: this.taskInfoForm.value.transactionapproval,
+    // TransactionApprovalName: this.taskInfoForm.value.transactionapprovalid,
+    // FTD: '',
+    // Desk: '',
+    // Comment: '',
+    // ManualAuto: ''
   }
   this.generalinfoService.insrtfinancialTrnsion(insrtfincilTransParamtr).subscribe(addfincialtransctionRes => {
     this.addedfincialTransaction = addfincialtransctionRes;
