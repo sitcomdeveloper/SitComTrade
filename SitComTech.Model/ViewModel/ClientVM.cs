@@ -15,7 +15,9 @@ namespace SitComTech.Model.ViewModel
 
         public Nullable<long> CountryId { get; set; }
         public string CountryName { get; set; }
-
+        public Nullable<long> CurrencyId { get; set; }
+        public string CurrencyName { get; set; }
+        public Nullable<DateTime> DateOfBirth { get; set; }
         public Nullable<long> GroupId { get; set; }
         public string GroupName { get; set; }
 

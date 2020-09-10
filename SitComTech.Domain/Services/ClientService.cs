@@ -64,6 +64,9 @@ namespace SitComTech.Domain.Services
                         GroupName = clientdata.GroupName,
                         CountryId = clientdata.CountryId,
                         CountryName = clientdata.CountryName,
+                        CurrencyId = clientdata.CurrencyId,
+                        CurrencyName = clientdata.CurrencyName,
+                        DateOfBirth = clientdata.DateOfBirth,
                         Enabled = true,
                         TypeName = clientdata.AccountType,
                         FirstRegistrationDate = DateTime.Now,
@@ -140,6 +143,9 @@ namespace SitComTech.Domain.Services
                 clientdata.GroupName = entity.GroupName;
                 clientdata.CountryId = entity.CountryId;
                 clientdata.CountryName = entity.CountryName;
+                clientdata.CurrencyId = clientdata.CurrencyId;
+                clientdata.CurrencyName = clientdata.CurrencyName;
+                clientdata.DateOfBirth = clientdata.DateOfBirth;
                 clientdata.TypeName = entity.TypeName;
                 clientdata.Phone = entity.Phone;
                 clientdata.OwnerId = entity.OwnerId;
@@ -321,6 +327,9 @@ namespace SitComTech.Domain.Services
                 CountryName = x.UserOwner.clients.CountryName,
                 CountryId = x.UserOwner.clients.CountryId,
                 FirstOwner = x.UserOwner.clients.FirstOwner,
+                CurrencyId = x.UserOwner.clients.CurrencyId,
+                CurrencyName = x.UserOwner.clients.CurrencyName,
+                DateOfBirth = x.UserOwner.clients.DateOfBirth,
                 PreviousOwner = x.UserOwner.clients.PreviousOwner,
                 LastCallDate = x.UserOwner.clients.LastCallDate,
                 Password = x.UserOwner.clients.Password,
@@ -394,6 +403,9 @@ namespace SitComTech.Domain.Services
                 LastName = x.UserOwner.clients.LastName,
                 CountryName = x.UserOwner.clients.CountryName,
                 CountryId = x.UserOwner.clients.CountryId,
+                CurrencyId = x.UserOwner.clients.CurrencyId,
+                CurrencyName = x.UserOwner.clients.CurrencyName,
+                DateOfBirth = x.UserOwner.clients.DateOfBirth,
                 FirstOwner = x.UserOwner.clients.FirstOwner,
                 PreviousOwner = x.UserOwner.clients.PreviousOwner,
                 LastCallDate = x.UserOwner.clients.LastCallDate,
@@ -543,6 +555,9 @@ namespace SitComTech.Domain.Services
                 FirstName = x.CL.FirstName,
                 LastName = x.CL.LastName,
                 Email = x.CL.Email,
+                Phone = x.CL.Phone,
+                Mobile = x.CL.Mobile,
+                CountryISDCode = x.CL.CountryISDCode,
                 PinCode = x.Addrs.Select(y=>y.ZipCode).FirstOrDefault(),
                 State = x.Addrs.Select(y => y.State).FirstOrDefault(),
                 City = x.Addrs.Select(y => y.City).FirstOrDefault(),               
