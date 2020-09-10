@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralInfoService } from '../general-info/general-info.service';
 import { ActivatedRoute } from '@angular/router';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { CreateTaskComponent } from '../tasks-info/create-task/create-task.component';
 
 @Component({
   selector: 'app-financial-transactions',
@@ -8,13 +10,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./financial-transactions.component.css']
 })
 export class FinancialTransactionsComponent implements OnInit {
-  typeoffinaclTransaction: any;
-  addedfincialTransaction: any;
   updatedFinacilTranstion: any;
   tketransctionbyId: any;
   detail: number;
 
-  constructor(private generalinfoService: GeneralInfoService, private _route: ActivatedRoute) { }
+  constructor(private generalinfoService: GeneralInfoService, private _route: ActivatedRoute, private modalService: BsModalService) { }
+  bsModalRef: BsModalRef;
 
   ngOnInit() {
     // get trans by id
@@ -23,49 +24,6 @@ export class FinancialTransactionsComponent implements OnInit {
     this.generalinfoService.getfinanciltransbyId(4).subscribe(gettransactioRes => {
       this.tketransctionbyId = gettransactioRes;
       console.log('tketransctionbyId', gettransactioRes);
-    })
-    this.transactionType();
-  }
-  // get trans by id
-  // getallfinacialtransctionbyId() {
-  //   this.generalinfoService.getfinanciltransbyId().subscribe(gettransactioRes => {
-  //     this.tketransctionbyId = gettransactioRes;
-  //     console.log('tketransctionbyId',gettransactioRes);
-  //   })
-  // }
-  // get transaction type
-  transactionType() {
-    this.generalinfoService.gettransactiontype().subscribe(transtypeRes => {
-      this.typeoffinaclTransaction = transtypeRes;
-      console.log('typeoffinaclTransaction', transtypeRes);
-    })
-  }
-  // insrt financial transaction
-  addfinacilaTransaction() {
-    const insrtfincilTransParamtr = {
-      // OwnerId: ,
-      // ClientId: ,
-      // AccountId: ,
-      // TPAccountNumber: ,
-      // CurrencyId: ,
-      // CurrencyName: ,
-      // DepositAmount: ,
-      // WithdrawAmount: ,
-      // BalanceAmount: ,
-      // ItemId: ,
-      // TradingEnvironment: ,
-      // TransactionTypeId: ,
-      // TransactionTypeName: ,
-      // TransactionApprovalId: ,
-      // TransactionApprovalName: ,
-      // FTD: ,
-      // Desk: ,
-      // Comment: ,
-      // ManualAuto: 
-    }
-    this.generalinfoService.insrtfinancialTrnsion(insrtfincilTransParamtr).subscribe(addfincialtransctionRes => {
-      this.addedfincialTransaction = addfincialtransctionRes;
-      console.log('addedfincialTransaction', addfincialtransctionRes);
     })
   }
   // updt finacial trns
@@ -96,5 +54,20 @@ ManualAuto: ('JHss')
       this.updatedFinacilTranstion = updtFinTrnsRes;
       console.log('updatedFinacilTranstion', updtFinTrnsRes);
     })
+  }
+  // financial transaction poup
+  opencrtfinancialTransactionspopup() {
+    const initialState = {
+      title: 'Monetary Transaction',
+      createfincTransactions:'createfincTransactions',
+      id: this.detail,
+    };
+    // tslint:disable-next-line: max-line-length
+    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef.content.closeBtnName = 'Cancel';
+    this.bsModalRef.content.clddata.subscribe(data => {
+      // after update refresh all the data
+      // this.getAllTask();
+    });
   }
 }

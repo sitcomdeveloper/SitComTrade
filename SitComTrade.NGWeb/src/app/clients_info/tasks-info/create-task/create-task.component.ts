@@ -3,6 +3,7 @@ import { TasksInfoService } from '../tasks-info.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { GeneralInfoService } from '../../general-info/general-info.service';
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -31,8 +32,13 @@ export class CreateTaskComponent implements OnInit {
   infopagetasks = false;
   infotasks: string;
   activitytasks: string;
+  crtfinancialtransaction = false;
+  createfincTransactions: string;
+  typeoffinaclTransaction: any;
+  approvaloffinaclTransaction: any;
+  addedfincialTransaction: any;
   
-  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute) { }
+  constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute, private generalinfoService: GeneralInfoService) { }
 
   ngOnInit() {
     this.taskInfoForm = this.fb.group({
@@ -45,7 +51,13 @@ export class CreateTaskComponent implements OnInit {
       taskStatusId: [''],
       statusName: [''],
       taskName: [''],
-      taskdate: ['']
+      taskdate: [''],
+      // crt financial transaction
+      tpaccount: [''],
+      amount: [''],
+      transactiontype: [''],
+      transactionapproval: [''],
+      comment: [''],
 });
 // info task
 if(this.infotasks === 'infotasks') {
@@ -59,6 +71,12 @@ if(this.activitytasks === 'activitytasks') {
 } else {
   this.activitypagetasks = false;
 }
+// crt finacil transactions
+if(this.createfincTransactions === 'createfincTransactions') {
+  this.crtfinancialtransaction = true;
+} else {
+  this.crtfinancialtransaction = false;
+}
  // code for receiving login details and bind to owner name at place of name
  this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
  this.bindLoginData = this.getLoginDetails;
@@ -66,7 +84,9 @@ if(this.activitytasks === 'activitytasks') {
     this.getAllTask();
     this.taskType();
     this.taskStatus();
-    
+    this.transactionType();
+    this.transactionApproval();
+
     let d = new Date();
     let date: number | string = d.getDate();
 date.toString().length == 1 ?  date = '0' + date: date;
@@ -174,5 +194,47 @@ DataOwnerTypeName: 'Owner',
 hideModal() {
   this.bsModalRef.hide();
 }
-
+// finacial transaction
+ // get transaction type
+ transactionType() {
+  this.generalinfoService.gettransactiontype().subscribe(transtypeRes => {
+    this.typeoffinaclTransaction = transtypeRes;
+    // console.log('typeoffinaclTransaction', transtypeRes);
+  })
+}
+// get transaction approval
+transactionApproval() {
+  this.generalinfoService.gettransactionapproval().subscribe(transapprovalRes => {
+    this.approvaloffinaclTransaction = transapprovalRes;
+    // console.log('approvaloffinaclTransaction', transapprovalRes);
+  })
+}
+ // insrt financial transaction
+ addfinacilaTransaction() {
+  const insrtfincilTransParamtr = {
+    // OwnerId: ,
+    // ClientId: ,
+    // AccountId: ,
+    // TPAccountNumber: ,
+    // CurrencyId: ,
+    // CurrencyName: ,
+    // DepositAmount: ,
+    // WithdrawAmount: ,
+    // BalanceAmount: ,
+    // ItemId: ,
+    // TradingEnvironment: ,
+    // TransactionTypeId: ,
+    // TransactionTypeName: ,
+    // TransactionApprovalId: ,
+    // TransactionApprovalName: ,
+    // FTD: ,
+    // Desk: ,
+    // Comment: ,
+    // ManualAuto: 
+  }
+  this.generalinfoService.insrtfinancialTrnsion(insrtfincilTransParamtr).subscribe(addfincialtransctionRes => {
+    this.addedfincialTransaction = addfincialtransctionRes;
+    console.log('addedfincialTransaction', addfincialtransctionRes);
+  })
+}
 }

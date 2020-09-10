@@ -55,7 +55,7 @@ export class GeneralInfoService {
   }
 // get transaction approval
 gettransactionapproval(): Observable<any> {
-  return this.http.get<any>(API_URL + 'TradeAccount/GetTransactionTypeEnum');
+  return this.http.get<any>(API_URL + 'TradeAccount/GetTransactionApprovalEnum');
 }
 // insert financial transaction
 insrtfinancialTrnsion(insrtfincilTransParamtr: any):  Observable<any> {
