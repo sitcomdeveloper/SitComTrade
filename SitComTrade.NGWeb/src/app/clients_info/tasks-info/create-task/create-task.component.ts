@@ -32,11 +32,6 @@ export class CreateTaskComponent implements OnInit {
   infopagetasks = false;
   infotasks: string;
   activitytasks: string;
-  crtfinancialtransaction = false;
-  createfincTransactions: string;
-  typeoffinaclTransaction: any;
-  approvaloffinaclTransaction: any;
-  addedfincialTransaction: any;
   
   constructor(private taskInfoService: TasksInfoService, private fb: FormBuilder,private bsModalRef: BsModalRef, private route: ActivatedRoute, private generalinfoService: GeneralInfoService) { }
 
@@ -73,12 +68,6 @@ if(this.activitytasks === 'activitytasks') {
 } else {
   this.activitypagetasks = false;
 }
-// crt finacil transactions
-if(this.createfincTransactions === 'createfincTransactions') {
-  this.crtfinancialtransaction = true;
-} else {
-  this.crtfinancialtransaction = false;
-}
  // code for receiving login details and bind to owner name at place of name
  this.getLoginDetails = JSON.parse(window.sessionStorage.getItem('username'));
  this.bindLoginData = this.getLoginDetails;
@@ -86,8 +75,7 @@ if(this.createfincTransactions === 'createfincTransactions') {
     this.getAllTask();
     this.taskType();
     this.taskStatus();
-    this.transactionType();
-    this.transactionApproval();
+
 
     let d = new Date();
     let date: number | string = d.getDate();
@@ -195,58 +183,5 @@ DataOwnerTypeName: 'Owner',
 }
 hideModal() {
   this.bsModalRef.hide();
-}
-// finacial transaction
- // get transaction type
- transactionType() {
-  this.generalinfoService.gettransactiontype().subscribe(transtypeRes => {
-    this.typeoffinaclTransaction = transtypeRes;
-    // console.log('typeoffinaclTransaction', transtypeRes);
-  })
-}
-// get transaction approval
-transactionApproval() {
-  this.generalinfoService.gettransactionapproval().subscribe(transapprovalRes => {
-    this.approvaloffinaclTransaction = transapprovalRes;
-    // console.log('approvaloffinaclTransaction', transapprovalRes);
-  })
-}
- // insrt financial transaction
- addfinacilaTransaction() {
-  this.typeoffinaclTransaction.forEach(element => {
-    if (element.Id === +this.taskInfoForm.value.transactiontype) {
-      this.taskInfoForm.value.transactiontypeid = element.Name;
-    }
-  });
-  this.approvaloffinaclTransaction.forEach(element => {
-    if (element.Id === +this.taskInfoForm.value.transactionapproval) {
-      this.taskInfoForm.value.transactionapprovalid = element.Name;
-    }
-  });
-  const insrtfincilTransParamtr = {
-    // OwnerId: this.id,
-    // ClientId: ,
-    // AccountId: ,
-    // TPAccountNumber: ,
-    // CurrencyId: ,
-    // CurrencyName: ,
-    // DepositAmount: ,
-    // WithdrawAmount: ,
-    // BalanceAmount: ,
-    // ItemId: ,
-    // TradingEnvironment: ,
-    // TransactionTypeId: this.taskInfoForm.value.transactiontype,
-    // TransactionTypeName: this.taskInfoForm.value.transactiontypeid,
-    // TransactionApprovalId: this.taskInfoForm.value.transactionapproval,
-    // TransactionApprovalName: this.taskInfoForm.value.transactionapprovalid,
-    // FTD: '',
-    // Desk: '',
-    // Comment: '',
-    // ManualAuto: ''
-  }
-  this.generalinfoService.insrtfinancialTrnsion(insrtfincilTransParamtr).subscribe(addfincialtransctionRes => {
-    this.addedfincialTransaction = addfincialtransctionRes;
-    console.log('addedfincialTransaction', addfincialtransctionRes);
-  })
 }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GeneralInfoService } from '../general-info/general-info.service';
 import { ActivatedRoute } from '@angular/router';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
-import { CreateTaskComponent } from '../tasks-info/create-task/create-task.component';
+import { CreatefinancilatransactionsComponent } from './createfinancilatransactions/createfinancilatransactions.component';
 
 @Component({
   selector: 'app-financial-transactions',
@@ -63,7 +63,7 @@ ManualAuto: ('JHss')
       id: this.detail,
     };
     // tslint:disable-next-line: max-line-length
-    this.bsModalRef = this.modalService.show(CreateTaskComponent, Object.assign({ show: true }, { class: 'modal-lg', initialState }));
+    this.bsModalRef = this.modalService.show(CreatefinancilatransactionsComponent, Object.assign({ show: true }, { class: 'modal-lg', initialState }));
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       // after update refresh all the data

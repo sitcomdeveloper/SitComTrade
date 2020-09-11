@@ -1,0 +1,99 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}} </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)=" hideModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+ </div>
+<!-- create financial transaction -->
+    <div class="form-holder">
+    
+       <form class="form-horizontal" novalidate="novalidate">
+          <div [formGroup]="taskInfoForm" class="form-group">
+             <div class="row">
+                <div class="col-xs-2 col-md-2 "><label class="valign-label" for="UserId"><span
+                         data-tooltip-el="">TP Account</span></label></div>
+                <div class="col-xs-10 col-md-10">
+                   <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" 
+                      data-live-search="true" formControlName="tpaccount">
+                      <option ngcontent-qpo-c3="" value="">Select</option>
+                      <option ngcontent-qpo-c3="" value="">
+    
+                         {{bindLoginData?.FullName}}</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+          <div [formGroup]="taskInfoForm" class="form-group">
+             <div class="row">
+                <div class="col-xs-2 col-md-2 "><label class="valign-label" for="UserId"><span
+                         data-tooltip-el="">Amount</span></label></div>
+                <div class="col-xs-10 col-md-10">
+                   <input class="form-control itemformcontrol"
+                   name="Email" formControlName="amount" type="text" aria-required="true">
+                </div>
+             </div>
+          </div>
+    
+          <div [formGroup]="taskInfoForm" class="form-group">
+             <div class="row">
+                <div class="col-xs-2 col-md-2 "><label class="valign-label" for="UserId"><span
+                         data-tooltip-el="">Transaction Type</span></label></div>
+                <div class="col-xs-10 col-md-10">
+    
+                   <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="transactiontype"
+                      data-live-search="true">
+                      <option ngcontent-qpo-c3="" value="">Select</option>
+                      <option ngcontent-qpo-c3="" value="{{tasks.Id}}" *ngFor="let tasks of typeoffinaclTransaction">
+    
+                         {{tasks.Name}}</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+          <div [formGroup]="taskInfoForm" class="form-group">
+             <div class="row">
+                <div class="col-xs-2 col-md-2 "><label class="valign-label" for="UserId"><span
+                         data-tooltip-el="">Transaction Approval</span></label></div>
+                <div class="col-xs-10 col-md-10">
+    
+                   <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" formControlName="transactionapproval"
+                      data-live-search="true">
+                      <option ngcontent-qpo-c3="" value="">Select</option>
+                      <option ngcontent-qpo-c3="" value="{{tasks.Id}}" *ngFor="let tasks of approvaloffinaclTransaction">
+    
+                         {{tasks.Name}}</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+          <div [formGroup]="taskInfoForm" class="form-group">
+             <div class="row">
+                <div class="col-xs-2 col-md-2"><label class="valign-label" for="Description"><span
+                         data-tooltip-el="">Comment</span></label></div>
+                <div class="col-xs-10 col-md-10"><textarea name="Description" class="form-control"
+                      formControlName="comment" id="33b52bbd-cf23-2cf2-9200-92a1025a7d06"></textarea></div>
+             </div>
+          </div>
+    
+          <input class="form-control" name="Id" type="hidden" id="38906eec-2b88-2413-b15d-e67d84f1ba4b" value="">
+          <div class="line line-dashed mt30">&nbsp;
+ 
+          </div>
+       </form>
+    </div>
+    
+    <div class="row">
+       <div _ngcontent-yvm-c4="" class="col-md-12" style="text-align: center;
+     justify-content: center;
+     display: flex;">
+          <div _ngcontent-yvm-c4="" class="modal-footer item-modal-footer">
+    
+             <div _ngcontent-yvm-c4="" class="text-center margin17">
+                <a _ngcontent-yvm-c4="" id="create-task-refersh" class="button submit-button itembutton" href="javascript:void(0)"
+                   data-dismiss="modal" (click)="addfinacilaTransaction()">Save</a>
+                <a _ngcontent-yvm-c4="" class="button button2 itembutton1" data-dismiss="modal"
+                   href="javascript:void(0);" (click)=" hideModal()">Cancel</a>
+             </div>
+          </div>
+       </div>
+    </div>
