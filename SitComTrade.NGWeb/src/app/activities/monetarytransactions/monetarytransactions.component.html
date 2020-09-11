@@ -30,11 +30,11 @@
                         FTD
                       </a>
                     </li>
-                    <li _ngcontent-ena-c12="" _ngcontent-mew-c3="" class="nav-item">
+                    <!-- <li _ngcontent-ena-c12="" _ngcontent-mew-c3="" class="nav-item">
                       <a _ngcontent-ena-c12="" _ngcontent-mew-c3="" class="nav-link " data-toggle="pill" href="#deposit"> 
                         DEPOSITS
                       </a>
-                    </li>
+                    </li> -->
                  </ul>
               </div>
               <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="col-md-7 rightsubopt displayend">
@@ -43,18 +43,18 @@
                     <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-label="Second group" class="btn-group mr-2" role="group">
                        <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="input-group selecticon grpselect">
                           <select _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="selectpicker form-control" data-live-search="true" data-live-search-placeholder="All" id="all" title="Please select ">
-                             <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Others</option>
-                             <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Accounts</option>
-                             <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">All</option>
-                             <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Leads</option>
-                             <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Shared</option>
-                             <option _ngcontent-ena-c12="" _ngcontent-boj-c6="">Online</option>
+                           <optgroup label="Others">
+                              <option data-can-edit="False" value="1200">FTD</option>
+                              <option data-can-edit="False" value="2683" selected="selected">ALL</option>        
+                           </optgroup>
                           </select>
-                          <span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil-alt bg-primary1 fa-lg"></i></a></span>
+                          <span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon brdr-right"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="" href="javascript:void(0);"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-plus bg-primary1 fa-lg" style="color: white;"></i></a></span><span _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="serachicon"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" href="javascript:void(0);" class="disabled-button"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg"></i></a></span>
                        </div>
                     </div>
                     <div _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-label="Third group" class="btn-group mr-2 serachicon " role="group" [attr.disabled]="deletbtnn ==true ? true : false">
-                       <a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-user-plus bg-primary1 fa-lg" style="color: white"></i></a><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" href="#"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil-alt bg-primary1 fa-lg" disabled=""></i></a>
+                       <a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="brdr-right" data-target="#createitem" data-toggle="modal" href="javascript:void(0);" class="disabled-button">
+                          <i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-pencil bg-primary1 fa-lg" style="color: white"></i></a>
+                         
                      <a _ngcontent-ena-c12="" _ngcontent-boj-c6="" href="javascript:void(0);" [class.disabled] = deletbtnn (click)="dltmonetryTransaction()">
                         
                         <i _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-hidden="true" class="fa fa-trash bg-primary1 fa-lg" ></i>
@@ -65,11 +65,6 @@
                        <ul _ngcontent-ena-c12="" _ngcontent-boj-c6="" aria-labelledby="clientcret" class="dropdown-menu impdrp ">
                           <li _ngcontent-ena-c12="" _ngcontent-boj-c6=""><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-import" data-target="#importclient" data-toggle="modal" title="Import Clients"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-arrow-up"></i>Import Monetary Transactions</a></li>
                           <li _ngcontent-ena-c12="" _ngcontent-boj-c6=""><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-export" data-target="#exportclient" data-toggle="modal" href="#" title="Export Clients"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-arrow-down"></i>Export Monetary Transactions</a></li>
-                          <li _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-sms" href="javascript:void(0);" title="Sms"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-envelope"></i>Sms to selected</a></li>
-                          <li _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-sms-all" data-target="#sms-all" data-toggle="modal" href="#" title="Sms"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-sticky-note-o"></i>Sms to all</a></li>
-                          <li _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-email" href="#" title="Emails"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-envelope"></i>Email to selected</a></li>
-                          <li _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="no-events disabled"><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-email-all" data-target="#email-all" data-toggle="modal" href="#" title="Emails"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-envelope"></i>Email to all</a></li>
-                          <li _ngcontent-ena-c12="" _ngcontent-boj-c6=""><a _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="link-account" href="javascript:void(0);"><i _ngcontent-ena-c12="" _ngcontent-boj-c6="" class="fa fa-user"></i>Create Account</a></li>
                        </ul>
                     </div>
                  </div>
@@ -534,7 +529,7 @@
                                            </form>
                                         </div>
                                      </div>
-                                     <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                     <input class="form-control daterange" name="ModifiedDate" type="text" id="" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                   </div>
                                </div>
                             </td>
@@ -957,7 +952,7 @@
                             </td>
                             <td class="email-cell" style="width: 85px;">
                                <div class="email-cell-content">
-                                  <div data-display-for="14_Equity">
+                                  <div data-display-for="14_Equity"> 
                                      <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true">{{monetraytransactions?.BalanceAmount}}</div>
                                   </div>
                                </div>
@@ -1492,7 +1487,7 @@
                                           </form>
                                        </div>
                                     </div>
-                                    <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                    <input class="form-control daterange" name="ModifiedDate" type="text" id="" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                  </div>
                               </div>
                            </td>
@@ -2247,7 +2242,7 @@
            
         
          </div>
-         <div role="tabpanel" class="tab-pane  fade " id="deposit">
+         <!-- <div role="tabpanel" class="tab-pane  fade " id="deposit">
             <div id="email" class="email">
                <div class="email-grid-header email-header-scrollbar">
                  
@@ -2696,7 +2691,7 @@
                                           </form>
                                        </div>
                                     </div>
-                                    <input class="form-control daterange" name="ModifiedDate" type="text" id="3f4258bb-fa55-e464-f7f9-57caf98441b4" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
+                                    <input class="form-control daterange" name="ModifiedDate" type="text" id="" placeholder="M/D/YYYY - M/D/YYYY" data-close-start="2/1/1753" data-close-finish="2/1/2050" data-comparation-type="1"><i class="clear cstm-search-btn-clear"><span></span></i><span class="input-group-addon"><i class="ico-sz2 ico-calendar"></i></span>
                                  </div>
                               </div>
                            </td>
@@ -3202,7 +3197,7 @@
             </div>
            
         
-         </div>
+         </div> -->
        </div>
     </div>
   

@@ -37,7 +37,10 @@
     cursor:pointer;
     padding-right:0px;
 }
-
+optgroup {
+    color: #cecece;
+    font-weight: normal;
+}
 /* .btn {
     background-color: #159ac9; 
     border: none; 
