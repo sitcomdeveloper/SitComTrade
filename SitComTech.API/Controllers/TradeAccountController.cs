@@ -52,6 +52,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("GetTradeAccountListByClientId/{clientid}")]
+        public List<TradeAccountInfoVM> GetTradeAccountListByClientId(long clientid)
+        {
+            return _TradeAccountService.GetTradeAccountListByClientId(clientid);
+        }
+
+        [HttpPost]
         [Route("UpdateTradeAccount")]
         public void UpdateTradeAccount(TradeAccount groupVM)
         {

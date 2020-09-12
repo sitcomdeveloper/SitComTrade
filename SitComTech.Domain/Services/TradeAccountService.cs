@@ -170,6 +170,78 @@ namespace SitComTech.Domain.Services
                 IsOnline = x.UserOwner.Owner.IsOnline
             }).ToList();
         }
+
+        public List<TradeAccountInfoVM> GetTradeAccountListByClientId(long clientid)
+        {
+            return _repository.Queryable().Join(_repository.GetRepository<Client>().Queryable(), clients => clients.ClientId, owner => owner.Id,
+                (clients, owner) => new { clients, Owner = owner })
+                .GroupJoin(_repository.GetRepository<TradeGroup>().Queryable(), userowner => userowner.clients.Id, mrktinfo => mrktinfo.Id,
+                (userowner, mrktinfo) => new { UserOwner = userowner, MarketInfo = mrktinfo })
+                .SelectMany(x => x.MarketInfo.DefaultIfEmpty(), (x, y) => new { x.UserOwner, MarketInfo = y })
+            .Where(x => x.UserOwner.clients.Active && !x.UserOwner.clients.Deleted && x.UserOwner.clients.ClientId == clientid).Select(x =>
+            new TradeAccountInfoVM
+            {
+                Id = x.UserOwner.clients.Id,
+                UserId = x.UserOwner.clients.UserId,
+                ClientId = x.UserOwner.clients.ClientId,
+                TPAccountNumber = x.UserOwner.clients.TPAccountNumber,
+                FtdAmount = x.UserOwner.clients.FtdAmount,
+                CurrencyId = x.UserOwner.clients.CurrencyId,
+                CurrencyName = x.UserOwner.clients.CurrencyName,
+                AccountId = x.UserOwner.clients.AccountId,
+                LastDepositDate = x.UserOwner.clients.LastDepositDate,
+                LastTradeDate = x.UserOwner.clients.LastTradeDate,
+                LastLoginDate = x.UserOwner.Owner.LastLoginDate,
+                TotalDeposit = x.UserOwner.clients.TotalDeposit,
+                TotalWithdrawal = x.UserOwner.clients.TotalWithdrawal,
+                NetDeposit = x.UserOwner.clients.NetDeposit,
+                OpenProfit = x.UserOwner.clients.OpenProfit,
+                AllowTrade = x.UserOwner.clients.AllowTrade,
+                InitialDeposit = x.UserOwner.clients.InitialDeposit,
+                StopOut = x.UserOwner.clients.StopOut,
+                MarginCall = x.UserOwner.clients.MarginCall,
+                Balance = x.UserOwner.clients.Balance,
+                MinDeposit = x.UserOwner.clients.MinDeposit,
+                OrderCount = x.UserOwner.clients.OrderCount,
+                CloseLoss = x.UserOwner.clients.CloseLoss,
+                FTD = x.UserOwner.clients.FTD,
+                GroupId = x.UserOwner.clients.GroupId,
+                GroupName = x.UserOwner.clients.GroupName,
+                FTDDate = x.UserOwner.clients.FTDDate,
+                RetentionOwner = x.UserOwner.Owner.RetentionOwner,
+                ConvertionOwner = x.UserOwner.Owner.ConvertionOwner,
+                AssignedDate = x.UserOwner.Owner.AssignedDate,
+                FirstRegistrationDate = x.UserOwner.Owner.FirstRegistrationDate,
+                ImportId = x.UserOwner.Owner.ImportId,
+                RegistrationType = x.UserOwner.Owner.RegistrationType,
+                RegistrationTypeId = x.UserOwner.Owner.RegistrationTypeId,
+                ISendEmail = x.UserOwner.clients.ISendEmail,
+                OpenLoss = x.UserOwner.clients.OpenLoss,
+                Commission = x.UserOwner.clients.Commission,
+                Equity = x.UserOwner.clients.Equity,
+                MarginLevel = x.UserOwner.clients.MarginLevel,
+                FreeMargin = x.UserOwner.clients.FreeMargin,
+                Credit = x.UserOwner.clients.Credit,
+                Volume = x.UserOwner.clients.Volume,
+                DepositCount = x.UserOwner.clients.DepositCount,
+                Desk = x.UserOwner.Owner.Desk,
+                DeskId = x.UserOwner.Owner.DeskId,
+                FirstName = x.UserOwner.Owner.FirstName,
+                LastName = x.UserOwner.Owner.LastName,
+                Email = x.UserOwner.Owner.Email,
+                SecondEmail = x.UserOwner.Owner.SecondEmail,
+                Password = x.UserOwner.Owner.Password,
+                Phone = x.UserOwner.Owner.Phone,
+                LeverageId = x.UserOwner.clients.LeverageId,
+                LeverageName = x.UserOwner.clients.LeverageName,
+                Demo = x.MarketInfo.Demo,
+                OwnerName = x.UserOwner.clients.UserName,
+                StatusId = x.UserOwner.clients.StatusId,
+                StatusName = x.UserOwner.clients.StatusName,
+                Tag = x.UserOwner.clients.Tag,
+                IsOnline = x.UserOwner.Owner.IsOnline
+            }).ToList();
+        }
         public void CreateTradeAccount(CreateTradeAccountVM entity)
         {
             try

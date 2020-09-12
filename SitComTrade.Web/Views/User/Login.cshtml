@@ -749,13 +749,23 @@
 
             $.ajax({
                 type: 'Post',
-                url: apiURl + "api/TradeAccount/GetFinancialTransactionByTPAccountNumber?tpaccount=TRA0234",
+                url: apiURl + "api/TradeAccount/GetTradeAccountListByClientId/203",
                 contentType: 'application/json',
                 processData: false,
                 success: function (result) {
                     alert(result);
                 }
             });
+
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/TradeAccount/GetFinancialTransactionByTPAccountNumber?tpaccount=TRA0234",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //  $.ajax({
             //    type: 'Post',
