@@ -24,5 +24,6 @@ namespace SitComTech.Core.Interface
         bool UploadClientDocuments(ClientDocument clientDocument);
         bool WithdrawalAmount(WithdrawalTransaction entity);
         List<FinancialTransaction> GetFinancialTransactionByClientId(long clientId);
+        List<FinancialTransaction> GetFinancialTransactionByTPAccountNumber(string TPAccountNumber);
     }
 }

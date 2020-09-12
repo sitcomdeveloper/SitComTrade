@@ -532,6 +532,14 @@ namespace SitComTech.Domain.Services
             return vinstr;
         }
 
+        public List<FinancialTransaction> GetFinancialTransactionByTPAccountNumber(string TPAccountNumber)
+        {
+            if (String.IsNullOrEmpty(TPAccountNumber))
+                return null;
+            List<FinancialTransaction> vinstr = _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Active && !x.Deleted && x.TPAccountNumber == TPAccountNumber.Trim()).ToList();
+            return vinstr;
+        }
+
         public List<FinancialTransaction> GetFinancialTransactionList()
         {
             return _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Active && !x.Deleted).ToList();

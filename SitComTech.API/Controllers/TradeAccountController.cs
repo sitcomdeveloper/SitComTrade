@@ -134,6 +134,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("GetFinancialTransactionByTPAccountNumber")]
+        public List<FinancialTransaction> GetFinancialTransactionByTPAccountNumber(string tpaccount)
+        {
+            return _TradeAccountService.GetFinancialTransactionByTPAccountNumber(tpaccount);
+        }
+
+        [HttpPost]
         [Route("GetAllFinancialTransactionLists")]
         public List<FinancialTransaction> GetFinancialTransactionList()
         {

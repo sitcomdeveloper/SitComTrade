@@ -747,15 +747,25 @@
 
         $(document).ready(function () {
 
-              $.ajax({
+            $.ajax({
                 type: 'Post',
-                  url: apiURl + "api/TradeAccount/GetFinancialTransactionByClientId/1",
+                url: apiURl + "api/TradeAccount/GetFinancialTransactionByTPAccountNumber?tpaccount=TRA0234",
                 contentType: 'application/json',
                 processData: false,
                 success: function (result) {
                     alert(result);
                 }
             });
+
+            //  $.ajax({
+            //    type: 'Post',
+            //      url: apiURl + "api/TradeAccount/GetFinancialTransactionByClientId/1",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',
