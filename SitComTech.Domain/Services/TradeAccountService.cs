@@ -524,6 +524,13 @@ namespace SitComTech.Domain.Services
             FinancialTransaction vinstr = _repository.GetRepository<FinancialTransaction>().Queryable().Where(x =>x.Id ==(long)Id && x.Active && !x.Deleted).FirstOrDefault();
             return vinstr;
         }
+        public List<FinancialTransaction> GetFinancialTransactionByClientId(long clientId)
+        {
+            if (clientId == 0)
+                return null;
+            List<FinancialTransaction> vinstr = _repository.GetRepository<FinancialTransaction>().Queryable().Where(x => x.Active && !x.Deleted && x.ClientId==clientId).ToList();
+            return vinstr;
+        }
 
         public List<FinancialTransaction> GetFinancialTransactionList()
         {

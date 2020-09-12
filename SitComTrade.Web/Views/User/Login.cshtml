@@ -747,6 +747,16 @@
 
         $(document).ready(function () {
 
+              $.ajax({
+                type: 'Post',
+                  url: apiURl + "api/TradeAccount/GetFinancialTransactionByClientId/1",
+                contentType: 'application/json',
+                processData: false,
+                success: function (result) {
+                    alert(result);
+                }
+            });
+
             //$.ajax({
             //    type: 'Post',
             //    url: apiURl + "api/Client/UpdateClientWithAddress",
@@ -854,15 +864,15 @@
             //    }
             //});
 
-            $.ajax({
-                type: 'Post',
-                url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=realacc.1@gmail.com",
-                contentType: 'application/json',
-                processData: false,
-                success: function (result) {
-                    alert(result);
-                }
-            });
+            //$.ajax({
+            //    type: 'Post',
+            //    url: apiURl + "api/Client/GetTradeAccountDetailWithAddressById?email=realacc.1@gmail.com",
+            //    contentType: 'application/json',
+            //    processData: false,
+            //    success: function (result) {
+            //        alert(result);
+            //    }
+            //});
 
             //$.ajax({
             //    type: 'Post',

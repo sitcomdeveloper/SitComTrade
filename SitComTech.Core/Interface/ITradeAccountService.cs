@@ -23,5 +23,6 @@ namespace SitComTech.Core.Interface
         bool DeleteMultipleFinancialTransaction(List<long> groupids);
         bool UploadClientDocuments(ClientDocument clientDocument);
         bool WithdrawalAmount(WithdrawalTransaction entity);
+        List<FinancialTransaction> GetFinancialTransactionByClientId(long clientId);
     }
 }

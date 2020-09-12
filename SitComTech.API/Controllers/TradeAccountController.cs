@@ -127,6 +127,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("GetFinancialTransactionByClientId/{clientid}")]
+        public List<FinancialTransaction> GetFinancialTransactionByClientId(long clientid)
+        {
+            return _TradeAccountService.GetFinancialTransactionByClientId(clientid);
+        }
+
+        [HttpPost]
         [Route("GetAllFinancialTransactionLists")]
         public List<FinancialTransaction> GetFinancialTransactionList()
         {
