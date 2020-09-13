@@ -24,7 +24,7 @@
          <div _ngcontent-dym-c1="" class="records-control showrcrd1" style="display: none;">Showing Records <a _ngcontent-dym-c1="" class="prev" href="javascript:void(0);" style="visibility:hidden">Prev</a><a _ngcontent-dym-c1="" class="next" href="javascript:void(0);" style="visibility:hidden">Next</a><span _ngcontent-dym-c1="" style="width: 30px;">1 - 1</span> of <span _ngcontent-dym-c1="" style="width: 20px;">1</span></div>
       </div>
    </div>
-   <div _ngcontent-dym-c1="" aria-labelledby="headingeight" class="collapse" id="collapseeight" role="tabpanel" style="">
+   <div _ngcontent-dym-c1="" aria-labelledby="headingeight" class="collapse" id="collapseeight" role="tabpanel">
       <div _ngcontent-dym-c1="" class="card-body">
          
             <div _ngcontent-dym-c8="" class="box-content">
@@ -47,10 +47,10 @@
                         <tfoot _ngcontent-dym-c8=""></tfoot>
                         <tbody _ngcontent-dym-c8="">
                           
-                           <tr data-index="0" data-rule="body">
+                           <tr data-index="0" data-rule="body" *ngFor = "let userGenralinfo of userinfo">
                             <td >
                                <div data-display-for="9_ItemId">
-                                  <div class="text-ellipsis"><a href=""><span>102921</span></a></div>
+                                  <div class="text-ellipsis"><a href=""><span>{{userGenralinfo?.TPAccountNumber}}</span></a></div>
                                </div>
                             </td>
                             <td >
@@ -60,32 +60,34 @@
                             </td>
                             <td>
                                <div data-display-for="9_AllowTrade">
-                                  <div><i _ngcontent-mfm-c17="" aria-hidden="true" class="fa fa-check-circle greenbtn"></i></div>
+                                  <div>
+                                    <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': userGenralinfo?.AllowTrade ? 'green':'gray' }"></i> 
+                                    </div>
                                </div>
                             </td>
                             <td>
-                               <div data-display-for="9_RegistrationDate">11/21/2019 5:35:09 PM</div>
+                               <div data-display-for="9_RegistrationDate">{{userGenralinfo?.FirstRegistrationDate}}</div>
                             </td>
                             <td >
                                <div data-display-for="9_Equity">
-                                  <div class="text-ellipsis" data-field="Equity" data-original-value="805.90418439" data-isformatted="true"> € 805.90</div>
+                                  <div class="text-ellipsis" data-field="Equity" data-original-value="805.90418439" data-isformatted="true"> {{userGenralinfo?.Equity}}</div>
                                </div>
                             </td>
                             <td>
                                <div data-display-for="9_Balance">
-                                  <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true"> € 1'008.70</div>
+                                  <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true"> {{userGenralinfo?.Balance}}</div>
                                </div>
                             </td>
                             <td>
                                <div data-display-for="9_Credit">
-                                  <div class="text-ellipsis" data-field="Credit" data-original-value="0" data-isformatted="true"> € 0.00</div>
+                                  <div class="text-ellipsis" data-field="Credit" data-original-value="0" data-isformatted="true"> {{userGenralinfo?.Credit}}</div>
                                </div>
                             </td>
                             <td>
-                               <div data-display-for="9_LastLoginDate">4/19/2020 4:21:16 PM</div>
+                               <div data-display-for="9_LastLoginDate">{{userGenralinfo?.LastLoginDate}}</div>
                             </td>
                             <td>
-                               <div data-display-for="9_LastTradeDate">12/27/2019 12:42:21 PM</div>
+                               <div data-display-for="9_LastTradeDate">{{userGenralinfo?.LastTradeDate}}</div>
                             </td>
                             <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-no2" title="Delete">&nbsp;</a></td>
                          </tr>

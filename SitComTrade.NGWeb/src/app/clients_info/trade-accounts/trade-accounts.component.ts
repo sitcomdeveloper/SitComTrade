@@ -9,15 +9,15 @@ import { GeneralInfoService } from '../general-info/general-info.service';
 })
 export class TradeAccountsComponent implements OnInit {
   detail: number;
-  userGenralinfo: any;
+  userinfo: any;
 
   constructor(private route: ActivatedRoute, private generalinfoservice: GeneralInfoService) { }
 
   ngOnInit() {
     const details = +this.route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    this.generalinfoservice.getUsersInfo(details).subscribe(res => {
-      this.userGenralinfo = res;
+    this.generalinfoservice.GetTradeAccountListByClientId(details).subscribe(res => {
+      this.userinfo = res;
     });
   }
-  }
+}

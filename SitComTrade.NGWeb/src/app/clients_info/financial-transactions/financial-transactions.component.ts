@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralInfoService } from '../general-info/general-info.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CreatefinancilatransactionsComponent } from './createfinancilatransactions/createfinancilatransactions.component';
 
@@ -11,18 +11,18 @@ import { CreatefinancilatransactionsComponent } from './createfinancilatransacti
 })
 export class FinancialTransactionsComponent implements OnInit {
   updatedFinacilTranstion: any;
-  tketransctionbyId: any;
   detail: number;
+  tketransctionbyclientId: any;
 
-  constructor(private generalinfoService: GeneralInfoService, private _route: ActivatedRoute, private modalService: BsModalService) { }
+  constructor(private generalinfoService: GeneralInfoService, private _route: ActivatedRoute, private modalService: BsModalService, private router: Router) { }
   bsModalRef: BsModalRef;
 
   ngOnInit() {
     // get trans by id
     const details = +this._route.snapshot.paramMap.get('selectedItem');
     this.detail = details;
-    this.generalinfoService.getfinanciltransbyId(details).subscribe(gettransactioRes => {
-      this.tketransctionbyId = gettransactioRes;
+    this.generalinfoService.GetfinancialtransactionByClientId(details).subscribe(gettransactioRes => {
+      this.tketransctionbyclientId = gettransactioRes;
       console.log('tketransctionbyId', gettransactioRes);
     })
   }
@@ -69,5 +69,8 @@ ManualAuto: ('JHss')
       // after update refresh all the data
       // this.getAllTask();
     });
+  }
+  movetoTradeaccountInfo(selectedinfo: any) {
+    this.router.navigate(['/trade-info', selectedinfo]);
   }
 }

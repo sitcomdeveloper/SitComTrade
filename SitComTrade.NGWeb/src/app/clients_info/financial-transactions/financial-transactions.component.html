@@ -47,7 +47,7 @@
                         <tfoot _ngcontent-dym-c8=""></tfoot>
                         <tbody _ngcontent-dym-c8="">
                           
-                           <tr data-index="0" data-rule="body">
+                           <tr data-index="0" data-rule="body" *ngFor = "let tketransctionbyId of tketransctionbyclientId">
                             <td >
                                <div data-display-for="9_ItemId">
                                   <div class="text-ellipsis"><a href=""><span>{{tketransctionbyId?.ItemId}}</span></a></div>
@@ -55,7 +55,7 @@
                             </td>
                             <td >
                                <div data-display-for="9_GroupId">
-                                  <div class="text-ellipsis"><a href="" valuesource="IsDemo" attrname="data-is-demo"><span>{{tketransctionbyId?.TPAccountNumber}}</span></a></div>
+                                  <div class="text-ellipsis"><a href="javascript:void(0);" valuesource="IsDemo" attrname="data-is-demo" (click)="movetoTradeaccountInfo(tketransctionbyId?.Id)"><span>{{tketransctionbyId?.TPAccountNumber}}</span></a></div>
                                </div>
                             </td>
                             <td>

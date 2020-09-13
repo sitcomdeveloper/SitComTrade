@@ -18,9 +18,13 @@ export class CreatefinancilatransactionsComponent implements OnInit {
   userGenralinfo: any;
   addedfincialTransaction: any;
   id: number;
+  tketransctionbyclientId: any;
   constructor(private fb: FormBuilder, private bsModalRef: BsModalRef, private route: ActivatedRoute, private generalinfoService: GeneralInfoService) { }
 
   ngOnInit() {
+  //   const details = +this.route.snapshot.paramMap.get('selectedItem');
+  // this.detail = details;
+ 
     this.taskInfoForm = this.fb.group({
       // crt financial transaction
       tpaccount: [''],
@@ -31,11 +35,18 @@ export class CreatefinancilatransactionsComponent implements OnInit {
       transactionapproval: [''],
       comment: [''],
 });
+this.gettransactionbyclientid();
     this.transactionType();
     this.transactionApproval();
   }
   hideModal() {
     this.bsModalRef.hide();
+  }
+  gettransactionbyclientid() {
+    this.generalinfoService.GetfinancialtransactionByClientId(this.id).subscribe(gettransactioRes => {
+      this.tketransctionbyclientId = gettransactioRes;
+      console.log('tketransctionbyId', gettransactioRes);
+    })
   }
   // finacial transaction
  // get transaction type
@@ -53,12 +64,7 @@ transactionApproval() {
   })
 }
 // insrt financial transaction
-addfinacilaTransaction() {
-  // const details = +this.route.snapshot.paramMap.get('selectedItem');
-  // this.detail = details;
-  this.generalinfoService.getUsersInfo(this.id).subscribe(res => {
-    this.userGenralinfo = res;
-  });
+addfinacilaTransaction() { 
   this.typeoffinaclTransaction.forEach(element => {
     if (element.Id === +this.taskInfoForm.value.transactiontype) {
       this.taskInfoForm.value.transactiontypeid = element.Name;
@@ -71,23 +77,23 @@ addfinacilaTransaction() {
   });
   
   const insrtfincilTransParamtr = {
-    OwnerId: this.userGenralinfo.OwnerId,
-    ClientId: this.userGenralinfo.Id,
-    AccountId: '',
-    TPAccountNumber: '',
-    CurrencyId: this.userGenralinfo.CurrencyId,
-    CurrencyName: this.userGenralinfo.CurrencyName,
-    DepositAmount: '',
-    WithdrawAmount: '',
-    BalanceAmount: '',
-    ItemId: this.userGenralinfo.ItemId,
-    TradingEnvironment: '',
+    OwnerId: 4,
+    ClientId: this.tketransctionbyclientId.ClientId,
+    AccountId: this.tketransctionbyclientId.AccountId,
+    TPAccountNumber: this.tketransctionbyclientId.TPAccountNumber,
+    CurrencyId: this.tketransctionbyclientId.CurrencyId,
+    CurrencyName: this.tketransctionbyclientId.CurrencyName,
+    DepositAmount: this.tketransctionbyclientId.TotalDeposit,
+    WithdrawAmount: this.tketransctionbyclientId.TotalWithdrawal,
+    BalanceAmount: this.tketransctionbyclientId.NetDeposit,
+    ItemId: this.tketransctionbyclientId.TPAccountNumber,
+    TradingEnvironment: 'Real',
     TransactionTypeId: this.taskInfoForm.value.transactiontype,
     TransactionTypeName: this.taskInfoForm.value.transactiontypeid,
     TransactionApprovalId: this.taskInfoForm.value.transactionapproval,
     TransactionApprovalName: this.taskInfoForm.value.transactionapprovalid,
-    FTD: this.userGenralinfo.FTD,
-    Desk: this.userGenralinfo.Desk,
+    FTD: this.tketransctionbyclientId.FTD,
+    Desk: this.tketransctionbyclientId.Desk,
     Comment: this.taskInfoForm.value.comment,
     ManualAuto: ''
   }

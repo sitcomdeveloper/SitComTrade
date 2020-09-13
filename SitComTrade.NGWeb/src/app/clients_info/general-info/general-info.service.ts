@@ -65,8 +65,12 @@ insrtfinancialTrnsion(insrtfincilTransParamtr: any):  Observable<any> {
 updtfinancialTrnsion(updtfincilTransParamtr: any):  Observable<any> {
   return this.http.post<any>(API_URL + 'TradeAccount/UpdateFinancialTransaction', updtfincilTransParamtr);
 }
-// financil transaction by id
-getfinanciltransbyId(finTransId: any): Observable<any> {
-  return this.http.post<any>(API_URL + 'TradeAccount/GetFinancialTransactionById/' + finTransId, {});
+// trade acc trans by client id
+GetTradeAccountListByClientId(trdeTransId: any): Observable<any> {
+  return this.http.post<any>(API_URL + 'TradeAccount/GetTradeAccountListByClientId/' + trdeTransId, {});
+}
+// financil transaction by client id
+GetfinancialtransactionByClientId(finTransId: any): Observable<any> {
+  return this.http.post<any>(API_URL + 'TradeAccount/GetFinancialTransactionByClientId/' + finTransId, {});
 }
 }
