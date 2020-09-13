@@ -10,6 +10,7 @@ namespace SitComTech.Core.Interface
     public interface ITradeAccountService : IService<TradeAccount>
     {
         List<TradeAccountInfoVM> GetTradeAccountList();
+        List<TradeAccountInfoVM> GetTradeAccountListByClientId(long clientid);
         TradeAccountInfoVM GetTradeAccountById(long Id);
         void CreateTradeAccount(CreateTradeAccountVM entity);
         void UpdateTradeAccount(TradeAccount entity);
@@ -23,5 +24,7 @@ namespace SitComTech.Core.Interface
         bool DeleteMultipleFinancialTransaction(List<long> groupids);
         bool UploadClientDocuments(ClientDocument clientDocument);
         bool WithdrawalAmount(WithdrawalTransaction entity);
+        List<FinancialTransaction> GetFinancialTransactionByClientId(long clientId);
+        List<FinancialTransaction> GetFinancialTransactionByTPAccountNumber(string TPAccountNumber);
     }
 }

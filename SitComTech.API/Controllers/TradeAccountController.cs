@@ -52,6 +52,13 @@ namespace SitComTech.API.Controllers
         }
 
         [HttpPost]
+        [Route("GetTradeAccountListByClientId/{clientid}")]
+        public List<TradeAccountInfoVM> GetTradeAccountListByClientId(long clientid)
+        {
+            return _TradeAccountService.GetTradeAccountListByClientId(clientid);
+        }
+
+        [HttpPost]
         [Route("UpdateTradeAccount")]
         public void UpdateTradeAccount(TradeAccount groupVM)
         {
@@ -124,6 +131,20 @@ namespace SitComTech.API.Controllers
         public FinancialTransaction GetFinancialTransactionById(long id)
         {
             return _TradeAccountService.GetFinancialTransactionById(id);
+        }
+
+        [HttpPost]
+        [Route("GetFinancialTransactionByClientId/{clientid}")]
+        public List<FinancialTransaction> GetFinancialTransactionByClientId(long clientid)
+        {
+            return _TradeAccountService.GetFinancialTransactionByClientId(clientid);
+        }
+
+        [HttpPost]
+        [Route("GetFinancialTransactionByTPAccountNumber")]
+        public List<FinancialTransaction> GetFinancialTransactionByTPAccountNumber(string tpaccount)
+        {
+            return _TradeAccountService.GetFinancialTransactionByTPAccountNumber(tpaccount);
         }
 
         [HttpPost]
