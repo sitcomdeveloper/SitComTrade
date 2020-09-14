@@ -16,9 +16,9 @@
                    <select _ngcontent-qpo-c3="" class=" form-control itemformcontrol" 
                       data-live-search="true" formControlName="tpaccount">
                       <option ngcontent-qpo-c3="" value="">Select</option>
-                      <option ngcontent-qpo-c3="" value="">
+                      <option ngcontent-qpo-c3="" value="{{TAN.TPAccountNumber}}" *ngFor = "let TAN of userinfo">
     
-                         {{this.tketransctionbyclientId?.TPAccountNumber}}</option>
+                         {{TAN.TPAccountNumber}}</option>
                    </select>
                 </div>
              </div>

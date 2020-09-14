@@ -18,13 +18,16 @@ export class FinancialTransactionsComponent implements OnInit {
   bsModalRef: BsModalRef;
 
   ngOnInit() {
-    // get trans by id
-    const details = +this._route.snapshot.paramMap.get('selectedItem');
-    this.detail = details;
-    this.generalinfoService.GetfinancialtransactionByClientId(details).subscribe(gettransactioRes => {
-      this.tketransctionbyclientId = gettransactioRes;
-      console.log('tketransctionbyId', gettransactioRes);
-    })
+    this.getfinancialtransaction();
+  }
+  getfinancialtransaction() {
+// get trans by id
+const details = +this._route.snapshot.paramMap.get('selectedItem');
+this.detail = details;
+this.generalinfoService.GetfinancialtransactionByClientId(details).subscribe(gettransactioRes => {
+  this.tketransctionbyclientId = gettransactioRes.reverse();
+  // console.log('tketransctionbyId', gettransactioRes);
+})
   }
   // updt finacial trns
   modifyFinancilTrans() {
@@ -67,7 +70,7 @@ ManualAuto: ('JHss')
     this.bsModalRef.content.closeBtnName = 'Cancel';
     this.bsModalRef.content.clddata.subscribe(data => {
       // after update refresh all the data
-      // this.getAllTask();
+      this.getfinancialtransaction();
     });
   }
   movetoTradeaccountInfo(selectedinfo: any) {
