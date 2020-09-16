@@ -1594,10 +1594,10 @@
               </div>
             </div>
           </td>
-          <td class="" (click)="getGeneralInfo(item.GroupId)">
+          <td class="" >
             <div class="">
               <div data-display-for="27_DeskId">
-                <div class="text-ellipsis" tooltip="{{item.GroupName}}"><a href="javascript:void(0)">{{item.GroupName}}</a></div>
+                <div class="text-ellipsis" tooltip="{{item.GroupName}}"><a href="javascript:void(0)" (click)="getGeneralInfo(item.GroupId)">{{item.GroupName}}</a></div>
               </div>
             </div>
           </td>

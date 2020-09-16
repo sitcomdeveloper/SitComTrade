@@ -13,7 +13,8 @@ export class FinancialTransactionsComponent implements OnInit {
   updatedFinacilTranstion: any;
   detail: number;
   tketransctionbyclientId: any;
-
+  nofinancialtransctions = false;
+  financialtransactionslength: any;
   constructor(private generalinfoService: GeneralInfoService, private _route: ActivatedRoute, private modalService: BsModalService, private router: Router) { }
   bsModalRef: BsModalRef;
 
@@ -26,6 +27,12 @@ const details = +this._route.snapshot.paramMap.get('selectedItem');
 this.detail = details;
 this.generalinfoService.GetfinancialtransactionByClientId(details).subscribe(gettransactioRes => {
   this.tketransctionbyclientId = gettransactioRes.reverse();
+  this.financialtransactionslength = gettransactioRes.length;
+  if(this.financialtransactionslength === 0) {
+    this.nofinancialtransctions = true;
+  } else {
+    this.nofinancialtransctions = false;
+  }
   // console.log('tketransctionbyId', gettransactioRes);
 })
   }

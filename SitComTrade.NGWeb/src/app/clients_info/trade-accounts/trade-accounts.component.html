@@ -46,16 +46,16 @@
                         </thead>
                         <tfoot _ngcontent-dym-c8=""></tfoot>
                         <tbody _ngcontent-dym-c8="">
-                          
+                           <tr *ngIf = noaccount class="nofield">No Account</tr>
                            <tr data-index="0" data-rule="body" *ngFor = "let userGenralinfo of userinfo">
                             <td >
                                <div data-display-for="9_ItemId">
-                                  <div class="text-ellipsis"><a href=""><span>{{userGenralinfo?.TPAccountNumber}}</span></a></div>
+                                  <div class="text-ellipsis"><a href="javascript:void(0);" (click)="movetoTradeaccountInfo(userGenralinfo?.Id)"><span>{{userGenralinfo?.TPAccountNumber}}</span></a></div>
                                </div>
                             </td>
                             <td >
                                <div data-display-for="9_GroupId">
-                                  <div class="text-ellipsis"><a href="" valuesource="IsDemo" attrname="data-is-demo"><span>{{userGenralinfo?.GroupName}}</span></a></div>
+                                  <div class="text-ellipsis"><a href="javascript:void(0);" (click)="getGeneralInfo(userGenralinfo.GroupId)" valuesource="IsDemo" attrname="data-is-demo"><span>{{userGenralinfo?.GroupName}}</span></a></div>
                                </div>
                             </td>
                             <td>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientsService } from 'src/app/header/clients/clients.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { GeneralInfoService } from 'src/app/clients_info/general-info/general-info.service';
 
 @Component({
   selector: 'app-tradeaccount-info',
@@ -15,7 +16,10 @@ export class TradeaccountInfoComponent implements OnInit {
   backmode = false;
   tradeaccountInfoForm: FormGroup
   updtaeddetails: any;
-  constructor(private clientsService: ClientsService, private route: ActivatedRoute, private fb: FormBuilder) { }
+  tketransctionbyclientId: any;
+  notransactions = false;
+  transactionslength: any;
+  constructor(private clientsService: ClientsService, private route: ActivatedRoute, private fb: FormBuilder, private generalinfoService: GeneralInfoService) { }
 
   ngOnInit() {
     this.tradeaccountInfoForm = this.fb.group({
@@ -111,7 +115,17 @@ export class TradeaccountInfoComponent implements OnInit {
         // status: this.realTradeUsers.,
       })
     })
-
+    // get financial transaction
+    this.generalinfoService.GetfinancialtransactionByClientId(tradeaccountdetails).subscribe(gettransactioRes => {
+      this.tketransctionbyclientId = gettransactioRes.reverse();
+      this.transactionslength = gettransactioRes.length;
+      if(this.transactionslength === 0) {
+        this.notransactions = true;
+      } else {
+        this.notransactions = false;
+      }
+      // console.log('tketransctionbyId', gettransactioRes);
+    })
   }
   // pencil
   openeditingmode() {
@@ -177,43 +191,3 @@ export class TradeaccountInfoComponent implements OnInit {
   })
 }
 }
-// firstname
-//       lastname
-//       tpaccount
-//       groupname
-//       leveragename
-//       margincall
-//       stopout
-//       ordercount
-//       mindeposit
-//       accountid
-//       allowtrade
-//       registrationdate
-//       closeprofitandloss
-//       totaldeposits
-//       totalwithdrawals
-//       netdeposits
-//       openprofitandloss
-//       commission
-//       equity
-//       balance
-//       marginlevel
-//       freemargin
-//       credit
-//       volume
-//       lastlogindate
-//       lasttradedate
-//       isonline
-//       demo
-//       owner
-//       disabled
-//       lastdepositdate
-//       convertionowner
-//       ftddate
-//       ftdamount
-//       phone
-//       currency
-//       depositcount
-//       desk
-//       tag
-//       status

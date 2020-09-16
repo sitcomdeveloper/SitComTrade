@@ -48,8 +48,8 @@ export class RegisterComponent implements OnInit {
     }, {
         validator: MustMatch('password', 'confirmPassword')
       });
-    this.countryName(this.a);
-    this.currencyName(this.b);
+    // this.countryName(this.a);
+    // this.currencyName(this.b);
   }
   get f() {
     return this.registerForm.controls;
@@ -61,42 +61,42 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  register() {
-    this.Country.forEach(element => {
-      if (element.Id === this.registerForm.value.country) {
-        this.registerForm.value.countryName = element.Name;
-      }
-    });
-    this.currrency.forEach(element => {
-      if (element.Id === this.registerForm.value.currency) {
-        this.registerForm.value.currencyName = element.Name;
-      }
-    });
-    this.userinfo = {
-      FirstName: this.registerForm.value.firstName,
-      LastName: this.registerForm.value.lastName,
-      Email: this.registerForm.value.email,
-      Phone: this.registerForm.value.phone,
-      CountryId: this.registerForm.value.country,
-      CountryName: this.registerForm.value.countryName,
-      CurrencyId: this.registerForm.value.currency,
-      CurrencyName: this.registerForm.value.currencyName,
-      PromoCode: this.registerForm.value.promoCode,
-      Password: this.registerForm.value.password
-    };
+  // register() {
+  //   this.Country.forEach(element => {
+  //     if (element.Id === this.registerForm.value.country) {
+  //       this.registerForm.value.countryName = element.Name;
+  //     }
+  //   });
+  //   this.currrency.forEach(element => {
+  //     if (element.Id === this.registerForm.value.currency) {
+  //       this.registerForm.value.currencyName = element.Name;
+  //     }
+  //   });
+  //   this.userinfo = {
+  //     FirstName: this.registerForm.value.firstName,
+  //     LastName: this.registerForm.value.lastName,
+  //     Email: this.registerForm.value.email,
+  //     Phone: this.registerForm.value.phone,
+  //     CountryId: this.registerForm.value.country,
+  //     CountryName: this.registerForm.value.countryName,
+  //     CurrencyId: this.registerForm.value.currency,
+  //     CurrencyName: this.registerForm.value.currencyName,
+  //     PromoCode: this.registerForm.value.promoCode,
+  //     Password: this.registerForm.value.password
+  //   };
 
-    if (this.registerForm.valid) {
-      this.modalClose.nativeElement.click();
-      this.loginservice.saveUserInfo(this.userinfo)
-      .subscribe(res => {
-        this.router.navigateByUrl('clients');
-        this.registerForm.reset();
-      }
-      );
-    }
+  //   if (this.registerForm.valid) {
+  //     this.modalClose.nativeElement.click();
+  //     this.loginservice.saveUserInfo(this.userinfo)
+  //     .subscribe(res => {
+  //       this.router.navigateByUrl('clients');
+  //       this.registerForm.reset();
+  //     }
+  //     );
+  //   }
 
 
-  }
+  // }
   countryName(a) {
     this.loginservice.countryName(0).subscribe(result => {
       this.Country = result;

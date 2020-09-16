@@ -789,43 +789,47 @@
                                                </tr>
                                           </thead>
                                           <tfoot _ngcontent-ght-c9=""></tfoot>
-                                         <tbody><tr data-index="0" data-rule="body">
+                                         <tbody>
+                                          <tr *ngIf = notransactions class="nofield">No Transactions</tr>
+                                            <tr data-index="0" data-rule="body" *ngFor = "let FTS of tketransctionbyclientId">
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_ItemId">
-                                                <div class="text-ellipsis"><a href="/moduleitems/item?moduleId=14&amp;itemId=41156"><span>41156</span></a></div>
+                                                <div class="text-ellipsis"><a href="javascript:void(0);"><span>{{FTS?.ItemId}}</span></a></div>
                                              </div>
                                           </td>
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_Equity">
-                                                <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true"> € 1'000.00</div>
+                                                <div class="text-ellipsis" data-field="Equity" data-original-value="1000" data-isformatted="true">{{FTS?.BalanceAmount}}</div>
                                              </div>
                                           </td>
                                           <td style="max-width: 300px;">
-                                             <div data-display-for="14_Date">11/22/2019 12:32:34 PM</div>
+                                             <div data-display-for="14_Date">{{FTS?.TransactionDate}}</div>
                                           </td>
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_TradingEnvironment">
-                                                <div class="text-ellipsis">Real</div>
+                                                <div class="text-ellipsis">{{FTS?.TradingEnvironment}}</div>
                                              </div>
                                           </td>
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_TransactionType">
-                                                <div class="text-ellipsis">Deposit</div>
+                                                <div class="text-ellipsis">{{FTS?.TransactionTypeName}}</div>
                                              </div>
                                           </td>
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_Currency">
-                                                <div class="text-ellipsis">EUR</div>
+                                                <div class="text-ellipsis">{{FTS?.CurrencyName}}</div>
                                              </div>
                                           </td>
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_TransactionApproval">
-                                                <div class="text-ellipsis">Approved</div>
+                                                <div class="text-ellipsis">{{FTS?.TransactionApprovalName}}</div>
                                              </div>
                                           </td>
                                           <td style="max-width: 300px;">
                                              <div data-display-for="14_FirstDeposit">
-                                                <div><i class="ico-sz2 ico-status-ok"></i></div>
+                                                <div>
+                                                   <i class="fa fa-check-circle" style="font-size:17px" aria-hidden="true" [ngStyle]="{'color': FTS?.FTD ? 'green':'gray' }"></i> 
+                                                </div>
                                              </div>
                                           </td>
                                           <td class="nowrap"><a href="javascript:void(0);" class="ico-sz3 ico-delete">&nbsp;</a></td>
@@ -841,11 +845,6 @@
                   </div>
               
             </div>
-             <!--bindings={
-                "ng-reflect-ng-if": "false"
-                }--><!--bindings={
-                "ng-reflect-ng-if": "false"
-                }-->
           </div>
        </div>
        <div _ngcontent-ght-c2="" class="col-xs-3 col-md-4">
@@ -853,19 +852,13 @@
              <div _ngcontent-ght-c2="" class="sidenav" style="display: block;">
                 <h2 _ngcontent-ght-c2="">Actions</h2>
                 <ul _ngcontent-ght-c2="" style="display: block;">
-                   <!--bindings={
-                      "ng-reflect-ng-if": "true"
-                      }-->
-                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-user-o">&nbsp;</i>Create Account</a></li>
-                   <!--bindings={
-                      "ng-reflect-ng-if": "false"
-                      }-->
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-user-o">&nbsp;</i>Open Order</a></li>
                 </ul>
                 <ul _ngcontent-ght-c2="" style="display: block;">
-                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-refresh" style="font-size: 21px;">&nbsp;</i>Add task</a></li>
-                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-envelope">&nbsp;</i>Send email</a></li>
-                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-envelope">&nbsp;</i>Send Sms</a></li>
-                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-history">&nbsp;</i>View history</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-refresh" style="font-size: 21px;">&nbsp;</i>Create Monetray Transaction</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-envelope">&nbsp;</i>View History</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-envelope">&nbsp;</i>New Window</a></li>
+                   <li _ngcontent-ght-c2=""><a _ngcontent-ght-c2="" href="javascript:void(0);"><i _ngcontent-ght-c2="" class="fa fa-history">&nbsp;</i>Trading Journal</a></li>
                 </ul>
              </div>
           </div>

@@ -360,7 +360,7 @@ export class ClientComponent implements OnInit {
   getGeneralInfo(setItem: any) {
     //  this.router.navigate(['/groups-info', setItem]);
     const url = this.router.serializeUrl(
-      this.router.createUrlTree(['/groups-info', setItem])
+      this.router.createUrlTree(['/groups-info', setItem,1])
     );
     window.open(url, '_blank');
   }

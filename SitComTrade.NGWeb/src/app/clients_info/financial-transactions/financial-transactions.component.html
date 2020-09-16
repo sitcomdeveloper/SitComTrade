@@ -46,7 +46,7 @@
                         </thead>
                         <tfoot _ngcontent-dym-c8=""></tfoot>
                         <tbody _ngcontent-dym-c8="">
-                          
+                           <tr *ngIf = nofinancialtransctions class="nofield">No Financial Transactions</tr>
                            <tr data-index="0" data-rule="body" *ngFor = "let tketransctionbyId of tketransctionbyclientId">
                             <td >
                                <div data-display-for="9_ItemId">
@@ -60,7 +60,7 @@
                             </td>
                             <td>
                                <div data-display-for="9_AllowTrade">
-                                  <div><a href=""><span>{{tketransctionbyId?.BalanceAmount}}</span></a></div>
+                                  <div><span>{{tketransctionbyId?.BalanceAmount}}</span></div>
                                </div>
                             </td>
                             <td>

@@ -71,4 +71,7 @@ export class MonetarytransactionsComponent implements OnInit {
     mnetarytrnsactions: 'mnetarytrnsactions';
     this.router.navigate(['/info', 189]);
   }
+  movetoTradeaccountInfo(selectedinfo: any) {
+    this.router.navigate(['/trade-info', selectedinfo]);
+  }
 }
