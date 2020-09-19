@@ -20,6 +20,7 @@ export class CreatefinancilatransactionsComponent implements OnInit {
   id: number;
   tketransctionbyclientId: any;
   userinfo: any;
+  title: any;
   constructor(private fb: FormBuilder, private bsModalRef: BsModalRef, private route: ActivatedRoute, private generalinfoService: GeneralInfoService) { }
 
   ngOnInit() {
