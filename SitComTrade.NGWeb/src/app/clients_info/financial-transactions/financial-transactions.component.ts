@@ -83,4 +83,7 @@ ManualAuto: ('JHss')
   movetoTradeaccountInfo(selectedinfo: any) {
     this.router.navigate(['/trade-info', selectedinfo]);
   }
+  movetofinancilatransactionInfo(selectedFinancialTransactons: any) {
+    this.router.navigate(['/financial-transactions-info', selectedFinancialTransactons]);
+  }
 }

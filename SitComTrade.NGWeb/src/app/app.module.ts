@@ -54,6 +54,7 @@ import { CreateEditWoorkflowsComponent } from './settings/workflows/create-edit-
 import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeaccount-info.component';
 import { LivepopupsComponent } from './clients/tradeaccounts/live-detail/livepopups/livepopups.component';
 import { CreatefinancilatransactionsComponent } from './clients_info/financial-transactions/createfinancilatransactions/createfinancilatransactions.component';
+import { FinancialTransactionsInfoComponent } from './clients_info/financial-transactions-info/financial-transactions-info.component';
 
 @NgModule({
   declarations: [
@@ -146,6 +147,7 @@ import { CreatefinancilatransactionsComponent } from './clients_info/financial-t
     TradeaccountInfoComponent,
     LivepopupsComponent,
     CreatefinancilatransactionsComponent,
+    FinancialTransactionsInfoComponent,
   ],
   imports: [
     BrowserModule,

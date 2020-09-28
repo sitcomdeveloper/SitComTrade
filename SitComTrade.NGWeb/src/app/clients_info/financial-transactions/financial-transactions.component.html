@@ -50,12 +50,12 @@
                            <tr data-index="0" data-rule="body" *ngFor = "let tketransctionbyId of tketransctionbyclientId">
                             <td >
                                <div data-display-for="9_ItemId">
-                                  <div class="text-ellipsis"><a href=""><span>{{tketransctionbyId?.ItemId}}</span></a></div>
+                                  <div class="text-ellipsis"><a href="javascript:void(0);" tooltip="{{tketransctionbyId?.ItemId}}" (click)="movetofinancilatransactionInfo(tketransctionbyId?.Id)"><span>{{tketransctionbyId?.ItemId}}</span></a></div>
                                </div>
                             </td>
                             <td >
                                <div data-display-for="9_GroupId">
-                                  <div class="text-ellipsis"><a href="javascript:void(0);" valuesource="IsDemo" attrname="data-is-demo" (click)="movetoTradeaccountInfo(tketransctionbyId?.Id)"><span>{{tketransctionbyId?.TPAccountNumber}}</span></a></div>
+                                  <div class="text-ellipsis"><a href="javascript:void(0);" valuesource="IsDemo" attrname="data-is-demo" (click)="movetoTradeaccountInfo(tketransctionbyId?.Id)" tooltip="{{tketransctionbyId?.TPAccountNumber}}"><span>{{tketransctionbyId?.TPAccountNumber}}</span></a></div>
                                </div>
                             </td>
                             <td>
@@ -74,7 +74,7 @@
                             </td>
                             <td>
                                <div data-display-for="9_Balance">
-                                  <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true"> {{tketransctionbyId?.TransactionTypeName}}</div>
+                                  <div class="text-ellipsis" data-field="Balance" data-original-value="1008.69662955" data-isformatted="true" tooltip="{{tketransctionbyId?.TransactionTypeName}}"> {{tketransctionbyId?.TransactionTypeName}}</div>
                                </div>
                             </td>
                             <td>

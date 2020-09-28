@@ -18,6 +18,7 @@ import { LiveDetailComponent } from './clients/tradeaccounts/live-detail/live-de
 import { AuthGuard } from './auth.guard';
 import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 import { TradeaccountInfoComponent } from './clients/tradeaccount-info/tradeaccount-info.component';
+import { FinancialTransactionsInfoComponent } from './clients_info/financial-transactions-info/financial-transactions-info.component';
 // import { CreateInstrumentsComponent } from './settings/instruments/create-instruments/create-instruments.component';
 
 const routes: Routes = [
@@ -93,7 +94,9 @@ const routes: Routes = [
 {path: 'livetrade/:trdingDtls', component: LiveDetailComponent},
 // /:trdingDtls
 // ,canActivate:[AuthGuard]
-{path: 'groups-info/:setItem/:instid', component: GroupsInfoComponent}
+{path: 'groups-info/:setItem/:instid', component: GroupsInfoComponent},
+// financial transaction info
+{path: 'financial-transactions-info/:selectedFinancialTransactons', component: FinancialTransactionsInfoComponent},
 ];
 
 @NgModule({
