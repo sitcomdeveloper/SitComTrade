@@ -73,4 +73,8 @@ GetTradeAccountListByClientId(trdeTransId: any): Observable<any> {
 GetfinancialtransactionByClientId(finTransId: any): Observable<any> {
   return this.http.post<any>(API_URL + 'TradeAccount/GetFinancialTransactionByClientId/' + finTransId, {});
 }
+// financial transaction by id
+GetfinancialtransactionbyID(fintrans: any): Observable<any> {
+  return this.http.post<any>(API_URL + 'TradeAccount/GetFinancialTransactionById/' + fintrans, {});
+}
 }
