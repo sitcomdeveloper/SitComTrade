@@ -60,9 +60,9 @@ export class SettingsService {
    getAllRoles(): Observable<any> {
     return this.http.get(API_URL + 'Common/GetAllRoles');
    }
-   getAllAffiliateFields(): Observable<any> {
-    return this.http.get(API_URL + 'Common/GetAllAffiliateFields');
-   }
+  //  getAllAffiliateFields(): Observable<any> {
+  //   return this.http.get(API_URL + 'Common/GetAllAffiliateFields');
+  //  }
    getAllSenderSettings(): Observable<any> {
     return this.http.get<any>(API_URL + 'Common/GetAllSenderSettings');
    }

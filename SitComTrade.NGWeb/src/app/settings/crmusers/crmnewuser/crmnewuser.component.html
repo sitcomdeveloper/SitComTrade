@@ -122,7 +122,7 @@
                           
                            <select class="form-control" name="DeskId" data-container="body" data-live-search="true"  aria-required="true" [ngClass]="{ 'is-invalid': submitted && f.roles.errors,'form-control':true}" tabindex="-98" formControlName="roles" multiple (change)="selctmultiRoles($event.target.value)">
                               <option value="">Select</option>
-                              <option value="{{getroles?.Name}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
+                              <option value="{{getroles?.Id}}" *ngFor="let getroles of Roles">{{getroles?.Name}}</option>
                            </select>
                            <div *ngIf="submitted && f.roles.errors" class="invalid-feedback">
                               <div *ngIf="f.roles.errors.required">Roles is required</div>
@@ -290,7 +290,7 @@
                        
                         <select class="form-control" name="TimeZoneId" data-container="body" data-live-search="true" aria-required="true" tabindex="-98" formControlName="sharedsendersettings" multiple (change)="selectmultisharedSenderSettings($event.target.value)">
                            <option value="">Select...</option>
-                           <option value="{{getsndrsettings?.SenderMailId}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
+                           <option value="{{getsndrsettings?.Id}}"  *ngFor="let getsndrsettings of isharedsender">{{getsndrsettings?.SenderMailId}}</option>
                         </select>
                         </div>
                     

@@ -10,7 +10,6 @@ import { CreatefinancilatransactionsComponent } from './createfinancilatransacti
   styleUrls: ['./financial-transactions.component.css']
 })
 export class FinancialTransactionsComponent implements OnInit {
-  updatedFinacilTranstion: any;
   detail: number;
   tketransctionbyclientId: any;
   nofinancialtransctions = false;
@@ -35,35 +34,6 @@ this.generalinfoService.GetfinancialtransactionByClientId(details).subscribe(get
   }
   // console.log('tketransctionbyId', gettransactioRes);
 })
-  }
-  // updt finacial trns
-  modifyFinancilTrans() {
-    const updtfincilTransParamtr = {
-      Id: (4),
-OwnerId: (1),
-ClientId: (1),
-AccountId: (2),
-TPAccountNumber: ('ty6777733443'),
-CurrencyId: (2),
-CurrencyName: ('USD'),
-DepositAmount: (10999),
-WithdrawAmount: (498),
-BalanceAmount: (5654),
-ItemId: ('yrd'),
-TradingEnvironment: ('Real'),
-TransactionTypeId: (1),
-TransactionTypeName: ('Deposit'),
-TransactionApprovalId: (2),
-TransactionApprovalName: ('Paid'),
-FTD: (1),
-Desk: ('Meeting'),
-Comment: ('dhdh jddf'),
-ManualAuto: ('JHss')
-    }
-    this.generalinfoService.updtfinancialTrnsion(updtfincilTransParamtr).subscribe(updtFinTrnsRes => {
-      this.updatedFinacilTranstion = updtFinTrnsRes;
-      console.log('updatedFinacilTranstion', updtFinTrnsRes);
-    })
   }
   // financial transaction poup
   opencrtfinancialTransactionspopup() {

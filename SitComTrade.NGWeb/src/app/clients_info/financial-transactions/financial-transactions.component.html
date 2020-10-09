@@ -50,7 +50,12 @@
                            <tr data-index="0" data-rule="body" *ngFor = "let tketransctionbyId of tketransctionbyclientId">
                             <td >
                                <div data-display-for="9_ItemId">
-                                  <div class="text-ellipsis"><a href="javascript:void(0);" tooltip="{{tketransctionbyId?.ItemId}}" (click)="movetofinancilatransactionInfo(tketransctionbyId?.Id)"><span>{{tketransctionbyId?.ItemId}}</span></a></div>
+                                  <div class="text-ellipsis">
+                                     <a href="javascript:void(0);" tooltip="{{tketransctionbyId?.ItemId}}" >
+                                       <!-- (click)="movetofinancilatransactionInfo(tketransctionbyId?.Id)" -->
+                                        <span>{{tketransctionbyId?.ItemId}}</span>
+                                    </a>
+                                 </div>
                                </div>
                             </td>
                             <td >

@@ -33,7 +33,7 @@ export class AffilateusersComponent implements OnInit {
     this.settingsService.getAffilateUsers(this.bindLoginData.UserId).subscribe(res => {
       this.isaffiliate = res;
       this.affiliateUsers = this.isaffiliate.filter(useraffiliate => {
-        if(useraffiliate.RoleName === 'Affilate') {
+        if(useraffiliate.AffiliateFieldName === 'Affilate') {
         return useraffiliate;
         }
       })

@@ -189,16 +189,8 @@ export class CrmnewuserComponent implements OnInit {
           this.newRegisterForm.value.deskid = element.Name;
         }
       });
-      this.isshared.forEach(element => {
-        if (element.Id === +this.newRegisterForm.value.shareddesks) {
-          this.newRegisterForm.value.shareddesksid = element.Name;
-        }
-      });
-      this.Roles.forEach(element => {
-        if (element.Id === +this.newRegisterForm.value.roles) {
-          this.newRegisterForm.value.rolesid = element.Name;
-        }
-      });
+      
+      
       this.Departments.forEach(element => {
         if (element.Id === +this.newRegisterForm.value.department) {
           this.newRegisterForm.value.departmentid = element.Name;
@@ -214,11 +206,7 @@ export class CrmnewuserComponent implements OnInit {
           this.newRegisterForm.value.defaultsendersettingid = element.Name;
         }
       });
-      this.isharedsender.forEach(element => {
-        if (element.Id === +this.newRegisterForm.value.sharedsendersettings) {
-          this.newRegisterForm.value.sharedsendersettingsid = element.Name;
-        }
-      });
+      
       
       const rgstrusr = {   
         FirstName: this.newRegisterForm.value.firstname,
@@ -281,14 +269,24 @@ export class CrmnewuserComponent implements OnInit {
     return password === repeatpassword ? null : { passwordNotMatch: true };
   }
   selctmultiRoles(val: any) {
+    this.Roles.forEach(element => {
+      if (element.Id === +this.newRegisterForm.value.roles) {
+        this.newRegisterForm.value.rolesid = element.Name;
+      }
+    });
       const userRoles = {
-        RoleId: this.newRegisterForm.value.rolesid,
-        RoleName: this.newRegisterForm.value.roles,
+        RoleId: this.newRegisterForm.value.roles,
+        RoleName: this.newRegisterForm.value.rolesid,
       }
      this.ListofRoles.push(userRoles);
      console.log('mltirole',this.ListofRoles);
     }
   selectmultisharedDesks(dskval: any) {
+    this.isshared.forEach(element => {
+      if (element.Id === +this.newRegisterForm.value.shareddesks) {
+        this.newRegisterForm.value.shareddesksid = element.Name;
+      }
+    });
     const userSharedDesks = {
       SharedDeskId: this.newRegisterForm.value.shareddesks,
       SharedDeskName: this.newRegisterForm.value.shareddesksid,
@@ -297,9 +295,14 @@ export class CrmnewuserComponent implements OnInit {
     console.log('mltishareddesks',this.ListofSharedDesks);
   }
   selectmultisharedSenderSettings(shredsndrsettings: any) {
+    this.isharedsender.forEach(element => {
+      if (element.Id === +this.newRegisterForm.value.sharedsendersettings) {
+        this.newRegisterForm.value.sharedsendersettingsid = element.Name;
+      }
+    });
     const userSharedSenderSettings = {
       SenderMailId: this.newRegisterForm.value.sharedsendersettings,
-          SenderMail: '',
+          SenderMail: this.newRegisterForm.value.sharedsendersettingsid,
     }
     this.Listofsharedsendersettings.push(userSharedSenderSettings);
     console.log('mltisharedsendersettings',this.Listofsharedsendersettings);
