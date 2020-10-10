@@ -29,6 +29,7 @@ export class ClientsInfoComponent implements OnInit {
   detail: number;
   tkemail: any;
   leadAccountSection = true;
+  userinfo: any;
  
   @HostListener("window:scroll", []) onWindowScroll() {
     this.scrollFunction();
@@ -60,6 +61,12 @@ export class ClientsInfoComponent implements OnInit {
       } else {
         this.realAccountSection = false;
       }
+    });
+    // const details = +this._route.snapshot.paramMap.get('selectedItem');
+    // this.detail = details;
+    this._generalinfoservice.GetTradeAccountListByClientId(details).subscribe(res => {
+      this.userinfo = res;
+      console.log('userinfo',res);
     });
     }, );
     this.userDetails();

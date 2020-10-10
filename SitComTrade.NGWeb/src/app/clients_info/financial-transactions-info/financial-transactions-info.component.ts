@@ -30,6 +30,7 @@ export class FinancialTransactionsInfoComponent implements OnInit {
       date: [''],
       tradingenvironment: [''],
       modifieddate: [''],
+      transactiontypeid: [''],
       transactiontype: [''],
       manualauto: [''],
       amount: [''],
@@ -37,6 +38,7 @@ export class FinancialTransactionsInfoComponent implements OnInit {
       currencyname: [''],
       orderid: [''],
       complianceapproval: [''],
+      transactionapprovalid: [''],
       transactionapproval: [''],
       declinereason: [''],
       transactionid: [''],
@@ -96,8 +98,52 @@ export class FinancialTransactionsInfoComponent implements OnInit {
   }
   // apply
   updtedetailsofFinanciaktransactions() {
+    this.typeoffinaclTransaction.forEach(element => {
+      if (element.Id === +this.financialtransactionInfoForm.value.transactiontype) {
+        this.financialtransactionInfoForm.value.transactiontypeid = element.Name;
+      }
+    });
+    this.approvaloffinaclTransaction.forEach(element => {
+      if (element.Id === +this.financialtransactionInfoForm.value.transactionapproval) {
+        this.financialtransactionInfoForm.value.transactionapprovalid = element.Name;
+      }
+    });
+    const updtfincilTransParamtr = {
+      Id: this.resFT.Id,
+      OwnerId: this.resFT.OwnerId,
+      ClientId: this.resFT.ClientId,
+      AccountId: this.resFT.AccountId,
+      TPAccountNumber: this.resFT.TPAccountNumber,
+      CurrencyId: this.resFT.CurrencyId,
+      CurrencyName: this.resFT.CurrencyName,
+      DepositAmount: this.financialtransactionInfoForm.value.amount,
+      WithdrawAmount:this.resFT.WithdrawAmount,
+      BalanceAmount: this.resFT.BalanceAmount,
+      ItemId: this.resFT.ItemId,
+      TradingEnvironment: this.resFT.TradingEnvironment,
+      TransactionTypeId: this.financialtransactionInfoForm.value.transactiontypeid,
+      TransactionTypeName: this.financialtransactionInfoForm.value.transactiontype,
+      TransactionApprovalId: this.financialtransactionInfoForm.value.transactionapprovalid,
+      TransactionApprovalName: this.financialtransactionInfoForm.value.transactionapproval,
+      FTD: this.financialtransactionInfoForm.value.ftd,
+      Desk: this.resFT.Desk,
+      Comment: this.financialtransactionInfoForm.value.comment,
+      ManualAuto: this.financialtransactionInfoForm.value.manualauto
+    }
+    this.generalinfoService.updtfinancialTrnsion(updtfincilTransParamtr).subscribe(updtFinTrnsRes => {
+      this.updatedFinacilTranstion = updtFinTrnsRes;
+      this.afterupdate();
+      // console.log('updatedFinacilTranstion', updtFinTrnsRes);
+    })
     this.frontend = true;
     this.backend = false;
+  }
+  afterupdate() {
+    const IDofFT = +this.route.snapshot.paramMap.get('selectedFinancialTransactons');
+    this.idfinacialtrnsctions = IDofFT;
+    this.generalinfoService.GetfinancialtransactionbyID(IDofFT).subscribe(fincialtransidRes => {
+      this.resFT = fincialtransidRes;
+    })
   }
   // cancel
   backtofrontmode() {
@@ -115,35 +161,6 @@ export class FinancialTransactionsInfoComponent implements OnInit {
     this.generalinfoService.gettransactionapproval().subscribe(transapprovalRes => {
       this.approvaloffinaclTransaction = transapprovalRes;
       // console.log('approvaloffinaclTransaction', transapprovalRes);
-    })
-  }
-  // updt finacial trns
-  modifyFinancilTrans() {
-    const updtfincilTransParamtr = {
-      // Id: this.financialtransactionInfoForm.value.,
-      OwnerId: this.resFT.OwnerId,
-      ClientId: this.resFT.ClientId,
-      AccountId: this.resFT.AccountId,
-      TPAccountNumber: this.resFT.TPAccountNumber,
-      CurrencyId: this.resFT.CurrencyId,
-      CurrencyName: this.resFT.CurrencyName,
-      // DepositAmount: this.financialtransactionInfoForm.value.,
-      // WithdrawAmount:this.financialtransactionInfoForm.value.,
-      // BalanceAmount: this.financialtransactionInfoForm.value.,
-      ItemId: this.resFT.ItemId,
-      // TradingEnvironment: this.financialtransactionInfoForm.value.,
-      // TransactionTypeId: this.financialtransactionInfoForm.value.,
-      // TransactionTypeName: this.financialtransactionInfoForm.value.,
-      // TransactionApprovalId: this.financialtransactionInfoForm.value.,
-      // TransactionApprovalName: this.financialtransactionInfoForm.value.,
-      FTD: this.financialtransactionInfoForm.value.ftd,
-      Desk: this.financialtransactionInfoForm.value.desk,
-      Comment: this.financialtransactionInfoForm.value.comment,
-      ManualAuto: this.financialtransactionInfoForm.value.manualauto
-    }
-    this.generalinfoService.updtfinancialTrnsion(updtfincilTransParamtr).subscribe(updtFinTrnsRes => {
-      this.updatedFinacilTranstion = updtFinTrnsRes;
-      console.log('updatedFinacilTranstion', updtFinTrnsRes);
     })
   }
 }
